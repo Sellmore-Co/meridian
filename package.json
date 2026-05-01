@@ -1,0 +1,33 @@
+{
+  "name": "meridian",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "campaign-init",
+    "start": "campaign-start",
+    "dev": "campaign-dev",
+    "build": "campaign-build",
+    "clone": "campaign-clone",
+    "config": "campaign-config",
+    "compress": "campaign-compress",
+    "compress:preview": "campaign-compress --preview",
+    "migrate": "campaign-migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sellmore-Co/meridian.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sellmore-Co/meridian/issues"
+  },
+  "homepage": "https://github.com/Sellmore-Co/meridian#readme",
+  "dependencies": {
+    "next-campaign-page-kit": "^0.1.0"
+  }
+}
