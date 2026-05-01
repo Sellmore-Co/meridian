@@ -21,6 +21,7 @@ Target path: `/theduo-v1/`
   - Package 1: Meridian - The Duo, base unit price 74.00
   - Package 2: Eye Renewal Cream, offer price 19.00 through offer ref 1
   - Package 3: Restorative Cleanser, offer price 29.00 through offer ref 4
+- Spec/API drift found after launch: the exported local Spec includes offers 1-3 only, while the live Campaigns API now includes offer ref 4 for package 3. Treat the API as runtime truth for QA, and regenerate/update the Spec before using it as a durable build artifact.
 - Live Campaigns API confirms only one shipping method: ref ID `1`, code `default`, price 0.00.
 - Live Campaigns API confirms payment methods: `bankcard`, `apple_pay`, `google_pay`.
 - Spec marks pages as custom. This is workable: the design HTML is the visual source, while Olympus provides SDK-managed surface patterns.
@@ -32,6 +33,7 @@ Target path: `/theduo-v1/`
 - The upsell design references a 40% voucher-style discount, but live API exposes a 25% cleanser offer and no voucher code.
   - Build decision: remove static 40% copy.
   - Later finding: the live calculate endpoint returns base package 3 pricing for `?upsell=true`, even with an upsell line, and there is no documented offer-id attribute to force offer ref 4 pricing. The page now shows SDK dynamic base pricing rather than unsubstantiated savings.
+  - Follow-up finding on 2026-05-01: the live API campaign payload now includes offer ref 4 for package 3, but the local Spec remains stale and the `?upsell=true` calculate path still returns base pricing. This likely needs a Campaigns/API/SDK decision: post-purchase upsells either need automatic offer application, an offer/voucher binding field, or a regenerated Spec that exposes the intended upsell pricing mechanism.
 - The checkout mockup includes unsupported payment options (`paypal`, `klarna`).
   - Build decision: hide/remove unsupported methods and keep bankcard plus Apple/Google express.
 - Checkout bundle cards include wrong shipping IDs (`2`) on 1x/2x cards.
@@ -68,6 +70,7 @@ Target path: `/theduo-v1/`
 - Add a hard-price scan that distinguishes SDK dynamic fallbacks from genuinely static commerce values.
 - Add local CORS preflight guidance: in this run the pages loaded locally, but Campaigns SDK API calls were blocked until local origins are allowlisted. The build recipe should ask operators to whitelist `http://localhost:<port>`, `http://127.0.0.1:<port>`, and optionally `http://[::1]:<port>` before browser QA.
 - Add an upsell-offer verification recipe. Campaign payload exposed an upsell-looking offer ref, but calculate pricing did not apply it; the skill needs a documented way to decide whether to show savings, hide savings, or require a real order reference before verification.
+- Add a Spec drift workflow: when the merchant changes offers/packages after export, record Spec-vs-API drift, keep runtime wiring aligned to API truth, and regenerate the Spec before treating it as immutable.
 - Add a starter-template cleanup step. Unused Olympus example partials/scripts contained fake payment methods, fake bump package IDs, FOMO, and exit-intent coupon behavior. Those were not rendered, but they created scan noise and could leak behavior if referenced later.
 - Add a visual QA note for checkout pages with sticky sidebars: `prettyscreenshot --cleanup` hid the checkout left column in this run, while plain browser screenshots and selector screenshots showed the real layout. Use plain screenshots for sticky checkout validation.
 - Add a CSS override check for template layout widths. Olympus `next-core.css` sets `.checkout-layout__left { width: 50% }`; in a CSS grid this halved the product column until the Meridian skin reset left/right layout widths to `100%`.
@@ -85,17 +88,29 @@ Target path: `/theduo-v1/`
 - Removed unused starter partials/scripts that referenced fake bump package IDs, fake promos, or unsupported payment methods.
 - Fixed checkout layout overrides so the left product/review column uses the full grid track and review cards do not collapse into starter flex columns.
 - Receipt includes `data-next-order-items` with an item template plus order subtotal, shipping, tax, currency, total, customer, and shipping address display fields.
+- Post-launch fixes:
+  - Added the missing `data-next-toggle="toggle"` target and `data-next-is-upsell="true"` marker to the Eye Renewal pre-purchase bump, matching starter-template docs.
+  - Removed the visual-only express checkout placeholder text; Apple Pay and Google Pay are now only represented by SDK-injected buttons.
+  - Added explicit card iframe styling through `paymentConfig.cardInputConfig` and removed static bullet placeholders from the Spreedly containers.
+  - Moved the upsell page to the starter-template wrapper pattern: `data-next-upsell="offer"` wraps the hidden bundle selector and add/skip actions.
+  - Tightened the upsell top spacing and copy so the CTA sits in the first coherent offer block, and added a receipt fallback link for direct/no-order upsell visits where the SDK hides the post-purchase offer wrapper.
 
 ## Verification
 
 - `npm run build` passes and builds 5 pages.
 - Focused active-source scan passes for hardcoded price strings, unsupported payment method markup, fake promo codes, lorem text, invalid checkout shipping IDs, and upsell shipping IDs.
 - Local server used: `_site` served at `http://localhost:8080`.
+- Post-launch local server used: `_site` served at `http://127.0.0.1:8082`.
 - Browser structural checks confirm:
   - checkout active payment method list is `credit`
   - checkout shipping IDs are `1, 1, 1`
   - checkout fake promo text is absent
+  - checkout express placeholder text is absent
+  - checkout Spreedly fallback bullet text is absent, with card/CVV containers left empty for SDK iframe injection
+  - Eye Renewal bump includes the required `data-next-toggle="toggle"` target
   - upsell package is package `3`
   - upsell has no shipping IDs
+  - upsell offer wrapper owns `data-next-upsell="offer"` and `data-next-bundle-selector-id="upsell-bundle"`
+  - upsell add/skip actions are visible in a 720px-tall desktop viewport after the layout tightening
   - receipt order item template and order display fields are present
-- Full SDK hydration and a first test order are pending local origin allowlisting. Without allowlisting, browser console shows Campaigns SDK `Failed to fetch` errors and dynamic prices remain placeholders.
+- Full SDK hydration and a first test order are pending local origin allowlisting or Netlify preview validation. Without allowlisting, browser console shows Campaigns SDK `Failed to fetch` CORS errors and dynamic prices remain placeholders.

@@ -34,13 +34,10 @@ styles:
       <!-- Upsell header -->
       <section class="section upsell-header">
         <div class="upsell-header__inner">
-          <div class="type-mono-cap" style="margin-bottom: 16px; color: var(--signal);">— Customers who bought The Duo also added —</div>
-          <h1 class="upsell-header__title">Add the Restorative Cleanser to your ritual.</h1>
+          <div class="type-mono-cap" style="margin-bottom: 16px; color: var(--signal);">Customers who bought The Duo also added</div>
+          <h1 class="upsell-header__title">Complete the ritual with the Restorative Cleanser.</h1>
           <div class="upsell-header__offer">
-            One-click add to your order &middot; ships with The Duo &middot; no extra shipping &middot; only available on this page
-          </div>
-          <div class="upsell-header__suboffer">
-            Dynamic one-click pricing is loaded by the checkout SDK before you add it.
+            One-click add to your order &middot; ships with The Duo &middot; no extra shipping
           </div>
         </div>
       </section>
@@ -48,7 +45,7 @@ styles:
       <!-- Upsell offer card — preserves SDK bundle-selector + bundle-card structure -->
       <section class="section upsell-box">
         <div class="container">
-          <div class="upsell-wrapper">
+          <div class="upsell-wrapper" data-next-upsell="offer" data-next-bundle-selector-id="upsell-bundle" data-next-await="">
 
             <!-- Hidden bundle selector that the SDK reads on accept -->
             <div data-next-bundle-selector data-next-upsell-context data-next-selector-id="upsell-bundle" class="os-option" style="display:none">
@@ -71,14 +68,23 @@ styles:
                   <span data-next-display="package.3.name">Restorative Cleanser</span>
                 </h2>
 
+                <div class="upsell-pricing">
+                  <div class="upsell-pricing__current"><span data-next-display="bundle.upsell-bundle.price" data-next-format="currency">...</span></div>
+                </div>
+
+                <div class="upsell-actions">
+                  <button data-next-upsell-action="add" data-next-upsell-bundle-id="upsell-bundle-1x" type="button" class="upsell-accept-btn">
+                    Yes &mdash; add to my order &nbsp;&rarr;
+                  </button>
+                  <a data-next-upsell-action="skip" href="{{ 'receipt.html' | campaign_link }}" class="upsell-decline-btn">
+                    No thanks, take me to my receipt
+                  </a>
+                </div>
+
                 <div class="type-body-lg" style="color: var(--ink-muted); margin-bottom: 16px;">
                   A pH-balanced gel cleanser engineered to clear the canvas without
                   stripping it. Designed to pair with the Duo: removes daily buildup
                   while leaving the skin's barrier intact for the actives that follow.
-                </div>
-
-                <div class="upsell-pricing">
-                  <div class="upsell-pricing__current"><span data-next-display="bundle.upsell-bundle.price" data-next-format="currency">...</span></div>
                 </div>
 
                 <ul class="upsell-list">
@@ -88,15 +94,6 @@ styles:
                   <li>3-month supply with the Duo schedule</li>
                   <li>Same 60-night guarantee as the Duo</li>
                 </ul>
-
-                <div class="upsell-actions" data-next-upsell="offer" data-next-bundle-selector-id="upsell-bundle">
-                  <button data-next-upsell-action="add" data-next-upsell-bundle-id="upsell-bundle-1x" type="button" class="upsell-accept-btn">
-                    Yes &mdash; add to my order &nbsp;&rarr;
-                  </button>
-                  <a data-next-upsell-action="skip" href="{{ 'receipt.html' | campaign_link }}" class="upsell-decline-btn">
-                    No thanks, take me to my receipt
-                  </a>
-                </div>
               </div>
             </div>
 
@@ -111,6 +108,11 @@ styles:
               </p>
             </div>
 
+          </div>
+          <div class="upsell-fallback-actions">
+            <a href="{{ 'receipt.html' | campaign_link }}" class="upsell-decline-btn">
+              Continue to receipt
+            </a>
           </div>
         </div>
       </section>

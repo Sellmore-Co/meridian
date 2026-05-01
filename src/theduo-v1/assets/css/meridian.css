@@ -404,7 +404,18 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   border-color: var(--ink);
   box-shadow: 0 0 0 1px var(--ink) inset;
 }
-.input-flds.spreedly-field { display: block; height: 48px; padding: 12px 14px; }
+.input-flds.spreedly-field {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  min-height: 56px;
+  padding: 0 44px 0 14px;
+  overflow: hidden;
+}
+.input-flds.spreedly-field iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
 .select-form-wrapper { position: relative; }
 .select-field { appearance: none; padding-right: 36px; }
 .caret-down { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); pointer-events: none; }
@@ -510,18 +521,21 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   margin: var(--s-4) 0;
   cursor: pointer;
 }
-.bump-card[data-next-selected="true"], .bump-card.next-selected {
+.bump-card[data-next-selected="true"], .bump-card.next-selected, .bump-card.next-in-cart {
   border: 2px solid var(--ink);
   background: var(--bg);
   padding: calc(var(--s-4) - 1px);
 }
-.bump__header-left { display: flex; }
+.bump__header-left { display: flex; cursor: pointer; }
 .bump__header-content { display: flex; align-items: center; gap: var(--s-3); }
 .bump__checkbox { width: 18px; height: 18px; border: 1.5px solid var(--ink); display: inline-flex; align-items: center; justify-content: center; background: var(--bg); }
-.bump-card[data-next-selected="true"] .bump__checkbox { background: var(--ink); }
-.bump-card[data-next-selected="true"] .checkbox__icon { color: #fff; opacity: 1; }
-.checkbox__icon { width: 14px; height: 14px; color: var(--ink); opacity: 0.2; }
-.bump-card[data-next-selected="true"] .checkbox__icon { opacity: 1; }
+.bump-card[data-next-selected="true"] .bump__checkbox,
+.bump-card.next-selected .bump__checkbox,
+.bump-card.next-in-cart .bump__checkbox { background: var(--ink); }
+.checkbox__icon { width: 14px; height: 14px; color: var(--ink); opacity: 0; }
+.bump-card[data-next-selected="true"] .checkbox__icon,
+.bump-card.next-selected .checkbox__icon,
+.bump-card.next-in-cart .checkbox__icon { color: #fff; opacity: 1; }
 .bump__title { font-weight: 600; font-size: 14.5px; }
 .bump__body { display: block; }
 .bump__content { display: grid; grid-template-columns: 1fr 100px; gap: var(--s-4); align-items: start; }
@@ -550,16 +564,12 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   color: var(--ink-muted); margin-bottom: var(--s-3);
 }
 .express-checkout__buttons {
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--s-2);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-2);
   min-height: 48px;
 }
-.express-checkout__buttons::after {
-  content: "Apple Pay · Google Pay · PayPal injected by SDK";
-  grid-column: 1 / -1;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--ink-faint);
-  border: 1px dashed var(--line); padding: var(--s-3);
+.express-checkout__buttons > * { min-width: 0; }
+@media (max-width: 540px) {
+  .express-checkout__buttons { grid-template-columns: 1fr; }
 }
 .divider-section {
   display: flex; align-items: center; gap: var(--s-3);
@@ -600,8 +610,11 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 .payment-method__form { overflow: hidden; transition: max-height 200ms ease; }
 .payment-method__form--collapsed { max-height: 0; }
 .payment-method__form--expanded { max-height: 1200px; }
-.payment-method__content { padding: 0 var(--s-4) var(--s-4); border-top: 1px solid var(--line-soft); }
-.payment-method__content > .form-grid { padding-top: var(--s-3); }
+.payment-method__content { padding: var(--s-4); border-top: 1px solid var(--line-soft); }
+.payment-method__content > .form-grid { padding-top: 0; }
+.payment-method__content .form-grid__row:has(> .form-group:nth-child(3)) {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(128px, 0.82fr);
+}
 .payment-method__info {
   padding: var(--s-4); display: grid; gap: var(--s-3);
   font-size: 13.5px; color: var(--ink-muted);
@@ -643,18 +656,24 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 .cart-summary__line.pb--header { border-bottom: 1px solid var(--ink); }
 .cart-items__list { display: grid; gap: var(--s-3); padding: var(--s-3) 0; }
 .cart-item {
-  display: grid; grid-template-columns: 64px 1fr;
-  gap: var(--s-3);
-  padding: 0;
+  display: block;
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--line-soft);
 }
-.cart-item__wrapper { display: contents; }
-.cart-item__details { display: contents; grid-column: span 2; }
-.cart-item__content { display: flex; justify-content: space-between; gap: var(--s-3); align-items: flex-start; }
-.cart-item__description { display: block; }
+.cart-item__wrapper { display: block; }
+.cart-item__details { display: block; }
+.cart-item__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  justify-content: space-between;
+  gap: var(--s-4);
+  align-items: start;
+}
+.cart-item__description { display: block; min-width: 0; }
 .cart-item__header { display: block; }
 .cart-item__title { font-size: 14.5px; font-weight: 500; line-height: 1.3; }
 .cart-item__title.os-bold { font-weight: 600; }
-.cart-item__pricing { text-align: right; flex-shrink: 0; }
+.cart-item__pricing { text-align: right; min-width: max-content; }
 .checkout__line-item__final-price { font-size: 15px; font-weight: 500; }
 .cart-price.diagonal-strike, .diagonal-strike { text-decoration: line-through; color: var(--ink-faint); font-size: 12px; }
 .line-compare { font-size: 12px; }
@@ -1082,15 +1101,17 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 .upsell-progress-step.is-active { color: #fff; }
 .upsell-progress-step::before { content: "● "; }
 
-.upsell-header { padding: var(--s-12) 0 0; text-align: center; background: var(--bg); }
+.upsell-header { padding: var(--s-5) 0 var(--s-4); text-align: center; background: var(--bg); }
 .upsell-header__inner { max-width: 720px; margin: 0 auto; padding: 0 var(--gut); }
 .upsell-header__title {
-  font-size: clamp(32px, 4.5vw, 52px);
+  font-size: clamp(28px, 4vw, 44px);
   font-weight: 600; line-height: 1.04; letter-spacing: -0.022em;
-  margin-bottom: var(--s-4);
+  margin: 0 auto var(--s-3);
+  max-width: 680px;
 }
 .upsell-header__offer {
-  font-size: 18px; color: var(--ink); margin-bottom: var(--s-2);
+  font-size: 16px; line-height: 1.5; color: var(--ink); margin: 0 auto;
+  max-width: 640px;
 }
 .upsell-header__offer span { font-weight: 600; }
 .upsell-header__suboffer {
@@ -1098,16 +1119,24 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   color: var(--signal);
 }
 
-.upsell-box { padding: var(--s-10) 0 var(--s-12); }
+.section.upsell-box {
+  padding: var(--s-5) 0 var(--s-12);
+  margin-top: 0;
+}
 .upsell-container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gut); }
 .upsell-wrapper { background: var(--bg); }
 .upsell-offer__card {
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-10);
-  padding: var(--s-8);
+  padding: var(--s-6);
   border: 1px solid var(--line);
   background: var(--bg);
 }
-@media (max-width: 920px) { .upsell-offer__card { grid-template-columns: 1fr; gap: var(--s-6); } }
+@media (max-width: 920px) {
+  .section.upsell-box .container { padding-left: var(--gut); padding-right: var(--gut); }
+  .upsell-header-bar__inner { align-items: flex-start; flex-direction: column; }
+  .upsell-header-bar__progress { flex-wrap: wrap; }
+  .upsell-offer__card { grid-template-columns: 1fr; gap: var(--s-6); padding: var(--s-5); }
+}
 .upsell-image-block {
   aspect-ratio: 4/5;
   position: relative;
@@ -1117,7 +1146,7 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 .upsell-image-block img {
   width: 100%; height: 100%; object-fit: cover; display: block;
 }
-.upsell-content { display: grid; gap: var(--s-4); align-content: center; }
+.upsell-content { display: grid; gap: var(--s-4); align-content: start; }
 .upsell-savings-row {
   display: inline-flex; gap: var(--s-2); align-items: baseline;
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
@@ -1131,6 +1160,12 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 .upsell-list li::before { content: "✓"; color: var(--verified); font-weight: 600; }
 
 .upsell-actions { display: grid; gap: var(--s-3); margin-top: var(--s-5); }
+.upsell-fallback-actions {
+  display: none;
+  max-width: 420px;
+  margin: var(--s-5) auto 0;
+}
+.upsell-wrapper.next-hidden + .upsell-fallback-actions { display: block; }
 .upsell-accept-btn {
   display: block; width: 100%; background: var(--ink); color: #fff;
   padding: 18px 24px;
