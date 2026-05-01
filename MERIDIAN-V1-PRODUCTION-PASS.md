@@ -75,6 +75,7 @@ Target path: `/theduo-v1/`
 - Add a visual QA note for checkout pages with sticky sidebars: `prettyscreenshot --cleanup` hid the checkout left column in this run, while plain browser screenshots and selector screenshots showed the real layout. Use plain screenshots for sticky checkout validation.
 - Add a CSS override check for template layout widths. Olympus `next-core.css` sets `.checkout-layout__left { width: 50% }`; in a CSS grid this halved the product column until the Meridian skin reset left/right layout widths to `100%`.
 - Updated the local `next-campaigns-build` skill and its production gate reference to require local origin allowlisting before SDK browser QA.
+- Add the Campaign Cart SDK Konami test-order path to the campaign build recipe. Secure Spreedly iframe fields are not automatable from the outside; use `ArrowUp ArrowUp ArrowDown ArrowDown ArrowLeft ArrowRight ArrowLeft ArrowRight KeyB KeyA` after selecting the intended cart state, then verify the generated `ref_id`, upsell path, and receipt line items.
 
 ## Implementation Notes
 
@@ -135,4 +136,8 @@ Target path: `/theduo-v1/`
   - card header renders 4 logo images, with no text fallback
   - month, year, and CVV controls compute to matching `56px` heights
   - fresh checkout pass reports no browser console errors
-- SDK hydration is verified on Netlify preview. A real first test order remains pending card/test-order execution; local browser QA still requires origin allowlisting, otherwise Campaigns SDK API calls show `Failed to fetch` CORS errors and dynamic prices remain placeholders.
+- Netlify deploy preview test-order pass confirms:
+  - Konami checkout test order `101887` / `ref_id=c15c6a56592042859e4ae96b9abae16c` created from a 1x Duo cart, redirected to `/upsell/`, skip redirected to `/receipt/`, and receipt rendered `1x Meridian - The Duo` with `$74.00` total.
+  - Konami checkout test order `101889` / `ref_id=8871578f3f6f41e09558074bd5830ba4` created from a 1x Duo + Eye Renewal bump cart, redirected to `/upsell/`, accept added `1x Restorative Cleanser`, and receipt rendered Duo + Eye Renewal + Cleanser with `$132.00` total.
+  - Fresh receipt reload for order `101889` reached `html.next-display-ready` and reported no browser console errors.
+- SDK hydration and real test-order execution are verified on Netlify preview. Local browser QA still requires origin allowlisting, otherwise Campaigns SDK API calls show `Failed to fetch` CORS errors and dynamic prices remain placeholders.
