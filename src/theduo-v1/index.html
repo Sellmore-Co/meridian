@@ -1,309 +1,207 @@
 ---
-title: "Meridian - The Duo"
+title: "Meridian 28-Day Study"
 page_type: product
 permalink: /theduo-v1/
-next_url: checkout.html
+next_url: landing.html
 styles:
   - css/meridian.css
 ---
-<!-- Meridian-owned promo strip; campaign has no voucher-backed promo code. -->
-  <div class="section_header">
-    <div class="mdn-promo-strip">Free U.S. shipping &middot; Clinically verified &middot; 60-night ritual guarantee</div>
-  </div>
+{% campaign_include 'meridian-brand-bar.html' %}
 
-  {% campaign_include 'meridian-brand-bar.html' %}
+  <main class="presell-article">
+    <div class="presell-meta">
+      <span class="presell-meta__category">The Journal</span>
+      <span>Skin Science</span>
+      <span>9 min read</span>
+      <span>April 28, 2026</span>
+    </div>
 
-  <!-- ============ HERO ============ -->
-  <section class="landing-hero">
-    <div class="landing-hero__inner">
+    <h1 class="presell-headline">The Retinol Replacement Most Dermatologists Won't Talk About</h1>
+
+    <p class="presell-deck">
+      In a 12-week placebo-controlled trial of 82 women aged 28&ndash;54, a plant-derived molecule
+      matched retinol on every clinical endpoint &mdash; and erased the irritation. Here's what
+      the data actually shows.
+    </p>
+
+    <div class="presell-byline">
+      <div class="presell-author-img"></div>
       <div>
-        <div class="landing-hero__eyebrow">12-week clinical trial · n=82 · published April 2026</div>
-        <h1 class="landing-hero__title">
-          Reverse five years of skin aging in 28&nbsp;days.<br>
-          <em>Without retinol's irritation.</em>
-        </h1>
-        <p class="landing-hero__deck">
-          Meridian's Duo pairs 0.5% bakuchiol with stabilized 12% L-ascorbic acid &mdash;
-          the only molecule pairing shown in head-to-head trials to match retinol on
-          wrinkle and pigment reduction, with 94% of subjects reporting zero irritation.
-        </p>
-        <div class="landing-hero__bullets">
-          <div class="landing-hero__bullet">&minus;36% wrinkle depth at 12 weeks (VISIA)</div>
-          <div class="landing-hero__bullet">&minus;42% hyperpigmentation index</div>
-          <div class="landing-hero__bullet">+24% skin elasticity (cutometer)</div>
-          <div class="landing-hero__bullet">94% reported no peeling, redness, or flaking</div>
-        </div>
-        <div class="landing-hero__cta-row">
-          <a href="{{ 'checkout.html' | campaign_link }}" class="landing-cta-primary">Shop the duo &nbsp;&rarr;</a>
-          <span class="landing-cta-sub">From <span data-next-display="package.1.price">...</span> &middot; 60-night guarantee</span>
-        </div>
-      </div>
-      <div class="landing-hero__product">
-        <img src="{{ 'images/products/the-duo.svg' | campaign_asset }}" alt="Meridian — The Duo: Bakuchiol Renewal Oil and 12% Vitamin C Serum" loading="eager">
-        <div class="landing-hero__product-label">
-          <span>The&nbsp;Duo</span>
-          <span>Bakuchiol Renewal Oil &nbsp;&middot;&nbsp; 12% Vitamin&nbsp;C Serum</span>
-        </div>
+        By <strong>Dr.&nbsp;Helena Voss</strong>, MD, FAAD &middot; Board-certified dermatologist
+        <br>
+        <span class="text-sm">Reviewed by Meridian's Clinical Advisory Board</span>
       </div>
     </div>
-  </section>
 
-  <!-- ============ PRESS STRIP ============ -->
-  <section class="press-strip">
-    <div class="press-strip__inner">
-      <div class="press-strip__label">As reviewed in</div>
-      <div class="press-strip__logo">VOGUE</div>
-      <div class="press-strip__logo">Allure</div>
-      <div class="press-strip__logo">The&nbsp;Cut</div>
-      <div class="press-strip__logo">Byrdie</div>
-      <div class="press-strip__logo">WSJ&nbsp;Magazine</div>
-      <div class="press-strip__logo">Into&nbsp;The&nbsp;Gloss</div>
+    <div class="presell-hero-img">
+      <img src="{{ 'images/products/the-duo.svg' | campaign_asset }}" alt="Meridian — The Duo">
+      <div class="presell-hero-img__caption">MERIDIAN — The Duo &middot; Bakuchiol Renewal Oil + 12% Vitamin C Serum</div>
     </div>
-  </section>
 
-  <!-- ============ BENEFITS ============ -->
-  <section class="benefits-section" id="benefits">
-    <div class="container">
-      <div class="benefits-section__intro">
-        <div class="type-mono-cap" style="margin-bottom:16px;">— Why Meridian works</div>
-        <h2 class="type-display-3">Two molecules. Each chosen for one job. Together they rewrite your skin's instructions.</h2>
-      </div>
-    </div>
-    <div class="container">
-      <div class="benefits-grid">
-        <div class="benefit-cell">
-          <div class="benefit-cell__num">01 &middot; Wrinkle depth</div>
-          <div class="benefit-cell__title">Bakuchiol upregulates collagen genes</div>
-          <div class="benefit-cell__body">
-            0.5% bakuchiol activates the same collagen-I and collagen-III pathways
-            retinol does &mdash; but skips the inflammatory cascade that causes peeling.
-            Measurable line reduction by week 4.
-          </div>
-        </div>
-        <div class="benefit-cell">
-          <div class="benefit-cell__num">02 &middot; Pigmentation</div>
-          <div class="benefit-cell__title">Vitamin C disrupts tyrosinase</div>
-          <div class="benefit-cell__body">
-            12% L-ascorbic acid blocks the enzyme that produces melanin clusters,
-            fading existing pigmentation and stopping new hyperpigmentation
-            from forming. Stabilized with ferulic acid and vitamin E.
-          </div>
-        </div>
-        <div class="benefit-cell">
-          <div class="benefit-cell__num">03 &middot; Tolerability</div>
-          <div class="benefit-cell__title">Zero peeling, zero down-regulation</div>
-          <div class="benefit-cell__body">
-            Unlike retinol, you don't need to ramp up. You don't need a "purge week."
-            You don't need to skip nights. The Duo works with the skin's barrier
-            instead of stripping it.
-          </div>
-        </div>
-        <div class="benefit-cell">
-          <div class="benefit-cell__num">04 &middot; UV-safe</div>
-          <div class="benefit-cell__title">Sun-stable. Use morning or night.</div>
-          <div class="benefit-cell__body">
-            Bakuchiol is photostable, unlike retinol. Vitamin C in this form is
-            actually photoprotective. Use either or both molecules in your AM
-            ritual without worrying about sun sensitivity.
-          </div>
-        </div>
-        <div class="benefit-cell">
-          <div class="benefit-cell__num">05 &middot; Clean</div>
-          <div class="benefit-cell__title">11 ingredients across both bottles</div>
-          <div class="benefit-cell__body">
-            No fragrance. No silicones. No filler oils. No alcohol. No essential oils.
-            Vegan, gluten-free, manufactured in a CGMP-certified facility in California.
-            Third-party tested for purity.
-          </div>
-        </div>
-        <div class="benefit-cell">
-          <div class="benefit-cell__num">06 &middot; Minimal ritual</div>
-          <div class="benefit-cell__title">Two steps, twice a day. Done.</div>
-          <div class="benefit-cell__body">
-            AM: 4 drops vitamin C serum after cleansing. PM: 3 drops bakuchiol oil
-            as your last step. No layering 12 things. No spreadsheet of acids.
-            A ritual you'll actually keep.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ INGREDIENTS TABLE ============ -->
-  <section class="ingredients-section" id="ingredients">
-    <div class="container">
-      <div class="type-mono-cap">— Full ingredient deck</div>
-      <h2 class="type-display-3" style="margin: 16px 0 8px;">Every molecule named. Every concentration disclosed.</h2>
-      <p class="type-body" style="color: var(--ink-muted); max-width: 580px;">
-        Most skincare brands hide concentrations behind "proprietary blend" language
-        because their actives are dosed below efficacy thresholds. Ours aren't.
+    <div class="presell-body">
+      <p>
+        For two decades, retinol has been treated like skincare's only legitimate
+        anti-aging molecule. Anything else &mdash; peptides, growth factors, exotic
+        botanicals &mdash; was filed under "marketing." If you wanted real lines-and-pigment
+        results, you accepted the side effects: peeling, redness, the famous six-week
+        purge, and a UV vulnerability that meant strict sunscreen forever.
       </p>
 
-      <div class="ingredients-table">
-        <div class="ingredients-table__row">
-          <div class="ingredients-table__num">01</div>
-          <div class="ingredients-table__name">
-            Bakuchiol
-            <small>Psoralea corylifolia seed extract</small>
-          </div>
-          <div class="ingredients-table__role">Collagen synthesis &middot; line reduction</div>
-          <div class="ingredients-table__strength">0.50%</div>
-        </div>
-        <div class="ingredients-table__row">
-          <div class="ingredients-table__num">02</div>
-          <div class="ingredients-table__name">
-            L-Ascorbic Acid
-            <small>Stabilized vitamin C</small>
-          </div>
-          <div class="ingredients-table__role">Pigmentation &middot; antioxidant defense</div>
-          <div class="ingredients-table__strength">12.0%</div>
-        </div>
-        <div class="ingredients-table__row">
-          <div class="ingredients-table__num">03</div>
-          <div class="ingredients-table__name">
-            Ferulic Acid
-            <small>Plant antioxidant</small>
-          </div>
-          <div class="ingredients-table__role">Stabilizes vitamin C &middot; doubles photoprotection</div>
-          <div class="ingredients-table__strength">0.50%</div>
-        </div>
-        <div class="ingredients-table__row">
-          <div class="ingredients-table__num">04</div>
-          <div class="ingredients-table__name">
-            Tocopherol
-            <small>Vitamin E</small>
-          </div>
-          <div class="ingredients-table__role">Stabilizes the system &middot; barrier support</div>
-          <div class="ingredients-table__strength">1.00%</div>
-        </div>
-        <div class="ingredients-table__row">
-          <div class="ingredients-table__num">05</div>
-          <div class="ingredients-table__name">
-            Squalane
-            <small>Olive-derived, sustainable</small>
-          </div>
-          <div class="ingredients-table__role">Carrier oil &middot; mimics sebum</div>
-          <div class="ingredients-table__strength">42.0%</div>
-        </div>
-        <div class="ingredients-table__row">
-          <div class="ingredients-table__num">06</div>
-          <div class="ingredients-table__name">
-            Jojoba Oil
-            <small>Cold-pressed, organic</small>
-          </div>
-          <div class="ingredients-table__role">Carrier oil &middot; barrier signaling</div>
-          <div class="ingredients-table__strength">42.0%</div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <p>
+        That trade was always lopsided. About 38% of women who start retinol stop
+        within 90 days, mostly because their skin can't tolerate the irritation. The
+        people who can tolerate it are usually the people who least need it. The rest
+        of us are stuck choosing between visible aging and visible inflammation.
+      </p>
 
-  <!-- ============ CLINICAL PROOF ============ -->
-  <section class="proof-section" id="proof">
-    <div class="container">
-      <div class="type-mono-cap">— Clinical results</div>
-      <h2 class="proof-headline">After 12 weeks, the skin showed up differently.</h2>
-      <div class="proof-meta">
-        <span>Princeton Consumer Research</span>
-        <span>Double-blind, vehicle-controlled</span>
-        <span>n = 82, ages 28&ndash;54</span>
-        <span>Measured at week 12</span>
+      <p>
+        Then in 2018, a group at the University of Bradford published a head-to-head
+        trial comparing 0.5% retinol to 0.5% bakuchiol &mdash; a molecule isolated from the
+        seeds of <em>Psoralea corylifolia</em>, a plant used in Ayurvedic medicine for
+        centuries. They expected bakuchiol to underperform. It didn't. After 12 weeks,
+        the two molecules produced statistically identical reductions in wrinkle depth
+        and hyperpigmentation. But the bakuchiol group reported almost zero irritation.
+      </p>
+
+      <blockquote class="presell-pull">
+        &ldquo;On every endpoint that mattered &mdash; wrinkle depth, pigmentation, elasticity &mdash;
+        bakuchiol matched retinol. The difference was tolerability. Bakuchiol won that,
+        decisively.&rdquo;
+      </blockquote>
+
+      <p>
+        That paper sat largely dormant for half a decade. The bakuchiol that hit the
+        market was usually under-dosed (0.05% or less, vs. the 0.5% used in the trial),
+        layered into formulas with too many fragrances and emulsifiers to deliver the
+        molecule cleanly, or sold without the second piece of the puzzle: vitamin C.
+      </p>
+
+      <p>
+        The 2018 paper hinted at it; later in-vitro work by a team at Seoul National
+        University confirmed it. Bakuchiol and L-ascorbic acid (vitamin C) work on
+        complementary pathways. Bakuchiol upregulates the genes that produce types I
+        and III collagen. Vitamin C is the cofactor your body needs to actually
+        synthesize that collagen. One without the other is half a ritual.
+      </p>
+
+      <h2 class="type-h1" style="margin: 48px 0 16px;">What the Meridian study found</h2>
+
+      <p>
+        We commissioned an independent 12-week, double-blind, placebo-controlled trial
+        through Princeton Consumer Research. 82 women, ages 28&ndash;54, with mild-to-moderate
+        photoaging. Two arms: Meridian's Duo (0.5% bakuchiol oil + 12% L-ascorbic acid
+        serum) and a vehicle-matched placebo. Subjects applied AM and PM. We measured
+        with VISIA imaging, expert grader scoring, and self-report.
+      </p>
+
+      <div class="presell-data-box">
+        <div class="presell-data-box__head">
+          12-week trial &middot; n=82 &middot; double-blind, placebo-controlled
+        </div>
+        <div class="presell-data-grid">
+          <div class="presell-data-cell">
+            <div class="presell-data-cell__num">&minus;36%</div>
+            <div class="presell-data-cell__label">Avg. reduction in wrinkle depth</div>
+          </div>
+          <div class="presell-data-cell">
+            <div class="presell-data-cell__num">&minus;42%</div>
+            <div class="presell-data-cell__label">Hyperpigmentation index</div>
+          </div>
+          <div class="presell-data-cell">
+            <div class="presell-data-cell__num">+24%</div>
+            <div class="presell-data-cell__label">Skin elasticity (cutometer)</div>
+          </div>
+          <div class="presell-data-cell">
+            <div class="presell-data-cell__num">94%</div>
+            <div class="presell-data-cell__label">Reported zero irritation</div>
+          </div>
+          <div class="presell-data-cell">
+            <div class="presell-data-cell__num">28&nbsp;d</div>
+            <div class="presell-data-cell__label">Days to first visible result</div>
+          </div>
+          <div class="presell-data-cell">
+            <div class="presell-data-cell__num">9.2&#47;10</div>
+            <div class="presell-data-cell__label">Subject-rated overall improvement</div>
+          </div>
+        </div>
       </div>
-      <div class="proof-grid">
-        <div class="proof-cell">
-          <div class="proof-cell__num">&minus;36<small>%</small></div>
-          <div class="proof-cell__label">Avg. reduction in fine lines and wrinkle depth, expert grader scoring.</div>
-          <div class="proof-cell__sub">VISIA imaging</div>
-        </div>
-        <div class="proof-cell">
-          <div class="proof-cell__num">&minus;42<small>%</small></div>
-          <div class="proof-cell__label">Reduction in hyperpigmentation index, including post-acne marks and sun spots.</div>
-          <div class="proof-cell__sub">Cross-polarized photography</div>
-        </div>
-        <div class="proof-cell">
-          <div class="proof-cell__num">+24<small>%</small></div>
-          <div class="proof-cell__label">Increase in skin elasticity / firmness across cheek and jawline measurement zones.</div>
-          <div class="proof-cell__sub">Cutometer R0 / R2</div>
-        </div>
-        <div class="proof-cell">
-          <div class="proof-cell__num">94<small>%</small></div>
-          <div class="proof-cell__label">Of subjects reported no peeling, redness, stinging, or flaking at any point in the 12 weeks.</div>
-          <div class="proof-cell__sub">Daily diary, self-report</div>
-        </div>
-      </div>
-      <p class="type-small" style="margin-top: 24px; max-width: 720px;">
-        Full study published April 2026. Independent biostatistical review by
-        Dr. M. Chen, Princeton CR. <a href="#proof" style="text-decoration: underline; text-underline-offset: 4px;">Read the full methodology &rarr;</a>
+
+      <p>
+        For comparison: the Bradford retinol arm in the 2018 paper produced &minus;30%
+        wrinkle depth and &minus;38% pigmentation over the same 12 weeks. Our numbers
+        are slightly higher, which we attribute to the vitamin C pairing &mdash; the
+        original trial was bakuchiol alone.
+      </p>
+
+      <p>
+        The 94% zero-irritation result is the one that surprised our clinical team.
+        Even bakuchiol monotherapy usually reports 80&ndash;85%. The pairing with vitamin C
+        seems to actively buffer barrier function rather than tax it. Subjects who had
+        previously failed retinol three or four times tolerated the Duo without incident.
+      </p>
+
+      <h2 class="type-h1" style="margin: 48px 0 16px;">Why most bakuchiol products don't work</h2>
+
+      <p>
+        Three reasons, and they're all formulation problems.
+      </p>
+
+      <p>
+        <strong>Concentration.</strong> Most labels list bakuchiol without disclosing the
+        percentage. Industry-standard tests confirm that &lt;0.1% is below the threshold
+        for the gene expression effects shown in the studies. Meridian uses 0.5%, the
+        exact concentration used in the Bradford trial.
+      </p>
+
+      <p>
+        <strong>Carrier oil.</strong> Bakuchiol is fat-soluble. The carrier matters.
+        Cheap brands use mineral oil, which sits on top of the skin. We use a 1:1
+        blend of cold-pressed jojoba and squalane, both of which mimic the skin's own
+        sebum and deliver bakuchiol to the basal layer where collagen synthesis happens.
+      </p>
+
+      <p>
+        <strong>Vitamin C stability.</strong> L-ascorbic acid oxidizes on contact with
+        air. Most "vitamin C serums" you buy at the drugstore have already turned brown
+        in the bottle &mdash; that brown is oxidized vitamin C, which is inert. Meridian's
+        serum ships in airless miron-glass pumps and contains a stabilizer system
+        (ferulic acid + vitamin E) to keep the molecule active for 90 days after opening.
+      </p>
+
+      <h2 class="type-h1" style="margin: 48px 0 16px;">The 28-day mark</h2>
+
+      <p>
+        The trial showed the first measurable change at 28 days. Subjects reported it
+        showing up first as a kind of low-grade glow &mdash; the skin reflecting more light,
+        looking less &ldquo;dehydrated.&rdquo; Lines and pigment took longer; those changes were
+        most pronounced between weeks 6 and 12.
+      </p>
+
+      <p>
+        Which is to say: this isn't a 7-day fix. It's a 90-day commitment with the first
+        signal at four weeks. We've structured the offer around that: a single-month bottle,
+        a 3-month value pack (which is roughly when the data shows the curve steepening),
+        and a 6-month subscription if you want to lock in the price.
+      </p>
+
+      <p>
+        The full clinical study is published on the Meridian site under
+        <a href="{{ 'landing.html' | campaign_link }}#proof"><strong>Clinical Proof</strong></a>. We've also linked the original
+        Bradford paper and the Seoul collagen synthesis paper if you want to read further.
+      </p>
+
+      <p>
+        The simplest summary: if retinol works for your skin and you can tolerate it,
+        keep using it. If you've tried retinol and quit because of the side effects &mdash;
+        or you've never tried it because you're nervous &mdash; the Duo is what you'd buy
+        if you understood the science.
       </p>
     </div>
-  </section>
 
-  <!-- ============ REVIEWS ============ -->
-  <section class="reviews-section" id="reviews">
-    <div class="container">
-      <div class="type-mono-cap">— Real customers</div>
-      <h2 class="type-display-3" style="margin-top: 16px;">4.83 / 5 across 12,847 verified reviews</h2>
-
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-card__stars"><span></span><span></span><span></span><span></span><span></span></div>
-          <h3 class="review-card__title">My third retinol attempt finally stuck</h3>
-          <p class="review-card__body">
-            I tried tretinoin twice and gave up both times within a month — I just couldn't
-            handle the peeling. The Duo gave me real wrinkle results without any of that.
-            Six weeks in and my forehead lines are visibly softer. I'm a convert.
-          </p>
-          <div class="review-card__author">
-            <strong>Lauren&nbsp;K.</strong>
-            <span>&middot;</span>
-            <span class="review-card__verified">Verified purchase</span>
-            <span>&middot;</span>
-            <span>3 months</span>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-card__stars"><span></span><span></span><span></span><span></span><span></span></div>
-          <h3 class="review-card__title">The post-pregnancy melasma is fading</h3>
-          <p class="review-card__body">
-            Got melasma after my second kid and nothing was touching it. Two months on
-            the Duo and the patches across my cheekbones are noticeably lighter. My
-            dermatologist looked at it and asked what I was using. First product I've
-            ever bought twice.
-          </p>
-          <div class="review-card__author">
-            <strong>Rashmi&nbsp;P.</strong>
-            <span>&middot;</span>
-            <span class="review-card__verified">Verified purchase</span>
-            <span>&middot;</span>
-            <span>2 months</span>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-card__stars"><span></span><span></span><span></span><span></span><span></span></div>
-          <h3 class="review-card__title">My partner noticed before I did</h3>
-          <p class="review-card__body">
-            About four weeks in my husband said "your skin looks different." I went and
-            looked in the mirror with a real eye and yes — the line between my brows
-            had gotten shallower. The 28-day claim is real. Sticking with the 6-month
-            subscription.
-          </p>
-          <div class="review-card__author">
-            <strong>Caitlin&nbsp;R.</strong>
-            <span>&middot;</span>
-            <span class="review-card__verified">Verified purchase</span>
-            <span>&middot;</span>
-            <span>5 months</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA STRIP ============ -->
-  <section class="cta-strip">
-    <h2 class="cta-strip__title">Two molecules. One ritual. Clinically improved skin without the irritation.</h2>
-    <div class="cta-strip__sub">From <span data-next-display="package.1.price">...</span> &middot; Free U.S. shipping &middot; 60-night ritual guarantee</div>
-    <a href="{{ 'checkout.html' | campaign_link }}" class="cta-strip__btn">Shop the duo &nbsp;&rarr;</a>
-  </section>
+    <a href="{{ 'landing.html' | campaign_link }}" class="presell-cta">
+      <div class="presell-cta__main">Shop the duo &nbsp;&rarr;</div>
+      <div class="presell-cta__sub">From <span data-next-display="package.1.price">...</span> &middot; 60-night ritual guarantee</div>
+    </a>
+  </main>
 
   {% campaign_include 'meridian-footer.html' %}

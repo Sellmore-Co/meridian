@@ -29,7 +29,7 @@ Target path: `/theduo-v1/`
 ## Initial Friction Points
 
 - The spec routes presell to `index.html`, while the design folder's `index.html` is a design guide, not a funnel page.
-  - Build decision: use design `landing.html` as production `index.html`; preserve design `presell.html` as `/theduo-v1/presell/`.
+  - Final build decision: use design `presell.html` as production root `/theduo-v1/`; use design `landing.html` as `/theduo-v1/landing/`; preserve the full Spec path `Presell > Landing > Checkout > Upsell > Receipt`.
 - The upsell design references a 40% voucher-style discount, but live API exposes a 25% cleanser offer and no voucher code.
   - Build decision: remove static 40% copy.
   - Later finding: the live calculate endpoint returns base package 3 pricing for `?upsell=true`, even with an upsell line, and there is no documented offer-id attribute to force offer ref 4 pricing. The page now shows SDK dynamic base pricing rather than unsubstantiated savings.
@@ -78,8 +78,8 @@ Target path: `/theduo-v1/`
 
 ## Implementation Notes
 
-- Built five production pages at `/theduo-v1/`, `/theduo-v1/presell/`, `/theduo-v1/checkout/`, `/theduo-v1/upsell/`, and `/theduo-v1/receipt/`.
-- Used the design `landing.html` as the production `/theduo-v1/` page because the design `index.html` is a guide/index, not a funnel page.
+- Built five production pages at `/theduo-v1/`, `/theduo-v1/landing/`, `/theduo-v1/checkout/`, `/theduo-v1/upsell/`, and `/theduo-v1/receipt/`.
+- Corrected the funnel order to match the Spec: root `/theduo-v1/` is now the presell entry, `/theduo-v1/landing/` is the PDP/landing page, then checkout, upsell, and receipt.
 - Preserved SDK-owned checkout surfaces: checkout fields, bundle cards, card payment form, express checkout container, cart summary, submit button, and toggle bump structure.
 - Removed unsupported PayPal/Klarna payment markup from active checkout. The only active payment method block is card, with Apple Pay and Google Pay left for SDK express checkout injection.
 - Normalized checkout bundle shipping methods to ID `1`; upsell has no shipping method ID.
@@ -96,6 +96,10 @@ Target path: `/theduo-v1/`
   - Tightened the upsell top spacing and copy so the CTA sits in the first coherent offer block, and added a receipt fallback link for direct/no-order upsell visits where the SDK hides the post-purchase offer wrapper.
   - Follow-up fix: narrowed the upsell SDK-owned hide surface from the whole visible offer wrapper to the hidden selector/action controls, so direct preview visits still show the offer content and expose a receipt fallback when no order context exists.
   - Follow-up fix: restored real card-brand logo assets in the credit-card header, tightened express-payment spacing, normalized card/CVV field heights, and forced the Eye Renewal bump checkbox to render as an empty box when SDK state is `next-not-in-cart`.
+  - Follow-up fix: restored the Olympus-style billing address mount (`os-checkout-element="different-billing-address"`) so unchecking "Use shipping address as billing address" has a SDK target to expand.
+  - Follow-up fix: tightened checkout payment spacing, forced card logo image dimensions, widened shipping-address rows to the full checkout form width, and added padding inside the SDK cart summary card.
+  - Follow-up fix: moved the upsell accept/decline controls below the cleanser benefit bullets. The direct/no-order fallback now mirrors the visual hierarchy with a primary CTA above `Continue to receipt`; the fallback primary routes back to checkout because a direct upsell visit has no order to mutate.
+  - Open UX concern: the Eye Renewal pre-purchase bump uses `data-next-package-sync="1"`, which keeps it synced with the selected Duo quantity. That may be interpreted as too aggressive for a one-time add-on; leave unchanged until we decide whether bumps should always be quantity `1` or mirror the base bundle.
 
 ## Verification
 
@@ -118,6 +122,12 @@ Target path: `/theduo-v1/`
   - direct/no-order upsell fallback simulation keeps the offer card visible and shows `Continue to receipt`
   - checkout local browser check confirms unchecked Eye Renewal box has hidden icon, credit-card header renders 4 logo images with no text fallback, and month/year/CVV fields compute to matching `56px` heights
   - receipt order item template and order display fields are present
+- Local route/layout follow-up checks confirm:
+  - `/theduo-v1/` renders the presell article and links forward to `/theduo-v1/landing/`
+  - `/theduo-v1/landing/` renders the PDP/landing page and links forward to `/theduo-v1/checkout/`
+  - checkout shipping rows render at full checkout form width instead of centered/narrow
+  - checkout card logo assets compute to visible `35px` widths
+  - direct/no-order upsell fallback appears below the 5 benefit bullets with a primary CTA above `Continue to receipt`
 - Netlify deploy preview check for commit `ac05843` confirms:
   - direct `/theduo-v1/upsell/` shows the full Restorative Cleanser offer card, hides SDK post-purchase controls without order context, and exposes `Continue to receipt`
   - hydrated `/theduo-v1/checkout/` reaches `html.next-display-ready`

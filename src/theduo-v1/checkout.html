@@ -349,7 +349,7 @@ scripts:
                               </div>
 
                               <!-- ===== Step 3: Shipping ===== -->
-                              <div class="form-section">
+                              <div class="form-section form-section--shipping">
                                 <h1 class="form-section__title">Step 3 &middot; Shipping address</h1>
                                 <div class="form-grid">
                                   <div data-next-component="shipping-field-row" class="form-grid__row">
@@ -358,9 +358,7 @@ scripts:
                                         <label for="shipping_country" class="label-checkout">Country</label>
                                         <div class="select-form-wrapper">
                                           <select autocomplete="country-name" os-checkout-validate="required" data-next-checkout-field="country" class="input-flds select-field">
-                                            <option value="US" selected>United States</option>
-                                            <option value="CA">Canada</option>
-                                            <option value="UK">United Kingdom</option>
+                                            <option value="">Select Country</option>
                                           </select>
                                           <div class="caret-down"><div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg></div></div>
                                         </div>
@@ -383,12 +381,12 @@ scripts:
                                       </div>
                                     </div>
                                   </div>
-                                  <div data-next-component="location">
+                                  <div data-next-component="location" class="next-hidden">
                                     <div data-next-component="shipping-field-row" class="form-grid__row">
                                       <div class="form-group">
                                         <div class="form-input">
                                           <label for="shipping_city" class="label-checkout">City</label>
-                                          <input autocomplete="address-level2" os-checkout-validate="required" placeholder="City" maxlength="256" name="shipping_city" data-name="Shipping City" type="text" id="shipping_city" data-next-checkout-field="city" class="input-flds">
+                                          <input autocomplete="address-level2" os-checkout-validate="required" placeholder="City" maxlength="256" name="shipping_city" data-name="Shipping City" type="text" id="shipping_city" pattern="^[A-Za-z\s]+$" data-next-checkout-field="city" class="input-flds">
                                         </div>
                                       </div>
                                       <div class="form-group">
@@ -396,9 +394,7 @@ scripts:
                                           <label for="shipping_province" class="label-checkout">State</label>
                                           <div class="select-form-wrapper">
                                             <select autocomplete="address-level1" os-checkout-validate="required" name="shipping_province" data-name="Shipping Province" id="shipping_province" data-next-checkout-field="province" class="input-flds select-field">
-                                              <option value="">State</option>
-                                              <option value="NY">New York</option>
-                                              <option value="CA">California</option>
+                                              <option value="">Select State</option>
                                             </select>
                                             <div class="caret-down"><div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg></div></div>
                                           </div>
@@ -470,7 +466,7 @@ scripts:
                             </div>
 
                             <!-- ===== Step 4: Payment ===== -->
-                            <div class="form-section form-section--last">
+                            <div class="form-section form-section--last form-section--payment">
                               <div class="form-section__header">
                                 <h1 class="form-section__title">Step 4 &middot; Payment Method</h1>
                                 <div class="form-section__subtitle">All transactions are secure and encrypted.</div>
@@ -504,11 +500,15 @@ scripts:
                                   </div>
                                   <div data-next-payment-form="credit" os-checkout-element="credit-form" os-shipping-method-same="true" class="payment-method__form payment-method__form--expanded">
                                     <div class="payment-method__content">
+                                      <div data-next-component="credit-error" class="next-toast-handler">
+                                        <div class="tip1_bar is-warning">
+                                          <div data-next-component="credit-error-text" class="text-sm">Error message</div>
+                                        </div>
+                                      </div>
                                       <div class="form-grid">
                                         <div class="form-grid__row">
                                           <div class="form-group">
                                             <div class="form-input">
-                                              <label class="label-checkout">Card number</label>
                                               <div data-next-tooltip="All transactions are secure and encrypted." class="form-input-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1"><path d="M2.5 7c0-.97.78-1.75 1.75-1.75h5.5c.97 0 1.75.78 1.75 1.75v3.5a1.75 1.75 0 0 1-1.75 1.75h-5.5A1.75 1.75 0 0 1 2.5 10.5zm7-1.75V4.22c0-1.36-1.12-2.47-2.5-2.47S4.5 2.86 4.5 4.22v1.03"/></svg>
                                               </div>
@@ -519,10 +519,9 @@ scripts:
                                         <div class="form-grid__row">
                                           <div class="form-group">
                                             <div class="form-input">
-                                              <label class="label-checkout">Exp. Month</label>
                                               <div class="select-form-wrapper">
-                                                <select autocomplete="cc-exp-month" data-placeholder="MM" placeholder="MM" name="credit_card_exp_month" id="credit_card_exp_month" data-next-checkout-field="exp-month" class="input-flds select-field">
-                                                  <option value="">MM</option>
+                                                <select autocomplete="cc-exp-month" data-placeholder="Exp. Month" placeholder="Exp. Month" name="credit_card_exp_month" id="credit_card_exp_month" data-name="Credit Card Exp. Month" data-next-checkout-field="exp-month" class="input-flds select-field">
+                                                  <option value="">Exp. Month</option>
                                                 </select>
                                                 <div class="caret-down"><div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg></div></div>
                                               </div>
@@ -530,10 +529,9 @@ scripts:
                                           </div>
                                           <div class="form-group">
                                             <div class="form-input">
-                                              <label class="label-checkout">Exp. Year</label>
                                               <div class="select-form-wrapper">
-                                                <select autocomplete="cc-exp-year" data-placeholder="YYYY" placeholder="YYYY" name="credit_card_exp_year" id="credit_card_exp_year" data-next-checkout-field="exp-year" class="input-flds select-field">
-                                                  <option value="">YYYY</option>
+                                                <select autocomplete="cc-exp-year" data-placeholder="Exp. Year" placeholder="Exp. Year" name="credit_card_exp_year" id="credit_card_exp_year" data-name="Credit Card Exp. Year" data-next-checkout-field="exp-year" class="input-flds select-field">
+                                                  <option value="">Exp. Year</option>
                                                 </select>
                                                 <div class="caret-down"><div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg></div></div>
                                               </div>
@@ -541,7 +539,6 @@ scripts:
                                           </div>
                                           <div class="form-group">
                                             <div class="form-input">
-                                              <label class="label-checkout">CVV</label>
                                               <div data-next-tooltip="3-digit code on back of card" class="form-input-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1"><circle cx="7" cy="7" r="5.5"/><path stroke-linecap="round" d="M5.5 5.25a1.5 1.5 0 1 1 2.43 1.18C7.5 6.77 7 7.2 7 7.75M6.99 10.24h.02v.02h-.02z"/></svg>
                                               </div>
@@ -557,6 +554,10 @@ scripts:
                                             <div class="checkbox__label">Use shipping address as billing address</div>
                                           </label>
                                         </div>
+                                        <div os-checkout-element="different-billing-address" class="billing-address__form">
+                                          <h1 class="form-section__title cc-billing">Billing Address</h1>
+                                          <div os-checkout-component="billing-form" class="form-grid"></div>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -565,7 +566,7 @@ scripts:
                             </div>
 
                             <!-- ===== Cart summary ===== -->
-                            <div class="form-section form-section--last">
+                            <div class="form-section form-section--last form-section--summary">
                               <div class="cart-box cart-box--card">
                                 {% campaign_include 'cart-summary01.html' %}
                               </div>
