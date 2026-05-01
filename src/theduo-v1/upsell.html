@@ -1,0 +1,122 @@
+---
+title: "Special Offer - Meridian"
+page_type: upsell
+permalink: /theduo-v1/upsell/
+next_url: receipt.html
+decline_url: receipt.html
+styles:
+  - css/meridian.css
+---
+<!-- Page-wrapper / SDK structure mirrors src/olympus/upsell-bundle-stepper.html -->
+  <div class="upsell-page">
+  <div class="page-wrapper">
+    <div class="main-wrapper">
+
+      <!-- Announcement bar -->
+      <div class="announcement">
+        <div class="announcement__block">
+          <div class="announcement__text"><strong>Special offer unlocked &middot; Do not close this page</strong></div>
+        </div>
+      </div>
+
+      <!-- Upsell header bar -->
+      <header class="upsell-header-bar">
+        <div class="upsell-header-bar__inner">
+          <div class="upsell-header-bar__brand">M&middot;E&middot;R&middot;I&middot;D&middot;I&middot;A&middot;N</div>
+          <div class="upsell-header-bar__progress">
+            <div class="upsell-progress-step">Order placed</div>
+            <div class="upsell-progress-step is-active">Special offer</div>
+            <div class="upsell-progress-step">Receipt</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Upsell header -->
+      <section class="section upsell-header">
+        <div class="upsell-header__inner">
+          <div class="type-mono-cap" style="margin-bottom: 16px; color: var(--signal);">— Customers who bought The Duo also added —</div>
+          <h1 class="upsell-header__title">Add the Restorative Cleanser to your ritual.</h1>
+          <div class="upsell-header__offer">
+            One-click add to your order &middot; ships with The Duo &middot; no extra shipping &middot; only available on this page
+          </div>
+          <div class="upsell-header__suboffer">
+            Dynamic one-click pricing is loaded by the checkout SDK before you add it.
+          </div>
+        </div>
+      </section>
+
+      <!-- Upsell offer card — preserves SDK bundle-selector + bundle-card structure -->
+      <section class="section upsell-box">
+        <div class="container">
+          <div class="upsell-wrapper">
+
+            <!-- Hidden bundle selector that the SDK reads on accept -->
+            <div data-next-bundle-selector data-next-upsell-context data-next-selector-id="upsell-bundle" class="os-option" style="display:none">
+              <div role="button" data-next-bundle-card data-next-bundle-id="upsell-bundle-1x" data-next-bundle-items='[{"packageId":3,"quantity":1}]' data-next-quantity="1" data-next-min-quantity="1" data-next-max-quantity="3" data-next-selected="true" class="os-card next-selected"></div>
+            </div>
+
+            <div class="upsell-offer__card">
+              <div class="upsell-image-block">
+                <img src="{{ 'images/products/restorative-cleanser.svg' | campaign_asset }}" alt="Meridian Restorative Cleanser — pH-balanced gel cleanser" loading="eager">
+              </div>
+
+              <div class="upsell-content">
+                <div class="upsell-savings-row">
+                  <span>One-click add</span>
+                  <span>&middot;</span>
+                  <span>Ships with The Duo</span>
+                </div>
+
+                <h2 class="display-lg">
+                  <span data-next-display="package.3.name">Restorative Cleanser</span>
+                </h2>
+
+                <div class="type-body-lg" style="color: var(--ink-muted); margin-bottom: 16px;">
+                  A pH-balanced gel cleanser engineered to clear the canvas without
+                  stripping it. Designed to pair with the Duo: removes daily buildup
+                  while leaving the skin's barrier intact for the actives that follow.
+                </div>
+
+                <div class="upsell-pricing">
+                  <div class="upsell-pricing__current"><span data-next-display="bundle.upsell-bundle.price" data-next-format="currency">...</span></div>
+                </div>
+
+                <ul class="upsell-list">
+                  <li>4.7% mild surfactant blend &mdash; gentle enough for daily use</li>
+                  <li>Niacinamide-buffered to support barrier function</li>
+                  <li>No fragrance, no sulfates, no essential oils</li>
+                  <li>3-month supply with the Duo schedule</li>
+                  <li>Same 60-night guarantee as the Duo</li>
+                </ul>
+
+                <div class="upsell-actions" data-next-upsell="offer" data-next-bundle-selector-id="upsell-bundle">
+                  <button data-next-upsell-action="add" data-next-upsell-bundle-id="upsell-bundle-1x" type="button" class="upsell-accept-btn">
+                    Yes &mdash; add to my order &nbsp;&rarr;
+                  </button>
+                  <a data-next-upsell-action="skip" href="{{ 'receipt.html' | campaign_link }}" class="upsell-decline-btn">
+                    No thanks, take me to my receipt
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trust + ritual context -->
+            <div style="max-width: 720px; margin: 56px auto 0; text-align: center;">
+              <div class="type-mono-cap">— Why we recommend the cleanser</div>
+              <p class="type-body-lg" style="margin-top: 12px; color: var(--ink);">
+                In our 12-week clinical trial, subjects who paired the Duo with a
+                non-stripping cleanser saw <strong>11% greater wrinkle reduction</strong>
+                than those using a typical foaming cleanser. The actives in the Duo work
+                better when the barrier underneath them isn't compromised.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  {% campaign_include 'meridian-footer.html' %}
+</div>

@@ -1,0 +1,197 @@
+---
+title: "Order Confirmed - Meridian"
+page_type: receipt
+permalink: /theduo-v1/receipt/
+styles:
+  - css/meridian.css
+---
+{% campaign_include 'meridian-brand-bar.html' %}
+
+  <!-- Receipt hero -->
+  <div class="receipt-page">
+  <section class="receipt-hero">
+    <div class="receipt-hero__inner">
+      <div class="receipt-hero__check">✓</div>
+      <div class="receipt-hero__eyebrow">Order confirmed &middot; A copy is on its way to your inbox</div>
+      <h1 class="receipt-hero__title">Your skin's next 90 days starts now.</h1>
+      <div class="receipt-hero__order-num">
+        Order <strong>#<span data-next-display="order.number">...</span></strong> &middot; Total <span data-next-display="order.total">...</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Receipt body — two columns -->
+  <div class="receipt-grid">
+
+    <!-- LEFT: ritual + what happens next -->
+    <div>
+      <section class="receipt-section">
+        <h2 class="receipt-section__title">Your ritual &middot; AM &amp; PM</h2>
+
+        <div class="ritual-step">
+          <div class="ritual-step__num">01</div>
+          <div>
+            <div class="ritual-step__time">Morning &middot; 6:30am</div>
+            <div class="ritual-step__title">12% Vitamin C Serum</div>
+            <div class="ritual-step__desc">
+              On clean, dry skin: 4 drops, press into face and neck. Wait 60 seconds for
+              full absorption. Follow with SPF 30+ before stepping outside.
+            </div>
+          </div>
+        </div>
+
+        <div class="ritual-step">
+          <div class="ritual-step__num">02</div>
+          <div>
+            <div class="ritual-step__time">Evening &middot; 9:00pm</div>
+            <div class="ritual-step__title">Bakuchiol Renewal Oil</div>
+            <div class="ritual-step__desc">
+              After cleansing, as the last step of your routine: 3 drops, press into
+              skin. Slight warming is normal &mdash; that's the squalane delivering
+              bakuchiol to the basal layer.
+            </div>
+          </div>
+        </div>
+
+        <div class="ritual-step">
+          <div class="ritual-step__num">03</div>
+          <div>
+            <div class="ritual-step__time">Daily &middot; track your changes</div>
+            <div class="ritual-step__title">Take a photo every Sunday</div>
+            <div class="ritual-step__desc">
+              Same window, same lighting, same expression. The 28-day mark is real but
+              gradual &mdash; weekly photos make the change unmistakable.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="receipt-section" style="margin-top: 16px;">
+        <h2 class="receipt-section__title">What happens next</h2>
+        <div class="ritual-step">
+          <div class="ritual-step__num">→</div>
+          <div>
+            <div class="ritual-step__title">Today</div>
+            <div class="ritual-step__desc">
+              We'll email you a clinical-team-written ritual guide and a calendar
+              invite for your weekly progress photos.
+            </div>
+          </div>
+        </div>
+        <div class="ritual-step">
+          <div class="ritual-step__num">→</div>
+          <div>
+            <div class="ritual-step__title">In 1&ndash;2 days</div>
+            <div class="ritual-step__desc">
+              Your order ships from our California facility. You'll get a tracking
+              number when it leaves the warehouse.
+            </div>
+          </div>
+        </div>
+        <div class="ritual-step">
+          <div class="ritual-step__num">→</div>
+          <div>
+            <div class="ritual-step__title">In 3&ndash;5 days</div>
+            <div class="ritual-step__desc">
+              The Duo arrives. Open it, take your day-zero photo, and start the ritual
+              that night. The 28-day clock begins.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="referral-box">
+        <div class="referral-box__title">Share Meridian with a friend.</div>
+        <div class="referral-box__sub">
+          Share your code so friends can start the Duo ritual, and we will send you a
+          refill credit after their first order ships. No limit.
+        </div>
+        <div class="referral-box__code">
+          <span>MDN-RITUAL</span>
+          <span>Copy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: order summary (matches SDK receipt skeleton structure) -->
+    <div>
+      <section class="receipt-section">
+        <h2 class="receipt-section__title">Order details</h2>
+
+        <div class="cart-items" data-next-hide="cart.isEmpty">
+          <template id="meridian-order-item-template">
+            <div class="cart-item" data-package-id="{item.packageId}" style="grid-template-columns: 1fr;">
+              <div class="cart-item__details">
+                <div class="cart-item__content">
+                  <div class="cart-item__description">
+                    <div class="cart-item__title os-bold">{item.quantity}x {item.name}</div>
+                    <div class="text-2xs text-muted" style="margin-top: 4px;">
+                      <span class="{item.hasDiscount}">{item.originalUnitPrice}/ea</span> <span>{item.unitPrice}/ea</span>
+                    </div>
+                  </div>
+                  <div class="cart-item__pricing">
+                    <div class="cart-price diagonal-strike line-compare {item.hasDiscount}">{item.originalPrice}</div>
+                    <div class="checkout__line-item__final-price">{item.price}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+          <div data-item-template-id="meridian-order-item-template" data-next-order-items class="cart-items__list" style="display: grid; gap: 12px; padding: 0;"></div>
+        </div>
+
+        <div class="order-totals" style="margin-top: 16px;">
+          <div class="order-totals__line">
+            <div class="order-totals__label">Subtotal</div>
+            <div data-next-display="order.subtotal" class="order-totals__value">...</div>
+          </div>
+          <div data-next-show="order.hasShipping" class="order-totals__line">
+            <div class="order-totals__label">Shipping</div>
+            <div data-next-display="order.shipping" class="order-totals__value">...</div>
+          </div>
+          <div data-next-show="order.hasTax" class="order-totals__line">
+            <div class="order-totals__label">Tax</div>
+            <div data-next-display="order.tax" class="order-totals__value">...</div>
+          </div>
+          <div class="order-totals__section cc-total">
+            <div class="order-totals__line order-totals__line--total">
+              <div class="order-totals__label--total">Total charged</div>
+              <div class="order-totals__value-group">
+                <div data-next-display="order.currency" class="summary-total__coin"></div>
+                <div data-next-display="order.total" class="order-totals__value--total">...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="receipt-section" style="margin-top: 16px;">
+        <h2 class="receipt-section__title">Shipping to</h2>
+        <div class="type-body" style="margin: 0;">
+          <strong data-next-display="order.customer.name">...</strong><br>
+          <span data-next-display="order.shippingAddress.line1">...</span><br>
+          <span data-next-display="order.shippingAddress.line2"></span><br>
+          <span data-next-display="order.shippingAddress.city">...</span>, <span data-next-display="order.shippingAddress.state">...</span> <span data-next-display="order.shippingAddress.postcode">...</span><br>
+          <span data-next-display="order.shippingAddress.country">...</span>
+        </div>
+        <div class="type-mono-cap" style="margin-top: 12px;">
+          Estimated delivery &middot; May 6&ndash;8
+        </div>
+      </section>
+
+      <section class="receipt-section" style="margin-top: 16px;">
+        <h2 class="receipt-section__title">The 60-night guarantee</h2>
+        <div style="display: flex; gap: 16px; align-items: flex-start;">
+          <div class="guarantee-badge" style="flex-shrink: 0;"></div>
+          <div class="type-small" style="color: var(--ink); line-height: 1.5;">
+            Use the Duo morning and night for 60 days. If your skin doesn't measurably
+            change, return it &mdash; even empty &mdash; for a full refund. No questions, no
+            return-shipping cost. Email <strong>care@meridian.com</strong> to start.
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  {% campaign_include 'meridian-footer.html' %}
+</div>

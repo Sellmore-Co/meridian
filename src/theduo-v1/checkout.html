@@ -1,0 +1,648 @@
+---
+title: "Checkout - Meridian The Duo"
+page_type: checkout
+permalink: /theduo-v1/checkout/
+next_url: upsell.html
+styles:
+  - css/meridian.css
+scripts:
+  - js/checkout.js
+---
+<!-- ============================================================
+       The structure below mirrors campaign-cart-starter-templates/
+       src/olympus/checkout.html. All data-next-* attributes,
+       form fields (data-next-checkout-field), bundle cards
+       (data-next-bundle-card / data-next-bundle-id /
+       data-next-bundle-display), payment partials, submit button
+       structure (.submit-button + spinner + main-text + subtext),
+       and the SDK-owned commerce surfaces are preserved so this
+       design layer is drop-in.
+       ============================================================ -->
+
+  <div class="page-wrapper">
+    <div class="main-wrapper">
+
+      <!-- Promo banner -->
+      <div data-next-hide="param.banner=='n'" class="section_header">
+        <div class="mdn-promo-strip">Free U.S. shipping &middot; Clinically verified &middot; 60-night ritual guarantee</div>
+      </div>
+
+      <!-- Brand bar / checkout header -->
+      <header class="checkout-header">
+        <div class="checkout-header__inner">
+          <a class="checkout-header__brand-text" href="{{ 'index.html' | campaign_link }}">M&middot;E&middot;R&middot;I&middot;D&middot;I&middot;A&middot;N</a>
+          <div class="checkout-header__phone">Need help? 1&nbsp;(833) 627-7331</div>
+        </div>
+      </header>
+
+      <!-- Encrypted strip -->
+      <div class="encrypted-banner">
+        <div class="padding-global">
+          <div class="contain small">
+            <div class="scarcity-banner__content">
+              <div class="encrypted-banner__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2m-6 9c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1z"/>
+                </svg>
+              </div>
+              <div class="text-sm">100% Encrypted &amp; Secure Checkout</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main checkout layout -->
+      <div class="section-checkout cc-gray">
+        <div class="container">
+          <div class="checkout-page-layout">
+            <div class="checkout-wrapper">
+
+              <!-- ===== Left column — product, reviews ===== -->
+              <div class="checkout-layout__left">
+                <div class="checkout-layout__content">
+                  <div class="checkout-layout__content-inner">
+
+                    <div class="heading-box">
+                      <div class="hero_review-box">
+                        <div class="review_component cc-sm">
+                          <div class="review_component-wrapper">
+                            <div class="star_wrapper">
+                              <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                              <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                              <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                              <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                              <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            </div>
+                            <div>4.83 / 5 — 12,847 verified reviews</div>
+                          </div>
+                        </div>
+                      </div>
+                      <h1 class="display-md"><span>Meridian — The Duo</span></h1>
+                      <div class="text-reg"><strong>0.5% Bakuchiol Renewal Oil + 12% L-Ascorbic Acid Serum</strong></div>
+                    </div>
+
+                    <div class="checkout-media__wrapper">
+                      <div class="checkout-media__caption">M&middot;E&middot;R&middot;I&middot;D&middot;I&middot;A&middot;N — The Duo</div>
+                      <img src="{{ 'images/products/the-duo.svg' | campaign_asset }}" alt="Meridian — The Duo: Bakuchiol Renewal Oil and 12% Vitamin C Serum" loading="eager">
+                    </div>
+
+                    <div class="icons-grids hide-tablet-down">
+                      <div class="icon-image">
+                        <div class="icon-img"></div>
+                        <div class="text-xs">Clinically&nbsp;tested</div>
+                      </div>
+                      <div class="icon-image">
+                        <div class="icon-img"></div>
+                        <div class="text-xs">Vegan, gluten-free</div>
+                      </div>
+                      <div class="icon-image">
+                        <div class="icon-img"></div>
+                        <div class="text-xs">Made in California</div>
+                      </div>
+                      <div class="icon-image">
+                        <div class="icon-img"></div>
+                        <div class="text-xs">60-night guarantee</div>
+                      </div>
+                    </div>
+
+                    <div class="checkout-reviews hide-tablet-down">
+                      <div class="checkout-review">
+                        <div class="checkout-review__stars">
+                          <div class="review_component cc-sm"><div class="review_component-wrapper"><div class="star_wrapper">
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                          </div></div></div>
+                        </div>
+                        <p class="checkout-review__title">My third retinol attempt finally stuck</p>
+                        <p class="checkout-review__description">I tried tretinoin twice and gave up both times. The Duo gave me real wrinkle results without any of the peeling. Six weeks in and my forehead lines are visibly softer.</p>
+                        <div class="checkout-review__meta">
+                          <div class="review-auth">Lauren K.</div>
+                          <div class="review-auth">|</div>
+                          <div class="checkout-review__verified">Verified Customer</div>
+                        </div>
+                      </div>
+                      <div class="checkout-review">
+                        <div class="checkout-review__stars">
+                          <div class="review_component cc-sm"><div class="review_component-wrapper"><div class="star_wrapper">
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                          </div></div></div>
+                        </div>
+                        <p class="checkout-review__title">My partner noticed before I did</p>
+                        <p class="checkout-review__description">About four weeks in my husband said "your skin looks different." The line between my brows had gotten shallower. The 28-day claim is real.</p>
+                        <div class="checkout-review__meta">
+                          <div class="review-auth">Caitlin R.</div>
+                          <div class="review-auth">|</div>
+                          <div class="checkout-review__verified">Verified Customer</div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== Right column — form ===== -->
+              <div class="checkout-layout__right">
+                <div class="checkout-layout__form">
+                  <div class="checkout__form-container">
+
+                    <!-- Mobile heading -->
+                    <div class="hide-tablet">
+                      <div class="hero_heading-box">
+                        <div class="heading-box">
+                          <h1 class="display-md"><span>Meridian — The Duo</span></h1>
+                          <div class="text-reg"><strong>0.5% Bakuchiol + 12% Vitamin C</strong></div>
+                        </div>
+                        <div class="sub-head-text">
+                          <div>Clinically improved skin in 28 days. Without retinol's irritation.</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mdn-checkout-reserve">This price is reserved for this checkout session.</div>
+
+                    <div class="checkout-form">
+                      <form data-next-checkout="form" id="combo_form" method="post" onsubmit="event.preventDefault(); return false;">
+                        <div class="form-content">
+                          <div class="form-sections">
+
+                            <!-- ===== Step 1: Bundle selector ===== -->
+                            <div class="form-section grid-row-gap2 form-section--first">
+                              <h2 class="form-section__title">Step 1 &middot; Choose your supply</h2>
+
+                              <div data-next-bundle-selector data-next-selector-id="meridian-duo-packages" data-next-selection-mode="swap" data-next-include-shipping="true" class="os-option" data-next-await="">
+                                <div class="os-cards__vertical os--gap-xl">
+
+                                  <!-- 1× Duo -->
+                                  <div data-next-bundle-card data-next-bundle-id="duo-qty-1" data-next-shipping-id="1" data-next-bundle-items='[{"packageId":1,"quantity":1}]' role="button" class="os-card">
+                                    <div class="os-card__header-slot"></div>
+                                    <div class="os-card__wrapper">
+                                      <div class="os-card__content os--align-middle" data-next-package-id="1">
+                                        <div class="radio-style-1"><div class="radio-inner"></div></div>
+                                        <div class="os-card__image-slot hide-tablet"><img data-next-display="package.image" src="{{ 'images/products/the-duo.svg' | campaign_asset }}" alt=""></div>
+                                        <div class="os-card__main-slot">
+                                          <div class="os-card__title-section">
+                                            <div class="os-card__title-wrapper">
+                                              <div class="os-card__title">1&times; <span data-next-display="package.name">The Duo — 30-day supply</span></div>
+                                            </div>
+                                            <div class="os-card__subtitle-wrapper">
+                                              <div class="os-card__subtitle-text">Try the ritual &middot; qualifies for free shipping</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="os-card__secondary-slot">
+                                          <div class="os-card__pricing">
+                                            <div class="os-card__price-container">
+                                              <div class="os-card__price os--current"><span data-next-bundle-display="unitPrice">...</span>/ea</div>
+                                            </div>
+                                            <div class="os-card__total-container">
+                                              <div class="os-card__total-label">Total</div>
+                                              <div class="os-card__total-current"><span data-next-bundle-display="price">...</span></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <!-- 2× Duo (selected, Most Popular) -->
+                                  <div data-next-bundle-card data-next-bundle-id="duo-qty-2" data-next-shipping-id="1" data-next-bundle-items='[{"packageId":1,"quantity":2}]' data-next-selected="true" role="button" class="os-card">
+                                    <div class="os-card__header-slot"></div>
+                                    <div class="os-card__wrapper">
+                                      <div class="os-card__content os--align-middle" data-next-package-id="1">
+                                        <div data-selected="true" class="radio-style-1"><div class="radio-inner"></div></div>
+                                        <div class="os-card__image-slot hide-tablet"><img data-next-display="package.image" src="{{ 'images/products/the-duo.svg' | campaign_asset }}" alt=""></div>
+                                        <div class="os-card__main-slot">
+                                          <div class="os-card__title-section">
+                                            <div class="os-card__title-wrapper">
+                                              <div class="os-card__title">2&times; <span data-next-display="package.name">The Duo — 60-day supply</span></div>
+                                              <div data-next-bundle-display="hasDiscount" class="os-card__title-badge pb--bestseller">
+                                                <div>SAVE <span data-next-bundle-display="discountPercentage">...</span></div>
+                                              </div>
+                                            </div>
+                                            <div class="os-card__subtitle-wrapper">
+                                              <div data-next-bundle-display="hasDiscount" class="os-card__subtitle-text">
+                                                Save <span data-next-bundle-display="discountAmount">...</span> + free shipping
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="os-card__secondary-slot">
+                                          <div class="os-card__pricing">
+                                            <div class="os-card__price-container">
+                                              <div data-next-bundle-display="hasDiscount" class="os-card__price os--compare os-style"><span data-next-bundle-display="originalUnitPrice">...</span></div>
+                                              <div class="os-card__price os--current"><span data-next-bundle-display="unitPrice">...</span>/ea</div>
+                                            </div>
+                                            <div class="os-card__total-container">
+                                              <div class="os-card__total-label">Total</div>
+                                              <div data-next-bundle-display="hasDiscount" class="os-card__total-compare"><span data-next-bundle-display="originalPrice">...</span></div>
+                                              <div class="os-card__total-current"><span data-next-bundle-display="price">...</span></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="os-card__label-slot">
+                                      <div class="os-card__label-2 os-card__label--middle-right os-card__label--pill-primary">
+                                        <div class="card-icons">
+                                          <svg width="100%" height="100%" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg"><path d="M6.5.5l1.9 3.9 4.3.4-3.1 3 .8 4.3-3.9-2L2.6 12l.8-4.3-3.1-3 4.3-.4z"/></svg>
+                                        </div>
+                                        <div class="os-card__label-text-2">Most Popular</div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <!-- 3× Duo (Best Value) -->
+                                  <div data-next-bundle-card data-next-bundle-id="duo-qty-3" data-next-shipping-id="1" data-next-bundle-items='[{"packageId":1,"quantity":3}]' role="button" class="os-card">
+                                    <div class="os-card__header-slot"></div>
+                                    <div class="os-card__wrapper">
+                                      <div class="os-card__content os--align-middle" data-next-package-id="1">
+                                        <div class="radio-style-1"><div class="radio-inner"></div></div>
+                                        <div class="os-card__image-slot hide-tablet"><img data-next-display="package.image" src="{{ 'images/products/the-duo.svg' | campaign_asset }}" alt=""></div>
+                                        <div class="os-card__main-slot">
+                                          <div class="os-card__title-section">
+                                            <div class="os-card__title-wrapper">
+                                              <div class="os-card__title">3&times; <span data-next-display="package.name">The Duo — 90-day supply</span></div>
+                                              <div data-next-bundle-display="hasDiscount" class="os-card__title-badge pb--bestseller">
+                                                <div>SAVE <span data-next-bundle-display="discountPercentage">...</span></div>
+                                              </div>
+                                            </div>
+                                            <div class="os-card__subtitle-wrapper">
+                                              <div data-next-bundle-display="hasDiscount" class="os-card__subtitle-text">
+                                                Save <span data-next-bundle-display="discountAmount">...</span><span data-next-show="shipping.isFree"> + free shipping</span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="os-card__secondary-slot">
+                                          <div class="os-card__pricing">
+                                            <div class="os-card__price-container">
+                                              <div data-next-bundle-display="hasDiscount" class="os-card__price os--compare os-style"><span data-next-bundle-display="originalUnitPrice">...</span></div>
+                                              <div class="os-card__price os--current"><span data-next-bundle-display="unitPrice">...</span>/ea</div>
+                                            </div>
+                                            <div class="os-card__total-container">
+                                              <div class="os-card__total-label">Total</div>
+                                              <div data-next-bundle-display="hasDiscount" class="os-card__total-compare"><span data-next-bundle-display="originalPrice">...</span></div>
+                                              <div class="os-card__total-current os-dark"><span data-next-bundle-display="price">...</span></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="os-card__label-slot">
+                                      <div class="os-card__label-2 os-card__label--middle-right os-card__label--pill-secondary">
+                                        <div class="card-icons">
+                                          <svg width="100%" height="100%" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg"><path d="M6.5.5l1.9 3.9 4.3.4-3.1 3 .8 4.3-3.9-2L2.6 12l.8-4.3-3.1-3 4.3-.4z"/></svg>
+                                        </div>
+                                        <div class="os-card__label-text-2">Best Value</div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- ===== Step 2: Customer info ===== -->
+                            <div data-next-component="shipping-form" class="form-sections">
+                              <div class="form-section form-section--first">
+                                <h2 class="form-section__title">Step 2 &middot; Customer Information</h2>
+                                <div class="form-grid">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
+                                    <div class="form-group">
+                                      <div class="form-input">
+                                        <label for="shipping_fname" class="label-checkout">First Name</label>
+                                        <input autocomplete="given-name" os-checkout-validate="required" placeholder="First name" maxlength="256" name="shipping_fname" data-name="Shipping First Name" type="text" id="shipping_fname" data-next-checkout-field="fname" class="input-flds">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="form-input">
+                                        <label for="shipping_lname" class="label-checkout">Last Name</label>
+                                        <input autocomplete="family-name" os-checkout-validate="required" placeholder="Last name" maxlength="256" name="shipping_lname" data-name="Shipping Last Name" type="text" id="shipping_lname" data-next-checkout-field="lname" class="input-flds">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="form-grid__row">
+                                    <div class="form-group">
+                                      <div class="form-input">
+                                        <label for="email" class="label-checkout">Email</label>
+                                        <input autocomplete="email" os-checkout-validate="required" name="email" data-name="Email" type="email" id="email" placeholder="you@example.com" data-next-checkout-field="email" class="input-flds">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
+                                    <div class="form-group">
+                                      <div class="form-input">
+                                        <label for="phone" class="label-checkout">Phone</label>
+                                        <input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="(201) 555-0123" data-next-checkout-field="phone" class="input-flds">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- ===== Step 3: Shipping ===== -->
+                              <div class="form-section">
+                                <h1 class="form-section__title">Step 3 &middot; Shipping address</h1>
+                                <div class="form-grid">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
+                                    <div class="form-group">
+                                      <div class="form-input">
+                                        <label for="shipping_country" class="label-checkout">Country</label>
+                                        <div class="select-form-wrapper">
+                                          <select autocomplete="country-name" os-checkout-validate="required" data-next-checkout-field="country" class="input-flds select-field">
+                                            <option value="US" selected>United States</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="UK">United Kingdom</option>
+                                          </select>
+                                          <div class="caret-down"><div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg></div></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
+                                    <div class="form-group">
+                                      <div class="form-input">
+                                        <label for="shipping_address1" class="label-checkout">Address</label>
+                                        <input autocomplete="address-line1" os-checkout-validate="required" placeholder="Street address" data-next-checkout-field="address1" class="input-flds">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
+                                    <div class="form-group">
+                                      <div class="form-input">
+                                        <label for="shipping_address2" class="label-checkout">Apartment, suite, etc. (optional)</label>
+                                        <input autocomplete="address-line2" name="shipping_address2" data-name="Shipping Address 2" type="text" id="shipping_address2" placeholder="Apt, suite, floor" maxlength="256" data-next-checkout-field="address2" class="input-flds">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div data-next-component="location">
+                                    <div data-next-component="shipping-field-row" class="form-grid__row">
+                                      <div class="form-group">
+                                        <div class="form-input">
+                                          <label for="shipping_city" class="label-checkout">City</label>
+                                          <input autocomplete="address-level2" os-checkout-validate="required" placeholder="City" maxlength="256" name="shipping_city" data-name="Shipping City" type="text" id="shipping_city" data-next-checkout-field="city" class="input-flds">
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-input">
+                                          <label for="shipping_province" class="label-checkout">State</label>
+                                          <div class="select-form-wrapper">
+                                            <select autocomplete="address-level1" os-checkout-validate="required" name="shipping_province" data-name="Shipping Province" id="shipping_province" data-next-checkout-field="province" class="input-flds select-field">
+                                              <option value="">State</option>
+                                              <option value="NY">New York</option>
+                                              <option value="CA">California</option>
+                                            </select>
+                                            <div class="caret-down"><div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg></div></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-input">
+                                          <label for="shipping_postal_code" class="label-checkout">ZIP Code</label>
+                                          <input autocomplete="postal-code" os-checkout-validate="required" placeholder="ZIP" maxlength="10" name="shipping_postal_code" data-name="Shipping Postal Code" type="text" id="shipping_postal_code" inputmode="numeric" data-next-checkout-field="postal" class="input-flds">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- ===== Bump check (pre-purchase upsell) ===== -->
+                            <div data-component="prepurchase-upsell" data-variant="check01" data-next-await="">
+                              <div data-next-package-toggle>
+                                <div class="bump-card" data-next-toggle-card data-next-package-sync="1" data-next-package-id="2">
+                                  <div class="bump__header-left">
+                                    <div class="bump__header-content">
+                                      <div class="bump__checkbox">
+                                        <div class="checkbox__icon">
+                                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m6 10l-2 2l6 6L20 8l-2-2l-8 8z"/></svg>
+                                        </div>
+                                      </div>
+                                      <div class="bump__title">Add Eye Renewal Cream — 50% off (one-time)</div>
+                                    </div>
+                                  </div>
+                                  <div class="bump__body">
+                                    <div class="bump__content">
+                                      <div class="bump__content-wrap">
+                                        <div class="bump__price">
+                                          <div class="bump__price-row">
+                                            <div class="bump__price-unit"><span data-next-toggle-display="originalUnitPrice" class="bump__price-reg">...</span></div>
+                                            <div class="bump__price-unit"><span data-next-toggle-display="unitPrice" class="bump__price-sale">...</span><span class="text-xl">/ea</span></div>
+                                          </div>
+                                        </div>
+                                        <div class="list-container cc-2xs">
+                                          <ul role="list" class="list w-list-unstyled">
+                                            <li class="list__item">
+                                              <div class="list_icon">
+                                                <svg width="100%" height="100%" viewBox="0 0 13 10" fill="currentColor"><path d="M12 .2L4 7.6 1 4.8c-.2-.2-.6-.2-.8 0s-.2.6 0 .8l3.3 3.3c.2.2.6.2.8 0L12 1c.2-.2.2-.6 0-.8z"/></svg>
+                                              </div>
+                                              <div>0.5% bakuchiol formulated for delicate eye area</div>
+                                            </li>
+                                            <li class="list__item">
+                                              <div class="list_icon">
+                                                <svg width="100%" height="100%" viewBox="0 0 13 10" fill="currentColor"><path d="M12 .2L4 7.6 1 4.8c-.2-.2-.6-.2-.8 0s-.2.6 0 .8l3.3 3.3c.2.2.6.2.8 0L12 1c.2-.2.2-.6 0-.8z"/></svg>
+                                              </div>
+                                              <div>Caffeine + niacinamide for puffiness &amp; dark circles</div>
+                                            </li>
+                                            <li class="list__item">
+                                              <div class="list_icon">
+                                                <svg width="100%" height="100%" viewBox="0 0 13 10" fill="currentColor"><path d="M12 .2L4 7.6 1 4.8c-.2-.2-.6-.2-.8 0s-.2.6 0 .8l3.3 3.3c.2.2.6.2.8 0L12 1c.2-.2.2-.6 0-.8z"/></svg>
+                                              </div>
+                                              <div>Ships in same package &mdash; no extra shipping</div>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <img data-next-toggle-image loading="lazy" alt="Meridian Eye Renewal Cream" src="{{ 'images/products/eye-renewal-cream.svg' | campaign_asset }}" class="bump__image">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- ===== Step 4: Payment ===== -->
+                            <div class="form-section form-section--last">
+                              <div class="form-section__header">
+                                <h1 class="form-section__title">Step 4 &middot; Payment Method</h1>
+                                <div class="form-section__subtitle">All transactions are secure and encrypted.</div>
+                              </div>
+
+                              <!-- Express checkout container — SDK injects buttons -->
+                              <div data-next-express-checkout="container" class="exp-checkout">
+                                <div class="express-checkout__title">Express Checkout</div>
+                                <div data-next-express-checkout="buttons" class="express-checkout__buttons"></div>
+                                <div class="divider-section">
+                                  <div class="divider-section__line-v2"></div>
+                                  <div class="divider-section__text-v2">OR</div>
+                                  <div class="divider-section__line-v2"></div>
+                                </div>
+                              </div>
+
+                              <!-- Payment methods — bankcard plus Apple/Google express per Campaigns API -->
+                              <div class="payment-methods">
+                                <div data-next-payment-method="credit" class="payment-method next-selected">
+                                  <div class="payment-method__header">
+                                    <label for="combo_mode_credit" combo_mode="credit" class="payment-method__label">
+                                      <input type="radio" name="payment_method" id="combo_mode_credit" data-name="Combo Mode" class="payment-method__input" checked value="credit">
+                                      <div class="payment-method__title">Credit / Debit Card</div>
+                                      <div class="payment-method__icons"></div>
+                                    </label>
+                                  </div>
+                                  <div data-next-payment-form="credit" os-checkout-element="credit-form" os-shipping-method-same="true" class="payment-method__form payment-method__form--expanded">
+                                    <div class="payment-method__content">
+                                      <div class="form-grid">
+                                        <div class="form-grid__row">
+                                          <div class="form-group">
+                                            <div class="form-input">
+                                              <label class="label-checkout">Card number</label>
+                                              <div data-next-tooltip="All transactions are secure and encrypted." class="form-input-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1"><path d="M2.5 7c0-.97.78-1.75 1.75-1.75h5.5c.97 0 1.75.78 1.75 1.75v3.5a1.75 1.75 0 0 1-1.75 1.75h-5.5A1.75 1.75 0 0 1 2.5 10.5zm7-1.75V4.22c0-1.36-1.12-2.47-2.5-2.47S4.5 2.86 4.5 4.22v1.03"/></svg>
+                                              </div>
+                                              <div data-next-checkout-field="cc-number" class="input-flds spreedly-field" style="display:flex; align-items:center; padding-left:14px; color: var(--ink-faint); font-family: var(--font-mono); font-size: 14px;">•••• •••• •••• ••••</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-grid__row">
+                                          <div class="form-group">
+                                            <div class="form-input">
+                                              <label class="label-checkout">Exp. Month</label>
+                                              <div class="select-form-wrapper">
+                                                <select autocomplete="cc-exp-month" data-placeholder="MM" placeholder="MM" name="credit_card_exp_month" id="credit_card_exp_month" data-next-checkout-field="exp-month" class="input-flds select-field">
+                                                  <option value="">MM</option>
+                                                </select>
+                                                <div class="caret-down"><div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg></div></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <div class="form-input">
+                                              <label class="label-checkout">Exp. Year</label>
+                                              <div class="select-form-wrapper">
+                                                <select autocomplete="cc-exp-year" data-placeholder="YYYY" placeholder="YYYY" name="credit_card_exp_year" id="credit_card_exp_year" data-next-checkout-field="exp-year" class="input-flds select-field">
+                                                  <option value="">YYYY</option>
+                                                </select>
+                                                <div class="caret-down"><div class="select-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg></div></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <div class="form-input">
+                                              <label class="label-checkout">CVV</label>
+                                              <div data-next-tooltip="3-digit code on back of card" class="form-input-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1"><circle cx="7" cy="7" r="5.5"/><path stroke-linecap="round" d="M5.5 5.25a1.5 1.5 0 1 1 2.43 1.18C7.5 6.77 7 7.2 7 7.75M6.99 10.24h.02v.02h-.02z"/></svg>
+                                              </div>
+                                              <div data-next-checkout-field="cvv" class="input-flds spreedly-field" style="display:flex; align-items:center; padding-left:14px; color: var(--ink-faint); font-family: var(--font-mono); font-size: 14px;">•••</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="billing-address">
+                                        <div os-input-field="use-shipping-address" class="checkbox-wrapper">
+                                          <label class="checkout__checkbox">
+                                            <input type="checkbox" name="use_shipping_address" id="use_shipping_address" data-name="Use Shipping Address" class="checkbox__input" checked>
+                                            <div class="checkbox__label">Use shipping address as billing address</div>
+                                          </label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- ===== Cart summary ===== -->
+                            <div class="form-section form-section--last">
+                              <div class="cart-box cart-box--card">
+                                {% campaign_include 'cart-summary01.html' %}
+                              </div>
+                            </div>
+
+                            <!-- ===== Submit ===== -->
+                            <div class="submit-section">
+                              <div class="submit-section__disclaimer">
+                                By placing this order, you agree to our <u>Terms of Use</u> and <u>Privacy Policy</u>.
+                                Your card will be charged <span data-next-display="cart.total">...</span>. No subscription unless you opt in.
+                              </div>
+                              <div class="submit-section__button">
+                                <button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-button">
+                                  <div data-pb-element="checkout-button-spinner" class="submit-button__loader">
+                                    <div class="three-quarter-spinner black"></div>
+                                  </div>
+                                  <div data-pb-element="checkout-button-info" class="submit-button__content">
+                                    <div class="submit-button__text">
+                                      <div data-i18n="complete_purchase" class="submit-button__main-text">Complete purchase &nbsp;&rarr;</div>
+                                    </div>
+                                    <div data-i18n="try_risk_free" class="submit-button__subtext">60-night ritual guarantee — full refund if your skin doesn't change</div>
+                                  </div>
+                                </button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </form>
+
+                    </div>
+
+                    <!-- Trust strip -->
+                    <div class="checkout-trust-bar">
+                      <div class="trust-badges">
+                        <div class="trust-badge__item">
+                          <div class="trust-badge--icon">
+                            <svg width="100%" height="100%" viewBox="0 0 21 25" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 .5a6 6 0 0 0-6 6V10H2.6c-1.4 0-2.5 1.2-2.5 2.6v9.6a2.6 2.6 0 0 0 2.6 2.6H18a2.6 2.6 0 0 0 2.6-2.6v-9.6a2.6 2.6 0 0 0-2.6-2.6h-1.7V6.6a6 6 0 0 0-6-6.1z"/></svg>
+                          </div>
+                          <div class="trust-badge--text">SSL ENCRYPTION</div>
+                        </div>
+                        <div class="trust-badge__item">
+                          <div class="trust-badge--icon">
+                            <svg width="100%" height="100%" viewBox="0 0 24 27" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.5.5C8.4 3.4 4.6 4.7 1 4.8c0 10.5 4.7 18.4 10.5 21.4 5.8-3 10.5-10.9 10.5-21.4-3.6-.1-7.4-1.4-10.5-4.3z"/></svg>
+                          </div>
+                          <div class="trust-badge--text">SAFE CHECKOUT</div>
+                        </div>
+                        <div class="trust-badge__item">
+                          <div class="trust-badge--icon">
+                            <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20"/></svg>
+                          </div>
+                          <div class="trust-badge--text">PCI COMPLIANT</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Mobile-only icon grid -->
+                    <div class="icons-grids hide-tablet-up">
+                      <div class="icon-image"><div class="icon-img"></div><div class="text-xs">Clinically tested</div></div>
+                      <div class="icon-image"><div class="icon-img"></div><div class="text-xs">Vegan</div></div>
+                      <div class="icon-image"><div class="icon-img"></div><div class="text-xs">Made in CA</div></div>
+                      <div class="icon-image"><div class="icon-img"></div><div class="text-xs">60-night guarantee</div></div>
+                    </div>
+
+                    <div class="guarantee-section">
+                      <div class="guarantee-badge"></div>
+                      <div class="text-xs">
+                        <strong>The 60-night ritual guarantee.</strong> Use the Duo morning and night for 60 days.
+                        If your skin doesn't measurably change, return it &mdash; even empty &mdash; for a full refund.
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {% campaign_include 'meridian-footer.html' %}
