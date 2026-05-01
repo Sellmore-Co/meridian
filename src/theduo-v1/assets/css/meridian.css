@@ -1378,7 +1378,7 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 @media (min-width: 720px) { .hide-tablet-down { display: block; } }
 .hide-tablet-up { display: block; }
 @media (min-width: 720px) { .hide-tablet-up { display: none; } }
-.next-hidden { display: none !important; }
+.next-hidden { display: none; }
 
 /* SDK await states (no hydration in preview) */
 [data-next-await] { opacity: 1; }
