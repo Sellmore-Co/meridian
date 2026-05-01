@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[[redirects]]
+  from = "/"
+  to = "/theduo-v1/"
+  status = 302
