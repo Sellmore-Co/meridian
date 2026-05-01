@@ -17,21 +17,21 @@ window.nextConfig = {
       requiredFields: ['email', 'fname', 'lname'], // Fields required for express checkout radio option
       methodOrder: ['apple_pay', 'google_pay'] // Display order of express payment method buttons
     },
-    // cardInputConfig: {
-    //   fieldType: {
-    //     number: "tel",   // 'number' | 'text' | 'tel'
-    //     cvv: "tel"
-    //   },
-    //   numberFormat: "prettyFormat", // 'prettyFormat' | 'plainFormat' | 'maskedFormat'
-    //   labels: { number: "", cvv: "" },
-    //   titles: { number: "", cvv: "" },
-    //   placeholders: { number: "", cvv: "" },
-    //   styles: {
-    //     number: "",
-    //     cvv: "",
-    //     placeholder: ""
-    //   },
-    // }
+    cardInputConfig: {
+      fieldType: {
+        number: "tel",
+        cvv: "tel"
+      },
+      numberFormat: "prettyFormat",
+      labels: { number: "Card number", cvv: "CVV" },
+      titles: { number: "Card number", cvv: "Security code" },
+      placeholders: { number: "Card number", cvv: "CVV" },
+      styles: {
+        number: 'color: #14161f; font-size: 16px; font-weight: 400; line-height: 56px; height: 56px; width: 100%; font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left;',
+        cvv: 'color: #14161f; font-size: 16px; font-weight: 400; line-height: 56px; height: 56px; width: 100%; font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left;',
+        placeholder: 'color: #72747d; font-weight: 400;'
+      }
+    }
   },
 
   // Address and country configuration
