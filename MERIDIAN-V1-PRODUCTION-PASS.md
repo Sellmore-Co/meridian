@@ -118,4 +118,11 @@ Target path: `/theduo-v1/`
   - direct/no-order upsell fallback simulation keeps the offer card visible and shows `Continue to receipt`
   - checkout local browser check confirms unchecked Eye Renewal box has hidden icon, credit-card header renders 4 logo images with no text fallback, and month/year/CVV fields compute to matching `56px` heights
   - receipt order item template and order display fields are present
-- Full SDK hydration and a first test order are pending local origin allowlisting or Netlify preview validation. Without allowlisting, browser console shows Campaigns SDK `Failed to fetch` CORS errors and dynamic prices remain placeholders.
+- Netlify deploy preview check for commit `ac05843` confirms:
+  - direct `/theduo-v1/upsell/` shows the full Restorative Cleanser offer card, hides SDK post-purchase controls without order context, and exposes `Continue to receipt`
+  - hydrated `/theduo-v1/checkout/` reaches `html.next-display-ready`
+  - Eye Renewal bump starts `next-not-in-cart` with the check icon hidden, adds package 2 on click, and returns to `next-not-in-cart` with no summary line item on second click
+  - card header renders 4 logo images, with no text fallback
+  - month, year, and CVV controls compute to matching `56px` heights
+  - fresh checkout pass reports no browser console errors
+- SDK hydration is verified on Netlify preview. A real first test order remains pending card/test-order execution; local browser QA still requires origin allowlisting, otherwise Campaigns SDK API calls show `Failed to fetch` CORS errors and dynamic prices remain placeholders.
