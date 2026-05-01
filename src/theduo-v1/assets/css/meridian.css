@@ -528,14 +528,46 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 }
 .bump__header-left { display: flex; cursor: pointer; }
 .bump__header-content { display: flex; align-items: center; gap: var(--s-3); }
-.bump__checkbox { width: 18px; height: 18px; border: 1.5px solid var(--ink); display: inline-flex; align-items: center; justify-content: center; background: var(--bg); }
+.bump__checkbox {
+  width: 22px; height: 22px; flex: 0 0 22px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--r-1);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--bg);
+}
 .bump-card[data-next-selected="true"] .bump__checkbox,
 .bump-card.next-selected .bump__checkbox,
 .bump-card.next-in-cart .bump__checkbox { background: var(--ink); }
-.checkbox__icon { width: 14px; height: 14px; color: var(--ink); opacity: 0; }
+.checkbox__icon { width: 14px; height: 14px; color: var(--ink); opacity: 0; visibility: hidden; }
 .bump-card[data-next-selected="true"] .checkbox__icon,
 .bump-card.next-selected .checkbox__icon,
-.bump-card.next-in-cart .checkbox__icon { color: #fff; opacity: 1; }
+.bump-card.next-in-cart .checkbox__icon { color: #fff; opacity: 1; visibility: visible; }
+[data-component="prepurchase-upsell"] .bump-card.next-not-in-cart .bump__checkbox,
+[data-component="prepurchase-upsell"] .bump-card:not(.next-selected):not(.next-in-cart) .bump__checkbox {
+  background: var(--bg);
+}
+[data-component="prepurchase-upsell"] .bump-card.next-not-in-cart .checkbox__icon,
+[data-component="prepurchase-upsell"] .bump-card:not(.next-selected):not(.next-in-cart) .checkbox__icon {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+[data-component="prepurchase-upsell"] .bump-card.next-selected .checkbox__icon,
+[data-component="prepurchase-upsell"] .bump-card.next-in-cart .checkbox__icon {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+[data-component="prepurchase-upsell"][data-variant="check01"] .bump__checkbox {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+}
+[data-component="prepurchase-upsell"][data-variant="check01"] .bump__title {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
 .bump__title { font-weight: 600; font-size: 14.5px; }
 .bump__body { display: block; }
 .bump__content { display: grid; grid-template-columns: 1fr 100px; gap: var(--s-4); align-items: start; }
@@ -558,10 +590,11 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 /* ============================================================
    PAYMENT METHODS
    ============================================================ */
-.exp-checkout { margin-bottom: var(--s-5); }
+.exp-checkout { margin: var(--s-4) 0; }
 .express-checkout__title {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-muted); margin-bottom: var(--s-3);
+  color: var(--ink-muted); margin: 0 0 var(--s-3);
+  text-align: center;
 }
 .express-checkout__buttons {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-2);
@@ -581,7 +614,7 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   color: var(--ink-faint);
 }
 
-.payment-methods { display: grid; gap: var(--s-2); }
+.payment-methods { display: grid; gap: var(--s-2); margin-top: 0; }
 .payment-method { border: 1px solid var(--line); }
 .payment-method.next-selected { border-color: var(--ink); }
 .payment-method__header { padding: var(--s-3) var(--s-4); }
@@ -602,16 +635,25 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   background: var(--ink); border-radius: 999px;
 }
 .payment-method__title { font-size: 14.5px; font-weight: 500; }
-.payment-method__icons { display: flex; gap: 6px; align-items: center; }
-.payment-method__icon { height: 18px; width: auto; opacity: 0.85; }
-.payment-method__icons::after { content: "VISA · MC · AMEX · DISC"; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; color: var(--ink-faint); }
-.payment-method__icon { display: none; }
+.payment-method__icons { display: flex; gap: 6px; align-items: center; justify-content: flex-end; }
+.payment-method__icon { display: block; height: 18px; width: auto; opacity: 0.88; }
+.payment-method__icons::after { content: none; }
 
 .payment-method__form { overflow: hidden; transition: max-height 200ms ease; }
 .payment-method__form--collapsed { max-height: 0; }
 .payment-method__form--expanded { max-height: 1200px; }
 .payment-method__content { padding: var(--s-4); border-top: 1px solid var(--line-soft); }
 .payment-method__content > .form-grid { padding-top: 0; }
+.payment-method__content .input-flds,
+.payment-method__content .select-field,
+.payment-method__content .input-flds.spreedly-field {
+  height: 56px;
+  min-height: 56px;
+}
+.payment-method__content .select-field {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .payment-method__content .form-grid__row:has(> .form-group:nth-child(3)) {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(128px, 0.82fr);
 }
@@ -1159,13 +1201,14 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 .upsell-list li { display: flex; gap: 10px; font-size: 14.5px; align-items: baseline; }
 .upsell-list li::before { content: "✓"; color: var(--verified); font-weight: 600; }
 
+.upsell-sdk-controls { display: block; }
 .upsell-actions { display: grid; gap: var(--s-3); margin-top: var(--s-5); }
 .upsell-fallback-actions {
   display: none;
   max-width: 420px;
-  margin: var(--s-5) auto 0;
+  margin: var(--s-3) auto 0;
 }
-.upsell-wrapper.next-hidden + .upsell-fallback-actions { display: block; }
+.upsell-sdk-controls.next-hidden + .upsell-fallback-actions { display: block; }
 .upsell-accept-btn {
   display: block; width: 100%; background: var(--ink); color: #fff;
   padding: 18px 24px;

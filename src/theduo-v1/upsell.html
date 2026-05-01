@@ -45,12 +45,7 @@ styles:
       <!-- Upsell offer card — preserves SDK bundle-selector + bundle-card structure -->
       <section class="section upsell-box">
         <div class="container">
-          <div class="upsell-wrapper" data-next-upsell="offer" data-next-bundle-selector-id="upsell-bundle" data-next-await="">
-
-            <!-- Hidden bundle selector that the SDK reads on accept -->
-            <div data-next-bundle-selector data-next-upsell-context data-next-selector-id="upsell-bundle" class="os-option" style="display:none">
-              <div role="button" data-next-bundle-card data-next-bundle-id="upsell-bundle-1x" data-next-bundle-items='[{"packageId":3,"quantity":1}]' data-next-quantity="1" data-next-min-quantity="1" data-next-max-quantity="3" data-next-selected="true" class="os-card next-selected"></div>
-            </div>
+          <div class="upsell-wrapper">
 
             <div class="upsell-offer__card">
               <div class="upsell-image-block">
@@ -72,12 +67,24 @@ styles:
                   <div class="upsell-pricing__current"><span data-next-display="bundle.upsell-bundle.price" data-next-format="currency">...</span></div>
                 </div>
 
-                <div class="upsell-actions">
-                  <button data-next-upsell-action="add" data-next-upsell-bundle-id="upsell-bundle-1x" type="button" class="upsell-accept-btn">
-                    Yes &mdash; add to my order &nbsp;&rarr;
-                  </button>
-                  <a data-next-upsell-action="skip" href="{{ 'receipt.html' | campaign_link }}" class="upsell-decline-btn">
-                    No thanks, take me to my receipt
+                <div class="upsell-sdk-controls" data-next-upsell="offer" data-next-bundle-selector-id="upsell-bundle" data-next-await="">
+                  <!-- Hidden bundle selector that the SDK reads on accept -->
+                  <div data-next-bundle-selector data-next-upsell-context data-next-selector-id="upsell-bundle" class="os-option" style="display:none">
+                    <div role="button" data-next-bundle-card data-next-bundle-id="upsell-bundle-1x" data-next-bundle-items='[{"packageId":3,"quantity":1}]' data-next-quantity="1" data-next-min-quantity="1" data-next-max-quantity="3" data-next-selected="true" class="os-card next-selected"></div>
+                  </div>
+
+                  <div class="upsell-actions">
+                    <button data-next-upsell-action="add" data-next-upsell-bundle-id="upsell-bundle-1x" type="button" class="upsell-accept-btn">
+                      Yes &mdash; add to my order &nbsp;&rarr;
+                    </button>
+                    <a data-next-upsell-action="skip" href="{{ 'receipt.html' | campaign_link }}" class="upsell-decline-btn">
+                      No thanks, take me to my receipt
+                    </a>
+                  </div>
+                </div>
+                <div class="upsell-fallback-actions">
+                  <a href="{{ 'receipt.html' | campaign_link }}" class="upsell-decline-btn">
+                    Continue to receipt
                   </a>
                 </div>
 
@@ -108,11 +115,6 @@ styles:
               </p>
             </div>
 
-          </div>
-          <div class="upsell-fallback-actions">
-            <a href="{{ 'receipt.html' | campaign_link }}" class="upsell-decline-btn">
-              Continue to receipt
-            </a>
           </div>
         </div>
       </section>

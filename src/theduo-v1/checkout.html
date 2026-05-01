@@ -494,7 +494,12 @@ scripts:
                                     <label for="combo_mode_credit" combo_mode="credit" class="payment-method__label">
                                       <input type="radio" name="payment_method" id="combo_mode_credit" data-name="Combo Mode" class="payment-method__input" checked value="credit">
                                       <div class="payment-method__title">Credit / Debit Card</div>
-                                      <div class="payment-method__icons"></div>
+                                      <div class="payment-method__icons">
+                                        <img loading="lazy" src="{{ 'images/cc-visa.svg' | campaign_asset }}" alt="" class="payment-method__icon payment-method__icon--visa">
+                                        <img loading="lazy" src="{{ 'images/cc_master.svg' | campaign_asset }}" alt="" class="payment-method__icon payment-method__icon--mastercard">
+                                        <img loading="lazy" src="{{ 'images/cc_amex.svg' | campaign_asset }}" alt="" class="payment-method__icon payment-method__icon--amex">
+                                        <img loading="lazy" src="{{ 'images/cc_discover.svg' | campaign_asset }}" alt="" class="payment-method__icon payment-method__icon--discover">
+                                      </div>
                                     </label>
                                   </div>
                                   <div data-next-payment-form="credit" os-checkout-element="credit-form" os-shipping-method-same="true" class="payment-method__form payment-method__form--expanded">

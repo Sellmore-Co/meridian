@@ -94,6 +94,8 @@ Target path: `/theduo-v1/`
   - Added explicit card iframe styling through `paymentConfig.cardInputConfig` and removed static bullet placeholders from the Spreedly containers.
   - Moved the upsell page to the starter-template wrapper pattern: `data-next-upsell="offer"` wraps the hidden bundle selector and add/skip actions.
   - Tightened the upsell top spacing and copy so the CTA sits in the first coherent offer block, and added a receipt fallback link for direct/no-order upsell visits where the SDK hides the post-purchase offer wrapper.
+  - Follow-up fix: narrowed the upsell SDK-owned hide surface from the whole visible offer wrapper to the hidden selector/action controls, so direct preview visits still show the offer content and expose a receipt fallback when no order context exists.
+  - Follow-up fix: restored real card-brand logo assets in the credit-card header, tightened express-payment spacing, normalized card/CVV field heights, and forced the Eye Renewal bump checkbox to render as an empty box when SDK state is `next-not-in-cart`.
 
 ## Verification
 
@@ -112,5 +114,8 @@ Target path: `/theduo-v1/`
   - upsell has no shipping IDs
   - upsell offer wrapper owns `data-next-upsell="offer"` and `data-next-bundle-selector-id="upsell-bundle"`
   - upsell add/skip actions are visible in a 720px-tall desktop viewport after the layout tightening
+  - direct/no-order upsell previews keep the product offer content visible even if the SDK hides post-purchase controls
+  - direct/no-order upsell fallback simulation keeps the offer card visible and shows `Continue to receipt`
+  - checkout local browser check confirms unchecked Eye Renewal box has hidden icon, credit-card header renders 4 logo images with no text fallback, and month/year/CVV fields compute to matching `56px` heights
   - receipt order item template and order display fields are present
 - Full SDK hydration and a first test order are pending local origin allowlisting or Netlify preview validation. Without allowlisting, browser console shows Campaigns SDK `Failed to fetch` CORS errors and dynamic prices remain placeholders.
