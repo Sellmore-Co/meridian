@@ -195,14 +195,11 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 .checkout-header__inner {
   max-width: var(--max-w); margin: 0 auto;
   padding: 0 var(--gut);
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: center;
 }
 .checkout-header__brand-text {
-  font-weight: 600; letter-spacing: 0.32em; font-size: 15px;
-}
-.checkout-header__phone {
-  font-family: var(--font-mono); font-size: 12px;
-  color: var(--ink-muted);
+  display: inline-flex;
+  align-items: center;
 }
 
 .encrypted-banner { background: var(--ink); color: #fff; padding: 11px 0; }
