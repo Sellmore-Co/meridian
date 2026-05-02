@@ -1,0 +1,296 @@
+---
+title: "Checkout - Meridian The Duo (v2)"
+page_type: checkout
+permalink: /theduo-v2/checkout/
+next_url: upsell.html
+styles:
+  - css/meridian.css
+scripts:
+  - js/checkout.js
+bundles:
+  - id: duo-qty-1
+    shipping_id: 1
+    items_json: '[{"packageId":1,"quantity":1}]'
+    title_prefix: "1× "
+    package_id: 1
+  - id: duo-qty-2
+    shipping_id: 1
+    items_json: '[{"packageId":1,"quantity":2}]'
+    selected: true
+    title_prefix: "2× "
+    package_id: 1
+    badge_text: "Most Popular"
+    badge_pill_class: "os-card__label--pill-primary"
+  - id: duo-qty-3
+    shipping_id: 1
+    items_json: '[{"packageId":1,"quantity":3}]'
+    title_prefix: "3× "
+    package_id: 1
+    show_free_shipping: true
+    total_tone_class: "os-dark"
+    badge_text: "Best Value"
+    badge_pill_class: "os-card__label--pill-secondary"
+bump_features:
+  - "0.5% bakuchiol formulated for delicate eye area"
+  - "Caffeine + niacinamide for puffiness & dark circles"
+  - "Ships in same package — no extra shipping"
+---
+{% comment %}
+  Meridian — The Duo v2
+  Rebuilt under v0 component catalog: every SDK-bound commerce surface is a
+  {% campaign_include %} from olympus/_includes/ canonical partials. Only
+  Meridian-branded outer chrome (promo strip, brand bar, hero, reviews,
+  trust badges, guarantee, footer) lives in-page.
+
+  Compare with theduo-v1/checkout.html (yesterday's build) — same campaign,
+  same design source, but every SDK contract now travels through a partial
+  with frozen contract metadata. Run npm run lint:sdk to verify discipline.
+{% endcomment %}
+
+  <div class="page-wrapper">
+    <div class="main-wrapper">
+
+      <!-- Promo banner -->
+      <div data-next-hide="param.banner=='n'" class="section_header">
+        <div class="mdn-promo-strip">Free U.S. shipping &middot; Clinically verified &middot; 60-night ritual guarantee</div>
+      </div>
+
+      <!-- Brand bar / checkout header -->
+      <header class="checkout-header">
+        <div class="checkout-header__inner">
+          <a class="mdn-brand-mark checkout-header__brand-text" href="{{ 'index.html' | campaign_link }}">M&middot;E&middot;R&middot;I&middot;D&middot;I&middot;A&middot;N<span class="dot"></span></a>
+        </div>
+      </header>
+
+      <!-- Encrypted strip -->
+      <div class="encrypted-banner">
+        <div class="padding-global">
+          <div class="contain small">
+            <div class="scarcity-banner__content">
+              <div class="encrypted-banner__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2m-6 9c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1z"/>
+                </svg>
+              </div>
+              <div class="text-sm">100% Encrypted &amp; Secure Checkout</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main checkout layout -->
+      <div class="section-checkout cc-gray">
+        <div class="container">
+          <div class="checkout-page-layout">
+            <div class="checkout-wrapper">
+
+              <!-- ===== Left column — product, reviews ===== -->
+              <div class="checkout-layout__left">
+                <div class="checkout-layout__content">
+                  <div class="checkout-layout__content-inner">
+
+                    <div class="heading-box">
+                      <div class="hero_review-box">
+                        <div class="review_component cc-sm">
+                          <div class="review_component-wrapper">
+                            <div class="star_wrapper">
+                              <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                              <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                              <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                              <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                              <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            </div>
+                            <div>4.83 / 5 — 12,847 verified reviews</div>
+                          </div>
+                        </div>
+                      </div>
+                      <h1 class="display-md"><span>Meridian — The Duo</span></h1>
+                      <div class="text-reg"><strong>0.5% Bakuchiol Renewal Oil + 12% L-Ascorbic Acid Serum</strong></div>
+                    </div>
+
+                    <div class="checkout-media__wrapper">
+                      <div class="checkout-media__caption">M&middot;E&middot;R&middot;I&middot;D&middot;I&middot;A&middot;N — The Duo</div>
+                      <img src="{{ 'images/products/the-duo.svg' | campaign_asset }}" alt="Meridian — The Duo: Bakuchiol Renewal Oil and 12% Vitamin C Serum" loading="eager">
+                    </div>
+
+                    <div class="icons-grids hide-tablet-down">
+                      <div class="icon-image">
+                        <div class="icon-img"></div>
+                        <div class="text-xs">Clinically&nbsp;tested</div>
+                      </div>
+                      <div class="icon-image">
+                        <div class="icon-img"></div>
+                        <div class="text-xs">Vegan, gluten-free</div>
+                      </div>
+                      <div class="icon-image">
+                        <div class="icon-img"></div>
+                        <div class="text-xs">Made in California</div>
+                      </div>
+                      <div class="icon-image">
+                        <div class="icon-img"></div>
+                        <div class="text-xs">60-night guarantee</div>
+                      </div>
+                    </div>
+
+                    <div class="checkout-reviews hide-tablet-down">
+                      <div class="checkout-review">
+                        <div class="checkout-review__stars">
+                          <div class="review_component cc-sm"><div class="review_component-wrapper"><div class="star_wrapper">
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                          </div></div></div>
+                        </div>
+                        <p class="checkout-review__title">My third retinol attempt finally stuck</p>
+                        <p class="checkout-review__description">I tried tretinoin twice and gave up both times. The Duo gave me real wrinkle results without any of the peeling. Six weeks in and my forehead lines are visibly softer.</p>
+                        <div class="checkout-review__meta">
+                          <div class="review-auth">Lauren K.</div>
+                          <div class="review-auth">|</div>
+                          <div class="checkout-review__verified">Verified Customer</div>
+                        </div>
+                      </div>
+                      <div class="checkout-review">
+                        <div class="checkout-review__stars">
+                          <div class="review_component cc-sm"><div class="review_component-wrapper"><div class="star_wrapper">
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                            <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2"/><path d="M7.3 2.2L8.5 6h4l-3.2 2.3 1.2 3.7-3.2-2.3-3.2 2.3 1.2-3.7L2.1 6h4z"/></svg></div>
+                          </div></div></div>
+                        </div>
+                        <p class="checkout-review__title">My partner noticed before I did</p>
+                        <p class="checkout-review__description">About four weeks in my husband said "your skin looks different." The line between my brows had gotten shallower. The 28-day claim is real.</p>
+                        <div class="checkout-review__meta">
+                          <div class="review-auth">Caitlin R.</div>
+                          <div class="review-auth">|</div>
+                          <div class="checkout-review__verified">Verified Customer</div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== Right column — form ===== -->
+              <div class="checkout-layout__right">
+                <div class="checkout-layout__form">
+                  <div class="checkout__form-container">
+
+                    <!-- Mobile heading -->
+                    <div class="hide-tablet">
+                      <div class="hero_heading-box">
+                        <div class="heading-box">
+                          <h1 class="display-md"><span>Meridian — The Duo</span></h1>
+                          <div class="text-reg"><strong>0.5% Bakuchiol + 12% Vitamin C</strong></div>
+                        </div>
+                        <div class="sub-head-text">
+                          <div>Clinically improved skin in 28 days. Without retinol's irritation.</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mdn-checkout-reserve">This price is reserved for this checkout session.</div>
+
+                    <div class="checkout-form">
+                      <form data-next-checkout="form" id="combo_form" method="post" onsubmit="event.preventDefault(); return false;">
+                        <div class="form-content">
+                          <div class="form-sections">
+
+                            <!-- ===== Step 1: Bundle selector (v0 partial) ===== -->
+                            <div class="form-section grid-row-gap2 form-section--first">
+                              <h2 class="form-section__title">Step 1 &middot; Choose your supply</h2>
+                              {% campaign_include 'bundle-selector.html' selector_id='meridian-duo-packages' bundles=bundles %}
+                            </div>
+
+                            <!-- ===== Step 2 + 3: Customer info + Shipping (v0 partials inside SDK shipping-form wrapper) ===== -->
+                            <div data-next-component="shipping-form" class="form-sections">
+                              {% campaign_include 'customer-info-form.html' section_title='Step 2 · Customer Information' %}
+                              {% campaign_include 'shipping-address-form.html' section_title='Step 3 · Shipping address' %}
+                            </div>
+
+                            <!-- ===== Bump check (pre-purchase upsell — v0 partial with Meridian copy) ===== -->
+                            {% campaign_include 'bump-check01.html' package_id=2 title='Add Eye Renewal Cream — 50% off (one-time)' bump_image='images/products/eye-renewal-cream.svg' bump_image_alt='Meridian Eye Renewal Cream' features=bump_features show_per_unit_price=true show_line_total_price=false %}
+
+                            <!-- ===== Step 4: Payment (v0 partials — express + bankcard, per CampaignSpec v2) ===== -->
+                            <div class="form-section form-section--last form-section--payment">
+                              <div class="form-section__header">
+                                <h1 class="form-section__title">Step 4 &middot; Payment Method</h1>
+                                <div class="form-section__subtitle">All transactions are secure and encrypted.</div>
+                              </div>
+                              {% campaign_include 'express-checkout.html' show_title=true %}
+                              {% campaign_include 'payment-methods.html' %}
+                            </div>
+
+                            <!-- ===== Cart summary ===== -->
+                            <div class="form-section form-section--last form-section--summary">
+                              <div class="cart-box cart-box--card">
+                                {% campaign_include 'cart-summary01.html' %}
+                              </div>
+                            </div>
+
+                            <!-- ===== Submit (v0 partial with Meridian disclaimer + CTA) ===== -->
+                            {% campaign_include 'submit-block.html' cta_text='Complete purchase →' subtext="60-night ritual guarantee — full refund if your skin doesn't change" disclaimer='By placing this order, you agree to our Terms of Use and Privacy Policy. No subscription unless you opt in.' %}
+
+                          </div>
+                        </div>
+                      </form>
+
+                    </div>
+
+                    <!-- Trust strip -->
+                    <div class="checkout-trust-bar">
+                      <div class="trust-badges">
+                        <div class="trust-badge__item">
+                          <div class="trust-badge--icon">
+                            <svg width="100%" height="100%" viewBox="0 0 21 25" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 .5a6 6 0 0 0-6 6V10H2.6c-1.4 0-2.5 1.2-2.5 2.6v9.6a2.6 2.6 0 0 0 2.6 2.6H18a2.6 2.6 0 0 0 2.6-2.6v-9.6a2.6 2.6 0 0 0-2.6-2.6h-1.7V6.6a6 6 0 0 0-6-6.1z"/></svg>
+                          </div>
+                          <div class="trust-badge--text">SSL ENCRYPTION</div>
+                        </div>
+                        <div class="trust-badge__item">
+                          <div class="trust-badge--icon">
+                            <svg width="100%" height="100%" viewBox="0 0 24 27" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.5.5C8.4 3.4 4.6 4.7 1 4.8c0 10.5 4.7 18.4 10.5 21.4 5.8-3 10.5-10.9 10.5-21.4-3.6-.1-7.4-1.4-10.5-4.3z"/></svg>
+                          </div>
+                          <div class="trust-badge--text">SAFE CHECKOUT</div>
+                        </div>
+                        <div class="trust-badge__item">
+                          <div class="trust-badge--icon">
+                            <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20"/></svg>
+                          </div>
+                          <div class="trust-badge--text">PCI COMPLIANT</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Mobile-only icon grid -->
+                    <div class="icons-grids hide-tablet-up">
+                      <div class="icon-image"><div class="icon-img"></div><div class="text-xs">Clinically tested</div></div>
+                      <div class="icon-image"><div class="icon-img"></div><div class="text-xs">Vegan</div></div>
+                      <div class="icon-image"><div class="icon-img"></div><div class="text-xs">Made in CA</div></div>
+                      <div class="icon-image"><div class="icon-img"></div><div class="text-xs">60-night guarantee</div></div>
+                    </div>
+
+                    <div class="guarantee-section">
+                      <div class="guarantee-badge"></div>
+                      <div class="text-xs">
+                        <strong>The 60-night ritual guarantee.</strong> Use the Duo morning and night for 60 days.
+                        If your skin doesn't measurably change, return it &mdash; even empty &mdash; for a full refund.
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {% campaign_include 'meridian-footer.html' %}

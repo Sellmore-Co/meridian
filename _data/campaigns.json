@@ -15,5 +15,22 @@
     "store_phone_tel": "tel:+18336277331",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "theduo-v2": {
+    "name": "Meridian - The Duo v2",
+    "description": "Meridian custom skincare funnel — v0 component-catalog rebuild (canonical partials via campaign_include)",
+    "entry_url": "",
+    "sdk_version": "0.4.18",
+    "store_name": "Meridian",
+    "store_url": "",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "1 (833) 627-7331",
+    "store_phone_tel": "tel:+18336277331",
+    "gtm_id": "",
+    "fb_pixel_id": ""
   }
 }
