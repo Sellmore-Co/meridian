@@ -82,9 +82,15 @@ styles:
                 </ul>
 
                 <div class="upsell-sdk-controls" data-next-upsell="offer" data-next-bundle-selector-id="upsell-bundle" data-next-await="">
-                  <!-- Hidden bundle selector that the SDK reads on accept -->
+                  <!-- Hidden bundle selector that the SDK reads on accept.
+                       data-next-bundle-vouchers='["4"]' references CampaignSpec offer
+                       ref_id 4 (Restorative Discount, 25% off pkg 3, condition: any).
+                       Auto-apply works in checkout context (count-based offer conditions),
+                       but upsell context with an "any" condition needs explicit voucher
+                       attachment. Trying ref_id-as-string first; if SDK rejects, fall
+                       back to setting offer.code in the Campaigns CMS. -->
                   <div data-next-bundle-selector data-next-upsell-context data-next-selector-id="upsell-bundle" class="os-option" style="display:none">
-                    <div role="button" data-next-bundle-card data-next-bundle-id="upsell-bundle-1x" data-next-bundle-items='[{"packageId":3,"quantity":1}]' data-next-quantity="1" data-next-min-quantity="1" data-next-max-quantity="3" data-next-selected="true" class="os-card next-selected"></div>
+                    <div role="button" data-next-bundle-card data-next-bundle-id="upsell-bundle-1x" data-next-bundle-items='[{"packageId":3,"quantity":1}]' data-next-bundle-vouchers='["4"]' data-next-quantity="1" data-next-min-quantity="1" data-next-max-quantity="3" data-next-selected="true" class="os-card next-selected"></div>
                   </div>
 
                   <div class="upsell-actions">
