@@ -1,6 +1,6 @@
 {% comment %}
   next_component: bundle-selector
-  next_version: 1.0.0
+  next_version: 1.1.0
   next_sdk_min: 0.4.18
   next_purpose: Tiered package selector. Customer picks a quantity tier (e.g. 1x/2x/3x) that maps to a bundle of package IDs at checkout. SDK swaps cart on selection change.
   next_params:
@@ -9,9 +9,18 @@
     include_shipping:   bool, default true. Required when any card has data-next-shipping-id.
     selection_mode:     enum [swap, select], default "swap". checkout=swap; upsell may select.
     bundles:            array of card defs. Defaults to canonical 3-tier (1x/2x/3x of packageId 1).
-                        Each card: { id, shipping_id, items_json, selected, title_prefix,
-                          show_free_shipping, total_tone_class, badge_text, badge_pill_class,
-                          show_label }
+                        Each card:
+                          { id, shipping_id, items_json, selected, title_prefix, package_id,
+                            subtitle_text,    # v1.1: free-text subtitle. Overrides the
+                                              # default auto-generated "Save Xamount" text.
+                                              # If set, the subtitle is rendered unconditionally
+                                              # (no SDK gating). Use for design-driven copy
+                                              # like "Try the ritual" on the no-discount tier.
+                            shipping_label,   # v1.1: free-text shipping callout appended to
+                                              # the subtitle (e.g. "+ Free shipping",
+                                              # "+ $9.99 shipping"). NO SDK validation —
+                                              # operator/build aligns with offer/method reality.
+                            total_tone_class, badge_text, badge_pill_class }
   next_sdk_owns:
     - data-next-bundle-selector
     - data-next-selector-id
@@ -25,7 +34,6 @@
     - data-next-selected
     - data-next-package-id
     - data-next-await
-    - data-next-show
     - data-next-display
   next_theming:
     classes_designer_owns: [.os-card, .os-card__title-badge, .os-card__price, .os-card__total-current, .pb--bestseller, .os-cards__vertical, .os--gap-xl]
@@ -41,6 +49,12 @@
     - data-next-selected="true" on the initial card; SDK toggles next-selected class at runtime.
     - data-next-await="" on outer wrapper renders skeleton until SDK hydrates prices.
     - hasDiscount tokens resolve to a CSS class string ('hide' when no discount); use as classname, not boolean.
+    - subtitle_text and shipping_label are FREE TEXT — the build skill cannot validate
+      stated copy against actual offer/shipping data. Design carries the opinion;
+      build renders faithfully; ad-hoc visual review is the gate. The SDK has no
+      per-bundle shipping resolution tokens (cart-level shipping.isFree only flips
+      for the currently-selected card), so SDK-driven gating of these labels is
+      not viable today.
   next_variants:
     - manual-cards (this partial; canonical for olympus)
     - config-driven (data-next-bundles= JSON; see commented reference in olympus/checkout.html)
@@ -74,7 +88,11 @@
                 </div>
               </div>
               <div class="os-card__subtitle-wrapper">
-                <div data-next-bundle-display="hasDiscount" class="os-card__subtitle-text">Save <span data-next-bundle-display="discountAmount">-</span>{% if b.show_free_shipping %}<span data-next-show="shipping.isFree"> + Free Shipping</span>{% endif %}</div>
+                {%- if b.subtitle_text %}
+                <div class="os-card__subtitle-text">{{ b.subtitle_text }}{% if b.shipping_label %} {{ b.shipping_label }}{% endif %}</div>
+                {%- else %}
+                <div data-next-bundle-display="hasDiscount" class="os-card__subtitle-text">Save <span data-next-bundle-display="discountAmount">-</span>{% if b.shipping_label %} {{ b.shipping_label }}{% endif %}</div>
+                {%- endif %}
               </div>
             </div>
           </div>
