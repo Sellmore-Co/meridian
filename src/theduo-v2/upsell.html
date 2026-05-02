@@ -84,27 +84,20 @@ styles:
                 <div class="upsell-sdk-controls" data-next-upsell="offer" data-next-bundle-selector-id="upsell-bundle" data-next-await="">
                   <!-- Hidden bundle selector that the SDK reads on accept.
 
-                       KNOWN ISSUE (theduo-v2, 2026-05-02): the upsell display
-                       price shows $39 (catalog) instead of $29 (offer 4: Restorative
-                       Discount, 25% off pkg 3). Investigated: the SDK auto-applies
-                       offers in checkout context when bundle items satisfy a
-                       count-based condition (works for Duo x2 and x3 offers), but
-                       does NOT auto-apply offers in upsell context with an "any"
-                       condition. Manual voucher attachment via
-                       `data-next-bundle-vouchers='["CODE"]'` requires a string
-                       voucher CODE on the offer. CampaignSpec v2 offer ref_id 4
-                       has `code: null`, so there is nothing to reference.
+                       Upsell offers REQUIRE explicit voucher codes (by design):
+                       a common funnel pattern is to re-offer the checkout's main
+                       product at a discount on the upsell step (e.g. "buy one
+                       more for $X off, one-time gift offer"). If upsell offers
+                       auto-applied via shared package conditions, that pattern
+                       would corrupt the checkout's own pricing for the same
+                       package. Voucher codes scope the discount to the specific
+                       upsell step.
 
-                       Fix path: add a code (e.g. "RESTORATIVE25") to offer ref_id 4
-                       in the Campaigns CMS for campaign 1548, then set
-                       `data-next-bundle-vouchers='["RESTORATIVE25"]'` on the
-                       bundle card below.
-
-                       Verified: tried `data-next-bundle-vouchers='["4"]'` (ref_id
-                       as voucher) — SDK rejected, price unchanged. Vouchers must
-                       be string codes, not ref_ids. -->
+                       Voucher code RESTORATIVE25 = CampaignSpec offer ref_id 4
+                       (Restorative Discount, 25% off pkg 3). Set in Campaigns CMS
+                       for campaign 1548 on 2026-05-02. -->
                   <div data-next-bundle-selector data-next-upsell-context data-next-selector-id="upsell-bundle" class="os-option" style="display:none">
-                    <div role="button" data-next-bundle-card data-next-bundle-id="upsell-bundle-1x" data-next-bundle-items='[{"packageId":3,"quantity":1}]' data-next-quantity="1" data-next-min-quantity="1" data-next-max-quantity="3" data-next-selected="true" class="os-card next-selected"></div>
+                    <div role="button" data-next-bundle-card data-next-bundle-id="upsell-bundle-1x" data-next-bundle-items='[{"packageId":3,"quantity":1}]' data-next-bundle-vouchers='["RESTORATIVE25"]' data-next-quantity="1" data-next-min-quantity="1" data-next-max-quantity="3" data-next-selected="true" class="os-card next-selected"></div>
                   </div>
 
                   <div class="upsell-actions">
