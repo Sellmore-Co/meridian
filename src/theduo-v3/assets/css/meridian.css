@@ -541,14 +541,18 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   display: grid; gap: var(--s-3);
   margin: var(--s-4) 0;
   cursor: pointer;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
 }
 .bump-card[data-next-selected="true"], .bump-card.next-selected, .bump-card.next-in-cart {
   border: 2px solid var(--ink);
   background: var(--bg);
   padding: calc(var(--s-4) - 1px);
 }
-.bump__header-left { display: flex; cursor: pointer; }
-.bump__header-content { display: flex; align-items: center; gap: var(--s-3); }
+.bump__header-left { display: flex; cursor: pointer; min-width: 0; max-width: 100%; }
+.bump__header-content { display: flex; align-items: center; gap: var(--s-3); min-width: 0; max-width: 100%; }
 .bump__checkbox {
   width: 22px; height: 22px; flex: 0 0 22px;
   box-sizing: border-box;
@@ -588,11 +592,21 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   font-size: 14.5px;
   font-weight: 600;
   line-height: 1.35;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .bump__title { font-weight: 600; font-size: 14.5px; }
 .bump__body { display: block; }
-.bump__content { display: grid; grid-template-columns: 1fr 100px; gap: var(--s-4); align-items: start; }
-.bump__content-wrap { display: grid; gap: var(--s-2); }
+.bump__content { display: grid; grid-template-columns: minmax(0, 1fr) 100px; gap: var(--s-4); align-items: start; max-width: 100%; min-width: 0; }
+[data-component="prepurchase-upsell"][data-variant="check01"] .bump__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 100px;
+  gap: var(--s-4);
+  align-items: start;
+  max-width: 100%;
+  min-width: 0;
+}
+.bump__content-wrap { display: grid; gap: var(--s-2); min-width: 0; }
 .bump__price-row { display: flex; align-items: baseline; gap: var(--s-2); }
 .bump__price-row + .bump__price-row { display: none; }
 .bump__price-unit { display: inline-flex; align-items: baseline; gap: 2px; }
@@ -606,6 +620,77 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 .bump__image {
   width: 100px; height: 100px; object-fit: cover;
   background: #F4F0E5; border: 1px solid var(--line);
+}
+[data-component="prepurchase-upsell"][data-variant="check01"] .bump__image {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+  height: 100px;
+  min-height: 100px;
+  max-height: 100px;
+}
+@media (max-width: 640px) {
+  [data-component="prepurchase-upsell"] .bump-card {
+    padding: var(--s-3);
+    gap: var(--s-3);
+  }
+  [data-component="prepurchase-upsell"] .bump-card[data-next-selected="true"],
+  [data-component="prepurchase-upsell"] .bump-card.next-selected,
+  [data-component="prepurchase-upsell"] .bump-card.next-in-cart {
+    padding: calc(var(--s-3) - 1px);
+  }
+  [data-component="prepurchase-upsell"][data-variant="check01"] .bump__body {
+    padding: var(--s-3);
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .bump__header-left,
+  .bump__header-content,
+  .bump__body,
+  .bump__content,
+  .bump__content-wrap,
+  .bump__title {
+    width: 100%;
+  }
+  [data-component="prepurchase-upsell"][data-variant="check01"] .bump__header-left,
+  [data-component="prepurchase-upsell"][data-variant="check01"] .bump__header-content {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+  [data-component="prepurchase-upsell"][data-variant="check01"] .bump__title {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+  }
+  [data-component="prepurchase-upsell"][data-variant="check01"] .bump__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 84px;
+    gap: var(--s-3);
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .bump__price-row {
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+  .list__item {
+    align-items: flex-start;
+  }
+  .list_icon {
+    margin-top: 4px;
+  }
+  [data-component="prepurchase-upsell"][data-variant="check01"] .bump__image {
+    width: 84px;
+    min-width: 84px;
+    max-width: 84px;
+    height: 84px;
+    min-height: 84px;
+    max-height: 84px;
+  }
 }
 
 /* ============================================================
@@ -1481,13 +1566,16 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 }
 @media (max-width: 640px) {
   .next-slot {
-    grid-template-columns: 1fr;
+    grid-template-columns: 58px minmax(0, 1fr);
     gap: var(--s-3);
-    padding: var(--s-4);
+    padding: var(--s-3);
     overflow: hidden;
+    align-items: start;
   }
   .next-slot .os-slot__selection {
-    grid-column: 1;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    min-width: 0;
   }
 }
 .next-slot__step {
@@ -1564,9 +1652,11 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 }
 @media (max-width: 640px) {
   #bundle-slots-stage .step__wrap {
-    display: none;
+    grid-column: 1;
+    grid-row: 2;
+    display: block;
+    min-width: 0;
   }
-  #bundle-slots-stage .next-slot__image,
   #bundle-slots-stage .next-slot .os-card__pricing {
     display: none !important;
   }
@@ -1576,8 +1666,14 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
     font-size: 16px;
     background: #eef4ff;
     border-radius: 4px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+  #bundle-slots-stage .next-slot__image {
+    display: block !important;
+    width: 56px;
+    height: 56px;
   }
   #bundle-slots-stage .os-card__variant-grid.cc-horiz,
   #bundle-slots-stage [data-next-variant-selectors] {
