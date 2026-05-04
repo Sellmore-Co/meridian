@@ -403,7 +403,7 @@
               "ref_id": "4",
               "name": "Eye Renewal Offer",
               "type": "offer",
-              "code": null,
+              "code": "EYERENEWAL",
               "condition": {
                 "type": "any",
                 "value": null,
@@ -802,7 +802,7 @@
           "ref_id": "4",
           "name": "Eye Renewal Offer",
           "type": "offer",
-          "code": null,
+          "code": "EYERENEWAL",
           "condition": {
             "type": "any",
             "value": null,
@@ -1011,7 +1011,7 @@
       "ref_id": "4",
       "name": "Eye Renewal Offer",
       "type": "offer",
-      "code": null,
+      "code": "EYERENEWAL",
       "condition": {
         "type": "any",
         "value": null,
