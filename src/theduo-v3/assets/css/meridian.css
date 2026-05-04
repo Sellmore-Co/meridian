@@ -1391,16 +1391,47 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--s-3);
+  padding-top: 22px;
 }
 @media (max-width: 720px) {
-  .os-cards__grid.os--three { grid-template-columns: 1fr; }
+  .os-cards__grid.os--three {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
 }
 .os-card.cc-mv {
+  position: relative;
   padding: var(--s-4);
   display: flex;
   flex-direction: column;
   gap: var(--s-3);
   align-items: stretch;
+  min-height: 184px;
+  overflow: visible;
+}
+.os-card.cc-mv .os-card__label-slot {
+  inset: auto 12px auto auto;
+  top: -18px;
+  width: auto;
+  height: auto;
+  z-index: 3;
+}
+.os-card.cc-mv .os-card__label-2 {
+  position: static;
+  inset: auto;
+  transform: none;
+  height: 24px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+@media (max-width: 720px) {
+  .os-card.cc-mv {
+    min-height: 0;
+  }
+  .os-card.cc-mv .os-card__label-slot {
+    top: var(--s-3);
+    right: var(--s-3);
+  }
 }
 .os-card.cc-mv .os-card__content {
   display: flex;
@@ -1445,13 +1476,18 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   grid-template-columns: 28px auto 1fr;
   gap: var(--s-3);
   align-items: center;
+  position: relative;
+  overflow: visible;
 }
 @media (max-width: 640px) {
   .next-slot {
-    grid-template-columns: 24px 1fr;
+    grid-template-columns: 1fr;
+    gap: var(--s-3);
+    padding: var(--s-4);
+    overflow: hidden;
   }
   .next-slot .os-slot__selection {
-    grid-column: 1 / -1;
+    grid-column: 1;
   }
 }
 .next-slot__step {
@@ -1473,11 +1509,18 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   border: 1px solid var(--line);
   flex-shrink: 0;
 }
+#bundle-slots-stage .next-slot__image {
+  width: 56px;
+  height: 56px;
+}
 .next-slot__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+#bundle-slots-stage .next-slot__image img {
+  object-fit: cover;
 }
 .next-slot .os-card__pricing {
   display: flex;
@@ -1515,6 +1558,52 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
 }
 #bundle-slots-stage [data-next-variant-selectors] {
   display: contents;
+}
+#bundle-slots-stage .os-card__variant-dropdown-menu-v2 {
+  z-index: 50;
+}
+@media (max-width: 640px) {
+  #bundle-slots-stage .step__wrap {
+    display: none;
+  }
+  #bundle-slots-stage .next-slot__step {
+    width: 52px;
+    height: 52px;
+    font-size: 16px;
+    background: #eef4ff;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+  }
+  #bundle-slots-stage .os-card__variant-grid.cc-horiz,
+  #bundle-slots-stage [data-next-variant-selectors] {
+    display: block;
+    width: 100%;
+  }
+  #bundle-slots-stage .next-slot-variant-field {
+    display: block;
+    width: 100%;
+  }
+  #bundle-slots-stage .os-card__variant-group.cc-full {
+    display: block;
+    width: 100%;
+  }
+  #bundle-slots-stage os-dropdown.os-variant-dropdown {
+    display: none !important;
+  }
+  #bundle-slots-stage .next-slot-variant-select {
+    display: block !important;
+    width: 100%;
+    min-height: 56px;
+    padding: 0 46px 0 16px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background-color: #fff;
+    color: var(--ink);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 56px;
+  }
 }
 .mv-variant-label {
   font-family: var(--font-mono);
