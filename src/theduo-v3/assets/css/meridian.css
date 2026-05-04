@@ -1566,6 +1566,10 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   #bundle-slots-stage .step__wrap {
     display: none;
   }
+  #bundle-slots-stage .next-slot__image,
+  #bundle-slots-stage .next-slot .os-card__pricing {
+    display: none !important;
+  }
   #bundle-slots-stage .next-slot__step {
     width: 52px;
     height: 52px;
