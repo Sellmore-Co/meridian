@@ -1495,7 +1495,7 @@ promo-timer::before { content: "⏱  This price expires in 14:53 — locked at c
   overflow: visible;
 }
 .os-card.cc-mv .os-card__label-slot {
-  inset: auto 12px auto auto;
+  inset: auto 6px auto auto;
   top: -18px;
   width: auto;
   height: auto;
