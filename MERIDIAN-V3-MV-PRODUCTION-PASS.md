@@ -36,6 +36,7 @@ Live checkout: `https://meridian-skincare.netlify.app/theduo-v3/checkout/`
 | PASS | `101994` | `52d532099be44723b9d32e8055dc5c92` | 3x Expert, skipped cleanser, skipped eye | `3x The Duo - Expert` at `$65.00/ea`, total `$195.00` |
 | PASS | `102004` | `70e99eeabe4f4169a26ac6bb3c82962d` | 1x Standard + Premium Lip Balm, skipped cleanser, skipped eye | Standard `$74.00`, Lip Balm `$26.00`, total `$100.00` |
 | PASS | `102006` | `037064ab48d441e78573d88ab49a50c3` | UI-selected 1x Expert via variant selector, skipped cleanser, skipped eye | `1x The Duo - Expert`, total `$94.00` |
+| PASS after Eye voucher fix | `102008` | `3e593c5890074378a5ef2747d02196f2` | 1x Standard, skipped cleanser, accepted Eye Renewal with `EYERENEWAL` voucher | Standard `$74.00`, Eye `$19.00`, total `$93.00` |
 
 ## Defect Specimens
 
@@ -50,6 +51,7 @@ Live checkout: `https://meridian-skincare.netlify.app/theduo-v3/checkout/`
    - The upsell page says `Save 50%`, and the CampaignSpec/API offer exposes Eye Renewal at `$19.00`.
    - Accepted Eye orders charged `$38.00` on receipts (`101991`, `102001`).
    - Likely cause: the `any` offer for package `2` has `code: null`; the current post-purchase add path is not binding that offer automatically.
+   - Resolution: Campaigns App offer was reconfigured with `EYERENEWAL`; v3 now passes `data-next-bundle-vouchers='["EYERENEWAL"]'` on the Eye upsell card. Retest order `102008` charged Eye Renewal at `$19.00`.
 
 2. Restorative Cleanser accept behavior is timing-sensitive.
    - A direct hydrated pass can add cleanser at `$29.00` (`101988`).
@@ -59,6 +61,7 @@ Live checkout: `https://meridian-skincare.netlify.app/theduo-v3/checkout/`
 3. Receipt/page-load console noise remains after navigation.
    - Repeated browser passes show `signal is aborted without reason`; some receipt reloads also show analytics/order fetch `Failed to fetch`.
    - The orders and receipt line items still rendered, so this did not block checkout verification, but it is worth separating expected navigation aborts from real API failures.
+   - Analytics note: raw source HTML does not contain the explicit Campaigns App snippet, but after SDK readiness `document.scripts` includes `https://campaigns.apps.29next.com/js/v1/campaign/`, and `window.nextCampaign` is configured by the SDK because `nextConfig.analytics.providers.nextCampaign.enabled` is true.
 
 ## Notes
 
