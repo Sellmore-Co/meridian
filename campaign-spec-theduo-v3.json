@@ -1,0 +1,1049 @@
+{
+  "schema_version": "4.2",
+  "builder_version": "0.2.2",
+  "generated_at": "2026-05-04T07:12:06.954Z",
+  "_provenance": {
+    "ops": [
+      "funnels.*.pages.*.label",
+      "funnels.*.pages.*.notes",
+      "funnels.*.pages.*.custom_fields",
+      "funnels.*.pages.*.figma_frame_url",
+      "funnels.*.pages.*.offers",
+      "global_config.sdk_version",
+      "global_config.gtm_container_id",
+      "figma_url"
+    ],
+    "api": [
+      "campaign.*",
+      "shipping_methods",
+      "offers",
+      "funnels.*.pages.*.packages.*.name",
+      "funnels.*.pages.*.packages.*.price"
+    ],
+    "derived": [
+      "funnels.*.pages.*.sdk_hints",
+      "funnels.*.pages.*.order",
+      "funnels.*.pages.*.is_entry",
+      "schema_version",
+      "builder_version",
+      "generated_at"
+    ],
+    "legacy": [
+      "funnel_pages"
+    ]
+  },
+  "campaign": {
+    "ref_id": 1549,
+    "slug": "the-duo-v3",
+    "id": "the-duo-v3",
+    "name": "Meridian - The Duo v3",
+    "currency": "USD",
+    "language": "en",
+    "payment_env_key": "57862XP7AB94ZSSMYZRDHTQA7W",
+    "campaigns_api_key": "JTomGTDupL6m2Nzpz0Sp4lACt2Ooa9L1yVE3VHtO",
+    "available_payment_methods": [
+      "apple_pay",
+      "bankcard",
+      "google_pay"
+    ],
+    "available_express_payment_methods": [
+      "apple_pay",
+      "google_pay"
+    ],
+    "available_currencies": [
+      "USD"
+    ],
+    "available_shipping_countries": [
+      {
+        "code": "US",
+        "label": "United States"
+      }
+    ]
+  },
+  "global_config": {
+    "sdk_version": "0.4.18"
+  },
+  "funnels": [
+    {
+      "id": "default",
+      "name": "Default",
+      "hypothesis": "Default campaign path exported by Campaign Map Builder.",
+      "weight": 100,
+      "pages": [
+        {
+          "id": "page_moqv03r1_240",
+          "type": "presell",
+          "order": 1,
+          "label": "Presell",
+          "is_entry": false,
+          "template": null,
+          "next_page": "page_moqv03r1_241",
+          "_next_label": "Landing Page (PDP)",
+          "resolved_routing": {
+            "next_page": "page_moqv03r1_241",
+            "next_page_filename": "index.html"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_moqv03r1_241",
+          "type": "landing",
+          "order": 2,
+          "label": "Landing Page (PDP)",
+          "is_entry": true,
+          "template": null,
+          "next_page": "page_moqv03r1_242",
+          "_next_label": "Checkout",
+          "resolved_routing": {
+            "next_page": "page_moqv03r1_242",
+            "next_page_filename": "checkout.html"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_moqv03r1_242",
+          "type": "checkout",
+          "order": 3,
+          "label": "Checkout",
+          "is_entry": false,
+          "template": null,
+          "packages": [
+            {
+              "ref_id": "1",
+              "qty": 1,
+              "name": "Meridian - The Duo",
+              "price": "74.00",
+              "price_retail": null,
+              "product_name": "The Duo",
+              "product_sku": "MERIDIAN",
+              "product_variant_name": "The Duo - Standard",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/52/e8/52e848eeedb50fb6e89775af09a35d29.webp",
+              "variant_attributes": [
+                {
+                  "code": "set",
+                  "name": "Set",
+                  "value": "Standard"
+                }
+              ]
+            },
+            {
+              "ref_id": "1",
+              "qty": 2,
+              "name": "Meridian - The Duo",
+              "price": "74.00",
+              "price_retail": null,
+              "product_name": "The Duo",
+              "product_sku": "MERIDIAN",
+              "product_variant_name": "The Duo - Standard",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/52/e8/52e848eeedb50fb6e89775af09a35d29.webp",
+              "variant_attributes": [
+                {
+                  "code": "set",
+                  "name": "Set",
+                  "value": "Standard"
+                }
+              ]
+            },
+            {
+              "ref_id": "1",
+              "qty": 3,
+              "name": "Meridian - The Duo",
+              "price": "74.00",
+              "price_retail": null,
+              "product_name": "The Duo",
+              "product_sku": "MERIDIAN",
+              "product_variant_name": "The Duo - Standard",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/52/e8/52e848eeedb50fb6e89775af09a35d29.webp",
+              "variant_attributes": [
+                {
+                  "code": "set",
+                  "name": "Set",
+                  "value": "Standard"
+                }
+              ]
+            },
+            {
+              "ref_id": "4",
+              "qty": 1,
+              "name": "The Duo - Expert",
+              "price": "94.00",
+              "price_retail": null,
+              "product_name": "The Duo",
+              "product_sku": null,
+              "product_variant_name": "The Duo - Expert",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/44/5c/445c1ceb2a53181c8d065ea563634d6c.webp",
+              "variant_attributes": [
+                {
+                  "code": "set",
+                  "name": "Set",
+                  "value": "Expert"
+                }
+              ]
+            },
+            {
+              "ref_id": "4",
+              "qty": 2,
+              "name": "The Duo - Expert",
+              "price": "94.00",
+              "price_retail": null,
+              "product_name": "The Duo",
+              "product_sku": null,
+              "product_variant_name": "The Duo - Expert",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/44/5c/445c1ceb2a53181c8d065ea563634d6c.webp",
+              "variant_attributes": [
+                {
+                  "code": "set",
+                  "name": "Set",
+                  "value": "Expert"
+                }
+              ]
+            },
+            {
+              "ref_id": "4",
+              "qty": 1,
+              "name": "The Duo - Expert",
+              "price": "94.00",
+              "price_retail": null,
+              "product_name": "The Duo",
+              "product_sku": null,
+              "product_variant_name": "The Duo - Expert",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/44/5c/445c1ceb2a53181c8d065ea563634d6c.webp",
+              "variant_attributes": [
+                {
+                  "code": "set",
+                  "name": "Set",
+                  "value": "Expert"
+                }
+              ]
+            },
+            {
+              "ref_id": "5",
+              "qty": 1,
+              "name": "Premium Lip Balm",
+              "price": "26.00",
+              "price_retail": null,
+              "product_name": "Premium Lip Balm",
+              "product_sku": "LIPBALM",
+              "product_variant_name": "Premium Lip Balm",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/54/fe/54fe089e62789a9e03a9958446dca5c0.webp"
+            }
+          ],
+          "offers": [
+            {
+              "ref_id": "1",
+              "name": "The Duo x2 Offer",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "count",
+                "value": 2,
+                "description": "Minimum purchase of 2 selected packages"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "20.00",
+                "description": "20% off selected packages"
+              }
+            },
+            {
+              "ref_id": "2",
+              "name": "The Duo x3 Offer",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "count",
+                "value": 3,
+                "description": "Minimum purchase of 3 selected packages"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "30.00",
+                "description": "30% off selected packages"
+              }
+            }
+          ],
+          "success_url": "page_moqv0t2u_272",
+          "_success_label": "Upsell 1",
+          "resolved_routing": {
+            "success": "page_moqv0t2u_272",
+            "success_filename": "upsell.html"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "checkout",
+            "meta_tags": {
+              "next-page-type": "checkout",
+              "next-success-url": "upsell.html"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_moqv0t2u_272",
+          "type": "upsell",
+          "order": 4,
+          "label": "Upsell 1",
+          "is_entry": false,
+          "template": null,
+          "packages": [
+            {
+              "ref_id": "3",
+              "qty": 1,
+              "name": "Restorative Cleanser",
+              "price": "39.00",
+              "price_retail": null,
+              "product_name": "Restorative Cleanser",
+              "product_sku": "RCLEANSER",
+              "product_variant_name": "Restorative Cleanser",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/39/bd/39bdeebc52c27a47d2c29d3736e45383.webp"
+            }
+          ],
+          "offers": [
+            {
+              "ref_id": "3",
+              "name": "Restorative Offer",
+              "type": "voucher",
+              "code": "RESTORATIVE25",
+              "condition": {
+                "type": "any",
+                "value": null,
+                "description": "No minimum purchase requirement"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "25.00",
+                "description": "25% off selected packages"
+              }
+            }
+          ],
+          "on_accept": "page_moqv0ugd_277",
+          "on_decline": "page_moqv0ugd_277",
+          "_accept_label": "Upsell 2",
+          "_decline_label": "Upsell 2",
+          "resolved_routing": {
+            "accept": "page_moqv0ugd_277",
+            "accept_filename": "olympus/upsell-bundle-tier-cards.html",
+            "decline": "page_moqv0ugd_277",
+            "decline_filename": "olympus/upsell-bundle-tier-cards.html"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "upsell",
+            "meta_tags": {
+              "next-page-type": "upsell",
+              "next-prevent-back-navigation": "true",
+              "next-upsell-accept-url": "olympus/upsell-bundle-tier-cards.html",
+              "next-upsell-decline-url": "olympus/upsell-bundle-tier-cards.html"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_moqv0ugd_277",
+          "type": "upsell",
+          "order": 5,
+          "label": "Upsell 2",
+          "is_entry": false,
+          "template": "olympus/upsell-bundle-tier-cards",
+          "packages": [
+            {
+              "ref_id": "2",
+              "qty": 1,
+              "name": "Eye Renewal Cream",
+              "price": "38.00",
+              "price_retail": null,
+              "product_name": "Eye Renewal Cream",
+              "product_sku": "EYECREAM",
+              "product_variant_name": "Eye Renewal Cream",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/f9/a5/f9a5c53b241f2b26a203a481575b30f0.webp"
+            }
+          ],
+          "offers": [
+            {
+              "ref_id": "4",
+              "name": "Eye Renewal Offer",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "any",
+                "value": null,
+                "description": "No minimum purchase requirement"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "50.00",
+                "description": "50% off selected packages"
+              }
+            }
+          ],
+          "on_accept": "page_moqv03r1_243",
+          "on_decline": "page_moqv03r1_243",
+          "_accept_label": "Thank You",
+          "_decline_label": "Thank You",
+          "resolved_routing": {
+            "accept": "page_moqv03r1_243",
+            "accept_filename": "olympus/receipt.html",
+            "decline": "page_moqv03r1_243",
+            "decline_filename": "olympus/receipt.html"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "upsell",
+            "meta_tags": {
+              "next-page-type": "upsell",
+              "next-upsell-accept-url": "olympus/receipt.html",
+              "next-upsell-decline-url": "olympus/receipt.html"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_moqv03r1_243",
+          "type": "thankyou",
+          "order": 6,
+          "label": "Thank You",
+          "is_entry": false,
+          "template": "olympus/receipt",
+          "sdk_hints": {
+            "sdk_page_type": "receipt",
+            "meta_tags": {
+              "next-page-type": "receipt"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        }
+      ]
+    }
+  ],
+  "funnel_pages": [
+    {
+      "id": "page_moqv03r1_240",
+      "type": "presell",
+      "order": 1,
+      "label": "Presell",
+      "is_entry": false,
+      "template": null,
+      "next_page": "page_moqv03r1_241",
+      "_next_label": "Landing Page (PDP)",
+      "resolved_routing": {
+        "next_page": "page_moqv03r1_241",
+        "next_page_filename": "index.html"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_moqv03r1_241",
+      "type": "landing",
+      "order": 2,
+      "label": "Landing Page (PDP)",
+      "is_entry": true,
+      "template": null,
+      "next_page": "page_moqv03r1_242",
+      "_next_label": "Checkout",
+      "resolved_routing": {
+        "next_page": "page_moqv03r1_242",
+        "next_page_filename": "checkout.html"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_moqv03r1_242",
+      "type": "checkout",
+      "order": 3,
+      "label": "Checkout",
+      "is_entry": false,
+      "template": null,
+      "packages": [
+        {
+          "ref_id": "1",
+          "qty": 1,
+          "name": "Meridian - The Duo",
+          "price": "74.00",
+          "price_retail": null,
+          "product_name": "The Duo",
+          "product_sku": "MERIDIAN",
+          "product_variant_name": "The Duo - Standard",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/52/e8/52e848eeedb50fb6e89775af09a35d29.webp",
+          "variant_attributes": [
+            {
+              "code": "set",
+              "name": "Set",
+              "value": "Standard"
+            }
+          ]
+        },
+        {
+          "ref_id": "1",
+          "qty": 2,
+          "name": "Meridian - The Duo",
+          "price": "74.00",
+          "price_retail": null,
+          "product_name": "The Duo",
+          "product_sku": "MERIDIAN",
+          "product_variant_name": "The Duo - Standard",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/52/e8/52e848eeedb50fb6e89775af09a35d29.webp",
+          "variant_attributes": [
+            {
+              "code": "set",
+              "name": "Set",
+              "value": "Standard"
+            }
+          ]
+        },
+        {
+          "ref_id": "1",
+          "qty": 3,
+          "name": "Meridian - The Duo",
+          "price": "74.00",
+          "price_retail": null,
+          "product_name": "The Duo",
+          "product_sku": "MERIDIAN",
+          "product_variant_name": "The Duo - Standard",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/52/e8/52e848eeedb50fb6e89775af09a35d29.webp",
+          "variant_attributes": [
+            {
+              "code": "set",
+              "name": "Set",
+              "value": "Standard"
+            }
+          ]
+        },
+        {
+          "ref_id": "4",
+          "qty": 1,
+          "name": "The Duo - Expert",
+          "price": "94.00",
+          "price_retail": null,
+          "product_name": "The Duo",
+          "product_sku": null,
+          "product_variant_name": "The Duo - Expert",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/44/5c/445c1ceb2a53181c8d065ea563634d6c.webp",
+          "variant_attributes": [
+            {
+              "code": "set",
+              "name": "Set",
+              "value": "Expert"
+            }
+          ]
+        },
+        {
+          "ref_id": "4",
+          "qty": 2,
+          "name": "The Duo - Expert",
+          "price": "94.00",
+          "price_retail": null,
+          "product_name": "The Duo",
+          "product_sku": null,
+          "product_variant_name": "The Duo - Expert",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/44/5c/445c1ceb2a53181c8d065ea563634d6c.webp",
+          "variant_attributes": [
+            {
+              "code": "set",
+              "name": "Set",
+              "value": "Expert"
+            }
+          ]
+        },
+        {
+          "ref_id": "4",
+          "qty": 1,
+          "name": "The Duo - Expert",
+          "price": "94.00",
+          "price_retail": null,
+          "product_name": "The Duo",
+          "product_sku": null,
+          "product_variant_name": "The Duo - Expert",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/44/5c/445c1ceb2a53181c8d065ea563634d6c.webp",
+          "variant_attributes": [
+            {
+              "code": "set",
+              "name": "Set",
+              "value": "Expert"
+            }
+          ]
+        },
+        {
+          "ref_id": "5",
+          "qty": 1,
+          "name": "Premium Lip Balm",
+          "price": "26.00",
+          "price_retail": null,
+          "product_name": "Premium Lip Balm",
+          "product_sku": "LIPBALM",
+          "product_variant_name": "Premium Lip Balm",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/54/fe/54fe089e62789a9e03a9958446dca5c0.webp"
+        }
+      ],
+      "offers": [
+        {
+          "ref_id": "1",
+          "name": "The Duo x2 Offer",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "count",
+            "value": 2,
+            "description": "Minimum purchase of 2 selected packages"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "20.00",
+            "description": "20% off selected packages"
+          }
+        },
+        {
+          "ref_id": "2",
+          "name": "The Duo x3 Offer",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "count",
+            "value": 3,
+            "description": "Minimum purchase of 3 selected packages"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "30.00",
+            "description": "30% off selected packages"
+          }
+        }
+      ],
+      "success_url": "page_moqv0t2u_272",
+      "_success_label": "Upsell 1",
+      "resolved_routing": {
+        "success": "page_moqv0t2u_272",
+        "success_filename": "upsell.html"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "checkout",
+        "meta_tags": {
+          "next-page-type": "checkout",
+          "next-success-url": "upsell.html"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_moqv0t2u_272",
+      "type": "upsell",
+      "order": 4,
+      "label": "Upsell 1",
+      "is_entry": false,
+      "template": null,
+      "packages": [
+        {
+          "ref_id": "3",
+          "qty": 1,
+          "name": "Restorative Cleanser",
+          "price": "39.00",
+          "price_retail": null,
+          "product_name": "Restorative Cleanser",
+          "product_sku": "RCLEANSER",
+          "product_variant_name": "Restorative Cleanser",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/39/bd/39bdeebc52c27a47d2c29d3736e45383.webp"
+        }
+      ],
+      "offers": [
+        {
+          "ref_id": "3",
+          "name": "Restorative Offer",
+          "type": "voucher",
+          "code": "RESTORATIVE25",
+          "condition": {
+            "type": "any",
+            "value": null,
+            "description": "No minimum purchase requirement"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "25.00",
+            "description": "25% off selected packages"
+          }
+        }
+      ],
+      "on_accept": "page_moqv0ugd_277",
+      "on_decline": "page_moqv0ugd_277",
+      "_accept_label": "Upsell 2",
+      "_decline_label": "Upsell 2",
+      "resolved_routing": {
+        "accept": "page_moqv0ugd_277",
+        "accept_filename": "olympus/upsell-bundle-tier-cards.html",
+        "decline": "page_moqv0ugd_277",
+        "decline_filename": "olympus/upsell-bundle-tier-cards.html"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "upsell",
+        "meta_tags": {
+          "next-page-type": "upsell",
+          "next-prevent-back-navigation": "true",
+          "next-upsell-accept-url": "olympus/upsell-bundle-tier-cards.html",
+          "next-upsell-decline-url": "olympus/upsell-bundle-tier-cards.html"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_moqv0ugd_277",
+      "type": "upsell",
+      "order": 5,
+      "label": "Upsell 2",
+      "is_entry": false,
+      "template": "olympus/upsell-bundle-tier-cards",
+      "packages": [
+        {
+          "ref_id": "2",
+          "qty": 1,
+          "name": "Eye Renewal Cream",
+          "price": "38.00",
+          "price_retail": null,
+          "product_name": "Eye Renewal Cream",
+          "product_sku": "EYECREAM",
+          "product_variant_name": "Eye Renewal Cream",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/f9/a5/f9a5c53b241f2b26a203a481575b30f0.webp"
+        }
+      ],
+      "offers": [
+        {
+          "ref_id": "4",
+          "name": "Eye Renewal Offer",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "any",
+            "value": null,
+            "description": "No minimum purchase requirement"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "50.00",
+            "description": "50% off selected packages"
+          }
+        }
+      ],
+      "on_accept": "page_moqv03r1_243",
+      "on_decline": "page_moqv03r1_243",
+      "_accept_label": "Thank You",
+      "_decline_label": "Thank You",
+      "resolved_routing": {
+        "accept": "page_moqv03r1_243",
+        "accept_filename": "olympus/receipt.html",
+        "decline": "page_moqv03r1_243",
+        "decline_filename": "olympus/receipt.html"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "upsell",
+        "meta_tags": {
+          "next-page-type": "upsell",
+          "next-upsell-accept-url": "olympus/receipt.html",
+          "next-upsell-decline-url": "olympus/receipt.html"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_moqv03r1_243",
+      "type": "thankyou",
+      "order": 6,
+      "label": "Thank You",
+      "is_entry": false,
+      "template": "olympus/receipt",
+      "sdk_hints": {
+        "sdk_page_type": "receipt",
+        "meta_tags": {
+          "next-page-type": "receipt"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    }
+  ],
+  "shipping_methods": [
+    {
+      "ref_id": "1",
+      "code": "default",
+      "price": "0.00"
+    }
+  ],
+  "offers": [
+    {
+      "ref_id": "1",
+      "name": "The Duo x2 Offer",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 2,
+        "description": "Minimum purchase of 2 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "20.00",
+        "description": "20% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/52/e8/52e848eeedb50fb6e89775af09a35d29.webp",
+          "package_name": "Meridian - The Duo",
+          "product_name": "The Duo",
+          "product_variant_name": "The Duo - Standard",
+          "unit_price": "59.00",
+          "unit_price_before_discount": "74.00",
+          "package_price": "59.00",
+          "package_price_before_discount": "74.00",
+          "package_unit_qty": 1
+        },
+        {
+          "package_id": 4,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/44/5c/445c1ceb2a53181c8d065ea563634d6c.webp",
+          "package_name": "The Duo - Expert",
+          "product_name": "The Duo",
+          "product_variant_name": "The Duo - Expert",
+          "unit_price": "75.00",
+          "unit_price_before_discount": "94.00",
+          "package_price": "75.00",
+          "package_price_before_discount": "94.00",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    },
+    {
+      "ref_id": "2",
+      "name": "The Duo x3 Offer",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 3,
+        "description": "Minimum purchase of 3 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "30.00",
+        "description": "30% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/52/e8/52e848eeedb50fb6e89775af09a35d29.webp",
+          "package_name": "Meridian - The Duo",
+          "product_name": "The Duo",
+          "product_variant_name": "The Duo - Standard",
+          "unit_price": "51.00",
+          "unit_price_before_discount": "74.00",
+          "package_price": "51.00",
+          "package_price_before_discount": "74.00",
+          "package_unit_qty": 1
+        },
+        {
+          "package_id": 4,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/44/5c/445c1ceb2a53181c8d065ea563634d6c.webp",
+          "package_name": "The Duo - Expert",
+          "product_name": "The Duo",
+          "product_variant_name": "The Duo - Expert",
+          "unit_price": "65.00",
+          "unit_price_before_discount": "94.00",
+          "package_price": "65.00",
+          "package_price_before_discount": "94.00",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    },
+    {
+      "ref_id": "3",
+      "name": "Restorative Offer",
+      "type": "voucher",
+      "code": "RESTORATIVE25",
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "25.00",
+        "description": "25% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 3,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/39/bd/39bdeebc52c27a47d2c29d3736e45383.webp",
+          "package_name": "Restorative Cleanser",
+          "product_name": "Restorative Cleanser",
+          "product_variant_name": "Restorative Cleanser",
+          "unit_price": "29.00",
+          "unit_price_before_discount": "39.00",
+          "package_price": "29.00",
+          "package_price_before_discount": "39.00",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    },
+    {
+      "ref_id": "4",
+      "name": "Eye Renewal Offer",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "50.00",
+        "description": "50% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 2,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/f9/a5/f9a5c53b241f2b26a203a481575b30f0.webp",
+          "package_name": "Eye Renewal Cream",
+          "product_name": "Eye Renewal Cream",
+          "product_variant_name": "Eye Renewal Cream",
+          "unit_price": "19.00",
+          "unit_price_before_discount": "38.00",
+          "package_price": "19.00",
+          "package_price_before_discount": "38.00",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    }
+  ]
+}

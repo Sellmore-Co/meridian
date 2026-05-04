@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500" role="img" aria-label="Meridian Premium Lip Balm variant B: squat round screw-lid jar">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#FAF7F0"/>
+      <stop offset="60%" stop-color="#F0EBDD"/>
+      <stop offset="100%" stop-color="#E5DFCE"/>
+    </radialGradient>
+    <linearGradient id="jarBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"  stop-color="#A89878"/>
+      <stop offset="20%" stop-color="#C9BC9B"/>
+      <stop offset="50%" stop-color="#D6CBA9"/>
+      <stop offset="80%" stop-color="#B8AB89"/>
+      <stop offset="100%" stop-color="#897C5E"/>
+    </linearGradient>
+    <linearGradient id="jarLid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"  stop-color="#0A0A0C"/>
+      <stop offset="35%" stop-color="#1F1F22"/>
+      <stop offset="55%" stop-color="#2A2A2E"/>
+      <stop offset="80%" stop-color="#15151A"/>
+      <stop offset="100%" stop-color="#040404"/>
+    </linearGradient>
+    <radialGradient id="jarTop" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2A2A2E"/>
+      <stop offset="50%" stop-color="#1A1A1E"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+    <linearGradient id="bodyShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"  stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="bottomShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.40"/>
+      <stop offset="60%" stop-color="#000" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="jarShadow" x="-30%" y="-15%" width="160%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="2" dy="8" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.36"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="500" height="500" fill="url(#bg)"/>
+  <ellipse cx="250" cy="395" rx="120" ry="11" fill="url(#bottomShadow)"/>
+
+  <!-- Squat round jar — viewed slightly from above so we see the round lid -->
+  <g filter="url(#jarShadow)" transform="translate(170,180)">
+    <!-- Lid top circular face -->
+    <ellipse cx="80" cy="22" rx="80" ry="20" fill="url(#jarTop)"/>
+    <!-- Lid sides (cylinder) -->
+    <rect x="0" y="22" width="160" height="34" fill="url(#jarLid)"/>
+    <!-- Ridges -->
+    <g fill="#3A3A40" fill-opacity="0.5">
+      <rect x="3" y="30" width="154" height="0.6"/>
+      <rect x="3" y="38" width="154" height="0.6"/>
+      <rect x="3" y="46" width="154" height="0.6"/>
+    </g>
+    <!-- Lid-base seam shadow -->
+    <ellipse cx="80" cy="56" rx="80" ry="6" fill="#000" fill-opacity="0.45"/>
+    <!-- Glass collar -->
+    <rect x="3" y="56" width="154" height="4" fill="#7C7158"/>
+    <!-- Body short cylinder -->
+    <rect x="0" y="60" width="160" height="80" rx="3" fill="url(#jarBody)"/>
+    <rect x="0" y="60" width="160" height="80" rx="3" fill="url(#bodyShine)"/>
+    <rect x="156" y="60" width="4" height="80" fill="#000" fill-opacity="0.10"/>
+    <rect x="0"   y="60" width="4" height="80" fill="#FFF" fill-opacity="0.20"/>
+    <!-- Bottom rim -->
+    <rect x="0" y="134" width="160" height="6" rx="2" fill="#000" fill-opacity="0.20"/>
+
+    <!-- Wordmark engraved on the round lid (top face) -->
+    <text x="80" y="20" font-family="ui-monospace,monospace" font-size="6.5" letter-spacing="2.6" text-anchor="middle" fill="#5A5A60" fill-opacity="0.85">M·E·R·I·D·I·A·N</text>
+    <text x="80" y="30" font-family="ui-monospace,monospace" font-size="4.5" letter-spacing="1.4" text-anchor="middle" fill="#5A5A60" fill-opacity="0.65">LIP RECOVERY</text>
+
+    <!-- Side label -->
+    <g font-family="ui-monospace, 'JetBrains Mono', monospace" fill="#1A1A1C" text-anchor="middle">
+      <text x="80" y="92" font-size="6" letter-spacing="1.8">M·E·R·I·D·I·A·N</text>
+      <line x1="55" y1="96" x2="105" y2="96" stroke="#1A1A1C" stroke-width="0.5" stroke-opacity="0.55"/>
+      <text x="80" y="115" font-size="11" letter-spacing="0.5" font-weight="500">LIP RECOVERY</text>
+      <text x="80" y="128" font-size="6" letter-spacing="1.0">BAKUCHIOL · SQUALANE · 15ML</text>
+    </g>
+  </g>
+</svg>

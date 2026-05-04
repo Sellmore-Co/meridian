@@ -1,0 +1,122 @@
+---
+title: "One Last Offer - Meridian"
+page_type: upsell
+permalink: /theduo-v3/upsell-2/
+next_url: receipt.html
+decline_url: receipt.html
+styles:
+  - css/meridian.css
+---
+<div class="upsell-page">
+  <div class="page-wrapper">
+    <div class="main-wrapper">
+
+      <div class="announcement">
+        <div class="announcement__block">
+          <div class="announcement__text"><strong>One last thing &middot; do not close this page</strong></div>
+        </div>
+      </div>
+
+      <header class="upsell-header-bar">
+        <div class="upsell-header-bar__inner">
+          <div class="upsell-header-bar__brand">M&middot;E&middot;R&middot;I&middot;D&middot;I&middot;A&middot;N</div>
+          <div class="upsell-header-bar__progress">
+            <div class="upsell-progress-step">Order placed</div>
+            <div class="upsell-progress-step">Cleanser offer</div>
+            <div class="upsell-progress-step is-active">Eye offer</div>
+            <div class="upsell-progress-step">Receipt</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="section upsell-header">
+        <div class="upsell-header__inner">
+          <div class="type-mono-cap" style="margin-bottom: 16px; color: var(--signal);">Final exclusive offer for new Meridian customers</div>
+          <h1 class="upsell-header__title">Add Eye Renewal Cream. Save 50%.</h1>
+          <div class="upsell-header__offer">
+            One-click add to your order &middot; ships with The Duo &middot; no extra shipping
+          </div>
+        </div>
+      </section>
+
+      <section class="section upsell-box">
+        <div class="container">
+          <div class="upsell-wrapper">
+
+            <div class="upsell-offer__card">
+              <div class="upsell-image-block">
+                <img src="{{ 'images/products/eye-renewal-cream.svg' | campaign_asset }}" alt="Meridian Eye Renewal Cream" loading="eager">
+              </div>
+
+              <div class="upsell-content">
+                <div class="upsell-savings-row">
+                  <span>Save 50%</span>
+                  <span>&middot;</span>
+                  <span>Ships with The Duo</span>
+                </div>
+
+                <h2 class="display-lg">
+                  <span data-next-display="package.2.name">Eye Renewal Cream</span>
+                </h2>
+
+                <div class="upsell-pricing">
+                  <div class="upsell-pricing__current"><span data-next-display="bundle.upsell-eye.price" data-next-format="currency">...</span></div>
+                  <div class="upsell-pricing__compare">$38</div>
+                </div>
+
+                <div class="type-body-lg" style="color: var(--ink-muted); margin-bottom: 16px;">
+                  The most fragile skin on your face needs the same molecule family the Duo delivers,
+                  in a formula that will not migrate or sting. 0.5% bakuchiol, caffeine, and
+                  niacinamide are pH-buffered for the under-eye barrier.
+                </div>
+
+                <ul class="upsell-list">
+                  <li>0.5% bakuchiol formulated for the delicate eye area</li>
+                  <li>Caffeine + niacinamide for puffiness and dark circles</li>
+                  <li>pH-buffered, fragrance-free, and designed for daily use</li>
+                  <li>3-month supply that pairs with the Duo ritual</li>
+                  <li>Same 60-night guarantee as the Duo</li>
+                </ul>
+
+                <div class="upsell-sdk-controls" data-next-upsell="offer" data-next-bundle-selector-id="upsell-eye" data-next-await="">
+                  <div data-next-bundle-selector data-next-upsell-context data-next-selector-id="upsell-eye" class="os-option" style="display:none">
+                    <div role="button" data-next-bundle-card data-next-bundle-id="upsell-eye-1x" data-next-bundle-items='[{"packageId":2,"quantity":1}]' data-next-quantity="1" data-next-min-quantity="1" data-next-max-quantity="1" data-next-selected="true" class="os-card next-selected"></div>
+                  </div>
+
+                  <div class="upsell-actions">
+                    <button data-next-upsell-action="add" data-next-upsell-bundle-id="upsell-eye-1x" type="button" class="upsell-accept-btn">
+                      Yes &mdash; add eye cream to my order &nbsp;&rarr;
+                    </button>
+                    <a data-next-upsell-action="skip" href="{{ 'receipt.html' | campaign_link }}" class="upsell-decline-btn">
+                      No thanks, take me to my receipt
+                    </a>
+                  </div>
+                </div>
+                <div class="upsell-fallback-actions">
+                  <a href="{{ 'checkout.html' | campaign_link }}" class="upsell-accept-btn">
+                    Yes &mdash; add eye cream to my order &nbsp;&rarr;
+                  </a>
+                  <a href="{{ 'receipt.html' | campaign_link }}" class="upsell-decline-btn">
+                    Continue to receipt
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div style="max-width: 720px; margin: 56px auto 0; text-align: center;">
+              <div class="type-mono-cap">Why we offer this last</div>
+              <p class="type-body-lg" style="margin-top: 12px; color: var(--ink);">
+                The under-eye area uses the same actives as the Duo, but at concentrations
+                and a pH the eye barrier can handle.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  {% campaign_include 'meridian-footer.html' %}
+</div>
