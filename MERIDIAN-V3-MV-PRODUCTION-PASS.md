@@ -2,7 +2,7 @@
 
 Date: 2026-05-04
 Repo: `/Users/devin/Developer/meridian`
-Commit: `34e6c22` (`Add Meridian theduo-v3 MV checkout funnel`)
+Initial commit: `34e6c22` (`Add Meridian theduo-v3 MV checkout funnel`)
 Target path: `/theduo-v3/`
 Live checkout: `https://meridian-skincare.netlify.app/theduo-v3/checkout/`
 
@@ -67,3 +67,102 @@ Live checkout: `https://meridian-skincare.netlify.app/theduo-v3/checkout/`
 
 - The attached spec typo on the third Expert row (`qty: 1`) was treated as intended quantity `3`; order `101994` confirms the live campaign supports 3x Expert at the x3 offer price.
 - Checkout totals returned by `window.next.getCartTotals()` can be stale or misleading immediately after configurable-slot mutations; receipt line items were used as truth.
+
+## Follow-up Component Hardening Pass
+
+Date: 2026-05-04
+
+Commits:
+
+- `c35a705` — `Harden mobile MV component layout`
+- `1f14c06` — `Tighten MV bundle card labels`
+
+What changed:
+
+- Restored product thumbnails inside mobile configurable-slot cards.
+- Kept mobile variant controls as native `<select>` elements because they are more reliable than custom dropdown overlays in narrow checkout columns.
+- Hid secondary per-slot pricing metadata on mobile before hiding product media. The thumbnail and selector are the primary user task.
+- Bounded the Premium Lip Balm pre-purchase bump so its title, checkbox, price, checklist, and image all fit inside the actual checkout column at 390px.
+- Tightened desktop MV card label positioning so "Most Popular" and "Best Value" stay inside their cards at 1024px.
+
+Live verification after deploy:
+
+- Mobile 390px, 3-bottle state: no horizontal overflow; 3 slots render; each slot thumbnail is 56px, inside the card; each native select is visible and enabled.
+- Mobile 390px bump: no horizontal clipping; card width 252px; content grid computes to `106px 84px`; bump image is 84px and inside card bounds.
+- Desktop 1024px: no horizontal overflow; 2-card and 3-card labels stay inside card bounds.
+- Screenshots saved during verification:
+  - `/tmp/meridian-v3-final-mobile.png`
+  - `/tmp/meridian-v3-final-desktop.png`
+
+## V1/V2/V3 Process Comparison
+
+This MV pass was not a fresh-from-zero campaign build. It inherited the repeatable discipline proven by Meridian v2, then stressed the next weak layer: configurable-slot commerce components inside custom responsive design.
+
+| Version | Role in the build-system learning loop | Main friction class | Outcome |
+| --- | --- | --- | --- |
+| `theduo-v1` | Discovery pass | Route interpretation, design-file ambiguity, unsupported payment methods, static price cleanup, shipping IDs, SDK hook preservation, upsell offer behavior, local CORS, Spreedly/test-order mechanics, receipt truth | Proved a fresh design + CampaignSpec + API key could become a live working campaign, but much of the work was hand-wired. |
+| `theduo-v2` | Discipline pass | Catalog extraction, source/rendered SDK linting, partial parameterization, design-carries-opinion doctrine | Proved the Olympus-shaped checkout could be rebuilt through canonical commerce components with 0 lint violations, 100% binding accuracy, and 55% smaller source. |
+| `theduo-v3` | Stress pass | MV configurable slots, per-bottle Standard/Expert selection, mobile selector reliability, generated slot thumbnail layout, order bump fit, upsell voucher application, backend truth after cart mutations | Proved the build path is more repeatable, but MV needs Tier-1 responsive component contracts rather than one-off campaign CSS. |
+
+The old friction categories were mostly absent here because v2 converted them into process. The new friction was not "agent forgot SDK wiring"; it was "commerce components need responsive contracts when injected into custom design shapes."
+
+## Pipeline Implications
+
+The practical standard should be:
+
+> Goal is not zero polish. Goal is no SDK re-wiring during polish.
+
+Acceptable polish:
+
+- spacing and rhythm
+- image crop or static-vs-carousel composition choices
+- mobile card fit
+- selected-state emphasis
+- copy hierarchy
+
+System failure / not acceptable as polish:
+
+- re-discovering which `data-next-*` hooks matter
+- rebuilding payment forms by hand
+- replacing catalog components because the agentic path could not preserve SDK behavior
+- using template-default copy/behavior that contradicts the supplied design
+- trusting DOM text after complex cart mutation when backend calculation or receipt truth is needed
+
+The hero image on v3 intentionally stayed closer to the supplied design instead of forcing the original Olympus carousel shape. That is consistent with the doctrine: design carries the visual opinion; the build preserves commerce behavior where commerce behavior exists.
+
+## Next Template-Family Test Plan
+
+For Limos and Demeter, use totally fresh fake full-funnel designs with fresh products, images, copy, and Campaigns App configs. Reusing Meridian assets would hide whether the build path is genuinely template-family capable.
+
+Recommended test shape per template family:
+
+1. Fresh design source with the target template family shape.
+2. Fresh fake product/media assets and Campaigns App packages/offers.
+3. Full funnel deployed live.
+4. Test orders across the main offer, bump, upsell accept, upsell decline, and receipt paths.
+5. Friction log classifying each fix as one of:
+   - component parameter missing
+   - responsive contract missing
+   - template-family inference wrong
+   - SDK/API primitive missing
+   - normal design/dev polish
+   - SDK re-wiring/system failure
+
+This keeps future iterations honest. The purpose of each pass is not to rescue one fake campaign; it is to improve the reusable build system.
+
+## Full Pipeline Track
+
+The broader operating model is:
+
+```text
+Design automation / Figma export
+  -> opinionated HTML and design components
+Campaigns OS
+  -> campaign intent, config, routing, operational state
+next-campaigns-build
+  -> maps design intent onto commerce components without breaking SDK contracts
+Agentic QA
+  -> verifies live behavior, visual fit, offers, analytics, orders, and receipt truth
+```
+
+The long-term goal is shortening go-live from weeks+ to a day. Each stage should emit artifacts the next stage can trust: design should not need Campaign Cart internals; build should not reinterpret design intent from scratch; QA should not depend on a human replaying checkout by hand.
