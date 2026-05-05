@@ -557,13 +557,18 @@ function css() {
   text-decoration: line-through;
   text-decoration-thickness: 2px;
 }
+.rf-price-stack .compare {
+  font-size: clamp(17px, 1.8vw, 22px);
+}
 .rf-price-stack .current {
-  font-size: clamp(48px, 7vw, 78px);
-  line-height: .9;
+  font-size: clamp(42px, 4.8vw, 60px);
+  line-height: .95;
+  letter-spacing: 0;
 }
 .rf-price-stack .save {
   color: var(--accent);
   font-weight: 900;
+  font-size: clamp(16px, 1.8vw, 20px);
   white-space: nowrap;
 }
 .rf-price-stack .hide,
@@ -707,7 +712,7 @@ function css() {
     grid-column: auto;
   }
   .rf-price-stack .current {
-    font-size: clamp(46px, 18vw, 64px);
+    font-size: clamp(40px, 15vw, 52px);
   }
   .tier {
     grid-template-columns: 22px 74px minmax(0,1fr);
