@@ -1,0 +1,39 @@
+---
+title: "Special Offer - Roadflare Beacon 2-Pack"
+page_type: upsell
+permalink: /roadflare-v1/upsell-beacon/
+next_url: upsell-fleet.html
+decline_url: upsell-fleet.html
+next_currency: USD
+prevent_back_navigation: true
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+body_class: "roadflare shell"
+---
+<div class="upsell-alert">Special offer unlocked - do not close this page</div>
+<main class="section">
+  <div class="wrap upsell-offer" data-next-upsell="offer">
+    <section class="card checkout-panel stack">
+      <p class="eyebrow">Add before your kit ships</p>
+      <h1 style="font-size:clamp(42px,6vw,70px);">Make your car visible from both directions.</h1>
+      <p class="lede">Add two magnetic amber beacons to your order for only <span data-next-bundle-display="price">$19.95</span> today. Place one behind the car and one near the front while you inflate, jump, or wait.</p>
+      <div class="grid-2">
+        <div class="checkline">Magnetic base sticks to hood or trunk</div>
+        <div class="checkline">Amber flash pattern for low visibility</div>
+        <div class="checkline">Stores in glovebox or door pocket</div>
+        <div class="checkline">Ships in the same box as your kit</div>
+      </div>
+      <div class="commerce-note" data-commerce-slot="hidden-upsell-bundle-stepper">One-time add-on price is locked to this order only.</div>
+      <div data-next-bundle-selector data-next-upsell-context data-next-selector-id="beacon-offer" class="bundle-selector">
+        <button type="button" data-next-bundle-card data-next-bundle-id="beacon-1" data-next-bundle-items='[{"packageId":3,"quantity":1}]' data-next-bundle-vouchers='["BEACON2"]' data-next-selected="true" class="bundle-card next-selected">
+          <span class="radio"></span><span><strong>Beacon 2-Pack</strong><small>Post-purchase roadside visibility add-on</small></span><span><strong data-next-bundle-display="price">$19.95</strong></span>
+        </button>
+      </div>
+      <button class="btn" type="button" data-next-upsell-action="add" data-next-upsell-bundle-id="beacon-1">Yes, add beacons to my order</button>
+      <a href="{{ 'upsell-fleet.html' | campaign_link }}" class="small" data-next-upsell-action="skip">No thanks, continue without beacons</a>
+    </section>
+    <aside class="gallery"><div class="gallery-main"><img src="{{ 'images/roadflare-beacon-2pack.png' | campaign_asset }}" alt="Two amber roadside beacons"></div></aside>
+  </div>
+</main>

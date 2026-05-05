@@ -1,0 +1,88 @@
+---
+title: "Checkout - Roadflare JumpBrick Pro"
+page_type: checkout
+permalink: /roadflare-v1/checkout/
+next_url: upsell-beacon.html
+next_currency: USD
+predictive_address: true
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+body_class: "roadflare shell"
+---
+<header class="brandbar"><div class="wrap nav"><a class="logo" href="{{ 'index.html' | campaign_link }}">Roadflare</a><span class="pill">100% encrypted checkout</span></div></header>
+<main class="section tight">
+  <div class="wrap checkout-grid">
+    <form class="stack" data-next-checkout="form" id="roadflare_form" method="post" onsubmit="event.preventDefault(); return false;">
+      <div class="card checkout-panel stack">
+        <div class="commerce-note commerce-note--timer" data-commerce-slot="promo-timer" data-countdown data-duration-seconds="582" data-storage-key="roadflare-checkout-countdown">Roadside sale reserved for <span data-countdown-min>09</span>:<span data-countdown-sec>42</span> &middot; 62 drivers are viewing this offer</div>
+          <div class="rf-offer-card" data-commerce-slot="main-bundle-selector">
+            <div data-next-bundle-selector data-next-selector-id="main" data-next-selection-mode="swap" data-next-include-shipping="true" class="rf-single-selector">
+            <div data-next-bundle-card data-next-bundle-id="jumpbrick-qty" data-next-shipping-id="1" data-next-bundle-items='[{"packageId":1,"quantity":1}]' data-next-quantity="1" data-next-min-quantity="1" data-next-max-quantity="5" data-next-selected="true" class="rf-single-offer-card next-selected">
+              <div class="rf-offer-head"><span>Special offer - limited time</span><span data-next-bundle-display="hasDiscount" class="rf-save-badge">Save <span data-next-bundle-display="discountPercentage">50%</span></span></div>
+              <div class="rf-offer-body rf-offer-body--stacked">
+                <div class="rf-thumb"><img src="{{ 'images/roadflare-jumpbrick-pro.png' | campaign_asset }}" alt="JumpBrick Pro kit"></div>
+                <div class="rf-offer-copy">
+                  <h2 style="font-size:32px;">JumpBrick Pro Roadside Kit</h2>
+                  <p class="small">4-in-1 jump starter, tire inflator, hazard light, and USB-C battery bank.</p>
+                </div>
+                <div class="price-row rf-price-stack">
+                  <span data-next-bundle-display="hasDiscount" class="compare"><span data-next-bundle-display="originalPrice">$119.98</span></span>
+                  <span class="current" data-next-bundle-display="price">$69.95</span>
+                  <span data-next-bundle-display="hasDiscount" class="save">You save <span data-next-bundle-display="discountAmount">$50.03</span></span>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="qty next-bundle-qty next-bundle-qty--anchor-br" aria-label="Bundle quantity">
+              <div class="next-bundle-qty__row" data-next-bundle-qty-for="main">
+                <button type="button" class="next-bundle-qty__btn" data-next-quantity-decrease aria-label="Decrease bundle quantity">-</button><span data-next-quantity-display>1</span><button type="button" class="next-bundle-qty__btn" data-next-quantity-increase aria-label="Increase bundle quantity">+</button>
+              </div>
+            </div>
+          </div>
+        <div class="grid-3">
+          <div class="checkline">30-day satisfaction guarantee</div>
+          <div class="checkline">Fast U.S. shipping</div>
+          <div class="checkline">38,000+ kits shipped</div>
+        </div>
+      </div>
+      <div class="card checkout-panel stack">
+        <h2 style="font-size:32px;">Shipping address</h2>
+        <div class="grid-2"><input aria-label="First name*" placeholder="First name*" data-next-checkout-field="fname" os-checkout-validate="required" > <input aria-label="Last name*" placeholder="Last name*" data-next-checkout-field="lname" os-checkout-validate="required" ></div>
+<input aria-label="Email*" placeholder="Email*" data-next-checkout-field="email" os-checkout-validate="required" type="email" autocomplete="email">
+<input aria-label="Phone*" placeholder="Phone*" data-next-checkout-field="phone" os-checkout-validate="required" type="tel" autocomplete="tel-full">
+<input aria-label="Address*" placeholder="Address*" data-next-checkout-field="address1" os-checkout-validate="required" autocomplete="address-line1">
+<input aria-label="Apartment, suite, etc." placeholder="Apartment, suite, etc. (optional)" data-next-checkout-field="address2" autocomplete="address-line2">
+<div class="grid-3"><input aria-label="City*" placeholder="City*" data-next-checkout-field="city" os-checkout-validate="required" autocomplete="address-level2"><select aria-label="State" data-next-checkout-field="province" os-checkout-validate="required"><option value="">State*</option></select><input aria-label="ZIP*" placeholder="ZIP*" data-next-checkout-field="postal" os-checkout-validate="required" autocomplete="postal-code"></div>
+<select aria-label="Country" data-next-checkout-field="country" os-checkout-validate="required"><option value="">Country*</option></select>
+      </div>
+      <div data-next-package-toggle data-commerce-slot="order-bump">
+        <div data-next-toggle-card data-next-is-upsell="true" data-next-package-id="2" class="bump">
+        <button type="button" class="bump-toggle" aria-label="Toggle MagMount Trunk Dock"><span class="box-check"><span os-component="check">✓</span></span></button>
+        <div class="rf-thumb" style="min-height:70px;"><img src="{{ 'images/roadflare-magmount-dock.png' | campaign_asset }}" alt="MagMount Trunk Dock"></div>
+        <div><strong>Add MagMount Trunk Dock</strong><p class="small">Keep JumpBrick mounted where you can grab it in 5 seconds.</p></div>
+        <strong data-next-toggle-display="price">$39.95</strong>
+        </div>
+      </div>
+      <div class="card checkout-panel stack">
+        <h2 style="font-size:32px;">Payment</h2>
+        {% campaign_include 'express-checkout.html' show_title=true %}
+{% campaign_include 'payment-methods.html' %}
+<div class="submit-section">
+  <div class="submit-section__disclaimer">By placing this order, you agree to this campaign's checkout terms and privacy notices.</div>
+  <button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-button">
+    <div data-pb-element="checkout-button-spinner" class="submit-button__loader"><div class="three-quarter-spinner black"></div></div>
+    <div data-pb-element="checkout-button-info" class="submit-button__content">
+      <div class="submit-button__main-text">Complete my roadside kit</div>
+      <div class="submit-button__subtext">Encrypted checkout - ships from the same warehouse batch</div>
+    </div>
+  </button>
+</div>
+      </div>
+    </form>
+    <aside class="checkout-summary-shell checkout-summary-shell--limos" data-commerce-slot="order-summary" aria-label="Order summary">
+  {% campaign_include 'cart-summary02.html' %}
+</aside>
+  </div>
+</main>

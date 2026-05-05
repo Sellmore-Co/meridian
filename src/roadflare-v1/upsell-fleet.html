@@ -1,0 +1,32 @@
+---
+title: "Fleet Add-On - Roadflare"
+page_type: upsell
+permalink: /roadflare-v1/upsell-fleet/
+next_url: receipt.html
+decline_url: receipt.html
+next_currency: USD
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+body_class: "roadflare shell"
+---
+<div class="upsell-alert">Last add-on offer before confirmation</div>
+<main class="section">
+  <div class="wrap upsell-offer" data-next-upsell="offer">
+    <section class="card checkout-panel stack">
+      <p class="eyebrow">Family fleet add-on</p>
+      <h1 style="font-size:clamp(42px,6vw,70px);">Equip the other car before the box leaves the warehouse.</h1>
+      <p class="lede">The Fleet Add-On adds the pieces that usually go missing: tire gauge, reflective triangle, spare USB-C cable, and quick-charge wall plug.</p>
+      <div class="commerce-note" data-commerce-slot="tiered-upsell-selector">Choose how many vehicles need the spare safety kit.</div>
+      <div class="grid-3 bundle-selector" data-next-bundle-selector data-next-upsell-context data-next-selector-id="fleet-offer">
+        <button class="card checkout-panel stack selected" data-next-bundle-card data-next-bundle-id="fleet-1" data-next-bundle-items='[{"packageId":4,"quantity":1}]' data-next-selected="true" type="button"><strong>1 vehicle</strong><span class="small">Spare essentials kit</span><span class="current" style="font-size:28px;" data-next-bundle-display="price">$24.95</span></button>
+        <button class="card checkout-panel stack" data-next-bundle-card data-next-bundle-id="fleet-2" data-next-bundle-items='[{"packageId":4,"quantity":2}]' data-next-bundle-vouchers='["FLEET2"]' type="button"><strong>2 vehicles</strong><span class="small">Most practical household set</span><span class="current" style="font-size:28px;" data-next-bundle-display="price">$39.92</span></button>
+        <button class="card checkout-panel stack" data-next-bundle-card data-next-bundle-id="fleet-3" data-next-bundle-items='[{"packageId":4,"quantity":3}]' data-next-bundle-vouchers='["FLEET3"]' type="button"><strong>3 vehicles</strong><span class="small">Family fleet, best savings</span><span class="current" style="font-size:28px;" data-next-bundle-display="price">$52.40</span></button>
+      </div>
+      <button class="btn" type="button" data-next-upsell-action="add">Add selected fleet kit</button>
+      <a href="{{ 'receipt.html' | campaign_link }}" class="small" data-next-upsell-action="skip">No thanks, show my receipt</a>
+    </section>
+    <aside class="gallery"><div class="gallery-main"><img src="{{ 'images/roadflare-magmount-dock.png' | campaign_asset }}" alt="Roadflare fleet add-on kit"></div></aside>
+  </div>
+</main>

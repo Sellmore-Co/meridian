@@ -1,0 +1,45 @@
+---
+title: "Order Confirmed - Roadflare"
+page_type: receipt
+permalink: /roadflare-v1/receipt/
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+body_class: "roadflare shell"
+---
+<header class="brandbar"><div class="wrap nav"><a class="logo" href="{{ 'index.html' | campaign_link }}">Roadflare</a><span class="pill">Order confirmed</span></div></header>
+<main class="section">
+  <div class="wrap receipt-grid">
+    <section class="card checkout-panel stack">
+      <div class="receipt-ok">✓</div>
+      <p class="eyebrow">Confirmation <span data-next-display="order.number">#RF-20491</span></p>
+      <h1 style="font-size:clamp(42px,6vw,76px);">Your roadside kit is confirmed.</h1>
+      <p class="lede">You will receive tracking by email as soon as the warehouse scans your kit. Keep the quick-start card in the glovebox after unboxing.</p>
+      <div class="grid-2">
+        <div class="card checkout-panel"><strong>Contact</strong><p class="small" data-next-display="order.customer.email">taylor@example.com</p></div>
+        <div class="card checkout-panel"><strong>Shipping method</strong><p class="small">Priority Roadflare Dispatch</p></div>
+        <div class="card checkout-panel"><strong>Ship to</strong><p class="small"><span data-next-display="order.shippingAddress.line1">151 O'Connor St</span>, <span data-next-display="order.shippingAddress.city">Ottawa</span></p></div>
+        <div class="card checkout-panel"><strong>Payment</strong><p class="small">Credit card ending in 4242</p></div>
+      </div>
+      <a class="btn" href="{{ 'index.html' | campaign_link }}">Return to Roadflare</a>
+    </section>
+    <aside class="card checkout-panel stack" data-commerce-slot="receipt-order-summary">
+      <h2 style="font-size:36px;">Order summary</h2>
+      <template id="roadflare-v1-order-item-template">
+        <div class="summary-line" data-package-id="{item.packageId}"><span>{item.quantity}x {item.name}</span><strong>{item.price}</strong></div>
+      </template>
+      <div data-item-template-id="roadflare-v1-order-item-template" data-next-order-items class="cart-items__list"></div>
+      <div class="fallback-summary">
+        <div class="summary-line"><span>JumpBrick Pro Roadside Kit</span><strong>$69.95</strong></div>
+        <div class="summary-line"><span>MagMount Trunk Dock</span><strong>$39.95</strong></div>
+        <div class="summary-line"><span>Beacon 2-Pack</span><strong>$19.95</strong></div>
+        <div class="summary-line"><span>Fleet Add-On Kit</span><strong>$24.95</strong></div>
+      </div>
+      <div class="summary-line"><span>Subtotal</span><strong data-next-display="order.subtotal">$154.80</strong></div>
+      <div class="summary-line"><span>Shipping</span><strong data-next-display="order.shipping">$0.00</strong></div>
+      <div class="summary-line"><span>Tax</span><strong data-next-display="order.tax">$8.41</strong></div>
+      <div class="summary-line" style="font-size:24px;"><strong>Total</strong><strong data-next-display="order.total">$163.21</strong></div>
+    </aside>
+  </div>
+</main>

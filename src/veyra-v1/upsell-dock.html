@@ -1,0 +1,32 @@
+---
+title: "Charging Tray Offer - Veyra House"
+page_type: upsell
+permalink: /veyra-v1/upsell-dock/
+next_url: receipt.html
+decline_url: receipt.html
+next_currency: USD
+prevent_back_navigation: true
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+body_class: "veyra shell force-light"
+---
+<main class="section">
+  <div class="wrap upsell-offer" data-next-upsell="offer">
+    <section class="card checkout-panel stack">
+      <p class="eyebrow">Private add-on offer</p>
+      <h1 style="font-size:clamp(44px,7vw,82px);">Your lamps need a place to come home to.</h1>
+      <p class="lede">The Twin Dock Charging Tray keeps two Luma Tapers aligned, charged, and ready for the next dinner. Add it now before your order is packed.</p>
+      <div class="commerce-note" data-commerce-slot="demeter-tiered-upsell">Add before packing and it ships with your lamp set.</div>
+      <div class="bundle-selector" data-next-bundle-selector data-next-upsell-context data-next-selector-id="dock-offer">
+        <button class="card vy-card stack selected" data-next-bundle-card data-next-bundle-id="dock-1" data-next-bundle-items='[{"packageId":3,"quantity":1}]' data-next-bundle-vouchers='["TWINDOCK"]' data-next-selected="true" type="button">
+          <strong>1 Twin Dock Charging Tray</strong><span class="small">For one pair of lamps</span><span class="current" style="font-size:30px;" data-next-bundle-display="price">$56.99</span>
+        </button>
+      </div>
+      <button class="btn" type="button" data-next-upsell-action="add" data-next-upsell-bundle-id="dock-1">Add tray to my order</button>
+      <a href="{{ 'receipt.html' | campaign_link }}" class="small" data-next-upsell-action="skip">No thank you, continue to receipt</a>
+    </section>
+    <aside class="gallery"><div class="gallery-main" style="background:#101815;"><img src="{{ 'images/veyra-twin-dock-tray.png' | campaign_asset }}" alt="Twin Dock Charging Tray"></div></aside>
+  </div>
+</main>

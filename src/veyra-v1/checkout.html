@@ -1,0 +1,66 @@
+---
+title: "Checkout - Veyra House"
+page_type: checkout
+permalink: /veyra-v1/checkout/
+next_url: upsell-dock.html
+next_currency: USD
+predictive_address: true
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+body_class: "veyra shell force-light"
+---
+<header class="brandbar"><div class="wrap nav"><a class="logo" href="{{ 'index.html' | campaign_link }}">Veyra House</a><span class="pill">Secure checkout</span></div></header>
+<main class="section tight">
+  <div class="wrap checkout-grid">
+    <form class="card checkout-panel stack" data-next-checkout="form" id="veyra_form" method="post" onsubmit="event.preventDefault(); return false;">
+      <div class="progress" aria-label="Checkout progress"><div></div><div></div><div></div></div>
+      <h1 style="font-size:clamp(42px,6vw,72px);">Select your bundle</h1>
+      <div class="commerce-note" data-commerce-slot="demeter-main-bundle-selector">Bundle pricing updates automatically when you choose a set.</div>
+      <div class="stack bundle-selector" data-next-bundle-selector data-next-selector-id="main" data-next-selection-mode="swap" data-next-include-shipping="true">
+        <button class="card tier" data-next-bundle-card data-next-bundle-id="luma-1" data-next-shipping-id="1" data-next-bundle-items='[{"packageId":1,"quantity":1}]' type="button">
+          <span class="radio"></span><span class="vy-thumb"><img src="{{ 'images/veyra-luma-taper.png' | campaign_asset }}" alt=""></span><span><strong>1 Luma Taper</strong><br><span class="small">For a bedside or reading corner</span></span><span class="tier-price"><strong data-next-bundle-display="price">$87.99</strong></span>
+        </button>
+        <button class="card tier next-selected" data-next-bundle-card data-next-bundle-id="luma-2" data-next-shipping-id="1" data-next-bundle-items='[{"packageId":1,"quantity":2}]' data-next-selected="true" type="button">
+          <span class="tier-badge">Most chosen</span><span class="radio"></span><span class="vy-thumb"><img src="{{ 'images/veyra-luma-taper.png' | campaign_asset }}" alt=""></span><span><strong>2 Luma Tapers</strong><br><span class="small">Most chosen for dinner tables - 25% offer</span></span><span class="tier-price"><span class="tier-compare" data-next-bundle-display="originalPrice">$175.98</span><strong data-next-bundle-display="price">$131.98</strong></span>
+        </button>
+        <button class="card tier" data-next-bundle-card data-next-bundle-id="luma-3" data-next-shipping-id="1" data-next-bundle-items='[{"packageId":1,"quantity":3}]' type="button">
+          <span class="tier-badge">Best value</span><span class="radio"></span><span class="vy-thumb"><img src="{{ 'images/veyra-luma-taper.png' | campaign_asset }}" alt=""></span><span><strong>3 Luma Tapers</strong><br><span class="small">Host set - 35% offer</span></span><span class="tier-price"><span class="tier-compare" data-next-bundle-display="originalPrice">$263.97</span><strong data-next-bundle-display="price">$173.97</strong></span>
+        </button>
+      </div>
+      <div data-next-package-toggle data-commerce-slot="order-bump">
+        <div data-next-toggle-card data-next-is-upsell="true" data-next-package-id="2" class="shade-bump">
+        <button type="button" class="bump-toggle" aria-label="Toggle extra smoked glass shade"><span class="box-check"><span os-component="check">✓</span></span></button>
+        <div class="shade-pair"><img src="{{ 'images/veyra-extra-shade.png' | campaign_asset }}" alt="Extra smoked glass shade"></div>
+        <div><strong>Add an extra smoked glass shade</strong><p class="small">A spare shade keeps the edit flexible between smoke and warmer table settings.</p></div>
+        <strong data-next-toggle-display="price">$27.99</strong>
+        </div>
+      </div>
+      <h2 style="font-size:34px;">Contact and delivery</h2>
+      <div class="grid-2"><input aria-label="First name*" placeholder="First name*" data-next-checkout-field="fname" os-checkout-validate="required" > <input aria-label="Last name*" placeholder="Last name*" data-next-checkout-field="lname" os-checkout-validate="required" ></div>
+<input aria-label="Email*" placeholder="Email*" data-next-checkout-field="email" os-checkout-validate="required" type="email" autocomplete="email">
+<input aria-label="Phone*" placeholder="Phone*" data-next-checkout-field="phone" os-checkout-validate="required" type="tel" autocomplete="tel-full">
+<input aria-label="Address*" placeholder="Address*" data-next-checkout-field="address1" os-checkout-validate="required" autocomplete="address-line1">
+<input aria-label="Apartment, suite, etc." placeholder="Apartment, suite, etc. (optional)" data-next-checkout-field="address2" autocomplete="address-line2">
+<div class="grid-3"><input aria-label="City*" placeholder="City*" data-next-checkout-field="city" os-checkout-validate="required" autocomplete="address-level2"><select aria-label="State" data-next-checkout-field="province" os-checkout-validate="required"><option value="">State*</option></select><input aria-label="ZIP*" placeholder="ZIP*" data-next-checkout-field="postal" os-checkout-validate="required" autocomplete="postal-code"></div>
+<select aria-label="Country" data-next-checkout-field="country" os-checkout-validate="required"><option value="">Country*</option></select>
+      <h2 style="font-size:34px;">Payment</h2>
+      {% campaign_include 'express-checkout.html' show_title=true %}
+{% campaign_include 'payment-methods.html' %}
+<div class="submit-section">
+  <div class="submit-section__disclaimer">By placing this order, you agree to this campaign's checkout terms and privacy notices.</div>
+  <button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-button">
+    <div data-pb-element="checkout-button-spinner" class="submit-button__loader"><div class="three-quarter-spinner black"></div></div>
+    <div data-pb-element="checkout-button-info" class="submit-button__content">
+      <div class="submit-button__main-text">Place order</div>
+      <div class="submit-button__subtext">Insured parcel - warm, portable light on its way</div>
+    </div>
+  </button>
+</div>
+    </form>
+    <aside class="checkout-summary-shell checkout-summary-shell--demeter card checkout-panel" data-commerce-slot="order-summary" aria-label="Your edit">
+  {% campaign_include 'cart-summary03.html' %}
+</aside>
+  </div>
+</main>

@@ -49,5 +49,39 @@
     "store_phone_tel": "tel:+18336277331",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "roadflare-v1": {
+    "name": "Roadflare Supply Co. - JumpBrick Pro",
+    "description": "Independent Roadflare / Limos campaign for JumpBrick Pro roadside power kit",
+    "entry_url": "",
+    "sdk_version": "0.4.18",
+    "store_name": "Roadflare Supply Co.",
+    "store_url": "",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
+  },
+  "veyra-v1": {
+    "name": "Veyra House - Luma Taper",
+    "description": "Independent Veyra / Demeter campaign for Luma Taper cordless table lamp",
+    "entry_url": "",
+    "sdk_version": "0.4.18",
+    "store_name": "Veyra House",
+    "store_url": "",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
   }
 }

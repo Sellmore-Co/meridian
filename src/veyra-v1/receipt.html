@@ -1,0 +1,44 @@
+---
+title: "Order Confirmed - Veyra House"
+page_type: receipt
+permalink: /veyra-v1/receipt/
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+body_class: "veyra shell force-light"
+---
+<header class="brandbar"><div class="wrap nav"><a class="logo" href="{{ 'index.html' | campaign_link }}">Veyra House</a><span class="pill">Order confirmed</span></div></header>
+<main class="section">
+  <div class="wrap receipt-grid">
+    <section class="card checkout-panel stack">
+      <div class="receipt-ok">✓</div>
+      <p class="eyebrow">Confirmation <span data-next-display="order.number">#VH-78104</span></p>
+      <h1 style="font-size:clamp(42px,6vw,76px);">Your Luma edit is confirmed.</h1>
+      <p class="lede">We will send tracking when your lamps leave the studio warehouse. Charge fully before first use, then dim low for dinner-length glow.</p>
+      <div class="grid-2">
+        <div class="card checkout-panel"><strong>Contact</strong><p class="small" data-next-display="order.customer.email">taylor@example.com</p></div>
+        <div class="card checkout-panel"><strong>Shipping method</strong><p class="small">Standard insured parcel</p></div>
+        <div class="card checkout-panel"><strong>Ship to</strong><p class="small"><span data-next-display="order.shippingAddress.line1">151 O'Connor St</span>, <span data-next-display="order.shippingAddress.city">Ottawa</span></p></div>
+        <div class="card checkout-panel"><strong>Payment</strong><p class="small">Credit card ending in 4242</p></div>
+      </div>
+      <a class="btn" href="{{ 'index.html' | campaign_link }}">Return to Veyra House</a>
+    </section>
+    <aside class="card checkout-panel stack" data-commerce-slot="receipt-order-summary">
+      <h2 style="font-size:36px;">Order summary</h2>
+      <template id="veyra-v1-order-item-template">
+        <div class="summary-line" data-package-id="{item.packageId}"><span>{item.quantity}x {item.name}</span><strong>{item.price}</strong></div>
+      </template>
+      <div data-item-template-id="veyra-v1-order-item-template" data-next-order-items class="cart-items__list"></div>
+      <div class="fallback-summary">
+        <div class="summary-line"><span>2 Luma Tapers</span><strong>$131.98</strong></div>
+        <div class="summary-line"><span>Extra smoked glass shade</span><strong>$27.99</strong></div>
+        <div class="summary-line"><span>Twin Dock Charging Tray</span><strong>$56.99</strong></div>
+      </div>
+      <div class="summary-line"><span>Subtotal</span><strong data-next-display="order.subtotal">$216.97</strong></div>
+      <div class="summary-line"><span>Shipping</span><strong data-next-display="order.shipping">$0.00</strong></div>
+      <div class="summary-line"><span>Tax</span><strong data-next-display="order.tax">$21.70</strong></div>
+      <div class="summary-line" style="font-size:24px;"><strong>Total</strong><strong data-next-display="order.total">$238.67</strong></div>
+    </aside>
+  </div>
+</main>
