@@ -70,9 +70,16 @@ Fixes made during review:
 
 No major visual regressions remain from the local pass.
 
-## Pending Deploy Gates
+## Production Verification
 
-- Push to `main` and wait for Netlify auto-deploy.
-- Verify production SDK load at `https://meridian-skincare.netlify.app/mira-v2/` with no `Failed to fetch` errors.
+- Pushed to `main`; Netlify is serving `https://meridian-skincare.netlify.app/mira-v2/`.
+- Production checkout loaded at `/mira-v2/checkout/?forcePackageId=1:3`.
+- Campaign Cart SDK assets loaded.
+- Campaigns API calls to `/api/v1/campaigns/` and `/api/v1/carts/calculate/` returned `200`; no CORS or `Failed to fetch` errors on production.
+- Landing bundle-card click verified on production: the 5-bottle card navigates to `/mira-v2/checkout/?forcePackageId=1:5`.
+- Bump check after deploy: Mira Travel Pouch renders as a single `$10.00` add-on on the 3-bottle checkout.
+
+Remaining:
+
 - Run spec-aware QA after the Map Builder spec is re-saved and a fresh Map ID is available.
 - Place one sandbox `test_card` order with `--test-order accept --cart 1:3`.
