@@ -6,3 +6,11 @@
   from = "/"
   to = "/theduo-v1/"
   status = 302
+
+# Mira v1 — multi-funnel split (Linear SELL-220)
+# Edge function fires only at /mira-v1/ campaign root and 302s to one of the
+# two funnels with sticky cookie. Direct hits to /mira-v1/listicle/* or
+# /mira-v1/advertorial/* bypass the function entirely.
+[[edge_functions]]
+  function = "mira-v1-split"
+  path = "/mira-v1/"

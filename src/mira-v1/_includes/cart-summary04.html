@@ -1,0 +1,83 @@
+{% comment %}
+  cart-summary04 — order summary panel for Mira checkout right column.
+  data-next-cart-summary surfaces the SDK's reactive line items and totals.
+{% endcomment %}
+<div data-next-catalog-component="order-summary" class="summary-wrapper" data-next-cart-summary>
+  <div class="order-summary">
+    <h4 class="order-summary__title">Order Summary</h4>
+    <div class="order-summary__content">
+
+      <div class="cart-items cart-items__list">
+        <div data-summary-lines>
+          {% comment %} SDK clones a <template> for each cart line. Designer placeholder shown. {% endcomment %}
+          <div data-package-id="1" class="cart-item">
+            <div class="cart-item__wrapper">
+              <div class="cart-item__image-container">
+                <div class="cart-item__quantity-badge"><div class="cart-item__quantity">3</div></div>
+                <img src="{{ 'images/mira-bundle-3.svg' | campaign_asset }}" alt="Mira Joint" class="cart-item__image">
+              </div>
+              <div class="cart-item__details">
+                <div class="cart-item__content">
+                  <div class="cart-item__description">
+                    <div class="cart-item__header">
+                      <div class="cart-item__title">Mira Joint Soft-Chews</div>
+                    </div>
+                    <div class="cart-item__frequency">
+                      <span data-next-hide="item.isRecurring">One-time purchase · 90-day supply</span>
+                    </div>
+                  </div>
+                  <div class="cart-item__pricing">
+                    <div class="cart-price price--original">$207.00</div>
+                    <div class="checkout__line-item__final-price">$117.00</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-totals os-cart-summary-totals">
+        <div class="order-totals__section">
+          <div class="order-totals__line">
+            <div class="order-totals__label">Subtotal</div>
+            <div class="order-totals__value" data-next-display="cart.subtotal">$207.00</div>
+          </div>
+        </div>
+
+        <div class="order-totals__section">
+          <ul class="order-totals__discount-list" data-next-discounts="offer">
+            <li class="order-totals__line">
+              <div class="order-totals__label text-muted">Spring sale (50% off)</div>
+              <div class="order-totals__value text-muted">−$90.00</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="order-totals__section">
+          <div class="order-totals__line">
+            <div class="order-totals__label">Shipping</div>
+            <div class="order-totals__value" data-next-display="cart.shipping" style="color:var(--forest);font-weight:600;">FREE</div>
+          </div>
+          <div class="order-totals__line">
+            <div class="order-totals__label">Sales tax</div>
+            <div class="order-totals__value" data-next-display="cart.tax">$0.00</div>
+          </div>
+        </div>
+
+        <div class="order-totals__total">
+          <div class="order-totals__label">Total</div>
+          <div class="order-totals__value" data-next-display="cart.total">$117.00</div>
+        </div>
+        <div class="order-savings">You're saving $90 today</div>
+      </div>
+
+      <div class="summary__trust">
+        <div><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>90-day money-back guarantee — no questions</div>
+        <div><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>Ships in 24h from Boulder · 2-4 day delivery</div>
+        <div><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>Skip, pause, or cancel anytime</div>
+      </div>
+
+    </div>
+  </div>
+</div>

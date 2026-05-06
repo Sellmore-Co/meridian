@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Mira Joint — 1 bottle starter">
+  <defs>
+    <linearGradient id="b1-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7E9CC"/>
+      <stop offset="1" stop-color="#D9BC8A"/>
+    </linearGradient>
+    <radialGradient id="b1-glow" cx="0.5" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="b1-jar" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#F4F0E6"/>
+      <stop offset="1" stop-color="#D8CFB6"/>
+    </linearGradient>
+    <linearGradient id="b1-lid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3F5D4D"/>
+      <stop offset="1" stop-color="#1F2A24"/>
+    </linearGradient>
+    <linearGradient id="b1-label" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2C4A3C"/>
+      <stop offset="1" stop-color="#1B3026"/>
+    </linearGradient>
+    <radialGradient id="b1-shine" cx="0.3" cy="0.3" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#b1-bg)"/>
+  <rect width="600" height="600" fill="url(#b1-glow)"/>
+
+  <ellipse cx="300" cy="510" rx="125" ry="14" fill="#000" opacity="0.18"/>
+
+  <g>
+    <rect x="200" y="170" width="200" height="320" rx="30" fill="url(#b1-jar)" stroke="#B4A985" stroke-width="2"/>
+    <rect x="208" y="190" width="60" height="270" rx="14" fill="url(#b1-shine)"/>
+    <rect x="190" y="132" width="220" height="40" rx="12" fill="#2C4A3C"/>
+    <rect x="200" y="115" width="200" height="28" rx="9" fill="url(#b1-lid)"/>
+    <rect x="220" y="206" width="160" height="240" rx="9" fill="url(#b1-label)" stroke="#0F1814" stroke-width="1"/>
+    <rect x="230" y="216" width="140" height="220" rx="6" fill="none" stroke="#D4A24A" stroke-width="1.4" opacity="0.8"/>
+    <circle cx="300" cy="252" r="18" fill="none" stroke="#D4A24A" stroke-width="1.8"/>
+    <text x="300" y="260" font-family="Georgia, serif" font-weight="700" font-size="18" fill="#D4A24A" text-anchor="middle">M</text>
+    <text x="300" y="306" font-family="Georgia, serif" font-style="italic" font-weight="600" font-size="40" fill="#FAF6F0" text-anchor="middle" letter-spacing="1">Mira</text>
+    <line x1="245" y1="324" x2="355" y2="324" stroke="#D4A24A" stroke-width="1" opacity="0.5"/>
+    <text x="300" y="350" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="#FAF6F0" text-anchor="middle" letter-spacing="3">JOINT &amp; HIP</text>
+    <text x="300" y="395" font-family="Georgia, serif" font-weight="600" font-size="26" fill="#FAF6F0" text-anchor="middle">60</text>
+    <text x="300" y="412" font-family="Inter, sans-serif" font-weight="400" font-size="8" fill="#D4A24A" text-anchor="middle" letter-spacing="2.4">SOFT CHEWS</text>
+  </g>
+</svg>

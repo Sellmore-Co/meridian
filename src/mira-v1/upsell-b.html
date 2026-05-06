@@ -1,0 +1,185 @@
+---
+page_layout: base-landing.html
+title: "Mira — One-Time Offer"
+page_type: upsell
+currency: USD
+prevent_back_navigation: "true"
+upsell_accept_url: "receipt-b.html"
+upsell_decline_url: "receipt-b.html"
+styles:
+  - css/upsell.css
+scripts:
+  - js/countdown.js
+  - js/upsell.js
+---
+
+<div class="upsell-bar" data-next-upsell-context="mira-calm-offer">
+  <strong>WAIT! Your order isn't complete yet.</strong>
+  <small>Add this one-time offer to your order before you leave — <span class="timer" id="countdown" data-format="ms" data-seconds="299">04:59</span></small>
+</div>
+
+<header class="upsell-header">
+  <div class="container upsell-header__inner">
+    <div class="brand"><span class="brand-mark">M</span>Mira</div>
+    <div class="upsell-step">Step <strong>2 of 3</strong> · One-time offer</div>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="container">
+    <div class="intro__eyebrow">Order #DQF-A2H7K · One-Time Offer · 50% Off</div>
+    <h1 class="intro__title" data-pretext>Before you go — would you like to add Mira <em>Calm</em>?</h1>
+    <p class="intro__sub" data-pretext>72% of senior dogs with joint pain also have anxiety — separation, storms, vet visits, fireworks. Our calming chew is the second formula vets ask about most. Add it to today's order at the lowest price we've ever offered.</p>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="container">
+    <div class="offer__inner" data-next-bundle-card data-next-package-id="2" data-next-quantity="1">
+
+      <div class="gallery">
+        <div class="gallery__main" data-next-display="package.2.image">
+          <span class="gallery__main-tag">One-Time Offer</span>
+          <img src="https://d1w87fp8j98gad.cloudfront.net/media/cache/6c/49/6c493666be5b87680578da2bf277bc8e.webp" alt="Mira Calm — 60-count jar of calming soft-chews for dogs"/>
+        </div>
+        <div class="gallery__thumbs">
+          <div class="gallery__thumb is-active" aria-label="Front">M</div>
+          <div class="gallery__thumb" aria-label="Side">+</div>
+          <div class="gallery__thumb" aria-label="Ingredients">i</div>
+          <div class="gallery__thumb" aria-label="Lifestyle">★</div>
+        </div>
+      </div>
+
+      <div class="pitch">
+        <div class="pitch__line">Vet-Formulated · 90-Day Guarantee</div>
+        <h2 class="pitch__title" data-pretext>Mira Calm — for the storms, the vet visits, and the lonely afternoons.</h2>
+        <p class="pitch__deck" data-pretext>L-theanine, organic chamomile, and pharmaceutical-grade GABA — formulated to take the edge off without sedation. Most owners notice their dog settling within 30 minutes.</p>
+
+        <div class="pitch__rating">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <strong>4.8 of 5</strong>
+          <span class="muted">· 6,209 verified reviews</span>
+        </div>
+
+        <ul class="pitch__bullets">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 9 17 20 6"/></svg>
+            <div><strong>Works in 30 minutes</strong><span data-pretext>Fast-acting formula for storms, fireworks, separation, and unfamiliar visitors. No drowsiness, no "blank dog" effect.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 9 17 20 6"/></svg>
+            <div><strong>Pairs with Mira Joint</strong><span data-pretext>Anxiety amplifies joint pain — and joint pain triggers anxiety. The two formulas were designed to work together for senior dogs.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 9 17 20 6"/></svg>
+            <div><strong>Same beef-liver chew</strong><span data-pretext>Same delivery format as Mira Joint. Dogs take it as a treat. No pill-hiding, no fight, no spit-out.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12 9 17 20 6"/></svg>
+            <div><strong>Non-habit forming</strong><span data-pretext>Plant-based and amino-acid based — no benzodiazepines, no sedatives. Use daily or only on hard days. Your dog won't build tolerance.</span></div>
+          </li>
+        </ul>
+
+        <div class="pricing">
+          <div class="pricing__top">
+            <span class="pricing__price" data-next-display="package.2.salePrice">$24.50</span>
+            <span class="pricing__was" data-next-display="package.2.retailPrice">$49</span>
+            <span class="pricing__off">Save 50%</span>
+          </div>
+          <div class="pricing__sub" data-pretext>One-time offer price · <strong>only available on this page</strong> · ships with your Mira Joint order today.</div>
+
+          <div class="stepper-row">
+            <span class="stepper-label">Quantity:</span>
+            <div class="stepper" data-next-bundle-qty-for="2" role="group" aria-label="Quantity">
+              <button type="button" data-next-quantity-decrement aria-label="Decrease quantity">−</button>
+              <input type="text" inputmode="numeric" value="1" data-next-quantity-input aria-label="Quantity" min="1" max="6" readonly>
+              <button type="button" data-next-quantity-increment aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <button type="button" class="accept-btn" data-next-upsell-action="accept" data-next-package-id="2" data-next-voucher-code="CALM50">
+            <span>Yes — Add Mira Calm to My Order</span>
+            <small>+ <span data-next-display="upsell.2.total">$24.50</span> · No re-entering payment info</small>
+          </button>
+          <button type="button" class="decline-btn" data-next-upsell-action="decline">No thanks, complete my order without Mira Calm</button>
+        </div>
+
+        <div class="reassurance">
+          <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>Same 90-day guarantee</span>
+          <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>Ships in same box</span>
+          <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>One-click — no re-entering info</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE -->
+<section class="science">
+  <div class="container">
+    <div class="science__head">
+      <div class="hero__eyebrow">Three ingredients. Zero benzodiazepines.</div>
+      <h2 class="science__title" data-pretext>Why this calms without sedating.</h2>
+      <p class="science__sub" data-pretext>Most pet calming chews use one of two strategies: throw melatonin at the problem, or use sedative herbs that leave dogs drowsy. Mira Calm targets the GABA receptor system directly — the same path prescription anti-anxiety meds take, but with food-grade compounds.</p>
+    </div>
+    <div class="science__grid">
+      <div class="science__card">
+        <div class="science__icon">L</div>
+        <h4>L-Theanine (Suntheanine)</h4>
+        <p data-pretext>The amino acid found in green tea. Promotes alpha brainwave activity — the relaxed-but-alert state. Your dog stays themselves, just calmer. <strong>200mg per chew.</strong></p>
+      </div>
+      <div class="science__card">
+        <div class="science__icon">C</div>
+        <h4>Organic Chamomile</h4>
+        <p data-pretext>The flower extract that's been calming nervous systems for two thousand years. Activates GABA receptors directly — same path as prescription anxiolytics, no side effects. <strong>150mg per chew.</strong></p>
+      </div>
+      <div class="science__card">
+        <div class="science__icon">G</div>
+        <h4>PharmaGABA®</h4>
+        <p data-pretext>Pharmaceutical-grade GABA produced by lactobacillus fermentation — the form that actually crosses the blood-brain barrier in dogs. Used in clinical veterinary settings. <strong>50mg per chew.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="container">
+    <span class="stars" aria-hidden="true" style="color: var(--gold); font-size: 20px;">★★★★★</span>
+    <p class="testimonial__quote" data-pretext>"The first thunderstorm we didn't lose her under the bed in eight years."</p>
+    <div class="testimonial__author">
+      <strong>Diane W.</strong>
+      Bend, OR · Lola, Vizsla · 9yo
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="upsell-faq">
+  <h3 data-pretext>Quick questions before you decide.</h3>
+
+  <details>
+    <summary>Will adding this delay my order?</summary>
+    <div class="answer" data-pretext>No. It ships in the same box as your Mira Joint order, on the same shipping label. Same delivery date.</div>
+  </details>
+  <details>
+    <summary>Is it safe to give both formulas at once?</summary>
+    <div class="answer" data-pretext>Yes — they're designed to work together. The ingredients don't interact, and many vets specifically recommend the pairing for senior dogs with both joint pain and anxiety.</div>
+  </details>
+  <details>
+    <summary>Can I get this later if I skip now?</summary>
+    <div class="answer" data-pretext>You can buy Mira Calm anytime, but the 50% off price is only available on this page, with this order. Standard price afterwards is $49.</div>
+  </details>
+  <details>
+    <summary>What if my dog doesn't need it daily?</summary>
+    <div class="answer" data-pretext>That's fine — many owners use Mira Calm only for trigger events: storms, fireworks, vet visits, travel. A 60-chew jar lasts most owners 4-6 months when used as needed.</div>
+  </details>
+  <details>
+    <summary>Same guarantee?</summary>
+    <div class="answer" data-pretext>Same 90-day money-back guarantee. If your dog doesn't respond to it, send the empty jar back and we refund every penny — no questions, no re-stocking fee.</div>
+  </details>
+
+</section>

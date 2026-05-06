@@ -1,0 +1,270 @@
+---
+page_layout: base-landing.html
+title: "Mira — Checkout"
+page_type: checkout
+currency: USD
+predictive_address: "true"
+next_url: "upsell-a.html"
+styles:
+  - css/checkout.css
+scripts: []
+---
+
+{% campaign_include 'checkout-header.html' %}
+
+<div class="page-wrapper checkout--shop">
+  <div class="main-wrapper">
+    <div class="checkout-content">
+      <div class="checkout__layout">
+
+        <!-- LEFT COLUMN -->
+        <div class="checkout__column checkout__column--left">
+
+          <!-- Mobile order summary collapse -->
+          <div class="order-summary-mobile">
+            <details class="order-summary-mobile__accordion" data-next-accordion="order-summary">
+              <summary class="order-summary__trigger">
+                <div class="summary-toggle">
+                  <span data-next-accordion-text="order-summary">Show order summary</span>
+                  <svg viewBox="0 0 14 14" class="summary-toggle__icon" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2 4.75 7 9.25 12 4.75"/></svg>
+                </div>
+                <div class="order-summary__mobile-right">
+                  <div class="summary_price price--crossed">$147.00</div>
+                  <div class="summary_price price--total" data-next-display="cart.total">$117.00</div>
+                </div>
+              </summary>
+              <div class="accordion__panel">
+                <div class="cart-items__list">
+                  <div class="cart-item">
+                    <div class="cart-item__image-container">
+                      <img src="{{ 'images/mira-bundle-3.svg' | campaign_asset }}" alt="Mira Joint" class="cart-item__image"/>
+                      <div class="cart-item__quantity-badge"><div class="cart-item__quantity">3</div></div>
+                    </div>
+                    <div class="cart-item__details">
+                      <div class="cart-item__title">Mira Joint Soft-Chews</div>
+                      <div class="cart-item__frequency">3-bottle bundle · 90-day supply</div>
+                    </div>
+                    <div class="cart-item__pricing">
+                      <div class="cart-price price--original">$147.00</div>
+                      <div class="checkout__line-item__final-price">$117.00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          {% campaign_include 'express-checkout.html' %}
+
+          <!-- form -->
+          <form data-next-checkout="form" id="combo_form" method="post" novalidate>
+            <div class="form-content">
+              <div class="form-sections" style="display: grid; gap: var(--sp-4);">
+
+                <!-- CONTACT -->
+                <div class="form-section form-section--first">
+                  <div class="form-section__header">
+                    <h2 class="form-section__title">Contact</h2>
+                    <span class="have-account">Have an account? <a href="#">Log in</a></span>
+                  </div>
+                  <div class="form-grid">
+                    <div class="form-grid__row">
+                      <div class="form-group">
+                        <div class="form-input">
+                          <label for="email" class="label-checkout">Email</label>
+                          <input autocomplete="email" os-checkout-validate="required" name="email" data-name="Email" type="email" id="email" placeholder="Email*" data-next-checkout-field="email" class="input-flds">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkbox-wrapper">
+                    <label for="accepts_marketing" class="checkout__checkbox">
+                      <input type="checkbox" data-next-checkout-field="accepts_marketing" name="accepts_marketing" id="accepts_marketing" class="checkbox__input" checked>
+                      <div class="checkbox__label">Email me with order updates and senior-dog care tips</div>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- SHIPPING -->
+                <div class="form-section">
+                  <div class="form-section__header">
+                    <h2 class="form-section__title">Shipping</h2>
+                  </div>
+                  <div data-next-component="shipping-form">
+                    <div class="form-grid">
+
+                      <!-- Country (spec ships to US + AE) -->
+                      <div data-next-component="shipping-field-row" class="form-grid__row">
+                        <div class="form-group">
+                          <div class="form-input">
+                            <label for="shipping_country" class="label-checkout">Country</label>
+                            <div class="select-form-wrapper">
+                              <select autocomplete="country-name" os-checkout-validate="required" data-next-checkout-field="country" id="shipping_country" class="input-flds select-field">
+                                <option value="US" selected>United States</option>
+                                <option value="AE">United Arab Emirates</option>
+                              </select>
+                              <div class="caret-down">
+                                <div class="select-arrow">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="2 4.75 7 9.25 12 4.75"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- First/Last name -->
+                      <div data-next-component="shipping-field-row" class="form-grid__row">
+                        <div class="form-group">
+                          <div class="form-input">
+                            <label for="shipping_fname" class="label-checkout">First Name</label>
+                            <input autocomplete="given-name" os-checkout-validate="required" placeholder="First Name*" maxlength="256" name="shipping_fname" data-name="Shipping First Name" type="text" id="shipping_fname" data-next-checkout-field="fname" class="input-flds">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-input">
+                            <label for="shipping_lname" class="label-checkout">Last Name</label>
+                            <input autocomplete="family-name" os-checkout-validate="required" placeholder="Last Name*" maxlength="256" name="shipping_lname" data-name="Shipping Last Name" type="text" id="shipping_lname" data-next-checkout-field="lname" class="input-flds">
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Address1 with leading icon -->
+                      <div data-next-component="shipping-field-row" class="form-grid__row">
+                        <div class="form-group">
+                          <div class="form-input">
+                            <label for="shipping_address1" class="label-checkout">Address</label>
+                            <div style="position:relative;">
+                              <div class="form-input-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none">
+                                  <circle cx="6" cy="6" r="4" stroke="currentColor" stroke-width="1"/>
+                                  <path stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" d="m9.25 9.25 2.5 2.5"/>
+                                </svg>
+                              </div>
+                              <input autocomplete="address-line1" os-checkout-validate="required" placeholder="Address*" id="shipping_address1" data-next-checkout-field="address1" class="input-flds">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Address2 -->
+                      <div data-next-component="shipping-field-row" class="form-grid__row">
+                        <div class="form-group">
+                          <div class="form-input">
+                            <label for="shipping_address2" class="label-checkout">Apartment, suite, etc. (optional)</label>
+                            <input autocomplete="address-line2" name="shipping_address2" data-name="Shipping Address 2" type="text" id="shipping_address2" placeholder="Apt, suite (optional)" maxlength="256" data-next-checkout-field="address2" class="input-flds">
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- City + State + ZIP -->
+                      <div data-next-component="shipping-field-row" data-os-component="location" class="form-grid__row">
+                        <div class="form-group">
+                          <div class="form-input">
+                            <label for="shipping_city" class="label-checkout">City</label>
+                            <input autocomplete="address-level2" os-checkout-validate="required" placeholder="City*" maxlength="256" name="shipping_city" data-name="Shipping City" type="text" id="shipping_city" data-next-checkout-field="city" class="input-flds">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-input">
+                            <label for="shipping_province" class="label-checkout">State</label>
+                            <div class="select-form-wrapper">
+                              <select autocomplete="address-level1" os-checkout-validate="required" name="shipping_province" data-name="Shipping Province" id="shipping_province" data-next-checkout-field="province" class="input-flds select-field">
+                                <option value="">Select State</option>
+                                <option>CA</option><option>CO</option><option>NY</option><option>TX</option><option>VT</option>
+                              </select>
+                              <div class="caret-down">
+                                <div class="select-arrow">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="2 4.75 7 9.25 12 4.75"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-input">
+                            <label for="shipping_postal_code" class="label-checkout">ZIP Code</label>
+                            <input autocomplete="postal-code" os-checkout-validate="required" placeholder="ZIP*" maxlength="10" name="shipping_postal_code" type="text" id="shipping_postal_code" inputmode="numeric" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)" data-next-checkout-field="postal" class="input-flds">
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Phone -->
+                      <div data-next-component="shipping-field-row" class="form-grid__row">
+                        <div class="form-group">
+                          <div class="form-input">
+                            <label for="phone" class="label-checkout">Phone</label>
+                            <input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" class="input-flds">
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ─── bump-check02 — package_id=3 (Mira Travel Pouch / $10) ─── -->
+                {% campaign_include 'bump-check02.html' package_id=3 package_name='a refillable Mira Travel Pouch' bump_image='https://d1w87fp8j98gad.cloudfront.net/media/cache/0e/5b/0e5b25a30d190a7a9655b65e73c0e19b.webp' bump_image_alt='Mira refillable travel pouch' %}
+
+                <!-- ─── payment-methods (apple_pay + bankcard + google_pay, no PayPal) ─── -->
+                <div class="form-section form-section--last">
+                  <div class="form-section__header">
+                    <h2 class="form-section__title">Payment</h2>
+                    <div class="form-section__subtitle">All transactions are secure and encrypted.</div>
+                  </div>
+                  {% campaign_include 'payment-methods.html' show_apple_pay=true show_google_pay=true %}
+                </div>
+
+                <!-- SUBMIT -->
+                <div class="submit-section">
+                  <div class="submit-section__disclaimer">By clicking the button below, you agree with our Terms of Use and Privacy Policy.</div>
+                  <div class="submit-section__button">
+                    <button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-button">
+                      <div data-pb-element="checkout-button-spinner" class="submit-button__loader">
+                        <div class="three-quarter-spinner black"></div>
+                      </div>
+                      <div data-pb-element="checkout-button-info" class="submit-button__content">
+                        <div class="submit-button__text">
+                          <div data-i18n="complete_purchase" class="submit-button__main-text">COMPLETE PURCHASE →</div>
+                        </div>
+                        <div data-i18n="try_risk_free" class="submit-button__subtext">TRY IT RISK FREE — 90-DAY MONEY-BACK GUARANTEE</div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </form>
+
+          <!-- Guarantee strip -->
+          <div class="guarantee-section">
+            <div class="guarantee-badge">90<small>DAY</small></div>
+            <div class="text-xs"><strong>90-Day Money-Back Guarantee:</strong> Try Mira risk-free for the full 90-day cycle. If your dog isn't measurably better, send the empty jars back for a full refund — including shipping. No re-stocking fee.</div>
+          </div>
+
+          {% campaign_include 'checkout-footer-links.html' %}
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="checkout__column checkout__column--right">
+          <div class="checkout__summary">
+            <div class="summary-desktop">
+              <div class="summary-wrap">
+                <div class="summary-holder">
+                  {% campaign_include 'cart-summary04.html' %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

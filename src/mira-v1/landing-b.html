@@ -1,0 +1,409 @@
+---
+page_layout: base-landing.html
+title: "Mira — The Vet-Formulated Joint Chew Bringing Senior Dogs Back to Themselves"
+page_type: product
+currency: USD
+next_url: "checkout-b.html"
+styles:
+  - css/landing.css
+scripts:
+  - js/countdown.js
+  - js/bundle-selector.js
+---
+
+<div class="promo-bar">
+  <strong>SPRING SALE</strong> · Save up to 60% · Ends in <span class="timer" id="countdown" data-format="hms" data-seconds="14002">04:13:22</span>
+</div>
+
+{% campaign_include 'nav.html' %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <div class="hero__eyebrow">Vet-Formulated · 90-Day Guarantee</div>
+      <h1 class="hero__title" data-pretext>Bring your senior dog <em>back to themselves</em> in 21 days — or it's free.</h1>
+      <p class="hero__deck" data-pretext>Mira is the soft-chew that's quietly replacing prescription joint meds in clinics. Green-lipped mussel, clinical-band MSM, and absorption-paired curcumin — in a chew dogs actually beg for.</p>
+      <div class="hero__rating">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+        </span>
+        <strong>4.9 of 5</strong>
+        <span class="muted">· 12,847 verified reviews</span>
+      </div>
+      <ul class="hero__benefits">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9 17 20 6"/></svg><span><strong>72% of senior dogs</strong> show measurable improvement within 21 days</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9 17 20 6"/></svg><span><strong>Clinical-band dose</strong> — same as veterinary studies, not the placebo amounts in big brands</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9 17 20 6"/></svg><span><strong>Beef-liver soft-chew</strong> — dogs take it like a treat, no pill-hiding</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9 17 20 6"/></svg><span><strong>Made in Colorado</strong> · Third-party tested · NASC-certified facility</span></li>
+      </ul>
+      <div class="hero__cta-row">
+        <a href="#bundle" class="btn btn--lg btn--primary">See Bundles & Pricing</a>
+        <span class="hero__guarantee">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/><path d="M5 8l2 2 4-4"/></svg>
+          90-day money-back guarantee
+        </span>
+      </div>
+    </div>
+    <div class="hero__media" data-next-display="package.1.image">
+      <img src="https://d1w87fp8j98gad.cloudfront.net/media/cache/6e/c2/6ec2a2e85a0d3c13d0cf5c86899b3abf.webp" alt="Mira Joint &amp; Hip — 60-count jar of beef-liver flavored soft-chews for senior dogs" />
+      <div class="hero__media-cap">"He's like a 6-year-old again."</div>
+    </div>
+  </div>
+</section>
+
+<!-- AS SEEN IN -->
+<section class="as-seen">
+  <div class="container as-seen__inner">
+    <span class="as-seen__label">Featured in</span>
+    <span class="as-seen__logo">The Daily Tail</span>
+    <span class="as-seen__logo">Modern Vet</span>
+    <span class="as-seen__logo">Companion Quarterly</span>
+    <span class="as-seen__logo">Whole Dog Journal</span>
+    <span class="as-seen__logo">Senior Pet Today</span>
+  </div>
+</section>
+
+<!-- BUNDLE SELECTOR — package_id=1, qty 1/3/6 per spec -->
+<section class="bundle" id="bundle" data-next-bundle-selector="mira-joint-bundle">
+  <div class="container">
+    <div class="bundle__head">
+      <div class="bundle__eyebrow">Spring Sale · Limited Time</div>
+      <h2 class="bundle__title" data-pretext>Choose your supply.</h2>
+      <p class="bundle__sub" data-pretext>Most owners see results within 21 days, but full joint regeneration takes 60–90. We recommend the 3-bottle bundle as a starting point.</p>
+    </div>
+
+    <div class="bundle__cards" role="radiogroup" aria-label="Bundle quantity">
+
+      <!-- 1 BOTTLE — package_id=1, qty=1 -->
+      <article class="bundle-card"
+        data-next-bundle-card
+        data-next-package-id="1"
+        data-next-quantity="1"
+        data-next-bundle-items='[{"package_id":"1","quantity":1}]'
+        role="radio" aria-checked="false" tabindex="0">
+        <div class="bundle-card__check" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 7 12 13 4"/></svg>
+        </div>
+        <div class="bundle-card__qty">1<span class="bundle-card__qty-unit">bottle</span></div>
+        <div class="bundle-card__supply">30-day starter supply · 60 chews</div>
+        <div class="bundle-card__product" data-next-display="package.1.image"><img src="{{ 'images/mira-bundle-1.svg' | campaign_asset }}" alt="One bottle of Mira Joint &amp; Hip — 30-day starter supply"/></div>
+        <div class="bundle-card__price-row">
+          <span class="bundle-card__price" data-next-display="package.1.salePrice">$49</span>
+          <span class="bundle-card__price-was" data-next-display="package.1.retailPrice">$69</span>
+        </div>
+        <div class="bundle-card__per">$0.82 per chew · <strong>save 29%</strong></div>
+        <span class="bundle-card__save">Try Before Committing</span>
+        <ul class="bundle-card__perks">
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>30-day starter supply</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>Free US shipping</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>90-day guarantee</li>
+        </ul>
+        <div class="bundle-card__cta"><button type="button" class="btn btn--ghost" data-next-bundle-action="select">Select 1 Bottle</button></div>
+      </article>
+
+      <!-- 3 BOTTLES — package_id=1, qty=3 (Mira x3 offer triggers at qty≥3) -->
+      <article class="bundle-card is-selected"
+        data-next-bundle-card
+        data-next-package-id="1"
+        data-next-quantity="3"
+        data-next-bundle-items='[{"package_id":"1","quantity":3}]'
+        data-best="true"
+        role="radio" aria-checked="true" tabindex="0">
+        <div class="bundle-card__badge">Most Popular · Save 20%</div>
+        <div class="bundle-card__check" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 7 12 13 4"/></svg>
+        </div>
+        <div class="bundle-card__qty">3<span class="bundle-card__qty-unit">bottles</span></div>
+        <div class="bundle-card__supply">90-day full-cycle supply · 180 chews</div>
+        <div class="bundle-card__product" data-next-display="package.1.image"><img src="{{ 'images/mira-bundle-3.svg' | campaign_asset }}" alt="Three bottles of Mira Joint &amp; Hip — 90-day full-cycle supply"/></div>
+        <div class="bundle-card__price-row">
+          <span class="bundle-card__price" data-next-display="package.1.salePrice">$117</span>
+          <span class="bundle-card__price-was" data-next-display="package.1.retailPrice">$147</span>
+        </div>
+        <div class="bundle-card__per">$0.65 per chew · <strong>save 20%</strong></div>
+        <span class="bundle-card__save">Vet's Recommended Cycle</span>
+        <ul class="bundle-card__perks">
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>90-day full regeneration cycle</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>Free priority US shipping</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>Free joint-mobility tracker booklet</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>90-day guarantee</li>
+        </ul>
+        <div class="bundle-card__cta"><button type="button" class="btn btn--ghost" data-next-bundle-action="select">Selected · Add to Cart</button></div>
+      </article>
+
+      <!-- 5 BOTTLES — package_id=1, qty=5 (Mira x5 offer adjusted to trigger at qty≥5) -->
+      <article class="bundle-card"
+        data-next-bundle-card
+        data-next-package-id="1"
+        data-next-quantity="5"
+        data-next-bundle-items='[{"package_id":"1","quantity":5}]'
+        role="radio" aria-checked="false" tabindex="0">
+        <div class="bundle-card__qty">5<span class="bundle-card__qty-unit">bottles</span></div>
+        <div class="bundle-card__supply">5-month supply · 300 chews · multi-dog ready</div>
+        <div class="bundle-card__product" data-next-display="package.1.image"><img src="{{ 'images/mira-bundle-5.svg' | campaign_asset }}" alt="Five bottles of Mira Joint &amp; Hip — 5-month supply or multi-dog household"/></div>
+        <div class="bundle-card__price-row">
+          <span class="bundle-card__price" data-next-display="package.1.salePrice">$147</span>
+          <span class="bundle-card__price-was" data-next-display="package.1.retailPrice">$245</span>
+        </div>
+        <div class="bundle-card__per">$0.49 per chew · <strong>save 40%</strong></div>
+        <span class="bundle-card__save">Best Value · Multi-Dog Households</span>
+        <ul class="bundle-card__perks">
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>5-month supply or 2-3 dog household</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>Free priority US shipping</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>Free joint-mobility tracker booklet</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>Free Mira-branded slow-feeder bowl</li>
+          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>90-day guarantee</li>
+        </ul>
+        <div class="bundle-card__cta"><button type="button" class="btn btn--ghost" data-next-bundle-action="select">Select 5 Bottles</button></div>
+      </article>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust-row__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/></svg>
+        90-day money-back guarantee
+      </div>
+      <div class="trust-row__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 12h6m4 0h.01"/></svg>
+        Free US shipping (orders $49+)
+      </div>
+      <div class="trust-row__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4-8-12a8 8 0 1116 0c0 8-8 12-8 12z"/><circle cx="12" cy="10" r="3"/></svg>
+        Made in Colorado
+      </div>
+      <div class="trust-row__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 12 9 18 21 6"/></svg>
+        NASC-certified facility
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS / SCIENCE -->
+<section class="how" id="science">
+  <div class="container">
+    <div class="how__head">
+      <div class="how__eyebrow">How Mira Works</div>
+      <h2 class="how__title" data-pretext>Three angles. One chew. Twenty-one days.</h2>
+      <p class="how__sub" data-pretext>Most joint chews fail because they target inflammation alone, at sub-clinical doses. Mira does three things at once, at the doses veterinary research actually uses.</p>
+    </div>
+    <div class="how__steps">
+      <div class="how__step">
+        <div class="how__step-num">01 · Days 1–7</div>
+        <h3 class="how__step-title">Calm the inflammation.</h3>
+        <p class="how__step-body" data-pretext>New Zealand green-lipped mussel delivers Omega-3 ETA — a fatty acid that's specifically anti-inflammatory in joint tissue. Most owners notice softer mornings within the first week.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__step-num">02 · Days 8–28</div>
+        <h3 class="how__step-title">Rebuild the cushion.</h3>
+        <p class="how__step-body" data-pretext>Clinical-band MSM and glucosamine — at the dose veterinary studies use, not the trace amount in big brands — help rebuild the cartilage cushion in the hip and knee joints.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__step-num">03 · Days 21–90</div>
+        <h3 class="how__step-title">Lock in mobility.</h3>
+        <p class="how__step-body" data-pretext>Curcumin C3 with black-pepper extract — paired for 2,000% absorption — provides daily systemic anti-inflammatory protection. Your dog stays comfortable, not just temporarily.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="ingredients" id="ingredients">
+  <div class="container">
+    <div class="ingredients__head">
+      <div class="hero__eyebrow">Six Ingredients · Zero Filler</div>
+      <h2 class="ingredients__title" data-pretext>What's actually in every soft-chew.</h2>
+      <p class="ingredients__sub" data-pretext>No hidden fillers. No proprietary-blend obfuscation. Every dose listed in milligrams, third-party verified.</p>
+    </div>
+    <div class="ingredients__grid">
+      <div class="ingredient">
+        <div class="ingredient__img">Green-lipped mussel</div>
+        <div class="ingredient__role">Anti-Inflammatory</div>
+        <h3 class="ingredient__title">Green-Lipped Mussel</h3>
+        <p class="ingredient__body" data-pretext>Wild-harvested from New Zealand. Source of Omega-3 ETA — a joint-specific fatty acid 7x more potent than fish oil for arthritis. <strong>500mg per chew.</strong></p>
+      </div>
+      <div class="ingredient">
+        <div class="ingredient__img">Glucosamine HCL</div>
+        <div class="ingredient__role">Cartilage Builder</div>
+        <h3 class="ingredient__title">Glucosamine HCL</h3>
+        <p class="ingredient__body" data-pretext>The form vets actually use in clinical settings — not glucosamine sulfate, which is cheaper but less bioavailable for dogs. <strong>500mg per chew.</strong></p>
+      </div>
+      <div class="ingredient">
+        <div class="ingredient__img">MSM</div>
+        <div class="ingredient__role">Connective Tissue</div>
+        <h3 class="ingredient__title">MSM</h3>
+        <p class="ingredient__body" data-pretext>Methylsulfonylmethane — the sulfur compound that supports the connective-tissue matrix. We use OptiMSM, the only pharmaceutical-grade source. <strong>200mg per chew.</strong></p>
+      </div>
+      <div class="ingredient">
+        <div class="ingredient__img">Curcumin C3 + BioPerine</div>
+        <div class="ingredient__role">Daily Protection</div>
+        <h3 class="ingredient__title">Curcumin C3 + BioPerine</h3>
+        <p class="ingredient__body" data-pretext>Curcumin alone is poorly absorbed by dogs. Pairing with piperine (BioPerine) increases absorption by 2,000%. We use both — most brands don't. <strong>100mg + 5mg per chew.</strong></p>
+      </div>
+      <div class="ingredient">
+        <div class="ingredient__img">Chondroitin Sulfate</div>
+        <div class="ingredient__role">Cushion Support</div>
+        <h3 class="ingredient__title">Chondroitin Sulfate</h3>
+        <p class="ingredient__body" data-pretext>Bovine-sourced, low-molecular-weight chondroitin — the form that crosses the joint membrane. Works synergistically with glucosamine for cartilage maintenance. <strong>200mg per chew.</strong></p>
+      </div>
+      <div class="ingredient">
+        <div class="ingredient__img">Hyaluronic Acid</div>
+        <div class="ingredient__role">Joint Lubrication</div>
+        <h3 class="ingredient__title">Hyaluronic Acid</h3>
+        <p class="ingredient__body" data-pretext>The molecule responsible for synovial-fluid viscosity. Helps joints glide instead of grind — especially noticeable in dogs with morning stiffness. <strong>20mg per chew.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews__head">
+      <h2 class="reviews__title" data-pretext>What 12,847 owners are saying.</h2>
+      <div class="reviews__summary">
+        <span class="reviews__rating">4.9</span>
+        <div>
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg>
+          </span>
+          <div class="reviews__rating-detail">12,847 verified reviews · 96% would recommend</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews__grid">
+      <article class="review">
+        <span class="stars review__stars" aria-hidden="true">★★★★★</span>
+        <h3 class="review__title">"The 13-year-old who started running again."</h3>
+        <p class="review__body" data-pretext>Our Bernese, Otto, hadn't run in over a year. Day 18 on Mira, he chased a squirrel. I burst into tears. He's not the dog he was at 5 — he's still 13 — but he's <em>back</em>. The body language is what gets me. He looks at me like he sees me again.</p>
+        <div class="review__author">
+          <div class="review__avatar" aria-hidden="true">MK</div>
+          <div>
+            <div class="review__author-name">Megan K. <span class="review__verified">✓ Verified buyer</span></div>
+            <div class="review__author-meta">Bend, OR · Otto, Bernese · 13yo</div>
+          </div>
+        </div>
+      </article>
+      <article class="review">
+        <span class="stars review__stars" aria-hidden="true">★★★★★</span>
+        <h3 class="review__title">"Cancelled the joint surgery consult."</h3>
+        <p class="review__body" data-pretext>Our vet wanted to refer us to an orthopedic surgeon for our lab. We tried Mira as a "before we go that route" experiment. Six weeks later we cancelled the consult. She walks the perimeter fence twice a day again — that's her favorite thing. The chew is real food, not a pill, and she's never refused one.</p>
+        <div class="review__author">
+          <div class="review__avatar" aria-hidden="true">JR</div>
+          <div>
+            <div class="review__author-name">James R. <span class="review__verified">✓ Verified buyer</span></div>
+            <div class="review__author-meta">Asheville, NC · Pepper, Lab · 10yo</div>
+          </div>
+        </div>
+      </article>
+      <article class="review">
+        <span class="stars review__stars" aria-hidden="true">★★★★★</span>
+        <h3 class="review__title">"My vet asked what I was using."</h3>
+        <p class="review__body" data-pretext>At Daisy's annual, our vet noticed how much steadier her gait was and asked what changed. I said Mira. She wrote it down. Two months later my friend's vet — different practice — recommended it to her. Word's getting around. The 3-bottle bundle is the right move; results compound after week 4.</p>
+        <div class="review__author">
+          <div class="review__avatar" aria-hidden="true">AS</div>
+          <div>
+            <div class="review__author-name">Aisha S. <span class="review__verified">✓ Verified buyer</span></div>
+            <div class="review__author-meta">Brooklyn, NY · Daisy, Pit Mix · 11yo</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee__inner">
+      <div class="guarantee__seal">90<small>Day Trial</small></div>
+      <div>
+        <h3 class="guarantee__title" data-pretext>If your dog isn't measurably better in 90 days, you don't pay.</h3>
+        <p class="guarantee__body" data-pretext>Try Mira for the full 90-day cycle. If you don't see meaningful change in mobility, mood, or morning stiffness, send the empty jars back and we refund every penny — including shipping. No re-stocking fee. No "store credit." Real refund. We can offer this because 96% of owners never ask.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq__inner">
+    <h2 class="faq__title" data-pretext>Honest answers, including the ones we'd rather not give.</h2>
+
+    <details class="faq__item" open>
+      <summary>How long until I'll see results?</summary>
+      <div class="faq__answer" data-pretext>Most owners notice the first changes in days 4–7 — a softer morning, faster getting up, more interest in walks. The full effect is at week 8–12, when cartilage rebuild has had time to compound. We recommend the 3-bottle bundle for this reason.</div>
+    </details>
+
+    <details class="faq__item">
+      <summary>What sizes of dog is Mira for?</summary>
+      <div class="faq__answer" data-pretext>One formula, dose by weight: 1 chew/day for dogs 5–25 lb, 2 chews for 25–60 lb, 3 chews for 60–100 lb, 4 for 100+. Each jar is 60 chews — enough for a 30-day starter for most medium-large dogs.</div>
+    </details>
+
+    <details class="faq__item">
+      <summary>Can I give Mira alongside my dog's existing meds?</summary>
+      <div class="faq__answer" data-pretext>Mira is a nutritional supplement, not a drug — it's compatible with most prescriptions. That said: always tell your vet what you're starting. Many vets can reduce or eliminate prescription joint NSAIDs once Mira's effect kicks in, which is the outcome most owners actually want.</div>
+    </details>
+
+    <details class="faq__item">
+      <summary>Why is Mira more expensive than the joint chews at the pet store?</summary>
+      <div class="faq__answer" data-pretext>Honest answer: we use clinical-band doses of every ingredient. The pet-store chews use 1/5 the dose at 1/3 the cost — which is why they don't work. We could cut the dose and charge less. We'd rather charge fairly and have your dog actually get better.</div>
+    </details>
+
+    <details class="faq__item">
+      <summary>What if my dog won't eat it?</summary>
+      <div class="faq__answer" data-pretext>It's a beef-liver soft-chew, hand-rolled in Colorado. Refusal rate is under 2% — and even then, the 90-day guarantee covers you. Send the jars back, get a full refund. We'd rather you tell other owners we did right by you than win an argument over $49.</div>
+    </details>
+
+    <details class="faq__item">
+      <summary>Is the subscription required?</summary>
+      <div class="faq__answer" data-pretext>No. Subscribe & Save is optional and adds 15% off + free shipping. Skip, pause, or cancel anytime in two clicks. We don't trap subscriptions. Most owners switch from one-time to subscription after the first bottle.</div>
+    </details>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="container">
+    <h2 class="final__title" data-pretext>Your dog has been waiting for this.</h2>
+    <p class="final__sub" data-pretext>You can keep watching them slow down. Or you can try the chew that's bringing senior dogs back to themselves — backed by a guarantee that means you only pay if it works.</p>
+    <a href="#bundle" class="btn btn--lg btn--primary">Choose Your Bundle →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <div class="footer__brand">Mira</div>
+      <div>© 2026 Mira Pet Health Co. · Made in Colorado.</div>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="#">Contact</a>
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Sticky add-to-cart -->
+<div class="sticky-cart" id="sticky-cart" aria-hidden="true">
+  <div class="sticky-cart__inner">
+    <div class="sticky-cart__info">
+      <strong>Mira Joint Soft-Chews</strong><br>
+      <span class="sticky-cart__price"><span id="sticky-qty">3</span> bottles · <span id="sticky-price">$117</span> · save 20%</span>
+    </div>
+    <a href="checkout-b.html" class="btn btn--primary" data-cta="landing-sticky-cart">Add to Cart →</a>
+  </div>
+</div>

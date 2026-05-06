@@ -1,0 +1,236 @@
+---
+page_layout: base-landing.html
+title: "Mira — Order Confirmed"
+page_type: receipt
+styles:
+  - css/receipt.css
+scripts:
+  - js/receipt.js
+---
+
+<header class="receipt-header">
+  <div class="container receipt-header__inner">
+    <div class="brand"><span class="brand-mark">M</span>Mira</div>
+    <div class="receipt-meta">
+      <span>Order <strong class="receipt-meta__num" data-next-display="order.number">#MR-DQF-A2H7K</strong></span>
+      <span>·</span>
+      <span data-next-display="order.placedAt">May 6, 2026</span>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <div>
+
+    <!-- HERO CONFIRMATION -->
+    <div class="hero">
+      <div class="hero__check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" stroke-width="2"/>
+          <polyline points="7 12 11 16 17 9"/>
+        </svg>
+      </div>
+      <div>
+        <div class="hero__order-num">Confirmation #<strong data-next-display="order.number">MR-DQF-A2H7K</strong></div>
+        <h1 class="hero__title">Thank you, <em><span data-next-display="order.customer.firstName">Sarah</span></em>.</h1>
+        <p class="hero__sub" data-pretext>Your order is confirmed. We've sent a confirmation email to <strong data-next-display="order.customer.email">sarah.j@gmail.com</strong>. Buddy is going to feel different in 21 days — keep an eye on the morning stiffness.</p>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="panel">
+      <h2 class="panel__title">What happens next</h2>
+      <p class="panel__sub" data-pretext>Tracking arrives by email within 24 hours. Most orders deliver in 2-4 business days.</p>
+      <div class="timeline">
+        <div class="timeline__step is-done">
+          <div class="timeline__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="3 8 7 12 13 4"/></svg></div>
+          <div class="timeline__body">
+            <div class="timeline__title">Order placed</div>
+            <div class="timeline__detail"><strong>Today</strong> · payment confirmed · <span data-next-display="order.placedAt">May 6, 2026 · 9:24 AM</span></div>
+          </div>
+        </div>
+        <div class="timeline__step is-current">
+          <div class="timeline__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="12" height="8" rx="1"/><path d="M5 5V3h6v2"/></svg></div>
+          <div class="timeline__body">
+            <div class="timeline__title">Packing in Colorado</div>
+            <div class="timeline__detail"><strong>Within 24 hours</strong> · we'll send tracking by email</div>
+          </div>
+        </div>
+        <div class="timeline__step">
+          <div class="timeline__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 11V6h7v5M9 8h3l2 3v0H9zM5.5 13a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM12 13a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg></div>
+          <div class="timeline__body">
+            <div class="timeline__title">Shipped</div>
+            <div class="timeline__detail">Estimated <strong data-next-display="order.estimatedShipDate">Tuesday, May 7</strong></div>
+          </div>
+        </div>
+        <div class="timeline__step">
+          <div class="timeline__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 4l5 4-5 4"/></svg></div>
+          <div class="timeline__body">
+            <div class="timeline__title">Delivered</div>
+            <div class="timeline__detail">Estimated <strong data-next-display="order.estimatedDeliveryDate">Friday, May 10 — Tuesday, May 14</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER DETAILS -->
+    <div class="panel">
+      <h2 class="panel__title">Order details</h2>
+      <div class="details-grid">
+        <div>
+          <h4>Shipping to</h4>
+          <p>
+            <strong data-next-display="order.customer.name">Sarah Jenkins</strong>
+            <span data-next-display="order.shippingAddress.line1">412 Maple Avenue</span><br>
+            <span data-next-display="order.shippingAddress.line2">Apt 3B</span><br>
+            <span data-next-display="order.shippingAddress.city">Burlington</span>, <span data-next-display="order.shippingAddress.state">VT</span> <span data-next-display="order.shippingAddress.postcode">05401</span><br>
+            <span data-next-display="order.shippingAddress.country">United States</span>
+          </p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>
+            <strong data-next-display="order.customer.email">sarah.j@gmail.com</strong>
+            <span data-next-display="order.customer.phone">(802) 555-0117</span>
+          </p>
+          <h4 style="margin-top:var(--sp-5);">Payment</h4>
+          <p>
+            <strong>Visa ending <span data-next-display="order.payment.last4">4242</span></strong>
+            Charged today
+          </p>
+          <h4 style="margin-top:var(--sp-5);">Shipping method</h4>
+          <p><strong>Free Standard (US)</strong>2-4 business days</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT TO DO NEXT — onboarding -->
+    <div class="guide">
+      <div class="guide__head">
+        <div class="guide__icon" aria-hidden="true">M</div>
+        <div>
+          <h2 class="guide__title" data-pretext>While you wait — here's how to get the most out of Mira.</h2>
+          <p class="guide__sub" data-pretext>The 21-day mark is when most owners notice the change. Here's how to track it so you don't miss it.</p>
+        </div>
+      </div>
+      <ol class="guide__steps">
+        <li>
+          <div>
+            <strong>Take a "before" video this weekend.</strong>
+            <span data-pretext>Film your dog standing up after a nap. Save it in your phone. In three weeks, take the same shot. The change is more obvious than you'll remember.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Start with the recommended dose, not more.</strong>
+            <span data-pretext>One chew per 30 lb of dog, once a day, with food. We'll send the dosing chart with your order.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Watch the eyes around day 7.</strong>
+            <span data-pretext>Most owners see the eyes brighten before they see the body change. That's the inflammation backing off. The mobility comes after.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Reach out if you're not seeing change at day 21.</strong>
+            <span data-pretext>Email <strong>care@mirapet.co</strong> — we read every message. Most non-responders need a small dose adjustment, not a refund.</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- REFERRAL -->
+    <div class="referral">
+      <h3 class="referral__title" data-pretext>Know another senior dog who'd want this?</h3>
+      <p class="referral__sub" data-pretext>Share your code. They get $20 off, you get $20 in store credit when they order.</p>
+      <div class="referral__code-row">
+        <span class="referral__code" data-next-display="customer.referralCode">SARAH-MIRA-20</span>
+        <button type="button" class="referral__copy" id="copy-code">Copy</button>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="#" onclick="window.print(); return false;">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5V2h8v3M4 12H2V7a1 1 0 011-1h10a1 1 0 011 1v5h-2M4 9h8v5H4z"/></svg>
+        Print receipt
+      </a>
+      <a href="#" id="email-receipt">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h12v8H2zM2 4l6 5 6-5"/></svg>
+        Email me a copy
+      </a>
+      <a href="index.html">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8l6-6 6 6M4 7v6h8V7"/></svg>
+        Return to funnel index
+      </a>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN: receipt summary -->
+  <aside>
+    <div class="summary" data-next-order-summary>
+      <div class="summary__head">Order summary</div>
+
+      <div data-next-order-items>
+        <div class="line-item">
+          <div class="line-item__img" data-next-display="order.lines.0.image">
+            <img src="{{ 'images/mira-bundle-3.svg' | campaign_asset }}" alt="Mira Joint — 3 bottle bundle"/>
+            <span class="line-item__qty" data-next-display="order.lines.0.quantity">3</span>
+          </div>
+          <div>
+            <div class="line-item__name" data-next-display="order.lines.0.name">Mira - Joint &amp; Hip</div>
+            <div class="line-item__variant">3-bottle bundle · 90-day supply</div>
+          </div>
+          <div class="line-item__price" data-next-display="order.lines.0.subtotal">$117.00</div>
+        </div>
+        <div class="line-item">
+          <div class="line-item__img" data-next-display="order.lines.1.image">
+            <img src="{{ 'images/mira-calm.svg' | campaign_asset }}" alt="Mira Calm"/>
+            <span class="line-item__qty" data-next-display="order.lines.1.quantity">1</span>
+          </div>
+          <div>
+            <div class="line-item__name" data-next-display="order.lines.1.name">Mira Calm</div>
+            <div class="line-item__variant">One-time offer · 50% off</div>
+          </div>
+          <div class="line-item__price" data-next-display="order.lines.1.subtotal">$24.50</div>
+        </div>
+      </div>
+
+      <div class="summary__totals">
+        <div class="summary__totals-row">
+          <span>Subtotal</span>
+          <span data-next-display="order.subtotal">$141.50</span>
+        </div>
+        <div class="summary__totals-row summary__totals-row--free">
+          <span>Shipping</span>
+          <span>FREE</span>
+        </div>
+        <div class="summary__totals-row">
+          <span>Sales tax</span>
+          <span data-next-display="order.tax">$0.00</span>
+        </div>
+        <div class="summary__totals-row summary__totals-row--discount">
+          <span>Spring sale</span>
+          <span data-next-display="order.discount">−$30.00</span>
+        </div>
+        <div class="summary__total">
+          <span>Total paid</span>
+          <span data-next-display="order.total">$141.50</span>
+        </div>
+      </div>
+
+      <div class="summary__paid">
+        <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg> Paid · <strong>Visa •••• <span data-next-display="order.payment.last4">4242</span></strong></span>
+        <span data-next-display="order.placedAt">May 6, 9:24 AM</span>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer class="footer-thanks">
+  <p class="signature">Thank you for trusting us with your dog.</p>
+  <p>Mira Pet Health Co. · Made in Boulder, Colorado · <a href="#">care@mirapet.co</a></p>
+</footer>
