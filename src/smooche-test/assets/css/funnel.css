@@ -1,0 +1,37 @@
+:root {
+  --smooche-pink: #c95672;
+  --smooche-pink-dark: #a8425a;
+  --smooche-pink-light: #f7e3e9;
+  --smooche-cream: #fdf6f2;
+  --smooche-ink: #1a1a1a;
+  --smooche-muted: #6b6b6b;
+  --smooche-border: #e5e5e5;
+  --smooche-success: #2d7a4d;
+  --smooche-danger: #c0392b;
+  --smooche-bg: #ffffff;
+  --smooche-radius: 12px;
+  --smooche-radius-lg: 20px;
+  --smooche-shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+  --smooche-shadow-md: 0 4px 16px rgba(0,0,0,.06);
+  --font-display: "Playfair Display", "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+html, body { background: var(--smooche-bg); color: var(--smooche-ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+.smooche.shell { min-height: 100vh; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 48px 0; }
+.section.tight { padding: 24px 0; }
+
+.brandbar { background: #fff; border-bottom: 1px solid var(--smooche-border); padding: 16px 0; }
+.brandbar .nav { display: flex; align-items: center; justify-content: space-between; }
+.brandbar .logo { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: 1px; color: var(--smooche-ink); text-decoration: none; }
+.brandbar .pill { background: var(--smooche-pink-light); color: var(--smooche-pink-dark); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 999px; }
+
+/* Page-specific styles will be appended below as each page is exported. */

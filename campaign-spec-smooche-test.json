@@ -1,0 +1,1097 @@
+{
+  "schema_version": "4.2",
+  "builder_version": "0.2.2",
+  "generated_at": "2026-05-05T15:59:30.746Z",
+  "_provenance": {
+    "ops": [
+      "funnels.*.pages.*.label",
+      "funnels.*.pages.*.notes",
+      "funnels.*.pages.*.custom_fields",
+      "funnels.*.pages.*.figma_frame_url",
+      "funnels.*.pages.*.offers",
+      "global_config.sdk_version",
+      "campaign.tracking",
+      "campaign.footer_links",
+      "campaign.seo",
+      "figma_url"
+    ],
+    "api": [
+      "campaign.*",
+      "shipping_methods",
+      "offers",
+      "funnels.*.pages.*.packages.*.name",
+      "funnels.*.pages.*.packages.*.price"
+    ],
+    "derived": [
+      "funnels.*.pages.*.sdk_hints",
+      "funnels.*.pages.*.order",
+      "funnels.*.pages.*.is_entry",
+      "schema_version",
+      "builder_version",
+      "generated_at"
+    ],
+    "legacy": [
+      "funnel_pages"
+    ]
+  },
+  "campaign": {
+    "ref_id": 1556,
+    "slug": "smooche-test",
+    "id": "smooche-test",
+    "name": "smooche-test",
+    "currency": "USD",
+    "language": "en",
+    "payment_env_key": "50KJ4F218F9X6V40JG9H1JW3E0",
+    "campaigns_api_key": "92FrBl3qX1Sc0FMoFqGasr7IEdQ6j13V54AEsVSo",
+    "available_payment_methods": [
+      "apple_pay",
+      "bankcard",
+      "google_pay",
+      "paypal"
+    ],
+    "available_express_payment_methods": [
+      "apple_pay",
+      "google_pay",
+      "paypal"
+    ],
+    "available_currencies": [
+      "USD",
+      "AUD",
+      "EUR",
+      "GBP",
+      "HKD",
+      "NZD",
+      "SGD"
+    ],
+    "available_shipping_countries": [],
+    "tracking": {
+      "status": "unknown",
+      "providers": {}
+    }
+  },
+  "global_config": {
+    "sdk_version": "0.4.18"
+  },
+  "funnels": [
+    {
+      "id": "default",
+      "name": "Default",
+      "hypothesis": "Default campaign path exported by Campaign Map Builder.",
+      "weight": 100,
+      "pages": [
+        {
+          "id": "page_most7ygt_414",
+          "type": "presell",
+          "order": 1,
+          "label": "Presell",
+          "is_entry": true,
+          "next_page": "page_most7ygt_415",
+          "_next_label": "Landing (PDP)",
+          "resolved_routing": {
+            "next_page": "page_most7ygt_415",
+            "next_page_filename": "index.html"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_most7ygt_415",
+          "type": "landing",
+          "order": 2,
+          "label": "Landing (PDP)",
+          "is_entry": false,
+          "next_page": "page_most7ygt_416",
+          "_next_label": "Checkout",
+          "resolved_routing": {
+            "next_page": "page_most7ygt_416",
+            "next_page_filename": "checkout.html"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product",
+              "next-currency": "USD"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_most7ygt_416",
+          "type": "checkout",
+          "order": 3,
+          "label": "Checkout",
+          "is_entry": false,
+          "packages": [
+            {
+              "ref_id": "1",
+              "qty": 1,
+              "name": "Smooche Color Changing Foundation",
+              "price": "41.99",
+              "price_retail": null,
+              "product_name": "Color Changing Foundation",
+              "product_sku": null,
+              "product_variant_name": "Color Changing Foundation",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/8f/bf/8fbf1e31218ecf96995d168e19f43403.webp"
+            },
+            {
+              "ref_id": "1",
+              "qty": 2,
+              "name": "Smooche Color Changing Foundation",
+              "price": "41.99",
+              "price_retail": null,
+              "product_name": "Color Changing Foundation",
+              "product_sku": null,
+              "product_variant_name": "Color Changing Foundation",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/8f/bf/8fbf1e31218ecf96995d168e19f43403.webp"
+            },
+            {
+              "ref_id": "1",
+              "qty": 3,
+              "name": "Smooche Color Changing Foundation",
+              "price": "41.99",
+              "price_retail": null,
+              "product_name": "Color Changing Foundation",
+              "product_sku": null,
+              "product_variant_name": "Color Changing Foundation",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/8f/bf/8fbf1e31218ecf96995d168e19f43403.webp"
+            },
+            {
+              "ref_id": "15",
+              "qty": 1,
+              "name": "+ Mystery Gift",
+              "price": "0.00",
+              "price_retail": "19.00",
+              "product_name": "Mystery Gift",
+              "product_sku": null,
+              "product_variant_name": "Mystery Gift",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/26/87/26878f44646be4fcd2e419f27d41eb42.webp"
+            },
+            {
+              "ref_id": "16",
+              "qty": 1,
+              "name": "+ Beauty Blender",
+              "price": "0.00",
+              "price_retail": "9.00",
+              "product_name": "Smooche Blender",
+              "product_sku": null,
+              "product_variant_name": "Smooche Blender",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/31/57/31579b3512706ba929becf89ca1b1b73.webp"
+            }
+          ],
+          "offers": [
+            {
+              "ref_id": "1",
+              "name": "Foundation 2x Offer",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "count",
+                "value": 2,
+                "description": "Minimum purchase of 2 selected packages"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "30.00",
+                "description": "30% off selected packages"
+              }
+            },
+            {
+              "ref_id": "2",
+              "name": "Foundation x3 Offer",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "count",
+                "value": 3,
+                "description": "Minimum purchase of 3 selected packages"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "40.00",
+                "description": "40% off selected packages"
+              }
+            }
+          ],
+          "success_url": "page_most7ygt_417",
+          "_success_label": "oto-lip-gloss-lip-liner",
+          "resolved_routing": {
+            "success": "page_most7ygt_417",
+            "success_filename": "upsell.html"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "checkout",
+            "meta_tags": {
+              "next-page-type": "checkout",
+              "next-currency": "USD",
+              "next-predictive-address": "true",
+              "next-success-url": "upsell.html"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_most7ygt_417",
+          "type": "upsell",
+          "order": 4,
+          "label": "oto-lip-gloss-lip-liner",
+          "is_entry": false,
+          "packages": [
+            {
+              "ref_id": "5",
+              "qty": 1,
+              "name": "Upsell - Volume Lip Gloss - Clear",
+              "price": "9.00",
+              "price_retail": "30.00",
+              "product_name": "Volume Lip Gloss",
+              "product_sku": "smooche-shea-butter-lip-gloss",
+              "product_variant_name": "Volume Lip Gloss - Clear",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/16/c5/16c515bce6af8f0e218945d2a6f47a59.webp",
+              "variant_attributes": [
+                {
+                  "code": "color",
+                  "name": "Color",
+                  "value": "Clear"
+                }
+              ]
+            },
+            {
+              "ref_id": "7",
+              "qty": 1,
+              "name": "Upsell - Luxury Lip Liner - Espresso",
+              "price": "9.00",
+              "price_retail": "30.00",
+              "product_name": "Luxury Lip Liner",
+              "product_sku": "DPCD5-AZ374002",
+              "product_variant_name": "Luxury Lip Liner - Espresso",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/1b/9c/1b9c305b6a736632535f2aadd3928c42.webp",
+              "variant_attributes": [
+                {
+                  "code": "color",
+                  "name": "Color",
+                  "value": "Espresso"
+                }
+              ]
+            },
+            {
+              "ref_id": "8",
+              "qty": 1,
+              "name": "Upsell - Luxury Lip Liner - Hazelnut",
+              "price": "9.00",
+              "price_retail": "30.00",
+              "product_name": "Luxury Lip Liner",
+              "product_sku": "DPCD5-AZ374003",
+              "product_variant_name": "Luxury Lip Liner - Hazelnut",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/e6/21/e6212b94aadaa2df181d4c862bbf00f5.webp",
+              "variant_attributes": [
+                {
+                  "code": "color",
+                  "name": "Color",
+                  "value": "Hazelnut"
+                }
+              ]
+            },
+            {
+              "ref_id": "9",
+              "qty": 1,
+              "name": "Upsell - Luxury Lip Liner - Blush",
+              "price": "9.00",
+              "price_retail": "30.00",
+              "product_name": "Luxury Lip Liner",
+              "product_sku": "smooche-luxury-lip-liner-redwood",
+              "product_variant_name": "Luxury Lip Liner - Blush",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/4e/c7/4ec79faab8c7e226a919fe50f3c28c40.webp",
+              "variant_attributes": [
+                {
+                  "code": "color",
+                  "name": "Color",
+                  "value": "Blush"
+                }
+              ]
+            },
+            {
+              "ref_id": "6",
+              "qty": 1,
+              "name": "Upsell - Volume Lip Gloss - Sweet Pink",
+              "price": "9.00",
+              "price_retail": "30.00",
+              "product_name": "Volume Lip Gloss",
+              "product_sku": "",
+              "product_variant_name": "Volume Lip Gloss - Sweet Pink",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/89/ca/89ca743565a4dbd26544edf75ffa234f.webp",
+              "variant_attributes": [
+                {
+                  "code": "color",
+                  "name": "Color",
+                  "value": "Sweet Pink"
+                }
+              ]
+            },
+            {
+              "ref_id": "10",
+              "qty": 1,
+              "name": "Upsell - Luxury Lip Liner - Cherry",
+              "price": "9.00",
+              "price_retail": "30.00",
+              "product_name": "Luxury Lip Liner",
+              "product_sku": "DPCD5-AZ374001",
+              "product_variant_name": "Luxury Lip Liner - Cherry",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/44/06/440645fbe167d41df6d9ca691d5cacf0.webp",
+              "variant_attributes": [
+                {
+                  "code": "color",
+                  "name": "Color",
+                  "value": "Cherry"
+                }
+              ]
+            }
+          ],
+          "on_accept": "page_mostaupl_479",
+          "on_decline": "page_mostaupl_479",
+          "_accept_label": "oto-lip-stain",
+          "_decline_label": "oto-lip-stain",
+          "resolved_routing": {
+            "accept": "page_mostaupl_479",
+            "accept_filename": "upsell.html",
+            "decline": "page_mostaupl_479",
+            "decline_filename": "upsell.html"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "upsell",
+            "meta_tags": {
+              "next-page-type": "upsell",
+              "next-currency": "USD",
+              "next-prevent-back-navigation": "true",
+              "next-upsell-accept-url": "upsell.html",
+              "next-upsell-decline-url": "upsell.html"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_mostaupl_479",
+          "type": "upsell",
+          "order": 5,
+          "label": "oto-lip-stain",
+          "is_entry": false,
+          "packages": [
+            {
+              "ref_id": "11",
+              "qty": 1,
+              "name": "Upsell - Peel-off Lip Stain - Raspberry Kiss",
+              "price": "29.00",
+              "price_retail": "39.00",
+              "product_name": "Peel-off Lip Stain",
+              "product_sku": null,
+              "product_variant_name": "Peel-off Lip Stain - Raspberry Kiss",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/47/4b/474b93439c0c8d1b746c2564a583895d.webp",
+              "variant_attributes": [
+                {
+                  "code": "color",
+                  "name": "Color",
+                  "value": "Raspberry Kiss"
+                }
+              ]
+            },
+            {
+              "ref_id": "12",
+              "qty": 1,
+              "name": "Upsell - Peel-off Lip Stain - Watermelon Sugar",
+              "price": "29.00",
+              "price_retail": "39.00",
+              "product_name": "Peel-off Lip Stain",
+              "product_sku": null,
+              "product_variant_name": "Peel-off Lip Stain - Watermelon Sugar",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/23/1c/231c985205582940fa0167fd2db94e0d.webp",
+              "variant_attributes": [
+                {
+                  "code": "color",
+                  "name": "Color",
+                  "value": "Watermelon Sugar"
+                }
+              ]
+            },
+            {
+              "ref_id": "14",
+              "qty": 1,
+              "name": "Upsell - Peel-off Lip Stain - Velvet Cacao",
+              "price": "29.00",
+              "price_retail": "39.00",
+              "product_name": "Peel-off Lip Stain",
+              "product_sku": null,
+              "product_variant_name": "Peel-off Lip Stain - Velvet Cacao",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/c2/7b/c27bb1d9bd73e52c927b320b8873caf3.webp",
+              "variant_attributes": [
+                {
+                  "code": "color",
+                  "name": "Color",
+                  "value": "Velvet Cacao"
+                }
+              ]
+            },
+            {
+              "ref_id": "13",
+              "qty": 1,
+              "name": "Upsell - Peel-off Lip Stain - Mauve Berry",
+              "price": "29.00",
+              "price_retail": "39.00",
+              "product_name": "Peel-off Lip Stain",
+              "product_sku": null,
+              "product_variant_name": "Peel-off Lip Stain - Mauve Berry",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/38/86/3886b46b89b9725ab5ccdce4042cc710.webp",
+              "variant_attributes": [
+                {
+                  "code": "color",
+                  "name": "Color",
+                  "value": "Mauve Berry"
+                }
+              ]
+            }
+          ],
+          "on_accept": "page_most7ygt_418",
+          "on_decline": "page_most7ygt_418",
+          "_accept_label": "Thank You",
+          "_decline_label": "Thank You",
+          "resolved_routing": {
+            "accept": "page_most7ygt_418",
+            "accept_filename": "receipt.html",
+            "decline": "page_most7ygt_418",
+            "decline_filename": "receipt.html"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "upsell",
+            "meta_tags": {
+              "next-page-type": "upsell",
+              "next-currency": "USD",
+              "next-upsell-accept-url": "receipt.html",
+              "next-upsell-decline-url": "receipt.html"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_most7ygt_418",
+          "type": "thankyou",
+          "order": 6,
+          "label": "Thank You",
+          "is_entry": false,
+          "sdk_hints": {
+            "sdk_page_type": "receipt",
+            "meta_tags": {
+              "next-page-type": "receipt"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        }
+      ]
+    }
+  ],
+  "funnel_pages": [
+    {
+      "id": "page_most7ygt_414",
+      "type": "presell",
+      "order": 1,
+      "label": "Presell",
+      "is_entry": true,
+      "next_page": "page_most7ygt_415",
+      "_next_label": "Landing (PDP)",
+      "resolved_routing": {
+        "next_page": "page_most7ygt_415",
+        "next_page_filename": "index.html"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_most7ygt_415",
+      "type": "landing",
+      "order": 2,
+      "label": "Landing (PDP)",
+      "is_entry": false,
+      "next_page": "page_most7ygt_416",
+      "_next_label": "Checkout",
+      "resolved_routing": {
+        "next_page": "page_most7ygt_416",
+        "next_page_filename": "checkout.html"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product",
+          "next-currency": "USD"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_most7ygt_416",
+      "type": "checkout",
+      "order": 3,
+      "label": "Checkout",
+      "is_entry": false,
+      "packages": [
+        {
+          "ref_id": "1",
+          "qty": 1,
+          "name": "Smooche Color Changing Foundation",
+          "price": "41.99",
+          "price_retail": null,
+          "product_name": "Color Changing Foundation",
+          "product_sku": null,
+          "product_variant_name": "Color Changing Foundation",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/8f/bf/8fbf1e31218ecf96995d168e19f43403.webp"
+        },
+        {
+          "ref_id": "1",
+          "qty": 2,
+          "name": "Smooche Color Changing Foundation",
+          "price": "41.99",
+          "price_retail": null,
+          "product_name": "Color Changing Foundation",
+          "product_sku": null,
+          "product_variant_name": "Color Changing Foundation",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/8f/bf/8fbf1e31218ecf96995d168e19f43403.webp"
+        },
+        {
+          "ref_id": "1",
+          "qty": 3,
+          "name": "Smooche Color Changing Foundation",
+          "price": "41.99",
+          "price_retail": null,
+          "product_name": "Color Changing Foundation",
+          "product_sku": null,
+          "product_variant_name": "Color Changing Foundation",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/8f/bf/8fbf1e31218ecf96995d168e19f43403.webp"
+        },
+        {
+          "ref_id": "15",
+          "qty": 1,
+          "name": "+ Mystery Gift",
+          "price": "0.00",
+          "price_retail": "19.00",
+          "product_name": "Mystery Gift",
+          "product_sku": null,
+          "product_variant_name": "Mystery Gift",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/26/87/26878f44646be4fcd2e419f27d41eb42.webp"
+        },
+        {
+          "ref_id": "16",
+          "qty": 1,
+          "name": "+ Beauty Blender",
+          "price": "0.00",
+          "price_retail": "9.00",
+          "product_name": "Smooche Blender",
+          "product_sku": null,
+          "product_variant_name": "Smooche Blender",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/31/57/31579b3512706ba929becf89ca1b1b73.webp"
+        }
+      ],
+      "offers": [
+        {
+          "ref_id": "1",
+          "name": "Foundation 2x Offer",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "count",
+            "value": 2,
+            "description": "Minimum purchase of 2 selected packages"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "30.00",
+            "description": "30% off selected packages"
+          }
+        },
+        {
+          "ref_id": "2",
+          "name": "Foundation x3 Offer",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "count",
+            "value": 3,
+            "description": "Minimum purchase of 3 selected packages"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "40.00",
+            "description": "40% off selected packages"
+          }
+        }
+      ],
+      "success_url": "page_most7ygt_417",
+      "_success_label": "oto-lip-gloss-lip-liner",
+      "resolved_routing": {
+        "success": "page_most7ygt_417",
+        "success_filename": "upsell.html"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "checkout",
+        "meta_tags": {
+          "next-page-type": "checkout",
+          "next-currency": "USD",
+          "next-predictive-address": "true",
+          "next-success-url": "upsell.html"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_most7ygt_417",
+      "type": "upsell",
+      "order": 4,
+      "label": "oto-lip-gloss-lip-liner",
+      "is_entry": false,
+      "packages": [
+        {
+          "ref_id": "5",
+          "qty": 1,
+          "name": "Upsell - Volume Lip Gloss - Clear",
+          "price": "9.00",
+          "price_retail": "30.00",
+          "product_name": "Volume Lip Gloss",
+          "product_sku": "smooche-shea-butter-lip-gloss",
+          "product_variant_name": "Volume Lip Gloss - Clear",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/16/c5/16c515bce6af8f0e218945d2a6f47a59.webp",
+          "variant_attributes": [
+            {
+              "code": "color",
+              "name": "Color",
+              "value": "Clear"
+            }
+          ]
+        },
+        {
+          "ref_id": "7",
+          "qty": 1,
+          "name": "Upsell - Luxury Lip Liner - Espresso",
+          "price": "9.00",
+          "price_retail": "30.00",
+          "product_name": "Luxury Lip Liner",
+          "product_sku": "DPCD5-AZ374002",
+          "product_variant_name": "Luxury Lip Liner - Espresso",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/1b/9c/1b9c305b6a736632535f2aadd3928c42.webp",
+          "variant_attributes": [
+            {
+              "code": "color",
+              "name": "Color",
+              "value": "Espresso"
+            }
+          ]
+        },
+        {
+          "ref_id": "8",
+          "qty": 1,
+          "name": "Upsell - Luxury Lip Liner - Hazelnut",
+          "price": "9.00",
+          "price_retail": "30.00",
+          "product_name": "Luxury Lip Liner",
+          "product_sku": "DPCD5-AZ374003",
+          "product_variant_name": "Luxury Lip Liner - Hazelnut",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/e6/21/e6212b94aadaa2df181d4c862bbf00f5.webp",
+          "variant_attributes": [
+            {
+              "code": "color",
+              "name": "Color",
+              "value": "Hazelnut"
+            }
+          ]
+        },
+        {
+          "ref_id": "9",
+          "qty": 1,
+          "name": "Upsell - Luxury Lip Liner - Blush",
+          "price": "9.00",
+          "price_retail": "30.00",
+          "product_name": "Luxury Lip Liner",
+          "product_sku": "smooche-luxury-lip-liner-redwood",
+          "product_variant_name": "Luxury Lip Liner - Blush",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/4e/c7/4ec79faab8c7e226a919fe50f3c28c40.webp",
+          "variant_attributes": [
+            {
+              "code": "color",
+              "name": "Color",
+              "value": "Blush"
+            }
+          ]
+        },
+        {
+          "ref_id": "6",
+          "qty": 1,
+          "name": "Upsell - Volume Lip Gloss - Sweet Pink",
+          "price": "9.00",
+          "price_retail": "30.00",
+          "product_name": "Volume Lip Gloss",
+          "product_sku": "",
+          "product_variant_name": "Volume Lip Gloss - Sweet Pink",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/89/ca/89ca743565a4dbd26544edf75ffa234f.webp",
+          "variant_attributes": [
+            {
+              "code": "color",
+              "name": "Color",
+              "value": "Sweet Pink"
+            }
+          ]
+        },
+        {
+          "ref_id": "10",
+          "qty": 1,
+          "name": "Upsell - Luxury Lip Liner - Cherry",
+          "price": "9.00",
+          "price_retail": "30.00",
+          "product_name": "Luxury Lip Liner",
+          "product_sku": "DPCD5-AZ374001",
+          "product_variant_name": "Luxury Lip Liner - Cherry",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/44/06/440645fbe167d41df6d9ca691d5cacf0.webp",
+          "variant_attributes": [
+            {
+              "code": "color",
+              "name": "Color",
+              "value": "Cherry"
+            }
+          ]
+        }
+      ],
+      "on_accept": "page_mostaupl_479",
+      "on_decline": "page_mostaupl_479",
+      "_accept_label": "oto-lip-stain",
+      "_decline_label": "oto-lip-stain",
+      "resolved_routing": {
+        "accept": "page_mostaupl_479",
+        "accept_filename": "upsell.html",
+        "decline": "page_mostaupl_479",
+        "decline_filename": "upsell.html"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "upsell",
+        "meta_tags": {
+          "next-page-type": "upsell",
+          "next-currency": "USD",
+          "next-prevent-back-navigation": "true",
+          "next-upsell-accept-url": "upsell.html",
+          "next-upsell-decline-url": "upsell.html"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mostaupl_479",
+      "type": "upsell",
+      "order": 5,
+      "label": "oto-lip-stain",
+      "is_entry": false,
+      "packages": [
+        {
+          "ref_id": "11",
+          "qty": 1,
+          "name": "Upsell - Peel-off Lip Stain - Raspberry Kiss",
+          "price": "29.00",
+          "price_retail": "39.00",
+          "product_name": "Peel-off Lip Stain",
+          "product_sku": null,
+          "product_variant_name": "Peel-off Lip Stain - Raspberry Kiss",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/47/4b/474b93439c0c8d1b746c2564a583895d.webp",
+          "variant_attributes": [
+            {
+              "code": "color",
+              "name": "Color",
+              "value": "Raspberry Kiss"
+            }
+          ]
+        },
+        {
+          "ref_id": "12",
+          "qty": 1,
+          "name": "Upsell - Peel-off Lip Stain - Watermelon Sugar",
+          "price": "29.00",
+          "price_retail": "39.00",
+          "product_name": "Peel-off Lip Stain",
+          "product_sku": null,
+          "product_variant_name": "Peel-off Lip Stain - Watermelon Sugar",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/23/1c/231c985205582940fa0167fd2db94e0d.webp",
+          "variant_attributes": [
+            {
+              "code": "color",
+              "name": "Color",
+              "value": "Watermelon Sugar"
+            }
+          ]
+        },
+        {
+          "ref_id": "14",
+          "qty": 1,
+          "name": "Upsell - Peel-off Lip Stain - Velvet Cacao",
+          "price": "29.00",
+          "price_retail": "39.00",
+          "product_name": "Peel-off Lip Stain",
+          "product_sku": null,
+          "product_variant_name": "Peel-off Lip Stain - Velvet Cacao",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/c2/7b/c27bb1d9bd73e52c927b320b8873caf3.webp",
+          "variant_attributes": [
+            {
+              "code": "color",
+              "name": "Color",
+              "value": "Velvet Cacao"
+            }
+          ]
+        },
+        {
+          "ref_id": "13",
+          "qty": 1,
+          "name": "Upsell - Peel-off Lip Stain - Mauve Berry",
+          "price": "29.00",
+          "price_retail": "39.00",
+          "product_name": "Peel-off Lip Stain",
+          "product_sku": null,
+          "product_variant_name": "Peel-off Lip Stain - Mauve Berry",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/38/86/3886b46b89b9725ab5ccdce4042cc710.webp",
+          "variant_attributes": [
+            {
+              "code": "color",
+              "name": "Color",
+              "value": "Mauve Berry"
+            }
+          ]
+        }
+      ],
+      "on_accept": "page_most7ygt_418",
+      "on_decline": "page_most7ygt_418",
+      "_accept_label": "Thank You",
+      "_decline_label": "Thank You",
+      "resolved_routing": {
+        "accept": "page_most7ygt_418",
+        "accept_filename": "receipt.html",
+        "decline": "page_most7ygt_418",
+        "decline_filename": "receipt.html"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "upsell",
+        "meta_tags": {
+          "next-page-type": "upsell",
+          "next-currency": "USD",
+          "next-upsell-accept-url": "receipt.html",
+          "next-upsell-decline-url": "receipt.html"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_most7ygt_418",
+      "type": "thankyou",
+      "order": 6,
+      "label": "Thank You",
+      "is_entry": false,
+      "sdk_hints": {
+        "sdk_page_type": "receipt",
+        "meta_tags": {
+          "next-page-type": "receipt"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    }
+  ],
+  "shipping_methods": [
+    {
+      "ref_id": "1",
+      "code": "default",
+      "price": "0.00"
+    }
+  ],
+  "offers": [
+    {
+      "ref_id": "1",
+      "name": "Foundation 2x Offer",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 2,
+        "description": "Minimum purchase of 2 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "30.00",
+        "description": "30% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/8f/bf/8fbf1e31218ecf96995d168e19f43403.webp",
+          "package_name": "Smooche Color Changing Foundation",
+          "product_name": "Color Changing Foundation",
+          "product_variant_name": "Color Changing Foundation",
+          "unit_price": "29.99",
+          "unit_price_before_discount": "41.99",
+          "package_price": "29.99",
+          "package_price_before_discount": "41.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    },
+    {
+      "ref_id": "2",
+      "name": "Foundation x3 Offer",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 3,
+        "description": "Minimum purchase of 3 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "40.00",
+        "description": "40% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/8f/bf/8fbf1e31218ecf96995d168e19f43403.webp",
+          "package_name": "Smooche Color Changing Foundation",
+          "product_name": "Color Changing Foundation",
+          "product_variant_name": "Color Changing Foundation",
+          "unit_price": "25.99",
+          "unit_price_before_discount": "41.99",
+          "package_price": "25.99",
+          "package_price_before_discount": "41.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    }
+  ],
+  "figma_url": "https://www.figma.com/design/LDEBHBhRmBzxbJdxrDnRXs/Smooche-Sharing?node-id=18-1065&p=f"
+}
