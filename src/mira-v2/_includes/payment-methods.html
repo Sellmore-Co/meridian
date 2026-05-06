@@ -12,10 +12,10 @@
         <input type="radio" name="payment_method" id="combo_mode_credit" data-name="Combo Mode" class="payment-method__input" checked value="credit">
         <div class="payment-method__title">Credit Card</div>
         <div class="payment-method__icons">
-          <span class="payment-method__icon payment-method__icon--visa">VISA</span>
-          <span class="payment-method__icon payment-method__icon--mastercard">MC</span>
-          <span class="payment-method__icon payment-method__icon--amex">AMEX</span>
-          <span class="payment-method__icon payment-method__icon--discover">DISC</span>
+          <img loading="lazy" src="{{ 'images/cc-visa.svg' | campaign_asset }}" alt="" class="payment-method__icon payment-method__icon--visa">
+          <img loading="lazy" src="{{ 'images/cc_master.svg' | campaign_asset }}" alt="" class="payment-method__icon payment-method__icon--mastercard">
+          <img loading="lazy" src="{{ 'images/cc_amex.svg' | campaign_asset }}" alt="" class="payment-method__icon payment-method__icon--amex">
+          <img loading="lazy" src="{{ 'images/cc_discover.svg' | campaign_asset }}" alt="" class="payment-method__icon payment-method__icon--discover">
         </div>
       </label>
     </div>
@@ -30,7 +30,11 @@
           <div class="form-grid__row">
             <div class="form-group">
               <div class="form-input">
-                <label class="label-checkout">Card Number</label>
+                <div data-next-tooltip="All transactions are secure and encrypted." class="form-input-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-width="1" d="M2.5 7c0-.966.784-1.75 1.75-1.75h5.5c.966 0 1.75.784 1.75 1.75v3.5a1.75 1.75 0 0 1-1.75 1.75h-5.5A1.75 1.75 0 0 1 2.5 10.5zm7-1.75V4.22c0-1.364-1.12-2.47-2.5-2.47S4.5 2.856 4.5 4.22v1.03"/>
+                  </svg>
+                </div>
                 <div data-next-checkout-field="cc-number" class="input-flds spreedly-field" aria-label="Card number"></div>
               </div>
             </div>
@@ -38,12 +42,9 @@
           <div class="form-grid__row">
             <div class="form-group">
               <div class="form-input">
-                <label class="label-checkout">Exp. Month</label>
                 <div class="select-form-wrapper">
-                  <select autocomplete="cc-exp-month" placeholder="Exp. Month" name="credit_card_exp_month" data-next-checkout-field="exp-month" class="input-flds select-field">
-                    <option value="">Month</option>
-                    <option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option>
-                    <option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option>
+                  <select autocomplete="cc-exp-month" data-placeholder="Exp. Month" placeholder="Exp. Month" name="credit_card_exp_month" id="credit_card_exp_month" data-name="Credit Card Exp. Month" data-next-checkout-field="exp-month" class="input-flds select-field">
+                    <option value="">Exp. Month</option>
                   </select>
                   <div class="caret-down"><div class="select-arrow">
                     <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg>
@@ -53,11 +54,9 @@
             </div>
             <div class="form-group">
               <div class="form-input">
-                <label class="label-checkout">Exp. Year</label>
                 <div class="select-form-wrapper">
-                  <select autocomplete="cc-exp-year" placeholder="Exp. Year" name="credit_card_exp_year" data-next-checkout-field="exp-year" class="input-flds select-field">
-                    <option value="">Year</option>
-                    <option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option>
+                  <select autocomplete="cc-exp-year" data-placeholder="Exp. Year" placeholder="Exp. Year" name="credit_card_exp_year" id="credit_card_exp_year" data-name="Credit Card Exp. Year" data-next-checkout-field="exp-year" class="input-flds select-field">
+                    <option value="">Exp. Year</option>
                   </select>
                   <div class="caret-down"><div class="select-arrow">
                     <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg>
@@ -67,7 +66,13 @@
             </div>
             <div class="form-group">
               <div class="form-input">
-                <label class="label-checkout">CVV</label>
+                <div data-next-tooltip="3-digit security code usually found on the back of your card." class="form-input-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" focusable="false" aria-hidden="true">
+                    <circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <path stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="1" d="M5.5 5.25a1.5 1.5 0 1 1 2.428 1.179C7.494 6.77 7 7.198 7 7.75"/>
+                    <path stroke-linejoin="round" fill="none" stroke="currentColor" stroke-width="1" d="M6.99 10.24h.02v.02h-.02z"/>
+                  </svg>
+                </div>
                 <div data-next-checkout-field="cvv" class="input-flds spreedly-field" aria-label="CVV"></div>
               </div>
             </div>
@@ -97,7 +102,7 @@
         <input type="radio" name="payment_method" id="combo_mode_apple_pay" data-name="Combo Mode" class="payment-method__input" value="apple-pay">
         <div class="payment-method__title">Apple Pay</div>
         <div class="payment-method__icons">
-          <span class="payment-method__icon--apple-pay-logo" style="background:#000;color:#fff;">  Pay</span>
+          <img loading="lazy" src="{{ 'images/apple-pay-logo.svg' | campaign_asset }}" alt="" class="payment-method__icon--apple-pay-logo">
         </div>
       </label>
     </div>
@@ -122,7 +127,7 @@
         <input type="radio" name="payment_method" id="combo_mode_google_pay" data-name="Combo Mode" class="payment-method__input" value="google-pay">
         <div class="payment-method__title">Google Pay</div>
         <div class="payment-method__icons">
-          <span class="payment-method__icon--google-pay-logo" style="background:#fff;border:1px solid #DADCE0;color:#5F6368;">G Pay</span>
+          <img loading="lazy" src="{{ 'images/google-pay-logo.svg' | campaign_asset }}" alt="" class="payment-method__icon--google-pay-logo">
         </div>
       </label>
     </div>

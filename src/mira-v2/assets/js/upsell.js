@@ -13,21 +13,36 @@
     var inc = stepper.querySelector('[data-next-quantity-increment]');
     var min = parseInt(inp.min, 10) || 1;
     var max = parseInt(inp.max, 10) || 6;
+    var unitSale = 24.5;
+    var unitRetail = 49;
+    function money(amount) {
+      return '$' + amount.toFixed(2);
+    }
     function update() {
       var v = parseInt(inp.value, 10) || 1;
       if (dec) dec.disabled = v <= min;
       if (inc) inc.disabled = v >= max;
+      var priceEl = document.querySelector('.pricing__price');
+      var wasEl = document.querySelector('.pricing__was');
       var totalEl = document.querySelector('[data-next-display="upsell.2.total"]');
-      if (totalEl) totalEl.textContent = '$' + (v * 24.5).toFixed(2);
+      if (priceEl) priceEl.textContent = money(v * unitSale);
+      if (wasEl) wasEl.textContent = money(v * unitRetail);
+      if (totalEl) totalEl.textContent = money(v * unitSale);
+    }
+    function updateSoon() {
+      update();
+      window.setTimeout(update, 50);
+      window.setTimeout(update, 250);
     }
     if (dec) dec.addEventListener('click', function () {
       inp.value = Math.max(min, (parseInt(inp.value, 10) || 1) - 1);
-      update();
+      updateSoon();
     });
     if (inc) inc.addEventListener('click', function () {
       inp.value = Math.min(max, (parseInt(inp.value, 10) || 1) + 1);
-      update();
+      updateSoon();
     });
+    inp.addEventListener('change', updateSoon);
     update();
   }
 
