@@ -89,15 +89,27 @@ body { background: var(--bg); }
 }
 @media (max-width: 540px) { .express-checkout__buttons { grid-template-columns: 1fr; } }
 .express-checkout__buttons:empty::before {
-  content: "[ Apple Pay · Google Pay ] — injected by SDK at runtime";
-  grid-column: 1 / -1;
-  text-align: center;
-  font-size: var(--fs-xs);
-  color: var(--text-muted);
-  font-style: italic;
-  padding: 14px;
-  border: 1px dashed var(--border);
+  content: "";
+  height: 48px;
+  border: 0;
   border-radius: var(--r-md);
+  background: linear-gradient(90deg, #ECE8DE 0%, #F7F3EA 45%, #ECE8DE 90%);
+  background-size: 220% 100%;
+  animation: wallet-skeleton 1.1s ease-in-out infinite;
+}
+.express-checkout__buttons:empty::after {
+  content: "";
+  height: 48px;
+  border: 0;
+  border-radius: var(--r-md);
+  background: linear-gradient(90deg, #ECE8DE 0%, #F7F3EA 45%, #ECE8DE 90%);
+  background-size: 220% 100%;
+  animation: wallet-skeleton 1.1s ease-in-out infinite;
+  animation-delay: 140ms;
+}
+@keyframes wallet-skeleton {
+  0% { background-position: 120% 0; }
+  100% { background-position: -120% 0; }
 }
 .divider-section { display: flex; align-items: center; gap: var(--sp-3); margin: var(--sp-5) 0 0; font-size: var(--fs-xs); color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
 .divider-section__line-v2 { flex: 1; height: 1px; background: var(--border); }
@@ -256,7 +268,7 @@ body { background: var(--bg); }
 [data-next-toggle-card].next-active > .bump__header .bump__arrow--right { display: block; }
 
 .bump__body {
-  display: none;
+  display: block;
   background: #FFFAEC;
   border: 2px solid var(--gold);
   border-top: 0;
@@ -264,8 +276,6 @@ body { background: var(--bg); }
   padding: var(--sp-4) var(--sp-5);
   margin-top: -2px;
 }
-.bump__header.next-active + .bump__body,
-[data-next-toggle-card].next-active > .bump__body { display: block; }
 .bump__content { display: flex; gap: var(--sp-4); align-items: center; }
 .bump__image {
   width: 64px; height: 64px;
