@@ -36,7 +36,7 @@ function parseCookie(cookieHeader: string | null, name: string): string | null {
 
 function pickFunnel(): Funnel {
   // 50/50 — Math.random() is fine for non-security distribution.
-  return Math.random() < 0.5 ? "listicle" : "advertorial";
+  return Math.random() < 0.5 ? "a" : "b";
 }
 
 export default async (request: Request, _context: Context): Promise<Response> => {
