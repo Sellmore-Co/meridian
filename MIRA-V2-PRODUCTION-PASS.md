@@ -66,6 +66,7 @@ Fixes made during review:
 - Removed the unused product-page bundle selector script and sticky cart pattern.
 - Reworked listicle numbered section heading spacing to avoid heading collisions.
 - Added bundle-section scroll offset so anchor navigation does not hide the section eyebrow beneath the sticky nav.
+- Removed bump quantity sync so the Mira Travel Pouch remains a single $10 add-on on multi-bottle carts.
 
 No major visual regressions remain from the local pass.
 
