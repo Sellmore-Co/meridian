@@ -75,10 +75,6 @@ body { background: var(--bg); }
   background: #111;
   cursor: pointer;
 }
-.express-checkout__buttons .payment-btn.cc-google-pay {
-  background: #fff;
-  border: 1px solid var(--border) !important;
-}
 .express-checkout__buttons .payment-btn__logo {
   display: block;
   width: auto;
