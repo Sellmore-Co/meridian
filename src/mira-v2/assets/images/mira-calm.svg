@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Mira Calm — 60-count anxiety soft-chews jar">
+  <defs>
+    <linearGradient id="bg-calm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1F2A24"/>
+      <stop offset="1" stop-color="#0F1814"/>
+    </linearGradient>
+    <radialGradient id="bgGlow-calm" cx="0.3" cy="0.25" r="0.7">
+      <stop offset="0" stop-color="#5B7A6A" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#5B7A6A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="jar-calm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F2EBDD"/>
+      <stop offset="0.5" stop-color="#EDE0C5"/>
+      <stop offset="1" stop-color="#C9BC9C"/>
+    </linearGradient>
+    <linearGradient id="lid-calm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D4A24A"/>
+      <stop offset="1" stop-color="#9B7A35"/>
+    </linearGradient>
+    <linearGradient id="label-calm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF6F0"/>
+      <stop offset="1" stop-color="#EDE0C5"/>
+    </linearGradient>
+    <radialGradient id="shine-calm" cx="0.3" cy="0.3" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadowCalm" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="10"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#bg-calm)"/>
+  <rect width="600" height="600" fill="url(#bgGlow-calm)"/>
+
+  <!-- moon motif -->
+  <g opacity="0.10">
+    <circle cx="500" cy="100" r="60" fill="#D4A24A"/>
+    <circle cx="478" cy="92" r="56" fill="#1F2A24"/>
+  </g>
+
+  <ellipse cx="300" cy="510" rx="170" ry="22" fill="#000" opacity="0.45"/>
+
+  <g filter="url(#softShadowCalm)">
+    <!-- jar body -->
+    <rect x="170" y="160" width="260" height="340" rx="36" fill="url(#jar-calm)" stroke="#9F9579" stroke-width="2"/>
+    <rect x="180" y="180" width="80" height="290" rx="20" fill="url(#shine-calm)"/>
+
+    <!-- gold lid -->
+    <rect x="160" y="120" width="280" height="44" rx="14" fill="#9B7A35"/>
+    <rect x="170" y="100" width="260" height="32" rx="10" fill="url(#lid-calm)"/>
+    <g stroke="#7A5E25" stroke-width="1.6" opacity="0.55">
+      <line x1="190" y1="110" x2="190" y2="124"/>
+      <line x1="206" y1="110" x2="206" y2="124"/>
+      <line x1="222" y1="110" x2="222" y2="124"/>
+      <line x1="238" y1="110" x2="238" y2="124"/>
+      <line x1="254" y1="110" x2="254" y2="124"/>
+      <line x1="270" y1="110" x2="270" y2="124"/>
+      <line x1="330" y1="110" x2="330" y2="124"/>
+      <line x1="346" y1="110" x2="346" y2="124"/>
+      <line x1="362" y1="110" x2="362" y2="124"/>
+      <line x1="378" y1="110" x2="378" y2="124"/>
+      <line x1="394" y1="110" x2="394" y2="124"/>
+      <line x1="410" y1="110" x2="410" y2="124"/>
+    </g>
+
+    <!-- label -->
+    <rect x="190" y="200" width="220" height="270" rx="10" fill="url(#label-calm)" stroke="#9F9579" stroke-width="1"/>
+    <rect x="200" y="210" width="200" height="250" rx="6" fill="none" stroke="#2C4A3C" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Mira mark -->
+    <circle cx="300" cy="248" r="22" fill="none" stroke="#2C4A3C" stroke-width="2"/>
+    <text x="300" y="258" font-family="Georgia, serif" font-weight="700" font-size="22" fill="#2C4A3C" text-anchor="middle">M</text>
+
+    <text x="300" y="310" font-family="Georgia, serif" font-style="italic" font-weight="600" font-size="46" fill="#1F2A24" text-anchor="middle" letter-spacing="2">Calm</text>
+
+    <line x1="240" y1="328" x2="360" y2="328" stroke="#2C4A3C" stroke-width="1" opacity="0.4"/>
+
+    <text x="300" y="358" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#1F2A24" text-anchor="middle" letter-spacing="3">CALM &amp; FOCUS</text>
+    <text x="300" y="380" font-family="Inter, sans-serif" font-weight="400" font-size="11" fill="#5B7A6A" text-anchor="middle" letter-spacing="2">L-THEANINE · CHAMOMILE · GABA</text>
+
+    <text x="300" y="430" font-family="Georgia, serif" font-weight="600" font-size="32" fill="#1F2A24" text-anchor="middle">60</text>
+    <text x="300" y="448" font-family="Inter, sans-serif" font-weight="400" font-size="9" fill="#5B7A6A" text-anchor="middle" letter-spacing="2.4">SOFT CHEWS</text>
+  </g>
+</svg>

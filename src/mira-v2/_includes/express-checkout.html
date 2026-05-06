@@ -1,0 +1,12 @@
+<!-- express-checkout — apple_pay + google_pay only (per spec, no PayPal) -->
+<div data-next-catalog-component="express-checkout" data-next-express-checkout="container" class="exp-checkout">
+  <div class="express-checkout__title">Express Checkout</div>
+  <div data-next-express-checkout="buttons" class="express-checkout__buttons">
+    {% comment %} SDK injects buttons per campaign.available_express_payment_methods (apple_pay, google_pay). {% endcomment %}
+  </div>
+  <div class="divider-section">
+    <div class="divider-section__line-v2"></div>
+    <div class="divider-section__text-v2">OR</div>
+    <div class="divider-section__line-v2"></div>
+  </div>
+</div>

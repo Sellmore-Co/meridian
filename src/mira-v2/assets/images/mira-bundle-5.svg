@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Mira Joint — 5 bottle bundle, multi-dog or 5-month supply">
+  <defs>
+    <linearGradient id="b5-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7E9CC"/>
+      <stop offset="1" stop-color="#D9BC8A"/>
+    </linearGradient>
+    <radialGradient id="b5-glow" cx="0.5" cy="0.3" r="0.7">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="b5-jar" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#F4F0E6"/>
+      <stop offset="1" stop-color="#D8CFB6"/>
+    </linearGradient>
+    <linearGradient id="b5-lid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3F5D4D"/>
+      <stop offset="1" stop-color="#1F2A24"/>
+    </linearGradient>
+    <linearGradient id="b5-label" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2C4A3C"/>
+      <stop offset="1" stop-color="#1B3026"/>
+    </linearGradient>
+    <radialGradient id="b5-shine" cx="0.3" cy="0.3" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <symbol id="jar-xs" viewBox="0 0 160 320">
+      <rect x="0" y="38" width="160" height="270" rx="22" fill="url(#b5-jar)" stroke="#B4A985" stroke-width="1.5"/>
+      <rect x="9" y="56" width="46" height="232" rx="10" fill="url(#b5-shine)"/>
+      <rect x="-10" y="2" width="180" height="36" rx="10" fill="#2C4A3C"/>
+      <rect x="-2" y="-14" width="164" height="26" rx="8" fill="url(#b5-lid)"/>
+      <rect x="16" y="68" width="128" height="208" rx="8" fill="url(#b5-label)" stroke="#0F1814" stroke-width="1"/>
+      <rect x="24" y="76" width="112" height="192" rx="5" fill="none" stroke="#D4A24A" stroke-width="1.2" opacity="0.8"/>
+      <circle cx="80" cy="106" r="13" fill="none" stroke="#D4A24A" stroke-width="1.6"/>
+      <text x="80" y="111" font-family="Georgia, serif" font-weight="700" font-size="13" fill="#D4A24A" text-anchor="middle">M</text>
+      <text x="80" y="148" font-family="Georgia, serif" font-style="italic" font-weight="600" font-size="28" fill="#FAF6F0" text-anchor="middle" letter-spacing="1">Mira</text>
+      <line x1="40" y1="164" x2="120" y2="164" stroke="#D4A24A" stroke-width="0.8" opacity="0.5"/>
+      <text x="80" y="184" font-family="Inter, sans-serif" font-weight="600" font-size="7.5" fill="#FAF6F0" text-anchor="middle" letter-spacing="2">JOINT &amp; HIP</text>
+      <text x="80" y="226" font-family="Georgia, serif" font-weight="600" font-size="18" fill="#FAF6F0" text-anchor="middle">60</text>
+      <text x="80" y="240" font-family="Inter, sans-serif" font-weight="400" font-size="6" fill="#D4A24A" text-anchor="middle" letter-spacing="1.5">SOFT CHEWS</text>
+    </symbol>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#b5-bg)"/>
+  <rect width="600" height="600" fill="url(#b5-glow)"/>
+
+  <!-- Best value badge -->
+  <g transform="translate(300, 90)">
+    <rect x="-110" y="-22" width="220" height="34" rx="17" fill="#1F2A24"/>
+    <text x="0" y="0" font-family="Inter, sans-serif" font-weight="700" font-size="11" fill="#D4A24A" text-anchor="middle" letter-spacing="2.5">BEST VALUE · SAVE 60%</text>
+  </g>
+
+  <ellipse cx="300" cy="540" rx="270" ry="20" fill="#000" opacity="0.20"/>
+
+  <!-- 5 jars in a fan, back to front -->
+  <g transform="translate(70, 175)" opacity="0.86">
+    <use href="#jar-xs" width="160" height="320" transform="rotate(-14 80 160) scale(0.82)"/>
+  </g>
+  <g transform="translate(150, 165)" opacity="0.92">
+    <use href="#jar-xs" width="160" height="320" transform="rotate(-7 80 160) scale(0.86)"/>
+  </g>
+  <g transform="translate(370, 165)" opacity="0.92">
+    <use href="#jar-xs" width="160" height="320" transform="rotate(7 80 160) scale(0.86)"/>
+  </g>
+  <g transform="translate(450, 175)" opacity="0.86">
+    <use href="#jar-xs" width="160" height="320" transform="rotate(14 80 160) scale(0.82)"/>
+  </g>
+  <!-- center foreground -->
+  <g transform="translate(220, 145)">
+    <use href="#jar-xs" width="160" height="320"/>
+  </g>
+</svg>

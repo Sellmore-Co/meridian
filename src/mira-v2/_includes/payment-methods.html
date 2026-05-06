@@ -1,0 +1,142 @@
+{% comment %}
+  Mira v2 payment-methods.
+  Spec available_payment_methods: apple_pay, bankcard, google_pay (NO PayPal, NO Klarna, NO Shop Pay).
+  Wraps payment-method-presentation with three options: Credit, Apple Pay, Google Pay.
+{% endcomment %}
+<div data-next-catalog-component="payment-method-presentation" class="payment-methods">
+
+  <!-- Credit (bankcard) -->
+  <div data-next-payment-method="credit" class="payment-method next-selected">
+    <div class="payment-method__header">
+      <label for="combo_mode_credit" combo_mode="credit" class="payment-method__label">
+        <input type="radio" name="payment_method" id="combo_mode_credit" data-name="Combo Mode" class="payment-method__input" checked value="credit">
+        <div class="payment-method__title">Credit Card</div>
+        <div class="payment-method__icons">
+          <span class="payment-method__icon payment-method__icon--visa">VISA</span>
+          <span class="payment-method__icon payment-method__icon--mastercard">MC</span>
+          <span class="payment-method__icon payment-method__icon--amex">AMEX</span>
+          <span class="payment-method__icon payment-method__icon--discover">DISC</span>
+        </div>
+      </label>
+    </div>
+    <div data-next-payment-form="credit" os-checkout-element="credit-form" os-shipping-method-same="true" class="payment-method__form payment-method__form--expanded">
+      <div class="payment-method__content">
+        <div data-next-component="credit-error" class="next-toast-handler">
+          <div class="tip1_bar is-warning">
+            <div data-next-component="credit-error-text" class="text-sm">Error message</div>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-grid__row">
+            <div class="form-group">
+              <div class="form-input">
+                <label class="label-checkout">Card Number</label>
+                <div data-next-checkout-field="cc-number" class="input-flds spreedly-field" aria-label="Card number"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-grid__row">
+            <div class="form-group">
+              <div class="form-input">
+                <label class="label-checkout">Exp. Month</label>
+                <div class="select-form-wrapper">
+                  <select autocomplete="cc-exp-month" placeholder="Exp. Month" name="credit_card_exp_month" data-next-checkout-field="exp-month" class="input-flds select-field">
+                    <option value="">Month</option>
+                    <option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option>
+                    <option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option>
+                  </select>
+                  <div class="caret-down"><div class="select-arrow">
+                    <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg>
+                  </div></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-input">
+                <label class="label-checkout">Exp. Year</label>
+                <div class="select-form-wrapper">
+                  <select autocomplete="cc-exp-year" placeholder="Exp. Year" name="credit_card_exp_year" data-next-checkout-field="exp-year" class="input-flds select-field">
+                    <option value="">Year</option>
+                    <option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option>
+                  </select>
+                  <div class="caret-down"><div class="select-arrow">
+                    <svg width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4.75 7 9.25 12 4.75"/></svg>
+                  </div></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-input">
+                <label class="label-checkout">CVV</label>
+                <div data-next-checkout-field="cvv" class="input-flds spreedly-field" aria-label="CVV"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="billing-address">
+          <div os-input-field="use-shipping-address" class="checkbox-wrapper">
+            <label class="checkout__checkbox">
+              <input type="checkbox" name="use_shipping_address" id="use_shipping_address" data-name="Use Shipping Address" class="checkbox__input" checked>
+              <div class="checkbox__label">Use shipping address as billing address</div>
+            </label>
+          </div>
+          <div os-checkout-element="different-billing-address" class="billing-address__form">
+            <h3 class="form-section__title cc-billing">Billing Address</h3>
+            <div os-checkout-component="billing-form" class="form-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if show_apple_pay %}
+  <!-- Apple Pay -->
+  <div data-next-payment-method="apple-pay" class="payment-method">
+    <div class="payment-method__header">
+      <label for="combo_mode_apple_pay" combo_mode="apple_pay" class="payment-method__label">
+        <input type="radio" name="payment_method" id="combo_mode_apple_pay" data-name="Combo Mode" class="payment-method__input" value="apple-pay">
+        <div class="payment-method__title">Apple Pay</div>
+        <div class="payment-method__icons">
+          <span class="payment-method__icon--apple-pay-logo" style="background:#000;color:#fff;">  Pay</span>
+        </div>
+      </label>
+    </div>
+    <div data-next-payment-form="apple-pay" os-checkout-element="credit-form" class="payment-method__form payment-method__form--collapsed">
+      <div class="payment-method__content">
+        <div class="payment-method__info">
+          <div class="payment-method__info-image">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="14" width="36" height="24" rx="3"/><path d="M30 26h-1.5"/></svg>
+          </div>
+          <h4 class="payment-method__info-title">After clicking "Complete Purchase", you'll be redirected to complete your purchase securely.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if show_google_pay %}
+  <!-- Google Pay -->
+  <div data-next-payment-method="google-pay" class="payment-method">
+    <div class="payment-method__header">
+      <label for="combo_mode_google_pay" combo_mode="google_pay" class="payment-method__label">
+        <input type="radio" name="payment_method" id="combo_mode_google_pay" data-name="Combo Mode" class="payment-method__input" value="google-pay">
+        <div class="payment-method__title">Google Pay</div>
+        <div class="payment-method__icons">
+          <span class="payment-method__icon--google-pay-logo" style="background:#fff;border:1px solid #DADCE0;color:#5F6368;">G Pay</span>
+        </div>
+      </label>
+    </div>
+    <div data-next-payment-form="google-pay" os-checkout-element="credit-form" class="payment-method__form payment-method__form--collapsed">
+      <div class="payment-method__content">
+        <div class="payment-method__info">
+          <div class="payment-method__info-image">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="14" width="36" height="24" rx="3"/><path d="M30 26h-1.5"/></svg>
+          </div>
+          <h4 class="payment-method__info-title">After clicking "Complete Purchase", you'll be redirected to complete your purchase securely.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+</div>

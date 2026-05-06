@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Mira Joint — 3 bottle bundle, 90-day supply">
+  <defs>
+    <linearGradient id="b3-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7E9CC"/>
+      <stop offset="1" stop-color="#D9BC8A"/>
+    </linearGradient>
+    <radialGradient id="b3-glow" cx="0.5" cy="0.3" r="0.7">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="b3-jar" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#F4F0E6"/>
+      <stop offset="1" stop-color="#D8CFB6"/>
+    </linearGradient>
+    <linearGradient id="b3-lid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3F5D4D"/>
+      <stop offset="1" stop-color="#1F2A24"/>
+    </linearGradient>
+    <linearGradient id="b3-label" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2C4A3C"/>
+      <stop offset="1" stop-color="#1B3026"/>
+    </linearGradient>
+    <radialGradient id="b3-shine" cx="0.3" cy="0.3" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <symbol id="jar-sm" viewBox="0 0 200 380">
+      <rect x="0" y="40" width="200" height="320" rx="28" fill="url(#b3-jar)" stroke="#B4A985" stroke-width="2"/>
+      <rect x="10" y="60" width="60" height="270" rx="14" fill="url(#b3-shine)"/>
+      <rect x="-12" y="2" width="224" height="40" rx="12" fill="#2C4A3C"/>
+      <rect x="-2" y="-15" width="204" height="28" rx="9" fill="url(#b3-lid)"/>
+      <rect x="20" y="74" width="160" height="240" rx="9" fill="url(#b3-label)" stroke="#0F1814" stroke-width="1"/>
+      <rect x="30" y="84" width="140" height="220" rx="6" fill="none" stroke="#D4A24A" stroke-width="1.4" opacity="0.8"/>
+      <circle cx="100" cy="120" r="16" fill="none" stroke="#D4A24A" stroke-width="1.7"/>
+      <text x="100" y="127" font-family="Georgia, serif" font-weight="700" font-size="16" fill="#D4A24A" text-anchor="middle">M</text>
+      <text x="100" y="172" font-family="Georgia, serif" font-style="italic" font-weight="600" font-size="34" fill="#FAF6F0" text-anchor="middle" letter-spacing="1">Mira</text>
+      <line x1="50" y1="190" x2="150" y2="190" stroke="#D4A24A" stroke-width="1" opacity="0.5"/>
+      <text x="100" y="216" font-family="Inter, sans-serif" font-weight="600" font-size="9" fill="#FAF6F0" text-anchor="middle" letter-spacing="2.5">JOINT &amp; HIP</text>
+      <text x="100" y="266" font-family="Georgia, serif" font-weight="600" font-size="22" fill="#FAF6F0" text-anchor="middle">60</text>
+      <text x="100" y="282" font-family="Inter, sans-serif" font-weight="400" font-size="7" fill="#D4A24A" text-anchor="middle" letter-spacing="2">SOFT CHEWS</text>
+    </symbol>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#b3-bg)"/>
+  <rect width="600" height="600" fill="url(#b3-glow)"/>
+
+  <!-- Most-popular badge -->
+  <g transform="translate(300, 90)">
+    <rect x="-100" y="-22" width="200" height="34" rx="17" fill="#C76A4A"/>
+    <text x="0" y="0" font-family="Inter, sans-serif" font-weight="700" font-size="11" fill="#FAF6F0" text-anchor="middle" letter-spacing="2.5">MOST POPULAR · 90-DAY</text>
+  </g>
+
+  <ellipse cx="300" cy="535" rx="240" ry="18" fill="#000" opacity="0.20"/>
+
+  <!-- back jar -->
+  <g transform="translate(180, 145)" opacity="0.94">
+    <use href="#jar-sm" width="200" height="380" transform="rotate(-6 100 190) scale(0.9)" />
+  </g>
+  <!-- right back -->
+  <g transform="translate(280, 150)" opacity="0.96">
+    <use href="#jar-sm" width="200" height="380" transform="rotate(7 100 190) scale(0.9)" />
+  </g>
+  <!-- center foreground -->
+  <g transform="translate(200, 130)">
+    <use href="#jar-sm" width="200" height="380"/>
+  </g>
+</svg>
