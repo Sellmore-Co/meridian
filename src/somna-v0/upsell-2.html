@@ -1,0 +1,58 @@
+---
+title: "Somna Special Offer 2"
+page_type: upsell
+permalink: /somna-v0/upsell-2/
+next_url: thank-you.html
+decline_url: thank-you.html
+currency: USD
+prevent_back_navigation: "true"
+body_class: upsell-page
+styles:
+  - css/funnel.css
+scripts:
+  - js/upsells.js
+  - js/funnel.js
+---
+<div class="upsell-alert">Final private offer · Only shown once</div>
+<nav class="nav" aria-label="Upsell">
+  <a class="brand" href="{{ 'landing.html' | campaign_link }}"><span class="brand-mark"></span>Somna</a>
+  <div class="trust-line">Secure one-click add-on</div>
+</nav>
+
+<main class="section">
+  <div class="container">
+    <div class="upsell-box" data-next-upsell="offer" data-next-package-id="3" data-next-await="">
+      <section>
+        <div class="eyebrow">One-time add-on</div>
+        <h1 class="section-title" data-pretext contenteditable="true">Add the Somna Wind-Down Kit before your order ships</h1>
+        <p class="body-lg">Customers who pair Somna capsules with the evening kit are more likely to keep the routine going. Add the weighted eye mask, pulse-point calm oil, and bedside routine card to the order already in progress.</p>
+        <div class="price-stack">
+          <span class="old">$58</span>
+          <span class="new">$19</span>
+        </div>
+        <ul class="body-lg">
+          <li>Weighted satin eye mask blocks light without pressure.</li>
+          <li>Lavender-free calm oil for pulse points and pillow edges.</li>
+          <li>Printed 7-night wind-down card for habit formation.</li>
+        </ul>
+        <div class="qty" data-qty>
+          <button type="button" data-qty-action="decrease" aria-label="Decrease quantity">−</button>
+          <strong data-qty-value>1</strong>
+          <button type="button" data-qty-action="increase" aria-label="Increase quantity">+</button>
+        </div>
+        <div class="cta-row">
+          <a data-next-upsell-action="add" class="button clay" href="{{ 'thank-you.html' | campaign_link }}">Yes, add the Wind-Down Kit</a>
+        </div>
+        <a data-next-upsell-action="skip" class="decline" href="{{ 'thank-you.html' | campaign_link }}">No thanks, finish my order</a>
+      </section>
+      <aside>
+        <div class="image-frame"><img src="{{ 'images/products/somna-wind-down-kit.png' | campaign_asset }}" alt="Somna wind-down accessories beside a bed"></div>
+        <div class="quote" style="margin-top:16px">
+          <div class="stars">★★★★★</div>
+          <p>“The kit made it feel like a ritual instead of another supplement bottle on my counter.”</p>
+          <strong>Jess W.</strong>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
