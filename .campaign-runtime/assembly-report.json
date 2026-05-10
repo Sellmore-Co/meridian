@@ -1,0 +1,589 @@
+{
+  "schema_version": "campaign-runtime-assembly-report/v0",
+  "run_id": "asm_1778430542515",
+  "generated_at": "2026-05-11T00:15:00.000+07:00",
+  "status": "preview_ready_local_qa_passed",
+  "identity": {
+    "map_id": "somna-v1-wbik",
+    "public_route_slug": "somna-v1",
+    "campaign_directory": "somna-v1",
+    "live_url_path": "/somna-v1/"
+  },
+  "inputs": {
+    "packet_path": "/Users/devin/Developer/meridian/.campaign-runtime/campaign-runtime.build.json",
+    "context_path": "/Users/devin/Developer/meridian/.campaign-runtime/build-context.json",
+    "spec_path": "/Users/devin/Developer/meridian/campaign-spec-somna-v1.json",
+    "source": {
+      "kind": "html_funnel",
+      "root": "/Users/devin/Developer/designer/somna-sleep-funnel"
+    },
+    "target_repo": "/Users/devin/Developer/meridian"
+  },
+  "template_family": {
+    "value": "olympus",
+    "locked": true,
+    "locked_by": "operator_flag",
+    "commerce_catalog_version": null,
+    "candidates": []
+  },
+  "stages": {
+    "prepare_build": {
+      "stage": "prepare_build",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [
+        "/Users/devin/Developer/meridian/.campaign-runtime/campaign-runtime.build.json",
+        "/Users/devin/Developer/meridian/.campaign-runtime/build-context.json",
+        "/Users/devin/Developer/meridian/.campaign-runtime/assembly-report.json"
+      ],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "doctor": {
+      "stage": "doctor",
+      "status": "ready_with_warnings",
+      "inputs": [
+        ".campaign-runtime/campaign-runtime.build.json",
+        ".campaign-runtime/build-context.json"
+      ],
+      "outputs": [
+        "doctor JSON emitted to terminal"
+      ],
+      "commands": [
+        "CAMPAIGNS_API_KEY=$(jq -r ' .campaign.campaigns_api_key ' campaign-spec-somna-v1.json) npm run campaign-os -- doctor --packet .campaign-runtime/campaign-runtime.build.json --context .campaign-runtime/build-context.json --json"
+      ],
+      "blockers": [],
+      "warnings": [
+        {
+          "code": "campaign.allowed_domains_confirmed",
+          "stage": "doctor",
+          "message": "Allowed domains are not confirmed; SDK calls may fail after deploy."
+        },
+        {
+          "code": "page_kit.dry_run_unavailable",
+          "stage": "doctor",
+          "message": "Target repo page-kit version 0.1.0 warned before setup; package was upgraded to 0.1.2 for non-interactive campaign-init."
+        },
+        {
+          "code": "deploy.target",
+          "stage": "doctor",
+          "message": "Deploy target is unknown; declare the host before build handoff."
+        },
+        {
+          "code": "deploy.preview_url",
+          "stage": "doctor",
+          "message": "Preview or production URL is not declared; spec-aware QA cannot run against deployed output yet."
+        }
+      ],
+      "next_owner": "next-campaigns-setup"
+    },
+    "setup": {
+      "stage": "setup",
+      "status": "completed",
+      "inputs": [
+        ".campaign-runtime/campaign-runtime.build.json",
+        ".campaign-runtime/build-context.json"
+      ],
+      "outputs": [
+        "src/somna-v1/",
+        ".campaign-runtime/campaign-init-result.json",
+        ".campaign-runtime/setup-handoff.json"
+      ],
+      "commands": [
+        "npm install next-campaign-page-kit@^0.1.1",
+        "npx campaign-init --non-interactive --json --template olympus --slug somna-v1 --name \"Somna v1\" --ai-context claude --keep-ai-context"
+      ],
+      "blockers": [],
+      "warnings": [
+        {
+          "code": "page_kit_upgrade",
+          "stage": "setup",
+          "message": "Upgraded next-campaign-page-kit to 0.1.2 because 0.1.0 ignored non-interactive scaffold flags."
+        },
+        {
+          "code": "store_url_absent",
+          "stage": "setup",
+          "message": "CampaignSpec does not declare store_url or policy URLs; setup blanked demo URLs instead of inventing production policy links."
+        }
+      ],
+      "next_owner": "next-campaigns-build"
+    },
+    "assembly": {
+      "stage": "assembly",
+      "status": "completed",
+      "inputs": [
+        "campaign-spec-somna-v1.json",
+        "/Users/devin/Developer/designer/somna-sleep-funnel",
+        "src/somna-v1/",
+        "/Users/devin/Developer/campaign-cart-starter-templates/docs/commerce-surface-catalog.md"
+      ],
+      "outputs": [
+        "src/somna-v1/presell.html",
+        "src/somna-v1/landing.html",
+        "src/somna-v1/checkout.html",
+        "src/somna-v1/upsell.html",
+        "src/somna-v1/upsell-2.html",
+        "src/somna-v1/receipt.html",
+        "src/somna-v1/assets/css/funnel.css",
+        "src/somna-v1/assets/js/funnel.js",
+        "src/somna-v1/assets/js/checkout.js",
+        "src/somna-v1/assets/js/upsells.js",
+        "src/somna-v1/assets/images/products/"
+      ],
+      "commands": [
+        "cp Somna page-kit-integrated v0 pages/assets into src/somna-v1, preserving v1 config.js",
+        "perl route rewrite somna-v0 -> somna-v1, upsell-1.html -> upsell.html, thank-you.html -> receipt.html",
+        "apply_patch removed scaffold sample upsell pages not present in CampaignSpec",
+        "apply_patch aligned local bundle-selector fallback shipping ids to CampaignSpec shipping ref_id=1",
+        "npm run build",
+        "rg route/commerce sentinel checks"
+      ],
+      "blockers": [],
+      "warnings": [
+        {
+          "code": "setup.demo_values_blank",
+          "stage": "assembly",
+          "message": "Setup blanked demo policy/tracking placeholders because CampaignSpec does not declare store URL, footer links, or tracking providers."
+        }
+      ],
+      "next_owner": "next-campaigns-polish"
+    },
+    "polish": {
+      "stage": "polish",
+      "status": "completed_skill_verified",
+      "inputs": [
+        "/Users/devin/.codex/skills/next-campaigns-polish/SKILL.md",
+        "/Users/devin/Developer/designer/somna-sleep-funnel/*.html",
+        "src/somna-v1/*.html",
+        "_site/somna-v1/",
+        "https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/"
+      ],
+      "outputs": [
+        "24 screenshots captured under /tmp/somna-polish/screens: source and built desktop/mobile for presell, landing, checkout, upsell, upsell-2, receipt",
+        "Follow-up checkout form-surface patch applied after reviewer found misshapen shipping/payment fields",
+        "Desktop and 390px mobile checkout screenshots captured at /tmp/somna-checkout-form-fixed-desktop.png and /tmp/somna-checkout-form-fixed-mobile.png"
+      ],
+      "commands": [
+        "sed -n 1,240p /Users/devin/.codex/skills/next-campaigns-polish/SKILL.md",
+        "npm run build",
+        "served source mockups at http://127.0.0.1:4176",
+        "gstack browse prettyscreenshot --cleanup --width 1440 and --width 390 for six source pages",
+        "gstack browse prettyscreenshot --cleanup --width 1440 and --width 390 for six built preview pages",
+        "npm run (checked for SDK lint scripts; no lint:sdk scripts available)",
+        "rg sentinel checks for paid-shipping copy, old route names, malformed hash links, shipping-id=2, typo regressions",
+        "apply_patch corrected Somna checkout field-grid and Spreedly mount geometry",
+        "npm run build",
+        "gstack browse chain captured full checkout desktop/mobile screenshots after form-surface patch",
+        "curl -I http://127.0.0.1:4181/somna-v1/checkout/",
+        "gstack browse chain checked local checkout console errors after form-surface patch",
+        "apply_patch tightened mobile bundle card grid to preserve radio/title/pricing horizontal order",
+        "npm run build",
+        "gstack browse chain captured selected 3-pack mobile checkout screenshot at /tmp/somna-bundle-mobile-after.png",
+        "gh pr checks 4 --watch --interval 10",
+        "gstack browse chain captured deployed selected 3-pack mobile checkout screenshot at /tmp/somna-bundle-mobile-preview-after.png and checked console errors"
+      ],
+      "blockers": [],
+      "warnings": [
+        {
+          "code": "sdk_lint_unavailable",
+          "stage": "polish",
+          "message": "No npm lint:sdk, lint:sdk:promoted, or lint:sdk:ci scripts are defined in this repo."
+        },
+        {
+          "code": "intentional_commerce_divergence",
+          "stage": "polish",
+          "message": "Built checkout intentionally differs from source paid-shipping mockup because user selected CampaignSpec truth: shipping ref_id=1/free shipping for all tiers."
+        },
+        {
+          "code": "intentional_route_divergence",
+          "stage": "polish",
+          "message": "Built routes intentionally use CampaignSpec/Page Kit canonical routes: index, landing, checkout, upsell, upsell-2, receipt instead of source file names upsell-1/thank-you."
+        }
+      ],
+      "next_owner": "next-campaigns-qa"
+    },
+    "deploy": {
+      "stage": "deploy",
+      "status": "completed_preview_verified",
+      "inputs": [
+        "Netlify deploy preview from PR #4"
+      ],
+      "outputs": [
+        "https://deploy-preview-4--meridian-skincare.netlify.app",
+        "https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/",
+        "https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/checkout/ returned HTTP 200 after checkout form-surface patch",
+        "Preview mobile checkout screenshot captured at /tmp/somna-checkout-form-fixed-preview-mobile.png"
+      ],
+      "commands": [
+        "gh pr checks 4 --watch --interval 10",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/landing/",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/checkout/",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/upsell/",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/upsell-2/",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/receipt/",
+        "gh pr checks 4 --watch --interval 10",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/checkout/",
+        "gstack browse chain captured deployed 390px checkout screenshot and checked console errors"
+      ],
+      "blockers": [],
+      "warnings": [
+        {
+          "code": "netlify.header_pages_checks_skipped",
+          "stage": "deploy",
+          "message": "Netlify Header rules and Pages changed checks reported skipping; deploy-preview and redirect checks passed."
+        }
+      ],
+      "next_owner": "next-campaigns-qa"
+    },
+    "qa": {
+      "stage": "qa",
+      "status": "completed_preview_smoke_pending_spec_qa",
+      "inputs": [
+        "http://127.0.0.1:4174/somna-v1/"
+      ],
+      "outputs": [
+        "all six local routes returned 200",
+        "browser smoke found expected page text on entry, landing, checkout, upsell, upsell-2, receipt",
+        "browser console reported no errors on entry, landing, checkout, and receipt",
+        "Netlify preview route resolution passed for all six Somna v1 routes"
+      ],
+      "commands": [
+        "/Users/devin/.codex/skills/gstack/browse/dist/browse chain for six-route smoke",
+        "rg emitted route/meta/data-next sentinel checks",
+        "npm run build"
+      ],
+      "blockers": [],
+      "warnings": [
+        {
+          "code": "test_orders_not_run",
+          "stage": "qa",
+          "message": "No test orders were run because test orders were not explicitly allowed and sandbox test_card routing was not confirmed."
+        },
+        {
+          "code": "spec_aware_qa_not_run",
+          "stage": "qa",
+          "message": "Deployed route smoke passed, but full next-campaigns-qa spec-aware runtime run was not available in the target repo scripts."
+        }
+      ],
+      "next_owner": "operator/deploy-system"
+    }
+  },
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mozxcega_25",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mozxcega_25\" to source file \"presell.html\"",
+      "confidence": "high",
+      "blast_radius": "routing",
+      "requires_ack": false,
+      "evidence": [
+        "matched source filename against page keys: page-mozxcega-25, advertorial, presell, index-html, index, presell-1"
+      ],
+      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
+      "manual_review_required": false
+    },
+    {
+      "id": "dec_page_map_page_mozxcega_26",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mozxcega_26\" to source file \"landing.html\"",
+      "confidence": "high",
+      "blast_radius": "routing",
+      "requires_ack": false,
+      "evidence": [
+        "matched source filename against page keys: page-mozxcega-26, landing, landing-html, landing-1, index"
+      ],
+      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
+      "manual_review_required": false
+    },
+    {
+      "id": "dec_page_map_page_mozxcega_27",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mozxcega_27\" to source file \"checkout.html\"",
+      "confidence": "high",
+      "blast_radius": "routing",
+      "requires_ack": false,
+      "evidence": [
+        "matched source filename against page keys: page-mozxcega-27, checkout, checkout-html, checkout-1"
+      ],
+      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
+      "manual_review_required": false
+    },
+    {
+      "id": "dec_page_map_page_mozxcega_28",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mozxcega_28\" to source file \"upsell-1.html\"",
+      "confidence": "high",
+      "blast_radius": "routing",
+      "requires_ack": false,
+      "evidence": [
+        "matched source filename against page keys: page-mozxcega-28, oto-refill, upsell, upsell-html, upsell-1"
+      ],
+      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
+      "manual_review_required": false
+    },
+    {
+      "id": "dec_page_map_page_mozxeafv_82",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mozxeafv_82\" to source file \"upsell-2.html\"",
+      "confidence": "high",
+      "blast_radius": "routing",
+      "requires_ack": false,
+      "evidence": [
+        "matched source filename against page keys: page-mozxeafv-82, oto-winddown, upsell, upsell-2-html, upsell-2"
+      ],
+      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
+      "manual_review_required": false
+    },
+    {
+      "id": "dec_page_map_page_mozxcega_29",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mozxcega_29\" to source file \"thank-you.html\"",
+      "confidence": "high",
+      "blast_radius": "routing",
+      "requires_ack": false,
+      "evidence": [
+        "matched source filename against page keys: page-mozxcega-29, thank-you, thankyou, receipt-html, receipt, thankyou-1"
+      ],
+      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
+      "manual_review_required": false
+    },
+    {
+      "id": "dec_spec_route_refresh_somna_v1",
+      "stage": "prepare_build",
+      "decision_type": "derived_from_merged_builder",
+      "decision": "refreshed local Somna CampaignSpec route fields to merged Map Builder canonical page_url output",
+      "reason": "The already-exported local spec predated the merged Map Builder fix and lacked explicit page_url values, causing doctor route collisions for stacked upsells.",
+      "evidence": [
+        "page_mozxcega_25 -> index.html",
+        "page_mozxcega_26 -> landing.html",
+        "page_mozxcega_27 -> checkout.html",
+        "page_mozxcega_28 -> upsell.html",
+        "page_mozxeafv_82 -> upsell-2.html",
+        "page_mozxcega_29 -> receipt.html"
+      ],
+      "confidence": "high",
+      "blast_radius": "routing and SDK meta tags",
+      "manual_review_required": false,
+      "requires_ack": false
+    },
+    {
+      "id": "dec_commerce_shipping_align_spec_b",
+      "stage": "assembly",
+      "decision_type": "user_selected_spec_authority",
+      "decision": "Aligned checkout bundle cards and copy to CampaignSpec shipping ref_id=1/free shipping for all tiers.",
+      "reason": "User selected option B after doctor/assembly found source HTML used shipping ref_id=2 and paid 1x shipping copy while CampaignSpec declares only shipping ref_id=1 at 0.00.",
+      "evidence": [
+        "CampaignSpec shipping_methods contains ref_id=1 price 0.00 only",
+        "checkout emits data-next-shipping-id=1 on somna-qty-1/2/3",
+        "browser smoke text shows Try the ritual + free shipping, Save  + free shipping, Save  + free shipping"
+      ],
+      "confidence": "high",
+      "blast_radius": "checkout bundle selector, cart shipping selection, offer copy",
+      "manual_review_required": false,
+      "requires_ack": false
+    },
+    {
+      "id": "dec_reuse_somna_v0_pagekit_integration",
+      "stage": "assembly",
+      "decision_type": "local_reference_reuse",
+      "decision": "Reused existing Somna v0 Page Kit-integrated pages/assets as assembly reference for v1 instead of raw scaffold placeholders.",
+      "reason": "Somna v0 already represented the same HTML source layout with Page Kit commerce surfaces integrated; v1 scaffold still contained generic Olympus placeholder checkout.",
+      "evidence": [
+        "src/somna-v0 checkout had Somna copy/images and valid data-next checkout surfaces",
+        "src/somna-v1 checkout before assembly was titled Olympus Checkout and had Product Name placeholder",
+        "source root contains matching Somna HTML/assets"
+      ],
+      "confidence": "medium-high",
+      "blast_radius": "all Somna v1 page markup and campaign-local assets",
+      "manual_review_required": true,
+      "requires_ack": false
+    },
+    {
+      "id": "dec_entry_outputs_index",
+      "stage": "assembly",
+      "decision_type": "page_kit_route_contract",
+      "decision": "Kept CampaignSpec entry page as source presell.html but Page Kit output route as /somna-v1/index.html.",
+      "reason": "campaign-page-kit expects the entry permalink /somna-v1/ to emit index.html while CampaignSpec page_url is index.html.",
+      "evidence": [
+        "src/somna-v1/presell.html permalink /somna-v1/",
+        "npm run build wrote _site/somna-v1/index.html from somna-v1/presell.html",
+        "CampaignSpec page_mozxcega_25 page_url index.html is_entry true"
+      ],
+      "confidence": "high",
+      "blast_radius": "entry route and public ad destination",
+      "manual_review_required": false,
+      "requires_ack": false
+    },
+    {
+      "id": "dec_polish_static_placeholders",
+      "stage": "polish",
+      "decision_type": "local_static_polish",
+      "decision": "Fixed static fallback text for billing-address label, receipt fallback address, and presell hash links.",
+      "reason": "Browser smoke exposed typo and non-US fallback address; route grep exposed malformed hash routes when hash was passed inside campaign_link.",
+      "evidence": [
+        "checkout text now shows Use shipping address as billing address",
+        "receipt text now shows Columbus, OH 43215 fallback",
+        "rg found no landing.html# or hrefs to .html in emitted somna-v1 pages"
+      ],
+      "confidence": "high",
+      "blast_radius": "static fallback copy and navigation anchors only",
+      "manual_review_required": false,
+      "requires_ack": false
+    },
+    {
+      "id": "dec_next_campaigns_polish_skill_run",
+      "stage": "polish",
+      "decision_type": "skill_verification",
+      "decision": "Ran the next-campaigns-polish skill after PR preview was available; later reviewer feedback found a missed scrolled checkout form-surface issue.",
+      "reason": "User asked whether the campaign polish skill had actually run; prior polish was manual, so the formal skill pass was executed against source mockups and built preview output.",
+      "evidence": [
+        "Captured 24 screenshots under /tmp/somna-polish/screens",
+        "Source pages and built preview pages all navigated with HTTP 200 during capture",
+        "npm run build passed in clean PR worktree",
+        "npm run showed no SDK lint scripts available",
+        "rg sentinel checks found no emitted paid-shipping copy, old v0 route names, malformed hash links, shipping-id=2, or typo regressions in src/somna-v1/_site/somna-v1"
+      ],
+      "confidence": "high",
+      "blast_radius": "reporting and verification; follow-up checkout form-surface patch recorded separately",
+      "manual_review_required": false,
+      "requires_ack": false
+    },
+    {
+      "id": "dec_polish_checkout_form_surfaces",
+      "stage": "polish",
+      "decision_type": "reviewer_found_visual_fix",
+      "decision": "Restored Somna checkout form surfaces to Olympus field geometry by forcing the campaign-local form grid to full-width tracks, preserving full-width field wrappers, removing duplicate visible fallback text from Spreedly mounts, and giving payment metadata an explicit responsive row.",
+      "reason": "Reviewer screenshot showed shipping fields and credit-card fields shrinking/overlapping instead of matching the Olympus component shape; the first polish screenshot pass captured page tops and missed the scrolled checkout form surface.",
+      "evidence": [
+        "src/somna-v1/assets/css/funnel.css now defines .form-grid with grid-template-columns: minmax(0, 1fr)",
+        "src/somna-v1/checkout.html removes visible Card Number/CVV text from Spreedly host elements and uses aria-label plus :empty placeholder fallback",
+        "Local desktop screenshot /tmp/somna-checkout-form-fixed-desktop.png shows full-width shipping fields and non-overlapping card/payment fields",
+        "Local 390px screenshot /tmp/somna-checkout-form-fixed-mobile.png shows full-width customer, shipping, and payment fields"
+      ],
+      "confidence": "high",
+      "blast_radius": "Somna v1 checkout form layout only; commerce data attributes and catalog-owned runtime surfaces preserved",
+      "manual_review_required": true,
+      "requires_ack": false
+    },
+    {
+      "id": "dec_polish_mobile_bundle_cards",
+      "stage": "polish",
+      "decision_type": "reviewer_found_visual_fix",
+      "decision": "Restored mobile checkout bundle cards to a compact Olympus-style horizontal ordering with radio, bundle copy, and pricing in one row.",
+      "reason": "Reviewer screenshot showed oversized mobile bundle cards with pricing not sitting in the expected horizontal order; the Somna skin had overridden the commerce card mobile grid into a two-column stacked pattern.",
+      "evidence": [
+        "src/somna-v1/assets/css/funnel.css previously set mobile .os-card__content to 24px 1fr and .os-card__pricing to grid-column: 2",
+        "src/somna-v1/assets/css/funnel.css now scopes checkout mobile bundle cards to 22px minmax(0, 1fr) minmax(74px, max-content)",
+        "Local selected 3-pack screenshot /tmp/somna-bundle-mobile-after.png shows compact card height with title/subtitle and pricing aligned horizontally",
+        "Deployed selected 3-pack screenshot /tmp/somna-bundle-mobile-preview-after.png shows the same compact horizontal ordering",
+        "Deploy preview console reported no errors after the mobile bundle card patch",
+        "npm run build passed after the mobile bundle card patch"
+      ],
+      "confidence": "high",
+      "blast_radius": "Somna v1 checkout bundle selector layout only; data-next bundle/shipping/package hooks preserved",
+      "manual_review_required": true,
+      "requires_ack": false
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "build",
+      "command": "npm run build",
+      "result": "passed; Built 61 pages; Somna v1 emitted index, landing, checkout, upsell, upsell-2, receipt routes."
+    },
+    {
+      "stage": "route_resolution",
+      "command": "curl -I local routes",
+      "result": "all Somna v1 local routes returned HTTP 200"
+    },
+    {
+      "stage": "browser_smoke",
+      "command": "/Users/devin/.codex/skills/gstack/browse/dist/browse chain",
+      "result": "entry, landing, checkout, upsell, upsell-2, receipt rendered expected text; no console errors on checked pages."
+    },
+    {
+      "stage": "commerce_static_check",
+      "command": "rg route/commerce sentinel checks",
+      "result": "no paid shipping copy, old v0 route names, old upsell-1/thank-you routes, or invalid shipping-id=2 emitted for Somna v1."
+    },
+    {
+      "stage": "preview",
+      "command": "curl -I Netlify preview routes",
+      "result": "all Somna v1 preview routes returned HTTP 200 at https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/"
+    },
+    {
+      "stage": "polish",
+      "command": "next-campaigns-polish skill workflow",
+      "result": "completed after source/built desktop/mobile screenshot capture; later reviewer feedback exposed a missed scrolled checkout form-surface issue; SDK lint unavailable in package scripts."
+    },
+    {
+      "stage": "polish_followup",
+      "command": "npm run build; gstack browse chain desktop/mobile checkout screenshots",
+      "result": "checkout form-surface patch verified locally at desktop and 390px mobile; shipping/customer/payment fields now render full-width within their Olympus surfaces, Spreedly fallback text no longer overlaps, local checkout returned HTTP 200, and browser console reported no errors."
+    },
+    {
+      "stage": "preview_followup",
+      "command": "gh pr checks 4 --watch --interval 10; curl -I preview checkout; gstack browse chain preview mobile screenshot and console",
+      "result": "PR #4 deploy preview passed after commit bab1839; deployed checkout returned HTTP 200; 390px preview screenshot shows corrected checkout form surfaces; browser console reported no errors."
+    },
+    {
+      "stage": "polish_followup",
+      "command": "npm run build; gstack browse chain selected 3-pack mobile checkout screenshot",
+      "result": "mobile bundle card layout now keeps radio, title/subtitle, and pricing in horizontal order with reduced card height; local SDK console remains blocked by expected 127.0.0.1 Campaigns API CORS."
+    },
+    {
+      "stage": "preview_followup",
+      "command": "gh pr checks 4 --watch --interval 10; gstack browse chain selected 3-pack preview mobile screenshot and console",
+      "result": "PR #4 deploy preview passed after commit eaba11a; deployed selected 3-pack mobile screenshot shows compact horizontal bundle cards; browser console reported no errors."
+    }
+  ],
+  "blockers": [],
+  "warnings": [
+    {
+      "code": "campaign.allowed_domains_confirmed",
+      "stage": "doctor",
+      "message": "Allowed domains are not confirmed; SDK calls may fail after deploy."
+    },
+    {
+      "code": "page_kit.dry_run_unavailable",
+      "stage": "doctor",
+      "message": "Target repo page-kit version 0.1.0 warned before setup; package was upgraded to 0.1.2 for non-interactive campaign-init."
+    },
+    {
+      "code": "page_kit_upgrade",
+      "stage": "setup",
+      "message": "Upgraded next-campaign-page-kit to 0.1.2 because 0.1.0 ignored non-interactive scaffold flags."
+    },
+    {
+      "code": "store_url_absent",
+      "stage": "setup",
+      "message": "CampaignSpec does not declare store_url or policy URLs; setup blanked demo URLs instead of inventing production policy links."
+    },
+    {
+      "code": "setup.demo_values_blank",
+      "stage": "assembly",
+      "message": "Setup blanked demo policy/tracking placeholders because CampaignSpec does not declare store URL, footer links, or tracking providers."
+    },
+    {
+      "code": "test_orders_not_run",
+      "stage": "qa",
+      "message": "No test orders were run because test orders were not explicitly allowed and sandbox test_card routing was not confirmed."
+    }
+  ],
+  "next": {
+    "stage": "review",
+    "owner": "reviewer",
+    "action": "Review PR #4 and, if desired, run full deployed spec-aware Campaigns QA with sandbox/test-order inputs confirmed.",
+    "blocked_stages": [
+      "test order QA only, pending explicit sandbox test_card authorization"
+    ]
+  }
+}
