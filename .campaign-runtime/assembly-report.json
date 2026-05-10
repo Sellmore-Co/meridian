@@ -1,8 +1,8 @@
 {
   "schema_version": "campaign-runtime-assembly-report/v0",
   "run_id": "asm_1778430542515",
-  "generated_at": "2026-05-10T16:39:56.188Z",
-  "status": "qa_passed_preview_blocked",
+  "generated_at": "2026-05-10T16:44:07.518Z",
+  "status": "preview_ready_local_qa_passed",
   "identity": {
     "map_id": "somna-v1-wbik",
     "public_route_slug": "somna-v1",
@@ -174,48 +174,44 @@
     },
     "deploy": {
       "stage": "deploy",
-      "status": "blocked_remote_preview",
+      "status": "completed_preview_verified",
       "inputs": [
-        "local _site build"
+        "Netlify deploy preview from PR #4"
       ],
       "outputs": [
-        "local preview http://127.0.0.1:4174/somna-v1/"
+        "https://deploy-preview-4--meridian-skincare.netlify.app",
+        "https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/"
       ],
       "commands": [
-        "python3 -m http.server 4174 --directory _site",
-        "curl -I http://127.0.0.1:4174/somna-v1/",
-        "curl -I http://127.0.0.1:4174/somna-v1/landing/",
-        "curl -I http://127.0.0.1:4174/somna-v1/checkout/",
-        "curl -I http://127.0.0.1:4174/somna-v1/upsell/",
-        "curl -I http://127.0.0.1:4174/somna-v1/upsell-2/",
-        "curl -I http://127.0.0.1:4174/somna-v1/receipt/"
+        "gh pr checks 4 --watch --interval 10",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/landing/",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/checkout/",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/upsell/",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/upsell-2/",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/receipt/"
       ],
-      "blockers": [
-        {
-          "code": "deploy.preview_url_absent",
-          "stage": "deploy",
-          "message": "Local preview routes return 200, but no remote preview URL is available yet to satisfy preview 200 verification."
-        }
-      ],
+      "blockers": [],
       "warnings": [
         {
-          "code": "deploy.target",
+          "code": "netlify.header_pages_checks_skipped",
           "stage": "deploy",
-          "message": "Deploy target is unknown; PR may need CI/deploy integration to provide the preview URL."
+          "message": "Netlify Header rules and Pages changed checks reported skipping; deploy-preview and redirect checks passed."
         }
       ],
-      "next_owner": "operator/deploy-system"
+      "next_owner": "next-campaigns-qa"
     },
     "qa": {
       "stage": "qa",
-      "status": "completed_local",
+      "status": "completed_preview_smoke_pending_spec_qa",
       "inputs": [
         "http://127.0.0.1:4174/somna-v1/"
       ],
       "outputs": [
         "all six local routes returned 200",
         "browser smoke found expected page text on entry, landing, checkout, upsell, upsell-2, receipt",
-        "browser console reported no errors on entry, landing, checkout, and receipt"
+        "browser console reported no errors on entry, landing, checkout, and receipt",
+        "Netlify preview route resolution passed for all six Somna v1 routes"
       ],
       "commands": [
         "/Users/devin/.codex/skills/gstack/browse/dist/browse chain for six-route smoke",
@@ -228,6 +224,11 @@
           "code": "test_orders_not_run",
           "stage": "qa",
           "message": "No test orders were run because test orders were not explicitly allowed and sandbox test_card routing was not confirmed."
+        },
+        {
+          "code": "spec_aware_qa_not_run",
+          "stage": "qa",
+          "message": "Deployed route smoke passed, but full next-campaigns-qa spec-aware runtime run was not available in the target repo scripts."
         }
       ],
       "next_owner": "operator/deploy-system"
@@ -422,15 +423,14 @@
       "stage": "commerce_static_check",
       "command": "rg route/commerce sentinel checks",
       "result": "no paid shipping copy, old v0 route names, old upsell-1/thank-you routes, or invalid shipping-id=2 emitted for Somna v1."
-    }
-  ],
-  "blockers": [
+    },
     {
-      "code": "deploy.preview_url_absent",
-      "stage": "deploy",
-      "message": "No deploy target or preview URL is declared yet, so remote preview 200 verification cannot be completed before PR/deploy integration provides a URL."
+      "stage": "preview",
+      "command": "curl -I Netlify preview routes",
+      "result": "all Somna v1 preview routes returned HTTP 200 at https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/"
     }
   ],
+  "blockers": [],
   "warnings": [
     {
       "code": "campaign.allowed_domains_confirmed",
@@ -441,16 +441,6 @@
       "code": "page_kit.dry_run_unavailable",
       "stage": "doctor",
       "message": "Target repo page-kit version 0.1.0 warned before setup; package was upgraded to 0.1.2 for non-interactive campaign-init."
-    },
-    {
-      "code": "deploy.target",
-      "stage": "deploy",
-      "message": "Deploy target is unknown; remote preview URL cannot be checked until hosting integration is identified."
-    },
-    {
-      "code": "deploy.preview_url",
-      "stage": "doctor",
-      "message": "Preview or production URL is not declared; spec-aware QA cannot run against deployed output yet."
     },
     {
       "code": "page_kit_upgrade",
@@ -474,12 +464,11 @@
     }
   ],
   "next": {
-    "stage": "deploy-preview",
-    "owner": "operator/deploy-system",
-    "action": "Open PR, let deploy integration produce a preview URL, then verify the preview URL returns 200 before declaring preview-ready.",
+    "stage": "review",
+    "owner": "reviewer",
+    "action": "Review PR #4 and, if desired, run full deployed spec-aware Campaigns QA with sandbox/test-order inputs confirmed.",
     "blocked_stages": [
-      "remote preview 200 verification",
-      "deployed spec-aware QA"
+      "test order QA only, pending explicit sandbox test_card authorization"
     ]
   }
 }
