@@ -206,7 +206,9 @@
       ],
       "outputs": [
         "https://deploy-preview-4--meridian-skincare.netlify.app",
-        "https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/"
+        "https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/",
+        "https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/checkout/ returned HTTP 200 after checkout form-surface patch",
+        "Preview mobile checkout screenshot captured at /tmp/somna-checkout-form-fixed-preview-mobile.png"
       ],
       "commands": [
         "gh pr checks 4 --watch --interval 10",
@@ -215,7 +217,10 @@
         "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/checkout/",
         "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/upsell/",
         "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/upsell-2/",
-        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/receipt/"
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/receipt/",
+        "gh pr checks 4 --watch --interval 10",
+        "curl -I https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/checkout/",
+        "gstack browse chain captured deployed 390px checkout screenshot and checked console errors"
       ],
       "blockers": [],
       "warnings": [
@@ -499,6 +504,11 @@
       "stage": "polish_followup",
       "command": "npm run build; gstack browse chain desktop/mobile checkout screenshots",
       "result": "checkout form-surface patch verified locally at desktop and 390px mobile; shipping/customer/payment fields now render full-width within their Olympus surfaces, Spreedly fallback text no longer overlaps, local checkout returned HTTP 200, and browser console reported no errors."
+    },
+    {
+      "stage": "preview_followup",
+      "command": "gh pr checks 4 --watch --interval 10; curl -I preview checkout; gstack browse chain preview mobile screenshot and console",
+      "result": "PR #4 deploy preview passed after commit bab1839; deployed checkout returned HTTP 200; 390px preview screenshot shows corrected checkout form surfaces; browser console reported no errors."
     }
   ],
   "blockers": [],
