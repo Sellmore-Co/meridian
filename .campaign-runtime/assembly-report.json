@@ -1,7 +1,7 @@
 {
   "schema_version": "campaign-runtime-assembly-report/v0",
   "run_id": "asm_1778430542515",
-  "generated_at": "2026-05-10T16:44:07.518Z",
+  "generated_at": "2026-05-10T16:52:41.219Z",
   "status": "preview_ready_local_qa_passed",
   "identity": {
     "map_id": "somna-v1-wbik",
@@ -151,25 +151,45 @@
     },
     "polish": {
       "stage": "polish",
-      "status": "completed",
+      "status": "completed_skill_verified",
       "inputs": [
-        "browser smoke text output",
-        "route resolution grep output"
+        "/Users/devin/.codex/skills/next-campaigns-polish/SKILL.md",
+        "/Users/devin/Developer/designer/somna-sleep-funnel/*.html",
+        "src/somna-v1/*.html",
+        "_site/somna-v1/",
+        "https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/"
       ],
       "outputs": [
-        "src/somna-v1/_includes/billing-address-form.html",
-        "src/somna-v1/receipt.html",
-        "src/somna-v1/presell.html"
+        "24 screenshots captured under /tmp/somna-polish/screens: source and built desktop/mobile for presell, landing, checkout, upsell, upsell-2, receipt",
+        "No additional code patches required by the skill pass"
       ],
       "commands": [
-        "apply_patch fixed checkout billing-address typo from shiping to shipping",
-        "apply_patch replaced Canadian receipt fallback address with US placeholder",
-        "apply_patch fixed presell hash links to append anchors after campaign_link",
+        "sed -n 1,240p /Users/devin/.codex/skills/next-campaigns-polish/SKILL.md",
         "npm run build",
-        "rg polish sentinel checks"
+        "served source mockups at http://127.0.0.1:4176",
+        "gstack browse prettyscreenshot --cleanup --width 1440 and --width 390 for six source pages",
+        "gstack browse prettyscreenshot --cleanup --width 1440 and --width 390 for six built preview pages",
+        "npm run (checked for SDK lint scripts; no lint:sdk scripts available)",
+        "rg sentinel checks for paid-shipping copy, old route names, malformed hash links, shipping-id=2, typo regressions"
       ],
       "blockers": [],
-      "warnings": [],
+      "warnings": [
+        {
+          "code": "sdk_lint_unavailable",
+          "stage": "polish",
+          "message": "No npm lint:sdk, lint:sdk:promoted, or lint:sdk:ci scripts are defined in this repo."
+        },
+        {
+          "code": "intentional_commerce_divergence",
+          "stage": "polish",
+          "message": "Built checkout intentionally differs from source paid-shipping mockup because user selected CampaignSpec truth: shipping ref_id=1/free shipping for all tiers."
+        },
+        {
+          "code": "intentional_route_divergence",
+          "stage": "polish",
+          "message": "Built routes intentionally use CampaignSpec/Page Kit canonical routes: index, landing, checkout, upsell, upsell-2, receipt instead of source file names upsell-1/thank-you."
+        }
+      ],
       "next_owner": "next-campaigns-qa"
     },
     "deploy": {
@@ -401,6 +421,24 @@
       "blast_radius": "static fallback copy and navigation anchors only",
       "manual_review_required": false,
       "requires_ack": false
+    },
+    {
+      "id": "dec_next_campaigns_polish_skill_run",
+      "stage": "polish",
+      "decision_type": "skill_verification",
+      "decision": "Ran the next-campaigns-polish skill after PR preview was available; no additional runtime-safe patches were required.",
+      "reason": "User asked whether the campaign polish skill had actually run; prior polish was manual, so the formal skill pass was executed against source mockups and built preview output.",
+      "evidence": [
+        "Captured 24 screenshots under /tmp/somna-polish/screens",
+        "Source pages and built preview pages all navigated with HTTP 200 during capture",
+        "npm run build passed in clean PR worktree",
+        "npm run showed no SDK lint scripts available",
+        "rg sentinel checks found no emitted paid-shipping copy, old v0 route names, malformed hash links, shipping-id=2, or typo regressions in src/somna-v1/_site/somna-v1"
+      ],
+      "confidence": "high",
+      "blast_radius": "reporting and verification only; no code surfaces changed during formal skill pass",
+      "manual_review_required": false,
+      "requires_ack": false
     }
   ],
   "evidence": [
@@ -428,6 +466,11 @@
       "stage": "preview",
       "command": "curl -I Netlify preview routes",
       "result": "all Somna v1 preview routes returned HTTP 200 at https://deploy-preview-4--meridian-skincare.netlify.app/somna-v1/"
+    },
+    {
+      "stage": "polish",
+      "command": "next-campaigns-polish skill workflow",
+      "result": "completed after source/built desktop/mobile screenshot capture; no extra code changes required; SDK lint unavailable in package scripts."
     }
   ],
   "blockers": [],
