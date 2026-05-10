@@ -1,7 +1,7 @@
 {
   "schema_version": "campaign-runtime-assembly-report/v0",
   "run_id": "asm_1778430542515",
-  "generated_at": "2026-05-10T16:52:41.219Z",
+  "generated_at": "2026-05-10T18:18:00.000Z",
   "status": "preview_ready_local_qa_passed",
   "identity": {
     "map_id": "somna-v1-wbik",
@@ -161,7 +161,8 @@
       ],
       "outputs": [
         "24 screenshots captured under /tmp/somna-polish/screens: source and built desktop/mobile for presell, landing, checkout, upsell, upsell-2, receipt",
-        "No additional code patches required by the skill pass"
+        "Follow-up checkout form-surface patch applied after reviewer found misshapen shipping/payment fields",
+        "Desktop and 390px mobile checkout screenshots captured at /tmp/somna-checkout-form-fixed-desktop.png and /tmp/somna-checkout-form-fixed-mobile.png"
       ],
       "commands": [
         "sed -n 1,240p /Users/devin/.codex/skills/next-campaigns-polish/SKILL.md",
@@ -170,7 +171,12 @@
         "gstack browse prettyscreenshot --cleanup --width 1440 and --width 390 for six source pages",
         "gstack browse prettyscreenshot --cleanup --width 1440 and --width 390 for six built preview pages",
         "npm run (checked for SDK lint scripts; no lint:sdk scripts available)",
-        "rg sentinel checks for paid-shipping copy, old route names, malformed hash links, shipping-id=2, typo regressions"
+        "rg sentinel checks for paid-shipping copy, old route names, malformed hash links, shipping-id=2, typo regressions",
+        "apply_patch corrected Somna checkout field-grid and Spreedly mount geometry",
+        "npm run build",
+        "gstack browse chain captured full checkout desktop/mobile screenshots after form-surface patch",
+        "curl -I http://127.0.0.1:4181/somna-v1/checkout/",
+        "gstack browse chain checked local checkout console errors after form-surface patch"
       ],
       "blockers": [],
       "warnings": [
@@ -426,7 +432,7 @@
       "id": "dec_next_campaigns_polish_skill_run",
       "stage": "polish",
       "decision_type": "skill_verification",
-      "decision": "Ran the next-campaigns-polish skill after PR preview was available; no additional runtime-safe patches were required.",
+      "decision": "Ran the next-campaigns-polish skill after PR preview was available; later reviewer feedback found a missed scrolled checkout form-surface issue.",
       "reason": "User asked whether the campaign polish skill had actually run; prior polish was manual, so the formal skill pass was executed against source mockups and built preview output.",
       "evidence": [
         "Captured 24 screenshots under /tmp/somna-polish/screens",
@@ -436,8 +442,25 @@
         "rg sentinel checks found no emitted paid-shipping copy, old v0 route names, malformed hash links, shipping-id=2, or typo regressions in src/somna-v1/_site/somna-v1"
       ],
       "confidence": "high",
-      "blast_radius": "reporting and verification only; no code surfaces changed during formal skill pass",
+      "blast_radius": "reporting and verification; follow-up checkout form-surface patch recorded separately",
       "manual_review_required": false,
+      "requires_ack": false
+    },
+    {
+      "id": "dec_polish_checkout_form_surfaces",
+      "stage": "polish",
+      "decision_type": "reviewer_found_visual_fix",
+      "decision": "Restored Somna checkout form surfaces to Olympus field geometry by forcing the campaign-local form grid to full-width tracks, preserving full-width field wrappers, removing duplicate visible fallback text from Spreedly mounts, and giving payment metadata an explicit responsive row.",
+      "reason": "Reviewer screenshot showed shipping fields and credit-card fields shrinking/overlapping instead of matching the Olympus component shape; the first polish screenshot pass captured page tops and missed the scrolled checkout form surface.",
+      "evidence": [
+        "src/somna-v1/assets/css/funnel.css now defines .form-grid with grid-template-columns: minmax(0, 1fr)",
+        "src/somna-v1/checkout.html removes visible Card Number/CVV text from Spreedly host elements and uses aria-label plus :empty placeholder fallback",
+        "Local desktop screenshot /tmp/somna-checkout-form-fixed-desktop.png shows full-width shipping fields and non-overlapping card/payment fields",
+        "Local 390px screenshot /tmp/somna-checkout-form-fixed-mobile.png shows full-width customer, shipping, and payment fields"
+      ],
+      "confidence": "high",
+      "blast_radius": "Somna v1 checkout form layout only; commerce data attributes and catalog-owned runtime surfaces preserved",
+      "manual_review_required": true,
       "requires_ack": false
     }
   ],
@@ -470,7 +493,12 @@
     {
       "stage": "polish",
       "command": "next-campaigns-polish skill workflow",
-      "result": "completed after source/built desktop/mobile screenshot capture; no extra code changes required; SDK lint unavailable in package scripts."
+      "result": "completed after source/built desktop/mobile screenshot capture; later reviewer feedback exposed a missed scrolled checkout form-surface issue; SDK lint unavailable in package scripts."
+    },
+    {
+      "stage": "polish_followup",
+      "command": "npm run build; gstack browse chain desktop/mobile checkout screenshots",
+      "result": "checkout form-surface patch verified locally at desktop and 390px mobile; shipping/customer/payment fields now render full-width within their Olympus surfaces, Spreedly fallback text no longer overlaps, local checkout returned HTTP 200, and browser console reported no errors."
     }
   ],
   "blockers": [],

@@ -149,12 +149,12 @@ scripts:
                   <div data-next-component="credit-error" class="next-toast-handler"><div class="tip1_bar is-warning"><div data-next-component="credit-error-text" class="text-sm">Error message</div></div></div>
                   <div class="form-grid">
                     <div class="form-grid__row one">
-                      <div class="form-group"><div class="form-input"><div data-next-tooltip="All transactions are secure and encrypted." class="form-input-icon" aria-hidden="true"><svg viewBox="0 0 14 14" width="100%" height="100%"><path fill="none" stroke="currentColor" d="M2.5 7c0-.966.784-1.75 1.75-1.75h5.5c.966 0 1.75.784 1.75 1.75v3.5a1.75 1.75 0 0 1-1.75 1.75h-5.5A1.75 1.75 0 0 1 2.5 10.5zM9.5 5.25V4.2c0-1.35-1.1-2.45-2.5-2.45S4.5 2.85 4.5 4.2v1.05"/></svg></div><div data-next-checkout-field="cc-number" class="input-flds spreedly-field">Card Number</div></div></div>
+                      <div class="form-group"><div class="form-input"><div data-next-tooltip="All transactions are secure and encrypted." class="form-input-icon" aria-hidden="true"><svg viewBox="0 0 14 14" width="100%" height="100%"><path fill="none" stroke="currentColor" d="M2.5 7c0-.966.784-1.75 1.75-1.75h5.5c.966 0 1.75.784 1.75 1.75v3.5a1.75 1.75 0 0 1-1.75 1.75h-5.5A1.75 1.75 0 0 1 2.5 10.5zM9.5 5.25V4.2c0-1.35-1.1-2.45-2.5-2.45S4.5 2.85 4.5 4.2v1.05"/></svg></div><div data-next-checkout-field="cc-number" class="input-flds spreedly-field" aria-label="Card Number"></div></div></div>
                     </div>
-                    <div class="form-grid__row">
+                    <div class="form-grid__row card-meta-row">
                       <div class="form-group"><div class="form-input"><div class="select-form-wrapper"><select autocomplete="cc-exp-month" id="credit_card_exp_month" data-next-checkout-field="exp-month" class="input-flds select-field"><option value="">Exp. Month</option></select><div class="caret-down">⌄</div></div></div></div>
                       <div class="form-group"><div class="form-input"><div class="select-form-wrapper"><select autocomplete="cc-exp-year" id="credit_card_exp_year" data-next-checkout-field="exp-year" class="input-flds select-field"><option value="">Exp. Year</option></select><div class="caret-down">⌄</div></div></div></div>
-                      <div class="form-group"><div class="form-input"><div data-next-tooltip="3-digit security code." class="form-input-icon">?</div><div data-next-checkout-field="cvv" class="input-flds spreedly-field">CVV</div></div></div>
+                      <div class="form-group"><div class="form-input"><div data-next-tooltip="3-digit security code." class="form-input-icon">?</div><div data-next-checkout-field="cvv" class="input-flds spreedly-field" aria-label="CVV"></div></div></div>
                     </div>
                   </div>
                   {% campaign_include 'billing-address-form.html' %}
