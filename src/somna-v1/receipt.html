@@ -1,0 +1,59 @@
+---
+title: "Somna Order Confirmed"
+page_type: receipt
+permalink: /somna-v1/receipt/
+body_class: receipt-body
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+---
+<nav class="nav" aria-label="Receipt">
+  <a class="brand" href="{{ 'landing.html' | campaign_link }}"><span class="brand-mark"></span>Somna</a>
+  <div class="trust-line">Order confirmed</div>
+</nav>
+
+<main class="container">
+  <section class="receipt-card">
+    <div>
+      <div class="checkmark" aria-hidden="true">✓</div>
+      <p class="eyebrow" style="margin-top:20px">Confirmation #<span data-next-display="order.number">SOM-48219</span></p>
+      <h1 class="section-title">Thank you, <span data-next-display="order.customer.name">your Somna order</span> is confirmed</h1>
+      <p class="body-lg">A confirmation email is on its way to <span data-next-display="order.customer.email">customer@example.com</span>. We will send tracking as soon as your order leaves the warehouse.</p>
+      <div class="detail-grid">
+        <div class="detail"><strong>Contact</strong><p class="muted" data-next-display="order.customer.email">customer@example.com</p></div>
+        <div class="detail"><strong>Shipping method</strong><p class="muted" data-next-display="order.shippingMethod">USPS Priority, 2-4 business days</p></div>
+        <div class="detail"><strong>Shipping address</strong><p class="muted"><span data-next-display="order.shippingAddress.line1">214 Maple Street</span><br><span data-next-display="order.shippingAddress.city">Columbus</span>, <span data-next-display="order.shippingAddress.state">OH</span> <span data-next-display="order.shippingAddress.postcode">43215</span></p></div>
+        <div class="detail"><strong>Payment method</strong><p class="muted" data-next-display="order.paymentMethod">Credit Card ending in 4242</p></div>
+      </div>
+      <div class="cta-row"><a class="button secondary" href="{{ 'landing.html' | campaign_link }}">Back to Somna</a></div>
+    </div>
+    <aside class="order-summary">
+      <h3>Order Summary</h3>
+      <div class="cart-items" data-next-hide="cart.isEmpty">
+        <template id="somna-order-item-template">
+          <div class="cart-item" data-package-id="{item.packageId}">
+            <div class="cart-item__details">
+              <div class="cart-item__content">
+                <div class="cart-item__description">
+                  <div class="cart-item__title os-bold">{item.quantity}x {item.name}</div>
+                  <div class="muted"><span class="{item.hasDiscount}">{item.originalUnitPrice}/ea</span> <span>{item.unitPrice}/ea</span></div>
+                </div>
+                <div class="cart-item__pricing">
+                  <div class="cart-price diagonal-strike line-compare {item.hasDiscount}">{item.originalPrice}</div>
+                  <div class="checkout__line-item__final-price">{item.price}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+        <div data-item-template-id="somna-order-item-template" data-next-order-items class="cart-items__list"></div>
+      </div>
+      <div class="summary-line"><span>Subtotal</span><strong data-next-display="order.subtotal">$78.00</strong></div>
+      <div class="summary-line"><span>Shipping</span><strong data-next-display="order.shipping">Free</strong></div>
+      <div class="summary-line" data-next-show="order.hasTax"><span>Tax</span><strong data-next-display="order.tax">$0.00</strong></div>
+      <div class="summary-total"><span>Total</span><strong data-next-display="order.total">$78.00</strong></div>
+      <p class="muted">Need help? Contact support within 30 days for guarantee assistance.</p>
+    </aside>
+  </section>
+</main>
