@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/Sellmore-Co/meridian#readme",
   "dependencies": {
-    "next-campaign-page-kit": "^0.1.0"
+    "next-campaign-page-kit": "^0.1.2"
   }
 }
