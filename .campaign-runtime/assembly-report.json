@@ -179,7 +179,9 @@
         "gstack browse chain checked local checkout console errors after form-surface patch",
         "apply_patch tightened mobile bundle card grid to preserve radio/title/pricing horizontal order",
         "npm run build",
-        "gstack browse chain captured selected 3-pack mobile checkout screenshot at /tmp/somna-bundle-mobile-after.png"
+        "gstack browse chain captured selected 3-pack mobile checkout screenshot at /tmp/somna-bundle-mobile-after.png",
+        "gh pr checks 4 --watch --interval 10",
+        "gstack browse chain captured deployed selected 3-pack mobile checkout screenshot at /tmp/somna-bundle-mobile-preview-after.png and checked console errors"
       ],
       "blockers": [],
       "warnings": [
@@ -481,6 +483,8 @@
         "src/somna-v1/assets/css/funnel.css previously set mobile .os-card__content to 24px 1fr and .os-card__pricing to grid-column: 2",
         "src/somna-v1/assets/css/funnel.css now scopes checkout mobile bundle cards to 22px minmax(0, 1fr) minmax(74px, max-content)",
         "Local selected 3-pack screenshot /tmp/somna-bundle-mobile-after.png shows compact card height with title/subtitle and pricing aligned horizontally",
+        "Deployed selected 3-pack screenshot /tmp/somna-bundle-mobile-preview-after.png shows the same compact horizontal ordering",
+        "Deploy preview console reported no errors after the mobile bundle card patch",
         "npm run build passed after the mobile bundle card patch"
       ],
       "confidence": "high",
@@ -533,7 +537,12 @@
     {
       "stage": "polish_followup",
       "command": "npm run build; gstack browse chain selected 3-pack mobile checkout screenshot",
-      "result": "mobile bundle card layout now keeps radio, title/subtitle, and pricing in horizontal order with reduced card height; local SDK console remains blocked by expected 127.0.0.1 Campaigns API CORS, so deployed console verification remains required after push."
+      "result": "mobile bundle card layout now keeps radio, title/subtitle, and pricing in horizontal order with reduced card height; local SDK console remains blocked by expected 127.0.0.1 Campaigns API CORS."
+    },
+    {
+      "stage": "preview_followup",
+      "command": "gh pr checks 4 --watch --interval 10; gstack browse chain selected 3-pack preview mobile screenshot and console",
+      "result": "PR #4 deploy preview passed after commit eaba11a; deployed selected 3-pack mobile screenshot shows compact horizontal bundle cards; browser console reported no errors."
     }
   ],
   "blockers": [],
