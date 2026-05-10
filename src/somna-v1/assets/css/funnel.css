@@ -438,8 +438,23 @@ h1, h2, h3, p { margin-top: 0; }
     max-width: none !important;
     width: 100% !important;
   }
-  .os-card__content { grid-template-columns: 24px 1fr; }
-  .os-card__pricing { grid-column: 2; text-align: left; }
+  .checkout__form-container .os-card__content {
+    gap: 10px;
+    grid-template-columns: 22px minmax(0, 1fr) minmax(74px, max-content);
+    min-height: 96px;
+    padding: 14px 12px;
+  }
+  .checkout__form-container .os-card__pricing {
+    align-self: center;
+    grid-column: auto;
+    min-width: 74px;
+    text-align: right;
+  }
+  .checkout__form-container .radio-style-1 { height: 20px; width: 20px; }
+  .checkout__form-container .os-card__title { font-size: 17px; line-height: 1.15; }
+  .checkout__form-container .os-card__subtitle-text { font-size: 12px; line-height: 1.25; }
+  .checkout__form-container .os-card__price { font-size: 12px; line-height: 1.15; }
+  .checkout__form-container .os-card__total-current { font-size: 20px; line-height: 1.05; }
 }
 @media (max-width: 480px) {
   .container { padding: 0 16px; }

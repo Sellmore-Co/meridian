@@ -1,7 +1,7 @@
 {
   "schema_version": "campaign-runtime-assembly-report/v0",
   "run_id": "asm_1778430542515",
-  "generated_at": "2026-05-10T18:18:00.000Z",
+  "generated_at": "2026-05-11T00:15:00.000+07:00",
   "status": "preview_ready_local_qa_passed",
   "identity": {
     "map_id": "somna-v1-wbik",
@@ -176,7 +176,10 @@
         "npm run build",
         "gstack browse chain captured full checkout desktop/mobile screenshots after form-surface patch",
         "curl -I http://127.0.0.1:4181/somna-v1/checkout/",
-        "gstack browse chain checked local checkout console errors after form-surface patch"
+        "gstack browse chain checked local checkout console errors after form-surface patch",
+        "apply_patch tightened mobile bundle card grid to preserve radio/title/pricing horizontal order",
+        "npm run build",
+        "gstack browse chain captured selected 3-pack mobile checkout screenshot at /tmp/somna-bundle-mobile-after.png"
       ],
       "blockers": [],
       "warnings": [
@@ -467,6 +470,23 @@
       "blast_radius": "Somna v1 checkout form layout only; commerce data attributes and catalog-owned runtime surfaces preserved",
       "manual_review_required": true,
       "requires_ack": false
+    },
+    {
+      "id": "dec_polish_mobile_bundle_cards",
+      "stage": "polish",
+      "decision_type": "reviewer_found_visual_fix",
+      "decision": "Restored mobile checkout bundle cards to a compact Olympus-style horizontal ordering with radio, bundle copy, and pricing in one row.",
+      "reason": "Reviewer screenshot showed oversized mobile bundle cards with pricing not sitting in the expected horizontal order; the Somna skin had overridden the commerce card mobile grid into a two-column stacked pattern.",
+      "evidence": [
+        "src/somna-v1/assets/css/funnel.css previously set mobile .os-card__content to 24px 1fr and .os-card__pricing to grid-column: 2",
+        "src/somna-v1/assets/css/funnel.css now scopes checkout mobile bundle cards to 22px minmax(0, 1fr) minmax(74px, max-content)",
+        "Local selected 3-pack screenshot /tmp/somna-bundle-mobile-after.png shows compact card height with title/subtitle and pricing aligned horizontally",
+        "npm run build passed after the mobile bundle card patch"
+      ],
+      "confidence": "high",
+      "blast_radius": "Somna v1 checkout bundle selector layout only; data-next bundle/shipping/package hooks preserved",
+      "manual_review_required": true,
+      "requires_ack": false
     }
   ],
   "evidence": [
@@ -509,6 +529,11 @@
       "stage": "preview_followup",
       "command": "gh pr checks 4 --watch --interval 10; curl -I preview checkout; gstack browse chain preview mobile screenshot and console",
       "result": "PR #4 deploy preview passed after commit bab1839; deployed checkout returned HTTP 200; 390px preview screenshot shows corrected checkout form surfaces; browser console reported no errors."
+    },
+    {
+      "stage": "polish_followup",
+      "command": "npm run build; gstack browse chain selected 3-pack mobile checkout screenshot",
+      "result": "mobile bundle card layout now keeps radio, title/subtitle, and pricing in horizontal order with reduced card height; local SDK console remains blocked by expected 127.0.0.1 Campaigns API CORS, so deployed console verification remains required after push."
     }
   ],
   "blockers": [],
