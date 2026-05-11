@@ -1,0 +1,57 @@
+---
+title: "Somna Special Offer 1"
+page_type: upsell
+permalink: /somna-v1/upsell/
+next_url: upsell-2.html
+decline_url: upsell-2.html
+currency: USD
+prevent_back_navigation: "true"
+body_class: upsell-page
+styles:
+  - css/funnel.css
+scripts:
+  - js/upsells.js
+  - js/funnel.js
+---
+<div class="upsell-alert">Special offer unlocked · Do not close this page</div>
+<nav class="nav" aria-label="Upsell">
+  <a class="brand" href="{{ 'landing.html' | campaign_link }}"><span class="brand-mark"></span>Somna</a>
+  <div class="trust-line">Your original order is reserved</div>
+</nav>
+
+<main class="section">
+  <div class="container">
+    <div class="upsell-box" data-next-upsell="offer" data-next-package-id="2" data-next-await="">
+      <section>
+        <div class="eyebrow">Best value restock</div>
+        <h1 class="section-title" data-pretext contenteditable="true">Lock in the Somna Refill Bundle at today’s best price</h1>
+        <p class="body-lg">Sleep support works best as a steady ritual. Add the refill bundle now and avoid paying full price later.</p>
+        <div class="tier-grid" data-choice-group>
+          <div class="tier-card next-selected" data-choice>
+            <strong data-next-display="package.2.name">Somna - Refill Bundle</strong>
+            <p class="muted">Ships with your original order</p>
+            <h3>$79</h3>
+          </div>
+        </div>
+        <ul class="body-lg">
+          <li>Adds to the same shipment with no separate checkout.</li>
+          <li>Protected by the same 30-day guarantee.</li>
+          <li>Useful for partners, travel bags, or uninterrupted routine.</li>
+        </ul>
+        <div class="cta-row">
+          <a data-next-upsell-action="add" class="button clay" href="{{ 'upsell-2.html' | campaign_link }}">Yes, add the refill bundle</a>
+        </div>
+        <a data-next-upsell-action="skip" class="decline" href="{{ 'upsell-2.html' | campaign_link }}">No thanks, continue to the next step</a>
+      </section>
+      <aside>
+        <div class="image-frame"><img src="{{ 'images/products/somna-restock-bundle.png' | campaign_asset }}" alt="Somna refill bundle"></div>
+        <div class="order-summary" style="margin-top:16px">
+          <h3>Why customers add it</h3>
+          <div class="summary-line"><span>Runs out less often</span><strong>✓</strong></div>
+          <div class="summary-line"><span>Ships with order</span><strong>✓</strong></div>
+          <div class="summary-line"><span>Today’s price held</span><strong>✓</strong></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
