@@ -1,0 +1,1930 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+.ul,
+ol,
+.ol,
+li,
+p,
+.p {
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #000;
+}
+a {
+    text-decoration: none!important
+}
+input:focus,
+select:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+button:focus {
+    outline: none
+}
+.text-theme {
+    color: #125161
+}
+.green_txt {
+    color: #007e3e
+}
+.red_text {
+    color: #ff0000
+}
+.yellow_text {
+    color: #ffea00
+}
+.showfxd {
+    position: fixed;
+    bottom: -30px;
+    left: auto;
+    right: 0;
+    margin: 0 auto
+}
+.text-theme-blue {
+    color: #01c8fb;
+}
+
+
+/*========================Announcement Bar======================*/
+.announcement_bar {
+    background: #eb1313;
+}
+.announcement_bar p {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.announcement_bar p .yellow_txt {
+    color: #ffea00;
+}
+.announcement_bar p .underline_txt {
+    text-decoration: underline;
+}
+
+
+/*========================Header======================*/
+.hdr_btn {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.13);
+    background: #1aae2d;
+    background: -moz-linear-gradient(top, #1aae2d 0%, #148c24 100%);
+    background: -webkit-linear-gradient(top, #1aae2d 0%, #148c24 100%);
+    background: linear-gradient(to bottom, #1aae2d 0%, #148c24 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1aae2d', endColorstr='#148c24', GradientType=0);
+    border: transparent;
+    border-radius: 0.375rem;
+    padding: 0.8rem 1.2rem;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    display: inline-block;
+    animation-name: pulse;
+    -webkit-animation-name: pulse;
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+.hdr_btn:hover,
+.hdr_btn:focus {
+    background: #148c24;
+    color: #fff;
+    background: -moz-linear-gradient(top, #148c24 0%, #1aae2d 100%);
+    background: -webkit-linear-gradient(top, #148c24 0%, #1aae2d 100%);
+    background: linear-gradient(to bottom, #148c24 0%, #1aae2d 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#148c24', endColorstr='#1aae2d', GradientType=0);
+}
+.blink_circle {
+    text-decoration: blink;
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 0.6s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+}
+.headersec .hdr_btn {
+    font-size: 1.125rem;
+    padding: 0.5rem 1rem
+}
+.headerwapper {
+    position: sticky;
+    top: 0;
+    z-index: 999
+}
+.logo {
+    max-width: 323px;
+    height: auto;
+    -webkit-transition: all 0.5s ease-out;
+    vertical-align: middle;
+}
+.headersec {
+    background: #fff;
+    padding: 10px 0px;
+}
+.cmenu {
+    height: auto;
+    font-size: 16px;
+    position: relative;
+    font-weight: normal;
+    -webkit-transition: all 0.5s ease-out;
+    text-align: center;
+}
+.cmenu ul {
+    margin: 0;
+    padding: 0;
+}
+.cmenu ul li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+}
+.cmenu .list-inline-item:not(:last-child) {
+    margin: 0;
+}
+.cmenu ul li a {
+    color: #212529;
+    position: relative;
+    display: block;
+    margin: 0 13px;
+    font-weight: 500;
+    border-radius: 0px;
+    text-transform: capitalize;
+}
+.cmenu ul li:first-child a {
+    margin-left: 0
+}
+.cmenu ul li:last-child a {
+    margin-right: 0
+}
+.cmenu ul li a:hover,
+.cmenu ul li a.activemenu {
+    color: #71d24f;
+}
+.cmenu ul li a.active {
+    color: var(--theme-color);
+}
+.rmenubar,
+.clsebtn,
+.mysidenav {
+    display: none;
+}
+/*.headersec.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    background: #fff;
+    transition: all 0.5s ease-out;
+    left: 0;
+    right: 0;
+    width: 100%
+}*/
+
+
+@media only screen and (max-width: 767px) {
+    /*========================Header======================*/
+    html {
+        scroll-padding-top: 30px;
+    }
+    .headersec {
+        padding: 10px 0px
+    }
+    .logo img {
+        max-height: 25px
+    }
+    .headersec .commonbtn {
+        padding: 8px 7px;
+        font-size: 10px;
+    }
+    .headersec .col-5,
+    .headersec .col-6 {
+        padding-left: 8px;
+        padding-right: 8px
+    }
+    .headersec .col-1 {
+        padding-left: 0px;
+        padding-right: 0px
+    }
+    .cmenu ul li:after {
+        display: none
+    }
+    .rmenubar {
+        position: absolute;
+        right: 8px;
+        top: 5px;
+        z-index: 99;
+        display: block;
+        font-size: 22px;
+        background: transparent;
+        padding: 2px 5px;
+        border-radius: 0;
+        -webkit-transition: all 0.5s ease-out;
+    }
+    .headersec.sticky .rmenubar {
+        top: 12px;
+    }
+    .clsebtn i {
+        color: #000;
+        position: absolute;
+        right: 20px;
+        top: 14px;
+        z-index: 9999;
+        display: none;
+        font-size: 22px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 27px;
+    }
+    .cmenu ul.navopen .clsebtn i,
+    .cmenu ul.navopen .clsebtn {
+        display: block;
+    }
+    .rmenubar a {
+        color: #fff !important;
+    }
+    .headersec.sticky .rmenubar a {
+        color: #000 !important
+    }
+    .headersec.sticky .commonbtn {
+        margin-right: 25px;
+    }
+    .rmenubar a:hover,
+    .rmenubar a:focus {
+        color: #fff !important;
+    }
+    .cmenu {
+        padding: 18px 20px;
+    }
+    .cmenu ul {
+        position: fixed;
+        top: 0px;
+        left: -100vw;
+        width: 100vw;
+        height: 100%;
+        z-index: 999;
+        background: #ffffff;
+        overflow-y: scroll;
+        font-size: 12px;
+        transition: 0.5s ease all;
+        padding-top: 80px;
+    }
+    .cmenu ul li {
+        display: block;
+        padding: 0;
+        font-weight: 600;
+        font-size: 16px;
+        padding-left: 16px;
+        margin-bottom: 12px;
+    }
+    ul.navopen {
+        left: 0;
+    }
+    .cmenu ul li ul {
+        margin: 0;
+        padding: 0;
+        position: unset;
+        z-index: 999;
+        background: transparent;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        -webkit-transition: all 0.5s ease-out;
+    }
+    .cmenu ul li a {
+        text-align: left;
+        margin: 0 !important;
+    }
+    .cmenu ul li a:hover {
+        color: #71d24f;
+        font-weight: 600
+    }
+}
+
+
+/*========================Banner======================*/
+.banner {
+    background: url(../images/bnr_bg-lg.jpg);
+    color: #FFF !important;
+    padding: 60px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.banner .bnr_star {
+    max-height: 18px;
+    width: auto;
+    margin: -4px 5px 0 0;
+}
+.banner .bnr_review {
+    font-weight: 600;
+    font-size: 18px;
+}
+.bnr_review i {
+    color: #fff;
+    background: #1ab22e;
+    border-radius: 50px;
+    padding: 0px 2px;
+    line-height: 20px;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+}
+.bnr_heading {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0;
+    color: #FFF;
+}
+.bnr_heading span {
+    color: #71d24f;
+    display: block;
+}
+.bnr_txt {
+    font-weight: 500;
+    font-size: 17px;
+}
+.free_txt {
+    border-radius: 50px;
+    background: #e2dbff;
+    max-width: 85%;
+    margin: 25px 0;
+    position: relative;
+    border: 2px solid #FFF;
+    min-width: 400px;
+}
+.free_txt:after {
+    content: "";
+    position: absolute;
+    right: -225px;
+    top: 25px;
+    background: url(../images/bnr_line.png);
+    width: 250px;
+    height: 135px;
+}
+.free_txt p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    line-height: 24px;
+}
+.free-tag {
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    display: inline-block;
+    animation-name: spin;
+    -webkit-animation-name: spin;
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+        /* transform: rotateY(-180deg); */
+    }
+    to {
+        transform: rotate(360deg);
+        /* transform: rotateY(180deg); */
+    }
+}
+.list-unstyled li {
+    margin-bottom: 8px
+}
+.list-unstyled li img {
+    max-height: 24px;
+    margin-right: 8px;
+    width: auto;
+}
+.list-unstyled li span {
+    font-size: 24px;
+    font-weight: 600
+}
+.btn_wrap {
+    width: fit-content;
+}
+.btn_wrap p {
+    font-size: 14px !important;
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 400!important
+}
+.bnr_prod img {
+    position: absolute;
+    top: -65px;
+    max-height: 525px;
+    left: -55px;
+    width: auto;
+}
+.bnr_prod_tab {
+    display: none !important
+}
+
+
+/*========================About======================*/
+.about {
+    padding: 40px 0;
+    background: url(../images/sec2_bg.jpg) top center/cover no-repeat;
+}
+.about h5 {
+    font-size: 18px
+}
+.advertisedlogobx img {
+    width: auto;
+    height: auto;
+    margin: 0 3px;
+    max-height: 40px;
+}
+.about h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #125161;
+}
+.dvdr img {
+    max-height: 12px;
+    width: auto;
+}
+.about.vdoimg {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.about .vdoimg img;
+.about .vdoimg iframe,
+.vdoimg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+.about .btn_wrap {
+    margin-top: 30px
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* Set the aspect ratio (16:9) based on the video's width and height */
+}
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.play-button-overlay img {
+    display: block;
+    width: 60px;
+    /* Adjust the width and height as needed */
+    
+    height: 60px;
+    cursor: pointer;
+}
+
+
+/*========================Tech Spec======================*/
+.tech_specs {
+    margin-bottom: 170px
+}
+.tech_specs_upper {
+    background: #bccfd4;
+    padding: 70px 0 20px;
+    height: 490px
+}
+.tech_specs_upper h1 {
+    font-weight: 400
+}
+.tech_specs_upper h1 span {
+    font-weight: 700
+}
+.tech_specs_upper .tech_specs_upper_head {
+    font-size: 2.25rem;
+}
+.tech_specs_upper .dvdr img {
+    max-height: 6.5px
+}
+.tech_specs_upper p {
+    font-size: 16px;
+    text-align: justify;
+    max-width: 90%;
+}
+.tech_specs_bottom {
+    margin-top: -150px
+}
+.tech_specs_box {
+    /*background: url(../images/tech_specs.jpg) top center no-repeat;*/
+    background: #125161;
+    background-size: cover;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 15px;
+    padding-bottom: 150px;
+    position: relative;
+}
+.tech_specs_box p {
+    font-size: 24px;
+    padding: 0px 15px;
+    font-weight: 300;
+}
+.tech_specs_box:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: -21px;
+    background: url(../images/tech_specs_model1.png) top left/contain no-repeat;
+    width: 490px;
+    height: 540px;
+}
+.tech_specs_box .badge img {
+    max-height: 110px
+}
+.tech_specs_box:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    background: url(../images/badge_bg.png) top left/contain no-repeat;
+}
+.badge p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    line-height: 24px;
+    font-size: 20px;
+}
+.featurebox {
+    box-shadow: 0px 9px 10px 0px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    color: #000;
+    padding: 25px 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    position: absolute;
+    right: 20px;
+    width: 100%;
+    max-width: 470px;
+    bottom: -120px;
+}
+.featurebox li {
+    list-style: none;
+    display: inline-block;
+    width: 24%;
+    border-right: 1px dashed rgb(203, 203, 203);
+    text-align: center;
+}
+.featurebox li {
+    list-style: none;
+    display: inline-block;
+    width: 24%;
+    border-right: 1px dashed rgb(203, 203, 203);
+    text-align: center;
+    padding: 10px 0;
+}
+.featurebox li:last-child {
+    border-right: 0
+}
+.featurebox ul {
+    margin-bottom: 10px
+}
+.featurebox li img {
+    max-height: 50px;
+    margin-bottom: 5px
+}
+.featurebox li:not:(first-child),
+.featurebox li:not:(last-child) {
+    margin: 0px 4px;
+}
+.featurebox li p {
+    font-size: 10px;
+    padding: 0px 10px;
+    font-weight: 600;
+}
+.featurebox .hdr_btn {
+    font-size: 18px;
+}
+.featurebox .btn_wrap p {
+    font-size: 12px !important;
+}
+
+
+/*========================Product Feature======================*/
+/*.pdctfeatures .dvdr img{max-height: 7px}
+.pdctfeatureimg img{
+    max-height: 500px;
+    margin: 10px auto;
+    display: block;
+}*/
+.featuresec h1 {
+    font-weight: 400
+}
+.featuresec p {
+    font-size: 25px;
+    line-height: 36px;
+}
+.featuresec .d-flex img {
+    max-height: 65px;
+    width: auto;
+}
+
+
+/*========================Discover Section======================*/
+.discoversec {
+    background: #125161;
+    color: #fff;
+    padding: 50px 0 220px
+}
+.discoversec .mainimg {
+    max-height: 360px
+}
+.discoversec h1 {
+    font-size: 34px
+}
+.discoversec .dvdr img {
+    max-height: 9px
+}
+.discoversec .content h6 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+}
+.discoversec .content img {
+    max-height: 68px;
+    width: auto;
+    margin-right: 8px
+}
+.discoversec .content p {
+    font-size: 14px;
+    margin-top: 15px
+}
+.discoversec .discover_img_desk img {
+    height: 290px;
+    width: auto;
+}
+.discoversec .discover_img_desk2 img {
+    height: 286px;
+    margin-bottom: 4px;
+}
+
+
+/*========================MBG Section======================*/
+.mbgsec {
+    margin-top: -175px
+}
+.mbgbx {
+    background: #f9f9f9;
+    color: #000;
+    border-radius: 50px;
+    border: 8px solid #e3e3e3;
+    padding: 30px 25px;
+    overflow: hidden;
+    position: relative;
+}
+.mbgbx:before {
+    content: "";
+    width: 17%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #125161;
+    z-index: 1;
+}
+.mbgbx h3 {
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 15px
+}
+.mbgbx p {
+    font-size: 16px;
+    margin-bottom: 8px
+}
+.mbgbx p:last-child {
+    margin-bottom: 0
+}
+.mbgbx .mbgseal {
+    max-height: 275px;
+    width: auto;
+    position: relative;
+    z-index: 2;
+}
+
+
+/*========================Review Section======================*/
+.review {
+    padding: 80px 0
+}
+.review .dvdr img {
+    max-height: 7px;
+}
+.raingimg img {
+    max-height: 130px;
+    width: auto;
+}
+.review .stars li {
+    list-style: none;
+    margin: 0 1px;
+    display: inline-block;
+    color: #ff9d1e;
+    letter-spacing: -4px
+}
+.review h6 {
+    color: #102d51;
+    font-size: 18px;
+    text-decoration: underline;
+    font-weight: 600;
+    margin: 3px 0;
+}
+.review p {
+    font-size: 16px
+}
+.review p.testi-paragraph {
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+}
+.review h2 {
+    color: #102d51;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 0px
+}
+
+
+/*====testi-sec====*/
+.testi-sec {
+    width: 100%;
+    padding: 0 70px;
+    border-top: 1px solid #d7d7d7;
+}
+.testi-sec:last-child {
+    border-bottom: 1px solid #d7d7d7;
+}
+.testi-sec .stars li {
+    color: #ff7e00;
+    margin: 0
+}
+.testi-row {
+    width: 100%;
+    text-align: left;
+    padding: 0 0 35px;
+    margin: 20px 0;
+    border-bottom: 1px solid #d7d7d7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.testi-row:last-child {
+    border: none;
+    padding-bottom: 0;
+}
+.testi-row-lft {
+    display: inline-block;
+    vertical-align: top;
+    width: 260px;
+    padding-right: 15px;
+}
+.testi-lft-abt {
+    width: 100%;
+    padding: 0px 0 10px 55px;
+    position: relative;
+}
+.testi-pics,
+p.testi-pics {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45px;
+    height: 45px;
+    background: #24146f;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    line-height: 45px;
+    text-align: center;
+    font-weight: 600;
+}
+.t-name {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #24146f;
+    margin-bottom: 0;
+}
+.t-vryfd,
+p.t-vryfd {
+    font-size: 13px;
+    line-height: 12px;
+    color: #6fb620;
+    margin-top: 5px;
+    font-weight: normal;
+}
+.t-vryfd img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -4px 2px 0 0;
+}
+.test-prod {
+    width: 100%;
+    position: relative;
+    text-align: left;
+    padding: 0px 0pc 0px 55px;
+}
+.test-prod-txt,
+p.test-prod-txt {
+    width: 100%;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 14px;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    max-width: 75%;
+}
+.test-prod-txt span {
+    color: #000000;
+    font-weight: 500
+}
+.t-prod-dv {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    border-radius: 0px;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+}
+.t-prod-dv img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    border-radius: 0px;
+}
+.testi-row-rght {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 270px);
+    padding: 8px 0 8px 30px;
+    border-left: 1px solid #d7d7d7;
+}
+.t-star {
+    margin-top: 13px;
+    display: block;
+    width: 109px;
+}
+.testi-row-rght span {
+    width: 100%;
+    font-size: 16px;
+    line-height: 30px;
+    color: #000;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+}
+.testi-paragraph {
+    width: 100%;
+    font-size: 18px;
+    line-height: 26px;
+    color: #000000;
+    margin-top: 10px;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+
+/*========================FAQ Section======================*/
+.faqsec {
+    width: 100%;
+    padding: 60px 0 80px;
+    background: #f2f2f2;
+}
+.faqsec .dvdr img {
+    max-height: 6px;
+}
+.faq-container {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 970px;
+    width: 100%;
+    margin: 40px 0 0;
+    padding: 0 15px 15px;
+}
+.up-slide-dwn {
+    width: 100%;
+    -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 30px;
+}
+.faq-innr {
+    width: 100%;
+    padding: 5px 10px;
+}
+.faqsec .accordion {
+    width: 100%;
+    text-align: left;
+    background: url(../images/close.png) no-repeat right 15px center;
+    padding: 18px 45px 15px 15px;
+    font-size: 20px;
+    line-height: 26px;
+    color: #000000;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    font-weight: 700;
+    position: relative;
+}
+.faqsec .accordion.last {
+    border-bottom: none;
+}
+.faqsec .acdn-heading.accordion-open {
+    background: url(../images/open.png) no-repeat right 15px center #fff;
+    border: none;
+}
+.faqsec .acdn-content {
+    width: 100%;
+    text-align: left;
+    background: #fff;
+    padding: 0px 30px 0 15px;
+}
+.faqsec .acdn-para {
+    width: 100%;
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: 0.2px;
+    color: #000;
+    margin-bottom: 15px;
+}
+.faqsec .acdn-para a {
+    color: #0072ff;
+}
+
+
+/*========================Footer Section======================*/
+.ftsec {
+    padding: 45px 0;
+    text-align: center;
+}
+.ftlogo img {
+    max-height: 50px;
+    width: auto;
+    margin-bottom: 15px;
+}
+ul.ftlist {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px
+}
+ul.ftlist li {
+    display: inline-block;
+    list-style: none;
+    margin: 0px 2px;
+    font-size: 17px;
+    font-weight: 300
+}
+.ftsec a {
+    color: #000
+}
+.ftsec p {
+    font-size: 17px;
+    margin-bottom: 0;
+    font-weight: 300
+}
+#ctabtn-mob {
+    z-index: 3;
+}
+.rmenubar,
+.clsebtn {
+    cursor: pointer;
+}
+
+
+/* pulse animation */
+.pulse {
+    animation-name: pulse;
+    -webkit-animation-name: pulse;
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+.blink {
+    text-decoration: blink;
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 0.6s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+}
+@-webkit-keyframes blinker {
+    from {
+        opacity: 1.0;
+    }
+    to {
+        opacity: 0.0;
+    }
+}
+.hourglass {
+    animation: rotateP 2.5s ease-in-out forwards infinite
+}
+@keyframes rotateP {
+    0% {
+        transform: rotate(0)
+    }
+    50% {
+        transform: rotate(180deg)
+    }
+    100% {
+        transform: rotate(180deg)
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(00deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+@keyframes fade {
+    0% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 30%;
+    }
+    70% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@media (max-width: 1920px) {
+    .banner {
+        background: url(../images/bnr_bg.jpg);
+        padding: 32px 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top right;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .headersec .hdr_btn {
+        font-size: 1rem;
+    }
+    .free_txt p {
+        font-size: 16px;
+    }
+    .bnr_prod img {
+        top: -140px;
+        max-height: 410px;
+        left: -146px;
+    }
+    .list-unstyled li span {
+        font-size: 20px;
+    }
+    .tech_specs_box p {
+        font-size: 16px;
+    }
+    .tech_specs_upper {
+        height: 490px;
+    }
+    .pdctfeatureimg img {
+        max-height: 425px;
+    }
+    .discoversec .mainimg {
+        max-height: 310px;
+    }
+    .discoversec .content h6 {
+        font-size: 20px
+    }
+    .mbgbx .mbgseal {
+        max-height: 260px;
+    }
+    .mbgbx p {
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 1399px) {
+    .free_txt p {
+        font-size: 15px;
+    }
+    .logo {
+        max-width: 210px;
+    }
+    .banner{    background-position-x: 80%;}
+    .bnr_heading {
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .banner {
+        background-position-x: 70%;
+    }
+    .headersec .hdr_btn {
+        font-size: 13px;
+        padding: 0.5rem 0.6rem;
+    }
+    .cmenu {
+        font-size: 14px
+    }
+    .cmenu ul li a {
+        margin: 0 6px;
+    }
+    .bnr_heading {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .free_txt p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    .hdr_btn {
+        font-size: 18px
+    }
+    .about h1 {
+        font-size: 42px;
+    }
+    .dvdr img {
+        max-height: 10px;
+    }
+    .badge img {
+        max-height: 100px
+    }
+    .tech_specs_box p {
+        font-size: 14px;
+    }
+    .badge p {
+        line-height: 20px
+    }
+    .tech_specs_upper h1 {
+        font-size: 32px
+    }
+    .tech_specs_upper .dvdr img {
+        max-height: 5px;
+    }
+    .tech_specs_upper p {
+        font-size: 16px;
+    }
+    .pdctfeatureimg img {
+        max-height: 370px;
+    }
+    .discoversec .mainimg {
+        max-height: 255px;
+    }
+    .mbgbx .mbgseal {
+        max-height: 210px;
+    }
+    .mbgbx p {
+        font-size: 14px;
+    }
+    .mbgbx h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .raingimg img {
+        max-height: 135px;
+    }
+    .testi-row-rght span {
+        font-size: 14px;
+    }
+    .review p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .testi-pics {
+        font-size: 30px !important;
+        line-height: 43px !important;
+    }
+}
+@media screen and (max-width: 1199px) {
+    .tech_specs_upper .tech_specs_upper_head {
+        font-size: 1.875rem;
+    }
+    .featurebox {
+        max-width: 410px;
+    }
+    .tech_specs_box:before {
+        bottom: -27px;
+        width: 390px;
+        height: 440px;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .featurebox li p br {
+        display: none;
+    }
+    .featurebox .hdr_btn {
+        font-size: 15px;
+    }
+    .featurebox .btn_wrap p {
+        padding: 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .dvdr img {
+        max-height: 7px;
+    }
+    .logo {
+        max-width: 160px;
+    }
+    .cmenu {
+        font-size: 11px;
+    }
+    .cmenu ul li a {
+        margin: 0 3px;
+    }
+    .headersec .hdr_btn {
+        font-size: 9.5px;
+        padding: 0.5rem 0.4rem;
+    }
+    .bnr_prod {
+        display: none !important
+    }
+    .bnr_prod_tab {
+        display: block !important;
+        position: absolute;
+        max-width: 240px;
+        top: 400px;
+        right: 30px;
+    }
+    .free_txt:after {
+        display: none !important
+    }
+    .banner {
+            background: #125161;
+    }
+    .badge {
+        position: absolute !important;
+        top: -70px;
+        right: -10px;
+    }
+    .tech_specs_box:before {
+        bottom: -32px;
+        width: 300px;
+        height: 350px;
+    }
+    .featuresec h1 {
+        font-size: 32px;
+    }
+    .discoversec h1 {
+        font-size: 28px;
+    }
+    .featurebox {
+        max-width: 96%;
+        bottom: -120px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    .tech_specs_bottom {
+        margin-top: -130px;
+    }
+    .tech_specs_upper {
+        height: 550px;
+    }
+    .pdctfeatureimg img {
+        max-height: 270px;
+    }
+    .discoversec .mainimg {
+        max-height: 190px;
+    }
+    .discoversec .content img {
+        max-height: 35px;
+        margin-right: 6px;
+    }
+    .discoversec .content h6 {
+        font-size: 13px;
+    }
+    .mbgbx{    padding: 20px 15px;}
+    .mbgbx h3 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+    .mbgbx p {
+        font-size: 13px;
+    }
+    .mbgbx .mbgseal {
+        max-height: 160px;
+    }
+    .raingimg img {
+        max-height: 70px;
+    }
+    .testi-sec {
+        width: 100%;
+        padding: 0 0px;
+    }
+    .testi-row {
+        width: 100%;
+        padding: 0px;
+        display: flex;
+    }
+    .testi-row-lft {
+        width: 230px;
+    }
+    .testi-row-rght {
+        width: calc(100% - 230px);
+        padding: 0px 0 0px 20px;
+        border: 0;
+    }
+    .testi-lft-abt p.testi-pics {
+        font-size: 30px;
+        line-height: 45px;
+    }
+    .test-prod-txt,
+    p.test-prod-txt {
+        font-size: 13px;
+    }
+    .review p {
+        max-width: 80%;
+    }
+    .free_txt {
+        max-width: 65%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .headersec .hdr_btn {
+        display: none
+    }
+    .rmenubar {
+        top: 60px
+    }
+    .rmenubar i {
+        color: #000;
+        font-size: 32px;
+        font-weight: 800;
+    }
+    .dvdr img {
+        max-height: 12px
+    }
+    .headersec {
+        padding: 15px 0px;
+    }
+    .logo {
+        max-height: 35px
+    }
+    .banner {
+        background: #125161;
+        padding: 35px 0;
+    }
+    .banner .bnr_review {
+        font-size: 14px;
+        text-align: center;
+    }
+    .banner .bnr_star {
+        max-height: 16px;
+        margin: -4px 3px 0 0;
+    }
+    .bnr_review i {
+        line-height: 24px;
+        font-size: 14px;
+    }
+    .bnr_heading {
+        font-size: 22px;
+        line-height: 34px;
+        text-align: center;
+    }
+    .bnr_txt {
+    font-size: 14px;
+    text-align: center;
+    margin: 15px 0px;
+    }
+    .bnr_prod img {
+        position: unset;
+        max-height: 410px
+    }
+    .free_txt:after {
+        display: none
+    }
+    ul.list-unstyled {
+        margin: 115px auto 0;width: fit-content;
+    }
+
+    .free_txt {
+        border-radius: 0px;
+        background: #e2dbff;
+        max-width: 100%;
+        margin: 20px 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        border: none;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+    }
+    .free_txt img {
+        max-width: 36px
+    }
+    .list-unstyled li img {
+        max-height: 20px;
+        margin-right: 12px;
+    }
+    .list-unstyled li span {
+        font-size: 18px;
+    }
+    .banner .btn_wrap{margin: 20px auto !important}
+    .about .btn_wrap,
+    .featurebox .btn_wrap {
+        display: none
+    }
+    .btn_wrap p{    font-size: 11px !important;}
+    .hdr_btn {
+        font-size: 15px;
+        padding: 0.8rem 0.8rem;
+    }
+    .about h1 {
+    font-size: 30px;
+    margin-top: 40px !important;
+    font-weight: 400;
+    }
+    .tech_specs_upper .tech_specs_upper_head {
+        font-size: 28px;
+        text-align: center;
+    }
+    .tech_specs_upper p {
+    font-size: 18px;
+    }
+    .tech_specs_upper .dvdr img {
+        max-height: 12px;
+    }
+    .tech_specs_upper p {
+        text-align: left;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .tech_specs_upper {
+        height: 100%;
+        background: #fff;
+        padding: 10px 0 20px;
+    }
+    .tech_specs_box:before {
+        background: url(../images/tech_specs_model_mb.png) top left/contain no-repeat;
+        width: 300px;
+        height: 290px;
+        background-size: 300px 290px;
+        top: -235px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    .featurebox {
+    padding: 10px 10px;
+    max-width: 90%;
+    /* position: unset; */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -25px;
+    border-radius: 35px;
+    }
+    .featurebox li img {
+    max-height: 80px;
+    }
+    .featurebox li p {    font-size: 16px;}
+    .featurebox li {
+        width: 49%;
+        border-right: 0
+    }
+    .tech_specs_box {
+        padding: 70px 25px 20px;
+        margin-top: 260px;
+        min-height: 460px;
+    }
+    .tech_specs_box p {
+        font-size: 20px;
+        padding: 0;
+    }
+    .tech_specs {
+        margin-bottom: 0px;
+    }
+    .badge img {
+        max-height: 125px;
+    }
+    .badge p {
+        font-size: 18px;
+        line-height: 20px
+    }
+    .badge {
+        position: absolute !important;
+        top: -98px;
+        right: -10px;
+    }
+    .featuresec .d-flex img {
+        max-height: 55px;
+        max-width: 15%;
+    }
+    .featuresec p {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 500;
+    }
+    .tech_specs_bottom {
+        margin-top: 0
+    }
+    .pdctfeatures .dvdr img {
+        max-height: 12px;
+    }
+    .discoversec .mainimg {
+        display: none
+    }
+    .discoversec h1 {
+        font-size: 22px;
+    }
+    .feature-mb-div .feature-mb-img {
+        height: auto;
+        width: auto;
+    }
+    .feature-mb-div .feature-mb-list,
+    .feature-mb-sub-list {
+        display: flex;
+        justify-content: center;
+    }
+    .feature-mb-list ul {
+        margin: 0;
+        padding: 0
+    }
+    .feature-mb-list ul li,
+    .feature-mb-sub-list li {
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px
+    }
+    .feature-mb-list ul li img {
+        max-height: 86px;
+        margin-right: 15px
+    }
+    .feature-mb-list ul li p {
+        color: #000;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .feature-mb-sub-list li img {
+        max-height: 38px;
+        margin-right: 10px
+    }
+    .feature-mb-sub-list li p {
+        line-height: 22px
+    }
+    .discoversec {
+        padding: 35px 0px 220px;
+    }
+    .discover_img_mb {
+        width: 100%;
+        height: auto;
+        margin-bottom: 25px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .discover_img_mb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+    .mbgbx .mbgseal {
+        max-height: 120px;
+        margin: 0 auto;
+        display: block;
+    }
+    .mbgbx {
+        text-align: center;
+    }
+    .mbgbx:before {
+        width: 100%;
+        height: 15%;
+    }
+    .mbgbx h3 {
+        font-size: 24px;
+    }
+    .mbgbx p {
+        font-size: 16px;
+        line-height: 22px;
+        text-align: start;
+    }
+    .mbgsec {
+        margin-top: -195px;
+        padding: 0 10px;
+    }
+    .review {
+        padding: 50px 0;
+    }
+    .review h1 {
+        font-size: 22px
+    }
+    .review .dvdr img {
+        max-height: 10px;
+    }
+    .testi-sec {
+        width: 100%;
+        padding: 0 0px;
+    }
+    .testi-row {
+        width: 100%;
+        padding: 0px;
+        display: block;
+    }
+    .testi-row-lft {
+        display: none
+    }
+    .testi-row-rght {
+        width: 100%;
+        padding: 0px 0 0px 10px;
+        border: 0;
+    }
+    .testi-lft-abt p.testi-pics {
+        font-size: 30px;
+        line-height: 45px;
+    }
+    ul.stars {
+        margin-top: -5px;
+    }
+    .faqsec .dvdr img {
+        max-height: 10px;
+    }
+    .faqsec .accordion {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .faqsec .acdn-para {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0px;
+        margin-bottom: 15px;
+    }
+    .faq-container {
+        margin: 0
+    }
+    .faqsec {
+        padding: 40px 0 35px;
+    }
+    .ftsec {
+        padding-top: 0
+    }
+    .mb-fixed-btn {
+        width: 100%;
+        background: #28341e;
+        padding: 10px 15px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .mb-fixed-btn .hdr_btn {
+        width: 100%;
+        color: #fff;
+        font-size: 22px
+    }
+    .advertisedlogobx img {
+        max-height: 28px;    margin: 10px 3px;
+    }
+}
+
+
+@media (max-width: 436px) {
+    /*#tech_specs {
+        margin-top: 220px
+    }*/
+    .ftlogo {
+        margin-top: 40px;
+    }
+}
+@media (max-width: 400px) {
+    .tech_specs_upper .tech_specs_upper_head {
+    font-size: 25px;
+    text-align: center;
+}
+    .free_txt {
+        min-width: inherit;
+    }
+    .featurebox li p {    font-size: 14px;}
+    .hdr_btn {
+        font-size: 15px !important;
+        padding: 0.8rem 0.8rem;
+    }
+    .advertisedlogobx img {
+        max-height: 25px;
+    }
+}
+/*@media (max-width: 410px) {
+    #tech_specs {
+        margin-top: 260px
+    }
+}*/
+@media only screen and (max-width: 322px) {
+    .featurebox li {
+        width: 46%;
+        border-right: 0
+    }
+    .featurebox {
+        padding: 5px;
+    }
+    .featurebox li p {
+        font-size: 11px;
+        padding: 0px 5px;
+        font-weight: 600;
+    }
+}
+
+
+/* Heading Bottom Line */
+.heading-bottom-line {
+    background: url(../images/dvdr-dark.png) no-repeat center center;
+    height: 30px;
+    margin: 0 0 15px;
+}
+.heading-bot-short {
+    max-width: 90%;
+}
+.heading-bot-mini {
+    max-width: 50%;
+}
+.heading-bottom-line-light {
+    background: url(../images/dvdr-light.png) no-repeat center center;
+    height: 30px;
+    margin: 0 0 15px;
+}
+@media only screen and (max-width: 767px) {
+    .heading-bot-short {
+        max-width: inherit;
+    }
+    .heading-bot-mini {
+        max-width: 100%;
+    }
+}
+
+
+/* Email Modal */
+.emailmodal .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.emailmodal .modal-body {
+    padding: 0;
+    border-radius: 0;
+}
+.formbox {
+    padding: 100px 45px 70px;
+    background: #3c107c url(../images/email-modal-left-img.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+.formbox .text img {
+    max-height: 30px;
+    margin: 0 3px;
+}
+.formbox p {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.formbox input {
+    border-radius: 0;
+    padding: 16px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    min-height: 58px
+}
+.formbox .modal-submit-btn {
+    background: #19b9bb;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 1px;
+    border-radius: 0;
+    border: 0;
+    display: inline-block;
+    width: 100%;
+    min-height: 58px
+}
+.formbox form {
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+.formbox .no-thanks {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500
+}
+.rightpanel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.rightpanel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media only screen and (max-width: 767px) {
+    .formbox {
+        padding: 70px 30px 70px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .rightpanel {
+        display: none
+    }
+}
+@media screen and (min-width: 1400px) {
+    .featurebox {
+        max-width: 575px;
+    }
+    .tech_specs_box:before {
+        bottom: -20px;
+        width: 530px;
+        height: 580px;
+    }
+    .tech_specs_upper .tech_specs_upper_head {
+        font-size: 2.5rem;
+    }
+    .discoversec .discover_img_desk img {
+        height: 360px;
+        width: auto;
+    }
+    .discoversec .discover_img_desk2 img {
+        height: 356px;
+        margin-bottom: 4px;
+    }
+}
+@media screen and (max-width: 1199px) {
+    .discoversec .discover_img_desk img {
+        height: 250px;
+        width: auto;
+    }
+    .discoversec .discover_img_desk2 img {
+        height: 246px;
+        margin-bottom: 4px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .discoversec .discover_img_desk img {
+        height: 186px;
+        width: auto;
+    }
+    .discoversec .discover_img_desk2 img {
+        height: 182px;
+        margin-bottom: 4px;
+    }
+}
