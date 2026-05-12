@@ -4,11 +4,15 @@ page_type: checkout
 promo_sale: "default"
 next_url: upsell.html
 # SDK meta tags — verbatim from CampaignSpec sdk_hints.meta_tags (page_mp2fniz4_39 / Checkout)
+# Routing tags (next-success-url, next-upsell-accept-url, next-upsell-decline-url) overridden
+# to absolute /<slug>/<route>/ form: SDK treats meta-tag URLs as absolute, so spec-relative
+# values (e.g. "upsell/") resolve to site root → 404. Spec contract bug to surface to Map Builder:
+# routing meta_tags should emit absolute paths.
 meta_tags:
   next-page-type: checkout
   next-currency: USD
   next-predictive-address: "true"
-  next-success-url: upsell/
+  next-success-url: /roadside-ready/upsell/
 styles:
   - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
 scripts:
@@ -326,7 +330,14 @@ swiper_thumbs:
                               {% campaign_include 'customer-info-form.html' %}
                               {% campaign_include 'shipping-address-form.html' %}
                             </div>
-                        {% campaign_include 'bump-check01.html' packages=packages bump_title='Add a Portable Air Compressor' bump_image_alt='Portable Air Compressor' features=bump_features %}
+                        {% comment %}
+                          package_sync=false: bump is a one-time add-on (qty 1), should NOT
+                          multiply with bundle qty (otherwise 2x bundle showed 2x compressors = $119.98).
+                          show_line_total_price=false: with package_sync off, line total === unit price,
+                          so the duplicate row is just visual noise.
+                          Partial-doc explicitly recommends both for one-time add-on framing.
+                        {% endcomment %}
+                        {% campaign_include 'bump-check01.html' packages=packages bump_title='Add a Portable Air Compressor' bump_image_alt='Portable Air Compressor' features=bump_features package_sync=false show_line_total_price=false %}
                         {% comment %} bump-switch01 removed — CampaignSpec has only one prepurchase package (Air Compressor); per olympus agentContract removeWhenUnsupported. {% endcomment %}
                             <div class="form-section form-section--last">
                               <div class="form-section__header">
