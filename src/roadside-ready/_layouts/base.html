@@ -16,10 +16,18 @@
 
     <!-- NEXT Metatags -->
     <meta name="next-funnel" content="{{ campaign.name }}">
-    {% if next_url %}<meta name="next-success-url" content="{{ next_url | campaign_link }}">{% endif %}
-    {% if next_url %}<meta name="next-upsell-accept-url" content="{{ next_url | campaign_link }}">{% endif %}
-    {% if decline_url %}<meta name="next-upsell-decline-url" content="{{ decline_url | campaign_link }}">{% endif %}
-    <meta name="next-page-type" content="{{ page_type }}">
+    {% comment %}
+      Per-page SDK meta tags are passed verbatim from CampaignSpec sdk_hints.meta_tags
+      via page frontmatter `meta_tags`. This is the authoritative source — preserves spec
+      URL form (e.g. "upsell/" rather than "/<slug>/upsell/") and lets QA assert byte-equal.
+      Fallback retained for next-page-type when meta_tags is absent.
+    {% endcomment %}
+    {% if meta_tags %}
+      {% for tag in meta_tags %}<meta name="{{ tag[0] }}" content="{{ tag[1] }}">
+      {% endfor %}
+    {% else %}
+      <meta name="next-page-type" content="{{ page_type }}">
+    {% endif %}
     <!-- BS-013 / Known #8 diagnostic only: <meta name="next-clear-cart" content="true"> clears session cart every load (masks merge bugs; breaks persistence — do not ship). -->
 
     <!-- Campaign Cart SDK -->
