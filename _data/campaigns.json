@@ -168,5 +168,22 @@
     "store_phone_tel": "",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "home-outage-prep-v0": {
+    "name": "Home Outage Prep v0",
+    "description": "Keer dogfood #2 — Home Outage Prep (demeter family) assembled via Campaigns OS from map home-outage-prep-v0-sf21",
+    "entry_url": "",
+    "sdk_version": "0.4.19",
+    "store_name": "Keer",
+    "store_url": "https://keer.29next.store",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
   }
 }

@@ -1,0 +1,188 @@
+/* RescueRay brand overlay — recolors demeter starter tokens to the RR palette
+   from brand.css (navy + orange) and surfaces shared rr-* primitives for
+   inline use on commerce pages. Load AFTER css/next-core.css so it wins
+   the cascade. */
+
+:root {
+  /* RR palette (mirror of brand.css) */
+  --rr-navy: #0a2540;
+  --rr-navy-deep: #051a30;
+  --rr-orange: #ff7a1a;
+  --rr-orange-deep: #e0620a;
+  --rr-yellow: #ffcc00;
+  --rr-green: #2e9c5b;
+  --rr-bg: #f6f7fb;
+  --rr-card: #ffffff;
+  --rr-border: #e3e6ee;
+  --rr-text: #1a2238;
+  --rr-text-muted: #5c6680;
+
+  /* Remap demeter brand tokens to RR palette.
+     - primary (was blue #3c7dff) -> RR orange — call-to-action color
+     - primary-dark (was navy-blue #0a265c) -> RR navy — strong CTAs / total chip
+     - primary-light (was pale blue tint) -> warm cream so highlight bands match the warm RR palette
+     - accent stays a deep gray; secondary/text tones land closer to RR's neutrals */
+  --brand--color--primary: var(--rr-orange);
+  --brand--color--primary-dark: var(--rr-navy);
+  --brand--color--primary-light: #fff3e6;
+  --brand--color--primary-lighter: #fffaf3;
+  --brand--color--primary-foreground: #ffffff;
+  --brand--color--cta-primary: var(--rr-navy);
+  --brand--color--accent: var(--rr-navy-deep);
+  --brand--color--accent-foreground: #ffffff;
+  --brand--color--surface: var(--rr-bg);
+  --brand--color--foreground: var(--rr-text);
+  --brand--color--border: var(--rr-border);
+  --brand--color--secondary: var(--rr-text-muted);
+}
+
+/* Body background carries the warm RR surface */
+body { background: var(--rr-bg); color: var(--rr-text); }
+
+/* Checkout / upsell submit + accept buttons */
+.submit-button,
+[data-next-upsell-action="add"],
+.os-card.next-selected .os-card__total-current { color: #fff; }
+
+.submit-button { background: var(--rr-orange); border-color: var(--rr-orange-deep); }
+.submit-button:hover { background: var(--rr-orange-deep); }
+
+[data-next-upsell-action="add"] {
+  background: var(--rr-orange);
+  border: 2px solid var(--rr-orange-deep);
+  color: #fff;
+  font-weight: 800;
+  padding: 14px 22px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background .15s ease;
+}
+[data-next-upsell-action="add"]:hover { background: var(--rr-orange-deep); }
+
+[data-next-upsell-action="skip"] {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--rr-text-muted);
+  text-decoration: underline;
+  font-size: 0.92rem;
+  text-align: center;
+  width: 100%;
+}
+[data-next-upsell-action="skip"]:hover { color: var(--rr-text); }
+
+/* Tier cards (upsell + checkout) - selected state in RR orange */
+.os-card.next-selected { border-color: var(--rr-orange); box-shadow: 0 0 0 2px var(--rr-orange) inset; }
+.os-card__title-badge.pb--bestseller,
+.os-card__label--pill-primary { background: var(--rr-orange); color: #fff; }
+.os-card__label--pill-secondary { background: var(--rr-navy); color: #fff; }
+
+/* Bundle/total currency emphasis */
+.os-card__total-current,
+[data-next-bundle-display="price"],
+[data-next-display="bundle.upsell-bundle.price"] { color: var(--rr-navy); font-weight: 800; }
+
+/* Headings + serif accents (demeter sometimes uses a generic serif; keep RR
+   sans-serif system stack for consistency with brand.css) */
+h1, h2, h3, h4 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; letter-spacing: -0.01em; }
+h1 { color: var(--rr-navy); }
+
+/* Order summary container chrome on receipt */
+.order-summary, .summary_price--total { color: var(--rr-navy); }
+
+/* Promo banner + scarcity strip — keep navy backplate for high contrast */
+promo-banner, .promo-banner, .encrypted-banner { background: var(--rr-navy); color: #fff; }
+.encrypted-banner .security-banner__text { color: #fff; }
+
+/* Inline RR primitives so upsell hero copy lifted from designer source still
+   styles cleanly here. These mirror brand.css but stay scoped to commerce
+   pages where brand.css itself is NOT loaded (passthrough only loads brand.css
+   on presell + landing). */
+.rr-upsell-hero {
+  background: var(--rr-navy);
+  color: #fff;
+  text-align: center;
+  padding: 10px 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.rr-upsell-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 28px;
+  align-items: start;
+}
+@media (max-width: 720px) {
+  .rr-upsell-grid { grid-template-columns: 1fr; }
+}
+.rr-upsell-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  background: var(--rr-card);
+  border: 1px solid var(--rr-border);
+}
+.rr-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4rem;
+}
+.rr-checklist li {
+  position: relative;
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  color: var(--rr-text);
+}
+.rr-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.55rem;
+  width: 1.05rem; height: 1.05rem;
+  border-radius: 50%;
+  background: var(--rr-green);
+  background-image: linear-gradient(135deg, var(--rr-green), #1e7a45);
+}
+.rr-checklist li::after {
+  content: "";
+  position: absolute;
+  left: 0.30rem; top: 0.74rem;
+  width: 0.42rem; height: 0.22rem;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+.rr-section-eyebrow {
+  display: inline-block;
+  background: var(--rr-yellow);
+  color: var(--rr-navy);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+.rr-h-display {
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  font-weight: 800;
+  color: var(--rr-navy);
+  margin: 0 0 0.6rem;
+  line-height: 1.15;
+}
+.rr-lede {
+  color: var(--rr-text-muted);
+  font-size: 1.05rem;
+  margin: 0 0 1.2rem;
+}
+
+/* Upsell page hero band (above demeter offer block) */
+.rr-upsell-band {
+  background: linear-gradient(180deg, #fff 0%, var(--rr-bg) 100%);
+  padding: 28px 0 8px;
+  border-bottom: 1px solid var(--rr-border);
+}
+.rr-upsell-band .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }

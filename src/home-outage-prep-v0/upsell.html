@@ -1,0 +1,145 @@
+---
+title: "Add fire safety in 60 seconds — Fire Blanket"
+page_type: upsell
+next_url: upsell-2
+decline_url: upsell-2
+# CampaignSpec sdk_hints.meta_tags (page_mp3qp2nt_28). Explicit so we cover
+# next-currency and next-prevent-back-navigation that base.html does not auto-emit.
+meta_tags:
+  next-funnel: Home Outage Prep v0
+  next-page-type: upsell
+  next-currency: USD
+  next-prevent-back-navigation: "true"
+  next-upsell-accept-url: /home-outage-prep-v0/upsell-2/
+  next-upsell-decline-url: /home-outage-prep-v0/upsell-2/
+styles:
+  - css/rescue-ray-brand.css
+# CampaignSpec voucher FIRE (40% off pkg 3) reused across all 3 tiers — spec
+# carries one voucher per upsell page (friction #9 on SELL-271). All tiers
+# get the same per-unit discount; total scales linearly with quantity.
+---
+
+<div class="page-wrapper">
+  <div class="main-wrapper">
+    <div class="rr-upsell-hero">Special offer unlocked &mdash; please don&rsquo;t close this page.</div>
+    {% campaign_include 'upsell-header-bar.html' %}
+
+    <!--
+      Hand-authored RescueRay layout with inline SDK contract.
+      The full SDK-owned surface is the data-next-* attribute set: see
+      `next_dont_touch` on the demeter starter partial. Visual chrome (layout,
+      copy, photography, color) is designer-owned and lifted from the source
+      upsell-1.html.
+    -->
+    <section class="rr-section" data-next-catalog-component="upsell-bundle-tier-cards-offer" style="padding: 28px 0 60px;">
+      <div class="rr-upsell-band" style="background: transparent; border-bottom: 0; padding: 0;">
+        <div class="container">
+          <div class="rr-upsell-grid">
+            <div class="rr-upsell-img">
+              <img src="{{ 'products/fire-blanket.png' | campaign_asset }}" alt="RescueRay Fire Blanket">
+            </div>
+
+            <!--
+              SDK upsell offer. UpsellEnhancer reads the first
+              [data-next-bundle-selector] inside [data-next-upsell="offer"] on
+              accept (must be selector_id="upsell-bundle"). A second selector
+              outside the offer drives the header discount % display.
+            -->
+            <div data-next-upsell="offer" data-next-await="">
+              <span class="rr-section-eyebrow">One-time offer</span>
+              <h1 class="rr-h-display">Household fire safety, in 60 seconds.</h1>
+              <h2 style="font-size: 1.15rem; font-weight: 700; color: var(--rr-text); margin: 0 0 0.6rem;"><span data-next-display="package.3.name">RescueRay Fire Blanket</span></h2>
+              <p class="rr-lede">A fire blanket is the safer first response to a kitchen fire. No aim, no chemicals, no mess. Hang it next to the stove and forget about it until you need it.</p>
+
+              <ul class="rr-checklist" style="margin-bottom: 1.6rem;">
+                <li>Smothers most stovetop fires faster than aiming an extinguisher</li>
+                <li>Reusable up to the manufacturer&rsquo;s rating &mdash; no powder cleanup</li>
+                <li>Hangs in seconds with the included wall hook</li>
+                <li>Lives next to the stove &mdash; not buried in a closet</li>
+              </ul>
+
+              <!-- Tier cards. 3-column grid (1×/2×/3×); click any to select. Single
+                   CampaignSpec voucher FIRE reused on every tier per spec data shape. -->
+              <div
+                data-next-bundle-selector
+                data-next-selector-id="upsell-bundle"
+                class="rr-tier-grid"
+                style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 1.2rem;"
+              >
+                <div
+                  role="button"
+                  data-next-bundle-card
+                  data-next-bundle-id="upsell-bundle-1x"
+                  data-next-bundle-items='[{"packageId":3,"quantity":1}]'
+                  data-next-bundle-vouchers='["FIRE"]'
+                  data-next-selected="true"
+                  class="rr-tier next-selected"
+                  style="background: var(--rr-card); border: 2px solid var(--rr-border); border-radius: 12px; padding: 14px 12px; text-align: center; cursor: pointer; transition: border-color .15s ease, transform .15s ease;"
+                >
+                  <div class="rr-tier__label" style="font-weight: 800; color: var(--rr-navy);">1 blanket</div>
+                  <div class="rr-tier__hint" style="font-size: 0.82rem; color: var(--rr-text-muted); margin-bottom: 0.4rem;">For the kitchen</div>
+                  <div class="rr-tier__price" style="font-size: 1.15rem; font-weight: 800; color: var(--rr-navy);">
+                    <span data-next-bundle-display="price" data-next-format="currency">$29.99</span>
+                  </div>
+                </div>
+                <div
+                  role="button"
+                  data-next-bundle-card
+                  data-next-bundle-id="upsell-bundle-2x"
+                  data-next-bundle-items='[{"packageId":3,"quantity":2}]'
+                  data-next-bundle-vouchers='["FIRE"]'
+                  class="rr-tier"
+                  style="background: var(--rr-card); border: 2px solid var(--rr-border); border-radius: 12px; padding: 14px 12px; text-align: center; cursor: pointer; transition: border-color .15s ease, transform .15s ease;"
+                >
+                  <div class="rr-tier__label" style="font-weight: 800; color: var(--rr-navy);">2 blankets</div>
+                  <div class="rr-tier__hint" style="font-size: 0.82rem; color: var(--rr-text-muted); margin-bottom: 0.4rem;">Kitchen + garage</div>
+                  <div class="rr-tier__price" style="font-size: 1.15rem; font-weight: 800; color: var(--rr-navy);">
+                    <span data-next-bundle-display="price" data-next-format="currency">$59.98</span>
+                  </div>
+                </div>
+                <div
+                  role="button"
+                  data-next-bundle-card
+                  data-next-bundle-id="upsell-bundle-3x"
+                  data-next-bundle-items='[{"packageId":3,"quantity":3}]'
+                  data-next-bundle-vouchers='["FIRE"]'
+                  class="rr-tier"
+                  style="background: var(--rr-card); border: 2px solid var(--rr-border); border-radius: 12px; padding: 14px 12px; text-align: center; cursor: pointer; transition: border-color .15s ease, transform .15s ease;"
+                >
+                  <div class="rr-tier__label" style="font-weight: 800; color: var(--rr-navy);">3 blankets</div>
+                  <div class="rr-tier__hint" style="font-size: 0.82rem; color: var(--rr-text-muted); margin-bottom: 0.4rem;">Whole home coverage</div>
+                  <div class="rr-tier__price" style="font-size: 1.15rem; font-weight: 800; color: var(--rr-navy);">
+                    <span data-next-bundle-display="price" data-next-format="currency">$89.97</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Selected summary -->
+              <div style="background: var(--rr-bg); border: 1px solid var(--rr-border); padding: 12px 14px; border-radius: 10px; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+                <div style="color: var(--rr-text-muted); font-size: 0.92rem;">Selected total</div>
+                <div>
+                  <span style="text-decoration: line-through; color: var(--rr-text-muted); margin-right: 0.6rem;">
+                    <span data-next-display="bundle.upsell-bundle.originalPrice" data-next-format="currency">$49.99</span>
+                  </span>
+                  <span style="font-size: 1.4rem; font-weight: 800; color: var(--rr-navy);">
+                    <span data-next-display="bundle.upsell-bundle.price" data-next-format="currency">$29.99</span>
+                  </span>
+                </div>
+              </div>
+
+              <a data-next-upsell-action="add" href="#" class="rr-btn">Yes, add fire safety to my order &rarr;</a>
+              <a data-next-upsell-action="skip" href="#">No thanks, I&rsquo;ll skip the fire blanket</a>
+
+              <p style="color: var(--rr-text-muted); font-size: 0.85rem; margin-top: 0.9rem; text-align: center;">
+                Charged to the card you used a moment ago &mdash; nothing to re-enter.<br>
+                Fire blankets are not a substitute for an extinguisher or smoke alarm.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% campaign_include 'footer.html' %}
+  </div>
+</div>
