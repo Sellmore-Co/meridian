@@ -14,6 +14,7 @@ meta_tags:
   next-upsell-decline-url: /home-outage-prep-v0/upsell-2/
 styles:
   - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
+  - css/rescue-ray-brand.css
 scripts:
   - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
   - js/upsells.js
@@ -195,12 +196,27 @@ swiper_thumbs:
       </div>
     </div>
     {% campaign_include 'upsell-header-bar.html' %}
-    <section class="section upsell-header">
+    <!-- RescueRay branded hero band (copy + product photography from designer source). -->
+    <section class="rr-upsell-band">
       <div class="container">
-        <div class="upsell-header__inner">
-          <div class="upsell-header__title">Wait! Your Order Isn't Complete</div>
-          <div class="upsell-header__offer">Special Discount: Add the <span data-next-display="{{ upsell_package_name_path }}">Product Title</span> to your order</div>
-          <div class="upsell-header__suboffer">Save up to <span data-next-display="{{ upsell_display_discount_path }}" data-next-format="percentage"></span> on the <span data-next-display="{{ upsell_package_name_path }}">Product Title</span> Today!<br></div>
+        <div class="rr-upsell-grid">
+          <div class="rr-upsell-img">
+            <img src="{{ 'products/fire-blanket.png' | campaign_asset }}" alt="RescueRay Fire Blanket">
+          </div>
+          <div>
+            <span class="rr-section-eyebrow">One-time offer</span>
+            <h1 class="rr-h-display">Household fire safety, in 60 seconds.</h1>
+            <p class="rr-lede">A fire blanket is the safer first response to a kitchen fire. No aim, no chemicals, no mess. Hang it next to the stove and forget about it until you need it.</p>
+            <ul class="rr-checklist">
+              <li>Smothers most stovetop fires faster than aiming an extinguisher</li>
+              <li>Reusable up to the manufacturer&rsquo;s rating &mdash; no powder cleanup</li>
+              <li>Hangs in seconds with the included wall hook</li>
+              <li>Lives next to the stove &mdash; not buried in a closet</li>
+            </ul>
+            <p style="color: var(--rr-text-muted); font-size: 0.92rem; margin: 0;">
+              Save up to <span data-next-display="{{ upsell_display_discount_path }}" data-next-format="percentage">40%</span> &mdash; charged to the card you used a moment ago, nothing to re-enter.
+            </p>
+          </div>
         </div>
       </div>
     </section>

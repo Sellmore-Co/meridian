@@ -13,6 +13,7 @@ meta_tags:
   next-upsell-decline-url: /home-outage-prep-v0/receipt/
 styles:
   - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
+  - css/rescue-ray-brand.css
 scripts:
   - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
   - js/upsells.js
@@ -85,20 +86,26 @@ swiper_thumbs:
     </div>
     {% campaign_include 'upsell-header-bar.html' %}
 
-    <section class="section upsell-header">
+    <!-- RescueRay branded hero band (copy + product photography from designer source). -->
+    <section class="rr-upsell-band">
       <div class="container">
-        <div class="upsell-header__inner">
-          <div class="upsell-header__title">Wait! Your Order Isn't Complete</div>
-          <div class="upsell-header__offer">
-            Special Discount: Get 1 More
-            <span data-next-display="{{ upsell_package_name_path }}">Product Title</span>
-            For Only
-            <span data-next-display="{{ upsell_price_path }}" data-next-format="currency">$14.95</span>
+        <div class="rr-upsell-grid">
+          <div class="rr-upsell-img">
+            <img src="{{ 'products/solar-spotlight.png' | campaign_asset }}" alt="RescueRay Portable Solar Spotlight">
           </div>
-          <div class="upsell-header__suboffer">
-            Add this to your order and get a
-            <span data-next-display="{{ upsell_discount_path }}" data-next-format="percentage">50%</span>
-            discount
+          <div>
+            <span class="rr-section-eyebrow">Final offer</span>
+            <h1 class="rr-h-display">Light up the dark spots around your home.</h1>
+            <p class="rr-lede">No wiring. No batteries to buy. Charges by day, throws a wide cone of light at night. Buy one for the entryway, or several to cover the property perimeter.</p>
+            <ul class="rr-checklist">
+              <li>Solar panel built in &mdash; no wiring, no batteries to replace</li>
+              <li>Wide-throw LED covers a walkway, driveway, or porch</li>
+              <li>Stake into the ground or hang on a wall hook</li>
+              <li>Weather-resistant for year-round use</li>
+            </ul>
+            <p style="color: var(--rr-text-muted); font-size: 0.92rem; margin: 0;">
+              <span data-next-display="{{ upsell_discount_path }}" data-next-format="percentage">33%</span> off, today only &mdash; charged to your existing card, nothing to re-enter.
+            </p>
           </div>
         </div>
       </div>
