@@ -152,10 +152,24 @@
     },
     "deploy": {
       "stage": "deploy",
-      "status": "pending",
-      "inputs": [],
-      "outputs": [],
-      "commands": [],
+      "status": "completed",
+      "inputs": [
+        "branch home-outage-prep-v0-sf21",
+        "PR https://github.com/Sellmore-Co/meridian/pull/7"
+      ],
+      "outputs": [
+        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/presell/",
+        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
+      ],
+      "commands": [
+        "git add -A && git commit -m '...' && git push -u origin home-outage-prep-v0-sf21",
+        "gh pr create --draft --base main --head home-outage-prep-v0-sf21",
+        "Netlify deploy preview for meridian-skincare: SUCCESS"
+      ],
       "blockers": [],
       "warnings": []
     },
