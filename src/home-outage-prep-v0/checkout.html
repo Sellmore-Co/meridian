@@ -1,9 +1,17 @@
 ---
 title: "RescueRay Emergency LED Bulb — Checkout"
 page_type: checkout
-# next_url auto-roots via campaign_link → /home-outage-prep-v0/upsell/
-# (no trailing slash — campaign_link appends one; double-slash if both have it)
+# next_url retained for downstream consumers, but explicit meta_tags is authoritative.
+# CampaignSpec sdk_hints.meta_tags carries next-predictive-address + next-currency that
+# base.html's auto-emission does NOT cover (only emits 5 tags) — must list inline here.
 next_url: upsell
+meta_tags:
+  next-funnel: Home Outage Prep v0
+  next-page-type: checkout
+  next-currency: USD
+  next-predictive-address: "true"
+  next-success-url: /home-outage-prep-v0/upsell/
+  next-upsell-accept-url: /home-outage-prep-v0/upsell/
 promo_sale: "default"
 cart_summary_variant: "03"
 order_bump_variant: "check01"

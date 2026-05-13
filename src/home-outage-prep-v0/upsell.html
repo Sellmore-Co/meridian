@@ -1,11 +1,17 @@
 ---
 title: "Add fire safety in 60 seconds — Fire Blanket"
 page_type: upsell
-# next_url + decline_url auto-root via campaign_link → /home-outage-prep-v0/upsell-2/
-# CampaignSpec exported unrooted paths (upsell-2/); doctor flagged routing_meta.runtime_root.
-# Page-kit's base.html else-branch emits next-upsell-accept-url + next-upsell-decline-url from these.
 next_url: upsell-2
 decline_url: upsell-2
+# Explicit meta_tags — CampaignSpec includes next-prevent-back-navigation + next-currency
+# that base.html auto-emission does not cover.
+meta_tags:
+  next-funnel: Home Outage Prep v0
+  next-page-type: upsell
+  next-currency: USD
+  next-prevent-back-navigation: "true"
+  next-upsell-accept-url: /home-outage-prep-v0/upsell-2/
+  next-upsell-decline-url: /home-outage-prep-v0/upsell-2/
 styles:
   - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
 scripts:

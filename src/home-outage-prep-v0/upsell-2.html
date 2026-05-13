@@ -1,9 +1,16 @@
 ---
 title: "Light up the dark spots — Portable Solar Spotlight"
 page_type: upsell
-# next_url + decline_url auto-root via campaign_link → /home-outage-prep-v0/receipt/
 next_url: receipt
 decline_url: receipt
+# Explicit meta_tags — CampaignSpec includes next-currency that base.html
+# auto-emission does not cover.
+meta_tags:
+  next-funnel: Home Outage Prep v0
+  next-page-type: upsell
+  next-currency: USD
+  next-upsell-accept-url: /home-outage-prep-v0/receipt/
+  next-upsell-decline-url: /home-outage-prep-v0/receipt/
 styles:
   - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
 scripts:
