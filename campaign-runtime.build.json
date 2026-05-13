@@ -6,7 +6,7 @@
     "live_url_path": "/home-outage-prep-v0/",
     "campaigns_app_url": null,
     "api_key_source": "env:CAMPAIGNS_API_KEY",
-    "allowed_domains_confirmed": false
+    "allowed_domains_confirmed": true
   },
   "spec": {
     "map_id": "home-outage-prep-v0-sf21",

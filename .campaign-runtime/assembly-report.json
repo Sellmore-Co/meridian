@@ -195,7 +195,7 @@
       "warnings": [
         {
           "code": "BROWSER_CONSOLE_ERRORS",
-          "message": "Playwright run flagged 1 console issue on checkout: pre-existing [ApiClient] API request failed: signal is aborted without reason. Friction #13 on SELL-271 (navigation-cancelled fetch logged at ERROR level)."
+          "message": "Playwright run flagged 1 browser console issue on checkout: a missing /home-outage-prep-v0/images/credit-card-flags.svg asset from the Demeter starter. Friction #10 / starter-template asset hygiene."
         },
         {
           "code": "QA_RECEIPT_LINE_ITEMS_MISSING_UPSELL",
@@ -211,7 +211,7 @@
         },
         {
           "code": "API_REQUEST_ABORTED",
-          "message": "Console error '[ApiClient] API request failed: signal is aborted without reason' fires on every page. Appears benign (cancelled during navigation) but is loud and would mask real errors. Worth quieting in SDK or treating as info. Folded into BROWSER_CONSOLE_ERRORS above."
+          "message": "Raw browser event logs also include [ApiClient] API request failed: signal is aborted without reason during navigation. It did not drive the top-level QA warning in this run, but remains useful SDK noise to quiet separately."
         }
       ]
     }

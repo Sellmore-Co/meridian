@@ -138,8 +138,8 @@ return `/${campaign.slug}/${clean}/`;
 ### 13. Console noise: `[ApiClient] API request failed: signal is aborted without reason`
 
 **Where**: every page in the funnel, in the dev console.
-**Symptom**: at least one of these errors fires per page. Pattern suggests fetch cancellation during page navigation, but it's logged at ERROR level. The new Playwright `browser-console-errors` assertion flagged this same noise as the only warn in the final QA run.
-**Impact**: makes real errors hard to spot in console; now also produces a noisy QA assertion.
+**Symptom**: at least one of these errors appears in the raw browser event logs. Pattern suggests fetch cancellation during page navigation, but it's logged at ERROR level. The final Playwright `browser-console-errors` assertion's top-level warning was the missing `credit-card-flags.svg` asset, not this API-abort noise.
+**Impact**: makes real errors harder to spot in console when reviewing raw QA event logs.
 **Recommendation**: SDK should catch AbortError on navigation-cancelled fetches and either swallow or log at DEBUG level.
 
 ### 14. Build skill doctrine: "starter-template commerce surface" is ambiguous

@@ -485,7 +485,7 @@
       "ok": true,
       "next_order_id": "102248",
       "ref_id": "807d4fba7dbb4d7c855c243fd5123931",
-      "qa_email": "qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687024572@example.com",
+      "qa_email": "[redacted-qa-email]",
       "is_test": true,
       "payment_method": "card_token",
       "card": {
@@ -526,7 +526,7 @@
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":3}],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "GET",
@@ -546,17 +546,17 @@
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2},{\"package_id\":2,\"quantity\":2}],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"vouchers\":[],\"currency\":\"USD\",\"shipping_method\":1}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/",
-              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"user\":{\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"language\":\"en\",\"accepts_marketing\":true,\"email\":\"qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687024572@example.com\"},\"currency\":\"USD\",\"attribution\":{\"funnel\":\"Home Outage Prep v0\",\"metadata\":{\"landing_page\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/\",\"referrer\":\"\",\"device\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36\",\"device_type\":\"desktop\",\"domain\":\"meridian-skincare.netlify.app\",\"timestamp\":1778687032778,\"fb_fbp\":\"\",\"fb_fbc\":\"\",\"fb_pixel_id\":\"\",\"sdk_version\":\"0.4.19\",\"user_ip\":\"2001:fb1:77:17e2:c34:7464:77c0:29c4\",\"conversion_timestamp\":1778687031383}}}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "GET",
@@ -571,17 +571,17 @@
             {
               "method": "POST",
               "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
-              "postData": "{\"environment_key\":\"57862XP7AB94ZSSMYZRDHTQA7W\",\"payment_method\":{\"credit_card\":{\"number\":\"[redacted-card]\",\"verification_value\":\"[redacted-cvv]\",\"full_name\":\"QA Playwright\",\"month\":\"12\",\"year\":\"2030\"}}}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/orders/",
-              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"shipping_address\":{\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"line1\":\"1600 Amphitheatre Pkwy\",\"line4\":\"Mountain View\",\"state\":\"CA\",\"postcode\":\"94043\",\"country\":\"US\",\"phone_number\":\"\"},\"billing_same_as_shipping_address\":true,\"shipping_method\":1,\"payment_detail\":{\"payment_method\":\"card_token\",\"card_token\":\"[redacted-token]\"},\"user\":{\"email\":\"qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687024572@example.com\",\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"language\":\"en\",\"phone_number\":\"\",\"accepts_marketing\":true},\"vouchers\":[],\"attribution\":{\"funnel\":\"Home Outage Prep v0\",\"metadata\":{\"landing_page\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/\",\"referrer\":\"\",\"device\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36\",\"device_type\":\"desktop\",\"domain\":\"meridian-skincare.netlify.app\",\"timestamp\":1778687032778,\"fb_fbp\":\"\",\"fb_fbc\":\"\",\"fb_pixel_id\":\"\",\"sdk_version\":\"0.4.19\",\"user_ip\":\"2001:fb1:77:17e2:c34:7464:77c0:29c4\",\"conversion_timestamp\":1778687031383}},\"currency\":\"USD\",\"success_url\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/\",\"payment_failed_url\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/?payment_failed=true\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":2,\"quantity\":1}],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "GET",
@@ -591,7 +591,7 @@
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[],\"vouchers\":[],\"currency\":\"USD\",\"shipping_method\":1}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "GET",
@@ -606,22 +606,22 @@
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":1}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":2}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":3}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":1,\"is_upsell\":false}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\",\"shipping_method\":1}"
+              "postData": "[redacted-request-body]"
             }
           ],
           "responses": [
@@ -895,7 +895,7 @@
       "ok": true,
       "next_order_id": "102251",
       "ref_id": "7aefc0059432476ea22bde177baa945c",
-      "qa_email": "qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687227402@example.com",
+      "qa_email": "[redacted-qa-email]",
       "is_test": true,
       "payment_method": "card_token",
       "card": {
@@ -951,17 +951,17 @@
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2},{\"package_id\":2,\"quantity\":2}],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"vouchers\":[],\"currency\":\"USD\",\"shipping_method\":1}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/",
-              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"user\":{\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"language\":\"en\",\"accepts_marketing\":true,\"email\":\"qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687227402@example.com\"},\"currency\":\"USD\",\"attribution\":{\"funnel\":\"Home Outage Prep v0\",\"metadata\":{\"landing_page\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/\",\"referrer\":\"\",\"device\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36\",\"device_type\":\"desktop\",\"domain\":\"meridian-skincare.netlify.app\",\"timestamp\":1778687230005,\"fb_fbp\":\"\",\"fb_fbc\":\"\",\"fb_pixel_id\":\"\",\"sdk_version\":\"0.4.19\",\"user_ip\":\"2001:fb1:77:17e2:c34:7464:77c0:29c4\",\"conversion_timestamp\":1778687228629}}}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "GET",
@@ -976,17 +976,17 @@
             {
               "method": "POST",
               "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
-              "postData": "{\"environment_key\":\"57862XP7AB94ZSSMYZRDHTQA7W\",\"payment_method\":{\"credit_card\":{\"number\":\"[redacted-card]\",\"verification_value\":\"[redacted-cvv]\",\"full_name\":\"QA Playwright\",\"month\":\"12\",\"year\":\"2030\"}}}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/orders/",
-              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"shipping_address\":{\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"line1\":\"1600 Amphitheatre Pkwy\",\"line4\":\"Mountain View\",\"state\":\"CA\",\"postcode\":\"94043\",\"country\":\"US\",\"phone_number\":\"\"},\"billing_same_as_shipping_address\":true,\"shipping_method\":1,\"payment_detail\":{\"payment_method\":\"card_token\",\"card_token\":\"[redacted-token]\"},\"user\":{\"email\":\"qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687227402@example.com\",\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"language\":\"en\",\"phone_number\":\"\",\"accepts_marketing\":true},\"vouchers\":[],\"attribution\":{\"funnel\":\"Home Outage Prep v0\",\"metadata\":{\"landing_page\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/\",\"referrer\":\"\",\"device\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36\",\"device_type\":\"desktop\",\"domain\":\"meridian-skincare.netlify.app\",\"timestamp\":1778687230005,\"fb_fbp\":\"\",\"fb_fbc\":\"\",\"fb_pixel_id\":\"\",\"sdk_version\":\"0.4.19\",\"user_ip\":\"2001:fb1:77:17e2:c34:7464:77c0:29c4\",\"conversion_timestamp\":1778687228629}},\"currency\":\"USD\",\"success_url\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/\",\"payment_failed_url\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/?payment_failed=true\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":2,\"quantity\":1}],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "GET",
@@ -1001,7 +1001,7 @@
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[],\"vouchers\":[],\"currency\":\"USD\",\"shipping_method\":1}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "GET",
@@ -1011,27 +1011,27 @@
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[],\"vouchers\":[],\"currency\":\"USD\",\"shipping_method\":1}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":1}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":2}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":3}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+              "postData": "[redacted-request-body]"
             },
             {
               "method": "POST",
               "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
-              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":1,\"is_upsell\":false}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\",\"shipping_method\":1}"
+              "postData": "[redacted-request-body]"
             }
           ],
           "responses": [

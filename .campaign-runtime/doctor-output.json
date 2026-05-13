@@ -4,10 +4,6 @@
   "errors": [],
   "warnings": [
     {
-      "code": "campaign.allowed_domains_confirmed",
-      "message": "Allowed domains are not confirmed. SDK runtime checks may be blocked."
-    },
-    {
       "code": "routing_meta.runtime_root",
       "message": "CampaignSpec sdk_hints.meta_tags routing values must render as campaign-rooted paths before QA. Expected values like \"/home-outage-prep-v0/upsell/\" for next-success-url, next-upsell-accept-url, next-upsell-decline-url; found page_mp3qp2nt_27:next-success-url=upsell/; page_mp3qp2nt_28:next-upsell-accept-url=upsell-2/; page_mp3qp2nt_28:next-upsell-decline-url=upsell-2/; page_mp3qs1fg_226:next-upsell-accept-url=receipt/; page_mp3qs1fg_226:next-upsell-decline-url=receipt/."
     },
@@ -166,6 +162,7 @@
   ],
   "ready": [
     "Build Packet schema campaign-runtime-build-packet/v0",
+    "Allowed domains confirmed for deployed production QA/test-order run",
     "Target campaign output directory exists",
     "Target page-kit dependency ^0.1.2",
     "Local CampaignSpec parsed",
