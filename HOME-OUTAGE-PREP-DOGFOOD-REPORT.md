@@ -9,14 +9,19 @@
 **Branch**: `home-outage-prep-v0-sf21`
 **PR**: [meridian#7](https://github.com/Sellmore-Co/meridian/pull/7)
 **Preview**: [deploy-preview-7--meridian-skincare.netlify.app](https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/)
-**Test order ref_id**: `ffeb4f90480341f1ae155f4bd6eef9f9`
+**Test orders** (after PR landed on main, against production URL `meridian-skincare.netlify.app`):
+- Accept path: order **`102248`** / ref_id `807d4fba7dbb4d7c855c243fd5123931` — $39.98, verified API 201/200, Spreedly tokenized
+- Decline path: order **`102251`** / ref_id `7aefc0059432476ea22bde177baa945c` — $39.98, verified API 201/200, Spreedly tokenized
+
+(Earlier preview-stage Konami order `ffeb4f90480341f1ae155f4bd6eef9f9` was the diagnostic-fallback test from before the toolchain update.)
 
 ## TL;DR
 
-- Funnel built end-to-end through `prepare-build → setup → assembly → polish → deploy → qa` on a fresh, never-seen-before campaign shape. Demeter family + 6 routes shipped to Netlify preview.
-- Static QA: **30 pass / 0 fail / READY**. Live walk reached `/receipt/` with a real Test Order and rendered line items (no SDK 0.4.19 receipt regression).
-- 8 new friction items filed (mix of toolchain, lint, page-kit, and SDK). Two are regressions of round-one's supposed fixes; four are new surface that round one didn't exercise; two are SDK/runtime issues.
+- Funnel built end-to-end through `prepare-build → setup → assembly → polish → deploy → qa` on a fresh, never-seen-before campaign shape. Demeter family + 6 routes shipped to Netlify preview, then merged to main and verified against the production URL.
+- Browser QA + Playwright typed-card test orders: **43 pass / 1 warn / 0 fail** on the live URL. Both accept-path and decline-path test orders placed real Spreedly-tokenized orders that verified server-side (201/200).
+- 16 friction items filed in total. Mix of toolchain, lint, page-kit, SDK, and visual-doctrine. Two were regressions of round-one's supposed fixes; the rest are new surface this run exercised.
 - **No round-one remediation broke** in the headline sense — but two of them (`routing_meta.runtime_root`, doctor warnings) only added lint without fixing the upstream cause, so the same problem appears in this run.
+- **Toolchain update mid-flight**: the QA toolchain shipped `campaigns-os qa run --browser --test-order both` (Playwright typed-card) during this dogfood. Konami DOM-keydown is now a diagnostic fallback. The new path produced clean, server-verifiable evidence — biggest single improvement over round one.
 
 ## Round-two scorecard vs round-one
 
@@ -133,29 +138,68 @@ return `/${campaign.slug}/${clean}/`;
 ### 13. Console noise: `[ApiClient] API request failed: signal is aborted without reason`
 
 **Where**: every page in the funnel, in the dev console.
-**Symptom**: at least one of these errors fires per page. Pattern suggests fetch cancellation during page navigation, but it's logged at ERROR level.
-**Impact**: makes real errors hard to spot in console. Will be louder when funnel velocity rises.
+**Symptom**: at least one of these errors appears in the raw browser event logs. Pattern suggests fetch cancellation during page navigation, but it's logged at ERROR level. The final Playwright `browser-console-errors` assertion's top-level warning was the missing `credit-card-flags.svg` asset, not this API-abort noise.
+**Impact**: makes real errors harder to spot in console when reviewing raw QA event logs.
 **Recommendation**: SDK should catch AbortError on navigation-cancelled fetches and either swallow or log at DEBUG level.
+
+### 14. Build skill doctrine: "starter-template commerce surface" is ambiguous
+
+**Where**: `next-campaigns-build` SKILL.md rule on checkout/upsell/downsell/receipt.
+**Symptom**: rule says "start from the selected starter-template commerce surface and swap only campaign-owned values/content". I read that as "use the demeter template's wiring + visuals together" and the first pass dropped designer-source RescueRay aesthetic on those pages. Later I corrected to "RR brand layer on top of demeter partials," which still produced two stacked offer surfaces (RR hero band + a fully-demeter offer block below it). Only the third revision — hand-inlining the data-next-* attributes inside a RescueRay layout — actually matched the intent.
+**Root cause**: doctrine doesn't draw a precise line between "SDK contract" (the data-next-* attributes) and "visual chrome" (the HTML wrapper around them).
+**Recommendation**: rewrite the skill rule as: "starter-template commerce surface = the data-next-* SDK attribute contract only (see template's `next_dont_touch`). The HTML wrapper around those attributes is designer-owned. For pages where prepared source HTML already inlines the SDK attributes with the right values for the spec, use that source verbatim and only swap refs/vouchers. Use the demeter starter partials as a reference for the attribute set, not as the page body."
+
+### 15. Logo override coverage is incomplete in page-kit-commands.md
+
+**Where**: page-kit-commands.md "Default `checkout-header.html` and `receipt-skeleton.html` use `next-logo.png`" gotcha.
+**Symptom**: I overrode three places (`_includes/checkout-header.html`, `_includes/receipt-skeleton.html`, and the inline reference in `receipt.html`), but the doc only names two. The fourth reference is `_includes/upsell-header-bar.html` — on every upsell page. Both upsell pages still showed the NEXT template mark until a second pass.
+**Recommendation**: page-kit-commands.md should list ALL `next-logo.png` references (`grep -rn next-logo.png src/<starter>/_includes/` would catch them). Better: a doctor/QA lint that fails when any built page renders `images/next-logo.png` and the campaign has its own brand logo asset shipped.
+
+### 16. `campaigns-os start` is destructive of lifecycle state
+
+**Where**: `bin/campaigns-os.mjs start` / `prepare-build`.
+**Symptom**: re-running `start` to regenerate the packet with new policy flags (here: `--test-orders-allowed --sandbox-test-card-confirmed --production-url`) wiped my populated `.campaign-runtime/assembly-report.json` and `build-context.json` with all the setup/build/polish/deploy/qa stage records. I had to `git checkout HEAD -- ...` to recover the lifecycle history.
+**Impact**: any operator who needs to toggle a policy flag mid-lifecycle loses their audit trail.
+**Recommendation**: either expose a separate `campaigns-os qa policy set` subcommand for in-place packet edits, or have `start` detect existing report content and merge the new packet's qa policy into the existing report rather than overwriting from scratch.
+
+### 17. `qa run --test-order both` receipt_line_items captures only the base order
+
+**Where**: `campaigns-os qa run --browser --test-order both` result schema, `test_orders[].receipt_line_items`.
+**Symptom**: ACCEPT path test order placed order #102248 and clicked through upsell-1 accept (Fire Blanket). The upsell-add API request succeeded. But the captured `receipt_line_items` for both ACCEPT and DECLINE paths show only the base bundle (2x Battery Powered Emergency LED Backup Bulb at $39.98) — the Fire Blanket upsell line is missing on the ACCEPT side.
+**Impact**: hard to tell the two paths apart in the QA result JSON; QA can't prove the upsell-add actually persisted to the order without doing a manual API GET on the order.
+**Recommendation**: after the upsell-add click, the runner should poll `/api/v1/orders/<id>/` once and surface the full final line items, not just the lines from initial order creation. Or rename the field to `initial_receipt_line_items` so the meaning is clear.
+
+### 18. `campaigns-os qa run` help is incomplete
+
+**Where**: `campaigns-os qa run --help`.
+**Symptom**: help text lists `[--browser] [--output-dir qa-output] [--json]` but not the test-order surface (`--test-order checkout|accept|decline|both`, `--allow-test-orders`, `--sandbox-test-card-confirmed`, `--test-email`, `--test-email-prefix`, `--cart`). I only found those flags by grepping the source. The skill SKILL.md documents the canonical incantation, but the CLI's own help should too.
+**Recommendation**: extend the qa run usage line with the test-order flags. The full test-order incantation is non-obvious without reading the skill or source.
 
 ## What QA caught vs what QA missed
 
 **QA caught**:
 - Missing SDK meta tags (`next-currency`, `next-predictive-address`, `next-prevent-back-navigation`, presell `next-page-type` value mismatch). Static QA found 7 failures on first run; all addressable before the live walk.
 - Presell route mismatch — spec's `page_url=""` (entry) vs my `presell.html` (route was `/presell/` not `/`).
+- (After toolchain update) Console errors on checkout. The Playwright `browser-console-errors` assertion now flags the API-abort noise that QA missed in earlier runs.
+- (After toolchain update) Real server-verified test order placement via the actual SDK pipeline (Spreedly tokenization → order POST → 201, order GET → 200).
 
 **QA missed**:
-- The `credit-card-flags.svg` 404 (static QA doesn't crawl assets, only checks meta tags + HTTP status of declared routes).
-- Test-mode upsell auto-accept (only visible by walking the funnel).
-- API abort console noise (would need a "console must be empty of errors" assertion).
+- The `credit-card-flags.svg` 404 (static QA doesn't crawl assets, only checks meta tags + HTTP status of declared routes). Even the new browser-runtime assertions don't crawl all referenced assets.
+- The first-pass demeter-blue-on-upsell visual regression (no automated check for designer-source vs starter-template brand consistency across pages).
+- Upsell-line presence in the final order (see friction #17 — captured receipt_line_items don't reflect the upsell-add).
 
 ## Top remediation actions (recommended priority)
 
-1. **Doctor build-state awareness** — fixes friction #4, #6, and gives a path to fix #7. (Linear ticket recommended.)
-2. **Map Builder export discipline** — fixes #1 (refuse export without `spec_identity`) and #3 (strip trailing slashes from `page_url`). (Linear ticket.)
-3. **Doctor lint coverage of full `sdk_hints.meta_tags`** — fixes #7. (Linear ticket.)
-4. **Page-kit `meta_tags:` additive semantics** — fixes #8. (Linear ticket, page-kit repo.)
-5. **Starter-template asset hygiene** — fixes #10 (`credit-card-flags.svg`). (Easy fix, starter-templates repo.)
-6. **TestModeManager public API + auto-submit audit** — fixes #11 and #12. (Larger ticket, SDK repo.)
+1. **Build-skill doctrine rewrite** — fixes #14 (and resolves the brand-identity-mid-funnel question for every future build). Smallest doc change with the biggest agent-behavior payoff. (campaigns-os repo.)
+2. **Doctor build-state awareness** — fixes friction #4, #6, and gives a path to fix #7. (campaigns-os repo.)
+3. **Map Builder export discipline** — fixes #1 (refuse export without `spec_identity`) and #3 (strip trailing slashes from `page_url`). (Map Builder repo.)
+4. **Non-destructive packet policy edit** — fixes #16 (`campaigns-os start` shouldn't wipe assembly-report.json on re-run). (campaigns-os repo, small.)
+5. **QA test-order line-item capture** — fixes #17 (re-read order after upsell-add). (campaigns-os repo, small.)
+6. **CLI help completeness** — fixes #18 (test-order flags in `qa run --help`). (campaigns-os repo, trivial.)
+7. **Doctor lint coverage of full `sdk_hints.meta_tags`** — fixes #7. (campaigns-os repo.)
+8. **Page-kit `meta_tags:` additive semantics** — fixes #8. (page-kit repo.)
+9. **Starter-template asset hygiene** — fixes #10 (`credit-card-flags.svg`) and #15 (logo override coverage). CI lint that all `campaign_asset` paths in starter partials resolve. (starter-templates repo.)
+10. **TestModeManager public API + auto-submit audit** — fixes #11 and #12. *Partially resolved by the Playwright typed-card toolchain update — the canonical proof path no longer relies on TestModeManager. Konami path stays as diagnostic fallback per the updated skill.* (SDK repo, lower priority now.)
 
 Friction #2 (setup→build two-file handoff), #5 (demo-ref false positives), #9 (tier-cards single voucher), and #13 (api abort noise) are lower-impact polish.
 
@@ -165,7 +209,9 @@ Friction #2 (setup→build two-file handoff), #5 (demo-ref false positives), #9 
 - Build context: [.campaign-runtime/build-context.json](.campaign-runtime/build-context.json)
 - Assembly report: [.campaign-runtime/assembly-report.json](.campaign-runtime/assembly-report.json)
 - Build pass log: [HOME-OUTAGE-PREP-BUILD-PASS.md](HOME-OUTAGE-PREP-BUILD-PASS.md)
-- Static QA result: [.campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP3SQK94I3FRLCE4GTMV0BR1D7.json](.campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP3SQK94I3FRLCE4GTMV0BR1D7.json)
+- Static QA result (preview): `.campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP3SQK94I3FRLCE4GTMV0BR1D7.json` (30 pass / 0 fail)
+- Browser-only QA result (live): `.campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP488C874DE9BB07KQLAF2TCTV.json` (41 pass / 0 fail)
+- Browser + test-order QA result (live): `.campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP48BJ6BQ494G2RM6OHD3O7BFJ.json` (43 pass / 1 warn / 0 fail, both test orders verified)
 - Funnel walk screenshots: [.campaign-runtime/qa-home-outage-prep/screenshots/](.campaign-runtime/qa-home-outage-prep/screenshots/)
 
 ## For reference
