@@ -1,0 +1,432 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MP488C874DE9BB07KQLAF2TCTV",
+  "campaign_slug": "home-outage-prep-v0-sf21",
+  "campaign_ref_id": 1579,
+  "spec_version": "4.2",
+  "spec_hash": "sha256:140bbbc7c8f7c4a49b2d1a1f60ea71c256c8840cab12539fe06c6625fb9c6ee2",
+  "started_at": "2026-05-13T15:40:59.238Z",
+  "completed_at": "2026-05-13T15:41:35.912Z",
+  "runtime": "campaigns-os-node-qa@0.1.0-alpha.0",
+  "operator": "devin@local",
+  "disposition": "ready",
+  "assertions": [
+    {
+      "id": "http:page_mp3qp2nt_25",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_25",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_25:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_25",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mp3qp2nt_25:next",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_25",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/"
+    },
+    {
+      "id": "http:page_mp3qp2nt_26",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_26",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_26:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_26",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_26:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_26",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "route-link:page_mp3qp2nt_26:next",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_26",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/"
+    },
+    {
+      "id": "http:page_mp3qp2nt_27",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_27:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "checkout",
+      "actual": "checkout"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_27:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_27:next-predictive-address",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_27:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "/home-outage-prep-v0/upsell/",
+      "actual": "/home-outage-prep-v0/upsell/"
+    },
+    {
+      "id": "route-link:page_mp3qp2nt_27:next",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/"
+    },
+    {
+      "id": "http:page_mp3qp2nt_28",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_28:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_28:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_28:next-prevent-back-navigation",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_28:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "/home-outage-prep-v0/upsell-2/",
+      "actual": "/home-outage-prep-v0/upsell-2/"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_28:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "/home-outage-prep-v0/upsell-2/",
+      "actual": "/home-outage-prep-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mp3qp2nt_28:accept",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mp3qp2nt_28:decline",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/"
+    },
+    {
+      "id": "http:page_mp3qs1fg_226",
+      "family": "funnel-flow",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qs1fg_226:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mp3qs1fg_226:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mp3qs1fg_226:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/home-outage-prep-v0/receipt/",
+      "actual": "/home-outage-prep-v0/receipt/"
+    },
+    {
+      "id": "meta:page_mp3qs1fg_226:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/home-outage-prep-v0/receipt/",
+      "actual": "/home-outage-prep-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mp3qs1fg_226:accept",
+      "family": "funnel-flow",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mp3qs1fg_226:decline",
+      "family": "funnel-flow",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
+    },
+    {
+      "id": "http:page_mp3qp2nt_29",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_29",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_29:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_29",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/",
+      "status": "pass",
+      "expected": "receipt",
+      "actual": "receipt"
+    },
+    {
+      "id": "browser-load:page_mp3qp2nt_25",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_25",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "What still works when the power goes out? | RescueRay",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mp3qp2nt_26",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_26",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "RescueRay Emergency LightBulb",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mp3qp2nt_27",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "RescueRay Emergency LED Bulb — Checkout",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-payment-surface:page_mp3qp2nt_27",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "rendered credit-card payment field mounts",
+      "actual": "card_mounts=1; cvv_mounts=1; spreedly_frames=0",
+      "evidence": {
+        "card_number_selector": "[data-next-checkout-field=\"cc-number\"], #spreedly-number",
+        "cvv_selector": "[data-next-checkout-field=\"cvv\"], #spreedly-cvv",
+        "spreedly_frame_urls": [],
+        "next_step": "Run --test-order with allowlist/sandbox confirmation for typed-card checkout proof."
+      }
+    },
+    {
+      "id": "browser-load:page_mp3qp2nt_28",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Add fire safety in 60 seconds — Fire Blanket",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mp3qp2nt_28:accept",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mp3qp2nt_28:decline",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-load:page_mp3qs1fg_226",
+      "family": "browser-runtime",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Light up the dark spots — Portable Solar Spotlight",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mp3qs1fg_226:accept",
+      "family": "browser-runtime",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mp3qs1fg_226:decline",
+      "family": "browser-runtime",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-load:page_mp3qp2nt_29",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_29",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "RescueRay — Order Confirmation",
+        "body_present": true
+      }
+    }
+  ],
+  "test_orders": [],
+  "exceptions": []
+}

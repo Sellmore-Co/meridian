@@ -1,0 +1,1313 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MP48BJ6BQ494G2RM6OHD3O7BFJ",
+  "campaign_slug": "home-outage-prep-v0-sf21",
+  "campaign_ref_id": 1579,
+  "spec_version": "4.2",
+  "spec_hash": "sha256:140bbbc7c8f7c4a49b2d1a1f60ea71c256c8840cab12539fe06c6625fb9c6ee2",
+  "started_at": "2026-05-13T15:43:28.210Z",
+  "completed_at": "2026-05-13T15:50:23.825Z",
+  "runtime": "campaigns-os-node-qa@0.1.0-alpha.0",
+  "operator": "devin@local",
+  "disposition": "ready_with_exceptions",
+  "assertions": [
+    {
+      "id": "http:page_mp3qp2nt_25",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_25",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_25:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_25",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mp3qp2nt_25:next",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_25",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/"
+    },
+    {
+      "id": "http:page_mp3qp2nt_26",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_26",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_26:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_26",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_26:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_26",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "route-link:page_mp3qp2nt_26:next",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_26",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/"
+    },
+    {
+      "id": "http:page_mp3qp2nt_27",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_27:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "checkout",
+      "actual": "checkout"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_27:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_27:next-predictive-address",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_27:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "/home-outage-prep-v0/upsell/",
+      "actual": "/home-outage-prep-v0/upsell/"
+    },
+    {
+      "id": "route-link:page_mp3qp2nt_27:next",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/"
+    },
+    {
+      "id": "http:page_mp3qp2nt_28",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_28:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_28:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_28:next-prevent-back-navigation",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_28:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "/home-outage-prep-v0/upsell-2/",
+      "actual": "/home-outage-prep-v0/upsell-2/"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_28:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "/home-outage-prep-v0/upsell-2/",
+      "actual": "/home-outage-prep-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mp3qp2nt_28:accept",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mp3qp2nt_28:decline",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/"
+    },
+    {
+      "id": "http:page_mp3qs1fg_226",
+      "family": "funnel-flow",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qs1fg_226:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mp3qs1fg_226:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mp3qs1fg_226:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/home-outage-prep-v0/receipt/",
+      "actual": "/home-outage-prep-v0/receipt/"
+    },
+    {
+      "id": "meta:page_mp3qs1fg_226:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/home-outage-prep-v0/receipt/",
+      "actual": "/home-outage-prep-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mp3qs1fg_226:accept",
+      "family": "funnel-flow",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mp3qs1fg_226:decline",
+      "family": "funnel-flow",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/",
+      "actual": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
+    },
+    {
+      "id": "http:page_mp3qp2nt_29",
+      "family": "funnel-flow",
+      "page": "page_mp3qp2nt_29",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp3qp2nt_29:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp3qp2nt_29",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/",
+      "status": "pass",
+      "expected": "receipt",
+      "actual": "receipt"
+    },
+    {
+      "id": "browser-load:page_mp3qp2nt_25",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_25",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "What still works when the power goes out? | RescueRay",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mp3qp2nt_26",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_26",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "RescueRay Emergency LightBulb",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mp3qp2nt_27",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "RescueRay Emergency LED Bulb — Checkout",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-payment-surface:page_mp3qp2nt_27",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "rendered credit-card payment field mounts",
+      "actual": "card_mounts=1; cvv_mounts=1; spreedly_frames=2",
+      "evidence": {
+        "card_number_selector": "[data-next-checkout-field=\"cc-number\"], #spreedly-number",
+        "cvv_selector": "[data-next-checkout-field=\"cvv\"], #spreedly-cvv",
+        "spreedly_frame_urls": [
+          "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+          "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html"
+        ],
+        "next_step": "Run --test-order with allowlist/sandbox confirmation for typed-card checkout proof."
+      }
+    },
+    {
+      "id": "browser-console-errors:page_mp3qp2nt_27",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "1 issue(s)",
+      "evidence": {
+        "messages": [
+          "Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      }
+    },
+    {
+      "id": "browser-load:page_mp3qp2nt_28",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Add fire safety in 60 seconds — Fire Blanket",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mp3qp2nt_28:accept",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mp3qp2nt_28:decline",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_28",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-load:page_mp3qs1fg_226",
+      "family": "browser-runtime",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Light up the dark spots — Portable Solar Spotlight",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mp3qs1fg_226:accept",
+      "family": "browser-runtime",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mp3qs1fg_226:decline",
+      "family": "browser-runtime",
+      "page": "page_mp3qs1fg_226",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-load:page_mp3qp2nt_29",
+      "family": "browser-runtime",
+      "page": "page_mp3qp2nt_29",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/receipt/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "RescueRay — Order Confirmation",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-test-order:accept",
+      "family": "browser-test-order",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "test order created through deployed checkout page",
+      "actual": "102248",
+      "evidence": {
+        "ref_id": "807d4fba7dbb4d7c855c243fd5123931",
+        "order_number": "102248",
+        "final_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/?ref_id=807d4fba7dbb4d7c855c243fd5123931",
+        "is_test": true,
+        "line_count": 1,
+        "card_last4": "1117"
+      }
+    },
+    {
+      "id": "browser-test-order:decline",
+      "family": "browser-test-order",
+      "page": "page_mp3qp2nt_27",
+      "url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "status": "pass",
+      "expected": "test order created through deployed checkout page",
+      "actual": "102251",
+      "evidence": {
+        "ref_id": "7aefc0059432476ea22bde177baa945c",
+        "order_number": "102251",
+        "final_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/?ref_id=7aefc0059432476ea22bde177baa945c",
+        "is_test": true,
+        "line_count": 1,
+        "card_last4": "1117"
+      }
+    }
+  ],
+  "test_orders": [
+    {
+      "path": "accept",
+      "ok": true,
+      "next_order_id": "102248",
+      "ref_id": "807d4fba7dbb4d7c855c243fd5123931",
+      "qa_email": "qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687024572@example.com",
+      "is_test": true,
+      "payment_method": "card_token",
+      "card": {
+        "last4": "1117"
+      },
+      "checkout_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "final_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/?ref_id=807d4fba7dbb4d7c855c243fd5123931",
+      "cart_state": {
+        "packages": [
+          {
+            "title": "Battery Powered Emergency LED Backup Bulb",
+            "quantity": 2,
+            "is_upsell": false
+          }
+        ]
+      },
+      "receipt_line_items": [
+        {
+          "title": "Battery Powered Emergency LED Backup Bulb",
+          "quantity": 2,
+          "is_upsell": false,
+          "price": "39.98"
+        }
+      ],
+      "verification": {
+        "verified": true,
+        "order_create_status": 201,
+        "order_read_status": 200,
+        "total_incl_tax": "39.98",
+        "currency": "USD",
+        "error": null
+      },
+      "evidence": {
+        "order_request_seen": true,
+        "spreedly_tokenized": true,
+        "events": {
+          "requests": [
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":3}],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2},{\"package_id\":2,\"quantity\":2}],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"vouchers\":[],\"currency\":\"USD\",\"shipping_method\":1}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"user\":{\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"language\":\"en\",\"accepts_marketing\":true,\"email\":\"qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687024572@example.com\"},\"currency\":\"USD\",\"attribution\":{\"funnel\":\"Home Outage Prep v0\",\"metadata\":{\"landing_page\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/\",\"referrer\":\"\",\"device\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36\",\"device_type\":\"desktop\",\"domain\":\"meridian-skincare.netlify.app\",\"timestamp\":1778687032778,\"fb_fbp\":\"\",\"fb_fbc\":\"\",\"fb_pixel_id\":\"\",\"sdk_version\":\"0.4.19\",\"user_ip\":\"2001:fb1:77:17e2:c34:7464:77c0:29c4\",\"conversion_timestamp\":1778687031383}}}"
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "postData": "{\"environment_key\":\"57862XP7AB94ZSSMYZRDHTQA7W\",\"payment_method\":{\"credit_card\":{\"number\":\"[redacted-card]\",\"verification_value\":\"[redacted-cvv]\",\"full_name\":\"QA Playwright\",\"month\":\"12\",\"year\":\"2030\"}}}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"shipping_address\":{\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"line1\":\"1600 Amphitheatre Pkwy\",\"line4\":\"Mountain View\",\"state\":\"CA\",\"postcode\":\"94043\",\"country\":\"US\",\"phone_number\":\"\"},\"billing_same_as_shipping_address\":true,\"shipping_method\":1,\"payment_detail\":{\"payment_method\":\"card_token\",\"card_token\":\"[redacted-token]\"},\"user\":{\"email\":\"qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687024572@example.com\",\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"language\":\"en\",\"phone_number\":\"\",\"accepts_marketing\":true},\"vouchers\":[],\"attribution\":{\"funnel\":\"Home Outage Prep v0\",\"metadata\":{\"landing_page\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/\",\"referrer\":\"\",\"device\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36\",\"device_type\":\"desktop\",\"domain\":\"meridian-skincare.netlify.app\",\"timestamp\":1778687032778,\"fb_fbp\":\"\",\"fb_fbc\":\"\",\"fb_pixel_id\":\"\",\"sdk_version\":\"0.4.19\",\"user_ip\":\"2001:fb1:77:17e2:c34:7464:77c0:29c4\",\"conversion_timestamp\":1778687031383}},\"currency\":\"USD\",\"success_url\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/\",\"payment_failed_url\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/?payment_failed=true\"}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":2,\"quantity\":1}],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[],\"vouchers\":[],\"currency\":\"USD\",\"shipping_method\":1}"
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=wDNSbdodeotU4PvSmZu3b0UBBg0PsvjaKxcqxpe5&event=page_view&title=Add+fire+safety+in+60+seconds+%E2%80%94+Fire+Blanket&url=https%3A%2F%2Fmeridian-skincare.netlify.app%2Fhome-outage-prep-v0%2Fupsell%2F%3Fref_id%3D807d4fba7dbb4d7c855c243fd5123931",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/807d4fba7dbb4d7c855c243fd5123931/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":1}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":2}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":3}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":1,\"is_upsell\":false}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\",\"shipping_method\":1}"
+            }
+          ],
+          "responses": [
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "body": "!function(e){var t={};function r(n){if(t[n])return t[n].exports;var a=t[n]={i:n,l:!1,exports:{}};return e[n].call(a.exports,a,a.exports,r),a.l=!0,a.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var a in e)r.d(n,a,function(t){return e[t]}.bind(null,a));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,\"a\",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p=\"\",r(r.s=30)}([function(e,t){e.exports=function(e){return e&&e.__esModule?e:{default:e}},e.exports.__e"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 3,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=wDNSbdodeotU4PvSmZu3b0UBBg0PsvjaKxcqxpe5&event=page_view&title=RescueRay+Emergency+LED+Bulb+%E2%80%94+Checkout&url=https%3A%2F%2Fmeridian-skincare.netlify.app%2Fhome-outage-prep-v0%2Fcheckout%2F",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null
+                  },
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "body": {
+                "total_incl_tax": "39.98",
+                "currency": "USD",
+                "checkout_url": "https://keer.29next.store/accounts/complete-order/de6a6a2ec70a471ca4abb01726525c43/",
+                "lines": [
+                  {
+                    "title": "Battery Powered Emergency LED Backup Bulb",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "39.98"
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "body": {
+                "number": "102248",
+                "ref_id": "807d4fba7dbb4d7c855c243fd5123931",
+                "is_test": true,
+                "total_incl_tax": "39.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Battery Powered Emergency LED Backup Bulb",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "39.98"
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=wDNSbdodeotU4PvSmZu3b0UBBg0PsvjaKxcqxpe5&event=page_view&title=Add+fire+safety+in+60+seconds+%E2%80%94+Fire+Blanket&url=https%3A%2F%2Fmeridian-skincare.netlify.app%2Fhome-outage-prep-v0%2Fupsell%2F%3Fref_id%3D807d4fba7dbb4d7c855c243fd5123931",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/807d4fba7dbb4d7c855c243fd5123931/",
+              "body": {
+                "number": "102248",
+                "ref_id": "807d4fba7dbb4d7c855c243fd5123931",
+                "is_test": true,
+                "total_incl_tax": "39.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Battery Powered Emergency LED Backup Bulb",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "39.98"
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 3,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            }
+          ],
+          "failed": [
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            }
+          ],
+          "console": [
+            {
+              "type": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 ()"
+            },
+            {
+              "type": "error",
+              "text": "[ApiClient] API request failed: Failed to fetch"
+            }
+          ],
+          "pageErrors": []
+        }
+      },
+      "upsell": {
+        "path": "accept",
+        "clicked": true,
+        "final_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/?ref_id=807d4fba7dbb4d7c855c243fd5123931"
+      }
+    },
+    {
+      "path": "decline",
+      "ok": true,
+      "next_order_id": "102251",
+      "ref_id": "7aefc0059432476ea22bde177baa945c",
+      "qa_email": "qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687227402@example.com",
+      "is_test": true,
+      "payment_method": "card_token",
+      "card": {
+        "last4": "1117"
+      },
+      "checkout_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
+      "final_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/?ref_id=7aefc0059432476ea22bde177baa945c",
+      "cart_state": {
+        "packages": [
+          {
+            "title": "Battery Powered Emergency LED Backup Bulb",
+            "quantity": 2,
+            "is_upsell": false
+          }
+        ]
+      },
+      "receipt_line_items": [
+        {
+          "title": "Battery Powered Emergency LED Backup Bulb",
+          "quantity": 2,
+          "is_upsell": false,
+          "price": "39.98"
+        }
+      ],
+      "verification": {
+        "verified": true,
+        "order_create_status": 201,
+        "order_read_status": 200,
+        "total_incl_tax": "39.98",
+        "currency": "USD",
+        "error": null
+      },
+      "evidence": {
+        "order_request_seen": true,
+        "spreedly_tokenized": true,
+        "events": {
+          "requests": [
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2},{\"package_id\":2,\"quantity\":2}],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"vouchers\":[],\"currency\":\"USD\",\"shipping_method\":1}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"user\":{\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"language\":\"en\",\"accepts_marketing\":true,\"email\":\"qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687227402@example.com\"},\"currency\":\"USD\",\"attribution\":{\"funnel\":\"Home Outage Prep v0\",\"metadata\":{\"landing_page\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/\",\"referrer\":\"\",\"device\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36\",\"device_type\":\"desktop\",\"domain\":\"meridian-skincare.netlify.app\",\"timestamp\":1778687230005,\"fb_fbp\":\"\",\"fb_fbc\":\"\",\"fb_pixel_id\":\"\",\"sdk_version\":\"0.4.19\",\"user_ip\":\"2001:fb1:77:17e2:c34:7464:77c0:29c4\",\"conversion_timestamp\":1778687228629}}}"
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "postData": "{\"environment_key\":\"57862XP7AB94ZSSMYZRDHTQA7W\",\"payment_method\":{\"credit_card\":{\"number\":\"[redacted-card]\",\"verification_value\":\"[redacted-cvv]\",\"full_name\":\"QA Playwright\",\"month\":\"12\",\"year\":\"2030\"}}}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "postData": "{\"lines\":[{\"package_id\":1,\"quantity\":2,\"is_upsell\":false}],\"shipping_address\":{\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"line1\":\"1600 Amphitheatre Pkwy\",\"line4\":\"Mountain View\",\"state\":\"CA\",\"postcode\":\"94043\",\"country\":\"US\",\"phone_number\":\"\"},\"billing_same_as_shipping_address\":true,\"shipping_method\":1,\"payment_detail\":{\"payment_method\":\"card_token\",\"card_token\":\"[redacted-token]\"},\"user\":{\"email\":\"qa+campaigns-os-mp48bj6bq494g2rm6ohd3o7bfj-1778687227402@example.com\",\"first_name\":\"QA\",\"last_name\":\"Playwright\",\"language\":\"en\",\"phone_number\":\"\",\"accepts_marketing\":true},\"vouchers\":[],\"attribution\":{\"funnel\":\"Home Outage Prep v0\",\"metadata\":{\"landing_page\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/\",\"referrer\":\"\",\"device\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36\",\"device_type\":\"desktop\",\"domain\":\"meridian-skincare.netlify.app\",\"timestamp\":1778687230005,\"fb_fbp\":\"\",\"fb_fbc\":\"\",\"fb_pixel_id\":\"\",\"sdk_version\":\"0.4.19\",\"user_ip\":\"2001:fb1:77:17e2:c34:7464:77c0:29c4\",\"conversion_timestamp\":1778687228629}},\"currency\":\"USD\",\"success_url\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell/\",\"payment_failed_url\":\"https://meridian-skincare.netlify.app/home-outage-prep-v0/checkout/?payment_failed=true\"}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":2,\"quantity\":1}],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=wDNSbdodeotU4PvSmZu3b0UBBg0PsvjaKxcqxpe5&event=page_view&title=Add+fire+safety+in+60+seconds+%E2%80%94+Fire+Blanket&url=https%3A%2F%2Fmeridian-skincare.netlify.app%2Fhome-outage-prep-v0%2Fupsell%2F%3Fref_id%3D7aefc0059432476ea22bde177baa945c",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[],\"vouchers\":[],\"currency\":\"USD\",\"shipping_method\":1}"
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/7aefc0059432476ea22bde177baa945c/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[],\"vouchers\":[],\"currency\":\"USD\",\"shipping_method\":1}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":1}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":2}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":3}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\"}"
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": "{\"lines\":[{\"package_id\":3,\"quantity\":1,\"is_upsell\":false}],\"vouchers\":[\"FIRE\"],\"currency\":\"USD\",\"shipping_method\":1}"
+            }
+          ],
+          "responses": [
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "body": "<!DOCTYPE html> <html> <head> <title>CVV Frame</title> <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" /> <style type=\"text/css\"> input { background: transparent; border-style: none; } body { background: transparent; margin: 0; } /* Don't show the number increment/decrement spinner in number fields */ input[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=\"number\"] { -moz-appearance: textfield; } input:invalid, textarea:invalid { box-shadow: none; } input:hover { cursor: text; } .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .input-outline-none { outline: none; } </style> <script> var uniqueId = window.name.replace(\"spreedly-cvv-frame-\", \"\"); var numberWindowName = \"spreedly-number-frame-\" + uniqueId; window.notifyEvent = function(name, notification, addActiveField) { var activeFiel"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=wDNSbdodeotU4PvSmZu3b0UBBg0PsvjaKxcqxpe5&event=page_view&title=RescueRay+Emergency+LED+Bulb+%E2%80%94+Checkout&url=https%3A%2F%2Fmeridian-skincare.netlify.app%2Fhome-outage-prep-v0%2Fcheckout%2F",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 3,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null
+                  },
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "body": {
+                "total_incl_tax": "39.98",
+                "currency": "USD",
+                "checkout_url": "https://keer.29next.store/accounts/complete-order/d4d14c3f73c54ea1ad289b810286d443/",
+                "lines": [
+                  {
+                    "title": "Battery Powered Emergency LED Backup Bulb",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "39.98"
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "body": {
+                "number": "102251",
+                "ref_id": "7aefc0059432476ea22bde177baa945c",
+                "is_test": true,
+                "total_incl_tax": "39.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Battery Powered Emergency LED Backup Bulb",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "39.98"
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=wDNSbdodeotU4PvSmZu3b0UBBg0PsvjaKxcqxpe5&event=page_view&title=Add+fire+safety+in+60+seconds+%E2%80%94+Fire+Blanket&url=https%3A%2F%2Fmeridian-skincare.netlify.app%2Fhome-outage-prep-v0%2Fupsell%2F%3Fref_id%3D7aefc0059432476ea22bde177baa945c",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/7aefc0059432476ea22bde177baa945c/",
+              "body": {
+                "number": "102251",
+                "ref_id": "7aefc0059432476ea22bde177baa945c",
+                "is_test": true,
+                "total_incl_tax": "39.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Battery Powered Emergency LED Backup Bulb",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "39.98"
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 3,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null
+                  }
+                ]
+              }
+            }
+          ],
+          "failed": [
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            },
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            }
+          ],
+          "console": [
+            {
+              "type": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 ()"
+            },
+            {
+              "type": "error",
+              "text": "[ApiClient] API request failed: Failed to fetch"
+            },
+            {
+              "type": "error",
+              "text": "[ApiClient] API request failed: signal is aborted without reason"
+            }
+          ],
+          "pageErrors": []
+        }
+      },
+      "upsell": {
+        "path": "decline",
+        "clicked": true,
+        "final_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/?ref_id=7aefc0059432476ea22bde177baa945c"
+      }
+    }
+  ],
+  "exceptions": []
+}

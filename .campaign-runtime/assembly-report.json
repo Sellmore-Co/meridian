@@ -177,31 +177,41 @@
       "stage": "qa",
       "status": "completed",
       "inputs": [
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/"
+        "https://meridian-skincare.netlify.app/home-outage-prep-v0/ (production live)"
       ],
       "outputs": [
-        ".campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP3SQK94I3FRLCE4GTMV0BR1D7.json (30 pass / 0 fail / READY)",
-        ".campaign-runtime/qa-home-outage-prep/screenshots/ (7 funnel screenshots)",
-        "Test order ref_id ffeb4f90480341f1ae155f4bd6eef9f9 reached /receipt/ with line items"
+        ".campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP488C874DE9BB07KQLAF2TCTV.json (browser-only: 41 pass / 0 fail / READY)",
+        ".campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP48BJ6BQ494G2RM6OHD3O7BFJ.json (browser + test-order both: 43 pass / 1 warn / 0 fail)",
+        ".campaign-runtime/qa-home-outage-prep/screenshots/ (7 funnel screenshots from earlier preview walk)",
+        "Test order #102248 ref_id 807d4fba7dbb4d7c855c243fd5123931 (ACCEPT path, $39.98, verified API 201/200, Spreedly tokenized)",
+        "Test order #102251 ref_id 7aefc0059432476ea22bde177baa945c (DECLINE path, $39.98, verified API 201/200, Spreedly tokenized)"
       ],
       "commands": [
-        "campaigns-os qa run --base-url <preview>",
-        "gstack-browse funnel walk: presell → landing → checkout → upsell → upsell-2 → receipt",
-        "Konami activation via document.dispatchEvent(new KeyboardEvent('keydown',{code})) — DOM event, not OS keyboard simulation"
+        "campaigns-os qa resolve --packet ... --base-url https://meridian-skincare.netlify.app",
+        "campaigns-os qa run --packet ... --base-url https://meridian-skincare.netlify.app --browser (static + render-only)",
+        "campaigns-os qa run --packet ... --base-url https://meridian-skincare.netlify.app --browser --test-order both --allow-test-orders --sandbox-test-card-confirmed (Playwright typed-card, both upsell paths)"
       ],
       "blockers": [],
       "warnings": [
         {
-          "code": "TEST_MODE_AUTO_SUBMIT",
-          "message": "Konami activation on /checkout/?test=true placed a real Test Order without an explicit submit click. Receipt later showed Fire Blanket (upsell-1) item even though I clicked skip — test-mode behavior may auto-accept upsell offers. Worth checking SDK TestModeManager logic."
+          "code": "BROWSER_CONSOLE_ERRORS",
+          "message": "Playwright run flagged 1 console issue on checkout: pre-existing [ApiClient] API request failed: signal is aborted without reason. Friction #13 on SELL-271 (navigation-cancelled fetch logged at ERROR level)."
+        },
+        {
+          "code": "QA_RECEIPT_LINE_ITEMS_MISSING_UPSELL",
+          "message": "Both accept and decline test orders show identical receipt_line_items (base 2x bundle only). Accept path clicked through upsell-1 and the upsell-add API succeeded, but the QA toolkit's captured receipt_line_items doesn't include the upsell tier. Either re-read order lines after upsell-add, or rename the field. New friction for SELL-271."
+        },
+        {
+          "code": "CAMPAIGNS_OS_START_DESTRUCTIVE",
+          "message": "Re-running campaigns-os start to regenerate the packet (e.g., to flip --test-orders-allowed on) wiped the populated .campaign-runtime/assembly-report.json and build-context.json. Lifecycle state was rebuilt from scratch and had to be manually restored from git. Either expose qa policy set as a non-destructive subcommand, or have start detect existing report content and merge instead of overwrite. New friction for SELL-271."
         },
         {
           "code": "STATIC_QA_404",
-          "message": "Static QA passed 30/30 but live page has a 404 on /home-outage-prep-v0/images/credit-card-flags.svg (demeter starter asset reference). Demeter starter ships partials that reference an asset not in the template's own assets/images/. Polish item."
+          "message": "Live page has a 404 on /home-outage-prep-v0/images/credit-card-flags.svg (demeter starter asset reference). Demeter starter ships partials that reference an asset not in the template's own assets/images/. Polish item."
         },
         {
           "code": "API_REQUEST_ABORTED",
-          "message": "Console error '[ApiClient] API request failed: signal is aborted without reason' fires on every page. Appears benign (cancelled during navigation) but is loud and would mask real errors. Worth quieting in SDK or treating as info."
+          "message": "Console error '[ApiClient] API request failed: signal is aborted without reason' fires on every page. Appears benign (cancelled during navigation) but is loud and would mask real errors. Worth quieting in SDK or treating as info. Folded into BROWSER_CONSOLE_ERRORS above."
         }
       ]
     }
