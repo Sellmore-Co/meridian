@@ -3,8 +3,8 @@ title: "Light up the dark spots — Portable Solar Spotlight"
 page_type: upsell
 next_url: receipt
 decline_url: receipt
-# Explicit meta_tags — CampaignSpec includes next-currency that base.html
-# auto-emission does not cover.
+# CampaignSpec sdk_hints.meta_tags (page_mp3qs1fg_226). Explicit so we cover
+# next-currency that base.html does not auto-emit.
 meta_tags:
   next-funnel: Home Outage Prep v0
   next-page-type: upsell
@@ -12,114 +12,124 @@ meta_tags:
   next-upsell-accept-url: /home-outage-prep-v0/receipt/
   next-upsell-decline-url: /home-outage-prep-v0/receipt/
 styles:
-  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
   - css/rescue-ray-brand.css
-scripts:
-  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
-  - js/upsells.js
-upsell_offer:
-  package_id: 4
-  selector_id: "upsell-bundle"
-  bundle_id: "upsell-bundle-1x"
-  items_json: '[{"packageId":4,"quantity":1}]'
-  vouchers_json: '["SOLAR"]'
-  default_quantity: 1
-  min_quantity: 1
-  max_quantity: 5
-  accept_text: "Yes, add to my order"
-  decline_text: "No thanks, complete my order"
-swiper_slides:
-  - src: "images/1x1_1.svg"
-    alt: ""
-  - src: "images/1x1_1.svg"
-    alt: ""
-  - src: "images/1x1_1.svg"
-    alt: ""
-  - src: "images/1x1_1.svg"
-    alt: ""
-  - src: "images/1x1_1.svg"
-    alt: ""
-  - src: "images/1x1_1.svg"
-    alt: ""
-swiper_thumbs:
-  - src: "images/1x1_2.svg"
-    alt: ""
-  - src: "images/1x1_2.svg"
-    alt: ""
-  - src: "images/1x1_2.svg"
-    alt: ""
-  - src: "images/1x1_2.svg"
-    alt: ""
-  - src: "images/1x1_2.svg"
-    alt: ""
-  - src: "images/1x1_2.svg"
-    alt: ""
+# CampaignSpec voucher SOLAR (33% off pkg 4 Portable Solar Spotlight). Single
+# hidden bundle card; quantity stepper drives the bundle quantity 1-5.
 ---
 
-<!--
-  Single-tier bundle upsell (SDK 0.4.x, pin in campaigns.json): one hidden data-next-bundle-card
-  + data-next-upsell-context. Same voucher + calculateBundlePrice mechanics as upsell-bundle-tier-pills.html,
-  without per-tier card picking — vouchers ride AddUpsellLine on accept.
-
-  SDK 0.4.18+ native bundle quantity: visible stepper (data-next-bundle-qty-for + data-next-quantity-*)
-  above the price block — markup uses generic `.next-bundle-qty*` (next-core.css; limos checkout adds `.next-bundle-qty--anchor-br` for card corner). Card carries data-next-quantity / min / max.
-  To ship fixed single qty only: remove/hide the stepper block in markup and remove those three attrs from the card.
-
-  Align packageId in data-next-bundle-items with data-next-display="package.<id>.name" and Campaigns.
-  Remote pricing: bundle.upsell-bundle.* — keep data-next-format="currency" / "percentage" on those
-  nodes (remote bundle.* display often needs explicit format; see https://developers.nextcommerce.com/docs/campaigns/campaign-cart/).
-
-  Only one [data-next-bundle-selector] here (inside offer) — no sibling-order pitfall vs a separate
-  display-only selector. data-next-upsell-action-for is not read by UpsellEnhancer.
--->
-{% assign upsell_package_id = upsell_offer.package_id | default: 3 -%}
-{% assign upsell_selector_id = upsell_offer.selector_id | default: 'upsell-bundle' -%}
-{% assign upsell_package_name_path = 'package.' | append: upsell_package_id | append: '.name' -%}
-{% assign upsell_price_path = 'bundle.' | append: upsell_selector_id | append: '.price' -%}
-{% assign upsell_discount_path = 'bundle.' | append: upsell_selector_id | append: '.discountPercentage' -%}
 <div class="page-wrapper">
   <div class="main-wrapper">
-    <div class="announcement">
-      <div class="announcement__block">
-        <div class="announcement__text"><strong>Special Offer Unlocked - Do Not Close This Page</strong></div>
-      </div>
-    </div>
+    <div class="rr-upsell-hero">One more upgrade &mdash; one-time offer, don&rsquo;t close this page.</div>
     {% campaign_include 'upsell-header-bar.html' %}
 
-    <!-- RescueRay branded hero band (copy + product photography from designer source). -->
-    <section class="rr-upsell-band">
-      <div class="container">
-        <div class="rr-upsell-grid">
-          <div class="rr-upsell-img">
-            <img src="{{ 'products/solar-spotlight.png' | campaign_asset }}" alt="RescueRay Portable Solar Spotlight">
-          </div>
-          <div>
-            <span class="rr-section-eyebrow">Final offer</span>
-            <h1 class="rr-h-display">Light up the dark spots around your home.</h1>
-            <p class="rr-lede">No wiring. No batteries to buy. Charges by day, throws a wide cone of light at night. Buy one for the entryway, or several to cover the property perimeter.</p>
-            <ul class="rr-checklist">
-              <li>Solar panel built in &mdash; no wiring, no batteries to replace</li>
-              <li>Wide-throw LED covers a walkway, driveway, or porch</li>
-              <li>Stake into the ground or hang on a wall hook</li>
-              <li>Weather-resistant for year-round use</li>
-            </ul>
-            <p style="color: var(--rr-text-muted); font-size: 0.92rem; margin: 0;">
-              <span data-next-display="{{ upsell_discount_path }}" data-next-format="percentage">33%</span> off, today only &mdash; charged to your existing card, nothing to re-enter.
-            </p>
+    <!--
+      Hand-authored RescueRay layout with inline SDK contract.
+      SDK-owned surface = the data-next-* attributes (see `next_dont_touch` on
+      the demeter starter partial). Visual chrome is designer-owned and lifted
+      from source upsell-2.html.
+    -->
+    <section class="rr-section" data-next-catalog-component="upsell-bundle-stepper-offer" style="padding: 28px 0 60px;">
+      <div class="rr-upsell-band" style="background: transparent; border-bottom: 0; padding: 0;">
+        <div class="container">
+          <div class="rr-upsell-grid">
+            <div class="rr-upsell-img">
+              <img src="{{ 'products/solar-spotlight.png' | campaign_asset }}" alt="RescueRay Portable Solar Spotlight">
+            </div>
+
+            <!--
+              SDK upsell offer. Stepper UX: single hidden bundle-card with
+              data-next-quantity / min / max; data-next-bundle-qty-for points
+              at the selector_id; +/- buttons drive bundleQuantity. Prices
+              re-render via remote data-next-display="bundle.upsell-bundle.*"
+              outside the hidden selector.
+            -->
+            <div data-next-upsell="offer" data-next-await="">
+              <span class="rr-section-eyebrow">Final offer</span>
+              <h1 class="rr-h-display"><span data-next-display="package.4.name">Light up the dark spots around your home.</span></h1>
+              <p class="rr-lede">No wiring. No batteries to buy. Charges by day, throws a wide cone of light at night. Buy one for the entryway, or several to cover the property perimeter.</p>
+
+              <ul class="rr-checklist" style="margin-bottom: 1.4rem;">
+                <li>Solar panel built in &mdash; no wiring, no batteries to replace</li>
+                <li>Wide-throw LED covers a walkway, driveway, or porch</li>
+                <li>Stake into the ground or hang on a wall hook</li>
+                <li>Weather-resistant for year-round use</li>
+              </ul>
+
+              <!-- Hidden single-card bundle; stepper drives bundleQuantity (SDK 0.4.18+). -->
+              <div
+                data-next-bundle-selector
+                data-next-upsell-context
+                data-next-selector-id="upsell-bundle"
+                style="display: none;"
+              >
+                <div
+                  role="button"
+                  data-next-bundle-card
+                  data-next-bundle-id="upsell-bundle-1x"
+                  data-next-bundle-items='[{"packageId":4,"quantity":1}]'
+                  data-next-bundle-vouchers='["SOLAR"]'
+                  data-next-quantity="1"
+                  data-next-min-quantity="1"
+                  data-next-max-quantity="5"
+                  data-next-selected="true"
+                ></div>
+              </div>
+
+              <!-- Stepper + price -->
+              <div style="background: var(--rr-bg); border: 1px solid var(--rr-border); padding: 14px 16px; border-radius: 12px; margin-bottom: 1.2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+                  <div style="font-weight: 800; color: var(--rr-navy);">Quantity</div>
+                  <div
+                    class="rr-stepper"
+                    data-next-bundle-qty-for="upsell-bundle"
+                    style="display: inline-flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--rr-border); border-radius: 999px; padding: 4px 10px;"
+                  >
+                    <button
+                      type="button"
+                      data-next-quantity-decrease
+                      aria-label="Decrease quantity"
+                      style="width: 32px; height: 32px; border: 0; background: transparent; color: var(--rr-navy); font-size: 1.4rem; line-height: 1; cursor: pointer;"
+                    >&minus;</button>
+                    <span
+                      data-next-quantity-display
+                      style="min-width: 1.4rem; text-align: center; font-weight: 800; font-size: 1.1rem; color: var(--rr-navy);"
+                    >1</span>
+                    <button
+                      type="button"
+                      data-next-quantity-increase
+                      aria-label="Increase quantity"
+                      style="width: 32px; height: 32px; border: 0; background: transparent; color: var(--rr-navy); font-size: 1.4rem; line-height: 1; cursor: pointer;"
+                    >+</button>
+                  </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                  <div>
+                    <span style="text-decoration: line-through; color: var(--rr-text-muted); margin-right: 0.6rem;">
+                      <span data-next-display="bundle.upsell-bundle.originalPrice" data-next-format="currency">$59.99</span>
+                    </span>
+                    <span style="font-size: 1.5rem; font-weight: 800; color: var(--rr-navy);">
+                      <span data-next-display="bundle.upsell-bundle.price" data-next-format="currency">$40.99</span>
+                    </span>
+                  </div>
+                  <div style="color: var(--rr-text-muted); font-size: 0.85rem;">
+                    <span data-next-display="bundle.upsell-bundle.discountPercentage" data-next-format="percentage">33%</span> off
+                  </div>
+                </div>
+              </div>
+
+              <a data-next-upsell-action="add" href="#" class="rr-btn">Yes, add to my order &rarr;</a>
+              <a data-next-upsell-action="skip" href="#">No thanks, complete my order</a>
+
+              <p style="color: var(--rr-text-muted); font-size: 0.85rem; margin-top: 0.9rem; text-align: center;">
+                Charged to your existing card &mdash; nothing to re-enter.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    {% campaign_include 'upsell-bundle-stepper-offer.html' %}
     {% campaign_include 'footer.html' %}
   </div>
 </div>
-
-<script>
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => initSwiperGalleries());
-  } else {
-    initSwiperGalleries();
-  }
-</script>
