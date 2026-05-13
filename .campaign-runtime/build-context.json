@@ -1,152 +1,126 @@
 {
   "schema_version": "campaign-runtime-build-context/v0",
-  "generated_at": "2026-05-12T10:26:30.782Z",
+  "generated_at": "2026-05-13T13:40:00.935Z",
   "source_adapter": "html_funnel",
   "status": "prepared",
   "packet_path": "./campaign-runtime.build.json",
-  "report_path": "./.campaign-runtime/assembly-report.json",
+  "report_path": ".campaign-runtime\\assembly-report.json",
   "spec": {
-    "path": "../designer/funnel-designs/roadside-ready-kit/campaign-spec-roadside-ready.json",
-    "hash": "26812d163ca57845e992a60543cbd4373f2aaf18d7660899cabdcc44fcba0bdb",
+    "path": "..\\aleksandar-dev\\campaign-spec-v42.json",
+    "hash": "15f7ed28d8666e555a742871ebe4045daeb319f756bdea93bf2d5bf42a62336a",
     "active_pages": [
       {
-        "id": "page_mp2fniz4_37",
+        "id": "presell",
         "type": "presell",
         "label": "Presell",
-        "page_url": ""
+        "page_url": "presell/"
       },
       {
-        "id": "page_mp2fniz4_38",
+        "id": "landing",
         "type": "landing",
-        "label": "Landing (PDP)",
+        "label": "Landing",
         "page_url": "landing/"
       },
       {
-        "id": "page_mp2fniz4_39",
+        "id": "checkout",
         "type": "checkout",
         "label": "Checkout",
         "page_url": "checkout/"
       },
       {
-        "id": "page_mp2fniz4_40",
+        "id": "upsell",
         "type": "upsell",
         "label": "Upsell",
-        "page_url": "upsell/"
+        "page_url": "upsell-bundle-tier-cards/"
       },
       {
-        "id": "page_mp2fnko8_50",
-        "type": "upsell",
-        "label": "Upsell 2",
-        "page_url": "upsell-2/"
-      },
-      {
-        "id": "page_mp2fniz4_41",
+        "id": "receipt",
         "type": "thankyou",
-        "label": "Thank You",
+        "label": "Receipt",
         "page_url": "receipt/"
       }
     ]
   },
   "source": {
-    "root": "../designer/funnel-designs/roadside-ready-kit",
+    "root": "..\\aleksandar-dev\\source-html",
     "html_files": [
-      {
-        "path": "assets/landing/index.html",
-        "name": "index.html",
-        "basename": "index",
-        "bytes": 39058,
-        "sha256": "96fa376af1a65abcda5a01182fc823caf9dfec87ce26bb9a65e0f7e8be14f29e"
-      },
       {
         "path": "checkout.html",
         "name": "checkout.html",
         "basename": "checkout",
-        "bytes": 30065,
-        "sha256": "d4a6cc89c807c70f340a4e09458586936ea232f96b746dc6f1895c5365918ab0"
+        "bytes": 12648,
+        "sha256": "ffb8028a8557a54f8a1f35cd23958633c943b958ef5f70e57b53b79b8a494d50"
       },
       {
         "path": "landing.html",
         "name": "landing.html",
         "basename": "landing",
-        "bytes": 40363,
-        "sha256": "1d4eb89d5768b4403ffcfce5528cea523170be691a09d0cae73be400de90038f"
+        "bytes": 9751,
+        "sha256": "08651268f2bff14fc96397d871758b6015e39eb1d591fbe3e895b82ed4a7f135"
       },
       {
         "path": "presell.html",
         "name": "presell.html",
         "basename": "presell",
-        "bytes": 9370,
-        "sha256": "2409abf1b9efbed13d59f9b57de5af1770c6e2ed0b27210b007d256373f254e9"
+        "bytes": 7951,
+        "sha256": "38a725cd19d93dd301eb5d642780e1c62dec820c52f02086ec3151bd225084fc"
       },
       {
-        "path": "thank-you.html",
-        "name": "thank-you.html",
-        "basename": "thank-you",
-        "bytes": 9055,
-        "sha256": "9ec13b3168cf6345c49a751b0d5e6028b6d8dad9d799c192e9d8614c41eac0e1"
+        "path": "receipt.html",
+        "name": "receipt.html",
+        "basename": "receipt",
+        "bytes": 9382,
+        "sha256": "7ecea07730519d28adedec918e5d38e48151106d456b3e382876783c0aaa591a"
       },
       {
-        "path": "upsell-1.html",
-        "name": "upsell-1.html",
-        "basename": "upsell-1",
-        "bytes": 10841,
-        "sha256": "5a32f74d6ad5ff8a8e603f81393d8e17d0770064cea26af16d9bb0438d97eb95"
-      },
-      {
-        "path": "upsell-2.html",
-        "name": "upsell-2.html",
-        "basename": "upsell-2",
-        "bytes": 7866,
-        "sha256": "f57425f5a22022ba37cf654471fc1d6354719529e73a7540772db1f3e29838ae"
+        "path": "upsell.html",
+        "name": "upsell.html",
+        "basename": "upsell",
+        "bytes": 6550,
+        "sha256": "f4b90273f0d2ef3aff0ca6148ecfecbb26fe3ef8b9712355967cc52bc2d80ff9"
       }
     ]
   },
   "page_map": [
     {
-      "page_id": "page_mp2fniz4_37",
-      "source_path": "assets/landing/index.html",
+      "page_id": "presell",
+      "source_path": "presell.html",
       "skip_reason": null,
-      "output_path": "src/roadside-ready/assets/landing/index.html"
+      "output_path": "./src\\aleksandar-campaign-v1\\presell.html"
     },
     {
-      "page_id": "page_mp2fniz4_38",
+      "page_id": "landing",
       "source_path": "landing.html",
       "skip_reason": null,
-      "output_path": "src/roadside-ready/landing.html"
+      "output_path": "./src\\aleksandar-campaign-v1\\landing.html"
     },
     {
-      "page_id": "page_mp2fniz4_39",
+      "page_id": "checkout",
       "source_path": "checkout.html",
       "skip_reason": null,
-      "output_path": "src/roadside-ready/checkout.html"
+      "output_path": "./src\\aleksandar-campaign-v1\\checkout.html"
     },
     {
-      "page_id": "page_mp2fniz4_40",
-      "source_path": "upsell-1.html",
+      "page_id": "upsell",
+      "source_path": "upsell.html",
       "skip_reason": null,
-      "output_path": "src/roadside-ready/upsell-1.html"
+      "output_path": "./src\\aleksandar-campaign-v1\\upsell.html"
     },
     {
-      "page_id": "page_mp2fnko8_50",
-      "source_path": "upsell-2.html",
+      "page_id": "receipt",
+      "source_path": "receipt.html",
       "skip_reason": null,
-      "output_path": "src/roadside-ready/upsell-2.html"
-    },
-    {
-      "page_id": "page_mp2fniz4_41",
-      "source_path": "thank-you.html",
-      "skip_reason": null,
-      "output_path": "src/roadside-ready/thank-you.html"
+      "output_path": "./src\\aleksandar-campaign-v1\\receipt.html"
     }
   ],
   "scaffold": {
-    "mode": "fresh",
-    "required": true,
+    "mode": "existing",
+    "required": false,
     "target_repo": ".",
-    "output_dir": "./src/roadside-ready",
-    "handoff_skill": "next-campaigns-setup",
+    "output_dir": "./src\\aleksandar-campaign-v1",
+    "handoff_skill": "next-campaigns-build",
     "handoff_artifact": ".campaign-runtime/setup-handoff.json",
-    "reason": "Target campaign output directory is missing; scaffold before build."
+    "reason": "Target campaign output directory already exists."
   },
   "template": {
     "family": "olympus",
@@ -167,95 +141,48 @@
       "zones": [
         "checkout",
         "payment",
-        "upsell",
         "receipt",
         "sdk_attributes"
       ],
       "sdk_attributes": [
-        "data-next-checkout",
         "data-next-bundle-selector",
-        "data-next-selector-id",
-        "data-next-bundles",
-        "data-next-selection-mode",
-        "data-next-include-shipping",
-        "data-next-bundle-card",
-        "data-next-bundle-id",
-        "data-next-shipping-id",
-        "data-next-bundle-display",
-        "data-next-component",
-        "data-next-catalog-component",
-        "data-next-checkout-field",
-        "data-next-await",
-        "data-next-package-toggle",
-        "data-next-toggle-card",
-        "data-next-is-upsell",
-        "data-next-package-id",
-        "data-next-toggle-image",
-        "data-next-toggle-display",
-        "data-next-payment-method",
-        "data-next-payment-form",
-        "data-next-cart-summary",
-        "data-next-discounts"
+        "data-next-bundle-card"
       ],
       "action": "review_and_preserve_catalog_surfaces"
     },
     {
-      "path": "thank-you.html",
+      "path": "landing.html",
       "zones": [
         "checkout",
+        "sdk_attributes"
+      ],
+      "sdk_attributes": [
+        "data-next-bundle-selector"
+      ],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "receipt.html",
+      "zones": [
+        "payment",
         "receipt",
         "sdk_attributes"
       ],
       "sdk_attributes": [
-        "data-next-display",
-        "data-next-hide",
-        "data-next-order-items",
-        "data-next-content",
-        "data-next-show"
+        "data-next-receipt"
       ],
       "action": "review_and_preserve_catalog_surfaces"
     },
     {
-      "path": "upsell-1.html",
+      "path": "upsell.html",
       "zones": [
         "upsell",
+        "receipt",
         "sdk_attributes"
       ],
       "sdk_attributes": [
-        "data-next-display",
-        "data-next-format",
         "data-next-upsell",
-        "data-next-bundle-",
-        "data-next-bundle-selector",
-        "data-next-selector-id",
-        "data-next-bundles",
-        "data-next-selection-mode",
-        "data-next-bundle-card",
-        "data-next-bundle-id",
-        "data-next-bundle-display",
-        "data-next-upsell-action",
-        "data-next-upsell-action-for"
-      ],
-      "action": "review_and_preserve_catalog_surfaces"
-    },
-    {
-      "path": "upsell-2.html",
-      "zones": [
-        "upsell",
-        "sdk_attributes"
-      ],
-      "sdk_attributes": [
-        "data-next-display",
-        "data-next-format",
-        "data-next-upsell",
-        "data-next-bundle-selector",
-        "data-next-selector-id",
-        "data-next-bundles",
-        "data-next-selection-mode",
-        "data-next-bundle-card",
-        "data-next-bundle-id",
-        "data-next-upsell-action",
-        "data-next-upsell-action-for"
+        "data-next-upsell-offer"
       ],
       "action": "review_and_preserve_catalog_surfaces"
     }
@@ -263,63 +190,53 @@
   "prompts_required": [],
   "decisions": [
     {
-      "id": "dec_page_map_page_mp2fniz4_37",
+      "id": "dec_page_map_presell",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp2fniz4_37\" to source file \"assets/landing/index.html\"",
-      "confidence": "medium",
-      "evidence": [
-        "matched source filename against page keys: page-mp2fniz4-37, presell, presell-1, index"
-      ]
-    },
-    {
-      "id": "dec_page_map_page_mp2fniz4_38",
-      "stage": "prepare_build",
-      "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp2fniz4_38\" to source file \"landing.html\"",
-      "confidence": "medium",
-      "evidence": [
-        "matched source filename against page keys: page-mp2fniz4-38, landing-pdp, landing, landing-1, index"
-      ]
-    },
-    {
-      "id": "dec_page_map_page_mp2fniz4_39",
-      "stage": "prepare_build",
-      "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp2fniz4_39\" to source file \"checkout.html\"",
+      "decision": "mapped CampaignSpec page \"presell\" to source file \"presell.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp2fniz4-39, checkout, checkout-1"
+        "matched source filename against page keys: presell, presell-1, index"
       ]
     },
     {
-      "id": "dec_page_map_page_mp2fniz4_40",
+      "id": "dec_page_map_landing",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp2fniz4_40\" to source file \"upsell-1.html\"",
+      "decision": "mapped CampaignSpec page \"landing\" to source file \"landing.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp2fniz4-40, upsell, upsell-1"
+        "matched source filename against page keys: landing, landing-1, index"
       ]
     },
     {
-      "id": "dec_page_map_page_mp2fnko8_50",
+      "id": "dec_page_map_checkout",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp2fnko8_50\" to source file \"upsell-2.html\"",
+      "decision": "mapped CampaignSpec page \"checkout\" to source file \"checkout.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp2fnko8-50, upsell-2, upsell"
+        "matched source filename against page keys: checkout, checkout-1"
       ]
     },
     {
-      "id": "dec_page_map_page_mp2fniz4_41",
+      "id": "dec_page_map_upsell",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp2fniz4_41\" to source file \"thank-you.html\"",
+      "decision": "mapped CampaignSpec page \"upsell\" to source file \"upsell.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp2fniz4-41, thank-you, thankyou, receipt, thankyou-1"
+        "matched source filename against page keys: upsell, upsell-bundle-tier-cards, upsell-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_receipt",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"receipt\" to source file \"receipt.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: receipt, thankyou, thankyou-1, thank-you"
       ]
     }
   ]

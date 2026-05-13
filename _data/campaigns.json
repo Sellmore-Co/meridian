@@ -152,6 +152,23 @@
     "gtm_id": "",
     "fb_pixel_id": ""
   },
+  "aleksandar-campaign-v1": {
+    "name": "Aleksandar Campaign V1",
+    "description": "Campaigns OS evaluation — Olympus full-funnel, campaign 1577, BuzzDefense Portable",
+    "entry_url": "presell",
+    "sdk_version": "0.4.18",
+    "store_name": "Aleksandar Dev",
+    "store_url": "",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
+  },
   "roadside-ready": {
     "name": "Roadside Ready",
     "description": "Keer dogfood — Roadside Ready Kit (Car Diagnostic Tool funnel) assembled via Campaigns OS from map roadside-ready-i5t4",
