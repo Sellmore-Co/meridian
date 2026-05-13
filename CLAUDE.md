@@ -33,7 +33,9 @@ CampaignSpec/API response as the operating inputs for a new build.
   stay untracked.
 - `.campaign-runtime/` files are build-session artifacts. Commit one only when it
   is intentionally useful for review and has been checked for local-only paths or
-  sensitive values.
+  sensitive values. Campaigns OS handoff artifacts should use repo-relative paths
+  such as `campaign-runtime.build.json`, `.campaign-runtime/build-context.json`,
+  or `../designer/source-export` instead of machine-local absolute paths.
 
 ## Campaigns OS Guardrails
 

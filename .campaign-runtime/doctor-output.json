@@ -1,0 +1,149 @@
+{
+  "ok": true,
+  "status": "ready_with_warnings",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "campaign.allowed_domains_confirmed",
+      "message": "Allowed domains are not confirmed. SDK runtime checks may be blocked."
+    },
+    {
+      "code": "page_kit.scaffold_required",
+      "message": "Target campaign output directory is missing; setup should run before build."
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: packages.main_package=1"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: packages.prepurchase_1=7"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: packages.prepurchase_2=9"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: shipping_methods.standard=2"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: shipping_methods.free=1"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: upsell_offer.package_id=3"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: upsell_offer.vouchers_json=[\"UP50\"]"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: upsell_bundle_tiers packageId=3"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: packages.*"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: shipping_methods.*"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: bundles[].shipping_method"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: order_bump.*.package_id"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: upsell_offer.*"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: upsell_bundle_tiers[].items_json"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: upsell_bundle_tiers[].vouchers_json"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: matching inline upsell package/voucher refs until upsell includes are promoted"
+    },
+    {
+      "code": "frontmatter.removeWhenUnsupported",
+      "message": "Remove when unsupported by target campaign: bundles[].shipping_method when no tier-specific shipping exists"
+    },
+    {
+      "code": "frontmatter.removeWhenUnsupported",
+      "message": "Remove when unsupported by target campaign: bump includes when prepurchase packages are absent"
+    },
+    {
+      "code": "frontmatter.removeWhenUnsupported",
+      "message": "Remove when unsupported by target campaign: unsupported payment method rows"
+    },
+    {
+      "code": "frontmatter.removeWhenUnsupported",
+      "message": "Remove when unsupported by target campaign: upsell pages not present in the funnel"
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"2\". Confirm it came from the actual Campaigns API."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\". Confirm it came from the actual Campaigns API."
+    },
+    {
+      "code": "deploy.preview_url",
+      "message": "No preview or production URL yet. QA remains blocked after build/polish."
+    },
+    {
+      "code": "qa.test_orders_allowed",
+      "message": "Backend test orders are disabled; QA must avoid live order mutations."
+    }
+  ],
+  "ready": [
+    "Build Packet schema campaign-runtime-build-packet/v0",
+    "Target page-kit dependency ^0.1.2",
+    "Local CampaignSpec parsed",
+    "CampaignSpec public page routes are Page Kit-compatible",
+    "Source mappings cover active CampaignSpec pages",
+    "Campaigns API key available via CampaignSpec campaign.campaigns_api_key",
+    "Commerce catalog sharedFrontmatterVocabulary loaded",
+    "Template agentContract loaded for olympus",
+    "Build context schema campaign-runtime-build-context/v0",
+    "Assembly report schema campaign-runtime-assembly-report/v0"
+  ],
+  "derived": {
+    "packet_path": "./campaign-runtime.build.json",
+    "map_id": "roadside-ready-i5t4",
+    "public_route_slug": "roadside-ready",
+    "template_family": "olympus",
+    "source_root": "../designer/funnel-designs/roadside-ready-kit",
+    "target_repo": ".",
+    "spec_path": "../designer/funnel-designs/roadside-ready-kit/campaign-spec-roadside-ready.json",
+    "scaffold_required": true,
+    "scaffold_reason": "Target campaign output directory is missing; scaffold before build."
+  },
+  "next": {
+    "stage": "setup",
+    "status": "ready_with_warnings",
+    "owner": "setup",
+    "default_skill": "next-campaigns-setup",
+    "command": "campaigns-os next setup --packet ./campaign-runtime.build.json",
+    "actions": [
+      "Use the template agentContract to replace demo values from CampaignSpec/API."
+    ],
+    "blocked_stages": [
+      "qa",
+      "runtime-sdk-verification",
+      "test-orders"
+    ]
+  }
+}

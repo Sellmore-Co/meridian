@@ -1,0 +1,317 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MP2O5NXE3M8GFKKRVBOAV44U56",
+  "campaign_slug": "roadside-ready-i5t4",
+  "campaign_ref_id": 1573,
+  "spec_version": "4.2",
+  "spec_hash": "sha256:e5d35ac6d8d83d2f1c343429fab611547ca06953d0b003c3cdd830710fe72220",
+  "started_at": "2026-05-12T13:31:15.937Z",
+  "completed_at": "2026-05-12T13:31:18.770Z",
+  "runtime": "campaigns-os-node-qa@0.1.0-alpha.0",
+  "operator": "devin@local",
+  "disposition": "blocked",
+  "assertions": [
+    {
+      "id": "http:page_mp2fniz4_37",
+      "family": "funnel-flow",
+      "page": "page_mp2fniz4_37",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp2fniz4_37:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_37",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mp2fniz4_37:next",
+      "family": "funnel-flow",
+      "page": "page_mp2fniz4_37",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/",
+      "status": "pass",
+      "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/landing/",
+      "actual": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/landing/"
+    },
+    {
+      "id": "http:page_mp2fniz4_38",
+      "family": "funnel-flow",
+      "page": "page_mp2fniz4_38",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/landing/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp2fniz4_38:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_38",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/landing/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "meta:page_mp2fniz4_38:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_38",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/landing/",
+      "status": "fail",
+      "severity": "blocker",
+      "expected": "USD",
+      "actual": null,
+      "evidence": {
+        "expected": "USD",
+        "actual": null
+      }
+    },
+    {
+      "id": "route-link:page_mp2fniz4_38:next",
+      "family": "funnel-flow",
+      "page": "page_mp2fniz4_38",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/landing/",
+      "status": "pass",
+      "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/checkout/",
+      "actual": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/checkout/"
+    },
+    {
+      "id": "http:page_mp2fniz4_39",
+      "family": "funnel-flow",
+      "page": "page_mp2fniz4_39",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/checkout/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp2fniz4_39:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_39",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/checkout/",
+      "status": "pass",
+      "expected": "checkout",
+      "actual": "checkout"
+    },
+    {
+      "id": "meta:page_mp2fniz4_39:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_39",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/checkout/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mp2fniz4_39:next-predictive-address",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_39",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/checkout/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mp2fniz4_39:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_39",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/checkout/",
+      "status": "pass",
+      "expected": "upsell/",
+      "actual": "upsell/"
+    },
+    {
+      "id": "route-link:page_mp2fniz4_39:next",
+      "family": "funnel-flow",
+      "page": "page_mp2fniz4_39",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/checkout/",
+      "status": "manual_review",
+      "severity": "warn",
+      "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell/",
+      "actual": "not found in static HTML",
+      "evidence": {
+        "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell/",
+        "note": "Route may be SDK/runtime-derived; verify manually if absent from static HTML."
+      }
+    },
+    {
+      "id": "http:page_mp2fniz4_40",
+      "family": "funnel-flow",
+      "page": "page_mp2fniz4_40",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp2fniz4_40:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_40",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mp2fniz4_40:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_40",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mp2fniz4_40:next-prevent-back-navigation",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_40",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mp2fniz4_40:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_40",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell/",
+      "status": "pass",
+      "expected": "upsell-2/",
+      "actual": "upsell-2/"
+    },
+    {
+      "id": "meta:page_mp2fniz4_40:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_40",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell/",
+      "status": "pass",
+      "expected": "upsell-2/",
+      "actual": "upsell-2/"
+    },
+    {
+      "id": "route-link:page_mp2fniz4_40:accept",
+      "family": "funnel-flow",
+      "page": "page_mp2fniz4_40",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell/",
+      "status": "manual_review",
+      "severity": "warn",
+      "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+      "actual": "not found in static HTML",
+      "evidence": {
+        "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+        "note": "Route may be SDK/runtime-derived; verify manually if absent from static HTML."
+      }
+    },
+    {
+      "id": "route-link:page_mp2fniz4_40:decline",
+      "family": "funnel-flow",
+      "page": "page_mp2fniz4_40",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell/",
+      "status": "manual_review",
+      "severity": "warn",
+      "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+      "actual": "not found in static HTML",
+      "evidence": {
+        "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+        "note": "Route may be SDK/runtime-derived; verify manually if absent from static HTML."
+      }
+    },
+    {
+      "id": "http:page_mp2fnko8_50",
+      "family": "funnel-flow",
+      "page": "page_mp2fnko8_50",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp2fnko8_50:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp2fnko8_50",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mp2fnko8_50:next-currency",
+      "family": "meta-tags",
+      "page": "page_mp2fnko8_50",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mp2fnko8_50:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mp2fnko8_50",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+      "status": "pass",
+      "expected": "receipt/",
+      "actual": "receipt/"
+    },
+    {
+      "id": "meta:page_mp2fnko8_50:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mp2fnko8_50",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+      "status": "pass",
+      "expected": "receipt/",
+      "actual": "receipt/"
+    },
+    {
+      "id": "route-link:page_mp2fnko8_50:accept",
+      "family": "funnel-flow",
+      "page": "page_mp2fnko8_50",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+      "status": "manual_review",
+      "severity": "warn",
+      "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/receipt/",
+      "actual": "not found in static HTML",
+      "evidence": {
+        "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/receipt/",
+        "note": "Route may be SDK/runtime-derived; verify manually if absent from static HTML."
+      }
+    },
+    {
+      "id": "route-link:page_mp2fnko8_50:decline",
+      "family": "funnel-flow",
+      "page": "page_mp2fnko8_50",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/upsell-2/",
+      "status": "manual_review",
+      "severity": "warn",
+      "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/receipt/",
+      "actual": "not found in static HTML",
+      "evidence": {
+        "expected": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/receipt/",
+        "note": "Route may be SDK/runtime-derived; verify manually if absent from static HTML."
+      }
+    },
+    {
+      "id": "http:page_mp2fniz4_41",
+      "family": "funnel-flow",
+      "page": "page_mp2fniz4_41",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/receipt/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mp2fniz4_41:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mp2fniz4_41",
+      "url": "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/receipt/",
+      "status": "pass",
+      "expected": "receipt",
+      "actual": "receipt"
+    }
+  ],
+  "test_orders": [],
+  "exceptions": []
+}
