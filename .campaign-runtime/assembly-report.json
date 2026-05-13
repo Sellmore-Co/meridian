@@ -175,12 +175,35 @@
     },
     "qa": {
       "stage": "qa",
-      "status": "pending",
-      "inputs": [],
-      "outputs": [],
-      "commands": [],
+      "status": "completed",
+      "inputs": [
+        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/"
+      ],
+      "outputs": [
+        ".campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP3SQK94I3FRLCE4GTMV0BR1D7.json (30 pass / 0 fail / READY)",
+        ".campaign-runtime/qa-home-outage-prep/screenshots/ (7 funnel screenshots)",
+        "Test order ref_id ffeb4f90480341f1ae155f4bd6eef9f9 reached /receipt/ with line items"
+      ],
+      "commands": [
+        "campaigns-os qa run --base-url <preview>",
+        "gstack-browse funnel walk: presell → landing → checkout → upsell → upsell-2 → receipt",
+        "Konami activation via document.dispatchEvent(new KeyboardEvent('keydown',{code})) — DOM event, not OS keyboard simulation"
+      ],
       "blockers": [],
-      "warnings": []
+      "warnings": [
+        {
+          "code": "TEST_MODE_AUTO_SUBMIT",
+          "message": "Konami activation on /checkout/?test=true placed a real Test Order without an explicit submit click. Receipt later showed Fire Blanket (upsell-1) item even though I clicked skip — test-mode behavior may auto-accept upsell offers. Worth checking SDK TestModeManager logic."
+        },
+        {
+          "code": "STATIC_QA_404",
+          "message": "Static QA passed 30/30 but live page has a 404 on /home-outage-prep-v0/images/credit-card-flags.svg (demeter starter asset reference). Demeter starter ships partials that reference an asset not in the template's own assets/images/. Polish item."
+        },
+        {
+          "code": "API_REQUEST_ABORTED",
+          "message": "Console error '[ApiClient] API request failed: signal is aborted without reason' fires on every page. Appears benign (cancelled during navigation) but is loud and would mask real errors. Worth quieting in SDK or treating as info."
+        }
+      ]
     }
   },
   "decisions": [
@@ -255,8 +278,8 @@
     }
   ],
   "next": {
-    "stage": "deploy",
-    "owner": "operator",
-    "action": "Commit + push feature branch home-outage-prep-v0-sf21; open draft PR; Netlify preview deploys to meridian-skincare."
+    "stage": "review",
+    "owner": "Devin / Campaigns OS team",
+    "action": "Triage dogfood findings (HOME-OUTAGE-PREP-DOGFOOD-REPORT.md) into the Campaigns OS Dogfood Linear project. Confirm PR #7 is reviewed and either land or close after writing remediation tickets."
   }
 }
