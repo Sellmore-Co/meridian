@@ -1,23 +1,24 @@
 {
   "schema_version": "campaign-runtime-assembly-report/v0",
-  "run_id": "asm_1778430542515",
-  "generated_at": "2026-05-10T16:39:56.188Z",
-  "status": "qa_passed_preview_blocked",
+  "run_id": "asm_1778581590784",
+  "generated_at": "2026-05-12T10:26:30.784Z",
+  "status": "prepared",
   "identity": {
-    "map_id": "somna-v1-wbik",
-    "public_route_slug": "somna-v1",
-    "campaign_directory": "somna-v1",
-    "live_url_path": "/somna-v1/"
+    "map_id": "roadside-ready-i5t4",
+    "public_route_slug": "roadside-ready",
+    "campaign_directory": "roadside-ready",
+    "live_url_path": "/roadside-ready/",
+    "spec_hash": "26812d163ca57845e992a60543cbd4373f2aaf18d7660899cabdcc44fcba0bdb"
   },
   "inputs": {
-    "packet_path": "/Users/devin/Developer/meridian/.campaign-runtime/campaign-runtime.build.json",
-    "context_path": "/Users/devin/Developer/meridian/.campaign-runtime/build-context.json",
-    "spec_path": "/Users/devin/Developer/meridian/campaign-spec-somna-v1.json",
+    "packet_path": "./campaign-runtime.build.json",
+    "context_path": "./.campaign-runtime/build-context.json",
+    "spec_path": "../designer/funnel-designs/roadside-ready-kit/campaign-spec-roadside-ready.json",
     "source": {
       "kind": "html_funnel",
-      "root": "/Users/devin/Developer/designer/somna-sleep-funnel"
+      "root": "../designer/funnel-designs/roadside-ready-kit"
     },
-    "target_repo": "/Users/devin/Developer/meridian"
+    "target_repo": "."
   },
   "template_family": {
     "value": "olympus",
@@ -32,9 +33,9 @@
       "status": "completed",
       "inputs": [],
       "outputs": [
-        "/Users/devin/Developer/meridian/.campaign-runtime/campaign-runtime.build.json",
-        "/Users/devin/Developer/meridian/.campaign-runtime/build-context.json",
-        "/Users/devin/Developer/meridian/.campaign-runtime/assembly-report.json"
+        "./campaign-runtime.build.json",
+        "./.campaign-runtime/build-context.json",
+        "./.campaign-runtime/assembly-report.json"
       ],
       "commands": [],
       "blockers": [],
@@ -42,444 +43,266 @@
     },
     "doctor": {
       "stage": "doctor",
-      "status": "ready_with_warnings",
+      "status": "completed",
       "inputs": [
-        ".campaign-runtime/campaign-runtime.build.json",
-        ".campaign-runtime/build-context.json"
+        "./campaign-runtime.build.json"
       ],
       "outputs": [
-        "doctor JSON emitted to terminal"
+        "./.campaign-runtime/doctor-output.json"
       ],
       "commands": [
-        "CAMPAIGNS_API_KEY=$(jq -r ' .campaign.campaigns_api_key ' campaign-spec-somna-v1.json) npm run campaign-os -- doctor --packet .campaign-runtime/campaign-runtime.build.json --context .campaign-runtime/build-context.json --json"
+        "campaigns-os start --spec ... --source ... --target . --template-family olympus"
       ],
       "blockers": [],
       "warnings": [
-        {
-          "code": "campaign.allowed_domains_confirmed",
-          "stage": "doctor",
-          "message": "Allowed domains are not confirmed; SDK calls may fail after deploy."
-        },
-        {
-          "code": "page_kit.dry_run_unavailable",
-          "stage": "doctor",
-          "message": "Target repo page-kit version 0.1.0 warned before setup; package was upgraded to 0.1.2 for non-interactive campaign-init."
-        },
-        {
-          "code": "deploy.target",
-          "stage": "doctor",
-          "message": "Deploy target is unknown; declare the host before build handoff."
-        },
-        {
-          "code": "deploy.preview_url",
-          "stage": "doctor",
-          "message": "Preview or production URL is not declared; spec-aware QA cannot run against deployed output yet."
-        }
-      ],
-      "next_owner": "next-campaigns-setup"
+        "READY_WITH_WARNINGS — 24 non-blocking warnings (demoOnlyValues, replaceFromSpecOrApi, removeWhenUnsupported, template_contract.demo_ref, allowed_domains_confirmed, deploy.preview_url, qa.test_orders_allowed); build phase will resolve."
+      ]
     },
     "setup": {
       "stage": "setup",
       "status": "completed",
       "inputs": [
-        ".campaign-runtime/campaign-runtime.build.json",
-        ".campaign-runtime/build-context.json"
+        "../campaign-cart-starter-templates/src/olympus",
+        "./_data/campaigns.json"
       ],
       "outputs": [
-        "src/somna-v1/",
-        ".campaign-runtime/campaign-init-result.json",
-        ".campaign-runtime/setup-handoff.json"
+        "./src/roadside-ready",
+        "./_data/campaigns.json (roadside-ready entry added)"
       ],
       "commands": [
-        "npm install next-campaign-page-kit@^0.1.1",
-        "npx campaign-init --non-interactive --json --template olympus --slug somna-v1 --name \"Somna v1\" --ai-context claude --keep-ai-context"
+        "cp -R campaign-cart-starter-templates/src/olympus meridian/src/roadside-ready",
+        "edit _data/campaigns.json — add 'roadside-ready' entry"
       ],
       "blockers": [],
       "warnings": [
-        {
-          "code": "page_kit_upgrade",
-          "stage": "setup",
-          "message": "Upgraded next-campaign-page-kit to 0.1.2 because 0.1.0 ignored non-interactive scaffold flags."
-        },
-        {
-          "code": "store_url_absent",
-          "stage": "setup",
-          "message": "CampaignSpec does not declare store_url or policy URLs; setup blanked demo URLs instead of inventing production policy links."
-        }
-      ],
-      "next_owner": "next-campaigns-build"
+        "store_* policy fields left empty: keer.29next.store is a test store with no Terms/Privacy/Contact/Returns/Shipping/Phone pages. Only store_name='Keer' and store_url='https://keer.29next.store' wired.",
+        "Map Builder export gap: store_* metadata not in CampaignSpec — manually wired this pass."
+      ]
     },
     "assembly": {
       "stage": "assembly",
       "status": "completed",
       "inputs": [
-        "campaign-spec-somna-v1.json",
-        "/Users/devin/Developer/designer/somna-sleep-funnel",
-        "src/somna-v1/",
-        "/Users/devin/Developer/campaign-cart-starter-templates/docs/commerce-surface-catalog.md"
+        "./campaign-runtime.build.json",
+        "../designer/funnel-designs/roadside-ready-kit/campaign-spec-roadside-ready.json",
+        "../campaign-cart-starter-templates/docs/commerce-surface-catalog.json (families.olympus.agentContract + sharedFrontmatterVocabulary)"
       ],
       "outputs": [
-        "src/somna-v1/presell.html",
-        "src/somna-v1/landing.html",
-        "src/somna-v1/checkout.html",
-        "src/somna-v1/upsell.html",
-        "src/somna-v1/upsell-2.html",
-        "src/somna-v1/receipt.html",
-        "src/somna-v1/assets/css/funnel.css",
-        "src/somna-v1/assets/js/funnel.js",
-        "src/somna-v1/assets/js/checkout.js",
-        "src/somna-v1/assets/js/upsells.js",
-        "src/somna-v1/assets/images/products/"
+        "./src/roadside-ready/presell.html",
+        "./src/roadside-ready/landing.html",
+        "./src/roadside-ready/checkout.html",
+        "./src/roadside-ready/upsell.html",
+        "./src/roadside-ready/upsell-2.html",
+        "./src/roadside-ready/receipt.html",
+        "./src/roadside-ready/assets/config.js",
+        "./_site/roadside-ready/* (6 routes built)"
       ],
       "commands": [
-        "cp Somna page-kit-integrated v0 pages/assets into src/somna-v1, preserving v1 config.js",
-        "perl route rewrite somna-v0 -> somna-v1, upsell-1.html -> upsell.html, thank-you.html -> receipt.html",
-        "apply_patch removed scaffold sample upsell pages not present in CampaignSpec",
-        "apply_patch aligned local bundle-selector fallback shipping ids to CampaignSpec shipping ref_id=1",
-        "npm run build",
-        "rg route/commerce sentinel checks"
+        "edit assets/config.js (apiKey, paymentEnvKey, storeName, qa.spec_identity, methodOrder: apple_pay+google_pay)",
+        "edit checkout.html frontmatter (packages: main=1 Car Diagnostic, prepurchase_1=2 Air Compressor; shipping_methods.standard=1; bundles 1x/2x/3x all shipping=standard; bump_features wired; bump-switch01 removed)",
+        "edit checkout.html payment includes (show_paypal=false show_klarna=false show_apple_pay=true show_google_pay=true on payment-methods + express-checkout)",
+        "edit upsell-bundle-tier-cards.html frontmatter (package_id=3 Dash Camera, voucher_json=[] for all tiers)",
+        "edit upsell-bundle-tier-pills.html frontmatter + body (package_id=4 Brake Fluid Tester, packageId 3→4 swap, vouchers cleared, qty 1 only in spec — body still carries demo 5-tier layout as friction)",
+        "rename upsell-bundle-tier-cards.html → upsell.html",
+        "rename upsell-bundle-tier-pills.html → upsell-2.html",
+        "delete upsell-bundle-stepper.html (not in funnel)",
+        "edit presell.html + landing.html + receipt.html (titles + article header only)",
+        "npm run build (61 pages built, 6 for roadside-ready, no errors)"
       ],
       "blockers": [],
       "warnings": [
-        {
-          "code": "setup.demo_values_blank",
-          "stage": "assembly",
-          "message": "Setup blanked demo policy/tracking placeholders because CampaignSpec does not declare store URL, footer links, or tracking providers."
-        }
+        "Pills variant 5-tier body retained on upsell-2 (Brake Fluid Tester); spec declares qty 1 only. SDK functionally correct (packageId 4, no demo vouchers) but visible qty buttons 2–5 are template carryover. Friction: olympus upsell partials are not yet promoted to data-driven includes, so inline DOM tier rows can't be reduced via frontmatter alone — full template body rewrite would be a polish-phase change.",
+        "Presell/landing deeper copy retains olympus wellness defaults (reason_1..9 supplement narrative, hero 'sleep' copy). Doctor flagged 'design carries the opinion, build carries faithful rendering' — page-level title/article header swapped; deeper narrative is polish phase.",
+        "Checkout 'Woke up without the soreness' reviews + 'Product Name' hero are template defaults; not free-text frontmatter params. Polish phase to swap with PrecisionTune-themed copy.",
+        "SDK network calls to campaigns.apps.29next.com failed (net::ERR_FAILED) — allowed_domains_confirmed=false in packet. 127.0.0.1:8770 not allowlisted for campaign ref_id 1573. Static structure verified; dynamic pricing/totals not verified locally."
       ],
-      "next_owner": "next-campaigns-polish"
+      "evidence": [
+        "checkout: 99 data-next-* attrs, bundles 1x/2x/3x → packageId 1, order bump → packageId 2, shipping ref 1, payment methods apple_pay+google_pay (paypal=0/klarna=0), SDK loader pinned v0.4.19, meta next-page-type=checkout + next-success-url=/roadside-ready/upsell/",
+        "upsell: title 'Roadside Ready — Add a Dash Camera (One-Time Offer)', bundle tier-cards 1x/2x/3x → packageId 3, vouchers cleared, accept/skip CTAs present, meta next-upsell-accept-url + next-upsell-decline-url both = /roadside-ready/upsell-2/",
+        "upsell-2: title 'Roadside Ready — Add a Brake Fluid Tester (One-Time Offer)', packageId 4, vouchers cleared, meta next-upsell-accept/decline-url = /roadside-ready/receipt/",
+        "receipt: title 'Roadside Ready — Order Confirmation', meta next-page-type=receipt, 29 data-next-display='order.*' bindings, order-item template present",
+        "config.js: apiKey=p8ETu2JH... (matches spec campaigns_api_key), paymentEnvKey=57862XP7AB94ZSSMYZRDHTQA7W, storeName='keer', qa.spec_identity carrying map_id roadside-ready-i5t4 + spec_url"
+      ]
     },
     "polish": {
       "stage": "polish",
       "status": "completed",
       "inputs": [
-        "browser smoke text output",
-        "route resolution grep output"
+        "./src/roadside-ready/presell.html",
+        "./src/roadside-ready/landing.html",
+        "./src/roadside-ready/checkout.html",
+        "./src/roadside-ready/upsell.html",
+        "./src/roadside-ready/upsell-2.html",
+        "../designer/Car Diagnostic Tool   (CARDIAGNOSTIC01)/Renders/Scanner-1.png",
+        "../designer/Car Diagnostic Tool   (CARDIAGNOSTIC01)/Renders/Scanner-2.png",
+        "../designer/Portable Air Compressor (AIRCOMPRESSOR01)/Renders/Air-Compressor-Pump-1.png",
+        "../designer/Dash Camera (DASHCAM01)/Renders/Dashcam 1.png",
+        "../designer/Brake Fluid Tester (BRAKETESTER01)/Renders/BrakeFluidTester-1_1024x1024@2x.webp"
       ],
       "outputs": [
-        "src/somna-v1/_includes/billing-address-form.html",
-        "src/somna-v1/receipt.html",
-        "src/somna-v1/presell.html"
+        "./src/roadside-ready/presell.html (9 reasons + CTA swapped to roadside narrative)",
+        "./src/roadside-ready/landing.html (hero + nav + icons + problem/solution + benefits + how-it-works steps + 8 capability cards + science + testimonials + reviews + guarantee + FAQ + bottomcta + footer swapped to PrecisionTune framing)",
+        "./src/roadside-ready/checkout.html (Product Name hero + Lorem subhead + 8 benefit labels + 4 review blocks swapped; swiper_slides + swiper_thumbs frontmatter added)",
+        "./src/roadside-ready/upsell.html (swiper_slides + swiper_thumbs frontmatter → dashcam render; 4 Lorem Ipsum bullets swapped to dash camera features)",
+        "./src/roadside-ready/upsell-2.html (swiper frontmatter → brake-tester; 4 Lorem Ipsum bullets swapped; 5-tier bundle layout collapsed to single 1x tier per spec qty=1; qty pill buttons 2-5 removed; header copy reframed for single-qty offer)",
+        "./src/roadside-ready/assets/images/products/car-diagnostic-1.png",
+        "./src/roadside-ready/assets/images/products/car-diagnostic-2.png",
+        "./src/roadside-ready/assets/images/products/air-compressor.png",
+        "./src/roadside-ready/assets/images/products/dashcam.png",
+        "./src/roadside-ready/assets/images/products/brake-tester.webp",
+        "./_site/roadside-ready/* (6 routes rebuilt, 61 total pages, no errors)"
       ],
       "commands": [
-        "apply_patch fixed checkout billing-address typo from shiping to shipping",
-        "apply_patch replaced Canadian receipt fallback address with US placeholder",
-        "apply_patch fixed presell hash links to append anchors after campaign_link",
-        "npm run build",
-        "rg polish sentinel checks"
+        "cp designer/*/Renders/* meridian/src/roadside-ready/assets/images/products/ (5 product renders, renamed to lowercase simple slugs)",
+        "edit presell.html (9 reason_N tag/heading/body swaps + cta_heading + cta_body + cta_text)",
+        "edit landing.html (~30 frontmatter copy fields: nav, hero, icons_5, problemsolution, benefits, results_4, ingredients_3 cards 1-8, ingredients_3 promise labels, science_1, testimonials_2, reviews_3 cards 1-8, guarantee_1, faq_1 9 Q&A, bottomcta_1, footer_1; hero/benefits/science/guarantee/bottomcta/faq images repointed to images/products/*)",
+        "edit checkout.html (frontmatter: add swiper_slides + swiper_thumbs pointing at car-diagnostic-1/2; body: 'Product Name' h1 → 'Roadside Ready Kit' (x2), 'Premium product bundle' subhead → kit subhead, Lorem subhead → roadside subhead, 4 'Benefit one/two/three/four' labels → roadside labels (in both desktop + mobile grids), 4 'Woke up without the soreness' review blocks → 'Paid for itself in one driveway scan', author Daniel K. → Mike R.)",
+        "edit upsell.html (frontmatter: swiper_slides + swiper_thumbs → dashcam.png; body: 4 Lorem Ipsum bullet rows → 1080p / loop+G-sensor / 12V plug-and-play / video evidence)",
+        "edit upsell-2.html (frontmatter: swiper_slides + swiper_thumbs → brake-tester.webp; STRUCTURAL collapse — removed hidden upsell-bundle-2x..5x bundle-card rows and removed qty pill buttons 2-5 + entire next-bundle-qty__label wrapper; header copy rewritten for single-qty; 4 Lorem bullets → brake fluid moisture / LED indicators / DOT compatibility / catches moisture early)",
+        "npm run build (61 pages built, 6 for roadside-ready, no errors)"
       ],
       "blockers": [],
-      "warnings": [],
-      "next_owner": "next-campaigns-qa"
+      "warnings": [
+        "Receipt page intentionally left untouched — fully SDK-driven (29 data-next-display='order.*' bindings), no literal placeholders worth swapping.",
+        "ingredients_3 section on landing.html was repurposed to 'What the PrecisionTune Reads' capability cards. Card 5 (B-Complex → I/M Readiness) and Card 6 (Zinc Bisglycinate → Code Reset) reuse the original olympus card images from images/landing/ingredients-3/* (placeholder ingredient photos) — image swap is a downstream design pass, not in polish scope. Same caveat for reviews_3 card photos/avatars (1x1_1.svg placeholders preserved).",
+        "Keer brand logo asset NOT created — no Keer brand mark available in ../designer; nav_logo_image still points at olympus default images/landing/nav-1/logo-next.svg. Defer to brand-asset task.",
+        "guarantee_1_badge_image still references olympus images/landing/guarantee-1/guarantee-1-badge.svg (60-day badge graphic) — alt text updated to '30 day money-back guarantee badge' but the badge SVG itself was not regenerated. Defer to design-asset pass.",
+        "checkout-spec 30/60/90-day guarantee text in checkout.html body still reads '90 Day Money-Back Guarantee' (template default not in scope per polish contract — would need a body-literal rewrite vs the spec's stated guarantee window). Confirm spec guarantee value with operator before swapping."
+      ],
+      "evidence": [
+        "presell.html: 9× reason_N_tag '⚡ All-Day Energy' → '🔧 Garage Confidence'; reason_1 'Works From the Very First Morning' → 'Decode That Check-Engine Light in Seconds'; reason_4 review count 1,200 → 19,000; reason_5 link 'View lab results' → 'View capabilities'; reason_7 'Subscribe & Save' → 'Pays for itself the first time you use it'; reason_8 60-day → 30-day guarantee; cta_heading appended 'Roadside Ready Kit at the Lowest Price of the Year'; cta_text 'GET 60% OFF' → 'GET THE KIT — 60% OFF'.",
+        "landing.html: hero_1_headline 'Fall Asleep in Minutes' → 'Decode Any Check-Engine Light in Under 60 Seconds'; hero_1_hero_image → images/products/car-diagnostic-1.png; benefits_2_section_heading '48,000+ Sleepers' → '19,500+ Drivers Keep It in the Glovebox'; results_4 4 sleep phases → 4 step-by-step usage steps (Plug In / Hit Scan / Read the Fix / Clear & Drive); ingredients_3 8 supplement cards → 8 OBD2 capability cards (Stored Codes / Pending Codes / Freeze-Frame / Live Stream / I/M Readiness / Code Reset / Vehicle Info / O2 Sensor Test); ingredients_3_promise 'All Natural/Non-GMO/...' → 'OBD2 Compliant/All US Makes/1996+/No App/Plug & Play/Glovebox Size'; science_1 cortisol/GABA cards → 'Skip the Diagnostic Fee' / 'Verify Before You Pay' / 'Catch Problems Before They Strand You'; reviews_3 8 cards rewritten to driver narratives (P0420, P0455, cat converter misdiagnosis, teenage driver, I/M readiness); faq_1 9 Q&A rewritten (Will it work on my car / Need an app / Clear check-engine light / etc.); bottomcta_1_review_count 48312 → 19569; footer_1_logo_alt + copyright '[Product]' → 'Roadside Ready Kit'.",
+        "checkout.html: swiper_slides + swiper_thumbs added (6 entries each, alternating Scanner-1/Scanner-2 renders) — hero gallery will now display product photos instead of empty/placeholder. 'Product Name' h1 swapped to 'Roadside Ready Kit' in both mobile (line ~108) and desktop (line ~208) headers. 8 'Benefit one/two/three/four' labels (4 in hide-tablet-down desktop grid + 4 in hide-tablet-up mobile grid) swapped to: 'Reads & clears codes' / 'Works on every car since 1996' / 'Inflates a flat in <10 min' / 'Ships free from US warehouse'. 4 review blocks (2 desktop left column, 2 mobile bottom) all rewritten from 'Woke up without the soreness' / Daniel K. → 'Paid for itself in one driveway scan' / Mike R.",
+        "upsell.html: swiper_slides + swiper_thumbs all 6+6 entries → images/products/dashcam.png. 4 Lorem Ipsum bullets → 1080p front-facing / loop recording w/ G-sensor / 12V plug-and-play / video evidence for claims.",
+        "upsell-2.html: swiper_slides + swiper_thumbs (4+4) → images/products/brake-tester.webp. STRUCTURAL POLISH: hidden bundle selector reduced from 5 inline bundle-card rows (1x..5x) to 1 row (1x only). Qty pill row deleted entirely (was 1/2/3/4/5 buttons w/ initBundleQtyToggle wiring). Single 1× tier auto-selects on hidden card; UpsellEnhancer still resolves the in-offer selector for AddUpsellLine. Header copy: 'Get 1 More Product Title' → 'Add a Brake Fluid Tester'; suboffer 'get a 50% discount' → 'save 50% off retail'. 4 Lorem bullets → moisture reading / 5 LED indicators / DOT 3/4/5.1 compatibility / catches mushy brakes early.",
+        "Product images wired: car-diagnostic-1.png + car-diagnostic-2.png (checkout swiper, landing hero, landing science, landing FAQ, landing bottomcta, landing guarantee side); air-compressor.png (landing science card 3); dashcam.png (upsell swiper); brake-tester.webp (upsell-2 swiper). All copied to ./src/roadside-ready/assets/images/products/ with simple lowercase slug names."
+      ]
     },
     "deploy": {
       "stage": "deploy",
-      "status": "blocked_remote_preview",
-      "inputs": [
-        "local _site build"
-      ],
+      "status": "completed",
+      "inputs": [],
+      "blockers": [],
       "outputs": [
-        "local preview http://127.0.0.1:4174/somna-v1/"
+        "https://github.com/Sellmore-Co/meridian/pull/5 (draft PR on branch roadside-ready-i5t4)",
+        "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready/ (Netlify preview)"
       ],
       "commands": [
-        "python3 -m http.server 4174 --directory _site",
-        "curl -I http://127.0.0.1:4174/somna-v1/",
-        "curl -I http://127.0.0.1:4174/somna-v1/landing/",
-        "curl -I http://127.0.0.1:4174/somna-v1/checkout/",
-        "curl -I http://127.0.0.1:4174/somna-v1/upsell/",
-        "curl -I http://127.0.0.1:4174/somna-v1/upsell-2/",
-        "curl -I http://127.0.0.1:4174/somna-v1/receipt/"
-      ],
-      "blockers": [
-        {
-          "code": "deploy.preview_url_absent",
-          "stage": "deploy",
-          "message": "Local preview routes return 200, but no remote preview URL is available yet to satisfy preview 200 verification."
-        }
+        "git checkout -b roadside-ready-i5t4",
+        "git add _data/campaigns.json src/roadside-ready/ ROADSIDE-READY-BUILD-PASS.md",
+        "git push -u origin roadside-ready-i5t4",
+        "gh pr create --draft"
       ],
       "warnings": [
-        {
-          "code": "deploy.target",
-          "stage": "deploy",
-          "message": "Deploy target is unknown; PR may need CI/deploy integration to provide the preview URL."
-        }
-      ],
-      "next_owner": "operator/deploy-system"
+        "Two Netlify sites watch the repo (campaignsos + meridian-skincare); only meridian-skincare serves /roadside-ready/ — campaignsos returns 404 (worth a note in netlify.toml or repo README to clarify which site is canonical)",
+        "Allowed-domain allowlist on Campaigns App needed both 127.0.0.1 (local) and the Netlify preview domain (operator added both)"
+      ]
     },
     "qa": {
       "stage": "qa",
-      "status": "completed_local",
+      "status": "completed",
+      "disposition": "ready_with_exceptions",
       "inputs": [
-        "http://127.0.0.1:4174/somna-v1/"
-      ],
-      "outputs": [
-        "all six local routes returned 200",
-        "browser smoke found expected page text on entry, landing, checkout, upsell, upsell-2, receipt",
-        "browser console reported no errors on entry, landing, checkout, and receipt"
-      ],
-      "commands": [
-        "/Users/devin/.codex/skills/gstack/browse/dist/browse chain for six-route smoke",
-        "rg emitted route/meta/data-next sentinel checks",
-        "npm run build"
+        "./campaign-runtime.build.json",
+        "https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready"
       ],
       "blockers": [],
-      "warnings": [
-        {
-          "code": "test_orders_not_run",
-          "stage": "qa",
-          "message": "No test orders were run because test orders were not explicitly allowed and sandbox test_card routing was not confirmed."
-        }
+      "outputs": [
+        ".campaign-runtime/qa-output/roadside-ready-i5t4/MP2O041PBPRKE3AGJQB4SC26GO.json (run 1: blocked 12 fail / 16 pass)",
+        ".campaign-runtime/qa-output/roadside-ready-i5t4/MP2O5NXE3M8GFKKRVBOAV44U56.json (run 2: blocked 1 fail / 24 pass / 5 manual_review)",
+        ".campaign-runtime/qa-output/roadside-ready-i5t4/MP2O7Q2AD9JS8BNJEHLKF1RL4P.json (run 3: ready_with_exceptions 25 pass / 5 manual_review)",
+        "https://campaign-map.nextcommerce.com/qa?slug=roadside-ready-i5t4&run=MP2O7Q2AD9JS8BNJEHLKF1RL4P (dashboard)"
       ],
-      "next_owner": "operator/deploy-system"
+      "commands": [
+        "campaigns-os qa resolve --packet ... --base-url https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready",
+        "campaigns-os qa run --packet ... --base-url https://deploy-preview-5--meridian-skincare.netlify.app/roadside-ready --output-dir .campaign-runtime/qa-output"
+      ],
+      "evidence": [
+        "Run 1 surfaced 3 wiring clusters: (a) /roadside-ready/ 404 because presell was at /presell/ not slug root; (b) base.html did not iterate sdk_hints.meta_tags from spec (5 missing tags); (c) base.html emitted absolute URLs via campaign_link while spec emits slug-relative (5 byte-mismatch fails).",
+        "Run 2 fixed (a) via rename presell.html → index.html with entry_url '', fixed (b)+(c) by adding meta_tags frontmatter to each page verbatim from spec and extending base.html to iterate; result 1 fail / 24 pass / 5 review (1 fail was base-landing.html not extended).",
+        "Run 3 extended base-landing.html and base-presell.html with the same iterator → 25 pass / 0 fail / 5 manual_review = ready_with_exceptions.",
+        "5 manual_review checks are all route-link:*:accept|decline|next family — SDK-action-driven navigation (data-next-upsell-action='add'|'skip'), no static <a href> on commerce CTAs. Static analyzer flags as manual_review by design. Resolution: operator runs through funnel in browser to confirm SDK actions wire correctly."
+      ],
+      "warnings": [
+        "QA tool: `qa resolve` drops public_route_slug from URLs unless caller appends it to --base-url (friction).",
+        "QA tool: route-link family treats SDK-action CTAs as manual_review since no static <a href>; could be improved by also checking data-next-upsell-action presence."
+      ]
     }
   },
   "decisions": [
     {
-      "id": "dec_page_map_page_mozxcega_25",
+      "id": "dec_page_map_page_mp2fniz4_37",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mozxcega_25\" to source file \"presell.html\"",
-      "confidence": "high",
-      "blast_radius": "routing",
-      "requires_ack": false,
+      "decision": "mapped CampaignSpec page \"page_mp2fniz4_37\" to source file \"assets/landing/index.html\"",
+      "confidence": "medium",
       "evidence": [
-        "matched source filename against page keys: page-mozxcega-25, advertorial, presell, index-html, index, presell-1"
-      ],
-      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
-      "manual_review_required": false
+        "matched source filename against page keys: page-mp2fniz4-37, presell, presell-1, index"
+      ]
     },
     {
-      "id": "dec_page_map_page_mozxcega_26",
+      "id": "dec_page_map_page_mp2fniz4_38",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mozxcega_26\" to source file \"landing.html\"",
-      "confidence": "high",
-      "blast_radius": "routing",
-      "requires_ack": false,
+      "decision": "mapped CampaignSpec page \"page_mp2fniz4_38\" to source file \"landing.html\"",
+      "confidence": "medium",
       "evidence": [
-        "matched source filename against page keys: page-mozxcega-26, landing, landing-html, landing-1, index"
-      ],
-      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
-      "manual_review_required": false
+        "matched source filename against page keys: page-mp2fniz4-38, landing-pdp, landing, landing-1, index"
+      ]
     },
     {
-      "id": "dec_page_map_page_mozxcega_27",
+      "id": "dec_page_map_page_mp2fniz4_39",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mozxcega_27\" to source file \"checkout.html\"",
+      "decision": "mapped CampaignSpec page \"page_mp2fniz4_39\" to source file \"checkout.html\"",
       "confidence": "high",
-      "blast_radius": "routing",
-      "requires_ack": false,
       "evidence": [
-        "matched source filename against page keys: page-mozxcega-27, checkout, checkout-html, checkout-1"
-      ],
-      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
-      "manual_review_required": false
+        "matched source filename against page keys: page-mp2fniz4-39, checkout, checkout-1"
+      ]
     },
     {
-      "id": "dec_page_map_page_mozxcega_28",
+      "id": "dec_page_map_page_mp2fniz4_40",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mozxcega_28\" to source file \"upsell-1.html\"",
+      "decision": "mapped CampaignSpec page \"page_mp2fniz4_40\" to source file \"upsell-1.html\"",
       "confidence": "high",
-      "blast_radius": "routing",
-      "requires_ack": false,
       "evidence": [
-        "matched source filename against page keys: page-mozxcega-28, oto-refill, upsell, upsell-html, upsell-1"
-      ],
-      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
-      "manual_review_required": false
+        "matched source filename against page keys: page-mp2fniz4-40, upsell, upsell-1"
+      ]
     },
     {
-      "id": "dec_page_map_page_mozxeafv_82",
+      "id": "dec_page_map_page_mp2fnko8_50",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mozxeafv_82\" to source file \"upsell-2.html\"",
+      "decision": "mapped CampaignSpec page \"page_mp2fnko8_50\" to source file \"upsell-2.html\"",
       "confidence": "high",
-      "blast_radius": "routing",
-      "requires_ack": false,
       "evidence": [
-        "matched source filename against page keys: page-mozxeafv-82, oto-winddown, upsell, upsell-2-html, upsell-2"
-      ],
-      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
-      "manual_review_required": false
+        "matched source filename against page keys: page-mp2fnko8-50, upsell-2, upsell"
+      ]
     },
     {
-      "id": "dec_page_map_page_mozxcega_29",
+      "id": "dec_page_map_page_mp2fniz4_41",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mozxcega_29\" to source file \"thank-you.html\"",
+      "decision": "mapped CampaignSpec page \"page_mp2fniz4_41\" to source file \"thank-you.html\"",
       "confidence": "high",
-      "blast_radius": "routing",
-      "requires_ack": false,
       "evidence": [
-        "matched source filename against page keys: page-mozxcega-29, thank-you, thankyou, receipt-html, receipt, thankyou-1"
-      ],
-      "reason": "Deterministic page mapping produced by prepare-build from CampaignSpec page_url/source filename evidence.",
-      "manual_review_required": false
-    },
-    {
-      "id": "dec_spec_route_refresh_somna_v1",
-      "stage": "prepare_build",
-      "decision_type": "derived_from_merged_builder",
-      "decision": "refreshed local Somna CampaignSpec route fields to merged Map Builder canonical page_url output",
-      "reason": "The already-exported local spec predated the merged Map Builder fix and lacked explicit page_url values, causing doctor route collisions for stacked upsells.",
-      "evidence": [
-        "page_mozxcega_25 -> index.html",
-        "page_mozxcega_26 -> landing.html",
-        "page_mozxcega_27 -> checkout.html",
-        "page_mozxcega_28 -> upsell.html",
-        "page_mozxeafv_82 -> upsell-2.html",
-        "page_mozxcega_29 -> receipt.html"
-      ],
-      "confidence": "high",
-      "blast_radius": "routing and SDK meta tags",
-      "manual_review_required": false,
-      "requires_ack": false
-    },
-    {
-      "id": "dec_commerce_shipping_align_spec_b",
-      "stage": "assembly",
-      "decision_type": "user_selected_spec_authority",
-      "decision": "Aligned checkout bundle cards and copy to CampaignSpec shipping ref_id=1/free shipping for all tiers.",
-      "reason": "User selected option B after doctor/assembly found source HTML used shipping ref_id=2 and paid 1x shipping copy while CampaignSpec declares only shipping ref_id=1 at 0.00.",
-      "evidence": [
-        "CampaignSpec shipping_methods contains ref_id=1 price 0.00 only",
-        "checkout emits data-next-shipping-id=1 on somna-qty-1/2/3",
-        "browser smoke text shows Try the ritual + free shipping, Save  + free shipping, Save  + free shipping"
-      ],
-      "confidence": "high",
-      "blast_radius": "checkout bundle selector, cart shipping selection, offer copy",
-      "manual_review_required": false,
-      "requires_ack": false
-    },
-    {
-      "id": "dec_reuse_somna_v0_pagekit_integration",
-      "stage": "assembly",
-      "decision_type": "local_reference_reuse",
-      "decision": "Reused existing Somna v0 Page Kit-integrated pages/assets as assembly reference for v1 instead of raw scaffold placeholders.",
-      "reason": "Somna v0 already represented the same HTML source layout with Page Kit commerce surfaces integrated; v1 scaffold still contained generic Olympus placeholder checkout.",
-      "evidence": [
-        "src/somna-v0 checkout had Somna copy/images and valid data-next checkout surfaces",
-        "src/somna-v1 checkout before assembly was titled Olympus Checkout and had Product Name placeholder",
-        "source root contains matching Somna HTML/assets"
-      ],
-      "confidence": "medium-high",
-      "blast_radius": "all Somna v1 page markup and campaign-local assets",
-      "manual_review_required": true,
-      "requires_ack": false
-    },
-    {
-      "id": "dec_entry_outputs_index",
-      "stage": "assembly",
-      "decision_type": "page_kit_route_contract",
-      "decision": "Kept CampaignSpec entry page as source presell.html but Page Kit output route as /somna-v1/index.html.",
-      "reason": "campaign-page-kit expects the entry permalink /somna-v1/ to emit index.html while CampaignSpec page_url is index.html.",
-      "evidence": [
-        "src/somna-v1/presell.html permalink /somna-v1/",
-        "npm run build wrote _site/somna-v1/index.html from somna-v1/presell.html",
-        "CampaignSpec page_mozxcega_25 page_url index.html is_entry true"
-      ],
-      "confidence": "high",
-      "blast_radius": "entry route and public ad destination",
-      "manual_review_required": false,
-      "requires_ack": false
-    },
-    {
-      "id": "dec_polish_static_placeholders",
-      "stage": "polish",
-      "decision_type": "local_static_polish",
-      "decision": "Fixed static fallback text for billing-address label, receipt fallback address, and presell hash links.",
-      "reason": "Browser smoke exposed typo and non-US fallback address; route grep exposed malformed hash routes when hash was passed inside campaign_link.",
-      "evidence": [
-        "checkout text now shows Use shipping address as billing address",
-        "receipt text now shows Columbus, OH 43215 fallback",
-        "rg found no landing.html# or hrefs to .html in emitted somna-v1 pages"
-      ],
-      "confidence": "high",
-      "blast_radius": "static fallback copy and navigation anchors only",
-      "manual_review_required": false,
-      "requires_ack": false
+        "matched source filename against page keys: page-mp2fniz4-41, thank-you, thankyou, receipt, thankyou-1"
+      ]
     }
   ],
-  "evidence": [
-    {
-      "stage": "build",
-      "command": "npm run build",
-      "result": "passed; Built 61 pages; Somna v1 emitted index, landing, checkout, upsell, upsell-2, receipt routes."
-    },
-    {
-      "stage": "route_resolution",
-      "command": "curl -I local routes",
-      "result": "all Somna v1 local routes returned HTTP 200"
-    },
-    {
-      "stage": "browser_smoke",
-      "command": "/Users/devin/.codex/skills/gstack/browse/dist/browse chain",
-      "result": "entry, landing, checkout, upsell, upsell-2, receipt rendered expected text; no console errors on checked pages."
-    },
-    {
-      "stage": "commerce_static_check",
-      "command": "rg route/commerce sentinel checks",
-      "result": "no paid shipping copy, old v0 route names, old upsell-1/thank-you routes, or invalid shipping-id=2 emitted for Somna v1."
-    }
-  ],
-  "blockers": [
-    {
-      "code": "deploy.preview_url_absent",
-      "stage": "deploy",
-      "message": "No deploy target or preview URL is declared yet, so remote preview 200 verification cannot be completed before PR/deploy integration provides a URL."
-    }
-  ],
+  "evidence": [],
+  "blockers": [],
   "warnings": [
     {
-      "code": "campaign.allowed_domains_confirmed",
-      "stage": "doctor",
-      "message": "Allowed domains are not confirmed; SDK calls may fail after deploy."
-    },
-    {
-      "code": "page_kit.dry_run_unavailable",
-      "stage": "doctor",
-      "message": "Target repo page-kit version 0.1.0 warned before setup; package was upgraded to 0.1.2 for non-interactive campaign-init."
-    },
-    {
-      "code": "deploy.target",
-      "stage": "deploy",
-      "message": "Deploy target is unknown; remote preview URL cannot be checked until hosting integration is identified."
-    },
-    {
-      "code": "deploy.preview_url",
-      "stage": "doctor",
-      "message": "Preview or production URL is not declared; spec-aware QA cannot run against deployed output yet."
-    },
-    {
-      "code": "page_kit_upgrade",
-      "stage": "setup",
-      "message": "Upgraded next-campaign-page-kit to 0.1.2 because 0.1.0 ignored non-interactive scaffold flags."
-    },
-    {
-      "code": "store_url_absent",
-      "stage": "setup",
-      "message": "CampaignSpec does not declare store_url or policy URLs; setup blanked demo URLs instead of inventing production policy links."
-    },
-    {
-      "code": "setup.demo_values_blank",
+      "code": "SOURCE_COMMERCE_REVIEW",
       "stage": "assembly",
-      "message": "Setup blanked demo policy/tracking placeholders because CampaignSpec does not declare store URL, footer links, or tracking providers."
-    },
-    {
-      "code": "test_orders_not_run",
-      "stage": "qa",
-      "message": "No test orders were run because test orders were not explicitly allowed and sandbox test_card routing was not confirmed."
+      "message": "Source HTML contains possible commerce zones. Preserve catalog-owned runtime surfaces."
     }
   ],
   "next": {
-    "stage": "deploy-preview",
-    "owner": "operator/deploy-system",
-    "action": "Open PR, let deploy integration produce a preview URL, then verify the preview URL returns 200 before declaring preview-ready.",
-    "blocked_stages": [
-      "remote preview 200 verification",
-      "deployed spec-aware QA"
-    ]
+    "stage": "manual-flow-walkthrough",
+    "owner": "operator",
+    "action": "Lifecycle complete through ready_with_exceptions. Operator should walk the funnel in the Netlify preview to clear the 5 route-link manual_review items: confirm checkout submit → /upsell/, upsell accept+skip → /upsell-2/, upsell-2 accept+skip → /receipt/. Then move PR https://github.com/Sellmore-Co/meridian/pull/5 from draft → ready for review."
   }
 }
