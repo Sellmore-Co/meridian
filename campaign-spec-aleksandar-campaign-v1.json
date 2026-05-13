@@ -1,0 +1,733 @@
+{
+  "schema_version": "4.2",
+  "builder_version": "0.2.3",
+  "generated_at": "2026-05-13T14:04:02.793Z",
+  "_provenance": {
+    "ops": [
+      "funnels.*.pages.*.label",
+      "funnels.*.pages.*.notes",
+      "funnels.*.pages.*.custom_fields",
+      "funnels.*.pages.*.figma_frame_url",
+      "funnels.*.pages.*.offers",
+      "global_config.sdk_version",
+      "campaign.store_*",
+      "campaign.tracking",
+      "campaign.footer_links",
+      "campaign.seo",
+      "figma_url"
+    ],
+    "api": [
+      "campaign.*",
+      "shipping_methods",
+      "offers",
+      "funnels.*.pages.*.packages.*.name",
+      "funnels.*.pages.*.packages.*.price"
+    ],
+    "derived": [
+      "funnels.*.pages.*.page_url",
+      "funnels.*.pages.*.sdk_hints",
+      "funnels.*.pages.*.order",
+      "funnels.*.pages.*.is_entry",
+      "schema_version",
+      "builder_version",
+      "generated_at"
+    ],
+    "legacy": [
+      "funnel_pages"
+    ]
+  },
+  "campaign": {
+    "ref_id": 1577,
+    "slug": "aleksandar-campaign-v1",
+    "id": "aleksandar-campaign-v1",
+    "name": "aleksandar-campaign-v1",
+    "currency": "USD",
+    "language": "en",
+    "payment_env_key": "1CND6EPZSB81RS441C34NNBCP6",
+    "campaigns_api_key": "cZQ2IvDCZAUfhQFR8GGwCKUzHKYVUB4GfUWtf0Cg",
+    "available_payment_methods": [],
+    "available_express_payment_methods": [],
+    "available_currencies": [
+      "USD"
+    ],
+    "available_shipping_countries": [
+      "US"
+    ],
+    "store_url": "aleksandardev.29next.store",
+    "store_name": "",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "tracking": {
+      "status": "unknown",
+      "providers": {}
+    }
+  },
+  "global_config": {
+    "sdk_version": "0.4.19"
+  },
+  "funnels": [
+    {
+      "id": "default",
+      "name": "Default",
+      "hypothesis": "Default campaign path exported by Campaign Map Builder.",
+      "weight": 50,
+      "pages": [
+        {
+          "id": "page_mp44o8vx_14",
+          "type": "landing",
+          "order": 1,
+          "label": "Landing Page (PDP)",
+          "is_entry": true,
+          "page_url": "",
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product",
+              "next-currency": "USD"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_mp44o8vx_15",
+          "type": "checkout",
+          "order": 2,
+          "label": "Checkout",
+          "is_entry": false,
+          "page_url": "checkout/",
+          "success_url": null,
+          "_success_label": null,
+          "sdk_hints": {
+            "sdk_page_type": "checkout",
+            "meta_tags": {
+              "next-page-type": "checkout",
+              "next-currency": "USD",
+              "next-predictive-address": "true"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_mp44o8vx_16",
+          "type": "thankyou",
+          "order": 3,
+          "label": "Thank You",
+          "is_entry": false,
+          "page_url": "receipt/",
+          "sdk_hints": {
+            "sdk_page_type": "receipt",
+            "meta_tags": {
+              "next-page-type": "receipt"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "path-2",
+      "name": "Path 2",
+      "hypothesis": "Clone of Default. Edit the changed page(s) and state the test hypothesis.",
+      "weight": 50,
+      "pages": [
+        {
+          "id": "page_mp44pcvh_42",
+          "type": "landing",
+          "order": 1,
+          "label": "Landing Page (PDP)",
+          "is_entry": true,
+          "page_url": "path-2/",
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product",
+              "next-currency": "USD"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_mp44pcvh_43",
+          "type": "checkout",
+          "order": 2,
+          "label": "Checkout",
+          "is_entry": false,
+          "page_url": "path-2-checkout/",
+          "success_url": null,
+          "_success_label": null,
+          "sdk_hints": {
+            "sdk_page_type": "checkout",
+            "meta_tags": {
+              "next-page-type": "checkout",
+              "next-currency": "USD",
+              "next-predictive-address": "true"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        },
+        {
+          "id": "page_mp44pcvh_44",
+          "type": "thankyou",
+          "order": 3,
+          "label": "Thank You",
+          "is_entry": false,
+          "page_url": "path-2-receipt/",
+          "sdk_hints": {
+            "sdk_page_type": "receipt",
+            "meta_tags": {
+              "next-page-type": "receipt"
+            }
+          },
+          "design_hooks": {
+            "figma_frame_url": null,
+            "component_slots": null
+          }
+        }
+      ]
+    }
+  ],
+  "funnel_pages": [
+    {
+      "id": "page_mp44o8vx_14",
+      "type": "landing",
+      "order": 1,
+      "label": "Landing Page (PDP)",
+      "is_entry": true,
+      "page_url": "",
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product",
+          "next-currency": "USD"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mp44o8vx_15",
+      "type": "checkout",
+      "order": 2,
+      "label": "Checkout",
+      "is_entry": false,
+      "page_url": "checkout/",
+      "success_url": null,
+      "_success_label": null,
+      "sdk_hints": {
+        "sdk_page_type": "checkout",
+        "meta_tags": {
+          "next-page-type": "checkout",
+          "next-currency": "USD",
+          "next-predictive-address": "true"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mp44o8vx_16",
+      "type": "thankyou",
+      "order": 3,
+      "label": "Thank You",
+      "is_entry": false,
+      "page_url": "receipt/",
+      "sdk_hints": {
+        "sdk_page_type": "receipt",
+        "meta_tags": {
+          "next-page-type": "receipt"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mp44pcvh_42",
+      "type": "landing",
+      "order": 1,
+      "label": "Landing Page (PDP)",
+      "is_entry": true,
+      "page_url": "path-2/",
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product",
+          "next-currency": "USD"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "path-2",
+      "_funnel_name": "Path 2"
+    },
+    {
+      "id": "page_mp44pcvh_43",
+      "type": "checkout",
+      "order": 2,
+      "label": "Checkout",
+      "is_entry": false,
+      "page_url": "path-2-checkout/",
+      "success_url": null,
+      "_success_label": null,
+      "sdk_hints": {
+        "sdk_page_type": "checkout",
+        "meta_tags": {
+          "next-page-type": "checkout",
+          "next-currency": "USD",
+          "next-predictive-address": "true"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "path-2",
+      "_funnel_name": "Path 2"
+    },
+    {
+      "id": "page_mp44pcvh_44",
+      "type": "thankyou",
+      "order": 3,
+      "label": "Thank You",
+      "is_entry": false,
+      "page_url": "path-2-receipt/",
+      "sdk_hints": {
+        "sdk_page_type": "receipt",
+        "meta_tags": {
+          "next-page-type": "receipt"
+        }
+      },
+      "design_hooks": {
+        "figma_frame_url": null,
+        "component_slots": null
+      },
+      "_funnel_id": "path-2",
+      "_funnel_name": "Path 2"
+    }
+  ],
+  "shipping_methods": [],
+  "offers": [
+    {
+      "ref_id": "1",
+      "name": "Buy 1 Get 50% Discount",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 1,
+        "description": "Minimum purchase of 1 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "50.00",
+        "description": "50% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/93/1a/931ab2cc88379a58d3165b32c1987899.webp",
+          "package_name": "BuzzDefense Portable",
+          "product_name": "BuzzDefense Portable",
+          "product_variant_name": "BuzzDefense Portable",
+          "unit_price": "39.99",
+          "unit_price_before_discount": "79.98",
+          "package_price": "39.99",
+          "package_price_before_discount": "79.98",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "2",
+      "name": "Buy 2 Get 53% Discount",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 2,
+        "description": "Minimum purchase of 2 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "53.00",
+        "description": "53% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/93/1a/931ab2cc88379a58d3165b32c1987899.webp",
+          "package_name": "BuzzDefense Portable",
+          "product_name": "BuzzDefense Portable",
+          "product_variant_name": "BuzzDefense Portable",
+          "unit_price": "37.99",
+          "unit_price_before_discount": "79.98",
+          "package_price": "37.99",
+          "package_price_before_discount": "79.98",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "3",
+      "name": "Buy 3 Get 55% Discount",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 3,
+        "description": "Minimum purchase of 3 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "55.00",
+        "description": "55% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/93/1a/931ab2cc88379a58d3165b32c1987899.webp",
+          "package_name": "BuzzDefense Portable",
+          "product_name": "BuzzDefense Portable",
+          "product_variant_name": "BuzzDefense Portable",
+          "unit_price": "35.99",
+          "unit_price_before_discount": "79.98",
+          "package_price": "35.99",
+          "package_price_before_discount": "79.98",
+          "package_unit_qty": 1
+        },
+        {
+          "package_id": 2,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/d5/1d/d51dfb3812803288c3e05c0ad5d9246a.webp",
+          "package_name": "Warranty 1 year",
+          "product_name": "Warranty",
+          "product_variant_name": "Warranty",
+          "unit_price": "2.99",
+          "unit_price_before_discount": "4.99",
+          "package_price": "2.99",
+          "package_price_before_discount": "4.99",
+          "package_unit_qty": 1
+        },
+        {
+          "package_id": 3,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/0a/29/0a2948e840958b8eb8ff5ac74a75738b.webp",
+          "package_name": "BuzzDefense Mosquito Mats",
+          "product_name": "BuzzDefense Mosquito Repellent Mats",
+          "product_variant_name": "BuzzDefense Mosquito Repellent Mats",
+          "unit_price": "4.99",
+          "unit_price_before_discount": "9.99",
+          "package_price": "4.99",
+          "package_price_before_discount": "9.99",
+          "package_unit_qty": 1
+        },
+        {
+          "package_id": 4,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/27/69/27695dde145e49ec7381bc39619ee29f.webp",
+          "package_name": "Freedom Perks Pass",
+          "product_name": "Freedom Perks Pass",
+          "product_variant_name": "Freedom Perks Pass",
+          "unit_price": "4.99",
+          "unit_price_before_discount": "9.99",
+          "package_price": "4.99",
+          "package_price_before_discount": "9.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "4",
+      "name": "Buy 4 Get 58% Discount",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 4,
+        "description": "Minimum purchase of 4 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "58.00",
+        "description": "58% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/93/1a/931ab2cc88379a58d3165b32c1987899.webp",
+          "package_name": "BuzzDefense Portable",
+          "product_name": "BuzzDefense Portable",
+          "product_variant_name": "BuzzDefense Portable",
+          "unit_price": "33.99",
+          "unit_price_before_discount": "79.98",
+          "package_price": "33.99",
+          "package_price_before_discount": "79.98",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "5",
+      "name": "Buy 5 Get 60% Discount",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 5,
+        "description": "Minimum purchase of 5 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "60.00",
+        "description": "60% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/93/1a/931ab2cc88379a58d3165b32c1987899.webp",
+          "package_name": "BuzzDefense Portable",
+          "product_name": "BuzzDefense Portable",
+          "product_variant_name": "BuzzDefense Portable",
+          "unit_price": "31.99",
+          "unit_price_before_discount": "79.98",
+          "package_price": "31.99",
+          "package_price_before_discount": "79.98",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "6",
+      "name": "10% Exit Coupon",
+      "type": "voucher",
+      "code": "EXIT10",
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "10.00",
+        "description": "10% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/93/1a/931ab2cc88379a58d3165b32c1987899.webp",
+          "package_name": "BuzzDefense Portable",
+          "product_name": "BuzzDefense Portable",
+          "product_variant_name": "BuzzDefense Portable",
+          "unit_price": "71.99",
+          "unit_price_before_discount": "79.98",
+          "package_price": "71.99",
+          "package_price_before_discount": "79.98",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "7",
+      "name": "OTO BuzzDefense Portable 70% Discount",
+      "type": "voucher",
+      "code": "BUZZDEFENSE01",
+      "condition": {
+        "type": "count",
+        "value": 1,
+        "description": "Minimum purchase of 1 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "70.00",
+        "description": "70% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/93/1a/931ab2cc88379a58d3165b32c1987899.webp",
+          "package_name": "BuzzDefense Portable",
+          "product_name": "BuzzDefense Portable",
+          "product_variant_name": "BuzzDefense Portable",
+          "unit_price": "23.99",
+          "unit_price_before_discount": "79.98",
+          "package_price": "23.99",
+          "package_price_before_discount": "79.98",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "8",
+      "name": "OTO BuzzDefense Mosquito Mats 70% OFF",
+      "type": "voucher",
+      "code": "BUZZDEFENSE02",
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "70.00",
+        "description": "70% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 3,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/0a/29/0a2948e840958b8eb8ff5ac74a75738b.webp",
+          "package_name": "BuzzDefense Mosquito Mats",
+          "product_name": "BuzzDefense Mosquito Repellent Mats",
+          "product_variant_name": "BuzzDefense Mosquito Repellent Mats",
+          "unit_price": "2.99",
+          "unit_price_before_discount": "9.99",
+          "package_price": "2.99",
+          "package_price_before_discount": "9.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "9",
+      "name": "OTO Freedom Perks Pass 80% OFF",
+      "type": "voucher",
+      "code": "BUZZDEFENSE03",
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "80.00",
+        "description": "80% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 4,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/27/69/27695dde145e49ec7381bc39619ee29f.webp",
+          "package_name": "Freedom Perks Pass",
+          "product_name": "Freedom Perks Pass",
+          "product_variant_name": "Freedom Perks Pass",
+          "unit_price": "1.99",
+          "unit_price_before_discount": "9.99",
+          "package_price": "1.99",
+          "package_price_before_discount": "9.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    }
+  ],
+  "spec_identity": {
+    "source": "campaign-map-builder",
+    "map_id": "aleksandar-campaign-v1-xmq3",
+    "id": "map:aleksandar-campaign-v1-xmq3",
+    "map_url": "https://campaign-map.nextcommerce.com/view/aleksandar-campaign-v1-xmq3",
+    "edit_url": "https://campaign-map.nextcommerce.com/?load=aleksandar-campaign-v1-xmq3",
+    "spec_url": "https://campaign-map.nextcommerce.com/api/spec/aleksandar-campaign-v1-xmq3",
+    "spec_hash": "sha256:33207083bf61318744114c3d17f2fadcc319436e8ac926077d85fb07334bbb77",
+    "saved_at": "2026-05-13T14:04:02.765Z",
+    "public_route_slug": "aleksandar-campaign-v1"
+  }
+}
