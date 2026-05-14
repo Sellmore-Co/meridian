@@ -1,19 +1,19 @@
 {
   "schema_version": "campaign-runtime-assembly-report/v0",
-  "run_id": "asm_1778743995968",
-  "generated_at": "2026-05-14T07:33:15.968Z",
+  "run_id": "asm_1778754937799",
+  "generated_at": "2026-05-14T10:35:37.799Z",
   "status": "prepared",
   "identity": {
-    "map_id": "sell-251-partial-eval",
+    "map_id": "aleksandar-campaign-v1-haf2",
     "public_route_slug": "aleksandar-campaign-v1",
     "campaign_directory": "aleksandar-campaign-v1",
     "live_url_path": "/aleksandar-campaign-v1/",
-    "spec_hash": "cbe177876321b38a7b816accf9473cdc6e66ebb897191d4d9c40cb01067ee968"
+    "spec_hash": "8f2eac29b6e45f7a4957c4f7b0e9f0e115ca263b1fec3b0d9146937b8bada089"
   },
   "inputs": {
     "packet_path": "./campaign-runtime.build.json",
     "context_path": ".campaign-runtime\\build-context.json",
-    "spec_path": "..\\aleksandar-dev\\campaign-spec-partial-v1.json",
+    "spec_path": "..\\..\\..\\..\\Downloads\\campaign-spec-aleksandar-campaign-v1.json",
     "source": {
       "kind": "html_funnel",
       "root": "..\\aleksandar-dev\\source-html"
@@ -52,7 +52,7 @@
     },
     "setup": {
       "stage": "setup",
-      "status": "pending",
+      "status": "skipped",
       "inputs": [],
       "outputs": [],
       "commands": [],
@@ -98,23 +98,83 @@
   },
   "decisions": [
     {
-      "id": "dec_page_map_presell",
+      "id": "dec_page_map_page_mp571hrf_13",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"presell\" to source file \"presell.html\"",
+      "decision": "mapped CampaignSpec page \"page_mp571hrf_13\" to source file \"presell.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: presell, presell-1, index"
+        "matched source filename against page keys: page-mp571hrf-13, presell, presell-1, index"
       ]
     },
     {
-      "id": "dec_page_map_landing",
+      "id": "dec_page_map_page_mp571hrf_14",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"landing\" to source file \"landing.html\"",
+      "decision": "mapped CampaignSpec page \"page_mp571hrf_14\" to source file \"landing.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: landing, landing-1, index"
+        "matched source filename against page keys: page-mp571hrf-14, landing-page-pdp, landing, landing-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mp571hrf_15",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mp571hrf_15\" to source file \"checkout.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mp571hrf-15, checkout, checkout-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mp571hrf_16",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mp571hrf_16\" to source file \"receipt.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mp571hrf-16, thank-you, thankyou, receipt, thankyou-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mp5caw29_89",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mp5caw29_89\" to source file \"presell.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mp5caw29-89, presell, path-2, presell-2, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mp5caw29_90",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mp5caw29_90\" to source file \"landing.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mp5caw29-90, landing-page-pdp, landing, path-2-landing, landing-2, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mp5caw29_91",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mp5caw29_91\" to source file \"checkout.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mp5caw29-91, checkout, path-2-checkout, checkout-2"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mp5caw29_92",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mp5caw29_92\" to source file \"receipt.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mp5caw29-92, thank-you, thankyou, path-2-receipt, thankyou-2, receipt"
       ]
     }
   ],
@@ -128,8 +188,8 @@
     }
   ],
   "next": {
-    "stage": "setup",
-    "owner": "next-campaigns-setup",
-    "action": "Run setup before build."
+    "stage": "assembly",
+    "owner": "next-campaigns-build",
+    "action": "Run build with this packet and context."
   }
 }
