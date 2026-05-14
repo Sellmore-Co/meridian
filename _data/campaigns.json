@@ -185,5 +185,22 @@
     "store_phone_tel": "",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "calmroot": {
+    "name": "Calmroot — Botanical Wellness",
+    "description": "SELL-252 dogfood — AI-generated HTML source path test. Demeter family.",
+    "entry_url": "landing",
+    "sdk_version": "0.4.19",
+    "store_name": "Calmroot",
+    "store_url": "",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
   }
 }
