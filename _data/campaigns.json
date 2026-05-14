@@ -185,5 +185,22 @@
     "store_phone_tel": "",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "aleksandar-campaign-v1": {
+    "name": "Aleksandar Campaign V1 — Partial Build (presell + landing)",
+    "description": "SELL-251 partial build evaluation — presell + landing only. Checkout/upsell/receipt out of scope.",
+    "entry_url": "presell",
+    "sdk_version": "0.4.19",
+    "store_name": "Aleksandar Dev",
+    "store_url": "aleksandardev.29next.store",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
   }
 }
