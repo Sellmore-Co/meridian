@@ -4,12 +4,64 @@
   "errors": [],
   "warnings": [
     {
-      "code": "routing_meta.runtime_root",
-      "message": "CampaignSpec sdk_hints.meta_tags routing values must render as campaign-rooted paths before QA. Expected values like \"/home-outage-prep-v0/upsell/\" for next-success-url, next-upsell-accept-url, next-upsell-decline-url; found page_mp3qp2nt_27:next-success-url=upsell/; page_mp3qp2nt_28:next-upsell-accept-url=upsell-2/; page_mp3qp2nt_28:next-upsell-decline-url=upsell-2/; page_mp3qs1fg_226:next-upsell-accept-url=receipt/; page_mp3qs1fg_226:next-upsell-decline-url=receipt/."
+      "code": "campaign.allowed_domains_confirmed",
+      "message": "Allowed domains are not confirmed. SDK runtime checks may be blocked."
+    },
+    {
+      "code": "built_output.page_missing",
+      "message": "Built HTML is missing for CampaignSpec page \"page_mp571hrf_13\" at ./_site\\aleksandar-campaign-v1\\index.html."
+    },
+    {
+      "code": "sdk_hints.meta_tags.missing",
+      "message": "Built page \"page_mp571hrf_14\" is missing SDK meta tag \"next-currency\" expected from CampaignSpec.",
+      "detail": {
+        "page_id": "page_mp571hrf_14",
+        "file": "./_site\\aleksandar-campaign-v1\\landing\\index.html"
+      }
+    },
+    {
+      "code": "sdk_hints.meta_tags.missing",
+      "message": "Built page \"page_mp571hrf_15\" is missing SDK meta tag \"next-currency\" expected from CampaignSpec.",
+      "detail": {
+        "page_id": "page_mp571hrf_15",
+        "file": "./_site\\aleksandar-campaign-v1\\checkout\\index.html"
+      }
+    },
+    {
+      "code": "sdk_hints.meta_tags.missing",
+      "message": "Built page \"page_mp571hrf_15\" is missing SDK meta tag \"next-predictive-address\" expected from CampaignSpec.",
+      "detail": {
+        "page_id": "page_mp571hrf_15",
+        "file": "./_site\\aleksandar-campaign-v1\\checkout\\index.html"
+      }
+    },
+    {
+      "code": "built_output.page_missing",
+      "message": "Built HTML is missing for CampaignSpec page \"page_mp5caw29_89\" at ./_site\\aleksandar-campaign-v1\\path-2\\index.html."
+    },
+    {
+      "code": "built_output.page_missing",
+      "message": "Built HTML is missing for CampaignSpec page \"page_mp5caw29_90\" at ./_site\\aleksandar-campaign-v1\\path-2-landing\\index.html."
+    },
+    {
+      "code": "built_output.page_missing",
+      "message": "Built HTML is missing for CampaignSpec page \"page_mp5caw29_91\" at ./_site\\aleksandar-campaign-v1\\path-2-checkout\\index.html."
+    },
+    {
+      "code": "built_output.page_missing",
+      "message": "Built HTML is missing for CampaignSpec page \"page_mp5caw29_92\" at ./_site\\aleksandar-campaign-v1\\path-2-receipt\\index.html."
     },
     {
       "code": "frontmatter.demoOnlyValues",
       "message": "Replace demo-only starter value before launch: packages.main_package=1"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: packages.prepurchase_1=7"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: packages.prepurchase_2=9"
     },
     {
       "code": "frontmatter.demoOnlyValues",
@@ -21,11 +73,15 @@
     },
     {
       "code": "frontmatter.demoOnlyValues",
-      "message": "Replace demo-only starter value before launch: packages.prepurchase_1=7"
+      "message": "Replace demo-only starter value before launch: upsell_offer.package_id=3"
     },
     {
       "code": "frontmatter.demoOnlyValues",
-      "message": "Replace demo-only starter value before launch: packages.prepurchase_2=9"
+      "message": "Replace demo-only starter value before launch: upsell_offer.vouchers_json=[\"UP50\"]"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: upsell_bundle_tiers packageId=3"
     },
     {
       "code": "frontmatter.replaceFromSpecOrApi",
@@ -45,11 +101,19 @@
     },
     {
       "code": "frontmatter.replaceFromSpecOrApi",
-      "message": "Must be replaced from CampaignSpec/API: upsell_offer.package_id"
+      "message": "Must be replaced from CampaignSpec/API: upsell_offer.*"
     },
     {
       "code": "frontmatter.replaceFromSpecOrApi",
       "message": "Must be replaced from CampaignSpec/API: upsell_bundle_tiers[].items_json"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: upsell_bundle_tiers[].vouchers_json"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: matching inline upsell package/voucher refs until upsell includes are promoted"
     },
     {
       "code": "frontmatter.removeWhenUnsupported",
@@ -57,59 +121,15 @@
     },
     {
       "code": "frontmatter.removeWhenUnsupported",
-      "message": "Remove when unsupported by target campaign: order bump variants when prepurchase packages are absent"
+      "message": "Remove when unsupported by target campaign: bump includes when prepurchase packages are absent"
     },
     {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnels.0.pages.2.packages.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+      "code": "frontmatter.removeWhenUnsupported",
+      "message": "Remove when unsupported by target campaign: unsupported payment method rows"
     },
     {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnels.0.pages.2.packages.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnels.0.pages.2.packages.2.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at funnels.0.pages.2.packages.3.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnels.0.pages.2.offers.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at funnels.0.pages.2.offers.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnel_pages.2.packages.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnel_pages.2.packages.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnel_pages.2.packages.2.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at funnel_pages.2.packages.3.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnel_pages.2.offers.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at funnel_pages.2.offers.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
-    },
-    {
-      "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+      "code": "frontmatter.removeWhenUnsupported",
+      "message": "Remove when unsupported by target campaign: upsell pages not present in the funnel"
     },
     {
       "code": "template_contract.demo_ref",
@@ -141,11 +161,15 @@
     },
     {
       "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at offers.2.packages.1.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
       "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.2.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
     },
     {
       "code": "template_contract.demo_ref",
-      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at offers.3.packages.0.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.3.packages.0.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
     },
     {
       "code": "template_contract.demo_ref",
@@ -153,16 +177,55 @@
     },
     {
       "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.4.packages.0.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
       "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.4.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
     },
     {
       "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.5.packages.0.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
       "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.5.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"7\" at offers.6.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.6.packages.0.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.6.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.7.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"9\" at offers.8.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.8.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "deploy.preview_url",
+      "message": "No preview or production URL yet. QA remains blocked after build/polish."
+    },
+    {
+      "code": "qa.test_orders_allowed",
+      "message": "SDK-driven test orders are not enabled for this packet; QA must avoid checkout order mutations."
     }
   ],
   "ready": [
     "Build Packet schema campaign-runtime-build-packet/v0",
-    "Allowed domains confirmed for deployed production QA/test-order run",
     "Target campaign output directory exists",
     "Target page-kit dependency ^0.1.2",
     "Local CampaignSpec parsed",
@@ -170,23 +233,24 @@
     "CampaignSpec public page routes are Page Kit-compatible",
     "CampaignSpec required Store Profile fields are present for page-kit campaigns.json",
     "CampaignSpec shipping countries: US",
+    "CampaignSpec SDK routing meta tags are runtime-rooted for /aleksandar-campaign-v1/",
     "Source mappings cover active CampaignSpec pages",
-    "Built SDK meta tags checked in _site/home-outage-prep-v0/ for 6 page(s)",
+    "Built SDK meta tags checked in _site/aleksandar-campaign-v1/ for 3 page(s)",
     "Campaigns API key available via CampaignSpec campaign.campaigns_api_key",
     "Commerce catalog sharedFrontmatterVocabulary loaded",
-    "Template agentContract loaded for demeter",
+    "Template agentContract loaded for olympus",
     "Build context schema campaign-runtime-build-context/v0",
     "Assembly report schema campaign-runtime-assembly-report/v0"
   ],
   "derived": {
     "packet_path": "./campaign-runtime.build.json",
-    "map_id": "home-outage-prep-v0-sf21",
-    "public_route_slug": "home-outage-prep-v0",
-    "template_family": "demeter",
-    "source_root": "../designer/funnel-designs/home-outage-prep",
+    "map_id": "aleksandar-campaign-v1-haf2",
+    "public_route_slug": "aleksandar-campaign-v1",
+    "template_family": "olympus",
+    "source_root": "..\\aleksandar-dev\\source-html",
     "target_repo": ".",
-    "target_output_dir": "./src/home-outage-prep-v0",
-    "spec_path": "../designer/funnel-designs/home-outage-prep/campaign-spec-home-outage-prep-v0.json",
+    "target_output_dir": "./src\\aleksandar-campaign-v1",
+    "spec_path": "..\\..\\..\\..\\Downloads\\campaign-spec-aleksandar-campaign-v1.json",
     "scaffold_required": false,
     "scaffold_reason": null
   },
@@ -200,7 +264,9 @@
       "Use the template agentContract to replace demo values from CampaignSpec/API."
     ],
     "blocked_stages": [
-      "runtime-sdk-verification"
+      "qa",
+      "runtime-sdk-verification",
+      "test-orders"
     ]
   }
 }
