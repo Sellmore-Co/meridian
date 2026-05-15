@@ -1,7 +1,7 @@
 ---
 title: "Calmroot — Checkout"
 page_type: checkout
-next_success_url: upsell-bundle-stepper.html
+next_success_url: receipt.html
 promo_sale: "default"
 scripts:
   - js/promo-banner.js
@@ -44,7 +44,7 @@ scripts:
                                   {% comment %} data-next-await: loading state while bundle prices hydrate. Per-tier shipping: data-next-shipping-id on each card below (1x/2x ref 2, 3x ref 1). {% endcomment %}
                                   <div data-next-bundle-selector data-next-selector-id="drone-packages" data-next-selection-mode="swap" data-next-include-shipping="true" class="os-option" data-next-await="">
                                     <div class="os-cards__vertical os--gap-m">
-                                      <div data-next-bundle-card data-next-bundle-id="drone-qty-1" data-next-shipping-id="2" data-next-bundle-items='[{"packageId":1,"quantity":1}]' data-next-selected="true" role="button" class="os-card">
+                                      <div data-next-bundle-card data-next-bundle-id="drone-qty-1" data-next-shipping-id="1" data-next-bundle-items='[{"packageId":1,"quantity":1}]' data-next-selected="true" role="button" class="os-card">
                                         <div class="os-card__header-slot"></div>
                                         <div class="os-card__wrapper">
                                           <div class="os-card__content os--align-middle" data-next-package-id="1">
@@ -88,7 +88,7 @@ scripts:
                                           </div>
                                         </div>
                                       </div>
-                                      <div data-next-bundle-card data-next-bundle-id="drone-qty-2" data-next-shipping-id="2" data-next-bundle-items='[{"packageId":1,"quantity":2}]' role="button" class="os-card">
+                                      <div data-next-bundle-card data-next-bundle-id="drone-qty-2" data-next-shipping-id="1" data-next-bundle-items='[{"packageId":1,"quantity":2}]' role="button" class="os-card">
                                         <div class="os-card__header-slot"></div>
                                         <div class="os-card__wrapper">
                                           <div class="os-card__content os--align-middle" data-next-package-id="1">
@@ -180,7 +180,7 @@ scripts:
                                   <div
                                     data-next-bundle-selector
                                     data-next-selector-id="drone-packages"
-                                    data-next-bundles='[{"id":"drone-qty-1","title":"1x Package Title","imageSrc":"{{ 'images/1x1_1.svg' | campaign_asset }}","shippingId":2,"labelSlotClass":"","totalToneClass":"","badgeText":"Most Popular","badgePillClass":"os-card__label--pill-primary","items":[{"packageId":1,"quantity":1}],"selected":true},{"id":"drone-qty-2","title":"2x Package Title","imageSrc":"{{ 'images/1x1_1.svg' | campaign_asset }}","shippingId":2,"labelSlotClass":"","totalToneClass":"","badgeText":"Best Deal","badgePillClass":"os-card__label--pill-secondary","items":[{"packageId":1,"quantity":2}]},{"id":"drone-qty-3","title":"3x Package Title","imageSrc":"{{ 'images/1x1_1.svg' | campaign_asset }}","shippingId":1,"labelSlotClass":"hide","totalToneClass":"os-dark","badgeText":"","badgePillClass":"","items":[{"packageId":1,"quantity":3}]}]'
+                                    data-next-bundles='[{"id":"drone-qty-1","title":"1x Package Title","imageSrc":"{{ 'images/1x1_1.svg' | campaign_asset }}","shippingId":1,"labelSlotClass":"","totalToneClass":"","badgeText":"Most Popular","badgePillClass":"os-card__label--pill-primary","items":[{"packageId":1,"quantity":1}],"selected":true},{"id":"drone-qty-2","title":"2x Package Title","imageSrc":"{{ 'images/1x1_1.svg' | campaign_asset }}","shippingId":1,"labelSlotClass":"","totalToneClass":"","badgeText":"Best Deal","badgePillClass":"os-card__label--pill-secondary","items":[{"packageId":1,"quantity":2}]},{"id":"drone-qty-3","title":"3x Package Title","imageSrc":"{{ 'images/1x1_1.svg' | campaign_asset }}","shippingId":1,"labelSlotClass":"hide","totalToneClass":"os-dark","badgeText":"","badgePillClass":"","items":[{"packageId":1,"quantity":3}]}]'
                                     data-next-selection-mode="swap"
                                     data-next-include-shipping="true"
                                     class="os-option os-cards__vertical os--gap-xl"
@@ -317,8 +317,6 @@ scripts:
                                   </div>
                                 </div>
 
-                                {% campaign_include 'bump-check01.html' %}
-                                {% campaign_include 'bump-switch01.html' %}
                                 <div class="form-section form-section--last">
                                   <div class="form-section__header">
                                     <h1 class="form-section__title">Payment</h1>

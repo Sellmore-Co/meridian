@@ -187,11 +187,11 @@
     "fb_pixel_id": ""
   },
   "calmroot": {
-    "name": "Calmroot — Botanical Wellness",
-    "description": "SELL-252 dogfood — AI-generated HTML source path test. Demeter family.",
+    "name": "Test Campaign — Demeter Dogfood",
+    "description": "SELL-250 dogfood — Demeter family evaluation",
     "entry_url": "landing",
     "sdk_version": "0.4.19",
-    "store_name": "Calmroot",
+    "store_name": "test-campaign",
     "store_url": "",
     "store_terms": "",
     "store_privacy": "",
