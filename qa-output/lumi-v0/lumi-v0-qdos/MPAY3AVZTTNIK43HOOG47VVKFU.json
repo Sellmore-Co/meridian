@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MPAY3AVZTTNIK43HOOG47VVKFU",
+  "campaign_slug": "lumi-v0-qdos",
+  "campaign_ref_id": 1596,
+  "spec_version": "4.3",
+  "spec_hash": "sha256:1f1086560867198ad8e3107400d5ee54a47f79c5884d86624d6729caf3aee9ca",
+  "started_at": "2026-05-18T08:31:31.294Z",
+  "completed_at": "2026-05-18T08:31:31.327Z",
+  "runtime": "campaigns-os-node-qa@0.1.0-alpha.0",
+  "operator": "devin@local",
+  "disposition": "blocked",
+  "assertions": [
+    {
+      "id": "http:page_mpaxqpb1_21",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:4173/lumi-v0/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_21:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:4173/lumi-v0/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_21:next",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:4173/lumi-v0/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/landing/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_22",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_22:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_22:next-currency",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "status": "fail",
+      "severity": "blocker",
+      "expected": "USD",
+      "actual": null,
+      "evidence": {
+        "expected": "USD",
+        "actual": null
+      }
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_22:next",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/checkout/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_23",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "checkout",
+      "actual": "checkout"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-currency",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "fail",
+      "severity": "blocker",
+      "expected": "USD",
+      "actual": null,
+      "evidence": {
+        "expected": "USD",
+        "actual": null
+      }
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-predictive-address",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "/lumi-v0/upsell/",
+      "actual": "/lumi-v0/upsell/"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_23:next",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/upsell/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_24",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-currency",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "fail",
+      "severity": "blocker",
+      "expected": "USD",
+      "actual": null,
+      "evidence": {
+        "expected": "USD",
+        "actual": null
+      }
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-prevent-back-navigation",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "/lumi-v0/upsell-2/",
+      "actual": "/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "/lumi-v0/upsell-2/",
+      "actual": "/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_24:accept",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_24:decline",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "http:page_mpaxrhe5_86",
+      "family": "funnel-flow",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-currency",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "fail",
+      "severity": "blocker",
+      "expected": "USD",
+      "actual": null,
+      "evidence": {
+        "expected": "USD",
+        "actual": null
+      }
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/lumi-v0/receipt/",
+      "actual": "/lumi-v0/receipt/"
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/lumi-v0/receipt/",
+      "actual": "/lumi-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mpaxrhe5_86:accept",
+      "family": "funnel-flow",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/receipt/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mpaxrhe5_86:decline",
+      "family": "funnel-flow",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/receipt/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/receipt/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_25",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_25",
+      "url": "http://127.0.0.1:4173/lumi-v0/receipt/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_25:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_25",
+      "url": "http://127.0.0.1:4173/lumi-v0/receipt/",
+      "status": "pass",
+      "expected": "receipt",
+      "actual": "receipt"
+    }
+  ],
+  "test_orders": [],
+  "exceptions": []
+}

@@ -1,0 +1,317 @@
+{
+  "schema_version": "campaign-runtime-assembly-report/v0",
+  "run_id": "asm_1779092823385",
+  "generated_at": "2026-05-18T16:02:10.487Z",
+  "status": "ready_with_exceptions",
+  "identity": {
+    "map_id": "lumi-v0-qdos",
+    "public_route_slug": "lumi-v0",
+    "campaign_directory": "lumi-v0",
+    "live_url_path": "/lumi-v0/",
+    "spec_hash": "8510dcd20a1eaa34e91c4049c6be562e10329de35e9ca4f78480299e91b55d5d"
+  },
+  "inputs": {
+    "packet_path": "./campaign-runtime-lumi-v0.build.json",
+    "context_path": ".campaign-runtime/lumi-v0-build-context.json",
+    "spec_path": "./campaign-spec-lumi-v0.json",
+    "source": {
+      "kind": "html_funnel",
+      "root": "../designer/funnel-designs/lumi-daily-wellness-set"
+    },
+    "target_repo": "."
+  },
+  "template_family": {
+    "value": "shop-single-step",
+    "locked": true,
+    "locked_by": "operator_flag",
+    "commerce_catalog_version": null,
+    "candidates": []
+  },
+  "stages": {
+    "prepare_build": {
+      "stage": "prepare_build",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [
+        "./campaign-runtime-lumi-v0.build.json",
+        ".campaign-runtime/lumi-v0-build-context.json",
+        ".campaign-runtime/lumi-v0-assembly-report.json"
+      ],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "doctor": {
+      "status": "completed_with_warnings",
+      "updated_at": "2026-05-18T10:53:01.972Z",
+      "commands": [
+        "npm run campaigns-os -- doctor --packet /Users/devin/Developer/meridian/campaign-runtime-lumi-v0.build.json --context /Users/devin/Developer/meridian/.campaign-runtime/lumi-v0-build-context.json --report /Users/devin/Developer/meridian/.campaign-runtime/lumi-v0-assembly-report.json --json"
+      ],
+      "blockers": [],
+      "warnings": [
+        {
+          "code": "campaign.allowed_domains_confirmed",
+          "message": "Allowed domains not confirmed; runtime SDK/test orders remain blocked on localhost."
+        },
+        {
+          "code": "deploy.preview_url",
+          "message": "No deploy preview URL; launch QA/test orders require deployed allowlisted preview."
+        },
+        {
+          "code": "routing_meta.runtime_root",
+          "message": "Source spec still contains relative runtime route hints in some fields, but built HTML renders rooted /lumi-v0/ paths and QA route assertions pass."
+        }
+      ]
+    },
+    "setup": {
+      "stage": "setup",
+      "status": "skipped",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "assembly": {
+      "status": "completed_with_warnings",
+      "updated_at": "2026-05-18T10:53:01.972Z",
+      "inputs": [
+        "campaign-runtime-lumi-v0.build.json",
+        ".campaign-runtime/lumi-v0-build-context.json",
+        "campaign-spec-lumi-v0.json",
+        "../designer/funnel-designs/lumi-daily-wellness-set"
+      ],
+      "outputs": [
+        "src/lumi-v0",
+        "_data/campaigns.json",
+        "_site/lumi-v0"
+      ],
+      "commands": [
+        "npm run build"
+      ],
+      "blockers": [],
+      "warnings": [
+        {
+          "code": "local_cors_runtime",
+          "message": "SDK API calls from http://127.0.0.1:4173 are blocked by CORS/allowed-domain policy; live price/cart/currency proof needs preview."
+        }
+      ],
+      "evidence": [
+        "src/lumi-v0/index.html",
+        "src/lumi-v0/landing.html",
+        "src/lumi-v0/checkout.html",
+        "src/lumi-v0/upsell.html",
+        "src/lumi-v0/upsell-2.html",
+        "src/lumi-v0/receipt.html",
+        "campaign-spec-lumi-v0.json"
+      ]
+    },
+    "polish": {
+      "status": "completed_with_warnings",
+      "updated_at": "2026-05-18T10:53:01.972Z",
+      "commands": [
+        "Playwright screenshot pass at desktop 1440px and mobile 390px"
+      ],
+      "outputs": [
+        "qa-output/lumi-v0/screenshots/visual-pass.json",
+        "qa-output/lumi-v0/screenshots/*.png"
+      ],
+      "blockers": [],
+      "warnings": [
+        {
+          "code": "runtime_values_unverified_local",
+          "message": "Dynamic SDK price/cart/currency values are not fully proven locally because campaign/cart API calls are CORS-blocked."
+        }
+      ],
+      "evidence": [
+        "qa-output/lumi-v0/screenshots/checkout-mobile.png"
+      ]
+    },
+    "deploy": {
+      "status": "blocked",
+      "updated_at": "2026-05-18T10:53:01.972Z",
+      "blockers": [
+        {
+          "code": "preview_url_missing",
+          "message": "No deployed preview URL was provided or created in this internal local build pass."
+        }
+      ],
+      "warnings": []
+    },
+    "qa": {
+      "status": "ready_with_exceptions",
+      "updated_at": "2026-05-18T16:02:10.487Z",
+      "commands": [
+        "npm run campaigns-os -- qa resolve --packet /Users/devin/Developer/meridian/campaign-runtime-lumi-v0.build.json --base-url http://127.0.0.1:4173/lumi-v0/ --json",
+        "npm run campaigns-os -- qa run --packet /Users/devin/Developer/meridian/campaign-runtime-lumi-v0.build.json --base-url http://127.0.0.1:4173/lumi-v0/ --browser --output-dir /Users/devin/Developer/meridian/qa-output/lumi-v0 --json",
+        "npm run campaigns-os -- qa run --packet /Users/devin/Developer/meridian/campaign-runtime-lumi-v0.build.json --base-url http://127.0.0.1:4173/lumi-v0/ --output-dir /Users/devin/Developer/meridian/qa-output/lumi-v0 --json",
+        "npm run campaign-os -- supervise-qa --verdict /Users/devin/Developer/meridian/qa-output/lumi-v0/lumi-v0-qdos/MPB35QW1KE8BSUFQ5I64O7D68C.json --packet /Users/devin/Developer/meridian/campaign-runtime-lumi-v0.build.json --assembly-report /Users/devin/Developer/meridian/.campaign-runtime/lumi-v0-assembly-report.json --previous-report /Users/devin/Developer/meridian/.campaign-runtime/lumi-v0-qa-supervisor-report.json --out /Users/devin/Developer/meridian/.campaign-runtime/lumi-v0-qa-supervisor-report.json --json"
+      ],
+      "outputs": [
+        "qa-output/lumi-v0/lumi-v0-qdos/MPB32EEMD9N7KEERAU0NEEPSRP.json",
+        "qa-output/lumi-v0/lumi-v0-qdos/MPB35QW1KE8BSUFQ5I64O7D68C.json",
+        ".campaign-runtime/lumi-v0-qa-supervisor-report.json",
+        "qa-output/lumi-v0/lumi-v0-qdos/MPBDSVD38VJJMJCDCMFSSIJ1PQ.json",
+        "qa-output/lumi-v0/lumi-v0-qdos/MPBE5W8TKOACAF54VDEKSFH9J8.json"
+      ],
+      "blockers": [],
+      "warnings": [
+        {
+          "code": "browser_runtime_cors",
+          "message": "Browser QA warns on SDK Campaigns API/cart API CORS failures from local host."
+        },
+        {
+          "code": "deploy_preview_required",
+          "message": "Live multi-currency price switching, cart totals, and typed-card test orders need an allowlisted preview domain."
+        },
+        {
+          "code": "supervisor_browser_schema_gap",
+          "message": "Earlier next-campaigns-ops supervisor rejected public browser-runtime verdict family; non-browser verdict was required for supervisor triage."
+        }
+      ],
+      "evidence": {
+        "latest_browser_run_id": "MPBE5W8TKOACAF54VDEKSFH9J8",
+        "latest_browser_disposition": "ready_with_exceptions",
+        "latest_browser_counts": {
+          "pass": 37,
+          "warn": 1,
+          "fail": 0,
+          "manual_review": 0
+        },
+        "dashboard_url": "https://campaign-map.nextcommerce.com/qa?slug=lumi-v0-qdos&run=MPBE5W8TKOACAF54VDEKSFH9J8",
+        "latest_non_browser_run_id": "MPB35QW1KE8BSUFQ5I64O7D68C",
+        "latest_non_browser_disposition": "ready",
+        "latest_non_browser_counts": {
+          "pass": 26,
+          "fail": 0,
+          "warn": 0,
+          "manual_review": 0
+        },
+        "latest_supervisor_status": "ready",
+        "resolved_original_currency_blockers": 4,
+        "checkout_commerce_surface_repair": "bundle prices, Spreedly mount sizing, express checkout container sizing, injected order-summary row styling, and bump visual toggle repaired after deploy-preview review",
+        "latest_browser_base_url": "https://deploy-preview-12--meridian-skincare.netlify.app/lumi-v0/",
+        "preview_payment_surface": "card_mounts=1; cvv_mounts=1; spreedly_frames=2"
+      }
+    }
+  },
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mpaxqpb1_21",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_21\" to source file \"presell.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxqpb1-21, presell, presell-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpaxqpb1_22",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_22\" to source file \"landing.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxqpb1-22, landing-pdp, landing, landing-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpaxqpb1_23",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_23\" to source file \"checkout.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxqpb1-23, checkout, checkout-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpaxqpb1_24",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_24\" to source file \"upsell-1.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxqpb1-24, upsell, upsell-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpaxrhe5_86",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxrhe5_86\" to source file \"upsell-2.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxrhe5-86, upsell-2, upsell"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpaxqpb1_25",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_25\" to source file \"thank-you.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxqpb1-25, thank-you, thankyou, receipt, thankyou-1"
+      ]
+    },
+    {
+      "id": "dec_multi_currency_next_currency_policy",
+      "stage": "assembly",
+      "decision_type": "policy_normalization",
+      "decision": "removed page-level next-currency from the local Lumi CampaignSpec copy and patched Map Builder to only emit next-currency for effectively single-currency campaigns",
+      "confidence": "high",
+      "evidence": [
+        "campaign-spec-lumi-v0.json",
+        "/Users/devin/Developer/next-campaigns-ops/campaign-map-builder/app.jsx"
+      ]
+    }
+  ],
+  "evidence": [],
+  "blockers": [
+    {
+      "code": "next_currency_spec_conflict",
+      "message": "QA expects next-currency=USD on landing/checkout/upsell/upsell-2, but the recipe README says multi-currency pages must omit it."
+    }
+  ],
+  "warnings": [
+    {
+      "code": "campaign.allowed_domains_confirmed",
+      "message": "Allowed domains not confirmed; runtime SDK/test orders blocked on local host."
+    },
+    {
+      "code": "spec.sdk_hints.next-currency",
+      "message": "CampaignSpec exports next-currency=USD on multi-currency pages while recipe README requires no hardcoded next-currency meta."
+    },
+    {
+      "code": "deploy.preview_url",
+      "message": "No deploy preview URL; launch QA/test orders blocked."
+    },
+    {
+      "code": "multi_currency_meta_conflict",
+      "message": "Built pages intentionally omit next-currency so country/currency picker can remain runtime-driven; CampaignSpec/QA currently expect USD."
+    },
+    {
+      "code": "local_cors_runtime",
+      "message": "SDK API calls from http://127.0.0.1:4173 are blocked by CORS/allowed domain policy."
+    },
+    {
+      "code": "browser_runtime_cors",
+      "message": "Browser QA warns on SDK Campaigns API/cart API CORS failures from local host."
+    },
+    {
+      "code": "payment_mount_manual_review",
+      "message": "Card/Spreedly mounts not present because SDK failed to initialize under local CORS."
+    },
+    {
+      "code": "supervisor_browser_schema_gap",
+      "message": "next-campaigns-ops supervisor rejected public browser-runtime verdict family; non-browser verdict was required."
+    }
+  ],
+  "next": {
+    "stage": "clarify-or-spec-repair",
+    "owner": "Campaigns OS / Map Builder",
+    "action": "Decide whether multi-currency specs should omit next-currency meta tags or whether QA should stop treating missing next-currency as a blocker for multi-currency campaigns."
+  }
+}
