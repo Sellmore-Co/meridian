@@ -1,0 +1,264 @@
+[
+  {
+    "route": "/",
+    "viewport": "desktop",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/index-desktop.png",
+    "title": "3 Things Hurting Your Air Quality (That You Didn't Know) | Lumi",
+    "bodyTextLength": 3550,
+    "scrollHeight": 2357,
+    "images": [],
+    "overflowX": false
+  },
+  {
+    "route": "/landing/",
+    "viewport": "desktop",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/landing-desktop.png",
+    "title": "Lumi Air Purifier — Plug-in. Filter-free. Daily clean air.",
+    "bodyTextLength": 2523,
+    "scrollHeight": 2578,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      }
+    ],
+    "overflowX": false
+  },
+  {
+    "route": "/checkout/",
+    "viewport": "desktop",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/checkout-desktop.png",
+    "title": "Checkout · Lumi",
+    "bodyTextLength": 1187,
+    "scrollHeight": 2012,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      },
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      },
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      },
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/odor-vaporizer.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      },
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      },
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/odor-vaporizer.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      }
+    ],
+    "overflowX": false
+  },
+  {
+    "route": "/upsell/",
+    "viewport": "desktop",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/upsell-desktop.png",
+    "title": "Special offer · Lumi Foot Recovery",
+    "bodyTextLength": 758,
+    "scrollHeight": 1200,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/foot-massager.png",
+        "complete": true,
+        "naturalWidth": 1807,
+        "naturalHeight": 1200
+      }
+    ],
+    "overflowX": false
+  },
+  {
+    "route": "/upsell-2/",
+    "viewport": "desktop",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/upsell-2-desktop.png",
+    "title": "Final offer · Lumi Produce Cleaner",
+    "bodyTextLength": 674,
+    "scrollHeight": 1200,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/veg-cleaner.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      }
+    ],
+    "overflowX": false
+  },
+  {
+    "route": "/receipt/",
+    "viewport": "desktop",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/receipt-desktop.png",
+    "title": "Thank you · Lumi",
+    "bodyTextLength": 606,
+    "scrollHeight": 1200,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      }
+    ],
+    "overflowX": false
+  },
+  {
+    "route": "/",
+    "viewport": "mobile",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/index-mobile.png",
+    "title": "3 Things Hurting Your Air Quality (That You Didn't Know) | Lumi",
+    "bodyTextLength": 3550,
+    "scrollHeight": 3226,
+    "images": [],
+    "overflowX": false
+  },
+  {
+    "route": "/landing/",
+    "viewport": "mobile",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/landing-mobile.png",
+    "title": "Lumi Air Purifier — Plug-in. Filter-free. Daily clean air.",
+    "bodyTextLength": 2523,
+    "scrollHeight": 4620,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      }
+    ],
+    "overflowX": false
+  },
+  {
+    "route": "/checkout/",
+    "viewport": "mobile",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/checkout-mobile.png",
+    "title": "Checkout · Lumi",
+    "bodyTextLength": 1187,
+    "scrollHeight": 3175,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      },
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      },
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      },
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/odor-vaporizer.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      },
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      },
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/odor-vaporizer.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      }
+    ],
+    "overflowX": false
+  },
+  {
+    "route": "/upsell/",
+    "viewport": "mobile",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/upsell-mobile.png",
+    "title": "Special offer · Lumi Foot Recovery",
+    "bodyTextLength": 758,
+    "scrollHeight": 1622,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/foot-massager.png",
+        "complete": true,
+        "naturalWidth": 1807,
+        "naturalHeight": 1200
+      }
+    ],
+    "overflowX": false
+  },
+  {
+    "route": "/upsell-2/",
+    "viewport": "mobile",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/upsell-2-mobile.png",
+    "title": "Final offer · Lumi Produce Cleaner",
+    "bodyTextLength": 674,
+    "scrollHeight": 1285,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/veg-cleaner.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      }
+    ],
+    "overflowX": false
+  },
+  {
+    "route": "/receipt/",
+    "viewport": "mobile",
+    "status": 200,
+    "screenshot": "/Users/devin/Developer/meridian/qa-output/lumi-v0/screenshots/receipt-mobile.png",
+    "title": "Thank you · Lumi",
+    "bodyTextLength": 606,
+    "scrollHeight": 1699,
+    "images": [
+      {
+        "src": "http://127.0.0.1:4173/lumi-v0/products/air-purifier.png",
+        "complete": true,
+        "naturalWidth": 1000,
+        "naturalHeight": 1000
+      }
+    ],
+    "overflowX": false
+  }
+]

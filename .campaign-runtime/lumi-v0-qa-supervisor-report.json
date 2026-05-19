@@ -1,0 +1,81 @@
+{
+  "schema_version": "campaigns-os-qa-supervisor-report/v0",
+  "generated_at": "2026-05-18T10:53:29.501Z",
+  "status": "ready",
+  "identity": {
+    "map_id": "lumi-v0-qdos",
+    "public_route_slug": "lumi-v0",
+    "campaign_ref_id": 1596,
+    "spec_hash": "sha256:8510dcd20a1eaa34e91c4049c6be562e10329de35e9ca4f78480299e91b55d5d",
+    "verdict_run_id": "MPB35QW1KE8BSUFQ5I64O7D68C",
+    "verdict_disposition": "ready",
+    "target_repo": ".",
+    "output_dir": "src/lumi-v0",
+    "deploy_url": null
+  },
+  "inputs": {
+    "verdict_path": "/Users/devin/Developer/meridian/qa-output/lumi-v0/lumi-v0-qdos/MPB35QW1KE8BSUFQ5I64O7D68C.json",
+    "packet_path": "/Users/devin/Developer/meridian/campaign-runtime-lumi-v0.build.json",
+    "assembly_report_path": "/Users/devin/Developer/meridian/.campaign-runtime/lumi-v0-assembly-report.json",
+    "previous_report_path": "/Users/devin/Developer/meridian/.campaign-runtime/lumi-v0-qa-supervisor-report.json"
+  },
+  "summary": {
+    "assertions": {
+      "total": 26,
+      "pass": 26,
+      "fail": 0,
+      "warn": 0,
+      "skipped": 0,
+      "manual_review": 0,
+      "blocker_failures": 0
+    },
+    "issue_assertions": 0,
+    "repairable": 0,
+    "clarification_needed": 0,
+    "manual_handoff": 0
+  },
+  "progress": {
+    "previous_report_generated_at": "2026-05-18T08:31:42.955Z",
+    "previous_verdict_run_id": "MPAY3AVZTTNIK43HOOG47VVKFU",
+    "current_verdict_run_id": "MPB35QW1KE8BSUFQ5I64O7D68C",
+    "previous_blockers": 4,
+    "current_blockers": 0,
+    "blocker_delta": -4,
+    "resolved_issue_keys": [
+      "meta-tags.meta-page-mpaxqpb1-22-next-currency.page-mpaxqpb1-22",
+      "meta-tags.meta-page-mpaxqpb1-23-next-currency.page-mpaxqpb1-23",
+      "meta-tags.meta-page-mpaxqpb1-24-next-currency.page-mpaxqpb1-24",
+      "meta-tags.meta-page-mpaxrhe5-86-next-currency.page-mpaxrhe5-86"
+    ],
+    "new_issue_keys": [],
+    "unchanged_issue_keys": [],
+    "improved": true
+  },
+  "loop": {
+    "next_action": "final_review",
+    "stop_reason": null,
+    "max_repair_attempts": 2,
+    "attempts_used": 0,
+    "attempts_remaining": 2,
+    "repair_budget_exhausted": false,
+    "repair_queue": [],
+    "repair_tasks": [],
+    "clarification_questions": [],
+    "manual_handoffs": [],
+    "rerun_command": "campaigns-os qa run --packet /Users/devin/Developer/meridian/campaign-runtime-lumi-v0.build.json --base-url <deployed-base-url> --browser",
+    "stop_conditions": [
+      "Stop and ask the user when a repair would invent campaign intent, legal/support URLs, tracking IDs, offer codes, or attribution rules.",
+      "Stop when a transport/deploy failure prevents proving the live URL graph.",
+      "Stop after 2 repair attempts without reducing blocker count.",
+      "Do not run Playwright typed-card test orders unless Build Packet QA policy confirms allowed domains and sandbox card routing."
+    ]
+  },
+  "actions": [],
+  "repair_tasks": [],
+  "repair_attempts": [],
+  "clarification_questions": [],
+  "final_review": {
+    "ready_when": "A rerun verdict is ready or ready_with_exceptions with only accepted/manual exceptions.",
+    "blocked_when": "A rerun verdict still has blocker failures, unresolved clarification questions, or manual handoffs."
+  }
+}

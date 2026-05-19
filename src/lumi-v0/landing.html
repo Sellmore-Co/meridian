@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumi Air Purifier &mdash; Plug-in. Filter-free. Daily clean air.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lumi-primary: #2f8f7e;
+            --lumi-primary-dark: #1f4a47;
+            --lumi-surface: #f7faf8;
+            --lumi-text: #1a2826;
+            --lumi-text-soft: #4a5b58;
+            --lumi-border: #e2ebe8;
+            --lumi-highlight: #e8f3ef;
+            --lumi-accent: #d49b3a;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Manrope', system-ui, -apple-system, sans-serif; background: #fff; color: var(--lumi-text); margin: 0; -webkit-font-smoothing: antialiased; line-height: 1.55; }
+        .top-bar { background: var(--lumi-primary-dark); color: #fff; text-align: center; padding: 9px 12px; font-size: 13px; letter-spacing: 0.04em; font-weight: 500; }
+        .brand-bar { background: #fff; border-bottom: 1px solid var(--lumi-border); padding: 16px 22px; display: flex; justify-content: space-between; align-items: center; }
+        .wordmark { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em; color: var(--lumi-primary-dark); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .wordmark::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--lumi-primary); display: inline-block; }
+        .brand-tag { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lumi-text-soft); font-weight: 600; }
+        .hero { background: linear-gradient(180deg, var(--lumi-surface) 0%, #fff 100%); padding: 56px 22px 48px; }
+        .hero-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        @media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; } }
+        .hero-eyebrow { color: var(--lumi-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; }
+        .hero-title { font-size: 44px; font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 18px; color: var(--lumi-text); }
+        .hero-sub { font-size: 18px; line-height: 1.55; color: var(--lumi-text-soft); margin: 0 0 24px; max-width: 480px; }
+        .hero-stars { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; font-size: 14px; color: var(--lumi-text-soft); }
+        .hero-stars .stars { color: var(--lumi-accent); font-size: 16px; letter-spacing: 1px; }
+        .hero-cta { display: inline-block; background: var(--lumi-primary); color: #fff; text-decoration: none; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 999px; letter-spacing: 0.02em; transition: background 0.15s; }
+        .hero-cta:hover { background: var(--lumi-primary-dark); }
+        .hero-trust { margin-top: 16px; font-size: 13px; color: var(--lumi-text-soft); }
+        .hero-image { background: var(--lumi-highlight); border-radius: 18px; padding: 36px; display: flex; align-items: center; justify-content: center; min-height: 380px; }
+        .hero-image img { max-width: 100%; max-height: 360px; height: auto; object-fit: contain; }
+        @media (max-width: 600px) { .hero-title { font-size: 32px; } }
+
+        .strip { background: var(--lumi-primary-dark); color: #fff; padding: 28px 22px; }
+        .strip-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+        @media (max-width: 820px) { .strip-grid { grid-template-columns: repeat(2, 1fr); } }
+        .strip-item { font-size: 13px; color: rgba(255,255,255,0.85); }
+        .strip-item strong { display: block; color: #fff; font-size: 15px; font-weight: 700; margin-bottom: 4px; letter-spacing: 0.02em; }
+
+        .section { padding: 64px 22px; }
+        .section-inner { max-width: 1000px; margin: 0 auto; }
+        .section h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 14px; text-align: center; }
+        .section .lead { font-size: 17px; line-height: 1.6; color: var(--lumi-text-soft); text-align: center; max-width: 640px; margin: 0 auto 40px; }
+
+        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        @media (max-width: 820px) { .features { grid-template-columns: 1fr; } }
+        .feature { background: var(--lumi-surface); border: 1px solid var(--lumi-border); border-radius: 12px; padding: 28px 22px; }
+        .feature .icon { width: 44px; height: 44px; border-radius: 50%; background: var(--lumi-highlight); color: var(--lumi-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; margin-bottom: 14px; }
+        .feature h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px; color: var(--lumi-text); letter-spacing: -0.01em; }
+        .feature p { font-size: 15px; line-height: 1.55; color: var(--lumi-text-soft); margin: 0; }
+
+        .howit { background: var(--lumi-surface); }
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+        @media (max-width: 820px) { .steps { grid-template-columns: 1fr; } }
+        .step { background: #fff; border: 1px solid var(--lumi-border); border-radius: 12px; padding: 24px; text-align: center; }
+        .step .num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--lumi-primary); color: #fff; font-weight: 700; margin-bottom: 12px; }
+        .step h3 { font-size: 16px; font-weight: 700; margin: 0 0 6px; }
+        .step p { font-size: 14px; color: var(--lumi-text-soft); margin: 0; }
+
+        .reviews { background: #fff; }
+        .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        @media (max-width: 820px) { .review-grid { grid-template-columns: 1fr; } }
+        .review { background: var(--lumi-surface); border: 1px solid var(--lumi-border); border-radius: 12px; padding: 24px; }
+        .review .stars { color: var(--lumi-accent); font-size: 15px; letter-spacing: 1px; margin-bottom: 10px; }
+        .review p { font-size: 15px; color: var(--lumi-text); margin: 0 0 12px; line-height: 1.55; }
+        .review .who { font-size: 13px; color: var(--lumi-text-soft); font-weight: 600; }
+
+        .final { background: var(--lumi-primary-dark); color: #fff; padding: 64px 22px; text-align: center; }
+        .final h2 { color: #fff; font-size: 32px; font-weight: 800; margin: 0 0 12px; letter-spacing: -0.02em; }
+        .final p { color: rgba(255,255,255,0.8); font-size: 17px; margin: 0 0 26px; }
+        .final .cta-final { display: inline-block; background: #fff; color: var(--lumi-primary-dark); text-decoration: none; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 999px; }
+        .final .cta-final:hover { background: var(--lumi-highlight); }
+
+        footer { background: var(--lumi-surface); border-top: 1px solid var(--lumi-border); padding: 36px 22px; color: var(--lumi-text-soft); font-size: 13px; }
+        .footer-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+        .footer-inner a { color: var(--lumi-text-soft); text-decoration: none; margin-left: 14px; }
+        .footer-inner a:hover { color: var(--lumi-primary); }
+    </style>
+    <meta name="next-funnel" content="Lumi v0">
+    <meta name="next-page-type" content="product">
+    <link rel="dns-prefetch" href="//campaigns.apps.29next.com">
+    <link rel="dns-prefetch" href="//cdn-countries.muddy-wind-c7ca.workers.dev">
+    <script src="/lumi-v0/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/loader.js" type="module"></script>
+</head>
+<body>
+
+<div class="top-bar">Daily clean. Daily calm. &middot; Tracked international shipping &middot; 30-day guarantee</div>
+<div class="brand-bar">
+    <a href="/lumi-v0/landing/" class="wordmark">Lumi</a>
+    <span class="brand-tag">Daily wellness, plugged in.</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-grid">
+        <div>
+            <div class="hero-eyebrow">Lumi Air Purifier &middot; Ionic Plug-in</div>
+            <h1 class="hero-title">Cleaner air. No filters. No noise. Just plug it in.</h1>
+            <p class="hero-sub">The Lumi ionic plug-in purifier silently neutralizes airborne dust, allergens, pet dander, and cooking residues &mdash; no replacement filters, no fan whirr, no monthly subscription.</p>
+            <div class="hero-stars">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span>4.8/5 from verified buyers</span>
+            </div>
+            <a href="/lumi-v0/checkout/" class="hero-cta">Get the Lumi Set &rarr;</a>
+            <div class="hero-trust">Free returns within 30 days &middot; Encrypted secure checkout</div>
+        </div>
+        <div class="hero-image">
+            <img src="/lumi-v0/products/air-purifier.png" alt="Lumi Air Purifier &mdash; ionic plug-in unit">
+        </div>
+    </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="strip">
+    <div class="strip-grid">
+        <div class="strip-item"><strong>Filter-free</strong>Zero ongoing cost</div>
+        <div class="strip-item"><strong>Silent operation</strong>No fan, no noise</div>
+        <div class="strip-item"><strong>Plug &amp; go</strong>Sets up in 60 seconds</div>
+        <div class="strip-item"><strong>30-day guarantee</strong>Return for a full refund</div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+    <div class="section-inner">
+        <h2>What it actually does</h2>
+        <p class="lead">No marketing fluff. Here's what changes in your home after a week of running the Lumi purifier in your most-used room.</p>
+        <div class="features">
+            <div class="feature">
+                <div class="icon">&#10003;</div>
+                <h3>Neutralizes airborne particles</h3>
+                <p>Negative ions bind to dust, pollen, dander, and smoke particulates and drop them out of the breathable air zone.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#10003;</div>
+                <h3>Reduces lingering odors</h3>
+                <p>Cooking smells, pet odor, and stale air clear noticeably faster &mdash; without adding fragrance or VOCs back into the room.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#10003;</div>
+                <h3>Runs on under 5W</h3>
+                <p>Leave it plugged in 24/7. Annual electricity cost is negligible &mdash; less than a single replacement filter on a traditional purifier.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section howit">
+    <div class="section-inner">
+        <h2>Set it up in 60 seconds</h2>
+        <p class="lead">Genuinely. There is no app, no pairing, no calibration.</p>
+        <div class="steps">
+            <div class="step"><div class="num">1</div><h3>Plug it in</h3><p>Any standard wall outlet. The unit ships with the correct plug for your region.</p></div>
+            <div class="step"><div class="num">2</div><h3>Place it in a high-traffic room</h3><p>Kitchen, entryway, or bedroom. Coverage zone is up to 30m&sup2;.</p></div>
+            <div class="step"><div class="num">3</div><h3>Forget about it</h3><p>The indicator light tells you it's running. There's nothing else to do. No filter to replace.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews">
+    <div class="section-inner">
+        <h2>What people who actually use it say</h2>
+        <p class="lead">Verified buyers, real names, no incentive offered for the review.</p>
+        <div class="review-grid">
+            <div class="review">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"I have two cats and the air in my flat used to be noticeable to guests within ten seconds. Six weeks in &mdash; nobody mentions it anymore. Zero noise, which is what sold me."</p>
+                <div class="who">&mdash; Helena R., verified buyer</div>
+            </div>
+            <div class="review">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"Bought one for my mother who has dust allergies. She rang me a week later asking if I'd send another for the kitchen. That's all the review I can offer."</p>
+                <div class="who">&mdash; James P., verified buyer</div>
+            </div>
+            <div class="review">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <p>"Took about a week before I noticed the difference. Once I noticed it, I couldn't un-notice it. Now it lives plugged in beside the stove permanently."</p>
+                <div class="who">&mdash; Marta L., verified buyer</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+    <h2>Try Lumi for 30 days</h2>
+    <p>If it doesn't measurably change the air in your home, return it for a full refund. Nothing to ship back if you keep it.</p>
+    <a href="/lumi-v0/checkout/" class="cta-final">Get the Lumi Set &rarr;</a>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <div>&copy; 2026 Lumi. Daily clean. Daily calm.</div>
+        <div>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

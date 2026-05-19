@@ -1,0 +1,483 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MPBDSVD38VJJMJCDCMFSSIJ1PQ",
+  "campaign_slug": "lumi-v0-qdos",
+  "campaign_ref_id": 1596,
+  "spec_version": "4.3",
+  "spec_hash": "sha256:8510dcd20a1eaa34e91c4049c6be562e10329de35e9ca4f78480299e91b55d5d",
+  "started_at": "2026-05-18T15:51:18.470Z",
+  "completed_at": "2026-05-18T15:51:48.752Z",
+  "runtime": "campaigns-os-node-qa@0.1.0-alpha.0",
+  "operator": "devin@local",
+  "disposition": "ready_with_exceptions",
+  "assertions": [
+    {
+      "id": "http:page_mpaxqpb1_21",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:4173/lumi-v0/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_21:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:4173/lumi-v0/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_21:next",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:4173/lumi-v0/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/landing/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_22",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_22:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_22:next",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/checkout/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_23",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "checkout",
+      "actual": "checkout"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-predictive-address",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "/lumi-v0/upsell/",
+      "actual": "/lumi-v0/upsell/"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_23:next",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/upsell/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_24",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-prevent-back-navigation",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "/lumi-v0/upsell-2/",
+      "actual": "/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "/lumi-v0/upsell-2/",
+      "actual": "/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_24:accept",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_24:decline",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "http:page_mpaxrhe5_86",
+      "family": "funnel-flow",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/lumi-v0/receipt/",
+      "actual": "/lumi-v0/receipt/"
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/lumi-v0/receipt/",
+      "actual": "/lumi-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mpaxrhe5_86:accept",
+      "family": "funnel-flow",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/receipt/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mpaxrhe5_86:decline",
+      "family": "funnel-flow",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:4173/lumi-v0/receipt/",
+      "actual": "http://127.0.0.1:4173/lumi-v0/receipt/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_25",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_25",
+      "url": "http://127.0.0.1:4173/lumi-v0/receipt/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_25:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_25",
+      "url": "http://127.0.0.1:4173/lumi-v0/receipt/",
+      "status": "pass",
+      "expected": "receipt",
+      "actual": "receipt"
+    },
+    {
+      "id": "browser-load:page_mpaxqpb1_21",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:4173/lumi-v0/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "3 Things Hurting Your Air Quality (That You Didn't Know) | Lumi",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mpaxqpb1_22",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Lumi Air Purifier — Plug-in. Filter-free. Daily clean air.",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-console-errors:page_mpaxqpb1_22",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "14 issue(s)",
+      "evidence": {
+        "messages": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        ]
+      }
+    },
+    {
+      "id": "browser-request-failures:page_mpaxqpb1_22",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:4173/lumi-v0/landing/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "3 failed request(s)",
+      "evidence": {
+        "failed_requests": [
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-load:page_mpaxqpb1_23",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Checkout · Lumi",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-payment-surface:page_mpaxqpb1_23",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:4173/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "rendered credit-card payment field mounts",
+      "actual": "card_mounts=1; cvv_mounts=1; spreedly_frames=0",
+      "evidence": {
+        "card_number_selector": "[data-next-checkout-field=\"cc-number\"], #spreedly-number",
+        "cvv_selector": "[data-next-checkout-field=\"cvv\"], #spreedly-cvv",
+        "spreedly_frame_urls": [],
+        "next_step": "Run --test-order with allowlist/sandbox confirmation for typed-card checkout proof."
+      }
+    },
+    {
+      "id": "browser-load:page_mpaxqpb1_24",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Special offer · Lumi Foot Recovery",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpaxqpb1_24:accept",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "http://127.0.0.1:4173/lumi-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpaxqpb1_24:decline",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "http://127.0.0.1:4173/lumi-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-console-errors:page_mpaxqpb1_24",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "5 issue(s)",
+      "evidence": {
+        "messages": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)"
+        ]
+      }
+    },
+    {
+      "id": "browser-request-failures:page_mpaxqpb1_24",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "1 failed request(s)",
+      "evidence": {
+        "failed_requests": [
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-load:page_mpaxrhe5_86",
+      "family": "browser-runtime",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Final offer · Lumi Produce Cleaner",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpaxrhe5_86:accept",
+      "family": "browser-runtime",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "http://127.0.0.1:4173/lumi-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpaxrhe5_86:decline",
+      "family": "browser-runtime",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:4173/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "http://127.0.0.1:4173/lumi-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-load:page_mpaxqpb1_25",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_25",
+      "url": "http://127.0.0.1:4173/lumi-v0/receipt/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Thank you · Lumi",
+        "body_present": true
+      }
+    }
+  ],
+  "test_orders": [],
+  "exceptions": []
+}
