@@ -105,6 +105,16 @@ body.travel-care-checkout {
   border-color: #2cbead;
 }
 
+.bump-card:not(.next-active):not(.next-selected):not(.os--active) .checkbox__icon {
+  opacity: 0;
+}
+
+.bump-card.next-active .checkbox__icon,
+.bump-card.next-selected .checkbox__icon,
+.bump-card.os--active .checkbox__icon {
+  opacity: 1;
+}
+
 .exit-intent-popup__dialog {
   border-radius: 18px;
   overflow: hidden;
