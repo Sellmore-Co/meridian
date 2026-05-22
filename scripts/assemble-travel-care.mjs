@@ -34,6 +34,8 @@ function frontmatter({ title, permalink }) {
 function rootAssets(html) {
   return html
     .replace(/(href|src)="assets\//g, `$1="/travel-care/`)
+    .replace(/srcset="assets\//g, `srcset="/travel-care/`)
+    .replace(/srcset="images\//g, `srcset="/travel-care/landing/images/`)
     .replace(/campaign-cart@v0\.4\.x/g, "campaign-cart@v0.4.20")
     .replace(/href="landing\.html"/g, `href="${routes.landing}"`)
     .replace(/href="checkout\.html"/g, `href="${routes.checkout}"`)
