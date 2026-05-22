@@ -1,0 +1,246 @@
+{
+  "schema_version": "campaign-runtime-assembly-report/v0",
+  "run_id": "asm_1779424559644",
+  "generated_at": "2026-05-22T04:35:59.644Z",
+  "status": "assembled_with_warnings",
+  "identity": {
+    "map_id": "travel-oral-care-bundle-tez-kx4f",
+    "public_route_slug": "travel-care",
+    "campaign_directory": "travel-care",
+    "live_url_path": "/travel-care/",
+    "spec_hash": "435ffaaec64b6c528a7e17e5ce5c8497e9e8e97d4a437e899aae1cc2783230ce"
+  },
+  "inputs": {
+    "packet_path": "./campaign-runtime-travel-care.build.json",
+    "context_path": ".campaign-runtime/travel-care-build-context.json",
+    "spec_path": "../../Downloads/campaign-spec-travel-oral-care-bundle-tez.json",
+    "source": {
+      "kind": "html_funnel",
+      "root": "../designer/funnel-designs/travel-oral-care-bundle"
+    },
+    "target_repo": "."
+  },
+  "template_family": {
+    "value": "limos",
+    "locked": true,
+    "locked_by": "operator_flag",
+    "commerce_catalog_version": null,
+    "candidates": []
+  },
+  "stages": {
+    "prepare_build": {
+      "stage": "prepare_build",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [
+        "./campaign-runtime-travel-care.build.json",
+        ".campaign-runtime/travel-care-build-context.json",
+        ".campaign-runtime/travel-care-assembly-report.json"
+      ],
+      "commands": [
+        "npm run campaigns-os -- start --spec /Users/devin/Downloads/campaign-spec-travel-oral-care-bundle-tez.json --source /Users/devin/Developer/designer/funnel-designs/travel-oral-care-bundle --target /Users/devin/Developer/meridian --template-family limos --public-route-slug travel-care --output-dir src/travel-care --live-url-path /travel-care/ --out /Users/devin/Developer/meridian/campaign-runtime-travel-care.build.json --context-out /Users/devin/Developer/meridian/.campaign-runtime/travel-care-build-context.json --report-out /Users/devin/Developer/meridian/.campaign-runtime/travel-care-assembly-report.json --doctor-out /Users/devin/Developer/meridian/.campaign-runtime/travel-care-doctor-output.json --json"
+      ],
+      "blockers": [],
+      "warnings": []
+    },
+    "doctor": {
+      "stage": "doctor",
+      "status": "completed_with_warnings",
+      "inputs": [
+        "./campaign-runtime-travel-care.build.json",
+        ".campaign-runtime/travel-care-build-context.json",
+        ".campaign-runtime/travel-care-assembly-report.json"
+      ],
+      "outputs": [],
+      "commands": [
+        "npm run campaigns-os -- doctor --packet /Users/devin/Developer/meridian/campaign-runtime-travel-care.build.json --context /Users/devin/Developer/meridian/.campaign-runtime/travel-care-build-context.json --report /Users/devin/Developer/meridian/.campaign-runtime/travel-care-assembly-report.json --json"
+      ],
+      "blockers": [],
+      "warnings": [
+        "Doctor status ready_with_warnings. Remaining gates are deploy/allowlist/test-orders plus generic limos demo-ref warnings for real Campaigns API refs 1/2/3/4/5/6."
+      ]
+    },
+    "setup": {
+      "stage": "setup",
+      "status": "skipped",
+      "inputs": [],
+      "outputs": [],
+      "commands": [
+        "node scripts/assemble-travel-care.mjs",
+        "npm run build"
+      ],
+      "blockers": [],
+      "warnings": []
+    },
+    "assembly": {
+      "stage": "assembly",
+      "status": "completed_with_warnings",
+      "inputs": [
+        "../../Downloads/campaign-spec-travel-oral-care-bundle-tez.json",
+        "../designer/funnel-designs/travel-oral-care-bundle"
+      ],
+      "outputs": [
+        "src/travel-care/",
+        "_data/campaigns.json",
+        "scripts/assemble-travel-care.mjs"
+      ],
+      "commands": [],
+      "blockers": [
+        "Runtime SDK verification is blocked on localhost until the campaign domain is allowlisted for the Campaigns API key.",
+        "campaign-cart@v0.4.20 CDN loader currently throws ReferenceError: Cannot access 'create' before initialization from dist/chunks/utils-eoibqppS.js. The generated campaign keeps the CampaignSpec-requested 0.4.20 version and records this as a dogfood blocker."
+      ],
+      "warnings": [
+        "Source checkout contained PayPal UI, but the CampaignSpec/store payment methods only expose apple_pay, google_pay, and bankcard; PayPal was removed from the generated checkout.",
+        "The checkout source did not include a main Water Flosser bundle selector, so assembly added a spec-driven package 1 bundle before the UV case bump.",
+        "Checkout exit-intent is wired from CampaignSpec offer ref 5 / code EXIT10 using data-exit-intent-action=\"apply-coupon\" and cart.hasCoupon(\"EXIT10\") active-state copy."
+      ]
+    },
+    "polish": {
+      "stage": "polish",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "deploy": {
+      "stage": "deploy",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "qa": {
+      "stage": "qa",
+      "status": "blocked",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [
+        "No preview or production URL is available yet.",
+        "SDK-driven test orders are disabled until the deployed domain is allowlisted and sandbox card routing is confirmed."
+      ],
+      "warnings": []
+    }
+  },
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mpfwhs0o_29",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_29\" to source file \"presell.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-29, presell, try-dogfoodprep-waterflosser-presell, presell-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_30",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_30\" to source file \"landing.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-30, landing-pdp, landing, try-dogfoodprep-waterflosser-landing, landing-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_31",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_31\" to source file \"checkout.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-31, checkout, try-dogfoodprep-waterflosser-checkout, checkout-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_32",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_32\" to source file \"upsell-1.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-32, upsell, try-dogfoodprep-waterflosser-oto-sonic, oto-sonic, upsell-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwnwyf_674",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwnwyf_674\" to source file \"upsell-2.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwnwyf-674, upsell-2, upsell, try-dogfoodprep-waterflosser-oto-kit, oto-kit"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_33",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_33\" to source file \"thank-you.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-33, thank-you, thankyou, try-dogfoodprep-waterflosser-receipt, receipt, thankyou-1"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "assembly",
+      "type": "build",
+      "command": "npm run build",
+      "result": "passed; built 73 pages including 6 travel-care routes under _site/travel-care/try.dogfoodprep/waterflosser/"
+    },
+    {
+      "stage": "assembly",
+      "type": "doctor",
+      "command": "npm run campaigns-os -- doctor --packet /Users/devin/Developer/meridian/campaign-runtime-travel-care.build.json --context /Users/devin/Developer/meridian/.campaign-runtime/travel-care-build-context.json --report /Users/devin/Developer/meridian/.campaign-runtime/travel-care-assembly-report.json --json",
+      "result": "ok true; ready_with_warnings; built-output missing script/meta warnings cleared after asset-path fix"
+    },
+    {
+      "stage": "assembly",
+      "type": "browser_smoke",
+      "target": "http://127.0.0.1:8097/travel-care/try.dogfoodprep/waterflosser/checkout/",
+      "result": "config.js, shared.css, product images, main bundle selector, no PayPal payment method, and EXIT10 template action present. Console shows expected localhost CORS plus campaign-cart@v0.4.20 loader ReferenceError."
+    },
+    {
+      "stage": "assembly",
+      "type": "browser_screenshot",
+      "target": "/tmp/travel-care-checkout.png",
+      "result": "Checkout visual smoke captured around the spec-driven Water Flosser bundle and UV case bump."
+    },
+    {
+      "stage": "assembly",
+      "type": "browser_screenshot",
+      "target": "/tmp/travel-care-landing-mobile.png",
+      "result": "Landing mobile visual smoke captured successfully."
+    }
+  ],
+  "blockers": [],
+  "warnings": [
+    {
+      "code": "SOURCE_COMMERCE_REVIEW",
+      "stage": "assembly",
+      "message": "Source HTML contains possible commerce zones. Preserve catalog-owned runtime surfaces."
+    },
+    {
+      "code": "SDK_CDN_RUNTIME",
+      "stage": "assembly",
+      "message": "campaign-cart@v0.4.20 loads from CDN but throws ReferenceError: Cannot access 'create' before initialization before SDK readiness on localhost."
+    },
+    {
+      "code": "LOCALHOST_CORS",
+      "stage": "qa",
+      "message": "Campaigns API calls are blocked from http://127.0.0.1:8097 until an allowlisted deployed preview is available."
+    }
+  ],
+  "next": {
+    "stage": "polish",
+    "owner": "next-campaigns-polish",
+    "action": "Run a focused polish pass on the assembled Travel Care pages, then deploy a preview before Campaigns OS browser QA."
+  }
+}

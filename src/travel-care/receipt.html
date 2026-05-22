@@ -1,0 +1,136 @@
+---
+title: "DentaStream Order Confirmation"
+permalink: /travel-care/try.dogfoodprep/waterflosser/receipt/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order confirmed — DentaStream</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/travel-care/landing/images/favicon.png">
+
+  <!-- Campaign Configuration -->
+  <script src="/travel-care/config.js"></script>
+
+  <!-- NEXT Metatags -->
+  <meta name="next-funnel" content="travel-oral-care-bundle">
+  <meta name="next-page-type" content="receipt">
+
+  <!-- Campaign Cart SDK -->
+  <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/loader.js" type="module"></script>
+
+  <link rel="stylesheet" href="/travel-care/shared.css">
+</head>
+<body>
+
+<div class="ds-announcement"><strong>Order confirmed.</strong> A receipt is on its way to your inbox.</div>
+
+<header class="ds-header">
+  <div class="ds-header__inner">
+    <span class="ds-header__logo">Denta<span>Stream</span></span>
+  </div>
+</header>
+
+<main class="ds-container ds-container--md" style="padding-top: 2rem; padding-bottom: 3rem;">
+
+  <div style="text-align:center;">
+    <div class="ds-receipt-check" aria-hidden="true">✓</div>
+    <p class="ds-muted" style="margin-bottom: 0.25rem;">Confirmation #<span data-next-display="order.number">—</span></p>
+    <h1 class="ds-h1" style="font-size: 2rem;">Thank you, <span data-next-display="order.customer.name">Customer</span></h1>
+    <p style="color: var(--ds-body); max-width: 500px; margin: 0.5rem auto;">
+      Your DentaStream order is in. You'll get an email with tracking once it ships — usually within 1 business day from our Ohio warehouse.
+    </p>
+  </div>
+
+  <div class="ds-card" style="margin-top: 2rem;">
+    <h2 class="ds-h2">Your order</h2>
+
+    <div data-next-cart-summary>
+      <template>
+        <div data-summary-lines>
+          <template>
+            <div data-package-id="{item.packageId}" class="ds-cart-item">
+              <img src="{item.image}" alt="{item.name}" class="ds-cart-item__img">
+              <div>
+                <div class="ds-cart-item__name">{item.name}</div>
+                <div class="ds-cart-item__qty">Qty {item.quantity}</div>
+              </div>
+              <div class="ds-cart-item__price">{item.price}</div>
+            </div>
+          </template>
+        </div>
+        <div class="ds-summary-line"><span>Subtotal</span><span>{subtotal}</span></div>
+        <div class="ds-summary-line"><span>Shipping</span><span>{shipping}</span></div>
+        <div data-next-show="cart.hasDiscounts" style="display:none">
+          <div class="ds-summary-line" style="color:var(--ds-success); font-weight:600;">
+            <span>You saved</span><span>{discounts}</span>
+          </div>
+        </div>
+        <div class="ds-summary-line ds-summary-line--total">
+          <span>Total</span><span>{currency} {total}</span>
+        </div>
+      </template>
+    </div>
+
+    <div class="ds-receipt-grid">
+      <div>
+        <div class="ds-receipt-section">
+          <div class="ds-receipt-section__label">Contact</div>
+          <div class="ds-receipt-section__value" data-next-display="order.customer.email">—</div>
+        </div>
+        <div class="ds-receipt-section">
+          <div class="ds-receipt-section__label">Ships to</div>
+          <div class="ds-receipt-section__value">
+            <div data-next-display="order.customer.name">—</div>
+            <div data-next-display="order.shippingAddress.line1">—</div>
+            <div data-next-display="order.shippingAddress.line2"></div>
+            <div>
+              <span data-next-display="order.shippingAddress.city">—</span>,
+              <span data-next-display="order.shippingAddress.state">—</span>
+              <span data-next-display="order.shippingAddress.postcode">—</span>
+            </div>
+            <div data-next-display="order.shippingAddress.country">—</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="ds-receipt-section">
+          <div class="ds-receipt-section__label">Shipping method</div>
+          <div class="ds-receipt-section__value" data-next-display="order.shippingMethod">Standard ground</div>
+        </div>
+        <div class="ds-receipt-section">
+          <div class="ds-receipt-section__label">Payment method</div>
+          <div class="ds-receipt-section__value" data-next-display="order.paymentMethod">Credit card</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-card" style="margin-top: 1rem;">
+    <h3 class="ds-h3">What's next</h3>
+    <ol style="padding-left: 1.2rem; margin: 0; font-size: 0.95rem; color: var(--ds-body); line-height: 1.7;">
+      <li>You'll get a shipping confirmation email with tracking within 1 business day.</li>
+      <li>Most orders arrive in 2–4 business days via USPS or FedEx Ground.</li>
+      <li>Charge your DentaStream for 4 hours before first use — full battery lasts 14+ days.</li>
+      <li>Questions? Reply to your confirmation email — we read every one.</li>
+    </ol>
+  </div>
+
+  <div style="text-align: center; margin-top: 1.5rem;">
+    <a href="/travel-care/try.dogfoodprep/waterflosser/landing/" class="ds-btn ds-btn--ghost" style="display: inline-flex; width: auto;">Continue shopping</a>
+  </div>
+</main>
+
+<footer class="ds-footer">
+  <div>© 2026 DentaStream. All rights reserved.</div>
+  <div class="ds-footer__links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Returns</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

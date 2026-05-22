@@ -1,0 +1,165 @@
+---
+title: "DentaStream Whitening Kit Offer"
+permalink: /travel-care/try.dogfoodprep/waterflosser/oto-kit/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One last thing — at-home whitening | DentaStream</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/travel-care/landing/images/favicon.png">
+
+  <!-- Campaign Configuration -->
+  <script src="/travel-care/config.js"></script>
+
+  <!-- NEXT Metatags -->
+  <meta name="next-funnel" content="travel-oral-care-bundle">
+  <meta name="next-upsell-accept-url" content="/travel-care/try.dogfoodprep/waterflosser/receipt/">
+  <meta name="next-upsell-decline-url" content="/travel-care/try.dogfoodprep/waterflosser/receipt/">
+  <meta name="next-page-type" content="upsell">
+  <meta name="next-currency" content="USD">
+
+  <!-- Campaign Cart SDK -->
+  <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/loader.js" type="module"></script>
+
+  <link rel="stylesheet" href="/travel-care/shared.css">
+</head>
+<body>
+
+<div class="ds-upsell-banner">FINAL ADD-ON — DO NOT CLOSE THIS PAGE</div>
+
+<header class="ds-header">
+  <div class="ds-header__inner">
+    <span class="ds-header__logo">Denta<span>Stream</span></span>
+    <div class="ds-header__trust">
+      <span>Step 3 of 3</span>
+    </div>
+  </div>
+</header>
+
+<main class="ds-container">
+  <div style="text-align:center; padding: 1.5rem 0 0.5rem;">
+    <h1 class="ds-h1">One last thing — a cosmetic finish</h1>
+    <p style="font-size: 1.05rem; color: var(--ds-body); max-width: 640px; margin: 0.5rem auto;">
+      Add the <strong>UV Tooth Whitening Kit</strong> for a gentle at-home polish.
+      <strong style="color: var(--ds-danger);"><span data-next-display="bundle.upsell-bundle.discountPercentage" data-next-format="percentage">50%</span> off</strong>
+      — this offer ends when you leave this page.
+    </p>
+  </div>
+
+  <!-- Display-only selector OUTSIDE offer -->
+  <div data-next-bundle-selector data-next-selector-id="upsell-bundle-1x" style="display:none">
+    <div role="button"
+         data-next-bundle-card
+         data-next-bundle-id="upsell-bundle-1x-card"
+         data-next-bundle-items='[{"packageId":4,"quantity":1}]'
+         data-next-bundle-vouchers='["UVKIT"]'
+         data-next-selected="true"
+         class="ds-tier-card next-selected"></div>
+  </div>
+
+  <div class="ds-upsell-wrapper" data-next-upsell="offer" data-next-await>
+
+    <!-- HIDDEN bundle selector — state machine for pill toggle (Approach B) -->
+    <div data-next-bundle-selector data-next-upsell-context data-next-selector-id="upsell-bundle" style="display:none">
+      <div role="button"
+           data-next-bundle-card
+           data-next-bundle-id="upsell-bundle-1x"
+           data-next-bundle-items='[{"packageId":4,"quantity":1}]'
+           data-next-bundle-vouchers='["UVKIT"]'
+           data-next-selected="true"
+           class="ds-tier-card next-selected"></div>
+      <div role="button"
+           data-next-bundle-card
+           data-next-bundle-id="upsell-bundle-2x"
+           data-next-bundle-items='[{"packageId":4,"quantity":2}]'
+           data-next-bundle-vouchers='["UVKIT"]'
+           class="ds-tier-card"></div>
+      <div role="button"
+           data-next-bundle-card
+           data-next-bundle-id="upsell-bundle-3x"
+           data-next-bundle-items='[{"packageId":4,"quantity":3}]'
+           data-next-bundle-vouchers='["UVKIT"]'
+           class="ds-tier-card"></div>
+    </div>
+
+    <div class="ds-upsell">
+      <div class="ds-upsell__img">
+        <img src="/travel-care/products/uv-whitening-kit.png" alt="UV Tooth Whitening Kit">
+      </div>
+
+      <div>
+        <h2 class="ds-h2" style="font-size: 1.5rem;">
+          <span data-next-display="package.4.name">UV Tooth Whitening Kit</span>
+        </h2>
+        <p style="color: var(--ds-body); font-size: 0.95rem;">
+          Cosmetic-grade gel and a UV light mouthpiece for a gentler at-home finish.
+          Use 1–2 times a week between cleanings. Not a medical treatment — just a polish that
+          works well alongside the rest of your routine.
+        </p>
+
+        <ul style="padding-left: 1.1rem; font-size: 0.92rem; line-height: 1.7; color: var(--ds-body);">
+          <li>Three single-use gel applications per kit</li>
+          <li>UV light mouthpiece, USB-charged</li>
+          <li>Designed for sensitive teeth — no peroxide burn</li>
+          <li>Travels well: kit fits in a standard toiletry bag</li>
+        </ul>
+
+        <p class="ds-h3" style="margin-top: 1rem;">Select quantity</p>
+
+        <!-- Compact pill selector — wired to hidden bundle cards via initBundleQtyToggle -->
+        <div class="ds-pill-row" data-bundle-qty-for="upsell-bundle">
+          <div data-bundle-qty-btn="1" class="ds-pill next-selected">1</div>
+          <div data-bundle-qty-btn="2" class="ds-pill">2</div>
+          <div data-bundle-qty-btn="3" class="ds-pill">3</div>
+        </div>
+
+        <div class="ds-summary-line">
+          <span class="ds-muted">Retail</span>
+          <span style="text-decoration:line-through" data-next-display="bundle.upsell-bundle.originalPrice" data-next-format="currency">$69.98</span>
+        </div>
+        <div class="ds-summary-line ds-summary-line--total" style="margin-top: 0; border-top: none; padding-top: 0;">
+          <span>Your price</span>
+          <span data-next-display="bundle.upsell-bundle.price" data-next-format="currency">$34.99</span>
+        </div>
+
+        <a data-next-upsell-action="add" href="#" class="ds-btn" style="margin-top: 1rem;" pb-animate="pulse-upsell">
+          <span>Yes — add the whitening kit</span>
+        </a>
+
+        <a data-next-upsell-action="skip" href="#" class="ds-decline">
+          No thanks, take me to my order confirmation
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="ds-footer">
+  <div>© 2026 DentaStream. All rights reserved.</div>
+</footer>
+
+<script>
+  // initBundleQtyToggle wiring (mirrors limos/js/upsells.js) — once SDK loads, clicking a pill triggers the matching hidden card click
+  window.addEventListener('next:initialized', function () {
+    if (typeof initBundleQtyToggle === 'function') { initBundleQtyToggle(); return; }
+    document.querySelectorAll('[data-bundle-qty-for]').forEach(function (row) {
+      var selectorId = row.getAttribute('data-bundle-qty-for');
+      var selector = document.querySelector('[data-next-bundle-selector][data-next-selector-id="' + selectorId + '"]');
+      if (!selector) return;
+      row.querySelectorAll('[data-bundle-qty-btn]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var qty = btn.getAttribute('data-bundle-qty-btn');
+          var card = selector.querySelector('[data-next-bundle-id$="-' + qty + 'x"]');
+          if (card) card.click();
+          row.querySelectorAll('[data-bundle-qty-btn]').forEach(function (b) { b.classList.remove('next-selected'); });
+          btn.classList.add('next-selected');
+        });
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

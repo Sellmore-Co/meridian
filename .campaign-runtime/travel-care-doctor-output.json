@@ -1,0 +1,282 @@
+{
+  "ok": true,
+  "status": "ready_with_warnings",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "campaign.allowed_domains_confirmed",
+      "message": "Allowed domains are not confirmed. SDK runtime checks may be blocked."
+    },
+    {
+      "code": "routing_meta.runtime_root",
+      "message": "CampaignSpec sdk_hints.meta_tags routing values must render as campaign-rooted paths before QA. Expected values like \"/travel-care/upsell/\" for next-success-url, next-upsell-accept-url, next-upsell-decline-url; found page_mpfwhs0o_31:next-success-url=try.dogfoodprep/waterflosser/oto-sonic/; page_mpfwhs0o_32:next-upsell-accept-url=try.dogfoodprep/waterflosser/oto-kit/; page_mpfwhs0o_32:next-upsell-decline-url=try.dogfoodprep/waterflosser/oto-kit/; page_mpfwnwyf_674:next-upsell-accept-url=try.dogfoodprep/waterflosser/receipt/; page_mpfwnwyf_674:next-upsell-decline-url=try.dogfoodprep/waterflosser/receipt/."
+    },
+    {
+      "code": "sdk_hints.meta_tags",
+      "message": "CampaignSpec expects SDK meta tags (next-currency, next-page-type, next-predictive-address, next-prevent-back-navigation, next-success-url, next-upsell-accept-url, next-upsell-decline-url). Doctor cannot verify rendered output until page-kit build writes _site/travel-care/."
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: single_offer.package_id=1"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: shipping_methods.standard=2"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: packages.prepurchase_1=7"
+    },
+    {
+      "code": "frontmatter.demoOnlyValues",
+      "message": "Replace demo-only starter value before launch: packages.prepurchase_2=9"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: packages.*"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: shipping_methods.standard"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: single_offer.package_id"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: order_bump.*.package_id"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: upsell_offer.package_id"
+    },
+    {
+      "code": "frontmatter.replaceFromSpecOrApi",
+      "message": "Must be replaced from CampaignSpec/API: upsell_bundle_tiers[].items_json"
+    },
+    {
+      "code": "frontmatter.removeWhenUnsupported",
+      "message": "Remove when unsupported by target campaign: single_offer.shipping_method when the target campaign has no selector shipping"
+    },
+    {
+      "code": "frontmatter.removeWhenUnsupported",
+      "message": "Remove when unsupported by target campaign: order bump variants when prepurchase packages are absent"
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnels.0.pages.2.packages.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at funnels.0.pages.2.packages.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnels.0.pages.3.offers.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at funnels.0.pages.3.offers.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnel_pages.2.packages.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at funnel_pages.2.packages.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at funnel_pages.3.offers.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at funnel_pages.3.offers.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.0.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at offers.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.1.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.2.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.3.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.4.packages.0.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"2\" at offers.4.packages.1.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.4.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.5.packages.0.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "template_contract.demo_ref",
+      "message": "CampaignSpec contains a starter-looking demo ref \"1\" at offers.5.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata."
+    },
+    {
+      "code": "deploy.preview_url",
+      "message": "No preview or production URL yet. QA remains blocked after build/polish."
+    },
+    {
+      "code": "qa.test_orders_allowed",
+      "message": "SDK-driven test orders are not enabled for this packet; QA must avoid checkout order mutations."
+    }
+  ],
+  "ready": [
+    "Build Packet schema campaign-runtime-build-packet/v0",
+    "Target campaign output directory exists",
+    "Target page-kit dependency ^0.1.2",
+    "Local CampaignSpec parsed",
+    "CampaignSpec spec_identity includes map_id and public_route_slug",
+    "CampaignSpec public page routes are Page Kit-compatible",
+    "CampaignSpec required Store Profile fields are present for page-kit campaigns.json",
+    "CampaignSpec shipping countries: US",
+    "Source mappings cover active CampaignSpec pages",
+    "All mapped CampaignSpec pages are build candidates",
+    "CampaignSpec package purchase availability has no unavailable package refs in active build data",
+    "Campaigns API key available via CampaignSpec campaign.campaigns_api_key",
+    "Commerce catalog sharedFrontmatterVocabulary loaded",
+    "Template agentContract loaded for limos",
+    "Build context schema campaign-runtime-build-context/v0",
+    "Assembly report schema campaign-runtime-assembly-report/v0"
+  ],
+  "derived": {
+    "packet_path": "./campaign-runtime-travel-care.build.json",
+    "map_id": "travel-oral-care-bundle-tez-kx4f",
+    "public_route_slug": "travel-care",
+    "template_family": "limos",
+    "source_root": "../designer/funnel-designs/travel-oral-care-bundle",
+    "target_repo": ".",
+    "target_output_dir": "./src/travel-care",
+    "spec_path": "../../Downloads/campaign-spec-travel-oral-care-bundle-tez.json",
+    "scaffold_required": false,
+    "scaffold_reason": null,
+    "scope": {
+      "mode": "full",
+      "built_pages": [
+        {
+          "page_id": "page_mpfwhs0o_29",
+          "type": "presell",
+          "role": "visual",
+          "route": "try.dogfoodprep/waterflosser/presell/",
+          "source_path": "presell.html"
+        },
+        {
+          "page_id": "page_mpfwhs0o_30",
+          "type": "landing",
+          "role": "visual",
+          "route": "try.dogfoodprep/waterflosser/landing/",
+          "source_path": "landing.html"
+        },
+        {
+          "page_id": "page_mpfwhs0o_31",
+          "type": "checkout",
+          "role": "runtime",
+          "route": "try.dogfoodprep/waterflosser/checkout/",
+          "source_path": "checkout.html"
+        },
+        {
+          "page_id": "page_mpfwhs0o_32",
+          "type": "upsell",
+          "role": "runtime",
+          "route": "try.dogfoodprep/waterflosser/oto-sonic/",
+          "source_path": "upsell-1.html"
+        },
+        {
+          "page_id": "page_mpfwnwyf_674",
+          "type": "upsell",
+          "role": "runtime",
+          "route": "try.dogfoodprep/waterflosser/oto-kit/",
+          "source_path": "upsell-2.html"
+        },
+        {
+          "page_id": "page_mpfwhs0o_33",
+          "type": "thankyou",
+          "role": "runtime",
+          "route": "try.dogfoodprep/waterflosser/receipt/",
+          "source_path": "thank-you.html"
+        }
+      ],
+      "out_of_scope_pages": [],
+      "out_of_scope_reasons": [],
+      "previewable_routes": [
+        {
+          "page_id": "page_mpfwhs0o_29",
+          "type": "presell",
+          "route": "try.dogfoodprep/waterflosser/presell/"
+        },
+        {
+          "page_id": "page_mpfwhs0o_30",
+          "type": "landing",
+          "route": "try.dogfoodprep/waterflosser/landing/"
+        },
+        {
+          "page_id": "page_mpfwhs0o_31",
+          "type": "checkout",
+          "route": "try.dogfoodprep/waterflosser/checkout/"
+        },
+        {
+          "page_id": "page_mpfwhs0o_32",
+          "type": "upsell",
+          "route": "try.dogfoodprep/waterflosser/oto-sonic/"
+        },
+        {
+          "page_id": "page_mpfwnwyf_674",
+          "type": "upsell",
+          "route": "try.dogfoodprep/waterflosser/oto-kit/"
+        },
+        {
+          "page_id": "page_mpfwhs0o_33",
+          "type": "thankyou",
+          "route": "try.dogfoodprep/waterflosser/receipt/"
+        }
+      ],
+      "blocked_runtime_pages": []
+    }
+  },
+  "next": {
+    "stage": "assembly",
+    "status": "ready_with_warnings",
+    "owner": "build",
+    "default_skill": "next-campaigns-build",
+    "command": "campaigns-os next build --packet ./campaign-runtime-travel-care.build.json",
+    "actions": [
+      "Use the template agentContract to replace demo values from CampaignSpec/API."
+    ],
+    "blocked_stages": [
+      "qa",
+      "runtime-sdk-verification",
+      "test-orders"
+    ]
+  }
+}

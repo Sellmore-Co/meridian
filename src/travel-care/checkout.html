@@ -1,0 +1,373 @@
+---
+title: "DentaStream Travel Oral Care - Checkout"
+permalink: /travel-care/try.dogfoodprep/waterflosser/checkout/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — DentaStream Travel Oral Care</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/travel-care/landing/images/favicon.png">
+
+  <!-- Campaign Configuration -->
+  <script src="/travel-care/config.js"></script>
+
+  <!-- NEXT Metatags -->
+  <meta name="next-funnel" content="travel-oral-care-bundle">
+  <meta name="next-success-url" content="/travel-care/try.dogfoodprep/waterflosser/oto-sonic/">
+  <meta name="next-page-type" content="checkout">
+  <meta name="next-currency" content="USD">
+  <meta name="next-predictive-address" content="true">
+
+  <!-- Campaign Cart SDK -->
+  <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/loader.js" type="module"></script>
+
+  <link rel="stylesheet" href="/travel-care/shared.css">
+</head>
+<body>
+
+<div class="ds-announcement"><strong>Quick & Convenient Shipping</strong> From Our Ohio Warehouse</div>
+
+<header class="ds-header">
+  <div class="ds-header__inner">
+    <a href="/travel-care/try.dogfoodprep/waterflosser/landing/" class="ds-header__logo">Denta<span>Stream</span></a>
+    <div class="ds-header__trust">
+      <span>🔒 Secure Checkout</span>
+      <span>30-Day Money-Back Guarantee</span>
+    </div>
+  </div>
+</header>
+
+<main class="ds-container">
+  <div class="ds-grid-checkout">
+    <!-- LEFT: Form -->
+    <div>
+      <h1 class="ds-h1">Complete your order</h1>
+      <p class="ds-muted" style="margin-top:0">62 people are looking at this offer right now.</p>
+
+      <!-- Express checkout placeholder (SDK mounts here when configured) -->
+      <div data-next-express-checkout="container" style="margin: 1rem 0;"></div>
+
+      <form data-next-checkout="form" id="combo_form" method="post" next-no-error-style next-show-validation-icons>
+        <div class="ds-card">
+          <h2 class="ds-h2">Contact</h2>
+          <div class="ds-form-row">
+            <div>
+              <label class="ds-label" for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@email.com"
+                     autocomplete="email" os-checkout-validate="required"
+                     data-next-checkout-field="email" data-label-behavior="placeholder" class="ds-input">
+            </div>
+          </div>
+          <div class="ds-form-row">
+            <div>
+              <label class="ds-label" for="phone">Phone (for shipping updates)</label>
+              <input id="phone" name="phone" type="tel" placeholder="201-555-0123"
+                     autocomplete="tel-full" data-next-checkout-field="phone"
+                     data-label-behavior="placeholder" class="ds-input">
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-card">
+          <h2 class="ds-h2">Shipping address</h2>
+          <div data-next-component="shipping-form">
+            <div class="ds-form-row ds-form-row--2">
+              <div>
+                <label class="ds-label" for="shipping_fname">First Name</label>
+                <input id="shipping_fname" name="shipping_fname" type="text" placeholder="First Name*"
+                       autocomplete="given-name" os-checkout-validate="required"
+                       data-next-checkout-field="fname" data-label-behavior="placeholder" class="ds-input">
+              </div>
+              <div>
+                <label class="ds-label" for="shipping_lname">Last Name</label>
+                <input id="shipping_lname" name="shipping_lname" type="text" placeholder="Last Name*"
+                       autocomplete="family-name" os-checkout-validate="required"
+                       data-next-checkout-field="lname" data-label-behavior="placeholder" class="ds-input">
+              </div>
+            </div>
+
+            <div data-next-component="shipping-field-row" class="ds-form-row">
+              <div>
+                <label class="ds-label" for="shipping_country">Country</label>
+                <select id="shipping_country" autocomplete="country-name"
+                        os-checkout-validate="required" data-next-checkout-field="country"
+                        data-label-behavior="placeholder" class="ds-select">
+                  <option value="">Select Country</option>
+                </select>
+              </div>
+            </div>
+
+            <div data-next-component="shipping-field-row" class="ds-form-row">
+              <div>
+                <label class="ds-label" for="shipping_address1">Address</label>
+                <input id="shipping_address1" name="shipping_address1" type="text" placeholder="Address*"
+                       autocomplete="address-line1" os-checkout-validate="required"
+                       data-next-checkout-field="address1" data-label-behavior="placeholder" class="ds-input">
+              </div>
+            </div>
+
+            <div data-next-component="location" class="next-hidden">
+              <div data-next-component="shipping-field-row" class="ds-form-row">
+                <div>
+                  <label class="ds-label" for="shipping_address2">Apartment, suite, etc. (optional)</label>
+                  <input id="shipping_address2" name="shipping_address2" type="text"
+                         placeholder="Apartment, suite, etc."
+                         autocomplete="address-line2"
+                         data-next-checkout-field="address2" data-label-behavior="placeholder" class="ds-input">
+                </div>
+              </div>
+              <div data-next-component="shipping-field-row" data-os-component="location" class="ds-form-row ds-form-row--3">
+                <div>
+                  <label class="ds-label" for="shipping_city">City</label>
+                  <input id="shipping_city" name="shipping_city" type="text" placeholder="City*"
+                         autocomplete="address-level2" os-checkout-validate="required"
+                         data-next-checkout-field="city" data-label-behavior="placeholder" class="ds-input">
+                </div>
+                <div>
+                  <label class="ds-label" for="shipping_province">State</label>
+                  <select id="shipping_province" name="shipping_province"
+                          autocomplete="address-level1" os-checkout-validate="required"
+                          data-next-checkout-field="province"
+                          data-label-behavior="placeholder" class="ds-select">
+                    <option value="">State</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="ds-label" for="shipping_postal_code">ZIP</label>
+                  <input id="shipping_postal_code" name="shipping_postal_code" type="text"
+                         placeholder="ZIP*" inputmode="numeric"
+                         autocomplete="postal-code" os-checkout-validate="required"
+                         data-next-checkout-field="postal" data-label-behavior="placeholder" class="ds-input">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-card" data-next-catalog-component="single-offer-quantity-selector" data-next-await>
+          <h2 class="ds-h2">Your Water Flosser bundle</h2>
+          <p class="ds-muted" style="margin-top:-0.35rem;">DentaStream Water Flosser, selected for this checkout.</p>
+          <div data-next-bundle-selector data-next-selector-id="main" data-next-selection-mode="swap" data-next-include-shipping="true">
+            <div data-next-bundle-card data-next-bundle-id="water-flosser-main" data-next-shipping-id="1" data-next-bundle-items='[{"packageId":1,"quantity":1}]' data-next-selected="true" class="ds-main-offer">
+              <div data-next-package-id="1" class="ds-main-offer__inner">
+                <img src="/travel-care/products/water-flosser.png" alt="DentaStream Water Flosser" class="ds-main-offer__img">
+                <div>
+                  <div class="ds-main-offer__title" data-next-display="package.1.name">DentaStream Water Flosser</div>
+                  <p class="ds-main-offer__desc">Compact cordless flosser for cleaner travel days.</p>
+                </div>
+                <div class="ds-main-offer__price">
+                  <span data-next-bundle-display="originalPrice">$99.98</span>
+                  <strong data-next-bundle-display="price">$49.99</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ORDER BUMP: UV Toothbrush Case (package 2) -->
+        <div data-next-catalog-component="order-bump-card" data-component="prepurchase-upsell" data-variant="check01" data-next-await>
+          <div data-next-package-toggle>
+            <label class="ds-bump" data-next-toggle-card data-next-is-upsell="true" data-next-package-sync="1" data-next-package-id="2">
+              <span class="ds-bump__check" os-component="check" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="m6 10l-2 2l6 6L20 8l-2-2l-8 8z" fill="currentColor"/></svg>
+              </span>
+              <img class="ds-bump__img" loading="lazy" data-next-toggle-image
+                   alt="UV Toothbrush Sanitizer Case"
+                   src="/travel-care/products/uv-case.png">
+              <div style="flex:1">
+                <div class="ds-bump__title">Add the UV Toothbrush Sanitizer Case — keep it spotless on the go</div>
+                <p class="ds-bump__desc">USB-rechargeable case kills surface bacteria on your brush head in 5 minutes. Perfect travel companion.</p>
+                <div class="ds-bump__price">
+                  <span data-next-toggle-display="originalPrice" class="ds-muted" style="text-decoration:line-through; margin-right:0.4rem;">--</span>
+                  <span data-next-toggle-display="price">$24.99</span>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="ds-card">
+          <h2 class="ds-h2">Payment</h2>
+          <div data-next-catalog-component="payment-method-presentation" class="payment-methods">
+            <div data-next-payment-method="credit" class="payment-method next-selected">
+              <label class="payment-method__label" for="combo_mode_credit" style="display:flex;align-items:center;gap:0.5rem;font-weight:600;color:var(--ds-ink);margin-bottom:0.75rem;">
+                <input type="radio" name="payment_method" id="combo_mode_credit" value="credit" checked
+                       data-name="Combo Mode" class="payment-method__input">
+                <span>Credit / Debit Card</span>
+              </label>
+              <div data-next-payment-form="credit" os-checkout-element="credit-form" os-shipping-method-same="true" class="payment-method__form">
+                <div class="ds-form-row">
+                  <div>
+                    <label class="ds-label">Card number</label>
+                    <div data-next-checkout-field="cc-number" class="ds-input spreedly-field" style="padding:0;height:42px;"></div>
+                  </div>
+                </div>
+                <div class="ds-form-row ds-form-row--3">
+                  <div>
+                    <label class="ds-label">Exp. Month</label>
+                    <select autocomplete="cc-exp-month" data-next-checkout-field="exp-month" class="ds-select">
+                      <option value="">MM</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="ds-label">Exp. Year</label>
+                    <select autocomplete="cc-exp-year" data-next-checkout-field="exp-year" class="ds-select">
+                      <option value="">YYYY</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="ds-label">CVV</label>
+                    <div data-next-checkout-field="cvv" class="ds-input spreedly-field" style="padding:0;height:42px;"></div>
+                  </div>
+                </div>
+                <div os-input-field="use-shipping-address" style="margin-top:0.5rem;">
+                  <label style="display:flex;gap:0.5rem;align-items:center;font-size:0.9rem;color:var(--ds-body);">
+                    <input type="checkbox" name="use_shipping_address" id="use_shipping_address" checked>
+                    Billing address is the same as shipping
+                  </label>
+                </div>
+                <div os-checkout-element="different-billing-address" class="billing-address__form" style="display:none">
+                  <h3 class="ds-h3" style="margin-top:1rem">Billing Address</h3>
+                  <div os-checkout-component="billing-form"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <button type="submit" os-checkout-payment="combo" data-action="submit" class="ds-btn" style="margin-top:1rem">
+          <span data-i18n="complete_purchase">Complete Your Secure Purchase</span>
+        </button>
+
+        <div class="ds-trust-row">
+          <span>🔒 <strong>SSL Encrypted</strong></span>
+          <span>📦 Ships from Ohio</span>
+          <span>↩︎ 30-Day Guarantee</span>
+        </div>
+      </form>
+    </div>
+
+    <!-- RIGHT: Order Summary -->
+    <aside>
+      <div class="ds-card" data-next-await>
+        <h2 class="ds-h2">Order summary</h2>
+        <div data-next-cart-summary>
+          <template>
+            <div data-summary-lines>
+              <template>
+                <div data-package-id="{item.packageId}" class="ds-cart-item">
+                  <img src="{item.image}" alt="{item.name}" class="ds-cart-item__img">
+                  <div>
+                    <div class="ds-cart-item__name">{item.name}</div>
+                    <div class="ds-cart-item__qty">Qty {item.quantity}</div>
+                  </div>
+                  <div class="ds-cart-item__price">{item.price}</div>
+                </div>
+              </template>
+            </div>
+
+            <div class="ds-summary-line">
+              <span>Subtotal</span>
+              <span>{subtotal}</span>
+            </div>
+            <ul class="ds-summary-line" data-next-discounts="voucher" style="display:block; padding: 0;" aria-label="Coupon discounts">
+              <template>
+                <li class="ds-summary-line" style="padding:0.25rem 0;">
+                  <span class="ds-muted">{discount.name}</span>
+                  <span class="ds-muted">−{discount.amount}</span>
+                </li>
+              </template>
+            </ul>
+            <div class="ds-summary-line">
+              <span>Shipping</span>
+              <span>{shipping}</span>
+            </div>
+            <div data-next-show="cart.hasDiscounts" style="display:none">
+              <div class="ds-summary-line" style="color:var(--ds-success); font-weight:600;">
+                <span>You saved</span>
+                <span>{discounts}</span>
+              </div>
+            </div>
+            <div class="ds-summary-line ds-summary-line--total">
+              <span>Total</span>
+              <span>{currency} {total}</span>
+            </div>
+          </template>
+        </div>
+
+        <div data-next-show='cart.hasCoupon("EXIT10")' class="ds-coupon-applied" style="display:none;">EXIT10 applied to this checkout.</div>
+        <div data-next-hide="cart.isEmpty" style="margin-top:1rem;">
+          <label class="ds-label" for="coupon">Have a coupon?</label>
+          <div style="display:flex; gap:0.5rem;">
+            <input id="coupon" data-next-coupon="input" type="text" placeholder="Code" class="ds-input" style="flex:1">
+            <button type="button" data-next-coupon="apply" class="ds-btn ds-btn--ghost" style="width:auto;padding:0.6rem 1rem;">Apply</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-card" style="margin-top:1rem">
+        <h3 class="ds-h3">Why DentaStream travels well</h3>
+        <ul style="padding-left: 1.1rem; margin: 0; font-size: 0.9rem; line-height: 1.6;">
+          <li>USB-rechargeable — one charge lasts 14+ days</li>
+          <li>Compact pen-style form fits any toiletry bag</li>
+          <li>3 cleaning modes for sensitive gums or deep clean</li>
+          <li>Ships in 2–4 business days from Ohio</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="ds-footer">
+  <div>© 2026 DentaStream. All rights reserved.</div>
+  <div class="ds-footer__links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Returns</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<template data-template="exit-intent">
+  <div class="ds-exit-pop">
+    <div class="ds-exit-pop__media">
+      <img src="/travel-care/products/water-flosser-banner.png" alt="DentaStream Water Flosser">
+    </div>
+    <div class="ds-exit-pop__copy">
+      <p class="ds-exit-pop__eyebrow">Before you go</p>
+      <h2>Take 10% off this oral-care bundle.</h2>
+      <p>Apply EXIT10 to your Water Flosser and travel case before checkout.</p>
+      <button type="button" class="ds-btn" data-exit-intent-action="apply-coupon" data-coupon-code="EXIT10">Apply EXIT10</button>
+      <button type="button" class="ds-exit-pop__close" data-exit-intent-action="close">No thanks</button>
+    </div>
+  </div>
+</template>
+
+<script>
+  (function () {
+    function initDentaStreamExitIntent(sdk) {
+      if (window.__dentaStreamExitIntentReady || !sdk || typeof sdk.exitIntent !== 'function') return;
+      window.__dentaStreamExitIntentReady = true;
+      sdk.exitIntent({
+        template: 'exit-intent',
+        maxTriggers: 1,
+        disableOnMobile: true,
+        overlayClosable: true,
+        showCloseButton: true
+      });
+    }
+    if (Array.isArray(window.nextReady)) {
+      window.nextReady.push(initDentaStreamExitIntent);
+    } else {
+      window.addEventListener('next:initialized', function (event) {
+        initDentaStreamExitIntent(event.detail && event.detail.sdk ? event.detail.sdk : window.next);
+      }, { once: true });
+    }
+  })();
+</script>
+
+</body>
+</html>
