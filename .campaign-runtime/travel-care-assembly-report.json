@@ -2,13 +2,13 @@
   "schema_version": "campaign-runtime-assembly-report/v0",
   "run_id": "asm_1779428767225",
   "generated_at": "2026-05-22T05:46:07.225Z",
-  "status": "polish_blocked",
+  "status": "ready_with_exceptions",
   "identity": {
     "map_id": "travel-oral-care-bundle-tez-1td7",
     "public_route_slug": "travel-care",
     "campaign_directory": "travel-care",
     "live_url_path": "/travel-care/",
-    "spec_hash": "0a3be2f869aa60b65f4c616c59b734e8a1538fba43b03e34a2b3f37cd371a451"
+    "spec_hash": "sha256:eaffeea547b63594b85db0515aef13a324dad9aab062d1cb456ca2c5870f435e"
   },
   "inputs": {
     "packet_path": "./campaign-runtime-travel-care.build.json",
@@ -124,7 +124,7 @@
     },
     "polish": {
       "stage": "polish",
-      "status": "blocked",
+      "status": "completed_with_warnings",
       "inputs": [
         "/Users/devin/Downloads/campaign-spec-travel-oral-care-bundle-tez (1).json",
         "src/travel-care",
@@ -149,18 +149,22 @@
         ".campaign-runtime/evidence/travel-care-oto-kit-desktop.png",
         ".campaign-runtime/evidence/travel-care-oto-kit-mobile.png",
         ".campaign-runtime/evidence/travel-care-receipt-desktop.png",
-        ".campaign-runtime/evidence/travel-care-receipt-mobile.png"
+        ".campaign-runtime/evidence/travel-care-receipt-mobile.png",
+        ".campaign-runtime/evidence/travel-care-preview-probes.json",
+        ".campaign-runtime/evidence/travel-care-preview-checkout-desktop.png"
       ],
       "commands": [
         "node scripts/assemble-travel-care.mjs",
         "npm run build",
-        "Playwright screenshot/probe pass against http://127.0.0.1:8098/travel-care/ at 1440px and 390px"
+        "Playwright screenshot/probe pass against http://127.0.0.1:8098/travel-care/ at 1440px and 390px",
+        "Playwright preview probe against https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/checkout/ for payment methods, exit-intent template, and bump toggle state"
       ],
       "fixed": [
         "[visual drift] checkout: replaced broken half-visible logo asset with DentaStream wordmark text.",
         "[copy/data mismatch] checkout: removed static PayPal footer mark; rendered methods now match bankcard, Apple Pay, and Google Pay.",
         "[copy/data mismatch] checkout: fixed billing-address typo and tuned DentaStream trust copy.",
-        "[SDK/runtime risk] checkout: fixed check01 bump so sync_quantity false does not emit data-next-package-sync; bump maps package_id 2."
+        "[SDK/runtime risk] checkout: fixed check01 bump so sync_quantity false does not emit data-next-package-sync; bump maps package_id 2.",
+        "[runtime state] checkout: hid inactive bump checkmark and verified click toggles active state on preview without package quantity sync."
       ],
       "intentional_divergences": [
         "Checkout intentionally uses canonical Limos commerce structure instead of the raw source checkout because payment, hosted fields, express checkout, and bump behavior are SDK-owned surfaces.",
@@ -173,8 +177,8 @@
           "apple-pay",
           "google-pay"
         ],
-        "hosted_fields": "cc-number and cvv containers render with stable dimensions",
-        "bump": "package_id 2 present; no data-next-package-sync; runtime toggle class could not be verified because SDK did not initialize locally",
+        "hosted_fields": "Spreedly number and CVV iframes mount on deployed preview with centered 20px iframe path inside 48px hosts",
+        "bump": "preview probe starts inactive with hidden marker, click toggles package_id 2 to next-active/os--active, and data-next-package-sync remains absent",
         "exit_intent": "template[data-template=\"exit-intent\"] contains EXIT10 apply-coupon action"
       },
       "screenshots": [
@@ -192,49 +196,60 @@
         ".campaign-runtime/evidence/travel-care-receipt-mobile.png"
       ],
       "probes": ".campaign-runtime/evidence/travel-care-polish-probes.json",
-      "blockers": [
-        "Runtime SDK verification is blocked locally: campaign-cart@v0.4.20 CDN throws ReferenceError: Cannot access 'create' before initialization.",
-        "Campaigns API requests from http://127.0.0.1:8098 are rejected by CORS/allowlist, so SDK readiness, express-wallet injection, cart totals, bump toggle state, exit-intent coupon mutation, and upsell/receipt hydration could not be proven locally."
-      ],
+      "blockers": [],
       "warnings": [
-        "No repo SDK lint script is available in meridian; polish used build plus Playwright DOM/visual probes.",
-        "A deployed/allowlisted preview is still required before spec-aware QA or test-order proof."
+        "campaign-cart@v0.4.20 still logs ReferenceError: Cannot access create before initialization from the jsDelivr chunk, even though runtime surfaces hydrate on deployed preview.",
+        "Localhost remains CORS-limited; deployed preview evidence is the canonical runtime proof."
       ],
-      "next_owner": "deploy-preview / SDK-runtime verification",
-      "updated_at": "2026-05-22T08:18:48.650Z"
+      "next_owner": "preview QA / optional test-order proof",
+      "updated_at": "2026-05-22T08:41:18.557Z"
     },
     "deploy": {
       "stage": "deploy",
-      "status": "blocked",
-      "inputs": [],
-      "outputs": [],
-      "commands": [],
-      "blockers": [
-        "Polish runtime verification is blocked until the SDK loader error and deployed-domain allowlist checks are resolved.",
-        "No preview or production URL is available yet."
+      "status": "completed",
+      "inputs": [
+        "PR13 branch codex/sell-284-travel-care"
       ],
-      "warnings": []
+      "outputs": [
+        "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/",
+        "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/checkout/"
+      ],
+      "commands": [
+        "git push",
+        "gh pr checks 13 --repo Sellmore-Co/meridian"
+      ],
+      "blockers": [],
+      "warnings": [
+        "The separate campaignsos Netlify preview check may run independently; meridian-skincare deploy preview is the campaign runtime target."
+      ],
+      "updated_at": "2026-05-22T08:41:18.557Z"
     },
     "qa": {
       "stage": "qa",
-      "status": "blocked",
-      "inputs": [],
+      "status": "ready_with_exceptions",
+      "inputs": [
+        "campaign-runtime-travel-care.build.json",
+        "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/"
+      ],
       "outputs": [
-        ".campaign-runtime/evidence/travel-care-qa-resolve-local.json"
+        ".campaign-runtime/evidence/travel-care-qa-resolve-preview.json",
+        ".campaign-runtime/qa-travel-care/travel-oral-care-bundle-tez-1td7/MPGO4DH4V2KMPVBM65VB2HVHQO.json",
+        ".campaign-runtime/evidence/travel-care-preview-probes.json",
+        ".campaign-runtime/evidence/travel-care-preview-checkout-desktop.png"
       ],
       "commands": [
-        "campaigns-os next qa --packet campaign-runtime-travel-care.build.json --report .campaign-runtime/travel-care-assembly-report.json --json (blocked: missing deploy URL)",
-        "campaigns-os qa resolve --packet campaign-runtime-travel-care.build.json --base-url http://127.0.0.1:8098/travel-care/ --json"
+        "campaigns-os qa resolve --packet campaign-runtime-travel-care.build.json --base-url https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/ --json",
+        "campaigns-os qa run --packet campaign-runtime-travel-care.build.json --base-url https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/ --browser --output-dir .campaign-runtime/qa-travel-care --json"
       ],
       "blockers": [
-        "No preview or production URL is available yet.",
-        "Polish runtime verification is blocked.",
-        "SDK-driven test orders are disabled until the deployed domain is allowlisted and sandbox card routing is confirmed."
+        "SDK-driven test orders remain disabled until sandbox card routing and merchant order mutation permission are confirmed."
       ],
       "warnings": [
-        "Local qa resolve now derives /travel-care/presell/, /landing/, /checkout/, /oto-sonic/, /oto-kit/, and /receipt/; no posted QA verdict was created."
+        "Preview QA verdict MPGO4DH4V2KMPVBM65VB2HVHQO is ready_with_exceptions: 45 pass, 5 warn, 0 fail.",
+        "Warnings are campaign-cart@v0.4.20 console ReferenceError on checkout/upsell/receipt and aborted landing MP4 requests.",
+        "No posted dashboard verdict was created; evidence is local to this PR workspace."
       ],
-      "updated_at": "2026-05-22T08:23:18.706Z"
+      "updated_at": "2026-05-22T08:41:18.557Z"
     }
   },
   "decisions": [
@@ -311,15 +326,28 @@
       "type": "source_wiring",
       "target": "src/travel-care/checkout.html",
       "result": "checkout cloned from Limos template with canonical express checkout, payment-methods, hosted card fields, order bump, cart summary, and exit-intent include"
+    },
+    {
+      "stage": "deploy",
+      "type": "preview",
+      "target": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/",
+      "result": "Netlify meridian-skincare deploy preview ready; Travel Care routes resolve directly under /travel-care/."
+    },
+    {
+      "stage": "qa",
+      "type": "browser-verdict",
+      "target": ".campaign-runtime/qa-travel-care/travel-oral-care-bundle-tez-1td7/MPGO4DH4V2KMPVBM65VB2HVHQO.json",
+      "result": "Campaigns OS browser QA ready_with_exceptions: 45 pass, 5 warn, 0 fail; payment geometry, express wallets, bundle selection, bump state, upsell controls, and routing passed."
+    },
+    {
+      "stage": "qa",
+      "type": "runtime-probe",
+      "target": ".campaign-runtime/evidence/travel-care-preview-probes.json",
+      "result": "Order bump starts inactive with marker opacity 0/display none; click sets next-in-cart next-selected next-active os--active with marker opacity 1/display flex; package sync remains null."
     }
   ],
   "blockers": [
-    "Runtime SDK verification is blocked locally: campaign-cart@v0.4.20 CDN throws ReferenceError: Cannot access 'create' before initialization.",
-    "Campaigns API requests from http://127.0.0.1:8098 are rejected by CORS/allowlist, so SDK readiness, express-wallet injection, cart totals, bump toggle state, exit-intent coupon mutation, and upsell/receipt hydration could not be proven locally.",
-    "Polish runtime verification is blocked until the SDK loader error and deployed-domain allowlist checks are resolved.",
-    "No preview or production URL is available yet.",
-    "Polish runtime verification is blocked.",
-    "SDK-driven test orders are disabled until the deployed domain is allowlisted and sandbox card routing is confirmed."
+    "SDK-driven test orders remain disabled until sandbox card routing and merchant order mutation permission are confirmed."
   ],
   "warnings": [
     {
@@ -328,21 +356,28 @@
       "message": "The raw source checkout had non-canonical payment/bump surfaces, so it was replaced with the Limos starter checkout and product-branded."
     },
     {
-      "code": "LOCALHOST_CORS",
+      "code": "SDK_CONSOLE_WARNING",
       "stage": "qa",
-      "message": "Campaigns API calls are not launch-verified until an allowlisted deployed preview is available."
+      "message": "campaign-cart@v0.4.20 logs ReferenceError: Cannot access create before initialization from the jsDelivr utility chunk on runtime pages."
+    },
+    {
+      "code": "LANDING_MP4_ABORTED",
+      "stage": "qa",
+      "message": "Landing video requests report net::ERR_ABORTED in headless browser QA; page load and route checks still pass."
+    },
+    {
+      "code": "TEST_ORDER_NOT_RUN",
+      "stage": "qa",
+      "message": "No checkout mutation/test order was attempted in this run."
     }
   ],
   "next": {
-    "stage": "deploy-preview-runtime-verification",
+    "stage": "optional-test-order-proof",
     "owner": "Campaigns OS operator",
-    "action": "Resolve or pin a working Campaign Cart SDK build, create an allowlisted deploy preview, then rerun polish runtime smoke before posted QA.",
+    "action": "Confirm sandbox card routing and permission to mutate merchant orders, then run checkout test-order proof for the deployed preview.",
     "blocked_stages": [
-      "deploy",
-      "qa",
-      "runtime-sdk-verification",
       "test-orders"
     ]
   },
-  "updated_at": "2026-05-22T08:23:18.706Z"
+  "updated_at": "2026-05-22T08:41:18.557Z"
 }

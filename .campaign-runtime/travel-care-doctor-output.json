@@ -217,19 +217,17 @@
     }
   },
   "next": {
-    "stage": "polish",
+    "stage": "test-orders",
     "status": "blocked",
-    "owner": "polish",
-    "default_skill": "next-campaigns-polish",
-    "command": "campaigns-os next polish --packet /Users/devin/Developer/meridian/campaign-runtime-travel-care.build.json",
+    "owner": "operator",
+    "default_skill": "next-campaigns-qa",
+    "command": "campaigns-os next qa --packet /Users/devin/Developer/meridian/campaign-runtime-travel-care.build.json --test-order checkout",
     "actions": [
-      "Resolve the recorded polish blockers, then rerun polish before deploy/QA handoff."
+      "Confirm test-order permission and sandbox card routing before firing checkout mutations."
     ],
     "blocked_stages": [
-      "qa",
       "runtime-sdk-verification",
-      "test-orders",
-      "deploy"
+      "test-orders"
     ]
   }
 }
