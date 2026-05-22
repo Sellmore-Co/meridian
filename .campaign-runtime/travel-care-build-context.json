@@ -1,13 +1,13 @@
 {
   "schema_version": "campaign-runtime-build-context/v0",
-  "generated_at": "2026-05-22T04:35:59.642Z",
+  "generated_at": "2026-05-22T05:46:07.224Z",
   "source_adapter": "html_funnel",
   "status": "prepared",
   "packet_path": "./campaign-runtime-travel-care.build.json",
   "report_path": ".campaign-runtime/travel-care-assembly-report.json",
   "spec": {
-    "path": "../../Downloads/campaign-spec-travel-oral-care-bundle-tez.json",
-    "hash": "435ffaaec64b6c528a7e17e5ce5c8497e9e8e97d4a437e899aae1cc2783230ce",
+    "path": "../../Downloads/campaign-spec-travel-oral-care-bundle-tez (1).json",
+    "hash": "0a3be2f869aa60b65f4c616c59b734e8a1538fba43b03e34a2b3f37cd371a451",
     "active_pages": [
       {
         "id": "page_mpfwhs0o_29",

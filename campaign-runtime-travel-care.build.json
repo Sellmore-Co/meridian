@@ -9,9 +9,9 @@
     "allowed_domains_confirmed": false
   },
   "spec": {
-    "map_id": "travel-oral-care-bundle-tez-kx4f",
-    "spec_url": "https://campaign-map.nextcommerce.com/api/spec/travel-oral-care-bundle-tez-kx4f",
-    "local_path": "../../Downloads/campaign-spec-travel-oral-care-bundle-tez.json"
+    "map_id": "travel-oral-care-bundle-tez-1td7",
+    "spec_url": "https://campaign-map.nextcommerce.com/api/spec/travel-oral-care-bundle-tez-1td7",
+    "local_path": "../../Downloads/campaign-spec-travel-oral-care-bundle-tez (1).json"
   },
   "source_html": {
     "root": "../designer/funnel-designs/travel-oral-care-bundle",

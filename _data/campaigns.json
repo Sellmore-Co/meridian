@@ -188,8 +188,8 @@
   },
   "travel-care": {
     "name": "DentaStream Travel Care",
-    "description": "SELL-284 Campaigns OS dogfood build from Map travel-oral-care-bundle-tez-kx4f with EXIT10 checkout exit intent.",
-    "entry_url": "try.dogfoodprep/waterflosser/presell",
+    "description": "SELL-284 Campaigns OS dogfood build from Map travel-oral-care-bundle-tez-1td7 with EXIT10 checkout exit intent.",
+    "entry_url": "",
     "sdk_version": "0.4.20",
     "store_name": "Keer",
     "store_url": "https://keer.29next.store/",

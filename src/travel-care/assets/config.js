@@ -30,17 +30,17 @@ window.nextConfig = {
       custom: { enabled: false, settings: {} }
     }
   },
-  storeName: "Keer",
+  storeName: "DentaStream",
   qa: {
     spec_identity: {
         "source": "campaign-map-builder",
-        "map_id": "travel-oral-care-bundle-tez-kx4f",
-        "id": "map:travel-oral-care-bundle-tez-kx4f",
-        "map_url": "https://campaign-map.nextcommerce.com/view/travel-oral-care-bundle-tez-kx4f",
-        "edit_url": "https://campaign-map.nextcommerce.com/?load=travel-oral-care-bundle-tez-kx4f",
-        "spec_url": "https://campaign-map.nextcommerce.com/api/spec/travel-oral-care-bundle-tez-kx4f",
-        "spec_hash": "sha256:8ad642d6f29f64e2cebcbd2af2c4c5671c766b43fe9f22949be72eb1ba46a7b9",
-        "saved_at": "2026-05-21T19:59:01.158Z",
+        "map_id": "travel-oral-care-bundle-tez-1td7",
+        "id": "map:travel-oral-care-bundle-tez-1td7",
+        "map_url": "https://campaign-map.nextcommerce.com/view/travel-oral-care-bundle-tez-1td7",
+        "edit_url": "https://campaign-map.nextcommerce.com/?load=travel-oral-care-bundle-tez-1td7",
+        "spec_url": "https://campaign-map.nextcommerce.com/api/spec/travel-oral-care-bundle-tez-1td7",
+        "spec_hash": "sha256:ccd74f03830566d14621d91c12c615f0ff811120b71bb9fbfc69d0bcb7cb68d6",
+        "saved_at": "2026-05-22T05:32:59.739Z",
         "public_route_slug": "travel-oral-care-bundle-tez"
     }
   },
