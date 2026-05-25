@@ -1,0 +1,154 @@
+
+:root {
+  --brand--color--primary: #2cbead;
+  --brand--color--primary-light: #dcf7f4;
+  --brand--color--accent: #ffb44c;
+  --brand--color--black: #172033;
+  --brand--color--dark: #172033;
+  --radius--cards: 12px;
+}
+
+body.travel-care-checkout {
+  background: #f5f8fb;
+  color: #172033;
+}
+
+.ds-shipping-strip {
+  background: #152238;
+  color: #fff;
+  font-size: 0.93rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  padding: 0.65rem 1rem;
+  text-align: center;
+}
+
+.ds-checkout-header {
+  background: #fff;
+  border-bottom: 1px solid #dfe6ee;
+}
+
+.checkout-header__brand {
+  text-decoration: none;
+}
+
+.ds-wordmark {
+  color: #172033;
+  display: inline-flex;
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.ds-wordmark strong {
+  color: #2cbead;
+  font-weight: 900;
+}
+
+.ds-secure-copy {
+  color: #687386;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.checkout-main,
+.checkout-layout__sidebar-bg {
+  background: #f5f8fb;
+}
+
+.checkout-wrapper,
+.order-summary--card,
+.form-sections--floating,
+.checkout-bundle-offer,
+.bump-card,
+.payment-method {
+  border-color: #dce5ee;
+}
+
+.checkout-package,
+.payment-method.next-selected,
+.payment-method__form,
+.bump-card {
+  border-radius: 12px;
+}
+
+.checkout__package-card-header,
+.submit-button,
+.exit-intent-popup__cta {
+  background: #2cbead;
+}
+
+.checkout__package-card-header,
+.submit-button,
+.exit-intent-popup__cta {
+  color: #fff;
+}
+
+.checkout__package-media-wrapper,
+.bump__image-wrapper,
+.cart-item__image-container {
+  background: #eefbf9;
+}
+
+.checkout__package-media,
+.bump__image {
+  object-fit: contain;
+}
+
+.bump-card {
+  background: #fff8e6;
+  border-color: #ffb44c;
+}
+
+.bump__checkbox {
+  border-color: #2cbead;
+}
+
+.bump-card:not(.next-active):not(.next-selected):not(.os--active) .checkbox__icon {
+  opacity: 0;
+}
+
+.bump-card.next-active .checkbox__icon,
+.bump-card.next-selected .checkbox__icon,
+.bump-card.os--active .checkbox__icon {
+  opacity: 1;
+}
+
+.exit-intent-popup__dialog {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.exit-intent-popup__header h3,
+.exit-intent-popup__header h4 {
+  color: #172033;
+}
+
+.exit-intent-popup__offer-label {
+  color: #159e8c;
+}
+
+.ds-payment-flags {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.ds-payment-flags img {
+  display: block;
+  max-height: 18px;
+  width: auto;
+}
+
+@media (max-width: 767px) {
+  .ds-secure-copy {
+    display: none;
+  }
+
+  .ds-wordmark {
+    font-size: 1.5rem;
+  }
+}

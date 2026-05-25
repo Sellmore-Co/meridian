@@ -1,0 +1,167 @@
+{
+  "ok": true,
+  "map_id": "travel-oral-care-bundle-tez-1td7",
+  "spec_source": "/Users/devin/Downloads/campaign-spec-travel-oral-care-bundle-tez (1).json",
+  "spec_version": "4.3",
+  "spec_hash": "sha256:eaffeea547b63594b85db0515aef13a324dad9aab062d1cb456ca2c5870f435e",
+  "base_url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/",
+  "campaign": {
+    "name": "Travel Oral Care Bundle - Tez",
+    "slug": "travel-oral-care-bundle-tez",
+    "ref_id": 1608
+  },
+  "funnels": [
+    {
+      "funnel_id": "default",
+      "funnel_name": "Default",
+      "weight": 100,
+      "pages": [
+        {
+          "page_id": "page_mpfwhs0o_29",
+          "page_type": "presell",
+          "order": 1,
+          "label": "Presell",
+          "url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/presell/",
+          "is_entry": true,
+          "expected_meta_tags": {
+            "next-page-type": "product"
+          },
+          "expected_next_url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/landing/",
+          "packages": []
+        },
+        {
+          "page_id": "page_mpfwhs0o_30",
+          "page_type": "landing",
+          "order": 2,
+          "label": "Landing (PDP)",
+          "url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/landing/",
+          "is_entry": true,
+          "expected_meta_tags": {
+            "next-page-type": "product",
+            "next-currency": "USD"
+          },
+          "expected_next_url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/checkout/",
+          "packages": []
+        },
+        {
+          "page_id": "page_mpfwhs0o_31",
+          "page_type": "checkout",
+          "order": 3,
+          "label": "Checkout",
+          "url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/checkout/",
+          "is_entry": false,
+          "expected_meta_tags": {
+            "next-page-type": "checkout",
+            "next-currency": "USD",
+            "next-predictive-address": "true",
+            "next-success-url": "/travel-care/oto-sonic/"
+          },
+          "expected_next_url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/oto-sonic/",
+          "packages": [
+            {
+              "ref_id": "1",
+              "qty": 1,
+              "name": "Water Flosser",
+              "price": "99.98",
+              "price_retail": null,
+              "product_name": "Water Flosser",
+              "product_sku": "KEER-DOG-WATERDENTALFLOSSER01",
+              "product_variant_name": "Water Flosser",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/6d/87/6d87b584dab7744edc3070557131404f.webp"
+            },
+            {
+              "ref_id": "2",
+              "qty": 1,
+              "name": "UV Toothbrush case",
+              "price": "24.99",
+              "price_retail": null,
+              "product_name": "UV Toothbrush Case",
+              "product_sku": "KEER-DOG-UVTOOTHBRUSH01",
+              "product_variant_name": "UV Toothbrush Case",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/e5/84/e584e6a82ab6c90cacd0bfe79600a77c.webp"
+            }
+          ]
+        },
+        {
+          "page_id": "page_mpfwhs0o_32",
+          "page_type": "upsell",
+          "order": 4,
+          "label": "Upsell",
+          "url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/oto-sonic/",
+          "is_entry": false,
+          "expected_meta_tags": {
+            "next-page-type": "upsell",
+            "next-currency": "USD",
+            "next-prevent-back-navigation": "true",
+            "next-upsell-accept-url": "/travel-care/oto-kit/",
+            "next-upsell-decline-url": "/travel-care/oto-kit/"
+          },
+          "expected_accept_url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/oto-kit/",
+          "expected_decline_url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/oto-kit/",
+          "packages": [
+            {
+              "ref_id": "3",
+              "qty": 1,
+              "name": "Sonic Toothbrush",
+              "price": "69.99",
+              "price_retail": null,
+              "product_name": "Sonic Toothbrush",
+              "product_sku": "KEER-DOG-SONICTOOTHBRUSH01",
+              "product_variant_name": "Sonic Toothbrush",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/e9/45/e9455cd71513f8c3c1314c2537e1f3b0.webp"
+            }
+          ]
+        },
+        {
+          "page_id": "page_mpfwnwyf_674",
+          "page_type": "upsell",
+          "order": 5,
+          "label": "Upsell 2",
+          "url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/oto-kit/",
+          "is_entry": false,
+          "expected_meta_tags": {
+            "next-page-type": "upsell",
+            "next-currency": "USD",
+            "next-upsell-accept-url": "/travel-care/receipt/",
+            "next-upsell-decline-url": "/travel-care/receipt/"
+          },
+          "expected_accept_url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/receipt/",
+          "expected_decline_url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/receipt/",
+          "packages": [
+            {
+              "ref_id": "4",
+              "qty": 1,
+              "name": "UV Tooth Whitening Kit",
+              "price": "69.98",
+              "price_retail": null,
+              "product_name": "UV Tooth Whitening Kit",
+              "product_sku": "KEER-DOG-UVTEETHKIT01",
+              "product_variant_name": "UV Tooth Whitening Kit",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/05/7b/057bc28ac161af28803d2240f4fb5853.webp"
+            }
+          ]
+        },
+        {
+          "page_id": "page_mpfwhs0o_33",
+          "page_type": "thankyou",
+          "order": 6,
+          "label": "Thank You",
+          "url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/receipt/",
+          "is_entry": false,
+          "expected_meta_tags": {
+            "next-page-type": "receipt"
+          },
+          "packages": []
+        }
+      ]
+    }
+  ]
+}

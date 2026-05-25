@@ -1,0 +1,325 @@
+{
+  "schema_version": "campaign-runtime-build-context/v0",
+  "generated_at": "2026-05-22T05:46:07.224Z",
+  "source_adapter": "html_funnel",
+  "status": "prepared",
+  "packet_path": "./campaign-runtime-travel-care.build.json",
+  "report_path": ".campaign-runtime/travel-care-assembly-report.json",
+  "spec": {
+    "path": "../../Downloads/campaign-spec-travel-oral-care-bundle-tez (1).json",
+    "hash": "0a3be2f869aa60b65f4c616c59b734e8a1538fba43b03e34a2b3f37cd371a451",
+    "active_pages": [
+      {
+        "id": "page_mpfwhs0o_29",
+        "type": "presell",
+        "label": "Presell",
+        "page_url": "try.dogfoodprep/waterflosser/presell/"
+      },
+      {
+        "id": "page_mpfwhs0o_30",
+        "type": "landing",
+        "label": "Landing (PDP)",
+        "page_url": "try.dogfoodprep/waterflosser/landing/"
+      },
+      {
+        "id": "page_mpfwhs0o_31",
+        "type": "checkout",
+        "label": "Checkout",
+        "page_url": "try.dogfoodprep/waterflosser/checkout/"
+      },
+      {
+        "id": "page_mpfwhs0o_32",
+        "type": "upsell",
+        "label": "Upsell",
+        "page_url": "try.dogfoodprep/waterflosser/oto-sonic/"
+      },
+      {
+        "id": "page_mpfwnwyf_674",
+        "type": "upsell",
+        "label": "Upsell 2",
+        "page_url": "try.dogfoodprep/waterflosser/oto-kit/"
+      },
+      {
+        "id": "page_mpfwhs0o_33",
+        "type": "thankyou",
+        "label": "Thank You",
+        "page_url": "try.dogfoodprep/waterflosser/receipt/"
+      }
+    ]
+  },
+  "source": {
+    "root": "../designer/funnel-designs/travel-oral-care-bundle",
+    "html_files": [
+      {
+        "path": "checkout.html",
+        "name": "checkout.html",
+        "basename": "checkout",
+        "bytes": 15478,
+        "sha256": "5300b3ecb128810fb3f933fbdd3f3033730cd12ef7cc56403589c0476a1eabbc"
+      },
+      {
+        "path": "landing.html",
+        "name": "landing.html",
+        "basename": "landing",
+        "bytes": 34950,
+        "sha256": "6b4e459265c8268930199551258786a1c23f688f674255f365d7d985360eed93"
+      },
+      {
+        "path": "presell.html",
+        "name": "presell.html",
+        "basename": "presell",
+        "bytes": 9340,
+        "sha256": "2a17da61793c129637626278b8a17d12110e9a1d68ff6a3cd84912207e420e2a"
+      },
+      {
+        "path": "thank-you.html",
+        "name": "thank-you.html",
+        "basename": "thank-you",
+        "bytes": 5495,
+        "sha256": "4321df38a5bf60cdd4a3a9c06619d122a30666d68549763072a573137093d63e"
+      },
+      {
+        "path": "upsell-1.html",
+        "name": "upsell-1.html",
+        "basename": "upsell-1",
+        "bytes": 6781,
+        "sha256": "cbafb187086302e3bd0b3140214ba4a98f57bc52e9ff1692f22cbd443ade0865"
+      },
+      {
+        "path": "upsell-2.html",
+        "name": "upsell-2.html",
+        "basename": "upsell-2",
+        "bytes": 6889,
+        "sha256": "ef9974c3cb0b701d1bd5a60f9d184ba6cba9f141af21891bad7f0b13339c13e1"
+      }
+    ]
+  },
+  "page_map": [
+    {
+      "page_id": "page_mpfwhs0o_29",
+      "source_path": "presell.html",
+      "skip_reason": null,
+      "output_path": "./src/travel-care/presell.html"
+    },
+    {
+      "page_id": "page_mpfwhs0o_30",
+      "source_path": "landing.html",
+      "skip_reason": null,
+      "output_path": "./src/travel-care/landing.html"
+    },
+    {
+      "page_id": "page_mpfwhs0o_31",
+      "source_path": "checkout.html",
+      "skip_reason": null,
+      "output_path": "./src/travel-care/checkout.html"
+    },
+    {
+      "page_id": "page_mpfwhs0o_32",
+      "source_path": "upsell-1.html",
+      "skip_reason": null,
+      "output_path": "./src/travel-care/upsell-1.html"
+    },
+    {
+      "page_id": "page_mpfwnwyf_674",
+      "source_path": "upsell-2.html",
+      "skip_reason": null,
+      "output_path": "./src/travel-care/upsell-2.html"
+    },
+    {
+      "page_id": "page_mpfwhs0o_33",
+      "source_path": "thank-you.html",
+      "skip_reason": null,
+      "output_path": "./src/travel-care/thank-you.html"
+    }
+  ],
+  "scaffold": {
+    "mode": "existing",
+    "required": false,
+    "target_repo": ".",
+    "output_dir": "./src/travel-care",
+    "handoff_skill": "next-campaigns-build",
+    "handoff_artifact": ".campaign-runtime/setup-handoff.json",
+    "reason": "Target campaign output directory already exists."
+  },
+  "template": {
+    "family": "limos",
+    "locked": true,
+    "lock": {
+      "locked": true,
+      "locked_by": "operator_flag",
+      "confidence": "high",
+      "evidence": [
+        "prepare-build --template-family"
+      ]
+    },
+    "candidates": []
+  },
+  "commerce_zone_findings": [
+    {
+      "path": "checkout.html",
+      "zones": [
+        "checkout",
+        "payment",
+        "upsell",
+        "receipt",
+        "sdk_attributes"
+      ],
+      "sdk_attributes": [
+        "data-next-express-checkout",
+        "data-next-checkout",
+        "data-next-checkout-field",
+        "data-next-component",
+        "data-next-catalog-component",
+        "data-next-await",
+        "data-next-package-toggle",
+        "data-next-toggle-card",
+        "data-next-is-upsell",
+        "data-next-package-sync",
+        "data-next-package-id",
+        "data-next-toggle-image",
+        "data-next-toggle-display",
+        "data-next-payment-method",
+        "data-next-payment-form",
+        "data-next-cart-summary",
+        "data-next-discounts",
+        "data-next-show",
+        "data-next-hide",
+        "data-next-coupon"
+      ],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "landing.html",
+      "zones": [
+        "checkout"
+      ],
+      "sdk_attributes": [],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "thank-you.html",
+      "zones": [
+        "payment",
+        "receipt",
+        "sdk_attributes"
+      ],
+      "sdk_attributes": [
+        "data-next-display",
+        "data-next-cart-summary",
+        "data-next-show"
+      ],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "upsell-1.html",
+      "zones": [
+        "upsell",
+        "sdk_attributes"
+      ],
+      "sdk_attributes": [
+        "data-next-display",
+        "data-next-format",
+        "data-next-bundle-selector",
+        "data-next-selector-id",
+        "data-next-bundle-card",
+        "data-next-bundle-id",
+        "data-next-bundle-items",
+        "data-next-bundle-vouchers",
+        "data-next-selected",
+        "data-next-upsell",
+        "data-next-await",
+        "data-next-upsell-context",
+        "data-next-package-id",
+        "data-next-bundle-display",
+        "data-next-upsell-action"
+      ],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "upsell-2.html",
+      "zones": [
+        "upsell",
+        "sdk_attributes"
+      ],
+      "sdk_attributes": [
+        "data-next-display",
+        "data-next-format",
+        "data-next-bundle-selector",
+        "data-next-selector-id",
+        "data-next-bundle-card",
+        "data-next-bundle-id",
+        "data-next-bundle-items",
+        "data-next-bundle-vouchers",
+        "data-next-selected",
+        "data-next-upsell",
+        "data-next-await",
+        "data-next-upsell-context",
+        "data-next-upsell-action"
+      ],
+      "action": "review_and_preserve_catalog_surfaces"
+    }
+  ],
+  "prompts_required": [],
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mpfwhs0o_29",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_29\" to source file \"presell.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-29, presell, try-dogfoodprep-waterflosser-presell, presell-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_30",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_30\" to source file \"landing.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-30, landing-pdp, landing, try-dogfoodprep-waterflosser-landing, landing-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_31",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_31\" to source file \"checkout.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-31, checkout, try-dogfoodprep-waterflosser-checkout, checkout-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_32",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_32\" to source file \"upsell-1.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-32, upsell, try-dogfoodprep-waterflosser-oto-sonic, oto-sonic, upsell-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwnwyf_674",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwnwyf_674\" to source file \"upsell-2.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwnwyf-674, upsell-2, upsell, try-dogfoodprep-waterflosser-oto-kit, oto-kit"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_33",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_33\" to source file \"thank-you.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-33, thank-you, thankyou, try-dogfoodprep-waterflosser-receipt, receipt, thankyou-1"
+      ]
+    }
+  ]
+}

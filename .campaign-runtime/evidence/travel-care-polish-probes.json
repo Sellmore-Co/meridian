@@ -1,0 +1,684 @@
+{
+  "generated_at": "2026-05-22T08:16:56.127Z",
+  "base": "http://127.0.0.1:8098/travel-care",
+  "results": [
+    {
+      "name": "presell",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:8098/travel-care/presell/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-presell-desktop.png",
+      "consoleEvents": [],
+      "pageErrors": [],
+      "title": "Why dentists keep telling people to floss differently — DentaStream",
+      "meta": {
+        "next-page-type": "product"
+      },
+      "residue": []
+    },
+    {
+      "name": "landing",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:8098/travel-care/landing/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-landing-desktop.png",
+      "consoleEvents": [],
+      "pageErrors": [],
+      "title": "DentaStream Water Flosser",
+      "meta": {
+        "next-page-type": "product",
+        "next-currency": "USD"
+      },
+      "residue": []
+    },
+    {
+      "name": "checkout",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:8098/travel-care/checkout/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-checkout-desktop.png",
+      "consoleEvents": [
+        {
+          "type": "error",
+          "text": "Failed to load SDK: ReferenceError: Cannot access 'create' before initialization\n    at https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/chunks/utils-eoibqppS.js:219:27"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        }
+      ],
+      "pageErrors": [],
+      "title": "DentaStream Travel Oral Care - Checkout",
+      "meta": {
+        "next-funnel": "travel-care",
+        "next-success-url": "/travel-care/oto-sonic/",
+        "next-page-type": "checkout",
+        "next-currency": "USD",
+        "next-predictive-address": "true"
+      },
+      "residue": [],
+      "checkout": {
+        "htmlReady": "",
+        "wordmark": {
+          "x": 220,
+          "y": 71,
+          "width": 183,
+          "height": 28,
+          "text": "DentaStream",
+          "classes": "ds-wordmark"
+        },
+        "featureCopy": [
+          "Satisfaction Guarantee Take DentaStream on the road for 30 days. If it is not right for your routine, send it back for a refund.",
+          "Fast U.S. Shipping Compact essentials ship quickly from our Ohio warehouse for easier travel prep.",
+          "50,000+ Travel Kits Shipped to Date Travel-sized oral care kits built for carry-ons, toiletry bags, and everyday routines away from home."
+        ],
+        "paymentMethods": [
+          {
+            "attr": "credit",
+            "tag": "div",
+            "alt": "",
+            "classes": "payment-method next-selected",
+            "text": "Credit Card Error message Exp. Month Exp. Year Use shipping address as billing address Billing Address",
+            "width": 548,
+            "height": 280,
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "attr": "apple-pay",
+            "tag": "div",
+            "alt": "",
+            "classes": "payment-method",
+            "text": "Apple Pay Error message After clicking \"Complete Purchase\", you will be redirected to complete your purchase securely.",
+            "width": 548,
+            "height": 55,
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "attr": "google-pay",
+            "tag": "div",
+            "alt": "",
+            "classes": "payment-method",
+            "text": "Google Pay Error message After clicking \"Complete Purchase\", you will be redirected to complete your purchase securely.",
+            "width": 548,
+            "height": 54,
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1"
+          }
+        ],
+        "footerPaymentFlags": [
+          "Visa",
+          "Mastercard",
+          "American Express",
+          "Discover",
+          "Apple Pay",
+          "Google Pay"
+        ],
+        "express": {
+          "x": 220,
+          "y": 669,
+          "width": 550,
+          "height": 38,
+          "text": "Express Checkout Error message",
+          "classes": "express-checkout"
+        },
+        "hostedFields": [
+          {
+            "attr": "cc-number",
+            "tag": "div",
+            "alt": "",
+            "classes": "input-flds spreedly-field",
+            "text": "",
+            "width": 516,
+            "height": 48,
+            "display": "flex",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "attr": "cvv",
+            "tag": "div",
+            "alt": "",
+            "classes": "input-flds spreedly-field",
+            "text": "",
+            "width": 161,
+            "height": 48,
+            "display": "flex",
+            "visibility": "visible",
+            "opacity": "1"
+          }
+        ],
+        "orderSummary": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "text": "",
+          "classes": "order-summary__content"
+        },
+        "bump": {
+          "wrap": {
+            "x": 220,
+            "y": 1503,
+            "width": 550,
+            "height": 220,
+            "text": "Add the UV Toothbrush Sanitizer Case -- --/ea USB-rechargeable case for travel days Kills surface bacteria on your brush head Compact case keeps your brush spotless on the go",
+            "classes": ""
+          },
+          "card": {
+            "x": 220,
+            "y": 1503,
+            "width": 550,
+            "height": 220,
+            "text": "Add the UV Toothbrush Sanitizer Case -- --/ea USB-rechargeable case for travel days Kills surface bacteria on your brush head Compact case keeps your brush spotless on the go",
+            "classes": "bump-card"
+          },
+          "before": {
+            "classes": "bump-card",
+            "packageId": "2",
+            "sync": null
+          },
+          "afterClick": {
+            "classes": "bump-card",
+            "packageId": "2",
+            "sync": null
+          },
+          "afterSecondClick": {
+            "classes": "bump-card",
+            "packageId": "2",
+            "sync": null
+          }
+        },
+        "exitIntentTemplate": {
+          "hasTemplate": true,
+          "includesExit10": true,
+          "ctaCode": "EXIT10",
+          "text": "<div class=\"exit-intent-popup\"> <div class=\"exit-intent-popup__dialog\"> <div class=\"exit-intent-popup__image\"> <picture> <img src=\"/travel-care/products/water-flosser-banner.png\" alt=\"\"> </picture> </div> <div class=\"exi"
+        },
+        "unsupportedVisible": []
+      }
+    },
+    {
+      "name": "oto-sonic",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:8098/travel-care/oto-sonic/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-oto-sonic-desktop.png",
+      "consoleEvents": [
+        {
+          "type": "error",
+          "text": "Failed to load SDK: ReferenceError: Cannot access 'create' before initialization\n    at https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/chunks/utils-eoibqppS.js:219:27"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        }
+      ],
+      "pageErrors": [],
+      "title": "Wait — complete your routine | DentaStream",
+      "meta": {
+        "next-funnel": "travel-care",
+        "next-upsell-accept-url": "/travel-care/oto-kit/",
+        "next-upsell-decline-url": "/travel-care/oto-kit/",
+        "next-page-type": "upsell",
+        "next-currency": "USD",
+        "next-prevent-back-navigation": "true"
+      },
+      "residue": []
+    },
+    {
+      "name": "oto-kit",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:8098/travel-care/oto-kit/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-oto-kit-desktop.png",
+      "consoleEvents": [
+        {
+          "type": "error",
+          "text": "Failed to load SDK: ReferenceError: Cannot access 'create' before initialization\n    at https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/chunks/utils-eoibqppS.js:219:27"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        }
+      ],
+      "pageErrors": [],
+      "title": "One last thing — at-home whitening | DentaStream",
+      "meta": {
+        "next-funnel": "travel-care",
+        "next-upsell-accept-url": "/travel-care/receipt/",
+        "next-upsell-decline-url": "/travel-care/receipt/",
+        "next-page-type": "upsell",
+        "next-currency": "USD"
+      },
+      "residue": []
+    },
+    {
+      "name": "receipt",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:8098/travel-care/receipt/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-receipt-desktop.png",
+      "consoleEvents": [
+        {
+          "type": "error",
+          "text": "Failed to load SDK: ReferenceError: Cannot access 'create' before initialization\n    at https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/chunks/utils-eoibqppS.js:219:27"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        }
+      ],
+      "pageErrors": [],
+      "title": "Order confirmed — DentaStream",
+      "meta": {
+        "next-funnel": "travel-care",
+        "next-page-type": "receipt"
+      },
+      "residue": []
+    },
+    {
+      "name": "presell",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:8098/travel-care/presell/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-presell-mobile.png",
+      "consoleEvents": [],
+      "pageErrors": [],
+      "title": "Why dentists keep telling people to floss differently — DentaStream",
+      "meta": {
+        "next-page-type": "product"
+      },
+      "residue": []
+    },
+    {
+      "name": "landing",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:8098/travel-care/landing/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-landing-mobile.png",
+      "consoleEvents": [],
+      "pageErrors": [],
+      "title": "DentaStream Water Flosser",
+      "meta": {
+        "next-page-type": "product",
+        "next-currency": "USD"
+      },
+      "residue": []
+    },
+    {
+      "name": "checkout",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:8098/travel-care/checkout/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-checkout-mobile.png",
+      "consoleEvents": [
+        {
+          "type": "error",
+          "text": "Failed to load SDK: ReferenceError: Cannot access 'create' before initialization\n    at https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/chunks/utils-eoibqppS.js:219:27"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        }
+      ],
+      "pageErrors": [],
+      "title": "DentaStream Travel Oral Care - Checkout",
+      "meta": {
+        "next-funnel": "travel-care",
+        "next-success-url": "/travel-care/oto-sonic/",
+        "next-page-type": "checkout",
+        "next-currency": "USD",
+        "next-predictive-address": "true"
+      },
+      "residue": [],
+      "checkout": {
+        "htmlReady": "",
+        "wordmark": {
+          "x": 20,
+          "y": 89,
+          "width": 156,
+          "height": 24,
+          "text": "DentaStream",
+          "classes": "ds-wordmark"
+        },
+        "featureCopy": [
+          "Satisfaction Guarantee Take DentaStream on the road for 30 days. If it is not right for your routine, send it back for a refund.",
+          "Fast U.S. Shipping Compact essentials ship quickly from our Ohio warehouse for easier travel prep.",
+          "50,000+ Travel Kits Shipped to Date Travel-sized oral care kits built for carry-ons, toiletry bags, and everyday routines away from home."
+        ],
+        "paymentMethods": [
+          {
+            "attr": "credit",
+            "tag": "div",
+            "alt": "",
+            "classes": "payment-method next-selected",
+            "text": "Credit Card Error message Exp. Month Exp. Year Use shipping address as billing address Billing Address",
+            "width": 348,
+            "height": 408,
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "attr": "apple-pay",
+            "tag": "div",
+            "alt": "",
+            "classes": "payment-method",
+            "text": "Apple Pay Error message After clicking \"Complete Purchase\", you will be redirected to complete your purchase securely.",
+            "width": 348,
+            "height": 55,
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "attr": "google-pay",
+            "tag": "div",
+            "alt": "",
+            "classes": "payment-method",
+            "text": "Google Pay Error message After clicking \"Complete Purchase\", you will be redirected to complete your purchase securely.",
+            "width": 348,
+            "height": 54,
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1"
+          }
+        ],
+        "footerPaymentFlags": [
+          "Visa",
+          "Mastercard",
+          "American Express",
+          "Discover",
+          "Apple Pay",
+          "Google Pay"
+        ],
+        "express": {
+          "x": 20,
+          "y": 739,
+          "width": 350,
+          "height": 46,
+          "text": "Express Checkout Error message",
+          "classes": "express-checkout"
+        },
+        "hostedFields": [
+          {
+            "attr": "cc-number",
+            "tag": "div",
+            "alt": "",
+            "classes": "input-flds spreedly-field",
+            "text": "",
+            "width": 316,
+            "height": 48,
+            "display": "flex",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "attr": "cvv",
+            "tag": "div",
+            "alt": "",
+            "classes": "input-flds spreedly-field",
+            "text": "",
+            "width": 316,
+            "height": 48,
+            "display": "flex",
+            "visibility": "visible",
+            "opacity": "1"
+          }
+        ],
+        "orderSummary": {
+          "x": 37,
+          "y": 2292,
+          "width": 316,
+          "height": 0,
+          "text": "",
+          "classes": "order-summary__content"
+        },
+        "bump": {
+          "wrap": {
+            "x": 20,
+            "y": 1733,
+            "width": 350,
+            "height": 273,
+            "text": "Add the UV Toothbrush Sanitizer Case -- --/ea USB-rechargeable case for travel days Kills surface bacteria on your brush head Compact case keeps your brush spotless on the go",
+            "classes": ""
+          },
+          "card": {
+            "x": 20,
+            "y": 1733,
+            "width": 350,
+            "height": 273,
+            "text": "Add the UV Toothbrush Sanitizer Case -- --/ea USB-rechargeable case for travel days Kills surface bacteria on your brush head Compact case keeps your brush spotless on the go",
+            "classes": "bump-card"
+          },
+          "before": {
+            "classes": "bump-card",
+            "packageId": "2",
+            "sync": null
+          },
+          "afterClick": {
+            "classes": "bump-card",
+            "packageId": "2",
+            "sync": null
+          },
+          "afterSecondClick": {
+            "classes": "bump-card",
+            "packageId": "2",
+            "sync": null
+          }
+        },
+        "exitIntentTemplate": {
+          "hasTemplate": true,
+          "includesExit10": true,
+          "ctaCode": "EXIT10",
+          "text": "<div class=\"exit-intent-popup\"> <div class=\"exit-intent-popup__dialog\"> <div class=\"exit-intent-popup__image\"> <picture> <img src=\"/travel-care/products/water-flosser-banner.png\" alt=\"\"> </picture> </div> <div class=\"exi"
+        },
+        "unsupportedVisible": []
+      }
+    },
+    {
+      "name": "oto-sonic",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:8098/travel-care/oto-sonic/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-oto-sonic-mobile.png",
+      "consoleEvents": [
+        {
+          "type": "error",
+          "text": "Failed to load SDK: ReferenceError: Cannot access 'create' before initialization\n    at https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/chunks/utils-eoibqppS.js:219:27"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        }
+      ],
+      "pageErrors": [],
+      "title": "Wait — complete your routine | DentaStream",
+      "meta": {
+        "next-funnel": "travel-care",
+        "next-upsell-accept-url": "/travel-care/oto-kit/",
+        "next-upsell-decline-url": "/travel-care/oto-kit/",
+        "next-page-type": "upsell",
+        "next-currency": "USD",
+        "next-prevent-back-navigation": "true"
+      },
+      "residue": []
+    },
+    {
+      "name": "oto-kit",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:8098/travel-care/oto-kit/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-oto-kit-mobile.png",
+      "consoleEvents": [
+        {
+          "type": "error",
+          "text": "Failed to load SDK: ReferenceError: Cannot access 'create' before initialization\n    at https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/chunks/utils-eoibqppS.js:219:27"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        }
+      ],
+      "pageErrors": [],
+      "title": "One last thing — at-home whitening | DentaStream",
+      "meta": {
+        "next-funnel": "travel-care",
+        "next-upsell-accept-url": "/travel-care/receipt/",
+        "next-upsell-decline-url": "/travel-care/receipt/",
+        "next-page-type": "upsell",
+        "next-currency": "USD"
+      },
+      "residue": []
+    },
+    {
+      "name": "receipt",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:8098/travel-care/receipt/",
+      "ok": true,
+      "screenshot": "/Users/devin/Developer/meridian/.campaign-runtime/evidence/travel-care-receipt-mobile.png",
+      "consoleEvents": [
+        {
+          "type": "error",
+          "text": "Failed to load SDK: ReferenceError: Cannot access 'create' before initialization\n    at https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/chunks/utils-eoibqppS.js:219:27"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        },
+        {
+          "type": "error",
+          "text": "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:8098' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: net::ERR_FAILED"
+        }
+      ],
+      "pageErrors": [],
+      "title": "Order confirmed — DentaStream",
+      "meta": {
+        "next-funnel": "travel-care",
+        "next-page-type": "receipt"
+      },
+      "residue": []
+    }
+  ]
+}

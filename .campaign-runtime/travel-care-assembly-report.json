@@ -1,0 +1,383 @@
+{
+  "schema_version": "campaign-runtime-assembly-report/v0",
+  "run_id": "asm_1779428767225",
+  "generated_at": "2026-05-22T05:46:07.225Z",
+  "status": "ready_with_exceptions",
+  "identity": {
+    "map_id": "travel-oral-care-bundle-tez-1td7",
+    "public_route_slug": "travel-care",
+    "campaign_directory": "travel-care",
+    "live_url_path": "/travel-care/",
+    "spec_hash": "sha256:eaffeea547b63594b85db0515aef13a324dad9aab062d1cb456ca2c5870f435e"
+  },
+  "inputs": {
+    "packet_path": "./campaign-runtime-travel-care.build.json",
+    "context_path": ".campaign-runtime/travel-care-build-context.json",
+    "spec_path": "../../Downloads/campaign-spec-travel-oral-care-bundle-tez (1).json",
+    "source": {
+      "kind": "html_funnel",
+      "root": "../designer/funnel-designs/travel-oral-care-bundle"
+    },
+    "target_repo": "."
+  },
+  "template_family": {
+    "value": "limos",
+    "locked": true,
+    "locked_by": "operator_flag",
+    "commerce_catalog_version": null,
+    "candidates": []
+  },
+  "stages": {
+    "prepare_build": {
+      "stage": "prepare_build",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [
+        "./campaign-runtime-travel-care.build.json",
+        ".campaign-runtime/travel-care-build-context.json",
+        ".campaign-runtime/travel-care-assembly-report.json"
+      ],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "doctor": {
+      "stage": "doctor",
+      "status": "completed_with_warnings",
+      "inputs": [
+        "./campaign-runtime-travel-care.build.json",
+        ".campaign-runtime/travel-care-build-context.json",
+        ".campaign-runtime/travel-care-assembly-report.json"
+      ],
+      "outputs": [
+        ".campaign-runtime/travel-care-doctor-output.json"
+      ],
+      "commands": [
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs doctor --packet /Users/devin/Developer/meridian/campaign-runtime-travel-care.build.json --context /Users/devin/Developer/meridian/.campaign-runtime/travel-care-build-context.json --report /Users/devin/Developer/meridian/.campaign-runtime/travel-care-assembly-report.json --json"
+      ],
+      "blockers": [],
+      "warnings": [
+        "Allowed domains are not confirmed. SDK runtime checks may be blocked.",
+        "CampaignSpec sdk_hints.meta_tags routing values must render as campaign-rooted paths before QA. Expected values like \"/travel-care/upsell/\" for next-success-url, next-upsell-accept-url, next-upsell-decline-url; found page_mpfwhs0o_31:next-success-url=try.dogfoodprep/waterflosser/oto-sonic/; page_mpfwhs0o_32:next-upsell-accept-url=try.dogfoodprep/waterflosser/oto-kit/; page_mpfwhs0o_32:next-upsell-decline-url=try.dogfoodprep/waterflosser/oto-kit/; page_mpfwnwyf_674:next-upsell-accept-url=try.dogfoodprep/waterflosser/receipt/; page_mpfwnwyf_674:next-upsell-decline-url=try.dogfoodprep/waterflosser/receipt/.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at funnels.0.pages.2.packages.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"2\" at funnels.0.pages.2.packages.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at funnels.0.pages.3.offers.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"2\" at funnels.0.pages.3.offers.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at funnel_pages.2.packages.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"2\" at funnel_pages.2.packages.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at funnel_pages.3.offers.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"2\" at funnel_pages.3.offers.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at offers.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at offers.0.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"2\" at offers.1.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at offers.1.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at offers.2.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at offers.3.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at offers.4.packages.0.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"2\" at offers.4.packages.1.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at offers.4.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at offers.5.packages.0.package_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "CampaignSpec contains a starter-looking demo ref \"1\" at offers.5.shipping_methods.0.ref_id. Confirm it came from the actual Campaigns API or attach _provenance.api/source metadata.",
+        "No preview or production URL yet. QA remains blocked after build/polish.",
+        "SDK-driven test orders are not enabled for this packet; QA must avoid checkout order mutations."
+      ]
+    },
+    "setup": {
+      "stage": "setup",
+      "status": "skipped",
+      "inputs": [],
+      "outputs": [],
+      "commands": [
+        "node scripts/assemble-travel-care.mjs",
+        "npm run build"
+      ],
+      "blockers": [],
+      "warnings": []
+    },
+    "assembly": {
+      "stage": "assembly",
+      "status": "completed_with_warnings",
+      "inputs": [
+        "../../Downloads/campaign-spec-travel-oral-care-bundle-tez (1).json",
+        "../designer/funnel-designs/travel-oral-care-bundle",
+        "../campaign-cart-starter-templates/src/limos/checkout.html"
+      ],
+      "outputs": [
+        "src/travel-care/",
+        "src/travel-care/_includes/",
+        "src/travel-care/_layouts/",
+        "src/travel-care/assets/",
+        "_data/campaigns.json",
+        "scripts/assemble-travel-care.mjs"
+      ],
+      "commands": [
+        "node scripts/assemble-travel-care.mjs",
+        "npm run build"
+      ],
+      "blockers": [],
+      "warnings": [
+        "Checkout source was replaced with the canonical Limos checkout template; source checkout is intentionally not reused.",
+        "Spec page_url vanity paths are rendered under the campaign public route /travel-care/ to avoid nested /travel-care/try.dogfoodprep/... output.",
+        "PayPal and Klarna are disabled at the payment-method include because CampaignSpec/store payment methods only expose bankcard, apple_pay, and google_pay."
+      ]
+    },
+    "polish": {
+      "stage": "polish",
+      "status": "completed_with_warnings",
+      "inputs": [
+        "/Users/devin/Downloads/campaign-spec-travel-oral-care-bundle-tez (1).json",
+        "src/travel-care",
+        "_site/travel-care",
+        "/Users/devin/Developer/campaign-cart-starter-templates/src/limos"
+      ],
+      "outputs": [
+        "src/travel-care/checkout.html",
+        "src/travel-care/_includes/checkout-header.html",
+        "src/travel-care/_includes/payment-methods.html",
+        "src/travel-care/_includes/bump-check01.html",
+        "src/travel-care/assets/css/travel-care-checkout.css",
+        ".campaign-runtime/evidence/travel-care-polish-probes.json",
+        ".campaign-runtime/evidence/travel-care-presell-desktop.png",
+        ".campaign-runtime/evidence/travel-care-presell-mobile.png",
+        ".campaign-runtime/evidence/travel-care-landing-desktop.png",
+        ".campaign-runtime/evidence/travel-care-landing-mobile.png",
+        ".campaign-runtime/evidence/travel-care-checkout-desktop.png",
+        ".campaign-runtime/evidence/travel-care-checkout-mobile.png",
+        ".campaign-runtime/evidence/travel-care-oto-sonic-desktop.png",
+        ".campaign-runtime/evidence/travel-care-oto-sonic-mobile.png",
+        ".campaign-runtime/evidence/travel-care-oto-kit-desktop.png",
+        ".campaign-runtime/evidence/travel-care-oto-kit-mobile.png",
+        ".campaign-runtime/evidence/travel-care-receipt-desktop.png",
+        ".campaign-runtime/evidence/travel-care-receipt-mobile.png",
+        ".campaign-runtime/evidence/travel-care-preview-probes.json",
+        ".campaign-runtime/evidence/travel-care-preview-checkout-desktop.png"
+      ],
+      "commands": [
+        "node scripts/assemble-travel-care.mjs",
+        "npm run build",
+        "Playwright screenshot/probe pass against http://127.0.0.1:8098/travel-care/ at 1440px and 390px",
+        "Playwright preview probe against https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/checkout/ for payment methods, exit-intent template, and bump toggle state"
+      ],
+      "fixed": [
+        "[visual drift] checkout: replaced broken half-visible logo asset with DentaStream wordmark text.",
+        "[copy/data mismatch] checkout: removed static PayPal footer mark; rendered methods now match bankcard, Apple Pay, and Google Pay.",
+        "[copy/data mismatch] checkout: fixed billing-address typo and tuned DentaStream trust copy.",
+        "[SDK/runtime risk] checkout: fixed check01 bump so sync_quantity false does not emit data-next-package-sync; bump maps package_id 2.",
+        "[runtime state] checkout: hid inactive bump checkmark and verified click toggles active state on preview without package quantity sync."
+      ],
+      "intentional_divergences": [
+        "Checkout intentionally uses canonical Limos commerce structure instead of the raw source checkout because payment, hosted fields, express checkout, and bump behavior are SDK-owned surfaces.",
+        "SDK-dynamic bundle/order-summary/bump money remains skeleton-gated on local first paint rather than hardcoded from the source mockup."
+      ],
+      "commerce_smoke": {
+        "static_contract": "checked",
+        "payment_methods": [
+          "credit",
+          "apple-pay",
+          "google-pay"
+        ],
+        "hosted_fields": "Spreedly number and CVV iframes mount on deployed preview with centered 20px iframe path inside 48px hosts",
+        "bump": "preview probe starts inactive with hidden marker, click toggles package_id 2 to next-active/os--active, and data-next-package-sync remains absent",
+        "exit_intent": "template[data-template=\"exit-intent\"] contains EXIT10 apply-coupon action"
+      },
+      "screenshots": [
+        ".campaign-runtime/evidence/travel-care-presell-desktop.png",
+        ".campaign-runtime/evidence/travel-care-presell-mobile.png",
+        ".campaign-runtime/evidence/travel-care-landing-desktop.png",
+        ".campaign-runtime/evidence/travel-care-landing-mobile.png",
+        ".campaign-runtime/evidence/travel-care-checkout-desktop.png",
+        ".campaign-runtime/evidence/travel-care-checkout-mobile.png",
+        ".campaign-runtime/evidence/travel-care-oto-sonic-desktop.png",
+        ".campaign-runtime/evidence/travel-care-oto-sonic-mobile.png",
+        ".campaign-runtime/evidence/travel-care-oto-kit-desktop.png",
+        ".campaign-runtime/evidence/travel-care-oto-kit-mobile.png",
+        ".campaign-runtime/evidence/travel-care-receipt-desktop.png",
+        ".campaign-runtime/evidence/travel-care-receipt-mobile.png"
+      ],
+      "probes": ".campaign-runtime/evidence/travel-care-polish-probes.json",
+      "blockers": [],
+      "warnings": [
+        "campaign-cart@v0.4.20 still logs ReferenceError: Cannot access create before initialization from the jsDelivr chunk, even though runtime surfaces hydrate on deployed preview.",
+        "Localhost remains CORS-limited; deployed preview evidence is the canonical runtime proof."
+      ],
+      "next_owner": "preview QA / optional test-order proof",
+      "updated_at": "2026-05-22T08:41:18.557Z"
+    },
+    "deploy": {
+      "stage": "deploy",
+      "status": "completed",
+      "inputs": [
+        "PR13 branch codex/sell-284-travel-care"
+      ],
+      "outputs": [
+        "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/",
+        "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/checkout/"
+      ],
+      "commands": [
+        "git push",
+        "gh pr checks 13 --repo Sellmore-Co/meridian"
+      ],
+      "blockers": [],
+      "warnings": [
+        "The separate campaignsos Netlify preview check may run independently; meridian-skincare deploy preview is the campaign runtime target."
+      ],
+      "updated_at": "2026-05-22T08:41:18.557Z"
+    },
+    "qa": {
+      "stage": "qa",
+      "status": "ready_with_exceptions",
+      "inputs": [
+        "campaign-runtime-travel-care.build.json",
+        "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/"
+      ],
+      "outputs": [
+        ".campaign-runtime/evidence/travel-care-qa-resolve-preview.json",
+        ".campaign-runtime/qa-travel-care/travel-oral-care-bundle-tez-1td7/MPGO4DH4V2KMPVBM65VB2HVHQO.json",
+        ".campaign-runtime/evidence/travel-care-preview-probes.json",
+        ".campaign-runtime/evidence/travel-care-preview-checkout-desktop.png"
+      ],
+      "commands": [
+        "campaigns-os qa resolve --packet campaign-runtime-travel-care.build.json --base-url https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/ --json",
+        "campaigns-os qa run --packet campaign-runtime-travel-care.build.json --base-url https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/ --browser --output-dir .campaign-runtime/qa-travel-care --json"
+      ],
+      "blockers": [
+        "SDK-driven test orders remain disabled until sandbox card routing and merchant order mutation permission are confirmed."
+      ],
+      "warnings": [
+        "Preview QA verdict MPGO4DH4V2KMPVBM65VB2HVHQO is ready_with_exceptions: 45 pass, 5 warn, 0 fail.",
+        "Warnings are campaign-cart@v0.4.20 console ReferenceError on checkout/upsell/receipt and aborted landing MP4 requests.",
+        "No posted dashboard verdict was created; evidence is local to this PR workspace."
+      ],
+      "updated_at": "2026-05-22T08:41:18.557Z"
+    }
+  },
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mpfwhs0o_29",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_29\" to source file \"presell.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-29, presell, try-dogfoodprep-waterflosser-presell, presell-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_30",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_30\" to source file \"landing.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-30, landing-pdp, landing, try-dogfoodprep-waterflosser-landing, landing-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_31",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_31\" to source file \"checkout.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-31, checkout, try-dogfoodprep-waterflosser-checkout, checkout-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_32",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_32\" to source file \"upsell-1.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-32, upsell, try-dogfoodprep-waterflosser-oto-sonic, oto-sonic, upsell-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwnwyf_674",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwnwyf_674\" to source file \"upsell-2.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwnwyf-674, upsell-2, upsell, try-dogfoodprep-waterflosser-oto-kit, oto-kit"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpfwhs0o_33",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpfwhs0o_33\" to source file \"thank-you.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpfwhs0o-33, thank-you, thankyou, try-dogfoodprep-waterflosser-receipt, receipt, thankyou-1"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "assembly",
+      "type": "build",
+      "command": "npm run build",
+      "result": "passed; built 73 pages including Travel Care routes at _site/travel-care/{presell,landing,checkout,oto-sonic,oto-kit,receipt}/"
+    },
+    {
+      "stage": "assembly",
+      "type": "source_wiring",
+      "target": "src/travel-care/checkout.html",
+      "result": "checkout cloned from Limos template with canonical express checkout, payment-methods, hosted card fields, order bump, cart summary, and exit-intent include"
+    },
+    {
+      "stage": "deploy",
+      "type": "preview",
+      "target": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/",
+      "result": "Netlify meridian-skincare deploy preview ready; Travel Care routes resolve directly under /travel-care/."
+    },
+    {
+      "stage": "qa",
+      "type": "browser-verdict",
+      "target": ".campaign-runtime/qa-travel-care/travel-oral-care-bundle-tez-1td7/MPGO4DH4V2KMPVBM65VB2HVHQO.json",
+      "result": "Campaigns OS browser QA ready_with_exceptions: 45 pass, 5 warn, 0 fail; payment geometry, express wallets, bundle selection, bump state, upsell controls, and routing passed."
+    },
+    {
+      "stage": "qa",
+      "type": "runtime-probe",
+      "target": ".campaign-runtime/evidence/travel-care-preview-probes.json",
+      "result": "Order bump starts inactive with marker opacity 0/display none; click sets next-in-cart next-selected next-active os--active with marker opacity 1/display flex; package sync remains null."
+    }
+  ],
+  "blockers": [
+    "SDK-driven test orders remain disabled until sandbox card routing and merchant order mutation permission are confirmed."
+  ],
+  "warnings": [
+    {
+      "code": "SOURCE_CHECKOUT_REPLACED",
+      "stage": "assembly",
+      "message": "The raw source checkout had non-canonical payment/bump surfaces, so it was replaced with the Limos starter checkout and product-branded."
+    },
+    {
+      "code": "SDK_CONSOLE_WARNING",
+      "stage": "qa",
+      "message": "campaign-cart@v0.4.20 logs ReferenceError: Cannot access create before initialization from the jsDelivr utility chunk on runtime pages."
+    },
+    {
+      "code": "LANDING_MP4_ABORTED",
+      "stage": "qa",
+      "message": "Landing video requests report net::ERR_ABORTED in headless browser QA; page load and route checks still pass."
+    },
+    {
+      "code": "TEST_ORDER_NOT_RUN",
+      "stage": "qa",
+      "message": "No checkout mutation/test order was attempted in this run."
+    }
+  ],
+  "next": {
+    "stage": "optional-test-order-proof",
+    "owner": "Campaigns OS operator",
+    "action": "Confirm sandbox card routing and permission to mutate merchant orders, then run checkout test-order proof for the deployed preview.",
+    "blocked_stages": [
+      "test-orders"
+    ]
+  },
+  "updated_at": "2026-05-22T08:41:18.557Z"
+}

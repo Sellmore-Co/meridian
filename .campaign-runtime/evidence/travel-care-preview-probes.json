@@ -1,0 +1,31 @@
+{
+  "url": "https://deploy-preview-13--meridian-skincare.netlify.app/travel-care/checkout/",
+  "generatedAt": "2026-05-22T08:40:11.301Z",
+  "before": {
+    "className": "bump-card next-toggle-card next-not-in-cart",
+    "active": false,
+    "markerOpacity": "0",
+    "markerDisplay": "none",
+    "packageId": "2",
+    "packageSync": null
+  },
+  "after": {
+    "className": "bump-card next-toggle-card next-in-cart next-selected next-active os--active",
+    "active": true,
+    "markerOpacity": "1",
+    "markerDisplay": "flex",
+    "packageId": "2",
+    "packageSync": null
+  },
+  "paymentMethods": [
+    "apple_pay",
+    "google_pay",
+    "credit",
+    "apple-pay",
+    "google-pay"
+  ],
+  "exitIntentTemplates": 1,
+  "consoleIssues": [
+    "error: Failed to load SDK: ReferenceError: Cannot access 'create' before initialization\n    at https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.20/dist/chunks/utils-eoibqppS.js:219:27"
+  ]
+}
