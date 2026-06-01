@@ -14,7 +14,7 @@ Prepared-HTML full-funnel replay through the current `campaigns-os` toolkit.
 | Target repo / dir | `meridian` / `src/test-campaign/` |
 | Template family | **limos** (locked via `--template-family limos`; spec `preferred_template_family: limos`) |
 | SDK version | 0.4.24 (from spec `global_config.sdk_version`) |
-| Outcome | Built through **polish**; cleanly **blocked at the deploy/QA allowlist gate** (no preview URL; `allowed_domains_confirmed=false`; typed-card OFF) |
+| Outcome | Built through **polish + preview deploy + browser QA** (`ready_with_exceptions`: 32 pass / 1 fail-warn / 1 manual_review-warn). **Typed-card skipped** (policy OFF, no Devin approval). |
 
 ## Command spine actually used
 
@@ -43,8 +43,8 @@ node .../campaigns-os.mjs qa resolve   --packet ...
 | build (page-kit) | ✅ **79 pages built in ~1s**; 5 test-campaign routes (`/`, `/checkout/`, `/presell/`, `/upsell/`, `/receipt/`) | `_site/test-campaign/` |
 | SDK lint | ⚠️ run; 13 source + 20 rendered "violations" — all olympus-v0-scope false positives for limos (see report) | exit 0 (advisory) |
 | polish | ✅ source/built compared; unsupported order-bump removed; source hardcoded-currency fixed; no brand logos to preserve | currency warning cleared (38→37) |
-| deploy | ⛔ blocked — no Netlify preview lane confirmed | `deploy.target=unknown`, `preview_url=null` |
-| qa | ⛔ blocked — `qa resolve` base-url `(missing)`; `allowed_domains_confirmed=false` | — |
+| deploy | ✅ Netlify deploy-preview-14 | `https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/` |
+| qa (browser) | ✅ `ready_with_exceptions` — 32 pass / 1 fail(warn: card iframe geometry) / 1 manual_review(warn: express wallets); `test_orders: []` | `.campaign-runtime/qa-test-campaign/test-campaign-ujqf/MPUZ87KM1J3P6GM9A4MFA0NSCE.json` |
 | typed-card | ⏭️ skipped — policy OFF, no Devin approval, `test_orders_allowed=false` | — |
 
 ## Built-output verification (`_site/test-campaign/`)

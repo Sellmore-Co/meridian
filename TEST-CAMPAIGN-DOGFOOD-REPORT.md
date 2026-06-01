@@ -1,7 +1,7 @@
 # SELL-362 Dogfood Report — Prepared-HTML full-funnel replay through current `campaigns-os`
 
 **Run type:** Campaigns OS Round 2 workflow evaluation / issue discovery. **Not a production launch.**
-**Outcome:** Drove the upgraded command spine from prepared HTML → Build Packet → doctor → setup → build → SDK lint → polish, with a successful page-kit build. **Cleanly blocked at the deploy/QA allowlist gate** (an accepted SELL-362 terminal state), and skipped typed-card proof (policy OFF). Map `test-campaign-ujqf`, slug `test-campaign`, family **limos**.
+**Outcome:** Drove the upgraded command spine from prepared HTML → Build Packet → doctor → setup → build → SDK lint → polish → preview deploy → **package-owned browser QA** (executed against `https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/`). QA disposition **`ready_with_exceptions` (32 pass, 1 fail/warn, 1 manual_review/warn)**. Only **typed-card proof was skipped** (policy OFF — no Devin approval). Map `test-campaign-ujqf`, slug `test-campaign`, family **limos**.
 
 ---
 
@@ -44,27 +44,46 @@ doctor returned `ready_with_warnings`, **not** `collect-inputs`; 0 errors. The s
 
 ---
 
-## 3. The gate reached (clean stop)
+## 3. Deploy + browser QA (executed)
 
-`campaigns-os qa resolve` resolved all 5 pages but reported **Base URL `(missing)`**; `next polish` returned **`BLOCKED`**. Browser QA (`qa run --browser`) and typed-card proof (`qa run --test-order`) both require: (1) a deployed preview URL, (2) that origin allowlisted in Campaigns App for `AbhmIK…`, and (3) Devin-approved proof policy. **None are in hand**, so the run stops here — the SELL-362-sanctioned "cleanly block at a named doctor/policy gate."
+The PR produced a Netlify deploy-preview (`deploy-preview-14--meridian-skincare.netlify.app`). The package-owned Playwright flow ran end-to-end:
+
+```bash
+campaigns-os qa resolve --packet campaign-runtime-test-campaign.build.json --base-url <preview>   # all 5 pages resolved
+npx playwright install chromium                                                                    # campaigns-os had no node_modules
+campaigns-os qa run --packet campaign-runtime-test-campaign.build.json --base-url <preview> --browser
+```
+
+**Verdict `MPUZ87KM1J3P6GM9A4MFA0NSCE` → `ready_with_exceptions`: 34 assertions, 32 pass / 1 fail (warn) / 1 manual_review (warn); `test_orders: []`; `exceptions: []`.**
+
+| Family | Result |
+|---|---|
+| `funnel-flow` | 10/10 pass — every next/accept/decline route link correct |
+| `meta-tags` | 10/10 pass — all SDK meta verified in deployed output, incl. **rooted** `next-success-url=/test-campaign/upsell/`, `next-upsell-accept/decline-url=/test-campaign/receipt/` |
+| `browser-runtime` | 12 pass / 1 fail / 1 manual_review — all 5 pages load, SDK initializes, bundle selector + upsell accept/decline controls mount |
+
+The campaign **loads and runs live** (SDK debugger + Spreedly card iframes + selector all mounted), which means the preview origin is effectively allowlisted for the key. Only **typed-card proof** remains, and it is skipped by policy (no Devin approval; `test_orders_allowed=false`). That is the single remaining gate — a sanctioned SELL-362 terminal state.
+
+Verdict file: `.campaign-runtime/qa-test-campaign/test-campaign-ujqf/MPUZ87KM1J3P6GM9A4MFA0NSCE.json`.
 
 ---
 
 ## 4. What QA caught vs. missed
 
-**Caught (static / pre-deploy):**
-- Allowlist not confirmed; no preview URL; test orders disabled — all three correctly gate proof.
-- Spec-level routing meta unrooted; source-level hardcoded currency; starter demo-value reminders.
-- Page→source coverage (manifest mapping) and package purchase-availability.
+**Caught — live browser QA (package-owned Playwright):**
+- **1 fail (warn) — `browser-payment-geometry` (checkout):** the hosted Spreedly card/CVV iframe is 54px tall inside a 56px host (ratio 0.96) vs the rule `iframe_height_ratio_max: 0.72`. Centering is fine (`center_delta 0px`), host height in range (56px in 42–64). Traced to the `cardInputConfig` `height/line-height: 56px` styles carried into `config.js` — the hosted field fills the host instead of sitting inside padding. Real, repairable rendering nit.
+- **1 manual_review (warn) — `browser-express-wallets` (checkout):** no express-wallet buttons mounted. Consistent with the spec's `available_express_payment_methods: []`; also Chrome-only eligibility (Apple Pay not assertable headless). Correctly downgraded to manual review, not fail.
+- **Verified live:** all 5 pages load; SDK initializes (`browser-sdk-debugger` ×3); bundle selector mounts on checkout; upsell accept/decline controls mount; **all routing meta render rooted in the deployed output** (10/10 meta-tags) and all funnel route links resolve (10/10).
 
-**Missed / cannot assess without a deployed, allowlisted preview:**
-- Whether the single-offer quantity stepper actually triggers the count-condition Offers (Buy 1/2/3 → 50/55/60%) and renders the right compare-at/savings.
-- Whether the upsell voucher `TESTUPESELL70` (70%) applies on the upsell page (site Offers silently no-op there — only the Code/voucher path works).
+**Missed / not exercised (would require a typed-card / order-mutating run — skipped by policy):**
+- Whether the quantity stepper actually recomputes price across the **count-condition Offers** (qty 1/2/3 → 50/55/60%) and renders the right compare-at/savings. The selector *mounts*, but non-order QA does not assert the offer math at quantity change.
+- Whether the upsell **voucher `TESTUPESELL70` (70%)** actually applies on accept (the control mounts; voucher application is not exercised without an order). Note this is the correct pattern — a site Offer would silently no-op on the upsell page; only the Code/voucher path works.
 - Whether `EXIT10` exit-intent applies on checkout.
-- Express-checkout (`available_express_payment_methods: []` in spec — likely nothing renders) and card iframe behavior.
-- `store_url: https://localhost:3000/` and `available_shipping_countries: [AU,CA,GB]` (no US) vs `currency: USD` — a live shopper-facing mismatch that only runtime QA would expose.
+- Actual order placement / receipt population (`order.*` tokens) — `test_orders: []`, none fired.
 
-QA-readiness checking is **artifact/policy-aware but not build-output-aware**: it never inspected `_site/test-campaign/` to confirm the build already resolved several of its own warnings (see §5).
+**A notable runtime gap QA did not flag** (neither doctor nor browser QA): `store_url: https://localhost:3000/` (a dev placeholder) and `available_shipping_countries: [AU, CA, GB]` with `available_payment_methods: []` / `available_express_payment_methods: []` — an under-configured test store. Doctor accepted `store_url` because it is non-empty; browser QA passed because pages render — but a real shopper on USD with no US shipping and no configured payment methods is a live-store problem that *neither gate surfaces*.
+
+**Meta-observation:** doctor is **artifact/policy-aware but not build-output-aware** — it kept warning about spec-level unrooted routing meta even though browser QA then proved the *deployed* meta is correctly rooted (see R2-B2, §5).
 
 ---
 
@@ -97,9 +116,9 @@ doctor emitted **21× `template_contract.demo_ref`** warnings claiming the spec 
 | Prepared source + manifest | `source-html/test-campaign/` (+ `.campaigns-os/source-html-manifest.json`) |
 | Built campaign | `src/test-campaign/` → `_site/test-campaign/` (build: 79 pages) |
 | Build/lint/polish + verification | `TEST-CAMPAIGN-BUILD-PASS.md` |
-| Preview URL | ⛔ none (deploy lane unconfirmed) |
-| QA resolve/run | resolve: base-url `(missing)`; run: blocked |
-| Typed-card | skipped — policy OFF, allowlist unconfirmed, no Devin approval |
+| Preview URL | `https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/` (PR #14) |
+| QA resolve/run | resolve: 5/5 pages resolved; **run: `ready_with_exceptions` 32 pass / 1 fail(warn) / 1 manual_review(warn)** → `.campaign-runtime/qa-test-campaign/test-campaign-ujqf/MPUZ87KM1J3P6GM9A4MFA0NSCE.json` |
+| Typed-card | skipped — policy OFF, no Devin approval, `test_orders_allowed=false` (`test_orders: []`) |
 
 ## 7. What the tooling should make harder to get wrong
 1. Distinguish real low-integer API refs from starter placeholders (R2-B1) so doctor noise doesn't train operators to ignore demo-ref warnings.
