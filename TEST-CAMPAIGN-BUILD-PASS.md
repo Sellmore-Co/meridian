@@ -14,7 +14,7 @@ Prepared-HTML full-funnel replay through the current `campaigns-os` toolkit.
 | Target repo / dir | `meridian` / `src/test-campaign/` |
 | Template family | **limos** (locked via `--template-family limos`; spec `preferred_template_family: limos`) |
 | SDK version | 0.4.24 (from spec `global_config.sdk_version`) |
-| Outcome | Built through **polish + preview deploy + browser QA** (`ready_with_exceptions`: 32 pass / 1 fail-warn / 1 manual_review-warn). **Typed-card skipped** (policy OFF, no Devin approval). |
+| Outcome | Built through **polish + preview deploy + browser QA**, then **one repair loop** (card-iframe geometry) → re-QA **`ready_with_exceptions`: 33 pass / 0 fail / 1 manual_review** (the manual_review is the inherent express-wallet eligibility check — store has no express methods configured). **Typed-card skipped** (policy OFF, no Devin approval). |
 
 ## Command spine actually used
 
@@ -44,7 +44,9 @@ node .../campaigns-os.mjs qa resolve   --packet ...
 | SDK lint | ⚠️ run; 13 source + 20 rendered "violations" — all olympus-v0-scope false positives for limos (see report) | exit 0 (advisory) |
 | polish | ✅ source/built compared; unsupported order-bump removed; source hardcoded-currency fixed; no brand logos to preserve | currency warning cleared (38→37) |
 | deploy | ✅ Netlify deploy-preview-14 | `https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/` |
-| qa (browser) | ✅ `ready_with_exceptions` — 32 pass / 1 fail(warn: card iframe geometry) / 1 manual_review(warn: express wallets); `test_orders: []` | `.campaign-runtime/qa-test-campaign/test-campaign-ujqf/MPUZ87KM1J3P6GM9A4MFA0NSCE.json` |
+| qa (browser) run 1 | ⚠️ `ready_with_exceptions` — 32 pass / 1 fail(warn: card iframe geometry 0.96) / 1 manual_review | `.campaign-runtime/qa-test-campaign/test-campaign-ujqf/MPUZ87KM1J3P6GM9A4MFA0NSCE.json` |
+| repair loop | fixed `.spreedly-field iframe` 54px→36px (ratio 0.64); rebuilt; pushed; Netlify redeployed | commit `032daf5` |
+| qa (browser) run 2 | ✅ `ready_with_exceptions` — **33 pass / 0 fail** / 1 manual_review (express wallets, inherent); geometry now PASS (iframe 36px); `test_orders: []` | `.campaign-runtime/qa-test-campaign/test-campaign-ujqf/MPUZWPCYL9IS4AQHE7H15NK0F8.json` |
 | typed-card | ⏭️ skipped — policy OFF, no Devin approval, `test_orders_allowed=false` | — |
 
 ## Built-output verification (`_site/test-campaign/`)

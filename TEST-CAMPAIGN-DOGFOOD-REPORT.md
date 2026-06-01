@@ -54,7 +54,8 @@ npx playwright install chromium                                                 
 campaigns-os qa run --packet campaign-runtime-test-campaign.build.json --base-url <preview> --browser
 ```
 
-**Verdict `MPUZ87KM1J3P6GM9A4MFA0NSCE` → `ready_with_exceptions`: 34 assertions, 32 pass / 1 fail (warn) / 1 manual_review (warn); `test_orders: []`; `exceptions: []`.**
+**Run 1 — verdict `MPUZ87KM1J3P6GM9A4MFA0NSCE` → `ready_with_exceptions`: 34 assertions, 32 pass / 1 fail (warn) / 1 manual_review (warn); `test_orders: []`.**
+**Run 2 (after repair loop) — verdict `MPUZWPCYL9IS4AQHE7H15NK0F8` → `ready_with_exceptions`: 33 pass / 0 fail / 1 manual_review.** The one fail was fixed (see below) and re-verified live; the remaining manual_review is the inherent express-wallet eligibility check.
 
 | Family | Result |
 |---|---|
@@ -71,7 +72,7 @@ Verdict file: `.campaign-runtime/qa-test-campaign/test-campaign-ujqf/MPUZ87KM1J3
 ## 4. What QA caught vs. missed
 
 **Caught — live browser QA (package-owned Playwright):**
-- **1 fail (warn) — `browser-payment-geometry` (checkout):** the hosted Spreedly card/CVV iframe is 54px tall inside a 56px host (ratio 0.96) vs the rule `iframe_height_ratio_max: 0.72`. Centering is fine (`center_delta 0px`), host height in range (56px in 42–64). Traced to the `cardInputConfig` `height/line-height: 56px` styles carried into `config.js` — the hosted field fills the host instead of sitting inside padding. Real, repairable rendering nit.
+- **1 fail (warn) — `browser-payment-geometry` (checkout) → FIXED:** the hosted Spreedly card/CVV iframe was 54px in a 56px host (ratio 0.96) vs rule `iframe_height_ratio_max: 0.72`. Traced to `funnel.css` `.spreedly-field iframe { height: 54px }` plus the matching `cardInputConfig` text height. **Repair loop:** shrank the iframe to 36px (host stays fixed 56px, `align-items:center` keeps it centered) + matched card text to 36px → rebuild → push → Netlify redeploy → **re-QA: geometry now PASS** (`host=56px iframe=36px center_delta=0px`, ratio 0.64). Good example of QA catching a real rendering nit and the repair-from-verdict loop closing cleanly.
 - **1 manual_review (warn) — `browser-express-wallets` (checkout):** no express-wallet buttons mounted. Consistent with the spec's `available_express_payment_methods: []`; also Chrome-only eligibility (Apple Pay not assertable headless). Correctly downgraded to manual review, not fail.
 - **Verified live:** all 5 pages load; SDK initializes (`browser-sdk-debugger` ×3); bundle selector mounts on checkout; upsell accept/decline controls mount; **all routing meta render rooted in the deployed output** (10/10 meta-tags) and all funnel route links resolve (10/10).
 
@@ -117,7 +118,7 @@ doctor emitted **21× `template_contract.demo_ref`** warnings claiming the spec 
 | Built campaign | `src/test-campaign/` → `_site/test-campaign/` (build: 79 pages) |
 | Build/lint/polish + verification | `TEST-CAMPAIGN-BUILD-PASS.md` |
 | Preview URL | `https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/` (PR #14) |
-| QA resolve/run | resolve: 5/5 pages resolved; **run: `ready_with_exceptions` 32 pass / 1 fail(warn) / 1 manual_review(warn)** → `.campaign-runtime/qa-test-campaign/test-campaign-ujqf/MPUZ87KM1J3P6GM9A4MFA0NSCE.json` |
+| QA resolve/run | resolve: 5/5 pages; run 1: 32 pass/1 fail/1 manual_review (`MPUZ87KM1J3P6GM9A4MFA0NSCE.json`); **run 2 after repair: 33 pass / 0 fail / 1 manual_review** (`MPUZWPCYL9IS4AQHE7H15NK0F8.json`) — both under `.campaign-runtime/qa-test-campaign/test-campaign-ujqf/` |
 | Typed-card | skipped — policy OFF, no Devin approval, `test_orders_allowed=false` (`test_orders: []`) |
 
 ## 7. What the tooling should make harder to get wrong
