@@ -1,0 +1,171 @@
+{
+  "schema_version": "campaign-runtime-assembly-report/v0",
+  "run_id": "asm_1780303298174",
+  "generated_at": "2026-06-01T08:41:38.174Z",
+  "status": "prepared",
+  "identity": {
+    "map_id": "test-campaign-ujqf",
+    "public_route_slug": "test-campaign",
+    "campaign_directory": "test-campaign",
+    "live_url_path": "/test-campaign/",
+    "spec_hash": "f6db3707232ae07d084d5a8dfff1a8862bb107f7f2ec4aef17bb638a985b670e"
+  },
+  "inputs": {
+    "packet_path": "./campaign-runtime.build.json",
+    "context_path": ".campaign-runtime/build-context.json",
+    "spec_path": "./campaign-spec-test-campaign.json",
+    "source": {
+      "kind": "html_funnel",
+      "root": "./source-html/test-campaign"
+    },
+    "target_repo": "."
+  },
+  "template_family": {
+    "value": "limos",
+    "locked": true,
+    "locked_by": "operator_flag",
+    "commerce_catalog_version": null,
+    "candidates": [
+      {
+        "family": "limos",
+        "source": "CampaignSpec preferred_template_family",
+        "confidence": "hint"
+      }
+    ]
+  },
+  "stages": {
+    "prepare_build": {
+      "stage": "prepare_build",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [
+        "./campaign-runtime.build.json",
+        ".campaign-runtime/build-context.json",
+        ".campaign-runtime/assembly-report.json"
+      ],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "doctor": {
+      "stage": "doctor",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "setup": {
+      "stage": "setup",
+      "status": "skipped",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "assembly": {
+      "stage": "assembly",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "polish": {
+      "stage": "polish",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "deploy": {
+      "stage": "deploy",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "qa": {
+      "stage": "qa",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    }
+  },
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mpuxjzed_13",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpuxjzed_13\" to source file \"presell.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mpuxjzed_13\" by page_id; path=\"presell.html\" from ./source-html/test-campaign/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpuxjzed_14",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpuxjzed_14\" to source file \"landing.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mpuxjzed_14\" by page_id; path=\"landing.html\" from ./source-html/test-campaign/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpuxjzed_15",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpuxjzed_15\" to source file \"checkout.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mpuxjzed_15\" by page_id; path=\"checkout.html\" from ./source-html/test-campaign/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpuxlgtt_121",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpuxlgtt_121\" to source file \"upsell.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mpuxlgtt_121\" by page_id; path=\"upsell.html\" from ./source-html/test-campaign/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpuxjzed_16",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpuxjzed_16\" to source file \"receipt.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mpuxjzed_16\" by page_id; path=\"receipt.html\" from ./source-html/test-campaign/.campaigns-os/source-html-manifest.json"
+      ]
+    }
+  ],
+  "evidence": [],
+  "blockers": [],
+  "warnings": [
+    {
+      "code": "SOURCE_COMMERCE_REVIEW",
+      "stage": "assembly",
+      "message": "Source HTML contains possible commerce zones. Preserve catalog-owned runtime surfaces."
+    }
+  ],
+  "next": {
+    "stage": "assembly",
+    "owner": "next-campaigns-build",
+    "action": "Run build with this packet and context."
+  }
+}

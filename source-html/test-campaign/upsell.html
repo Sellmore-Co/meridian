@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>One-Time Offer — TEST</title>
+    <style>
+      :root { --ink: #15110d; --paper: #fbf7f0; --card: #fff; --accent: #b5481f; --line: #e7ddcd; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--ink); background: var(--paper); }
+      .wrap { max-width: 640px; margin: 0 auto; padding: 32px 20px 80px; text-align: center; }
+      .flag { text-transform: uppercase; letter-spacing: .16em; font-size: 12px; color: var(--accent); font-weight: 700; }
+      h1 { font-size: 30px; margin: 8px 0 12px; }
+      .panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin-top: 20px; }
+      img { width: 220px; max-width: 60%; border-radius: 10px; }
+      .note { font-size: 13px; color: #6b5d4c; }
+    </style>
+  </head>
+  <body>
+    <main data-page="upsell" class="wrap">
+      <p class="flag">Wait — one-time offer</p>
+      <h1>Add another TEST at 70% off</h1>
+      <p>This price is only available on this page, right now. You won't see it again.</p>
+      <!-- SDK-OWNED: single-upsell accept/decline controls + offer voucher TESTUPESELL70 render from the limos upsell commerce surface -->
+      <div class="panel" data-commerce-zone="upsell-offer">
+        <img src="https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp" alt="TEST" />
+        <p class="note">Upsell accept / decline buttons and the 70%-off voucher render here from the limos single-upsell template.</p>
+      </div>
+    </main>
+  </body>
+</html>

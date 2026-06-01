@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout — TEST</title>
+    <style>
+      :root { --ink: #15110d; --paper: #fbf7f0; --card: #fff; --accent: #b5481f; --line: #e7ddcd; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--ink); background: var(--paper); }
+      .wrap { max-width: 980px; margin: 0 auto; padding: 24px 20px 80px; }
+      .brand { font-weight: 800; letter-spacing: .04em; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+      .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; margin-top: 28px; }
+      .panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+      h2 { font-size: 16px; margin: 0 0 12px; }
+      .note { font-size: 13px; color: #6b5d4c; }
+      @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main data-page="checkout" class="wrap">
+      <div class="brand">TEST</div>
+      <div class="grid">
+        <!-- SDK-OWNED: customer + shipping + payment form is provided by the limos checkout commerce surface -->
+        <section class="panel" data-commerce-zone="checkout-form">
+          <h2>Your details</h2>
+          <p class="note">Contact, shipping, and payment fields render here from the limos starter-template SDK contract.</p>
+        </section>
+        <!-- SDK-OWNED: single-offer quantity selector + cart-summary02 accordion from limos -->
+        <aside class="panel" data-commerce-zone="order-summary">
+          <h2>Order summary</h2>
+          <p class="note">The single-offer quantity selector (Buy 1/2/3 tier pricing via Campaign Offers) and order totals render here from limos.</p>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>

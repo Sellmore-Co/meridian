@@ -1,0 +1,242 @@
+{
+  "schema_version": "campaign-runtime-build-context/v0",
+  "generated_at": "2026-06-01T08:41:38.173Z",
+  "source_adapter": "html_funnel",
+  "status": "prepared",
+  "packet_path": "./campaign-runtime.build.json",
+  "report_path": ".campaign-runtime/assembly-report.json",
+  "spec": {
+    "path": "./campaign-spec-test-campaign.json",
+    "hash": "f6db3707232ae07d084d5a8dfff1a8862bb107f7f2ec4aef17bb638a985b670e",
+    "active_pages": [
+      {
+        "id": "page_mpuxjzed_13",
+        "type": "presell",
+        "label": "Presell",
+        "page_url": "presell/"
+      },
+      {
+        "id": "page_mpuxjzed_14",
+        "type": "landing",
+        "label": "Landing Page (PDP)",
+        "page_url": ""
+      },
+      {
+        "id": "page_mpuxjzed_15",
+        "type": "checkout",
+        "label": "Checkout",
+        "page_url": "checkout/"
+      },
+      {
+        "id": "page_mpuxlgtt_121",
+        "type": "upsell",
+        "label": "Upsell 1",
+        "page_url": "upsell/"
+      },
+      {
+        "id": "page_mpuxjzed_16",
+        "type": "thankyou",
+        "label": "Thank You",
+        "page_url": "receipt/"
+      }
+    ]
+  },
+  "source": {
+    "root": "./source-html/test-campaign",
+    "html_files": [
+      {
+        "path": "checkout.html",
+        "name": "checkout.html",
+        "basename": "checkout",
+        "bytes": 1940,
+        "sha256": "deface65a0beab1e1e1a5f965e55088bb380b1ac2723a2eb997cc0975e09e3fa"
+      },
+      {
+        "path": "landing.html",
+        "name": "landing.html",
+        "basename": "landing",
+        "bytes": 3187,
+        "sha256": "1d95e322d83a948b9963103f966bdf8c9be76eee9636281d9d596ece6ae71e87"
+      },
+      {
+        "path": "presell.html",
+        "name": "presell.html",
+        "basename": "presell",
+        "bytes": 2405,
+        "sha256": "3419850de8dc82a62bb8d7c51c9bd5c3bae4f0a036071cd40c87441b8c2d04ce"
+      },
+      {
+        "path": "receipt.html",
+        "name": "receipt.html",
+        "basename": "receipt",
+        "bytes": 1381,
+        "sha256": "821be0519393cf1fba6ef996bd7c334822bd3d5a9391b16afbcecb168efa0a6a"
+      },
+      {
+        "path": "upsell.html",
+        "name": "upsell.html",
+        "basename": "upsell",
+        "bytes": 1750,
+        "sha256": "a2dc9c3acb1f1909df74297ece9e31dd1886a356b41fb437ef08b6c16f861eac"
+      }
+    ],
+    "manifest": {
+      "path": "./source-html/test-campaign/.campaigns-os/source-html-manifest.json",
+      "schema_version": "source-html-manifest/v0",
+      "generator": "claude-opus-4.8-synthetic@1.0.0",
+      "generated_at": "2026-06-01T08:41:38.111Z",
+      "campaign_slug": "test-campaign",
+      "page_count": 5
+    },
+    "manifest_warnings": []
+  },
+  "page_map": [
+    {
+      "page_id": "page_mpuxjzed_13",
+      "source_path": "presell.html",
+      "skip_reason": null,
+      "output_path": "./src/test-campaign/presell.html"
+    },
+    {
+      "page_id": "page_mpuxjzed_14",
+      "source_path": "landing.html",
+      "skip_reason": null,
+      "output_path": "./src/test-campaign/landing.html"
+    },
+    {
+      "page_id": "page_mpuxjzed_15",
+      "source_path": "checkout.html",
+      "skip_reason": null,
+      "output_path": "./src/test-campaign/checkout.html"
+    },
+    {
+      "page_id": "page_mpuxlgtt_121",
+      "source_path": "upsell.html",
+      "skip_reason": null,
+      "output_path": "./src/test-campaign/upsell.html"
+    },
+    {
+      "page_id": "page_mpuxjzed_16",
+      "source_path": "receipt.html",
+      "skip_reason": null,
+      "output_path": "./src/test-campaign/receipt.html"
+    }
+  ],
+  "scaffold": {
+    "mode": "existing",
+    "required": false,
+    "target_repo": ".",
+    "output_dir": "./src/test-campaign",
+    "handoff_skill": "next-campaigns-build",
+    "handoff_artifact": ".campaign-runtime/setup-handoff.json",
+    "reason": "Target campaign output directory already exists."
+  },
+  "template": {
+    "family": "limos",
+    "locked": true,
+    "lock": {
+      "locked": true,
+      "locked_by": "operator_flag",
+      "confidence": "high",
+      "evidence": [
+        "prepare-build --template-family"
+      ]
+    },
+    "candidates": [
+      {
+        "family": "limos",
+        "source": "CampaignSpec preferred_template_family",
+        "confidence": "hint"
+      }
+    ]
+  },
+  "commerce_zone_findings": [
+    {
+      "path": "checkout.html",
+      "zones": [
+        "checkout",
+        "payment",
+        "receipt"
+      ],
+      "sdk_attributes": [],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "landing.html",
+      "zones": [
+        "checkout"
+      ],
+      "sdk_attributes": [],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "receipt.html",
+      "zones": [
+        "receipt"
+      ],
+      "sdk_attributes": [],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "upsell.html",
+      "zones": [
+        "upsell"
+      ],
+      "sdk_attributes": [],
+      "action": "review_and_preserve_catalog_surfaces"
+    }
+  ],
+  "prompts_required": [],
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mpuxjzed_13",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpuxjzed_13\" to source file \"presell.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mpuxjzed_13\" by page_id; path=\"presell.html\" from ./source-html/test-campaign/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpuxjzed_14",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpuxjzed_14\" to source file \"landing.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mpuxjzed_14\" by page_id; path=\"landing.html\" from ./source-html/test-campaign/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpuxjzed_15",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpuxjzed_15\" to source file \"checkout.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mpuxjzed_15\" by page_id; path=\"checkout.html\" from ./source-html/test-campaign/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpuxlgtt_121",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpuxlgtt_121\" to source file \"upsell.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mpuxlgtt_121\" by page_id; path=\"upsell.html\" from ./source-html/test-campaign/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpuxjzed_16",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpuxjzed_16\" to source file \"receipt.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mpuxjzed_16\" by page_id; path=\"receipt.html\" from ./source-html/test-campaign/.campaigns-os/source-html-manifest.json"
+      ]
+    }
+  ]
+}

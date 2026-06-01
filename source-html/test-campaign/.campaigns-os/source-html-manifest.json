@@ -1,0 +1,34 @@
+{
+  "schema_version": "source-html-manifest/v0",
+  "generated_at": "2026-06-01T08:41:38.111Z",
+  "generator": "claude-opus-4.8-synthetic@1.0.0",
+  "campaign_slug": "test-campaign",
+  "root": ".",
+  "pages": [
+    {
+      "page_id": "page_mpuxjzed_13",
+      "path": "presell.html",
+      "source_hash": "3419850de8dc82a62bb8d7c51c9bd5c3bae4f0a036071cd40c87441b8c2d04ce"
+    },
+    {
+      "page_id": "page_mpuxjzed_14",
+      "path": "landing.html",
+      "source_hash": "1d95e322d83a948b9963103f966bdf8c9be76eee9636281d9d596ece6ae71e87"
+    },
+    {
+      "page_id": "page_mpuxjzed_15",
+      "path": "checkout.html",
+      "source_hash": "deface65a0beab1e1e1a5f965e55088bb380b1ac2723a2eb997cc0975e09e3fa"
+    },
+    {
+      "page_id": "page_mpuxlgtt_121",
+      "path": "upsell.html",
+      "source_hash": "a2dc9c3acb1f1909df74297ece9e31dd1886a356b41fb437ef08b6c16f861eac"
+    },
+    {
+      "page_id": "page_mpuxjzed_16",
+      "path": "receipt.html",
+      "source_hash": "821be0519393cf1fba6ef996bd7c334822bd3d5a9391b16afbcecb168efa0a6a"
+    }
+  ]
+}
