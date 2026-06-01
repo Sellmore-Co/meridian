@@ -20,8 +20,8 @@ window.nextConfig = {
       titles: { number: 'Card number', cvv: 'Security code' },
       placeholders: { number: 'Card number', cvv: 'CVV' },
       styles: {
-        number: 'color: #14161f; font-size: 16px; font-weight: 400; line-height: 56px; height: 56px; width: 100%; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left;',
-        cvv: 'color: #14161f; font-size: 16px; font-weight: 400; line-height: 56px; height: 56px; width: 100%; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left;',
+        number: 'color: #14161f; font-size: 16px; font-weight: 400; line-height: 36px; height: 36px; width: 100%; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left;',
+        cvv: 'color: #14161f; font-size: 16px; font-weight: 400; line-height: 36px; height: 36px; width: 100%; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; text-align: left;',
         placeholder: 'color: #72747d; font-weight: 400;'
       }
     }

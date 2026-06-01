@@ -651,8 +651,8 @@ input, select {
   align-items: center;
 }
 .payment-method__form .spreedly-field iframe {
-  height: 54px;
-  min-height: 54px;
+  height: 36px;
+  min-height: 36px;
 }
 [os-checkout-element="different-billing-address"] { display: none; }
 .cc-billing,
