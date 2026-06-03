@@ -1,0 +1,771 @@
+{
+  "schema_version": "4.3",
+  "builder_version": "0.3.1",
+  "generated_at": "2026-06-01T08:14:45.854Z",
+  "_provenance": {
+    "ops": [
+      "funnels.*.pages.*.label",
+      "funnels.*.pages.*.notes",
+      "funnels.*.pages.*.custom_fields",
+      "funnels.*.pages.*.design_source",
+      "funnels.*.pages.*.upsell_template_pattern",
+      "funnels.*.pages.*.upsell_mv_tiers",
+      "funnels.*.pages.*.variant_labels",
+      "funnels.*.pages.*.offers",
+      "funnels.*.pages.*.exit_intent",
+      "funnels.*.pages.*.promo_code_input",
+      "funnels.*.promo_codes",
+      "build_scope",
+      "global_config.sdk_version",
+      "campaign.store_*",
+      "campaign.allowed_domains",
+      "campaign.tracking",
+      "campaign.footer_links",
+      "campaign.seo",
+      "campaign.preferred_template_family",
+      "figma_url"
+    ],
+    "api": [
+      "campaign.*",
+      "shipping_methods",
+      "offers",
+      "funnels.*.pages.*.packages.*.name",
+      "funnels.*.pages.*.packages.*.price"
+    ],
+    "derived": [
+      "funnels.*.pages.*.page_url",
+      "funnels.*.pages.*.sdk_hints",
+      "funnels.*.pages.*.order",
+      "funnels.*.pages.*.is_entry",
+      "schema_version",
+      "builder_version",
+      "generated_at"
+    ],
+    "legacy": [
+      "funnel_pages"
+    ]
+  },
+  "campaign": {
+    "ref_id": 1575,
+    "slug": "test-campaign",
+    "id": "test-campaign",
+    "name": "TEST CAMPAIGN",
+    "currency": "USD",
+    "language": "en",
+    "payment_env_key": "6PRY90RDJK8A18W1ES5FKJJ61T",
+    "campaigns_api_key": "AbhmIKMsCU6RUAgFfdoCHvIRtiPVHKtZJNN5eQp0",
+    "available_payment_methods": [],
+    "available_express_payment_methods": [],
+    "available_currencies": [
+      "USD",
+      "AUD",
+      "CAD",
+      "GBP"
+    ],
+    "available_shipping_countries": [
+      "AU",
+      "CA",
+      "GB"
+    ],
+    "store_url": "https://localhost:3000/",
+    "store_name": "",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "tracking": {
+      "status": "unknown",
+      "providers": {}
+    },
+    "preferred_template_family": "limos"
+  },
+  "global_config": {
+    "sdk_version": "0.4.24"
+  },
+  "build_scope": {
+    "mode": "full",
+    "reasons": []
+  },
+  "funnels": [
+    {
+      "id": "default",
+      "name": "Default",
+      "hypothesis": "Default campaign path exported by Campaign Map Builder.",
+      "weight": 100,
+      "pages": [
+        {
+          "id": "page_mpuxjzed_13",
+          "type": "presell",
+          "order": 1,
+          "label": "Presell",
+          "is_entry": false,
+          "page_url": "presell/",
+          "next_page": "page_mpuxjzed_14",
+          "_next_label": "Landing Page (PDP)",
+          "resolved_routing": {
+            "next_page": "page_mpuxjzed_14",
+            "next_page_route": "page_mpuxjzed_14/",
+            "next_page_filename": "page_mpuxjzed_14/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product"
+            }
+          }
+        },
+        {
+          "id": "page_mpuxjzed_14",
+          "type": "landing",
+          "order": 2,
+          "label": "Landing Page (PDP)",
+          "is_entry": true,
+          "page_url": "",
+          "next_page": "page_mpuxjzed_15",
+          "_next_label": "Checkout",
+          "resolved_routing": {
+            "next_page": "page_mpuxjzed_15",
+            "next_page_route": "checkout/",
+            "next_page_filename": "checkout/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product"
+            }
+          }
+        },
+        {
+          "id": "page_mpuxjzed_15",
+          "type": "checkout",
+          "order": 3,
+          "label": "Checkout",
+          "is_entry": false,
+          "page_url": "checkout/",
+          "packages": [
+            {
+              "ref_id": "1",
+              "qty": 1,
+              "name": "Test Package",
+              "price": "69.99",
+              "price_retail": null,
+              "product_name": "TEST",
+              "product_sku": "DEMO-SKU-123",
+              "product_variant_name": "TEST",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp"
+            }
+          ],
+          "offers": [
+            {
+              "ref_id": "1",
+              "name": "Test - Buy 1 - 50%",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "count",
+                "value": 1,
+                "description": "Minimum purchase of 1 selected packages"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "50.00",
+                "description": "50% off selected packages"
+              }
+            },
+            {
+              "ref_id": "2",
+              "name": "Test - Buy 2 - 55%",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "count",
+                "value": 2,
+                "description": "Minimum purchase of 2 selected packages"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "55.00",
+                "description": "55% off selected packages"
+              }
+            },
+            {
+              "ref_id": "3",
+              "name": "Test - Buy 3 - 60%",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "count",
+                "value": 3,
+                "description": "Minimum purchase of 3 selected packages"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "60.00",
+                "description": "60% off selected packages"
+              }
+            },
+            {
+              "ref_id": "4",
+              "name": "Exit 10",
+              "type": "voucher",
+              "code": "EXIT10",
+              "condition": {
+                "type": "any",
+                "value": null,
+                "description": "No minimum purchase requirement"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "10.00",
+                "description": "10% off selected packages"
+              }
+            }
+          ],
+          "success_url": "page_mpuxlgtt_121",
+          "_success_label": "Upsell 1",
+          "resolved_routing": {
+            "success": "page_mpuxlgtt_121",
+            "success_route": "upsell/",
+            "success_filename": "upsell/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "checkout",
+            "meta_tags": {
+              "next-page-type": "checkout",
+              "next-predictive-address": "true",
+              "next-success-url": "upsell/"
+            }
+          }
+        },
+        {
+          "id": "page_mpuxlgtt_121",
+          "type": "upsell",
+          "order": 4,
+          "label": "Upsell 1",
+          "is_entry": false,
+          "page_url": "upsell/",
+          "upsell_template_pattern": "single",
+          "packages": [
+            {
+              "ref_id": "1",
+              "qty": 1,
+              "name": "Test Package",
+              "price": "69.99",
+              "price_retail": null,
+              "product_name": "TEST",
+              "product_sku": "DEMO-SKU-123",
+              "product_variant_name": "TEST",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp"
+            }
+          ],
+          "offers": [
+            {
+              "ref_id": "5",
+              "name": "Test - OTO - Upsell - 70%",
+              "type": "voucher",
+              "code": "TESTUPESELL70",
+              "condition": {
+                "type": "any",
+                "value": null,
+                "description": "No minimum purchase requirement"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "70.00",
+                "description": "70% off selected packages"
+              }
+            }
+          ],
+          "on_accept": "page_mpuxjzed_16",
+          "on_decline": "page_mpuxjzed_16",
+          "_accept_label": "Thank You",
+          "_decline_label": "Thank You",
+          "resolved_routing": {
+            "accept": "page_mpuxjzed_16",
+            "accept_route": "receipt/",
+            "accept_filename": "receipt/",
+            "decline": "page_mpuxjzed_16",
+            "decline_route": "receipt/",
+            "decline_filename": "receipt/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "upsell",
+            "meta_tags": {
+              "next-page-type": "upsell",
+              "next-prevent-back-navigation": "true",
+              "next-upsell-accept-url": "receipt/",
+              "next-upsell-decline-url": "receipt/"
+            }
+          }
+        },
+        {
+          "id": "page_mpuxjzed_16",
+          "type": "thankyou",
+          "order": 5,
+          "label": "Thank You",
+          "is_entry": false,
+          "page_url": "receipt/",
+          "sdk_hints": {
+            "sdk_page_type": "receipt",
+            "meta_tags": {
+              "next-page-type": "receipt"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "funnel_pages": [
+    {
+      "id": "page_mpuxjzed_13",
+      "type": "presell",
+      "order": 1,
+      "label": "Presell",
+      "is_entry": false,
+      "page_url": "presell/",
+      "next_page": "page_mpuxjzed_14",
+      "_next_label": "Landing Page (PDP)",
+      "resolved_routing": {
+        "next_page": "page_mpuxjzed_14",
+        "next_page_route": "page_mpuxjzed_14/",
+        "next_page_filename": "page_mpuxjzed_14/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mpuxjzed_14",
+      "type": "landing",
+      "order": 2,
+      "label": "Landing Page (PDP)",
+      "is_entry": true,
+      "page_url": "",
+      "next_page": "page_mpuxjzed_15",
+      "_next_label": "Checkout",
+      "resolved_routing": {
+        "next_page": "page_mpuxjzed_15",
+        "next_page_route": "checkout/",
+        "next_page_filename": "checkout/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mpuxjzed_15",
+      "type": "checkout",
+      "order": 3,
+      "label": "Checkout",
+      "is_entry": false,
+      "page_url": "checkout/",
+      "packages": [
+        {
+          "ref_id": "1",
+          "qty": 1,
+          "name": "Test Package",
+          "price": "69.99",
+          "price_retail": null,
+          "product_name": "TEST",
+          "product_sku": "DEMO-SKU-123",
+          "product_variant_name": "TEST",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp"
+        }
+      ],
+      "offers": [
+        {
+          "ref_id": "1",
+          "name": "Test - Buy 1 - 50%",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "count",
+            "value": 1,
+            "description": "Minimum purchase of 1 selected packages"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "50.00",
+            "description": "50% off selected packages"
+          }
+        },
+        {
+          "ref_id": "2",
+          "name": "Test - Buy 2 - 55%",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "count",
+            "value": 2,
+            "description": "Minimum purchase of 2 selected packages"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "55.00",
+            "description": "55% off selected packages"
+          }
+        },
+        {
+          "ref_id": "3",
+          "name": "Test - Buy 3 - 60%",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "count",
+            "value": 3,
+            "description": "Minimum purchase of 3 selected packages"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "60.00",
+            "description": "60% off selected packages"
+          }
+        },
+        {
+          "ref_id": "4",
+          "name": "Exit 10",
+          "type": "voucher",
+          "code": "EXIT10",
+          "condition": {
+            "type": "any",
+            "value": null,
+            "description": "No minimum purchase requirement"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "10.00",
+            "description": "10% off selected packages"
+          }
+        }
+      ],
+      "success_url": "page_mpuxlgtt_121",
+      "_success_label": "Upsell 1",
+      "resolved_routing": {
+        "success": "page_mpuxlgtt_121",
+        "success_route": "upsell/",
+        "success_filename": "upsell/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "checkout",
+        "meta_tags": {
+          "next-page-type": "checkout",
+          "next-predictive-address": "true",
+          "next-success-url": "upsell/"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mpuxlgtt_121",
+      "type": "upsell",
+      "order": 4,
+      "label": "Upsell 1",
+      "is_entry": false,
+      "page_url": "upsell/",
+      "upsell_template_pattern": "single",
+      "packages": [
+        {
+          "ref_id": "1",
+          "qty": 1,
+          "name": "Test Package",
+          "price": "69.99",
+          "price_retail": null,
+          "product_name": "TEST",
+          "product_sku": "DEMO-SKU-123",
+          "product_variant_name": "TEST",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp"
+        }
+      ],
+      "offers": [
+        {
+          "ref_id": "5",
+          "name": "Test - OTO - Upsell - 70%",
+          "type": "voucher",
+          "code": "TESTUPESELL70",
+          "condition": {
+            "type": "any",
+            "value": null,
+            "description": "No minimum purchase requirement"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "70.00",
+            "description": "70% off selected packages"
+          }
+        }
+      ],
+      "on_accept": "page_mpuxjzed_16",
+      "on_decline": "page_mpuxjzed_16",
+      "_accept_label": "Thank You",
+      "_decline_label": "Thank You",
+      "resolved_routing": {
+        "accept": "page_mpuxjzed_16",
+        "accept_route": "receipt/",
+        "accept_filename": "receipt/",
+        "decline": "page_mpuxjzed_16",
+        "decline_route": "receipt/",
+        "decline_filename": "receipt/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "upsell",
+        "meta_tags": {
+          "next-page-type": "upsell",
+          "next-prevent-back-navigation": "true",
+          "next-upsell-accept-url": "receipt/",
+          "next-upsell-decline-url": "receipt/"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mpuxjzed_16",
+      "type": "thankyou",
+      "order": 5,
+      "label": "Thank You",
+      "is_entry": false,
+      "page_url": "receipt/",
+      "sdk_hints": {
+        "sdk_page_type": "receipt",
+        "meta_tags": {
+          "next-page-type": "receipt"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    }
+  ],
+  "shipping_methods": [
+    {
+      "ref_id": "1",
+      "code": "default",
+      "price": "9.99",
+      "price_before_discount": "9.99"
+    }
+  ],
+  "offers": [
+    {
+      "ref_id": "1",
+      "name": "Test - Buy 1 - 50%",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 1,
+        "description": "Minimum purchase of 1 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "50.00",
+        "description": "50% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp",
+          "package_name": "Test Package",
+          "product_name": "TEST",
+          "product_variant_name": "TEST",
+          "unit_price": "34.99",
+          "unit_price_before_discount": "69.99",
+          "package_price": "34.99",
+          "package_price_before_discount": "69.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "2",
+      "name": "Test - Buy 2 - 55%",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 2,
+        "description": "Minimum purchase of 2 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "55.00",
+        "description": "55% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp",
+          "package_name": "Test Package",
+          "product_name": "TEST",
+          "product_variant_name": "TEST",
+          "unit_price": "31.99",
+          "unit_price_before_discount": "69.99",
+          "package_price": "31.99",
+          "package_price_before_discount": "69.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "3",
+      "name": "Test - Buy 3 - 60%",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 3,
+        "description": "Minimum purchase of 3 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "60.00",
+        "description": "60% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp",
+          "package_name": "Test Package",
+          "product_name": "TEST",
+          "product_variant_name": "TEST",
+          "unit_price": "27.99",
+          "unit_price_before_discount": "69.99",
+          "package_price": "27.99",
+          "package_price_before_discount": "69.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "4",
+      "name": "Exit 10",
+      "type": "voucher",
+      "code": "EXIT10",
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "10.00",
+        "description": "10% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp",
+          "package_name": "Test Package",
+          "product_name": "TEST",
+          "product_variant_name": "TEST",
+          "unit_price": "62.99",
+          "unit_price_before_discount": "69.99",
+          "package_price": "62.99",
+          "package_price_before_discount": "69.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    },
+    {
+      "ref_id": "5",
+      "name": "Test - OTO - Upsell - 70%",
+      "type": "voucher",
+      "code": "TESTUPESELL70",
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "70.00",
+        "description": "70% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp",
+          "package_name": "Test Package",
+          "product_name": "TEST",
+          "product_variant_name": "TEST",
+          "unit_price": "20.99",
+          "unit_price_before_discount": "69.99",
+          "package_price": "20.99",
+          "package_price_before_discount": "69.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "9.99",
+          "price_before_discount": "9.99"
+        }
+      ]
+    }
+  ],
+  "spec_identity": {
+    "source": "campaign-map-builder",
+    "map_id": "test-campaign-ujqf",
+    "id": "map:test-campaign-ujqf",
+    "map_url": "https://campaign-map.nextcommerce.com/view/test-campaign-ujqf",
+    "edit_url": "https://campaign-map.nextcommerce.com/?load=test-campaign-ujqf",
+    "spec_url": "https://campaign-map.nextcommerce.com/api/spec/test-campaign-ujqf",
+    "spec_hash": "sha256:42a6f4c82d9f92dfc18b38e47cfc20e63c89ecc57e2be54b4b515a3263c31782",
+    "saved_at": "2026-06-01T08:14:36.308Z",
+    "public_route_slug": "test-campaign"
+  }
+}

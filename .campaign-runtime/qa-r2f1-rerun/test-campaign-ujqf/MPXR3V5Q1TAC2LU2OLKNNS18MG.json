@@ -1,0 +1,472 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MPXR3V5Q1TAC2LU2OLKNNS18MG",
+  "campaign_slug": "test-campaign-ujqf",
+  "campaign_ref_id": 1575,
+  "spec_version": "4.3",
+  "spec_hash": "sha256:1a677958e86aa0aeecfea330cfc9a07c5dc43252b7fc468c820fbd63a444b82f",
+  "started_at": "2026-06-03T07:34:42.295Z",
+  "completed_at": "2026-06-03T07:35:03.943Z",
+  "runtime": "campaigns-os-node-qa@0.1.0-alpha.0",
+  "operator": "januzovic@local",
+  "disposition": "ready_with_exceptions",
+  "assertions": [
+    {
+      "id": "http:page_mpuxjzed_13",
+      "family": "funnel-flow",
+      "page": "page_mpuxjzed_13",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/presell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpuxjzed_13:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpuxjzed_13",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/presell/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mpuxjzed_13:next",
+      "family": "funnel-flow",
+      "page": "page_mpuxjzed_13",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/presell/",
+      "status": "pass",
+      "expected": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/",
+      "actual": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/"
+    },
+    {
+      "id": "http:page_mpuxjzed_14",
+      "family": "funnel-flow",
+      "page": "page_mpuxjzed_14",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpuxjzed_14:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpuxjzed_14",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mpuxjzed_14:next",
+      "family": "funnel-flow",
+      "page": "page_mpuxjzed_14",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/",
+      "status": "pass",
+      "expected": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "actual": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/"
+    },
+    {
+      "id": "http:page_mpuxjzed_15",
+      "family": "funnel-flow",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpuxjzed_15:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "pass",
+      "expected": "checkout",
+      "actual": "checkout"
+    },
+    {
+      "id": "meta:page_mpuxjzed_15:next-predictive-address",
+      "family": "meta-tags",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mpuxjzed_15:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "pass",
+      "expected": "/test-campaign/upsell/",
+      "actual": "/test-campaign/upsell/"
+    },
+    {
+      "id": "route-link:page_mpuxjzed_15:next",
+      "family": "funnel-flow",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "pass",
+      "expected": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "actual": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/"
+    },
+    {
+      "id": "http:page_mpuxlgtt_121",
+      "family": "funnel-flow",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpuxlgtt_121:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mpuxlgtt_121:next-prevent-back-navigation",
+      "family": "meta-tags",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mpuxlgtt_121:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "/test-campaign/receipt/",
+      "actual": "/test-campaign/receipt/"
+    },
+    {
+      "id": "meta:page_mpuxlgtt_121:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "/test-campaign/receipt/",
+      "actual": "/test-campaign/receipt/"
+    },
+    {
+      "id": "route-link:page_mpuxlgtt_121:accept",
+      "family": "funnel-flow",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/",
+      "actual": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/"
+    },
+    {
+      "id": "route-link:page_mpuxlgtt_121:decline",
+      "family": "funnel-flow",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/",
+      "actual": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/"
+    },
+    {
+      "id": "http:page_mpuxjzed_16",
+      "family": "funnel-flow",
+      "page": "page_mpuxjzed_16",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpuxjzed_16:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpuxjzed_16",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/",
+      "status": "pass",
+      "expected": "receipt",
+      "actual": "receipt"
+    },
+    {
+      "id": "browser-load:page_mpuxjzed_13",
+      "family": "browser-runtime",
+      "page": "page_mpuxjzed_13",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/presell/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "The 60-Second Upgrade Everyone's Talking About | TEST",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mpuxjzed_14",
+      "family": "browser-runtime",
+      "page": "page_mpuxjzed_14",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "TEST — Buy More, Save More",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mpuxjzed_15",
+      "family": "browser-runtime",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Checkout — TEST CAMPAIGN",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-payment-surface:page_mpuxjzed_15",
+      "family": "browser-runtime",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "pass",
+      "expected": "rendered credit-card payment field mounts",
+      "actual": "card_mounts=1; cvv_mounts=1; spreedly_frames=2",
+      "evidence": {
+        "card_number_selector": "[data-next-checkout-field=\"cc-number\"], #spreedly-number",
+        "cvv_selector": "[data-next-checkout-field=\"cvv\"], #spreedly-cvv",
+        "spreedly_frame_urls": [
+          "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+          "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html"
+        ],
+        "next_step": "Run --test-order after domain allowlist and order count/path depth approval for typed-card checkout proof."
+      }
+    },
+    {
+      "id": "browser-payment-geometry:page_mpuxjzed_15",
+      "family": "browser-runtime",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "pass",
+      "expected": "native-looking card/CVV controls: fixed field height and centered hosted iframe text path",
+      "actual": "spreedly-number: host=56px iframe=36px center_delta=0px; spreedly-cvv: host=56px iframe=36px center_delta=0px",
+      "evidence": {
+        "fields": [
+          {
+            "id": "spreedly-number",
+            "host": {
+              "width": 562,
+              "height": 56
+            },
+            "iframe": {
+              "width": 504,
+              "height": 36
+            },
+            "centerDelta": 0
+          },
+          {
+            "id": "spreedly-cvv",
+            "host": {
+              "width": 179,
+              "height": 56
+            },
+            "iframe": {
+              "width": 121,
+              "height": 36
+            },
+            "centerDelta": 0
+          }
+        ],
+        "rules": {
+          "host_height_px": "42..64",
+          "iframe_height_ratio_max": 0.72,
+          "iframe_center_delta_px_max": 8
+        }
+      }
+    },
+    {
+      "id": "browser-express-wallets:page_mpuxjzed_15",
+      "family": "browser-runtime",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "manual_review",
+      "severity": "warn",
+      "expected": "eligible express wallet buttons render with stable wallet-button dimensions; Apple Pay may be absent in non-eligible browsers",
+      "actual": "no express wallet buttons mounted",
+      "evidence": {
+        "buttons": [],
+        "note": "Wallet presence is browser/device eligibility dependent; do not require Apple Pay in Chrome-only QA."
+      }
+    },
+    {
+      "id": "browser-bundle-selector:page_mpuxjzed_15",
+      "family": "browser-runtime",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "pass",
+      "expected": "bundle cards have one selected option and visible prices for every tier",
+      "actual": "1 selected; 1/1 cards with visible price",
+      "evidence": {
+        "selectedCount": 1,
+        "cards": [
+          {
+            "index": 0,
+            "id": "test-qty",
+            "selected": true,
+            "width": 592,
+            "height": 325,
+            "prices": [
+              "$69.99",
+              "$34.99"
+            ],
+            "hasVisiblePrice": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpuxjzed_15",
+      "family": "browser-runtime",
+      "page": "page_mpuxjzed_15",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/checkout/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mpuxlgtt_121",
+      "family": "browser-runtime",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "One-Time Offer — TEST CAMPAIGN",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpuxlgtt_121:accept",
+      "family": "browser-runtime",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpuxlgtt_121:decline",
+      "family": "browser-runtime",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpuxlgtt_121",
+      "family": "browser-runtime",
+      "page": "page_mpuxlgtt_121",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/upsell/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mpuxjzed_16",
+      "family": "browser-runtime",
+      "page": "page_mpuxjzed_16",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Order Confirmed — TEST CAMPAIGN",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpuxjzed_16",
+      "family": "browser-runtime",
+      "page": "page_mpuxjzed_16",
+      "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-14--meridian-skincare.netlify.app/test-campaign/receipt/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    }
+  ],
+  "test_orders": [],
+  "exceptions": []
+}

@@ -1,0 +1,39 @@
+---
+title: "Order Confirmed — TEST CAMPAIGN"
+page_type: receipt
+permalink: /test-campaign/receipt/
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+body_class: "test-campaign shell"
+---
+<header class="brandbar"><div class="wrap nav"><a class="logo" href="{{ 'index.html' | campaign_link }}">TEST</a><span class="pill">Order confirmed</span></div></header>
+<main class="section">
+  <div class="wrap receipt-grid">
+    <section class="card checkout-panel stack">
+      <div class="receipt-ok">✓</div>
+      <p class="eyebrow">Confirmation <span data-next-display="order.number">#TC-0000</span></p>
+      <h1 style="font-size:clamp(40px,6vw,72px);">Thank you — your order is confirmed.</h1>
+      <p class="lede">A confirmation email is on its way. Your TEST order is being prepared for shipment.</p>
+      <div class="grid-2">
+        <div class="card checkout-panel"><strong>Contact</strong><p class="small" data-next-display="order.customer.email">customer@example.com</p></div>
+        <div class="card checkout-panel"><strong>Shipping</strong><p class="small">Standard shipping</p></div>
+        <div class="card checkout-panel"><strong>Ship to</strong><p class="small"><span data-next-display="order.shippingAddress.line1">Address line 1</span>, <span data-next-display="order.shippingAddress.city">City</span></p></div>
+        <div class="card checkout-panel"><strong>Payment</strong><p class="small">Card on file</p></div>
+      </div>
+      <a class="btn" href="{{ 'index.html' | campaign_link }}">Back to TEST</a>
+    </section>
+    <aside class="card checkout-panel stack" data-commerce-slot="receipt-order-summary">
+      <h2 style="font-size:36px;">Order summary</h2>
+      <template id="test-campaign-order-item-template">
+        <div class="summary-line" data-package-id="{item.packageId}"><span>{item.quantity}x {item.name}</span><strong>{item.price}</strong></div>
+      </template>
+      <div data-item-template-id="test-campaign-order-item-template" data-next-order-items class="cart-items__list"></div>
+      <div class="summary-line"><span>Subtotal</span><strong data-next-display="order.subtotal"></strong></div>
+      <div class="summary-line"><span>Shipping</span><strong data-next-display="order.shipping"></strong></div>
+      <div class="summary-line"><span>Tax</span><strong data-next-display="order.tax"></strong></div>
+      <div class="summary-line" style="font-size:24px;"><strong>Total</strong><strong data-next-display="order.total"></strong></div>
+    </aside>
+  </div>
+</main>

@@ -202,5 +202,22 @@
     "store_phone_tel": "",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "test-campaign": {
+    "name": "TEST CAMPAIGN",
+    "description": "SELL-362 prepared-HTML full-funnel dogfood (limos family) from Map test-campaign-ujqf. Synthetic html_funnel source.",
+    "entry_url": "",
+    "sdk_version": "0.4.24",
+    "store_name": "TEST CAMPAIGN",
+    "store_url": "https://localhost:3000/",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
   }
 }

@@ -1,0 +1,31 @@
+---
+title: "TEST — Buy More, Save More"
+page_type: product
+permalink: /test-campaign/
+next_url: checkout.html
+next_currency: USD
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+body_class: "test-campaign shell"
+---
+<header class="brandbar"><div class="wrap nav"><a class="logo" href="{{ 'index.html' | campaign_link }}">TEST</a><span class="pill">Free returns · Ships AU · CA · GB</span></div></header>
+<main class="section">
+  <div class="wrap pdp-grid">
+    <aside class="gallery"><div class="gallery-main"><img src="https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp" alt="TEST"></div></aside>
+    <section class="stack">
+      <p class="eyebrow">The everyday upgrade</p>
+      <h1 style="font-size:clamp(40px,6vw,72px);">Meet TEST</h1>
+      <p class="lede">One simple kit, built to last. Stock up and the savings climb automatically — up to 60% off when you buy three.</p>
+      <div class="grid-2">
+        <div class="checkline">Buy 1 — save 50%</div>
+        <div class="checkline">Buy 2 — save 55%</div>
+        <div class="checkline">Buy 3 — save 60%</div>
+        <div class="checkline">30-day money-back guarantee</div>
+      </div>
+      <a class="btn" href="{{ 'checkout.html' | campaign_link }}">Get TEST now →</a>
+      <p class="small">Secure checkout · tiered savings applied automatically at checkout.</p>
+    </section>
+  </div>
+</main>

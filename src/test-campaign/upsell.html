@@ -1,0 +1,38 @@
+---
+title: "One-Time Offer — TEST CAMPAIGN"
+page_type: upsell
+permalink: /test-campaign/upsell/
+next_url: receipt.html
+decline_url: receipt.html
+next_currency: USD
+prevent_back_navigation: true
+styles:
+  - css/funnel.css
+scripts:
+  - js/funnel.js
+body_class: "test-campaign shell"
+---
+<div class="upsell-alert">Special offer unlocked — please don't close this page</div>
+<main class="section">
+  <div class="wrap upsell-offer" data-next-upsell="offer">
+    <section class="card checkout-panel stack">
+      <p class="eyebrow">Add before your order ships</p>
+      <h1 style="font-size:clamp(40px,6vw,68px);">Add one more TEST at 70% off.</h1>
+      <p class="lede">This one-time price is only available on this page. Add another TEST now at 70% off — no second checkout required.</p>
+      <div class="grid-2">
+        <div class="checkline">Lowest price we offer on TEST</div>
+        <div class="checkline">Ships in the same box</div>
+        <div class="checkline">Applied with code TESTUPESELL70</div>
+        <div class="checkline">One-click add — card already on file</div>
+      </div>
+      <div data-next-bundle-selector data-next-upsell-context data-next-selector-id="oto-offer" class="bundle-selector">
+        <button type="button" data-next-bundle-card data-next-bundle-id="oto-1" data-next-bundle-items='[{"packageId":1,"quantity":1}]' data-next-bundle-vouchers='["TESTUPESELL70"]' data-next-selected="true" class="bundle-card next-selected">
+          <span class="radio"></span><span><strong>One more TEST</strong><small>One-time upsell — 70% off with code TESTUPESELL70</small></span><span><strong data-next-bundle-display="price">$20.99</strong></span>
+        </button>
+      </div>
+      <button class="btn" type="button" data-next-upsell-action="add" data-next-upsell-bundle-id="oto-1">Yes, add another TEST at 70% off</button>
+      <a href="{{ 'receipt.html' | campaign_link }}" class="small" data-next-upsell-action="skip">No thanks, continue to my receipt</a>
+    </section>
+    <aside class="gallery"><div class="gallery-main"><img src="https://d1w87fp8j98gad.cloudfront.net/media/cache/db/97/db97a2f276f530171ae627b52a4dcec3.webp" alt="TEST"></div></aside>
+  </div>
+</main>
