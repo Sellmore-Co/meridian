@@ -127,12 +127,24 @@
     },
     "qa": {
       "stage": "qa",
-      "status": "pending",
+      "status": "completed",
       "inputs": [],
-      "outputs": [],
-      "commands": [],
+      "outputs": [
+        "browser QA: 46/46 pass, disposition ready",
+        "test orders verified: 102413 checkout $69.98; 102414 accept $89.97 (+Window upsell); 102416 decline $69.98; 102417 accept-decline $89.97; re-run 102419 accept $89.97",
+        "QA portal: https://campaign-map.nextcommerce.com/qa?slug=simple-home-watch-v0-ql9m&run=MPZ92LLK142U58MAIAGSIBV8SD"
+      ],
+      "commands": [
+        "campaigns-os qa run --browser (46/46 ready)",
+        "campaigns-os qa run --browser --test-order common (4 verified orders)",
+        "POST /api/qa/verdicts (published)"
+      ],
       "blockers": [],
-      "warnings": []
+      "warnings": [
+        "F2: runner false-negative — stepper upsell-accept API call not observed (upsell_request_seen undefined) though upsell persists in 5/5 verified orders; CONSISTENT across re-run"
+      ],
+      "disposition": "blocked",
+      "next_owner": "campaign lead / QA-runner fix (F2)"
     }
   },
   "decisions": [
