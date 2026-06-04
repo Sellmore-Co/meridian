@@ -202,5 +202,22 @@
     "store_phone_tel": "",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "skin-care-serum": {
+    "name": "Skin Care Serum",
+    "description": "SELL-366 dogfood — existing-campaign partial-update lane. Olympus single-step funnel with a single upsell (bundle stepper). Map test-campaign-ujqf.",
+    "entry_url": "",
+    "sdk_version": "0.4.18",
+    "store_name": "Skin Care Serum",
+    "store_url": "https://sasajanuzovic.29next.store/",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
   }
 }
