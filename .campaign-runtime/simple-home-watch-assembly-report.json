@@ -1,0 +1,234 @@
+{
+  "schema_version": "campaign-runtime-assembly-report/v0",
+  "run_id": "asm_1780560337796",
+  "generated_at": "2026-06-04T08:05:37.796Z",
+  "status": "prepared",
+  "identity": {
+    "map_id": "simple-home-watch-v0-ql9m",
+    "public_route_slug": "simple-home-watch-v0",
+    "campaign_directory": "simple-home-watch-v0",
+    "live_url_path": "/simple-home-watch-v0/",
+    "spec_hash": "7a98242482edb946b0fc12a7c990cfea051319c63548faabb2dd1b8139d651ab"
+  },
+  "inputs": {
+    "packet_path": "./campaign-runtime.build.json",
+    "context_path": ".campaign-runtime/build-context.json",
+    "spec_path": "../../Downloads/campaign-spec-simple-home-watch-v0.json",
+    "source": {
+      "kind": "html_funnel",
+      "root": "../designer/funnel-designs/simple-home-watch"
+    },
+    "target_repo": "."
+  },
+  "template_family": {
+    "value": "demeter",
+    "locked": true,
+    "locked_by": "operator_flag",
+    "commerce_catalog_version": null,
+    "candidates": []
+  },
+  "stages": {
+    "prepare_build": {
+      "stage": "prepare_build",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [
+        "./campaign-runtime.build.json",
+        ".campaign-runtime/build-context.json",
+        ".campaign-runtime/assembly-report.json"
+      ],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "doctor": {
+      "stage": "doctor",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [],
+      "commands": [
+        "campaigns-os doctor --packet campaign-runtime.build.json"
+      ],
+      "blockers": [],
+      "warnings": [
+        "ready_with_warnings (0 errors)"
+      ]
+    },
+    "setup": {
+      "stage": "setup",
+      "status": "completed",
+      "inputs": [
+        ".campaign-runtime/build-context.json",
+        ".campaign-runtime/assembly-report.json"
+      ],
+      "outputs": [
+        "src/simple-home-watch-v0/ (199 files, atomic demeter slice)",
+        "_data/campaigns.json#simple-home-watch-v0"
+      ],
+      "commands": [
+        "campaign-init --non-interactive --template demeter --slug simple-home-watch-v0 --name \"Simple Home Watch v0\" --api-key <campaigns_api_key>"
+      ],
+      "blockers": [],
+      "warnings": []
+    },
+    "assembly": {
+      "stage": "assembly",
+      "status": "completed",
+      "inputs": [
+        "campaign-runtime.build.json",
+        "CampaignSpec simple-home-watch-v0",
+        "demeter starter slice",
+        "source: ../designer/funnel-designs/simple-home-watch"
+      ],
+      "outputs": [
+        "src/simple-home-watch-v0/{index,landing,checkout,upsell,upsell-2,receipt}.html",
+        "_site/simple-home-watch-v0/* (80 pages built)",
+        "assets/css/brand-theme.css + Montserrat faces",
+        "assets/landing/*, assets/products/*"
+      ],
+      "commands": [
+        "npm run build (campaign-build) — Built 80 pages"
+      ],
+      "blockers": [],
+      "warnings": [
+        "presell (index.html) retains hardcoded $ amounts from source design (doctor copy.hardcoded_currency_symbol) — informational page, polish item",
+        "presell carries source BLUE InSight brand (#2e7dd7); landing + commerce carry the landing-look orange/navy overlay — intentional brand transition, flag for polish review",
+        "upsell galleries use a single product webp repeated x3 (no multi-angle source) — cosmetic"
+      ],
+      "decisions": [
+        "Package refs taken as spec ref_ids = real keer package IDs 1/2/3/4 (confirmed via offers[].packages[].package_id); README 399/401/403/405 NOT used",
+        "Single order bump = New Doorbell pkg2 (Doorbell Bonus 40%); dropped demeter demo switch01 + pkg7/pkg9",
+        "Bundles 1x/2x/3x of main pkg1 → SDK auto-applies Wifi/Wifi2x/Wifi3x offers (43/50/55%); 2x selected/BEST DEAL",
+        "Upsell template = STEPPER (operator choice) for both upsells",
+        "exit_intent wired via exit-intent-popup.html with coupon_code EXIT5 (5%)",
+        "PAYMENT REMOVAL: show_paypal=false, show_klarna=false (spec available_payment_methods=apple_pay,bankcard,google_pay) — polish must not reintroduce",
+        "Shipping collapsed to single spec method ref_id 1 (default, free $0); per-bundle shipping_method removed",
+        "store_name set to operator value \"InSight\" (CampaignSpec store_name blank); legal links left blank per spec"
+      ],
+      "next_owner": "next-campaigns-polish / next-campaigns-qa"
+    },
+    "polish": {
+      "stage": "polish",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "deploy": {
+      "stage": "deploy",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "qa": {
+      "stage": "qa",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    }
+  },
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mpz72wd5_29",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72wd5_29\" to source file \"presell.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72wd5-29, presell, presell-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpz72wd5_30",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72wd5_30\" to source file \"landing.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72wd5-30, landing-pdp, landing, landing-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpz72wd5_31",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72wd5_31\" to source file \"checkout.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72wd5-31, checkout, checkout-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpz72wd5_32",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72wd5_32\" to source file \"upsell-1.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72wd5-32, upsell, upsell-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpz72yp6_42",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72yp6_42\" to source file \"upsell-2.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72yp6-42, upsell-2, upsell"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpz72wd5_33",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72wd5_33\" to source file \"thank-you.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72wd5-33, thank-you, thankyou, receipt, thankyou-1"
+      ]
+    }
+  ],
+  "theme": {
+    "status": "applied",
+    "method": "hand-authored",
+    "css_path": "assets/css/brand-theme.css",
+    "load_order": "after-next-core",
+    "commerce_pages": [
+      "checkout",
+      "upsell",
+      "upsell-2",
+      "receipt"
+    ],
+    "evidence": [
+      "theme inspect (inspect_only) selected source checkout.html, found 2 tokens / 0 mappings -> auto-generate would emit empty CSS (theme.css.empty)",
+      "root cause: landing source is legacy affiliate CSS with hardcoded hex and no :root token layer; figma-sections-export extractor needs a token layer it does not expose",
+      "hand-authored root-variable-only overlay: remapped next-core 16 brand tokens + font-family tokens to landing palette (Montserrat; cta #ff6d00, navy #04265e, accent #16deb1, destructive #e8120a)",
+      "verified rendered: next-core.css (line 42) precedes brand-theme.css (line 44) on checkout"
+    ],
+    "warnings": [],
+    "repair_loop_defect": "theme auto-extractor degrades to empty CSS on token-less legacy stylesheets instead of palette-scraping; required manual authoring (dogfood friction)"
+  },
+  "evidence": [],
+  "blockers": [],
+  "warnings": [
+    {
+      "code": "SOURCE_COMMERCE_REVIEW",
+      "stage": "assembly",
+      "message": "Source HTML contains possible commerce zones. Preserve catalog-owned runtime surfaces."
+    }
+  ],
+  "next": {
+    "stage": "setup",
+    "owner": "next-campaigns-setup",
+    "action": "Run setup before build."
+  }
+}

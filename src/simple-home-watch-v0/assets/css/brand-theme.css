@@ -1,0 +1,83 @@
+/* ============================================================
+   brand-theme.css — Simple Home Watch v0
+   Landing-look brand overlay (root-variable-only).
+
+   Load order: AFTER next-core.css on checkout/upsell/upsell-2/receipt.
+   Hand-authored (the figma-sections-export theme extractor could not
+   derive tokens from the legacy affiliate stylesheet — no :root token
+   layer in the source). Maps next-core brand tokens to the landing
+   palette: Montserrat, orange CTA (#ff6d00), navy structure (#04265e),
+   teal/red accents.
+
+   Constraint: root variables + @font-face only. No SDK-owned selectors,
+   package controls, payment/totals/submit, or receipt templates touched.
+   ============================================================ */
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('Montserrat-Regular.woff2') format('woff2'),
+       url('Montserrat-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('Montserrat-Medium.woff2') format('woff2'),
+       url('Montserrat-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('Montserrat-SemiBold.woff2') format('woff2'),
+       url('Montserrat-SemiBold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('Montserrat-Bold.woff2') format('woff2'),
+       url('Montserrat-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url('Montserrat-Italic.woff2') format('woff2'),
+       url('Montserrat-Italic.woff') format('woff');
+}
+
+:root {
+  /* ---- Typography: landing uses Montserrat throughout ---- */
+  --_text---font-family--primary: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --_text---font-family--heading: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* ---- Brand color: navy structure + orange CTA (landing palette) ---- */
+  --brand--color--primary:         #04265e;  /* navy — dominant structural color */
+  --brand--color--primary-dark:    #021a40;  /* deeper navy for depth/hover */
+  --brand--color--primary-light:   #e6eef8;  /* light navy tint (selected states) */
+  --brand--color--primary-lighter: #f0f6ff;  /* landing section background */
+  --brand--color--cta-primary:     #ff6d00;  /* orange — primary CTA buttons */
+
+  --brand--color--accent:          #16deb1;  /* teal accent (landing highlight) */
+  --brand--color--secondary:       #5b6577;  /* muted slate */
+
+  --brand--color--background:      #ffffff;
+  --brand--color--surface:         #f7faff;  /* card surface over navy-tinted sections */
+  --brand--color--foreground:      #16233a;  /* navy ink */
+
+  --brand--color--text-primary:    #16233a;
+  --brand--color--text-secondary:  #5b6577;
+  --brand--color--text-inverse:    #ffffff;
+  --brand--color--border:          #d6e0ef;  /* light navy-tinted border */
+
+  --system-colors--success:        #0b975f;  /* keep next-core green */
+  --system-colors--destructive:    #e8120a;  /* landing red (savings/urgency) */
+}
