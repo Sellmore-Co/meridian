@@ -65,7 +65,7 @@
 
 - ✅ **Narrow change, not a stealth rebuild** — 4 template files touched; every commerce surface byte-identical to the starter contract.
 - ✅ **Protected surfaces named & preserved** — see "Preserved" above.
-- ⏳ **QA evidence matches blast radius** — pending the scoped QA run on the 3 affected pages.
+- ✅ **QA evidence matches blast radius** — scoped Playwright QA on the 3 pages: presentational change **PASS** (single image renders, theme `#8a5a2e` applied, no swiper, routing OK); runtime SDK init blocked by a **domain-allowlist/CORS** issue (environment, not the diff). See `.campaign-runtime/qa-skin-care-serum/verdict.md`.
 - ✅ **Missing runtime truth → follow-up issue, not guessed** — recorded as R2-E1, reconstructed rather than fabricated.
 
 ## First repair-loop defect
@@ -74,8 +74,13 @@
 
 ---
 
+## Preview + QA
+
+- **Preview URL:** https://deploy-preview-16--campaignsos.netlify.app/skin-care-serum/
+- **Scoped QA:** ✅ done — `.campaign-runtime/qa-skin-care-serum/verdict.md` (+ 3 screenshots). Disposition `ready_with_exceptions`.
+- **Runtime exception:** SDK campaign load blocked by CORS — preview origin `*.campaignsos.netlify.app` not on the store's allowed-domains for API key `Abhm…`. Fix: allowlist that domain, or redeploy to the approved `meridian-skincare.netlify.app`. (Secondary: SDK auto-detected currency RSD vs USD campaign.)
+
 ## Remaining steps
 
-1. Push branch → Netlify **deploy-preview URL**.
-2. **Scoped QA** (`campaigns-os qa resolve` → `qa run --browser`) on `checkout` + `upsell-bundle-stepper` + `receipt`; add `--test-order common`.
-3. Attach this envelope + diff + preview URL + QA output to **SELL-366**; file **R2-E1**.
+1. Post the SELL-366 comment (envelope + diff + preview + QA) and file **R2-E1**.
+2. Resolve the domain allowlist (or redeploy to approved domain) → re-run QA → optional `--test-order common`.
