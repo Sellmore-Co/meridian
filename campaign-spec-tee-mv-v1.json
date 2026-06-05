@@ -1,0 +1,230 @@
+{
+  "schema_version": "4.3",
+  "builder_version": "0.3.1",
+  "generated_at": "2026-06-04T16:02:35.922Z",
+  "_provenance": {
+    "ops": [
+      "funnels.*.pages.*.label",
+      "funnels.*.pages.*.notes",
+      "funnels.*.pages.*.custom_fields",
+      "funnels.*.pages.*.design_source",
+      "funnels.*.pages.*.upsell_template_pattern",
+      "funnels.*.pages.*.upsell_mv_tiers",
+      "funnels.*.pages.*.variant_labels",
+      "funnels.*.pages.*.offers",
+      "funnels.*.pages.*.exit_intent",
+      "funnels.*.pages.*.promo_code_input",
+      "funnels.*.promo_codes",
+      "build_scope",
+      "global_config.sdk_version",
+      "campaign.store_*",
+      "campaign.allowed_domains",
+      "campaign.tracking",
+      "campaign.footer_links",
+      "campaign.seo",
+      "campaign.preferred_template_family",
+      "figma_url"
+    ],
+    "api": [
+      "campaign.*",
+      "shipping_methods",
+      "offers",
+      "funnels.*.pages.*.packages.*.name",
+      "funnels.*.pages.*.packages.*.price"
+    ],
+    "derived": [
+      "funnels.*.pages.*.page_url",
+      "funnels.*.pages.*.sdk_hints",
+      "funnels.*.pages.*.order",
+      "funnels.*.pages.*.is_entry",
+      "schema_version",
+      "builder_version",
+      "generated_at"
+    ],
+    "legacy": [
+      "funnel_pages"
+    ]
+  },
+  "campaign": {
+    "ref_id": 1585,
+    "slug": "sam-haslam",
+    "id": "sam-haslam",
+    "name": "Sam Haslam",
+    "currency": "USD",
+    "language": "en",
+    "payment_env_key": "ZVlbCiGPapQbN11W3tig4OOxhpg",
+    "campaigns_api_key": "vWTeG8uy2QFCk0Cs7Lu2lZ1DO5Zod2znwjZWcv7y",
+    "available_payment_methods": [
+      "bankcard",
+      "paypal"
+    ],
+    "available_express_payment_methods": [
+      "paypal"
+    ],
+    "available_currencies": [
+      "USD"
+    ],
+    "available_shipping_countries": "all",
+    "store_url": "https://localhost:3000/",
+    "store_name": "",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "tracking": {
+      "status": "unknown",
+      "providers": {}
+    }
+  },
+  "global_config": {
+    "sdk_version": "0.4.24"
+  },
+  "build_scope": {
+    "mode": "full",
+    "reasons": []
+  },
+  "funnels": [
+    {
+      "id": "default",
+      "name": "Default",
+      "hypothesis": "Default campaign path exported by Campaign Map Builder.",
+      "weight": 100,
+      "pages": [
+        {
+          "id": "page_mpzolyo4_18",
+          "type": "landing",
+          "order": 1,
+          "label": "Landing Page (PDP)",
+          "is_entry": true,
+          "page_url": "",
+          "packages": [
+            { "ref_id": "1", "qty": 1, "name": "Tariff Fee", "price": "40.00", "product_name": "ninja kit", "product_sku": "MAKE-1222", "product_variant_name": "ninja kit" },
+            { "ref_id": "2", "qty": 1, "name": "shirt - black / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbs", "product_variant_name": "T-Shirt - black / small", "variant_attributes": [{"code":"color","name":"Color","value":"black"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "3", "qty": 1, "name": "shirt - blue / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbl", "product_variant_name": "T-Shirt - blue / large", "variant_attributes": [{"code":"color","name":"Color","value":"blue"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "4", "qty": 1, "name": "shirt - green / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tgl", "product_variant_name": "T-Shirt - green / large", "variant_attributes": [{"code":"color","name":"Color","value":"green"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "5", "qty": 1, "name": "shirt - blue / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbs", "product_variant_name": "T-Shirt - blue / small", "variant_attributes": [{"code":"color","name":"Color","value":"blue"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "6", "qty": 1, "name": "shirt - green / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tgs", "product_variant_name": "T-Shirt - green / small", "variant_attributes": [{"code":"color","name":"Color","value":"green"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "7", "qty": 1, "name": "shirt - red / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "trl", "product_variant_name": "T-Shirt - red / large", "variant_attributes": [{"code":"color","name":"Color","value":"red"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "8", "qty": 1, "name": "shirt - red / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "trs", "product_variant_name": "T-Shirt - red / small", "variant_attributes": [{"code":"color","name":"Color","value":"red"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "9", "qty": 1, "name": "shirt - white / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "twl", "product_variant_name": "T-Shirt - white / large", "variant_attributes": [{"code":"color","name":"Color","value":"white"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "10", "qty": 1, "name": "shirt - white / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tws", "product_variant_name": "T-Shirt - white / small", "variant_attributes": [{"code":"color","name":"Color","value":"white"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "11", "qty": 1, "name": "shirt - black / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbl", "product_variant_name": "T-Shirt - black / large", "variant_attributes": [{"code":"color","name":"Color","value":"black"},{"code":"size","name":"Size","value":"large"}] }
+          ],
+          "offers": [
+            { "ref_id": "1", "name": "Buy 1 Get 50% Discount", "type": "offer", "code": null, "condition": {"type":"count","value":1}, "benefit": {"type":"package_percentage","value":"20.00"} }
+          ],
+          "next_page": "page_mpzolyo4_19",
+          "resolved_routing": { "next_page": "page_mpzolyo4_19", "next_page_route": "checkout/", "next_page_filename": "checkout/" },
+          "sdk_hints": { "sdk_page_type": "product", "meta_tags": { "next-page-type": "product", "next-currency": "USD" } }
+        },
+        {
+          "id": "page_mpzolyo4_19",
+          "type": "checkout",
+          "order": 2,
+          "label": "Checkout",
+          "is_entry": false,
+          "page_url": "checkout/",
+          "packages": [
+            { "ref_id": "1", "qty": 1, "name": "Tariff Fee", "price": "40.00", "product_name": "ninja kit", "product_sku": "MAKE-1222", "product_variant_name": "ninja kit" },
+            { "ref_id": "2", "qty": 1, "name": "shirt - black / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbs", "product_variant_name": "T-Shirt - black / small", "variant_attributes": [{"code":"color","name":"Color","value":"black"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "3", "qty": 1, "name": "shirt - blue / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbl", "product_variant_name": "T-Shirt - blue / large", "variant_attributes": [{"code":"color","name":"Color","value":"blue"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "4", "qty": 1, "name": "shirt - green / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tgl", "product_variant_name": "T-Shirt - green / large", "variant_attributes": [{"code":"color","name":"Color","value":"green"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "5", "qty": 1, "name": "shirt - blue / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbs", "product_variant_name": "T-Shirt - blue / small", "variant_attributes": [{"code":"color","name":"Color","value":"blue"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "6", "qty": 1, "name": "shirt - green / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tgs", "product_variant_name": "T-Shirt - green / small", "variant_attributes": [{"code":"color","name":"Color","value":"green"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "7", "qty": 1, "name": "shirt - red / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "trl", "product_variant_name": "T-Shirt - red / large", "variant_attributes": [{"code":"color","name":"Color","value":"red"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "8", "qty": 1, "name": "shirt - red / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "trs", "product_variant_name": "T-Shirt - red / small", "variant_attributes": [{"code":"color","name":"Color","value":"red"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "9", "qty": 1, "name": "shirt - white / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "twl", "product_variant_name": "T-Shirt - white / large", "variant_attributes": [{"code":"color","name":"Color","value":"white"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "10", "qty": 1, "name": "shirt - white / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tws", "product_variant_name": "T-Shirt - white / small", "variant_attributes": [{"code":"color","name":"Color","value":"white"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "11", "qty": 1, "name": "shirt - black / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbl", "product_variant_name": "T-Shirt - black / large", "variant_attributes": [{"code":"color","name":"Color","value":"black"},{"code":"size","name":"Size","value":"large"}] }
+          ],
+          "offers": [
+            { "ref_id": "1", "name": "Buy 1 Get 50% Discount", "type": "offer", "code": null, "condition": {"type":"count","value":1}, "benefit": {"type":"package_percentage","value":"20.00"} }
+          ],
+          "success_url": "page_mpzoo952_213",
+          "resolved_routing": { "success": "page_mpzoo952_213", "success_route": "upsell/", "success_filename": "upsell/" },
+          "sdk_hints": { "sdk_page_type": "checkout", "meta_tags": { "next-page-type": "checkout", "next-currency": "USD", "next-predictive-address": "true", "next-success-url": "upsell/" } }
+        },
+        {
+          "id": "page_mpzoo952_213",
+          "type": "upsell",
+          "order": 3,
+          "label": "Upsell 1",
+          "is_entry": false,
+          "page_url": "upsell/",
+          "packages": [
+            { "ref_id": "2", "qty": 1, "name": "shirt - black / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbs", "product_variant_name": "T-Shirt - black / small", "variant_attributes": [{"code":"color","name":"Color","value":"black"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "3", "qty": 1, "name": "shirt - blue / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbl", "product_variant_name": "T-Shirt - blue / large", "variant_attributes": [{"code":"color","name":"Color","value":"blue"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "4", "qty": 1, "name": "shirt - green / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tgl", "product_variant_name": "T-Shirt - green / large", "variant_attributes": [{"code":"color","name":"Color","value":"green"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "5", "qty": 1, "name": "shirt - blue / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbs", "product_variant_name": "T-Shirt - blue / small", "variant_attributes": [{"code":"color","name":"Color","value":"blue"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "6", "qty": 1, "name": "shirt - green / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tgs", "product_variant_name": "T-Shirt - green / small", "variant_attributes": [{"code":"color","name":"Color","value":"green"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "7", "qty": 1, "name": "shirt - red / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "trl", "product_variant_name": "T-Shirt - red / large", "variant_attributes": [{"code":"color","name":"Color","value":"red"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "8", "qty": 1, "name": "shirt - red / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "trs", "product_variant_name": "T-Shirt - red / small", "variant_attributes": [{"code":"color","name":"Color","value":"red"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "9", "qty": 1, "name": "shirt - white / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "twl", "product_variant_name": "T-Shirt - white / large", "variant_attributes": [{"code":"color","name":"Color","value":"white"},{"code":"size","name":"Size","value":"large"}] },
+            { "ref_id": "10", "qty": 1, "name": "shirt - white / small", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tws", "product_variant_name": "T-Shirt - white / small", "variant_attributes": [{"code":"color","name":"Color","value":"white"},{"code":"size","name":"Size","value":"small"}] },
+            { "ref_id": "11", "qty": 1, "name": "shirt - black / large", "price": "10.00", "product_name": "T-Shirt", "product_sku": "tbl", "product_variant_name": "T-Shirt - black / large", "variant_attributes": [{"code":"color","name":"Color","value":"black"},{"code":"size","name":"Size","value":"large"}] }
+          ],
+          "on_accept": "page_mpzolyo4_20",
+          "on_decline": "page_mpzolyo4_20",
+          "resolved_routing": { "accept": "page_mpzolyo4_20", "accept_route": "receipt/", "accept_filename": "receipt/", "decline": "page_mpzolyo4_20", "decline_route": "receipt/", "decline_filename": "receipt/" },
+          "sdk_hints": { "sdk_page_type": "upsell", "meta_tags": { "next-page-type": "upsell", "next-currency": "USD", "next-prevent-back-navigation": "true", "next-upsell-accept-url": "receipt/", "next-upsell-decline-url": "receipt/" } }
+        },
+        {
+          "id": "page_mpzolyo4_20",
+          "type": "thankyou",
+          "order": 4,
+          "label": "Thank You",
+          "is_entry": false,
+          "page_url": "receipt/",
+          "sdk_hints": { "sdk_page_type": "receipt", "meta_tags": { "next-page-type": "receipt" } }
+        }
+      ]
+    }
+  ],
+  "shipping_methods": [
+    {
+      "ref_id": "1",
+      "code": "default",
+      "price": "3.99",
+      "price_before_discount": "3.99"
+    }
+  ],
+  "offers": [
+    {
+      "ref_id": "1",
+      "name": "Buy 1 Get 50% Discount",
+      "type": "offer",
+      "code": null,
+      "condition": { "type": "count", "value": 1, "description": "Minimum purchase of 1 selected packages" },
+      "benefit": { "type": "package_percentage", "value": "20.00", "description": "20% off selected packages" },
+      "packages": [
+        { "package_id": 2, "package_name": "shirt - black / small", "product_name": "T-Shirt", "unit_price": "8.00", "unit_price_before_discount": "10.00", "package_unit_qty": 1 },
+        { "package_id": 3, "package_name": "shirt - blue / large", "product_name": "T-Shirt", "unit_price": "8.00", "unit_price_before_discount": "10.00", "package_unit_qty": 1 },
+        { "package_id": 4, "package_name": "shirt - green / large", "product_name": "T-Shirt", "unit_price": "8.00", "unit_price_before_discount": "10.00", "package_unit_qty": 1 },
+        { "package_id": 5, "package_name": "shirt - blue / small", "product_name": "T-Shirt", "unit_price": "8.00", "unit_price_before_discount": "10.00", "package_unit_qty": 1 },
+        { "package_id": 6, "package_name": "shirt - green / small", "product_name": "T-Shirt", "unit_price": "8.00", "unit_price_before_discount": "10.00", "package_unit_qty": 1 },
+        { "package_id": 7, "package_name": "shirt - red / large", "product_name": "T-Shirt", "unit_price": "8.00", "unit_price_before_discount": "10.00", "package_unit_qty": 1 },
+        { "package_id": 8, "package_name": "shirt - red / small", "product_name": "T-Shirt", "unit_price": "8.00", "unit_price_before_discount": "10.00", "package_unit_qty": 1 },
+        { "package_id": 9, "package_name": "shirt - white / large", "product_name": "T-Shirt", "unit_price": "8.00", "unit_price_before_discount": "10.00", "package_unit_qty": 1 },
+        { "package_id": 10, "package_name": "shirt - white / small", "product_name": "T-Shirt", "unit_price": "8.00", "unit_price_before_discount": "10.00", "package_unit_qty": 1 },
+        { "package_id": 11, "package_name": "shirt - black / large", "product_name": "T-Shirt", "unit_price": "8.00", "unit_price_before_discount": "10.00", "package_unit_qty": 1 }
+      ],
+      "shipping_methods": [
+        { "ref_id": 1, "code": "default", "price": "3.99", "price_before_discount": "3.99" }
+      ]
+    }
+  ],
+  "spec_identity": {
+    "source": "campaign-map-builder",
+    "map_id": "sam-haslam-9jai",
+    "id": "map:sam-haslam-9jai",
+    "map_url": "https://campaign-map.nextcommerce.com/view/sam-haslam-9jai",
+    "edit_url": "https://campaign-map.nextcommerce.com/?load=sam-haslam-9jai",
+    "spec_url": "https://campaign-map.nextcommerce.com/api/spec/sam-haslam-9jai",
+    "spec_hash": "sha256:737272412197c351626610e74eb60a5756e863ad3848c3775958b035a91cb36d",
+    "saved_at": "2026-06-04T16:02:29.586Z",
+    "public_route_slug": "sam-haslam"
+  }
+}
