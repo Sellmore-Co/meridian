@@ -1,46 +1,46 @@
 {
   "schema_version": "campaign-runtime-build-context/v0",
-  "generated_at": "2026-05-13T07:40:54.660Z",
+  "generated_at": "2026-06-05T15:24:40.498Z",
   "source_adapter": "html_funnel",
-  "status": "prepared",
+  "status": "local_qa_ready_with_warnings",
   "packet_path": "./campaign-runtime.build.json",
   "report_path": ".campaign-runtime/assembly-report.json",
   "spec": {
-    "path": "../designer/funnel-designs/home-outage-prep/campaign-spec-home-outage-prep-v0.json",
-    "hash": "75703893a6301214159baa18af885ce0a5a9eb2b9c90f0bf3d20ccc803104528",
+    "path": "../designer/funnel-designs/lumi-daily-wellness-set/campaign-spec-lumi-v0.json",
+    "hash": "9cc010c6b017e0e86d0c7fa1bec1d63d6d11f2fab0ccfbcd8a58635ccd4092ec",
     "active_pages": [
       {
-        "id": "page_mp3qp2nt_25",
+        "id": "page_mpaxqpb1_21",
         "type": "presell",
         "label": "Presell",
         "page_url": ""
       },
       {
-        "id": "page_mp3qp2nt_26",
+        "id": "page_mpaxqpb1_22",
         "type": "landing",
         "label": "Landing (PDP)",
         "page_url": "landing/"
       },
       {
-        "id": "page_mp3qp2nt_27",
+        "id": "page_mpaxqpb1_23",
         "type": "checkout",
         "label": "Checkout",
         "page_url": "checkout/"
       },
       {
-        "id": "page_mp3qp2nt_28",
+        "id": "page_mpaxqpb1_24",
         "type": "upsell",
         "label": "Upsell",
         "page_url": "upsell/"
       },
       {
-        "id": "page_mp3qs1fg_226",
+        "id": "page_mpaxrhe5_86",
         "type": "upsell",
         "label": "Upsell 2",
         "page_url": "upsell-2/"
       },
       {
-        "id": "page_mp3qp2nt_29",
+        "id": "page_mpaxqpb1_25",
         "type": "thankyou",
         "label": "Thank You",
         "page_url": "receipt/"
@@ -48,102 +48,103 @@
     ]
   },
   "source": {
-    "root": "../designer/funnel-designs/home-outage-prep",
+    "root": "../designer/funnel-designs/lumi-daily-wellness-set",
     "html_files": [
       {
         "path": "checkout.html",
         "name": "checkout.html",
         "basename": "checkout",
-        "bytes": 17699,
-        "sha256": "ce7f9799ee61616e6a11fdc22636c99c2452de1ed459dd1a0fe040dbf3745342"
+        "bytes": 22281,
+        "sha256": "5d838e7b40606bd9e1ec4b6ae8c17951fd70b5a3de6ba9acf9419d0cefd51f25"
       },
       {
         "path": "landing.html",
         "name": "landing.html",
         "basename": "landing",
-        "bytes": 33525,
-        "sha256": "f73f2efeb53b99610f14accbc887ef85d76522132ea7149276fbcef66e415f85"
+        "bytes": 13753,
+        "sha256": "f50a43b5c36235e9c456f70bd77d8dcd0a0425ff6880633910060cb5d2704117"
       },
       {
         "path": "presell.html",
         "name": "presell.html",
         "basename": "presell",
-        "bytes": 4829,
-        "sha256": "791f6c92f1af95ec66a9c449d54686d21017400c4b84dfc958cdd70728804b84"
+        "bytes": 8627,
+        "sha256": "b1103d51e00c831bc480eeaa2659f9db4bdbd8f06a81d7aa36a4bd3c0b847ff6"
       },
       {
         "path": "thank-you.html",
         "name": "thank-you.html",
         "basename": "thank-you",
-        "bytes": 5245,
-        "sha256": "73853dcd8e6c2683bdc61f1a792fba5bf4c846cd7dfad1c9b923e7ddd4480173"
+        "bytes": 10572,
+        "sha256": "b460238e64c0e64de25ccbdaccd0fa4a65c467319abe67775f55061e8922a3c6"
       },
       {
         "path": "upsell-1.html",
         "name": "upsell-1.html",
         "basename": "upsell-1",
-        "bytes": 6063,
-        "sha256": "3143529ce25efba50147e9b62dfa9cb1202a39d1603c158a7573c294ba701c7b"
+        "bytes": 9655,
+        "sha256": "37faca4c1dde2589b54d3f4cb1a937b48f77879347620f0bfdda3786c56ac063"
       },
       {
         "path": "upsell-2.html",
         "name": "upsell-2.html",
         "basename": "upsell-2",
-        "bytes": 5615,
-        "sha256": "541ef58aa89d53a8e372d2b97f64d03f2fba6224c59358fcdbdd946b788328e2"
+        "bytes": 8728,
+        "sha256": "9953665335317ceeb9506d431a4d9774509f37927f819939a58864fa33ce63df"
       }
-    ]
+    ],
+    "manifest": null,
+    "manifest_warnings": []
   },
   "page_map": [
     {
-      "page_id": "page_mp3qp2nt_25",
+      "page_id": "page_mpaxqpb1_21",
       "source_path": "presell.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/presell.html"
+      "output_path": "./src/lumi-v0/index.html"
     },
     {
-      "page_id": "page_mp3qp2nt_26",
+      "page_id": "page_mpaxqpb1_22",
       "source_path": "landing.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/landing.html"
+      "output_path": "./src/lumi-v0/landing.html"
     },
     {
-      "page_id": "page_mp3qp2nt_27",
+      "page_id": "page_mpaxqpb1_23",
       "source_path": "checkout.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/checkout.html"
+      "output_path": "./src/lumi-v0/checkout.html"
     },
     {
-      "page_id": "page_mp3qp2nt_28",
+      "page_id": "page_mpaxqpb1_24",
       "source_path": "upsell-1.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/upsell-1.html"
+      "output_path": "./src/lumi-v0/upsell.html"
     },
     {
-      "page_id": "page_mp3qs1fg_226",
+      "page_id": "page_mpaxrhe5_86",
       "source_path": "upsell-2.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/upsell-2.html"
+      "output_path": "./src/lumi-v0/upsell-2.html"
     },
     {
-      "page_id": "page_mp3qp2nt_29",
+      "page_id": "page_mpaxqpb1_25",
       "source_path": "thank-you.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/thank-you.html"
+      "output_path": "./src/lumi-v0/receipt.html"
     }
   ],
   "scaffold": {
     "mode": "fresh",
     "required": false,
-    "completed_at": "2026-05-13T07:42:00.000Z",
     "target_repo": ".",
-    "output_dir": "./src/home-outage-prep-v0",
-    "handoff_skill": "next-campaigns-setup",
+    "output_dir": "./src/lumi-v0",
+    "handoff_skill": "next-campaigns-build",
     "handoff_artifact": ".campaign-runtime/setup-handoff.json",
-    "reason": "Setup completed: directory scaffolded and route registered."
+    "reason": "Target campaign output directory scaffolded from shop-single-step starter family."
   },
   "template": {
-    "family": "demeter",
+    "family": "shop-single-step",
     "locked": true,
     "lock": {
       "locked": true,
@@ -161,62 +162,48 @@
       "zones": [
         "checkout",
         "payment",
-        "upsell",
-        "receipt",
         "sdk_attributes"
       ],
+      "commerce_zones": [],
+      "sdk_owned_declared": false,
+      "requires_template_shell": false,
       "sdk_attributes": [
+        "data-next-component",
         "data-next-checkout",
         "data-next-bundle-selector",
         "data-next-selector-id",
-        "data-next-bundles",
         "data-next-selection-mode",
         "data-next-include-shipping",
         "data-next-bundle-card",
         "data-next-bundle-id",
         "data-next-shipping-id",
         "data-next-bundle-display",
+        "data-next-format",
         "data-next-checkout-field",
-        "data-next-component",
-        "data-next-catalog-component",
-        "data-next-await",
-        "data-next-package-toggle",
-        "data-next-toggle-card",
-        "data-next-is-upsell",
-        "data-next-package-sync",
+        "data-next-bump",
         "data-next-package-id",
-        "data-next-toggle-image",
-        "data-next-toggle-display",
-        "data-next-payment-method",
-        "data-next-payment-form",
         "data-next-display",
+        "data-next-payment-method",
         "data-next-cart-summary",
-        "data-next-discounts"
+        "data-next-cart-item",
+        "data-next-show"
       ],
-      "action": "review_and_preserve_catalog_surfaces"
-    },
-    {
-      "path": "landing.html",
-      "zones": [
-        "checkout"
-      ],
-      "sdk_attributes": [],
       "action": "review_and_preserve_catalog_surfaces"
     },
     {
       "path": "thank-you.html",
       "zones": [
-        "payment",
         "receipt",
         "sdk_attributes"
       ],
+      "commerce_zones": [],
+      "sdk_owned_declared": false,
+      "requires_template_shell": false,
       "sdk_attributes": [
-        "data-next-await",
         "data-next-display",
-        "data-next-catalog-component",
-        "data-next-order-items",
-        "data-next-receipt-line-item",
-        "data-next-show"
+        "data-next-cart-summary",
+        "data-next-order-item",
+        "data-next-order-items"
       ],
       "action": "review_and_preserve_catalog_surfaces"
     },
@@ -226,20 +213,20 @@
         "upsell",
         "sdk_attributes"
       ],
+      "commerce_zones": [],
+      "sdk_owned_declared": false,
+      "requires_template_shell": false,
       "sdk_attributes": [
-        "data-next-catalog-component",
-        "data-next-upsell",
-        "data-next-await",
         "data-next-display",
+        "data-next-format",
+        "data-next-upsell",
+        "data-next-upsell-context",
         "data-next-bundle-selector",
         "data-next-selector-id",
         "data-next-bundle-card",
         "data-next-bundle-id",
         "data-next-bundle-items",
-        "data-next-bundle-vouchers",
-        "data-next-selected",
         "data-next-bundle-display",
-        "data-next-format",
         "data-next-upsell-action"
       ],
       "action": "review_and_preserve_catalog_surfaces"
@@ -250,27 +237,18 @@
         "upsell",
         "sdk_attributes"
       ],
+      "commerce_zones": [],
+      "sdk_owned_declared": false,
+      "requires_template_shell": false,
       "sdk_attributes": [
-        "data-next-catalog-component",
         "data-next-upsell",
-        "data-next-await",
+        "data-next-upsell-context",
         "data-next-display",
         "data-next-bundle-selector",
-        "data-next-upsell-context",
         "data-next-selector-id",
         "data-next-bundle-card",
         "data-next-bundle-id",
         "data-next-bundle-items",
-        "data-next-bundle-vouchers",
-        "data-next-quantity",
-        "data-next-min-quantity",
-        "data-next-max-quantity",
-        "data-next-selected",
-        "data-next-bundle-qty-for",
-        "data-next-quantity-decrease",
-        "data-next-quantity-display",
-        "data-next-quantity-increase",
-        "data-next-format",
         "data-next-upsell-action"
       ],
       "action": "review_and_preserve_catalog_surfaces"
@@ -279,64 +257,204 @@
   "prompts_required": [],
   "decisions": [
     {
-      "id": "dec_page_map_page_mp3qp2nt_25",
+      "id": "dec_page_map_page_mpaxqpb1_21",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_25\" to source file \"presell.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_21\" to source file \"presell.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-25, presell, presell-1, index"
+        "matched source filename against page keys: page-mpaxqpb1-21, presell, presell-1, index"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_26",
+      "id": "dec_page_map_page_mpaxqpb1_22",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_26\" to source file \"landing.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_22\" to source file \"landing.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-26, landing-pdp, landing, landing-1, index"
+        "matched source filename against page keys: page-mpaxqpb1-22, landing-pdp, landing, landing-1, index"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_27",
+      "id": "dec_page_map_page_mpaxqpb1_23",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_27\" to source file \"checkout.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_23\" to source file \"checkout.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-27, checkout, checkout-1"
+        "matched source filename against page keys: page-mpaxqpb1-23, checkout, checkout-1"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_28",
+      "id": "dec_page_map_page_mpaxqpb1_24",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_28\" to source file \"upsell-1.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_24\" to source file \"upsell-1.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-28, upsell, upsell-1"
+        "matched source filename against page keys: page-mpaxqpb1-24, upsell, upsell-1"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qs1fg_226",
+      "id": "dec_page_map_page_mpaxrhe5_86",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qs1fg_226\" to source file \"upsell-2.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxrhe5_86\" to source file \"upsell-2.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qs1fg-226, upsell-2, upsell"
+        "matched source filename against page keys: page-mpaxrhe5-86, upsell-2, upsell"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_29",
+      "id": "dec_page_map_page_mpaxqpb1_25",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_29\" to source file \"thank-you.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_25\" to source file \"thank-you.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-29, thank-you, thankyou, receipt, thankyou-1"
+        "matched source filename against page keys: page-mpaxqpb1-25, thank-you, thankyou, receipt, thankyou-1"
       ]
     }
-  ]
+  ],
+  "theme": {
+    "status": "ready",
+    "policy": "inspect_only",
+    "source_kind": "html_funnel",
+    "producer": {
+      "name": "figma-sections-export",
+      "version": "v0"
+    },
+    "source_files": [
+      {
+        "path": "../designer/funnel-designs/lumi-daily-wellness-set/presell.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "956bcbf7ade4584ac932d302bb9cb00332b033951a6431cef9d6e9f6f35a86e2",
+        "token_count": 7,
+        "inline_block_index": 0,
+        "referenced_by": []
+      },
+      {
+        "path": "../designer/funnel-designs/lumi-daily-wellness-set/landing.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "59fee3fd57857a1bca9d95480d720a073ca6d0b3cd983dad4291809318cc32ce",
+        "token_count": 8,
+        "inline_block_index": 0,
+        "referenced_by": []
+      },
+      {
+        "path": "../designer/funnel-designs/lumi-daily-wellness-set/checkout.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "3a39a578775c4baa0ea9bbbe5af194d98e563ef3816dec357cb39c493704b074",
+        "token_count": 8,
+        "inline_block_index": 0,
+        "referenced_by": []
+      },
+      {
+        "path": "../designer/funnel-designs/lumi-daily-wellness-set/upsell-1.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "8e83c0bc8354401e04fc691b0f8f2d4c45e9b7c9c397e2a04bb07715ba6d1b4f",
+        "token_count": 8,
+        "inline_block_index": 0,
+        "referenced_by": []
+      },
+      {
+        "path": "../designer/funnel-designs/lumi-daily-wellness-set/upsell-2.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "da7a7feaf8efcac899edd97dd55aba5df2576564be20a2fd0e02630bac67ec76",
+        "token_count": 8,
+        "inline_block_index": 0,
+        "referenced_by": []
+      },
+      {
+        "path": "../designer/funnel-designs/lumi-daily-wellness-set/thank-you.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "b4ff072009935f262138d8131ec514b8bae092b1fb5a49553296de9565002177",
+        "token_count": 7,
+        "inline_block_index": 0,
+        "referenced_by": []
+      }
+    ],
+    "selected_source": {
+      "path": "../designer/funnel-designs/lumi-daily-wellness-set/checkout.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "3a39a578775c4baa0ea9bbbe5af194d98e563ef3816dec357cb39c493704b074",
+      "token_count": 8,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    "producer_defaults": {
+      "matched": false,
+      "producer": "figma-sections-export",
+      "version": "v0",
+      "matched_tokens": [],
+      "unresolved_tokens": [],
+      "present_core_tokens": []
+    },
+    "confidence": "medium",
+    "generated": {
+      "css_path": ".campaign-runtime/theme/brand-theme.css",
+      "report_path": ".campaign-runtime/theme/theme-report.json",
+      "safety": {
+        "ok": false,
+        "errors": [
+          {
+            "code": "theme.css.empty",
+            "message": "No generated CSS because no source tokens were selected."
+          }
+        ],
+        "warnings": []
+      },
+      "stale": {
+        "stale": false,
+        "reasons": []
+      },
+      "can_generate": false,
+      "can_auto_generate": false,
+      "overwrite_requires_force": false
+    },
+    "mappings": [],
+    "unmapped_defaults": [],
+    "warnings": [],
+    "wrote": {
+      "report": true,
+      "css": false
+    }
+  },
+  "updated_at": "2026-06-05T15:46:19.827Z",
+  "assembly": {
+    "status": "completed_with_warnings",
+    "script": "scripts/assemble-lumi-v0.mjs",
+    "built_routes": [
+      "/lumi-v0/",
+      "/lumi-v0/landing/",
+      "/lumi-v0/checkout/",
+      "/lumi-v0/upsell/",
+      "/lumi-v0/upsell-2/",
+      "/lumi-v0/receipt/"
+    ],
+    "notes": [
+      "Preserved Lumi source visual HTML while injecting Campaign Cart runtime loader/config/meta tags.",
+      "Rendered route-rooted SDK navigation URLs for QA despite unrooted sdk_hints in source CampaignSpec.",
+      "Generated config from CampaignSpec runtime keys; do not print raw keys in reports."
+    ]
+  },
+  "qa": {
+    "status": "local_ready",
+    "run_id": "MQ13I8EFT6V653BRKMN9QIERP9",
+    "local_path": ".campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json",
+    "base_url": "http://127.0.0.1:8099/lumi-v0/",
+    "counts": {
+      "pass": 50
+    },
+    "posted": null,
+    "publish_skipped": true
+  }
 }

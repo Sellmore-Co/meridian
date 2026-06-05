@@ -1,0 +1,22 @@
+{
+  "schema_version": "campaign-runtime-setup-handoff/v0",
+  "generated_at": "2026-06-05T15:26:02.436Z",
+  "status": "completed",
+  "campaign_directory": "src/lumi-v0",
+  "template_family": "shop-single-step",
+  "copied_from": "/Users/devin/Developer/campaign-cart-starter-templates/src/shop-single-step",
+  "copied_outputs": [
+    "pages",
+    "_includes",
+    "_layouts",
+    "assets/css",
+    "assets/js",
+    "assets/images",
+    "assets/config.js"
+  ],
+  "next_owner": "next-campaigns-build",
+  "notes": [
+    "Do not treat starter commerce values as final. Replace demo values from CampaignSpec/API during build.",
+    "Lumi source checkout intentionally deviates from canonical shop-single-step; preserve prepared source composition while retaining SDK-owned controls."
+  ]
+}

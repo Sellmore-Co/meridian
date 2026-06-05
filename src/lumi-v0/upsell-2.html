@@ -1,0 +1,148 @@
+---
+title: "Lumi Produce Cleaner Offer"
+permalink: /lumi-v0/upsell-2/
+page_layout: raw.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final offer &middot; Lumi Produce Cleaner</title>
+    <!-- SDK meta tags -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lumi-primary: #2f8f7e;
+            --lumi-primary-dark: #1f4a47;
+            --lumi-surface: #f7faf8;
+            --lumi-text: #1a2826;
+            --lumi-text-soft: #4a5b58;
+            --lumi-border: #e2ebe8;
+            --lumi-highlight: #e8f3ef;
+            --lumi-accent: #d49b3a;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Manrope', system-ui, -apple-system, sans-serif; background: var(--lumi-surface); color: var(--lumi-text); margin: 0; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+        .announce { background: var(--lumi-primary-dark); color: #fff; text-align: center; padding: 10px 14px; font-weight: 600; letter-spacing: 0.04em; font-size: 13px; }
+        .brand-bar { background: #fff; border-bottom: 1px solid var(--lumi-border); padding: 14px 22px; display: flex; justify-content: center; }
+        .wordmark { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em; color: var(--lumi-primary-dark); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .wordmark::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: var(--lumi-primary); display: inline-block; }
+
+        .wrap { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; }
+        .hero { text-align: center; margin-bottom: 24px; }
+        .hero .eyebrow { color: var(--lumi-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+        .hero h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; margin: 0 0 10px; color: var(--lumi-text); }
+        .hero p { font-size: 16px; color: var(--lumi-text-soft); margin: 0; }
+
+        .offer { background: #fff; border: 1px solid var(--lumi-border); border-radius: 16px; padding: 28px; }
+        .offer-top { display: grid; grid-template-columns: 240px 1fr; gap: 26px; align-items: center; margin-bottom: 22px; }
+        @media (max-width: 600px) { .offer-top { grid-template-columns: 1fr; text-align: center; } }
+        .product-img { background: var(--lumi-highlight); border-radius: 12px; padding: 22px; display: flex; align-items: center; justify-content: center; min-height: 220px; }
+        .product-img img { max-width: 100%; max-height: 200px; height: auto; }
+
+        .product-info h2 { font-size: 22px; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.015em; }
+        .product-info .why { font-size: 14px; color: var(--lumi-text-soft); line-height: 1.55; margin: 0 0 10px; }
+        .product-info ul { padding-left: 18px; margin: 0; font-size: 13px; line-height: 1.7; color: var(--lumi-text); }
+
+        .qty-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 22px 0 6px; flex-wrap: wrap; }
+        .qty-label { font-size: 12px; font-weight: 700; color: var(--lumi-text-soft); text-transform: uppercase; letter-spacing: 0.08em; }
+        .pill-group { display: flex; gap: 6px; border: 1.5px solid var(--lumi-border); border-radius: 999px; padding: 4px; background: #fff; }
+        .pill { padding: 8px 24px; border-radius: 999px; font-weight: 700; cursor: pointer; font-size: 14px; color: var(--lumi-text-soft); transition: background 0.15s, color 0.15s; }
+        .pill.active { background: var(--lumi-primary); color: #fff; }
+        .pill .pill-sub { display: block; font-size: 10px; font-weight: 600; opacity: 0.85; margin-top: 2px; }
+
+        .price-row { text-align: center; margin: 22px 0 18px; }
+        .price-row .current { font-size: 30px; font-weight: 800; color: var(--lumi-text); }
+        .price-row .save { font-size: 13px; color: var(--lumi-primary); font-weight: 700; margin-top: 4px; }
+
+        .accept-btn { display: block; width: 100%; background: var(--lumi-primary); color: #fff; border: 0; padding: 18px; font-size: 16px; font-weight: 700; text-transform: uppercase; border-radius: 999px; cursor: pointer; letter-spacing: 0.06em; text-decoration: none; text-align: center; transition: background 0.15s; }
+        .accept-btn:hover { background: var(--lumi-primary-dark); }
+        .skip-link { display: block; text-align: center; margin-top: 14px; color: var(--lumi-text-soft); text-decoration: underline; font-size: 14px; }
+        .skip-link:hover { color: var(--lumi-text); }
+        .hidden-cards { display: none; }
+    </style>
+    <meta name="next-funnel" content="Lumi v0">
+    <meta name="next-page-type" content="upsell">
+    <meta name="next-currency" content="USD">
+    <meta name="next-upsell-accept-url" content="/lumi-v0/receipt/">
+    <meta name="next-upsell-decline-url" content="/lumi-v0/receipt/">
+    <link href="/lumi-v0/css/next-core.css" rel="stylesheet" type="text/css">
+    <script src="/lumi-v0/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/loader.js" type="module"></script>
+</head>
+<body>
+
+<div class="announce">FINAL OFFER &mdash; Do not close this page</div>
+<div class="brand-bar"><a href="/lumi-v0/landing/" class="wordmark">Lumi</a></div>
+
+<div class="wrap">
+    <div class="hero">
+        <div class="eyebrow">Last one-time offer</div>
+        <h1>One more thing &mdash; the device most people don't realize they need.</h1>
+        <p>Add the <strong>Lumi Produce Cleaner</strong> at a one-time discount, available only on this page.</p>
+    </div>
+
+    <section data-next-upsell="offer" data-next-upsell-context="postpurchase">
+        <div class="offer">
+            <div class="offer-top">
+                <div class="product-img"><img src="/lumi-v0/products/veg-cleaner.png" alt="Lumi Produce Cleaner"></div>
+                <div class="product-info">
+                    <h2>Get the residue water alone can't.</h2>
+                    <p class="why">
+                        Ultrasonic + ozone produce cleaner. Drop in fruit, veg, or herbs &mdash; 3 minutes later, surface bacteria, wax coatings, and pesticide films are gone. No chemicals to add. No subscription.
+                    </p>
+                    <ul>
+                        <li>3-minute cleaning cycle</li>
+                        <li>Works in any bowl or sink</li>
+                        <li>USB rechargeable &mdash; no plug needed at the sink</li>
+                        <li>Safe on delicate produce &amp; herbs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quantity pill selector (2 tiers: 1x and 2x) -->
+            <div class="qty-row">
+                <span class="qty-label">Quantity:</span>
+                <div class="pill-group">
+                    <div class="pill active" data-bundle-qty-btn data-bundle-qty-target="upsell-veg-1x">1<span class="pill-sub">single</span></div>
+                    <div class="pill" data-bundle-qty-btn data-bundle-qty-target="upsell-veg-2x">2<span class="pill-sub">save more</span></div>
+                </div>
+            </div>
+
+            <div class="price-row">
+                <div class="current" data-next-display="bundle.upsell-veg.totalPrice"></div>
+                <div class="save">Save <span data-next-display="bundle.upsell-veg.discountAmount"></span> off retail</div>
+            </div>
+
+            <!-- Hidden tier cards for SDK selection logic -->
+            <div class="hidden-cards"
+                 data-next-bundle-selector
+                 data-next-selector-id="upsell-veg">
+                <label data-next-bundle-card data-next-bundle-id="upsell-veg-1x" data-next-bundle-items='[{"packageId":4,"quantity":1}]' data-next-selected="true" class="next-selected">
+                    <input type="radio" name="upsell-veg" value="1" checked>
+                </label>
+                <label data-next-bundle-card data-next-bundle-id="upsell-veg-2x" data-next-bundle-items='[{"packageId":4,"quantity":2}]'>
+                    <input type="radio" name="upsell-veg" value="2">
+                </label>
+            </div>
+
+            <a href="#" data-next-upsell-action="add" class="accept-btn">Yes &mdash; add to my order</a>
+            <a href="#" data-next-upsell-action="skip" class="skip-link">No thank you, complete my order without this</a>
+        </div>
+    </section>
+</div>
+
+<script>
+// Pill UI sync only — SDK handles real selection via data-bundle-qty-btn.
+document.querySelectorAll('[data-bundle-qty-btn]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+</script>
+</body>
+</html>

@@ -202,5 +202,22 @@
     "store_phone_tel": "",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "lumi-v0": {
+    "name": "Lumi v0",
+    "description": "Keer multi-currency dogfood build from Map lumi-v0-qdos.",
+    "entry_url": "",
+    "sdk_version": "0.4.19",
+    "store_name": "Keer",
+    "store_url": "https://keer.29next.store/",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
   }
 }

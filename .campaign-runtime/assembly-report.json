@@ -1,27 +1,27 @@
 {
   "schema_version": "campaign-runtime-assembly-report/v0",
-  "run_id": "asm_1778658054663",
-  "generated_at": "2026-05-13T07:40:54.663Z",
-  "status": "prepared",
+  "run_id": "asm_1780673080507",
+  "generated_at": "2026-06-05T15:24:40.507Z",
+  "status": "local_qa_ready_with_warnings",
   "identity": {
-    "map_id": "home-outage-prep-v0-sf21",
-    "public_route_slug": "home-outage-prep-v0",
-    "campaign_directory": "home-outage-prep-v0",
-    "live_url_path": "/home-outage-prep-v0/",
-    "spec_hash": "75703893a6301214159baa18af885ce0a5a9eb2b9c90f0bf3d20ccc803104528"
+    "map_id": "lumi-v0-qdos",
+    "public_route_slug": "lumi-v0",
+    "campaign_directory": "lumi-v0",
+    "live_url_path": "/lumi-v0/",
+    "spec_hash": "9cc010c6b017e0e86d0c7fa1bec1d63d6d11f2fab0ccfbcd8a58635ccd4092ec"
   },
   "inputs": {
     "packet_path": "./campaign-runtime.build.json",
     "context_path": ".campaign-runtime/build-context.json",
-    "spec_path": "../designer/funnel-designs/home-outage-prep/campaign-spec-home-outage-prep-v0.json",
+    "spec_path": "../designer/funnel-designs/lumi-daily-wellness-set/campaign-spec-lumi-v0.json",
     "source": {
       "kind": "html_funnel",
-      "root": "../designer/funnel-designs/home-outage-prep"
+      "root": "../designer/funnel-designs/lumi-daily-wellness-set"
     },
     "target_repo": "."
   },
   "template_family": {
-    "value": "demeter",
+    "value": "shop-single-step",
     "locked": true,
     "locked_by": "operator_flag",
     "commerce_catalog_version": null,
@@ -43,6 +43,108 @@
     },
     "doctor": {
       "stage": "doctor",
+      "status": "ready_with_warnings",
+      "inputs": [
+        "campaign-runtime.build.json"
+      ],
+      "outputs": [
+        ".campaign-runtime/doctor-output.json"
+      ],
+      "commands": [
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs doctor --packet campaign-runtime.build.json --json"
+      ],
+      "blockers": [],
+      "warnings": [
+        "campaign.allowed_domains_confirmed",
+        "spec.validation",
+        "spec.store_profile.payment_methods_default_on",
+        "routing_meta.runtime_root",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.removeWhenUnsupported",
+        "frontmatter.removeWhenUnsupported",
+        "frontmatter.removeWhenUnsupported",
+        "deploy.preview_url"
+      ]
+    },
+    "setup": {
+      "stage": "setup",
+      "status": "completed",
+      "inputs": [
+        "/Users/devin/Developer/campaign-cart-starter-templates/src/shop-single-step"
+      ],
+      "outputs": [
+        "src/lumi-v0/",
+        "src/lumi-v0/_includes/",
+        "src/lumi-v0/_layouts/",
+        "src/lumi-v0/assets/",
+        ".campaign-runtime/setup-handoff.json"
+      ],
+      "commands": [
+        "mkdir -p src/lumi-v0",
+        "cp -R /Users/devin/Developer/campaign-cart-starter-templates/src/shop-single-step/. src/lumi-v0/"
+      ],
+      "blockers": [],
+      "warnings": [
+        "Setup copied the shop-single-step starter family atomically. Commerce wiring remains pending for next-campaigns-build."
+      ]
+    },
+    "assembly": {
+      "stage": "assembly",
+      "status": "completed_with_warnings",
+      "inputs": [
+        "scripts/assemble-lumi-v0.mjs",
+        "/Users/devin/Developer/designer/funnel-designs/lumi-daily-wellness-set",
+        "/Users/devin/Developer/designer/funnel-designs/lumi-daily-wellness-set/campaign-spec-lumi-v0.json",
+        "/Users/devin/Developer/campaign-cart-starter-templates/src/shop-single-step"
+      ],
+      "outputs": [
+        "src/lumi-v0/index.html",
+        "src/lumi-v0/landing.html",
+        "src/lumi-v0/checkout.html",
+        "src/lumi-v0/upsell.html",
+        "src/lumi-v0/upsell-2.html",
+        "src/lumi-v0/receipt.html",
+        "src/lumi-v0/assets/config.js",
+        "_data/campaigns.json",
+        "_site/lumi-v0/"
+      ],
+      "commands": [
+        "node scripts/assemble-lumi-v0.mjs",
+        "npm run build"
+      ],
+      "blockers": [],
+      "warnings": [
+        "Doctor retains preview/domain and source-spec contract warnings until deployed preview and Campaigns App allowlist confirmation exist.",
+        "Typed-card order proof remains intentionally gated until operator approval and non-localhost SDK domain allowlist confirmation."
+      ]
+    },
+    "polish": {
+      "stage": "polish",
+      "status": "completed_local_browser",
+      "inputs": [
+        "_site/lumi-v0/"
+      ],
+      "outputs": [
+        ".campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json"
+      ],
+      "commands": [
+        "python3 -m http.server 8099 --directory _site",
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url http://127.0.0.1:8099/lumi-v0/ --browser --no-post-verdict --output-dir .campaign-runtime/qa-lumi-v0-local --json"
+      ],
+      "blockers": [],
+      "warnings": [
+        "Local-only QA did not publish a dashboard verdict."
+      ]
+    },
+    "deploy": {
+      "stage": "deploy",
       "status": "pending",
       "inputs": [],
       "outputs": [],
@@ -50,246 +152,198 @@
       "blockers": [],
       "warnings": []
     },
-    "setup": {
-      "stage": "setup",
-      "status": "completed",
-      "inputs": [
-        "./campaign-runtime.build.json",
-        ".campaign-runtime/build-context.json"
-      ],
-      "outputs": [
-        "src/home-outage-prep-v0/",
-        "src/home-outage-prep-v0/assets/",
-        "_data/campaigns.json#home-outage-prep-v0"
-      ],
-      "commands": [
-        "mkdir -p src/home-outage-prep-v0/assets",
-        "register route home-outage-prep-v0 in _data/campaigns.json (store_name=Keer, store_url=https://keer.29next.store)"
-      ],
-      "blockers": [],
-      "warnings": []
-    },
-    "assembly": {
-      "stage": "assembly",
-      "status": "completed",
-      "inputs": [
-        "./campaign-runtime.build.json",
-        ".campaign-runtime/build-context.json",
-        "../designer/funnel-designs/home-outage-prep/",
-        "../campaign-cart-starter-templates/src/demeter/"
-      ],
-      "outputs": [
-        "src/home-outage-prep-v0/_layouts/landing-passthrough.html",
-        "src/home-outage-prep-v0/presell.html (passthrough from designed source)",
-        "src/home-outage-prep-v0/landing.html (passthrough from designed source)",
-        "src/home-outage-prep-v0/checkout.html (demeter checkout, spec-driven values)",
-        "src/home-outage-prep-v0/upsell.html (demeter tier-cards, pkg 3 Fire Blanket, voucher FIRE)",
-        "src/home-outage-prep-v0/upsell-2.html (demeter stepper, pkg 4 Solar Spotlight, voucher SOLAR)",
-        "src/home-outage-prep-v0/receipt.html (demeter receipt)",
-        "src/home-outage-prep-v0/assets/ (demeter starter + brand.css + landing/ + products/)",
-        "src/home-outage-prep-v0/assets/config.js (apiKey + storeName from CampaignSpec, paypal removed)"
-      ],
-      "commands": [
-        "cp -r campaign-cart-starter-templates/src/demeter/* meridian/src/home-outage-prep-v0/",
-        "Replace config.js apiKey with CampaignSpec campaign.campaigns_api_key",
-        "Replace storeName with 'Keer'",
-        "Drop paypal from paymentConfig.expressCheckout.methodOrder",
-        "Wire frontmatter from CampaignSpec: packages.main_package=1, packages.prepurchase_1=2",
-        "Remove order_bump.switch01 (no second prepurchase in spec)",
-        "Replace shipping_methods with the one CampaignSpec shipping (standard=1)",
-        "Drop bundles[].shipping_method (no tier-specific shipping in spec)",
-        "Use bundle 2x as default-selected ('BEST DEAL' badge)",
-        "Pass show_paypal=false show_klarna=false to payment-methods.html (spec excludes them)",
-        "Wire upsell.html: pkg 3 Fire Blanket, single voucher FIRE on all 3 tiers (spec carries one voucher per upsell)",
-        "Wire upsell-2.html: pkg 4 Solar Spotlight, voucher SOLAR, qty stepper 1-5",
-        "Rooted SDK routing meta tags via campaign_link (next_url + decline_url frontmatter)",
-        "Removed unused upsell-bundle-tier-pills.html template",
-        "Renamed upsell-bundle-tier-cards.html → upsell.html, upsell-bundle-stepper.html → upsell-2.html (match spec page_url)",
-        "npm run build → 67 pages built, 6 home-outage-prep-v0 pages OK"
-      ],
-      "blockers": [],
-      "warnings": [
-        {
-          "code": "TIER_UPSELL_SINGLE_VOUCHER",
-          "message": "Upsell 1 tier cards (1x/2x/3x) all reuse single CampaignSpec voucher FIRE — spec does not carry per-tier voucher codes. Map Builder should expose tier voucher mapping, or doctor should flag tier UX with single voucher."
-        },
-        {
-          "code": "BRAND_LOGO_PLACEHOLDER",
-          "message": "Checkout header + receipt use next-logo.png placeholder. No RescueRay logo asset shipped in designer source — polish should add a brand asset and override checkout-header.html + receipt-skeleton.html in slug-local _includes."
-        }
-      ]
-    },
-    "polish": {
-      "stage": "polish",
-      "status": "completed",
-      "inputs": [
-        "src/home-outage-prep-v0/_includes/checkout-header.html",
-        "src/home-outage-prep-v0/_includes/receipt-skeleton.html",
-        "src/home-outage-prep-v0/receipt.html",
-        "src/home-outage-prep-v0/assets/js/checkout-demeter.js"
-      ],
-      "outputs": [
-        "Replaced next-logo.png placeholder with /home-outage-prep-v0/landing/images/logo.png (RescueRay brand mark from designer source) in checkout-header + receipt-skeleton + receipt body",
-        "Suppressed initExitIntentImage(placehold.co/600x400, EXIT10) in checkout-demeter.js — neither asset exists on this campaign"
-      ],
-      "commands": [
-        "Override _includes/checkout-header.html brand-logo to landing/images/logo.png (page-kit-commands.md gotcha)",
-        "Override _includes/receipt-skeleton.html brand-logo similarly",
-        "Override inline brand-logo in receipt.html (also references next-logo.png)",
-        "Rewrite checkout-demeter.js to drop initExitIntentImage call"
-      ],
-      "blockers": [],
-      "warnings": [
-        {
-          "code": "FUNNEL_VISUAL_INCONSISTENCY",
-          "message": "Presell + landing use designer source HTML (RescueRay navy/orange palette via brand.css). Checkout + upsells + receipt use demeter's tokens.css palette. Brand identity changes mid-funnel. v2 polish: retheme demeter visuals with RR colors via slug-local tokens.css override."
-        },
-        {
-          "code": "LOGO_SOURCE_OF_TRUTH",
-          "message": "Used landing/images/logo.png as the brand logo on checkout + receipt. Logo lives under a sub-asset path (landing/) rather than a top-level brand asset. Polish accepted this; designer source should ship a /brand/logo.png at the top of assets for the next round."
-        }
-      ]
-    },
-    "deploy": {
-      "stage": "deploy",
-      "status": "completed",
-      "inputs": [
-        "branch home-outage-prep-v0-sf21",
-        "PR https://github.com/Sellmore-Co/meridian/pull/7"
-      ],
-      "outputs": [
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/presell/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
-      ],
-      "commands": [
-        "git add -A && git commit -m '...' && git push -u origin home-outage-prep-v0-sf21",
-        "gh pr create --draft --base main --head home-outage-prep-v0-sf21",
-        "Netlify deploy preview for meridian-skincare: SUCCESS"
-      ],
-      "blockers": [],
-      "warnings": []
-    },
     "qa": {
       "stage": "qa",
-      "status": "completed",
+      "status": "local_ready_preview_pending",
       "inputs": [
-        "https://meridian-skincare.netlify.app/home-outage-prep-v0/ (production live)"
+        "campaign-runtime.build.json",
+        ".campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json"
       ],
       "outputs": [
-        ".campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP488C874DE9BB07KQLAF2TCTV.json (browser-only: 41 pass / 0 fail / READY)",
-        ".campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP48BJ6BQ494G2RM6OHD3O7BFJ.json (browser + test-order both: 43 pass / 1 warn / 0 fail)",
-        ".campaign-runtime/qa-home-outage-prep/screenshots/ (7 funnel screenshots from earlier preview walk)",
-        "Test order #102248 ref_id 807d4fba7dbb4d7c855c243fd5123931 (ACCEPT path, $39.98, verified API 201/200, Spreedly tokenized)",
-        "Test order #102251 ref_id 7aefc0059432476ea22bde177baa945c (DECLINE path, $39.98, verified API 201/200, Spreedly tokenized)"
+        ".campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json"
       ],
       "commands": [
-        "campaigns-os qa resolve --packet ... --base-url https://meridian-skincare.netlify.app",
-        "campaigns-os qa run --packet ... --base-url https://meridian-skincare.netlify.app --browser (static + render-only)",
-        "campaigns-os qa run --packet ... --base-url https://meridian-skincare.netlify.app --browser --test-order both --allow-test-orders --sandbox-test-card-confirmed (Playwright typed-card, both upsell paths)"
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa resolve --packet campaign-runtime.build.json --base-url http://127.0.0.1:8099/lumi-v0/ --json",
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url http://127.0.0.1:8099/lumi-v0/ --browser --no-post-verdict --output-dir .campaign-runtime/qa-lumi-v0-local --json"
       ],
-      "blockers": [],
-      "warnings": [
-        {
-          "code": "BROWSER_CONSOLE_ERRORS",
-          "message": "Playwright run flagged 1 browser console issue on checkout: a missing /home-outage-prep-v0/images/credit-card-flags.svg asset from the Demeter starter. Friction #10 / starter-template asset hygiene."
-        },
-        {
-          "code": "QA_RECEIPT_LINE_ITEMS_MISSING_UPSELL",
-          "message": "Both accept and decline test orders show identical receipt_line_items (base 2x bundle only). Accept path clicked through upsell-1 and the upsell-add API succeeded, but the QA toolkit's captured receipt_line_items doesn't include the upsell tier. Either re-read order lines after upsell-add, or rename the field. New friction for SELL-271."
-        },
-        {
-          "code": "CAMPAIGNS_OS_START_DESTRUCTIVE",
-          "message": "Re-running campaigns-os start to regenerate the packet (e.g., to flip --test-orders-allowed on) wiped the populated .campaign-runtime/assembly-report.json and build-context.json. Lifecycle state was rebuilt from scratch and had to be manually restored from git. Either expose qa policy set as a non-destructive subcommand, or have start detect existing report content and merge instead of overwrite. New friction for SELL-271."
-        },
-        {
-          "code": "STATIC_QA_404",
-          "message": "Live page has a 404 on /home-outage-prep-v0/images/credit-card-flags.svg (demeter starter asset reference). Demeter starter ships partials that reference an asset not in the template's own assets/images/. Polish item."
-        },
-        {
-          "code": "API_REQUEST_ABORTED",
-          "message": "Raw browser event logs also include [ApiClient] API request failed: signal is aborted without reason during navigation. It did not drive the top-level QA warning in this run, but remains useful SDK noise to quiet separately."
-        }
-      ]
+      "blockers": [
+        "Preview/dashboard QA and typed-card test-order proof still require a deployed preview URL plus SDK origin allowlist confirmation."
+      ],
+      "warnings": []
     }
   },
   "decisions": [
     {
-      "id": "dec_page_map_page_mp3qp2nt_25",
+      "id": "dec_page_map_page_mpaxqpb1_21",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_25\" to source file \"presell.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_21\" to source file \"presell.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-25, presell, presell-1, index"
+        "matched source filename against page keys: page-mpaxqpb1-21, presell, presell-1, index"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_26",
+      "id": "dec_page_map_page_mpaxqpb1_22",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_26\" to source file \"landing.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_22\" to source file \"landing.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-26, landing-pdp, landing, landing-1, index"
+        "matched source filename against page keys: page-mpaxqpb1-22, landing-pdp, landing, landing-1, index"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_27",
+      "id": "dec_page_map_page_mpaxqpb1_23",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_27\" to source file \"checkout.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_23\" to source file \"checkout.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-27, checkout, checkout-1"
+        "matched source filename against page keys: page-mpaxqpb1-23, checkout, checkout-1"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_28",
+      "id": "dec_page_map_page_mpaxqpb1_24",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_28\" to source file \"upsell-1.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_24\" to source file \"upsell-1.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-28, upsell, upsell-1"
+        "matched source filename against page keys: page-mpaxqpb1-24, upsell, upsell-1"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qs1fg_226",
+      "id": "dec_page_map_page_mpaxrhe5_86",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qs1fg_226\" to source file \"upsell-2.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxrhe5_86\" to source file \"upsell-2.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qs1fg-226, upsell-2, upsell"
+        "matched source filename against page keys: page-mpaxrhe5-86, upsell-2, upsell"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_29",
+      "id": "dec_page_map_page_mpaxqpb1_25",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_29\" to source file \"thank-you.html\"",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_25\" to source file \"thank-you.html\"",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-29, thank-you, thankyou, receipt, thankyou-1"
+        "matched source filename against page keys: page-mpaxqpb1-25, thank-you, thankyou, receipt, thankyou-1"
+      ]
+    },
+    {
+      "id": "dec_lumi_route_outputs",
+      "stage": "assembly",
+      "decision_type": "implementation_mapping",
+      "decision": "Rendered Lumi CampaignSpec routes to page-kit filenames: presell -> index.html, upsell-1 -> upsell.html, thank-you -> receipt.html.",
+      "confidence": "high",
+      "evidence": [
+        "CampaignSpec public routes are /lumi-v0/, /landing/, /checkout/, /upsell/, /upsell-2/, /receipt/.",
+        "Active src/lumi-v0 pages match those route filenames."
+      ]
+    },
+    {
+      "id": "dec_lumi_runtime_rooting",
+      "stage": "assembly",
+      "decision_type": "runtime_contract",
+      "decision": "Rendered SDK routing meta tags as campaign-rooted URLs even though CampaignSpec sdk_hints are unrooted.",
+      "confidence": "high",
+      "evidence": [
+        "Doctor warning routing_meta.runtime_root is on source spec values; rendered checkout success URL is /lumi-v0/upsell/ and upsell accept/decline URLs are campaign-rooted."
+      ]
+    },
+    {
+      "id": "dec_lumi_payment_methods",
+      "stage": "assembly",
+      "decision_type": "runtime_contract",
+      "decision": "Rendered checkout payment methods as credit-card, Apple Pay, and Google Pay only.",
+      "confidence": "high",
+      "evidence": [
+        "CampaignSpec lists credit-card/apple-pay/google-pay; active rendered checkout was inspected clean for PayPal/Klarna strings."
+      ]
+    },
+    {
+      "id": "dec_lumi_checkout_contract_hooks",
+      "stage": "polish",
+      "decision_type": "runtime_contract",
+      "decision": "Placed shop-single-step structure hook classes on visible inner panels, not grid items, to satisfy QA without letting starter CSS break the Lumi custom layout.",
+      "confidence": "high",
+      "evidence": [
+        "Initial grid-item hook placement pushed the summary off canvas; final local geometry shows 650px/550px columns and 8/8 commerce structure checks passing."
+      ]
+    },
+    {
+      "id": "dec_lumi_payment_component",
+      "stage": "polish",
+      "decision_type": "runtime_contract",
+      "decision": "Replaced custom payment tabs/placeholder with canonical SDK payment anchors for credit card, Apple Pay, and Google Pay.",
+      "confidence": "high",
+      "evidence": [
+        "Final QA observed card_mounts=1, cvv_mounts=1, spreedly_frames=2, apple_pay and google_pay buttons at 277x48."
       ]
     }
   ],
-  "evidence": [],
+  "theme": {
+    "status": "skipped",
+    "css_path": null,
+    "load_order": "unknown",
+    "commerce_pages": [],
+    "evidence": [
+      "theme inspect completed; no generated brand theme was applied during prepare-build."
+    ],
+    "warnings": [],
+    "repair_loop_defect": null
+  },
+  "evidence": [
+    "npm run build completed successfully for Lumi v0.",
+    "Doctor completed with status ready_with_warnings and zero errors after assembly.",
+    "Active source pages: index.html, landing.html, checkout.html, upsell.html, upsell-2.html, receipt.html.",
+    "Active rendered pages include Campaign Cart loader v0.4.19, /lumi-v0/config.js, /lumi-v0/css/next-core.css, and expected SDK meta tags.",
+    "Static scan of active rendered pages found no hardcoded dollar amounts, US-only shipping copy, PayPal/Klarna rows, UP50 voucher residue, upsell_offer, or upsell_bundle_tiers strings.",
+    "Final local-only browser QA status ready with 50 passing assertions and 0 exceptions.",
+    "Local QA run MQ13I8EFT6V653BRKMN9QIERP9 saved at .campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json.",
+    "Checkout payment proof mounted Spreedly card/CVV frames, Apple Pay and Google Pay express buttons, visible prices on 3/3 bundle cards, aligned order bump state, and 8/8 shop-single-step structure checks.",
+    "Receipt local browser pass is clean after replacing the literal {item.image} template request with a safe placeholder src."
+  ],
   "blockers": [],
   "warnings": [
     {
       "code": "SOURCE_COMMERCE_REVIEW",
       "stage": "assembly",
       "message": "Source HTML contains possible commerce zones. Preserve catalog-owned runtime surfaces."
+    },
+    {
+      "code": "NO_PREVIEW_URL",
+      "stage": "deploy",
+      "message": "No Netlify preview/production URL has been generated for this branch yet."
+    },
+    {
+      "code": "TYPED_CARD_ORDER_PROOF_GATED",
+      "stage": "qa",
+      "message": "Do not run qa --test-order until operator approves order count/path and deployed SDK origin allowlist is confirmed."
+    },
+    {
+      "code": "SPEC_STORE_PHONE_TEL_EMPTY",
+      "stage": "assembly",
+      "message": "CampaignSpec campaign.store_phone_tel is present but empty; leave blank output in campaigns.json or remove/fix source spec before launch."
+    },
+    {
+      "code": "TEMPLATE_CONTRACT_WARNINGS_SOURCE_ONLY",
+      "stage": "assembly",
+      "message": "Doctor warnings about PayPal/Klarna/demo starter frontmatter come from template contract expectations; active rendered Lumi checkout/upsell output was inspected clean."
+    },
+    {
+      "code": "DOCTOR_SOURCE_CONTRACT_WARNINGS",
+      "stage": "doctor",
+      "message": "Doctor still reports starter/source contract warnings from CampaignSpec/template metadata; active local rendered browser QA is clean."
     }
   ],
   "next": {
-    "stage": "review",
-    "owner": "Devin / Campaigns OS team",
-    "action": "Triage dogfood findings (HOME-OUTAGE-PREP-DOGFOOD-REPORT.md) into the Campaigns OS Dogfood Linear project. Confirm PR #7 is reviewed and either land or close after writing remediation tickets."
-  }
+    "stage": "deploy",
+    "owner": "Sellmore-Co/meridian branch lumi-v0-dogfood",
+    "action": "Push branch and create a draft PR to obtain a Netlify preview URL. Confirm the preview origin in Campaigns App SDK allowlist, then run preview QA and only then ask for typed-card order-proof approval."
+  },
+  "updated_at": "2026-06-05T15:46:19.827Z"
 }
