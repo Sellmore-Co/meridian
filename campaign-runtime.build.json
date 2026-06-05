@@ -69,7 +69,7 @@
   },
   "deploy": {
     "target": "netlify",
-    "preview_url": null,
+    "preview_url": "https://deploy-preview-18--meridian-skincare.netlify.app/lumi-v0/",
     "production_url": null,
     "live_url_path": "/lumi-v0/"
   },

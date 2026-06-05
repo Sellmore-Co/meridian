@@ -2,7 +2,7 @@
   "schema_version": "campaign-runtime-assembly-report/v0",
   "run_id": "asm_1780673080507",
   "generated_at": "2026-06-05T15:24:40.507Z",
-  "status": "local_qa_ready_with_warnings",
+  "status": "preview_qa_ready_with_warnings",
   "identity": {
     "map_id": "lumi-v0-qdos",
     "public_route_slug": "lumi-v0",
@@ -69,8 +69,7 @@
         "frontmatter.replaceFromSpecOrApi",
         "frontmatter.removeWhenUnsupported",
         "frontmatter.removeWhenUnsupported",
-        "frontmatter.removeWhenUnsupported",
-        "deploy.preview_url"
+        "frontmatter.removeWhenUnsupported"
       ]
     },
     "setup": {
@@ -145,31 +144,47 @@
     },
     "deploy": {
       "stage": "deploy",
-      "status": "pending",
-      "inputs": [],
-      "outputs": [],
-      "commands": [],
+      "status": "preview_ready",
+      "inputs": [
+        "GitHub PR #18",
+        "Netlify deploy preview checks"
+      ],
+      "outputs": [
+        "https://deploy-preview-18--meridian-skincare.netlify.app/lumi-v0/"
+      ],
+      "commands": [
+        "git push -u origin lumi-v0-dogfood",
+        "gh pr create --draft",
+        "Netlify deploy-preview checks completed for PR #18"
+      ],
       "blockers": [],
-      "warnings": []
+      "warnings": [
+        "Campaigns App SDK origin allowlist is still not confirmed for the preview origin."
+      ]
     },
     "qa": {
       "stage": "qa",
-      "status": "local_ready_preview_pending",
+      "status": "preview_ready_with_warnings_test_orders_gated",
       "inputs": [
         "campaign-runtime.build.json",
-        ".campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json"
+        ".campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json",
+        ".campaign-runtime/qa-lumi-v0-preview/lumi-v0-qdos/MQ13RGW9M4AJG7UT29EDJEI61U.json"
       ],
       "outputs": [
-        ".campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json"
+        ".campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json",
+        ".campaign-runtime/qa-lumi-v0-preview/lumi-v0-qdos/MQ13RGW9M4AJG7UT29EDJEI61U.json"
       ],
       "commands": [
         "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa resolve --packet campaign-runtime.build.json --base-url http://127.0.0.1:8099/lumi-v0/ --json",
-        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url http://127.0.0.1:8099/lumi-v0/ --browser --no-post-verdict --output-dir .campaign-runtime/qa-lumi-v0-local --json"
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url http://127.0.0.1:8099/lumi-v0/ --browser --no-post-verdict --output-dir .campaign-runtime/qa-lumi-v0-local --json",
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url https://deploy-preview-18--meridian-skincare.netlify.app/lumi-v0/ --browser --no-post-verdict --output-dir .campaign-runtime/qa-lumi-v0-preview --json"
       ],
       "blockers": [
-        "Preview/dashboard QA and typed-card test-order proof still require a deployed preview URL plus SDK origin allowlist confirmation."
+        "Typed-card test-order proof is intentionally gated until the operator approves the order count/path depth and the preview/production SDK origin is confirmed in the Campaigns App allowlist."
       ],
-      "warnings": []
+      "warnings": [
+        "Preview browser QA returned 50 pass and 2 warn; warnings were landing-page aborted cart calculation during navigation: browser-console-errors:page_mpaxqpb1_22: 1 issue(s); browser-request-failures:page_mpaxqpb1_22: 1 failed request(s)."
+      ]
     }
   },
   "decisions": [
@@ -305,7 +320,11 @@
     "Final local-only browser QA status ready with 50 passing assertions and 0 exceptions.",
     "Local QA run MQ13I8EFT6V653BRKMN9QIERP9 saved at .campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json.",
     "Checkout payment proof mounted Spreedly card/CVV frames, Apple Pay and Google Pay express buttons, visible prices on 3/3 bundle cards, aligned order bump state, and 8/8 shop-single-step structure checks.",
-    "Receipt local browser pass is clean after replacing the literal {item.image} template request with a safe placeholder src."
+    "Receipt local browser pass is clean after replacing the literal {item.image} template request with a safe placeholder src.",
+    "Netlify preview is ready at https://deploy-preview-18--meridian-skincare.netlify.app/lumi-v0/.",
+    "Preview browser QA run MQ13RGW9M4AJG7UT29EDJEI61U saved at .campaign-runtime/qa-lumi-v0-preview/lumi-v0-qdos/MQ13RGW9M4AJG7UT29EDJEI61U.json.",
+    "Preview browser QA disposition ready_with_exceptions: 50 pass, 2 warn, no test orders.",
+    "Preview checkout/upsell/receipt runtime assertions passed; the only preview warnings were a landing-page aborted carts/calculate request and matching console message during navigation."
   ],
   "blockers": [],
   "warnings": [
@@ -315,14 +334,9 @@
       "message": "Source HTML contains possible commerce zones. Preserve catalog-owned runtime surfaces."
     },
     {
-      "code": "NO_PREVIEW_URL",
-      "stage": "deploy",
-      "message": "No Netlify preview/production URL has been generated for this branch yet."
-    },
-    {
       "code": "TYPED_CARD_ORDER_PROOF_GATED",
       "stage": "qa",
-      "message": "Do not run qa --test-order until operator approves order count/path and deployed SDK origin allowlist is confirmed."
+      "message": "Do not run qa --test-order until operator approves order count/path depth and deployed SDK origin allowlist is confirmed."
     },
     {
       "code": "SPEC_STORE_PHONE_TEL_EMPTY",
@@ -338,12 +352,17 @@
       "code": "DOCTOR_SOURCE_CONTRACT_WARNINGS",
       "stage": "doctor",
       "message": "Doctor still reports starter/source contract warnings from CampaignSpec/template metadata; active local rendered browser QA is clean."
+    },
+    {
+      "code": "PREVIEW_QA_LANDING_ABORTED_CALCULATE",
+      "stage": "qa",
+      "message": "Preview browser QA had two warning assertions on landing from an aborted carts/calculate request during navigation; checkout, upsell, receipt, SDK, payment, bundle, and structure assertions passed."
     }
   ],
   "next": {
-    "stage": "deploy",
-    "owner": "Sellmore-Co/meridian branch lumi-v0-dogfood",
-    "action": "Push branch and create a draft PR to obtain a Netlify preview URL. Confirm the preview origin in Campaigns App SDK allowlist, then run preview QA and only then ask for typed-card order-proof approval."
+    "stage": "typed_card_order_proof",
+    "owner": "Campaigns App operator + Sellmore-Co/meridian branch lumi-v0-dogfood",
+    "action": "Confirm https://deploy-preview-18--meridian-skincare.netlify.app/lumi-v0/ is allowed for the campaign API key, choose the approved typed-card path/count, then run qa --test-order through the deployed SDK path."
   },
-  "updated_at": "2026-06-05T15:46:19.827Z"
+  "updated_at": "2026-06-05T15:56:16.061Z"
 }

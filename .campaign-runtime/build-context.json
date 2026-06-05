@@ -2,7 +2,7 @@
   "schema_version": "campaign-runtime-build-context/v0",
   "generated_at": "2026-06-05T15:24:40.498Z",
   "source_adapter": "html_funnel",
-  "status": "local_qa_ready_with_warnings",
+  "status": "preview_qa_ready_with_warnings",
   "packet_path": "./campaign-runtime.build.json",
   "report_path": ".campaign-runtime/assembly-report.json",
   "spec": {
@@ -428,7 +428,7 @@
       "css": false
     }
   },
-  "updated_at": "2026-06-05T15:46:19.827Z",
+  "updated_at": "2026-06-05T15:56:16.061Z",
   "assembly": {
     "status": "completed_with_warnings",
     "script": "scripts/assemble-lumi-v0.mjs",
@@ -447,14 +447,56 @@
     ]
   },
   "qa": {
-    "status": "local_ready",
-    "run_id": "MQ13I8EFT6V653BRKMN9QIERP9",
-    "local_path": ".campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json",
-    "base_url": "http://127.0.0.1:8099/lumi-v0/",
-    "counts": {
-      "pass": 50
+    "status": "preview_ready_with_warnings",
+    "local": {
+      "status": "local_ready",
+      "run_id": "MQ13I8EFT6V653BRKMN9QIERP9",
+      "local_path": ".campaign-runtime/qa-lumi-v0-local/lumi-v0-qdos/MQ13I8EFT6V653BRKMN9QIERP9.json",
+      "base_url": "http://127.0.0.1:8099/lumi-v0/",
+      "counts": {
+        "pass": 50
+      },
+      "posted": null,
+      "publish_skipped": true
     },
-    "posted": null,
-    "publish_skipped": true
+    "preview": {
+      "disposition": "ready_with_exceptions",
+      "run_id": "MQ13RGW9M4AJG7UT29EDJEI61U",
+      "local_path": ".campaign-runtime/qa-lumi-v0-preview/lumi-v0-qdos/MQ13RGW9M4AJG7UT29EDJEI61U.json",
+      "base_url": "https://deploy-preview-18--meridian-skincare.netlify.app/lumi-v0/",
+      "counts": {
+        "pass": 50,
+        "warn": 2
+      },
+      "exceptions": [
+        {
+          "id": "browser-console-errors:page_mpaxqpb1_22",
+          "status": "warn",
+          "severity": "warn",
+          "url": "https://deploy-preview-18--meridian-skincare.netlify.app/lumi-v0/landing/",
+          "actual": "1 issue(s)"
+        },
+        {
+          "id": "browser-request-failures:page_mpaxqpb1_22",
+          "status": "warn",
+          "severity": "warn",
+          "url": "https://deploy-preview-18--meridian-skincare.netlify.app/lumi-v0/landing/",
+          "actual": "1 failed request(s)"
+        }
+      ],
+      "posted": null,
+      "publish_skipped": true,
+      "test_orders": []
+    },
+    "typed_card_order_proof": {
+      "status": "gated",
+      "reason": "Requires operator-approved order count/path depth and Campaigns App SDK origin allowlist confirmation before qa --test-order.",
+      "test_orders_allowed": false
+    }
+  },
+  "deploy": {
+    "target": "netlify",
+    "preview_url": "https://deploy-preview-18--meridian-skincare.netlify.app/lumi-v0/",
+    "production_url": null
   }
 }

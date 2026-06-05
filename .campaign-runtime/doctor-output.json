@@ -69,10 +69,6 @@
     {
       "code": "frontmatter.removeWhenUnsupported",
       "message": "Remove when unsupported by target campaign: upsell pages not present in the funnel"
-    },
-    {
-      "code": "deploy.preview_url",
-      "message": "No preview or production URL yet. QA remains blocked after build/polish."
     }
   ],
   "ready": [
@@ -202,7 +198,6 @@
       "Use the template agentContract to replace demo values from CampaignSpec/API."
     ],
     "blocked_stages": [
-      "qa",
       "runtime-sdk-verification"
     ]
   }
