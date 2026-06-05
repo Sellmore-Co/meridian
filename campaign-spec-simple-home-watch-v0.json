@@ -1,0 +1,1128 @@
+{
+  "schema_version": "4.3",
+  "builder_version": "0.3.1",
+  "generated_at": "2026-06-04T08:00:38.001Z",
+  "_provenance": {
+    "ops": [
+      "funnels.*.pages.*.label",
+      "funnels.*.pages.*.notes",
+      "funnels.*.pages.*.custom_fields",
+      "funnels.*.pages.*.design_source",
+      "funnels.*.pages.*.upsell_template_pattern",
+      "funnels.*.pages.*.upsell_mv_tiers",
+      "funnels.*.pages.*.variant_labels",
+      "funnels.*.pages.*.offers",
+      "funnels.*.pages.*.exit_intent",
+      "funnels.*.pages.*.promo_code_input",
+      "funnels.*.promo_codes",
+      "build_scope",
+      "global_config.sdk_version",
+      "campaign.store_*",
+      "campaign.allowed_domains",
+      "campaign.tracking",
+      "campaign.footer_links",
+      "campaign.seo",
+      "campaign.preferred_template_family",
+      "figma_url"
+    ],
+    "api": [
+      "campaign.*",
+      "shipping_methods",
+      "offers",
+      "funnels.*.pages.*.packages.*.name",
+      "funnels.*.pages.*.packages.*.price"
+    ],
+    "derived": [
+      "funnels.*.pages.*.page_url",
+      "funnels.*.pages.*.sdk_hints",
+      "funnels.*.pages.*.order",
+      "funnels.*.pages.*.is_entry",
+      "schema_version",
+      "builder_version",
+      "generated_at"
+    ],
+    "legacy": [
+      "funnel_pages"
+    ]
+  },
+  "campaign": {
+    "ref_id": 1637,
+    "slug": "simple-home-watch-v0",
+    "id": "simple-home-watch-v0",
+    "name": "Simple Home Watch v0",
+    "currency": "USD",
+    "language": "en",
+    "payment_env_key": "57862XP7AB94ZSSMYZRDHTQA7W",
+    "campaigns_api_key": "USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5",
+    "available_payment_methods": [
+      "apple_pay",
+      "bankcard",
+      "google_pay"
+    ],
+    "available_express_payment_methods": [
+      "apple_pay",
+      "google_pay"
+    ],
+    "available_currencies": [
+      "USD",
+      "GBP"
+    ],
+    "available_shipping_countries": [
+      "GB",
+      "US"
+    ],
+    "store_url": "https://keer.29next.store/",
+    "store_name": "",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "tracking": {
+      "status": "unknown",
+      "providers": {}
+    }
+  },
+  "global_config": {
+    "sdk_version": "0.4.24"
+  },
+  "build_scope": {
+    "mode": "full",
+    "reasons": []
+  },
+  "funnels": [
+    {
+      "id": "default",
+      "name": "Default",
+      "hypothesis": "Default campaign path exported by Campaign Map Builder.",
+      "weight": 100,
+      "pages": [
+        {
+          "id": "page_mpz72wd5_29",
+          "type": "presell",
+          "order": 1,
+          "label": "Presell",
+          "is_entry": true,
+          "page_url": "",
+          "next_page": "page_mpz72wd5_30",
+          "_next_label": "Landing (PDP)",
+          "resolved_routing": {
+            "next_page": "page_mpz72wd5_30",
+            "next_page_route": "landing/",
+            "next_page_filename": "landing/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product"
+            }
+          }
+        },
+        {
+          "id": "page_mpz72wd5_30",
+          "type": "landing",
+          "order": 2,
+          "label": "Landing (PDP)",
+          "is_entry": true,
+          "page_url": "landing/",
+          "next_page": "page_mpz72wd5_31",
+          "_next_label": "Checkout",
+          "resolved_routing": {
+            "next_page": "page_mpz72wd5_31",
+            "next_page_route": "checkout/",
+            "next_page_filename": "checkout/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product"
+            }
+          }
+        },
+        {
+          "id": "page_mpz72wd5_31",
+          "type": "checkout",
+          "order": 3,
+          "label": "Checkout",
+          "is_entry": false,
+          "page_url": "checkout/",
+          "exit_intent": {
+            "enabled": true,
+            "offer_ref_id": "7",
+            "offer_code": "EXIT5"
+          },
+          "packages": [
+            {
+              "ref_id": "1",
+              "qty": 1,
+              "name": "Indoor Wifi Smart Cam",
+              "price": "69.99",
+              "price_retail": null,
+              "product_name": "Indoor Wifi Smart Cam",
+              "product_sku": "KEER-DOG-INDOORSMARTCAM01",
+              "product_variant_name": "Indoor Wifi Smart Cam",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/08/41/0841ccba88cb370126896487964b7a73.webp"
+            },
+            {
+              "ref_id": "1",
+              "qty": 2,
+              "name": "Indoor Wifi Smart Cam",
+              "price": "69.99",
+              "price_retail": null,
+              "product_name": "Indoor Wifi Smart Cam",
+              "product_sku": "KEER-DOG-INDOORSMARTCAM01",
+              "product_variant_name": "Indoor Wifi Smart Cam",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/08/41/0841ccba88cb370126896487964b7a73.webp"
+            },
+            {
+              "ref_id": "1",
+              "qty": 3,
+              "name": "Indoor Wifi Smart Cam",
+              "price": "69.99",
+              "price_retail": null,
+              "product_name": "Indoor Wifi Smart Cam",
+              "product_sku": "KEER-DOG-INDOORSMARTCAM01",
+              "product_variant_name": "Indoor Wifi Smart Cam",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/08/41/0841ccba88cb370126896487964b7a73.webp"
+            },
+            {
+              "ref_id": "2",
+              "qty": 1,
+              "name": "New Doorbell",
+              "price": "99.99",
+              "price_retail": null,
+              "product_name": "New Doorbell",
+              "product_sku": "KEER-DOG-VDOORBELLBLK01",
+              "product_variant_name": "New Doorbell",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/ec/d0/ecd081abb4b10f46da39aa109736db55.webp"
+            }
+          ],
+          "offers": [
+            {
+              "ref_id": "1",
+              "name": "Wifi Promo",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "any",
+                "value": null,
+                "description": "No minimum purchase requirement"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "43.00",
+                "description": "43% off selected packages"
+              }
+            },
+            {
+              "ref_id": "2",
+              "name": "Doorbell Bonus",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "any",
+                "value": null,
+                "description": "No minimum purchase requirement"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "40.00",
+                "description": "40% off selected packages"
+              }
+            },
+            {
+              "ref_id": "5",
+              "name": "Wifi 2x Promo",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "count",
+                "value": 2,
+                "description": "Minimum purchase of 2 selected packages"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "50.00",
+                "description": "50% off selected packages"
+              }
+            },
+            {
+              "ref_id": "6",
+              "name": "Wifi 3x Promo",
+              "type": "offer",
+              "code": null,
+              "condition": {
+                "type": "count",
+                "value": 3,
+                "description": "Minimum purchase of 3 selected packages"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "55.00",
+                "description": "55% off selected packages"
+              }
+            },
+            {
+              "ref_id": "7",
+              "name": "EXIT5",
+              "type": "voucher",
+              "code": "EXIT5",
+              "condition": {
+                "type": "any",
+                "value": null,
+                "description": "No minimum purchase requirement"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "5.00",
+                "description": "5% off selected packages"
+              }
+            }
+          ],
+          "success_url": "page_mpz72wd5_32",
+          "_success_label": "Upsell",
+          "resolved_routing": {
+            "success": "page_mpz72wd5_32",
+            "success_route": "upsell/",
+            "success_filename": "upsell/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "checkout",
+            "meta_tags": {
+              "next-page-type": "checkout",
+              "next-predictive-address": "true",
+              "next-success-url": "upsell/"
+            }
+          }
+        },
+        {
+          "id": "page_mpz72wd5_32",
+          "type": "upsell",
+          "order": 4,
+          "label": "Upsell",
+          "is_entry": false,
+          "page_url": "upsell/",
+          "packages": [
+            {
+              "ref_id": "3",
+              "qty": 1,
+              "name": "Window & Door Sensor",
+              "price": "39.99",
+              "price_retail": null,
+              "product_name": "Window & Door Alarm Sensor Contact",
+              "product_sku": "KEER-DOG-WINDOWDOORSENSOR01",
+              "product_variant_name": "Window & Door Alarm Sensor Contact",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/12/b9/12b9fc68a269cf9eb58f7892d5654a72.webp"
+            }
+          ],
+          "offers": [
+            {
+              "ref_id": "3",
+              "name": "Window & Door Promo",
+              "type": "voucher",
+              "code": "WINDOW",
+              "condition": {
+                "type": "any",
+                "value": null,
+                "description": "No minimum purchase requirement"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "50.00",
+                "description": "50% off selected packages"
+              }
+            }
+          ],
+          "on_accept": "page_mpz72yp6_42",
+          "on_decline": "page_mpz72yp6_42",
+          "_accept_label": "Upsell 2",
+          "_decline_label": "Upsell 2",
+          "resolved_routing": {
+            "accept": "page_mpz72yp6_42",
+            "accept_route": "upsell-2/",
+            "accept_filename": "upsell-2/",
+            "decline": "page_mpz72yp6_42",
+            "decline_route": "upsell-2/",
+            "decline_filename": "upsell-2/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "upsell",
+            "meta_tags": {
+              "next-page-type": "upsell",
+              "next-prevent-back-navigation": "true",
+              "next-upsell-accept-url": "upsell-2/",
+              "next-upsell-decline-url": "upsell-2/"
+            }
+          }
+        },
+        {
+          "id": "page_mpz72yp6_42",
+          "type": "upsell",
+          "order": 5,
+          "label": "Upsell 2",
+          "is_entry": false,
+          "page_url": "upsell-2/",
+          "packages": [
+            {
+              "ref_id": "4",
+              "qty": 1,
+              "name": "Light Bulb Wifi Camera",
+              "price": "79.99",
+              "price_retail": null,
+              "product_name": "Light Bulb Wifi Camera",
+              "product_sku": "KEER-DOG-LIGHTBULBCAM01",
+              "product_variant_name": "Light Bulb Wifi Camera",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "in_stock",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/2a/cc/2acca1ef87f8e2e041d4f37c38b7597e.webp"
+            }
+          ],
+          "offers": [
+            {
+              "ref_id": "4",
+              "name": "Light Bulb Promo",
+              "type": "voucher",
+              "code": "LIGHT",
+              "condition": {
+                "type": "any",
+                "value": null,
+                "description": "No minimum purchase requirement"
+              },
+              "benefit": {
+                "type": "package_percentage",
+                "value": "45.00",
+                "description": "45% off selected packages"
+              }
+            }
+          ],
+          "on_accept": "page_mpz72wd5_33",
+          "on_decline": "page_mpz72wd5_33",
+          "_accept_label": "Thank You",
+          "_decline_label": "Thank You",
+          "resolved_routing": {
+            "accept": "page_mpz72wd5_33",
+            "accept_route": "receipt/",
+            "accept_filename": "receipt/",
+            "decline": "page_mpz72wd5_33",
+            "decline_route": "receipt/",
+            "decline_filename": "receipt/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "upsell",
+            "meta_tags": {
+              "next-page-type": "upsell",
+              "next-upsell-accept-url": "receipt/",
+              "next-upsell-decline-url": "receipt/"
+            }
+          }
+        },
+        {
+          "id": "page_mpz72wd5_33",
+          "type": "thankyou",
+          "order": 6,
+          "label": "Thank You",
+          "is_entry": false,
+          "page_url": "receipt/",
+          "sdk_hints": {
+            "sdk_page_type": "receipt",
+            "meta_tags": {
+              "next-page-type": "receipt"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "funnel_pages": [
+    {
+      "id": "page_mpz72wd5_29",
+      "type": "presell",
+      "order": 1,
+      "label": "Presell",
+      "is_entry": true,
+      "page_url": "",
+      "next_page": "page_mpz72wd5_30",
+      "_next_label": "Landing (PDP)",
+      "resolved_routing": {
+        "next_page": "page_mpz72wd5_30",
+        "next_page_route": "landing/",
+        "next_page_filename": "landing/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mpz72wd5_30",
+      "type": "landing",
+      "order": 2,
+      "label": "Landing (PDP)",
+      "is_entry": true,
+      "page_url": "landing/",
+      "next_page": "page_mpz72wd5_31",
+      "_next_label": "Checkout",
+      "resolved_routing": {
+        "next_page": "page_mpz72wd5_31",
+        "next_page_route": "checkout/",
+        "next_page_filename": "checkout/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mpz72wd5_31",
+      "type": "checkout",
+      "order": 3,
+      "label": "Checkout",
+      "is_entry": false,
+      "page_url": "checkout/",
+      "exit_intent": {
+        "enabled": true,
+        "offer_ref_id": "7",
+        "offer_code": "EXIT5"
+      },
+      "packages": [
+        {
+          "ref_id": "1",
+          "qty": 1,
+          "name": "Indoor Wifi Smart Cam",
+          "price": "69.99",
+          "price_retail": null,
+          "product_name": "Indoor Wifi Smart Cam",
+          "product_sku": "KEER-DOG-INDOORSMARTCAM01",
+          "product_variant_name": "Indoor Wifi Smart Cam",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/08/41/0841ccba88cb370126896487964b7a73.webp"
+        },
+        {
+          "ref_id": "1",
+          "qty": 2,
+          "name": "Indoor Wifi Smart Cam",
+          "price": "69.99",
+          "price_retail": null,
+          "product_name": "Indoor Wifi Smart Cam",
+          "product_sku": "KEER-DOG-INDOORSMARTCAM01",
+          "product_variant_name": "Indoor Wifi Smart Cam",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/08/41/0841ccba88cb370126896487964b7a73.webp"
+        },
+        {
+          "ref_id": "1",
+          "qty": 3,
+          "name": "Indoor Wifi Smart Cam",
+          "price": "69.99",
+          "price_retail": null,
+          "product_name": "Indoor Wifi Smart Cam",
+          "product_sku": "KEER-DOG-INDOORSMARTCAM01",
+          "product_variant_name": "Indoor Wifi Smart Cam",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/08/41/0841ccba88cb370126896487964b7a73.webp"
+        },
+        {
+          "ref_id": "2",
+          "qty": 1,
+          "name": "New Doorbell",
+          "price": "99.99",
+          "price_retail": null,
+          "product_name": "New Doorbell",
+          "product_sku": "KEER-DOG-VDOORBELLBLK01",
+          "product_variant_name": "New Doorbell",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/ec/d0/ecd081abb4b10f46da39aa109736db55.webp"
+        }
+      ],
+      "offers": [
+        {
+          "ref_id": "1",
+          "name": "Wifi Promo",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "any",
+            "value": null,
+            "description": "No minimum purchase requirement"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "43.00",
+            "description": "43% off selected packages"
+          }
+        },
+        {
+          "ref_id": "2",
+          "name": "Doorbell Bonus",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "any",
+            "value": null,
+            "description": "No minimum purchase requirement"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "40.00",
+            "description": "40% off selected packages"
+          }
+        },
+        {
+          "ref_id": "5",
+          "name": "Wifi 2x Promo",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "count",
+            "value": 2,
+            "description": "Minimum purchase of 2 selected packages"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "50.00",
+            "description": "50% off selected packages"
+          }
+        },
+        {
+          "ref_id": "6",
+          "name": "Wifi 3x Promo",
+          "type": "offer",
+          "code": null,
+          "condition": {
+            "type": "count",
+            "value": 3,
+            "description": "Minimum purchase of 3 selected packages"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "55.00",
+            "description": "55% off selected packages"
+          }
+        },
+        {
+          "ref_id": "7",
+          "name": "EXIT5",
+          "type": "voucher",
+          "code": "EXIT5",
+          "condition": {
+            "type": "any",
+            "value": null,
+            "description": "No minimum purchase requirement"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "5.00",
+            "description": "5% off selected packages"
+          }
+        }
+      ],
+      "success_url": "page_mpz72wd5_32",
+      "_success_label": "Upsell",
+      "resolved_routing": {
+        "success": "page_mpz72wd5_32",
+        "success_route": "upsell/",
+        "success_filename": "upsell/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "checkout",
+        "meta_tags": {
+          "next-page-type": "checkout",
+          "next-predictive-address": "true",
+          "next-success-url": "upsell/"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mpz72wd5_32",
+      "type": "upsell",
+      "order": 4,
+      "label": "Upsell",
+      "is_entry": false,
+      "page_url": "upsell/",
+      "packages": [
+        {
+          "ref_id": "3",
+          "qty": 1,
+          "name": "Window & Door Sensor",
+          "price": "39.99",
+          "price_retail": null,
+          "product_name": "Window & Door Alarm Sensor Contact",
+          "product_sku": "KEER-DOG-WINDOWDOORSENSOR01",
+          "product_variant_name": "Window & Door Alarm Sensor Contact",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/12/b9/12b9fc68a269cf9eb58f7892d5654a72.webp"
+        }
+      ],
+      "offers": [
+        {
+          "ref_id": "3",
+          "name": "Window & Door Promo",
+          "type": "voucher",
+          "code": "WINDOW",
+          "condition": {
+            "type": "any",
+            "value": null,
+            "description": "No minimum purchase requirement"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "50.00",
+            "description": "50% off selected packages"
+          }
+        }
+      ],
+      "on_accept": "page_mpz72yp6_42",
+      "on_decline": "page_mpz72yp6_42",
+      "_accept_label": "Upsell 2",
+      "_decline_label": "Upsell 2",
+      "resolved_routing": {
+        "accept": "page_mpz72yp6_42",
+        "accept_route": "upsell-2/",
+        "accept_filename": "upsell-2/",
+        "decline": "page_mpz72yp6_42",
+        "decline_route": "upsell-2/",
+        "decline_filename": "upsell-2/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "upsell",
+        "meta_tags": {
+          "next-page-type": "upsell",
+          "next-prevent-back-navigation": "true",
+          "next-upsell-accept-url": "upsell-2/",
+          "next-upsell-decline-url": "upsell-2/"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mpz72yp6_42",
+      "type": "upsell",
+      "order": 5,
+      "label": "Upsell 2",
+      "is_entry": false,
+      "page_url": "upsell-2/",
+      "packages": [
+        {
+          "ref_id": "4",
+          "qty": 1,
+          "name": "Light Bulb Wifi Camera",
+          "price": "79.99",
+          "price_retail": null,
+          "product_name": "Light Bulb Wifi Camera",
+          "product_sku": "KEER-DOG-LIGHTBULBCAM01",
+          "product_variant_name": "Light Bulb Wifi Camera",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "in_stock",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/2a/cc/2acca1ef87f8e2e041d4f37c38b7597e.webp"
+        }
+      ],
+      "offers": [
+        {
+          "ref_id": "4",
+          "name": "Light Bulb Promo",
+          "type": "voucher",
+          "code": "LIGHT",
+          "condition": {
+            "type": "any",
+            "value": null,
+            "description": "No minimum purchase requirement"
+          },
+          "benefit": {
+            "type": "package_percentage",
+            "value": "45.00",
+            "description": "45% off selected packages"
+          }
+        }
+      ],
+      "on_accept": "page_mpz72wd5_33",
+      "on_decline": "page_mpz72wd5_33",
+      "_accept_label": "Thank You",
+      "_decline_label": "Thank You",
+      "resolved_routing": {
+        "accept": "page_mpz72wd5_33",
+        "accept_route": "receipt/",
+        "accept_filename": "receipt/",
+        "decline": "page_mpz72wd5_33",
+        "decline_route": "receipt/",
+        "decline_filename": "receipt/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "upsell",
+        "meta_tags": {
+          "next-page-type": "upsell",
+          "next-upsell-accept-url": "receipt/",
+          "next-upsell-decline-url": "receipt/"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mpz72wd5_33",
+      "type": "thankyou",
+      "order": 6,
+      "label": "Thank You",
+      "is_entry": false,
+      "page_url": "receipt/",
+      "sdk_hints": {
+        "sdk_page_type": "receipt",
+        "meta_tags": {
+          "next-page-type": "receipt"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    }
+  ],
+  "shipping_methods": [
+    {
+      "ref_id": "1",
+      "code": "default",
+      "price": "0.00",
+      "price_before_discount": "0.00"
+    }
+  ],
+  "offers": [
+    {
+      "ref_id": "1",
+      "name": "Wifi Promo",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "43.00",
+        "description": "43% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/08/41/0841ccba88cb370126896487964b7a73.webp",
+          "package_name": "Indoor Wifi Smart Cam",
+          "product_name": "Indoor Wifi Smart Cam",
+          "product_variant_name": "Indoor Wifi Smart Cam",
+          "unit_price": "39.99",
+          "unit_price_before_discount": "69.99",
+          "package_price": "39.99",
+          "package_price_before_discount": "69.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    },
+    {
+      "ref_id": "2",
+      "name": "Doorbell Bonus",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "40.00",
+        "description": "40% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 2,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/ec/d0/ecd081abb4b10f46da39aa109736db55.webp",
+          "package_name": "New Doorbell",
+          "product_name": "New Doorbell",
+          "product_variant_name": "New Doorbell",
+          "unit_price": "59.99",
+          "unit_price_before_discount": "99.99",
+          "package_price": "59.99",
+          "package_price_before_discount": "99.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    },
+    {
+      "ref_id": "3",
+      "name": "Window & Door Promo",
+      "type": "voucher",
+      "code": "WINDOW",
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "50.00",
+        "description": "50% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 3,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/12/b9/12b9fc68a269cf9eb58f7892d5654a72.webp",
+          "package_name": "Window & Door Sensor",
+          "product_name": "Window & Door Alarm Sensor Contact",
+          "product_variant_name": "Window & Door Alarm Sensor Contact",
+          "unit_price": "19.99",
+          "unit_price_before_discount": "39.99",
+          "package_price": "19.99",
+          "package_price_before_discount": "39.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    },
+    {
+      "ref_id": "4",
+      "name": "Light Bulb Promo",
+      "type": "voucher",
+      "code": "LIGHT",
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "45.00",
+        "description": "45% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 4,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/2a/cc/2acca1ef87f8e2e041d4f37c38b7597e.webp",
+          "package_name": "Light Bulb Wifi Camera",
+          "product_name": "Light Bulb Wifi Camera",
+          "product_variant_name": "Light Bulb Wifi Camera",
+          "unit_price": "43.99",
+          "unit_price_before_discount": "79.99",
+          "package_price": "43.99",
+          "package_price_before_discount": "79.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    },
+    {
+      "ref_id": "5",
+      "name": "Wifi 2x Promo",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 2,
+        "description": "Minimum purchase of 2 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "50.00",
+        "description": "50% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/08/41/0841ccba88cb370126896487964b7a73.webp",
+          "package_name": "Indoor Wifi Smart Cam",
+          "product_name": "Indoor Wifi Smart Cam",
+          "product_variant_name": "Indoor Wifi Smart Cam",
+          "unit_price": "34.99",
+          "unit_price_before_discount": "69.99",
+          "package_price": "34.99",
+          "package_price_before_discount": "69.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    },
+    {
+      "ref_id": "6",
+      "name": "Wifi 3x Promo",
+      "type": "offer",
+      "code": null,
+      "condition": {
+        "type": "count",
+        "value": 3,
+        "description": "Minimum purchase of 3 selected packages"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "55.00",
+        "description": "55% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/08/41/0841ccba88cb370126896487964b7a73.webp",
+          "package_name": "Indoor Wifi Smart Cam",
+          "product_name": "Indoor Wifi Smart Cam",
+          "product_variant_name": "Indoor Wifi Smart Cam",
+          "unit_price": "31.99",
+          "unit_price_before_discount": "69.99",
+          "package_price": "31.99",
+          "package_price_before_discount": "69.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    },
+    {
+      "ref_id": "7",
+      "name": "EXIT5",
+      "type": "voucher",
+      "code": "EXIT5",
+      "condition": {
+        "type": "any",
+        "value": null,
+        "description": "No minimum purchase requirement"
+      },
+      "benefit": {
+        "type": "package_percentage",
+        "value": "5.00",
+        "description": "5% off selected packages"
+      },
+      "packages": [
+        {
+          "package_id": 1,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/08/41/0841ccba88cb370126896487964b7a73.webp",
+          "package_name": "Indoor Wifi Smart Cam",
+          "product_name": "Indoor Wifi Smart Cam",
+          "product_variant_name": "Indoor Wifi Smart Cam",
+          "unit_price": "66.49",
+          "unit_price_before_discount": "69.99",
+          "package_price": "66.49",
+          "package_price_before_discount": "69.99",
+          "package_unit_qty": 1
+        },
+        {
+          "package_id": 2,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/ec/d0/ecd081abb4b10f46da39aa109736db55.webp",
+          "package_name": "New Doorbell",
+          "product_name": "New Doorbell",
+          "product_variant_name": "New Doorbell",
+          "unit_price": "94.99",
+          "unit_price_before_discount": "99.99",
+          "package_price": "94.99",
+          "package_price_before_discount": "99.99",
+          "package_unit_qty": 1
+        },
+        {
+          "package_id": 3,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/12/b9/12b9fc68a269cf9eb58f7892d5654a72.webp",
+          "package_name": "Window & Door Sensor",
+          "product_name": "Window & Door Alarm Sensor Contact",
+          "product_variant_name": "Window & Door Alarm Sensor Contact",
+          "unit_price": "37.99",
+          "unit_price_before_discount": "39.99",
+          "package_price": "37.99",
+          "package_price_before_discount": "39.99",
+          "package_unit_qty": 1
+        },
+        {
+          "package_id": 4,
+          "package_image": "https://d1w87fp8j98gad.cloudfront.net/media/cache/2a/cc/2acca1ef87f8e2e041d4f37c38b7597e.webp",
+          "package_name": "Light Bulb Wifi Camera",
+          "product_name": "Light Bulb Wifi Camera",
+          "product_variant_name": "Light Bulb Wifi Camera",
+          "unit_price": "75.99",
+          "unit_price_before_discount": "79.99",
+          "package_price": "75.99",
+          "package_price_before_discount": "79.99",
+          "package_unit_qty": 1
+        }
+      ],
+      "shipping_methods": [
+        {
+          "ref_id": 1,
+          "code": "default",
+          "price": "0.00",
+          "price_before_discount": "0.00"
+        }
+      ]
+    }
+  ],
+  "spec_identity": {
+    "source": "campaign-map-builder",
+    "map_id": "simple-home-watch-v0-ql9m",
+    "id": "map:simple-home-watch-v0-ql9m",
+    "map_url": "https://campaign-map.nextcommerce.com/view/simple-home-watch-v0-ql9m",
+    "edit_url": "https://campaign-map.nextcommerce.com/?load=simple-home-watch-v0-ql9m",
+    "spec_url": "https://campaign-map.nextcommerce.com/api/spec/simple-home-watch-v0-ql9m",
+    "spec_hash": "sha256:06cac2602a7a67b3881951bf4dc61484e5fdf1ea5ec349a5b1636ac4c7639e78",
+    "saved_at": "2026-06-04T08:00:36.568Z",
+    "public_route_slug": "simple-home-watch-v0"
+  }
+}

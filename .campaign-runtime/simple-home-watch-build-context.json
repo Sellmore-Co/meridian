@@ -1,0 +1,471 @@
+{
+  "schema_version": "campaign-runtime-build-context/v0",
+  "generated_at": "2026-06-04T08:05:37.786Z",
+  "source_adapter": "html_funnel",
+  "status": "prepared",
+  "packet_path": "./campaign-runtime.build.json",
+  "report_path": ".campaign-runtime/assembly-report.json",
+  "spec": {
+    "path": "../../Downloads/campaign-spec-simple-home-watch-v0.json",
+    "hash": "7a98242482edb946b0fc12a7c990cfea051319c63548faabb2dd1b8139d651ab",
+    "active_pages": [
+      {
+        "id": "page_mpz72wd5_29",
+        "type": "presell",
+        "label": "Presell",
+        "page_url": ""
+      },
+      {
+        "id": "page_mpz72wd5_30",
+        "type": "landing",
+        "label": "Landing (PDP)",
+        "page_url": "landing/"
+      },
+      {
+        "id": "page_mpz72wd5_31",
+        "type": "checkout",
+        "label": "Checkout",
+        "page_url": "checkout/"
+      },
+      {
+        "id": "page_mpz72wd5_32",
+        "type": "upsell",
+        "label": "Upsell",
+        "page_url": "upsell/"
+      },
+      {
+        "id": "page_mpz72yp6_42",
+        "type": "upsell",
+        "label": "Upsell 2",
+        "page_url": "upsell-2/"
+      },
+      {
+        "id": "page_mpz72wd5_33",
+        "type": "thankyou",
+        "label": "Thank You",
+        "page_url": "receipt/"
+      }
+    ]
+  },
+  "source": {
+    "root": "../designer/funnel-designs/simple-home-watch",
+    "html_files": [
+      {
+        "path": "checkout.html",
+        "name": "checkout.html",
+        "basename": "checkout",
+        "bytes": 27851,
+        "sha256": "b0386c757dbe37205c91d51546ee5b3d0981f29fa5bd091b4d8120a97fbad6dc"
+      },
+      {
+        "path": "landing.html",
+        "name": "landing.html",
+        "basename": "landing",
+        "bytes": 36923,
+        "sha256": "c6bcbf7ba109f23570babfbd67911b62634a5eaf01c84334b873b1d78a43e802"
+      },
+      {
+        "path": "presell.html",
+        "name": "presell.html",
+        "basename": "presell",
+        "bytes": 9804,
+        "sha256": "bba72ae21c0f71519a4751b5977189f89302d5415e53410ac6671e6023df62b4"
+      },
+      {
+        "path": "thank-you.html",
+        "name": "thank-you.html",
+        "basename": "thank-you",
+        "bytes": 8864,
+        "sha256": "45ce0f0e93eef6e7b8aaaf29c178f276584e68e7b4b3dd88d76e8939a2f93543"
+      },
+      {
+        "path": "upsell-1.html",
+        "name": "upsell-1.html",
+        "basename": "upsell-1",
+        "bytes": 9437,
+        "sha256": "190fd465c40d53ccb9b3c7416b5532c14f5b29415f0d3c6c6f5695aa633588ba"
+      },
+      {
+        "path": "upsell-2.html",
+        "name": "upsell-2.html",
+        "basename": "upsell-2",
+        "bytes": 7851,
+        "sha256": "99ba98aa9c6c47128976cfab56249f141c44164f217e68491d0ab2b202ac032f"
+      }
+    ],
+    "manifest": null,
+    "manifest_warnings": []
+  },
+  "page_map": [
+    {
+      "page_id": "page_mpz72wd5_29",
+      "source_path": "presell.html",
+      "skip_reason": null,
+      "output_path": "./src/simple-home-watch-v0/presell.html"
+    },
+    {
+      "page_id": "page_mpz72wd5_30",
+      "source_path": "landing.html",
+      "skip_reason": null,
+      "output_path": "./src/simple-home-watch-v0/landing.html"
+    },
+    {
+      "page_id": "page_mpz72wd5_31",
+      "source_path": "checkout.html",
+      "skip_reason": null,
+      "output_path": "./src/simple-home-watch-v0/checkout.html"
+    },
+    {
+      "page_id": "page_mpz72wd5_32",
+      "source_path": "upsell-1.html",
+      "skip_reason": null,
+      "output_path": "./src/simple-home-watch-v0/upsell-1.html"
+    },
+    {
+      "page_id": "page_mpz72yp6_42",
+      "source_path": "upsell-2.html",
+      "skip_reason": null,
+      "output_path": "./src/simple-home-watch-v0/upsell-2.html"
+    },
+    {
+      "page_id": "page_mpz72wd5_33",
+      "source_path": "thank-you.html",
+      "skip_reason": null,
+      "output_path": "./src/simple-home-watch-v0/thank-you.html"
+    }
+  ],
+  "scaffold": {
+    "mode": "fresh",
+    "required": false,
+    "target_repo": ".",
+    "output_dir": "./src/simple-home-watch-v0",
+    "handoff_skill": "next-campaigns-build",
+    "handoff_artifact": ".campaign-runtime/setup-handoff.json",
+    "reason": "Atomic demeter slice scaffolded into src/simple-home-watch-v0 via campaign-init.",
+    "status": "completed",
+    "completed_at": "2026-06-04T08:11:03.550Z",
+    "files_extracted": 199
+  },
+  "template": {
+    "family": "demeter",
+    "locked": true,
+    "lock": {
+      "locked": true,
+      "locked_by": "operator_flag",
+      "confidence": "high",
+      "evidence": [
+        "prepare-build --template-family"
+      ]
+    },
+    "candidates": []
+  },
+  "commerce_zone_findings": [
+    {
+      "path": "checkout.html",
+      "zones": [
+        "checkout",
+        "payment",
+        "sdk_attributes"
+      ],
+      "commerce_zones": [],
+      "sdk_owned_declared": false,
+      "requires_template_shell": false,
+      "sdk_attributes": [
+        "data-next-checkout",
+        "data-next-bundle-selector",
+        "data-next-selector-id",
+        "data-next-selection-mode",
+        "data-next-include-shipping",
+        "data-next-bundle-card",
+        "data-next-bundle-id",
+        "data-next-bundle-items",
+        "data-next-shipping-id",
+        "data-next-selected",
+        "data-next-express-checkout",
+        "data-next-checkout-field",
+        "data-next-component",
+        "data-next-bump",
+        "data-next-bump-toggle",
+        "data-next-package-id",
+        "data-next-quantity",
+        "data-next-payment-method",
+        "data-next-payment-form",
+        "data-next-await",
+        "data-next-cart-summary",
+        "data-next-display",
+        "data-next-format",
+        "data-next-show"
+      ],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "thank-you.html",
+      "zones": [
+        "receipt",
+        "sdk_attributes"
+      ],
+      "commerce_zones": [],
+      "sdk_owned_declared": false,
+      "requires_template_shell": false,
+      "sdk_attributes": [
+        "data-next-display",
+        "data-next-order-items",
+        "data-next-format"
+      ],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "upsell-1.html",
+      "zones": [
+        "upsell",
+        "sdk_attributes"
+      ],
+      "commerce_zones": [],
+      "sdk_owned_declared": false,
+      "requires_template_shell": false,
+      "sdk_attributes": [
+        "data-next-upsell",
+        "data-next-await",
+        "data-next-bundle-selector",
+        "data-next-upsell-context",
+        "data-next-selector-id",
+        "data-next-bundle-card",
+        "data-next-bundle-id",
+        "data-next-bundle-items",
+        "data-next-quantity",
+        "data-next-min-quantity",
+        "data-next-max-quantity",
+        "data-next-selected",
+        "data-next-display",
+        "data-next-bundle-qty-for",
+        "data-next-quantity-decrease",
+        "data-next-quantity-display",
+        "data-next-quantity-increase",
+        "data-next-format",
+        "data-next-upsell-action"
+      ],
+      "action": "review_and_preserve_catalog_surfaces"
+    },
+    {
+      "path": "upsell-2.html",
+      "zones": [
+        "upsell",
+        "sdk_attributes"
+      ],
+      "commerce_zones": [],
+      "sdk_owned_declared": false,
+      "requires_template_shell": false,
+      "sdk_attributes": [
+        "data-next-upsell",
+        "data-next-await",
+        "data-next-display",
+        "data-next-bundle-selector",
+        "data-next-upsell-context",
+        "data-next-selector-id",
+        "data-next-selection-mode",
+        "data-next-bundle-card",
+        "data-next-bundle-id",
+        "data-next-bundle-items",
+        "data-next-selected",
+        "data-next-format",
+        "data-next-upsell-action"
+      ],
+      "action": "review_and_preserve_catalog_surfaces"
+    }
+  ],
+  "prompts_required": [],
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mpz72wd5_29",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72wd5_29\" to source file \"presell.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72wd5-29, presell, presell-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpz72wd5_30",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72wd5_30\" to source file \"landing.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72wd5-30, landing-pdp, landing, landing-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpz72wd5_31",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72wd5_31\" to source file \"checkout.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72wd5-31, checkout, checkout-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpz72wd5_32",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72wd5_32\" to source file \"upsell-1.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72wd5-32, upsell, upsell-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpz72yp6_42",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72yp6_42\" to source file \"upsell-2.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72yp6-42, upsell-2, upsell"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpz72wd5_33",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpz72wd5_33\" to source file \"thank-you.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpz72wd5-33, thank-you, thankyou, receipt, thankyou-1"
+      ]
+    }
+  ],
+  "theme": {
+    "status": "ready",
+    "policy": "inspect_only",
+    "source_kind": "html_funnel",
+    "producer": {
+      "name": "figma-sections-export",
+      "version": "v0"
+    },
+    "source_files": [
+      {
+        "path": "../designer/funnel-designs/simple-home-watch/presell.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "145c98a41957cf009a28913ae0125ae44e8dc081b81fa959ecb66c4f57e1597d",
+        "token_count": 4,
+        "inline_block_index": 0,
+        "referenced_by": []
+      },
+      {
+        "path": "../designer/funnel-designs/simple-home-watch/assets/landing/css/style.css",
+        "role": "landing",
+        "source": "mapped_html_reference",
+        "hash": "7e817410d31a6d289823278ba0b14a520eaa7aa2b3c71ce278a47d15b0a0a5b8",
+        "token_count": 0,
+        "inline_block_index": null,
+        "referenced_by": [
+          {
+            "page_id": "page_mpz72wd5_30",
+            "path": "landing.html",
+            "ref": "assets/landing/css/style.css"
+          }
+        ]
+      },
+      {
+        "path": "../designer/funnel-designs/simple-home-watch/assets/landing/css/slick.css",
+        "role": "landing",
+        "source": "mapped_html_reference",
+        "hash": "bb9e3bd40f71b7eff41b822020df5c26cd84bd3b29ae58d2a295491a71e93c69",
+        "token_count": 0,
+        "inline_block_index": null,
+        "referenced_by": [
+          {
+            "page_id": "page_mpz72wd5_30",
+            "path": "landing.html",
+            "ref": "assets/landing/css/slick.css"
+          }
+        ]
+      },
+      {
+        "path": "../designer/funnel-designs/simple-home-watch/checkout.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "9ae91b954400a91bdd45dd51ec4f2e915924d0ee4d8ab1346966d3487b402b34",
+        "token_count": 2,
+        "inline_block_index": 0,
+        "referenced_by": []
+      },
+      {
+        "path": "../designer/funnel-designs/simple-home-watch/upsell-1.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "77d70ace0655ee44e01bd1ae9d227bf607753a44e7d390ead6683ac5320fbac0",
+        "token_count": 2,
+        "inline_block_index": 0,
+        "referenced_by": []
+      },
+      {
+        "path": "../designer/funnel-designs/simple-home-watch/upsell-2.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "a692b28fafbc9f2cccb7a10d6823b2fea478386ca6bc04c58018f48ce583b4e4",
+        "token_count": 2,
+        "inline_block_index": 0,
+        "referenced_by": []
+      },
+      {
+        "path": "../designer/funnel-designs/simple-home-watch/thank-you.html",
+        "role": "page",
+        "source": "html_inline_root",
+        "hash": "c74c1008e58743a23d8772b80aa0550743a378162d2764dcd0dac3f8386e35a9",
+        "token_count": 2,
+        "inline_block_index": 0,
+        "referenced_by": []
+      }
+    ],
+    "selected_source": {
+      "path": "../designer/funnel-designs/simple-home-watch/checkout.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "9ae91b954400a91bdd45dd51ec4f2e915924d0ee4d8ab1346966d3487b402b34",
+      "token_count": 2,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    "producer_defaults": {
+      "matched": false,
+      "producer": "figma-sections-export",
+      "version": "v0",
+      "matched_tokens": [],
+      "unresolved_tokens": [],
+      "present_core_tokens": []
+    },
+    "confidence": "medium",
+    "generated": {
+      "css_path": ".campaign-runtime/theme/brand-theme.css",
+      "report_path": ".campaign-runtime/theme/theme-report.json",
+      "safety": {
+        "ok": false,
+        "errors": [
+          {
+            "code": "theme.css.empty",
+            "message": "No generated CSS because no source tokens were selected."
+          }
+        ],
+        "warnings": []
+      },
+      "stale": {
+        "stale": false,
+        "reasons": []
+      },
+      "can_generate": false,
+      "can_auto_generate": false,
+      "overwrite_requires_force": false
+    },
+    "mappings": [],
+    "unmapped_defaults": [],
+    "warnings": [],
+    "wrote": {
+      "report": true,
+      "css": false
+    }
+  }
+}
