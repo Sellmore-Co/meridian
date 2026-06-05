@@ -1,0 +1,129 @@
+{
+  "schema_version": "campaign-runtime-brand-theme/v0",
+  "generated_at": "2026-06-04T08:05:37.791Z",
+  "status": "ready",
+  "policy": "inspect_only",
+  "source_kind": "html_funnel",
+  "confidence": "medium",
+  "source_files": [
+    {
+      "path": "../designer/funnel-designs/simple-home-watch/presell.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "145c98a41957cf009a28913ae0125ae44e8dc081b81fa959ecb66c4f57e1597d",
+      "token_count": 4,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    {
+      "path": "../designer/funnel-designs/simple-home-watch/assets/landing/css/style.css",
+      "role": "landing",
+      "source": "mapped_html_reference",
+      "hash": "7e817410d31a6d289823278ba0b14a520eaa7aa2b3c71ce278a47d15b0a0a5b8",
+      "token_count": 0,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_mpz72wd5_30",
+          "path": "landing.html",
+          "ref": "assets/landing/css/style.css"
+        }
+      ]
+    },
+    {
+      "path": "../designer/funnel-designs/simple-home-watch/assets/landing/css/slick.css",
+      "role": "landing",
+      "source": "mapped_html_reference",
+      "hash": "bb9e3bd40f71b7eff41b822020df5c26cd84bd3b29ae58d2a295491a71e93c69",
+      "token_count": 0,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_mpz72wd5_30",
+          "path": "landing.html",
+          "ref": "assets/landing/css/slick.css"
+        }
+      ]
+    },
+    {
+      "path": "../designer/funnel-designs/simple-home-watch/checkout.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "9ae91b954400a91bdd45dd51ec4f2e915924d0ee4d8ab1346966d3487b402b34",
+      "token_count": 2,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    {
+      "path": "../designer/funnel-designs/simple-home-watch/upsell-1.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "77d70ace0655ee44e01bd1ae9d227bf607753a44e7d390ead6683ac5320fbac0",
+      "token_count": 2,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    {
+      "path": "../designer/funnel-designs/simple-home-watch/upsell-2.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "a692b28fafbc9f2cccb7a10d6823b2fea478386ca6bc04c58018f48ce583b4e4",
+      "token_count": 2,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    {
+      "path": "../designer/funnel-designs/simple-home-watch/thank-you.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "c74c1008e58743a23d8772b80aa0550743a378162d2764dcd0dac3f8386e35a9",
+      "token_count": 2,
+      "inline_block_index": 0,
+      "referenced_by": []
+    }
+  ],
+  "selected_source": {
+    "path": "../designer/funnel-designs/simple-home-watch/checkout.html",
+    "role": "page",
+    "source": "html_inline_root",
+    "hash": "9ae91b954400a91bdd45dd51ec4f2e915924d0ee4d8ab1346966d3487b402b34",
+    "token_count": 2,
+    "inline_block_index": 0,
+    "referenced_by": []
+  },
+  "producer_defaults": {
+    "matched": false,
+    "producer": "figma-sections-export",
+    "version": "v0",
+    "matched_tokens": [],
+    "unresolved_tokens": [],
+    "present_core_tokens": []
+  },
+  "conflicts": [],
+  "mappings": [],
+  "generated": {
+    "css_path": ".campaign-runtime/theme/brand-theme.css",
+    "report_path": ".campaign-runtime/theme/theme-report.json",
+    "safety": {
+      "ok": false,
+      "errors": [
+        {
+          "code": "theme.css.empty",
+          "message": "No generated CSS because no source tokens were selected."
+        }
+      ],
+      "warnings": []
+    },
+    "stale": {
+      "stale": false,
+      "reasons": []
+    },
+    "can_generate": false,
+    "can_auto_generate": false,
+    "overwrite_requires_force": false
+  },
+  "existing_brand_layers": [],
+  "warnings": [],
+  "errors": [],
+  "next_action": "Review theme-report.json and decide whether to skip or collect stronger brand inputs."
+}

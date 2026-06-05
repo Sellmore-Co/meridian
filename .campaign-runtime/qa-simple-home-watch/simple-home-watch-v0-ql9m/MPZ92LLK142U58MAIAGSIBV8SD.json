@@ -1,0 +1,4263 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MPZ92LLK142U58MAIAGSIBV8SD",
+  "campaign_slug": "simple-home-watch-v0-ql9m",
+  "campaign_ref_id": 1637,
+  "spec_version": "4.3",
+  "spec_hash": "sha256:c42a50bebd48ad3d526a35283715299bcecd01f514f60b822a3eb5c927940f93",
+  "started_at": "2026-06-04T08:45:22.519Z",
+  "completed_at": "2026-06-04T09:00:46.067Z",
+  "runtime": "campaigns-os-node-qa@0.1.0-alpha.0",
+  "operator": "devin@local",
+  "disposition": "blocked",
+  "assertions": [
+    {
+      "id": "http:page_mpz72wd5_29",
+      "family": "funnel-flow",
+      "page": "page_mpz72wd5_29",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpz72wd5_29:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpz72wd5_29",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mpz72wd5_29:next",
+      "family": "funnel-flow",
+      "page": "page_mpz72wd5_29",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/",
+      "status": "pass",
+      "expected": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/landing/",
+      "actual": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/landing/"
+    },
+    {
+      "id": "http:page_mpz72wd5_30",
+      "family": "funnel-flow",
+      "page": "page_mpz72wd5_30",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/landing/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpz72wd5_30:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpz72wd5_30",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/landing/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mpz72wd5_30:next",
+      "family": "funnel-flow",
+      "page": "page_mpz72wd5_30",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/landing/",
+      "status": "pass",
+      "expected": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "actual": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/"
+    },
+    {
+      "id": "http:page_mpz72wd5_31",
+      "family": "funnel-flow",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpz72wd5_31:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "checkout",
+      "actual": "checkout"
+    },
+    {
+      "id": "meta:page_mpz72wd5_31:next-predictive-address",
+      "family": "meta-tags",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mpz72wd5_31:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "/simple-home-watch-v0/upsell/",
+      "actual": "/simple-home-watch-v0/upsell/"
+    },
+    {
+      "id": "route-link:page_mpz72wd5_31:next",
+      "family": "funnel-flow",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "actual": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/"
+    },
+    {
+      "id": "http:page_mpz72wd5_32",
+      "family": "funnel-flow",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpz72wd5_32:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mpz72wd5_32:next-prevent-back-navigation",
+      "family": "meta-tags",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mpz72wd5_32:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "/simple-home-watch-v0/upsell-2/",
+      "actual": "/simple-home-watch-v0/upsell-2/"
+    },
+    {
+      "id": "meta:page_mpz72wd5_32:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "/simple-home-watch-v0/upsell-2/",
+      "actual": "/simple-home-watch-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mpz72wd5_32:accept",
+      "family": "funnel-flow",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "actual": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mpz72wd5_32:decline",
+      "family": "funnel-flow",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "actual": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/"
+    },
+    {
+      "id": "http:page_mpz72yp6_42",
+      "family": "funnel-flow",
+      "page": "page_mpz72yp6_42",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpz72yp6_42:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpz72yp6_42",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mpz72yp6_42:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mpz72yp6_42",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/simple-home-watch-v0/receipt/",
+      "actual": "/simple-home-watch-v0/receipt/"
+    },
+    {
+      "id": "meta:page_mpz72yp6_42:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mpz72yp6_42",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/simple-home-watch-v0/receipt/",
+      "actual": "/simple-home-watch-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mpz72yp6_42:accept",
+      "family": "funnel-flow",
+      "page": "page_mpz72yp6_42",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "status": "pass",
+      "expected": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/",
+      "actual": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mpz72yp6_42:decline",
+      "family": "funnel-flow",
+      "page": "page_mpz72yp6_42",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "status": "pass",
+      "expected": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/",
+      "actual": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/"
+    },
+    {
+      "id": "http:page_mpz72wd5_33",
+      "family": "funnel-flow",
+      "page": "page_mpz72wd5_33",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpz72wd5_33:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpz72wd5_33",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/",
+      "status": "pass",
+      "expected": "receipt",
+      "actual": "receipt"
+    },
+    {
+      "id": "browser-load:page_mpz72wd5_29",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_29",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Why renters and homeowners are skipping the security contract — InSight",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mpz72wd5_30",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_30",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/landing/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "InSight Wifi Camera",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mpz72wd5_31",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Simple Home Watch — Secure Checkout",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-payment-surface:page_mpz72wd5_31",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "rendered credit-card payment field mounts",
+      "actual": "card_mounts=1; cvv_mounts=1; spreedly_frames=2",
+      "evidence": {
+        "card_number_selector": "[data-next-checkout-field=\"cc-number\"], #spreedly-number",
+        "cvv_selector": "[data-next-checkout-field=\"cvv\"], #spreedly-cvv",
+        "spreedly_frame_urls": [
+          "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+          "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html"
+        ],
+        "next_step": "Run --test-order common for typed-card checkout proof (test cards bypass the gateway; no approval needed)."
+      }
+    },
+    {
+      "id": "browser-payment-geometry:page_mpz72wd5_31",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "native-looking card/CVV controls: fixed field height and centered hosted iframe text path",
+      "actual": "spreedly-number: host=48px iframe=20px center_delta=0px; spreedly-cvv: host=48px iframe=20px center_delta=0px",
+      "evidence": {
+        "fields": [
+          {
+            "id": "spreedly-number",
+            "host": {
+              "width": 504,
+              "height": 48
+            },
+            "iframe": {
+              "width": 478,
+              "height": 20
+            },
+            "centerDelta": 0
+          },
+          {
+            "id": "spreedly-cvv",
+            "host": {
+              "width": 157,
+              "height": 48
+            },
+            "iframe": {
+              "width": 131,
+              "height": 20
+            },
+            "centerDelta": 0
+          }
+        ],
+        "rules": {
+          "host_height_px": "42..64",
+          "iframe_height_ratio_max": 0.72,
+          "iframe_center_delta_px_max": 8
+        }
+      }
+    },
+    {
+      "id": "browser-express-wallets:page_mpz72wd5_31",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "eligible express wallet buttons render with stable wallet-button dimensions; Apple Pay may be absent in non-eligible browsers",
+      "actual": "apple_pay:261x44; google_pay:261x44",
+      "evidence": {
+        "buttons": [
+          {
+            "kind": "apple_pay",
+            "className": "payment-btn cc-apple-pay",
+            "width": 261,
+            "height": 44
+          },
+          {
+            "kind": "google_pay",
+            "className": "payment-btn cc-google-pay",
+            "width": 261,
+            "height": 44
+          }
+        ],
+        "note": "Wallet presence is browser/device eligibility dependent; do not require Apple Pay in Chrome-only QA."
+      }
+    },
+    {
+      "id": "browser-bundle-selector:page_mpz72wd5_31",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "bundle cards have one selected option and visible prices for every tier",
+      "actual": "1 selected; 3/3 cards with visible price",
+      "evidence": {
+        "selectedCount": 1,
+        "cards": [
+          {
+            "index": 0,
+            "id": "bundle-1x",
+            "selected": false,
+            "width": 538,
+            "height": 112,
+            "prices": [
+              "$69.99",
+              "$39.99",
+              "$69.99",
+              "$39.99"
+            ],
+            "hasVisiblePrice": true
+          },
+          {
+            "index": 1,
+            "id": "bundle-2x",
+            "selected": true,
+            "width": 538,
+            "height": 112,
+            "prices": [
+              "$69.99",
+              "$34.99",
+              "$139.98",
+              "$69.98"
+            ],
+            "hasVisiblePrice": true
+          },
+          {
+            "index": 2,
+            "id": "bundle-3x",
+            "selected": false,
+            "width": 538,
+            "height": 112,
+            "prices": [
+              "$69.99",
+              "$31.99",
+              "$209.97",
+              "$95.97"
+            ],
+            "hasVisiblePrice": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-order-bump-state:page_mpz72wd5_31",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "order bump visible checkbox state agrees with active/in-cart and hidden input state",
+      "actual": "1/1 bump toggle(s) aligned",
+      "evidence": {
+        "toggles": [
+          {
+            "index": 0,
+            "packageId": "2",
+            "active": false,
+            "inputChecked": null,
+            "markerChecked": false,
+            "inputAgrees": true,
+            "markerAgrees": true,
+            "statesAgree": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-commerce-structure:page_mpz72wd5_31",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "rendered checkout conforms to the selected template-family commerce structure contract",
+      "actual": "8/8 structure check(s) passed",
+      "evidence": {
+        "template_family": "demeter",
+        "contract_status": "loaded",
+        "description": "Rendered Demeter checkout must adopt the starter-template shell, not a custom shell with only borrowed partials.",
+        "checks": [
+          {
+            "name": "Demeter checkout wrapper",
+            "selectors": [
+              ".checkout-wrapper"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 2784,
+            "sample_text": "Select Your Bundle 1x Indoor Wifi Smart Cam SAVE 43% Save $30.00 $69.99 $39.99/ea Total: $69.99 $39.99 STARTER 2x Indoor"
+          },
+          {
+            "name": "left checkout column",
+            "selectors": [
+              ".checkout-layout__left"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 2270,
+            "sample_text": "Select Your Bundle 1x Indoor Wifi Smart Cam SAVE 43% Save $30.00 $69.99 $39.99/ea Total: $69.99 $39.99 STARTER 2x Indoor"
+          },
+          {
+            "name": "right checkout column",
+            "selectors": [
+              ".checkout-layout__right"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 513,
+            "sample_text": "Your Cart Free shipping on all orders. Most Popular Cart subtext Indoor Wifi Smart Cam Item Amount Scroll for more items"
+          },
+          {
+            "name": "checkout form",
+            "selectors": [
+              "[data-next-checkout=\"form\"]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 2061,
+            "sample_text": "Select Your Bundle 1x Indoor Wifi Smart Cam SAVE 43% Save $30.00 $69.99 $39.99/ea Total: $69.99 $39.99 STARTER 2x Indoor"
+          },
+          {
+            "name": "shipping field row component",
+            "selectors": [
+              "[data-next-component=\"shipping-field-row\"]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 12,
+            "visible_count": 12,
+            "text_length": 749,
+            "sample_text": "Country Select CountryUnited KingdomUnited States First Name Last Name Address Apartment, suite, etc. (optional) City St"
+          },
+          {
+            "name": "checkout payment submit",
+            "selectors": [
+              "[os-checkout-payment]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 68,
+            "sample_text": "COMPLETE PURCHASE → TRY IT RISK FREE! - 30 DAY MONEY BACK GUARANTEE!"
+          },
+          {
+            "name": "rendered order summary",
+            "selectors": [
+              "[data-next-cart-summary]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 247,
+            "sample_text": "Item Amount Scroll for more items 2x Indoor Wifi Smart Cam $69.99/ea $34.99/ea $139.98 $69.98 Subtotal $139.98 Wifi 2x P"
+          },
+          {
+            "name": "visible order summary content",
+            "selectors": [
+              "[data-next-cart-summary]"
+            ],
+            "mode": "non_empty",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 247,
+            "sample_text": "Item Amount Scroll for more items 2x Indoor Wifi Smart Cam $69.99/ea $34.99/ea $139.98 $69.98 Subtotal $139.98 Wifi 2x P"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpz72wd5_31",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mpz72wd5_32",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Add Window & Door Protection — Special Offer",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpz72wd5_32:accept",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpz72wd5_32:decline",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpz72wd5_32",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_32",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mpz72yp6_42",
+      "family": "browser-runtime",
+      "page": "page_mpz72yp6_42",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Add a Light Bulb Wifi Camera — Special Offer",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpz72yp6_42:accept",
+      "family": "browser-runtime",
+      "page": "page_mpz72yp6_42",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpz72yp6_42:decline",
+      "family": "browser-runtime",
+      "page": "page_mpz72yp6_42",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpz72yp6_42",
+      "family": "browser-runtime",
+      "page": "page_mpz72yp6_42",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mpz72wd5_33",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_33",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Simple Home Watch — Order Confirmation",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpz72wd5_33",
+      "family": "browser-runtime",
+      "page": "page_mpz72wd5_33",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-test-order:checkout",
+      "family": "browser-test-order",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "test order created through deployed checkout page",
+      "actual": "102413",
+      "evidence": {
+        "ref_id": "d87461989ec74e838a97c7d4e7704118",
+        "order_number": "102413",
+        "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/?ref_id=d87461989ec74e838a97c7d4e7704118",
+        "is_test": true,
+        "line_count": 1,
+        "card_last4": "1117"
+      }
+    },
+    {
+      "id": "browser-test-order:accept",
+      "family": "browser-test-order",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "fail",
+      "severity": "blocker",
+      "expected": "test order created through deployed checkout page",
+      "actual": "step 1: upsell accept did not call order upsell API",
+      "evidence": {
+        "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=1adf7f62ef4e4e46841b120732e5d755",
+        "events": {
+          "requests": [
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 2,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "currency",
+                  "lines",
+                  "user"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "environment_key",
+                  "payment_method"
+                ]
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "billing_same_as_shipping_address",
+                  "currency",
+                  "lines",
+                  "payment_detail",
+                  "payment_failed_url",
+                  "shipping_address",
+                  "shipping_method",
+                  "success_url",
+                  "user",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3D1adf7f62ef4e4e46841b120732e5d755",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/1adf7f62ef4e4e46841b120732e5d755/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/1adf7f62ef4e4e46841b120732e5d755/upsells/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+a+Light+Bulb+Wifi+Camera+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell-2%2F%3Fref_id%3D1adf7f62ef4e4e46841b120732e5d755",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            }
+          ],
+          "responses": [
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 3,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  },
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "body": {
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "checkout_url": "https://keer.29next.store/accounts/complete-order/edb515647a1c43e2ad4510ef6f23003a/",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "body": {
+                "number": "102414",
+                "ref_id": "1adf7f62ef4e4e46841b120732e5d755",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3D1adf7f62ef4e4e46841b120732e5d755",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/1adf7f62ef4e4e46841b120732e5d755/",
+              "body": {
+                "number": "102414",
+                "ref_id": "1adf7f62ef4e4e46841b120732e5d755",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/1adf7f62ef4e4e46841b120732e5d755/upsells/",
+              "body": {
+                "number": "102414",
+                "ref_id": "1adf7f62ef4e4e46841b120732e5d755",
+                "is_test": true,
+                "total_incl_tax": "89.97",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  },
+                  {
+                    "title": "Window & Door Alarm Sensor Contact",
+                    "quantity": 1,
+                    "is_upsell": true,
+                    "price": "19.99",
+                    "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+                    "product_id": 402,
+                    "variant_id": 403
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+a+Light+Bulb+Wifi+Camera+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell-2%2F%3Fref_id%3D1adf7f62ef4e4e46841b120732e5d755",
+              "body": {}
+            }
+          ],
+          "failed": [
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            },
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            }
+          ],
+          "console": [
+            {
+              "type": "error",
+              "text": "[ApiClient] API request failed: Failed to fetch"
+            }
+          ],
+          "pageErrors": []
+        }
+      }
+    },
+    {
+      "id": "browser-test-order:decline",
+      "family": "browser-test-order",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "pass",
+      "expected": "test order created through deployed checkout page",
+      "actual": "102416",
+      "evidence": {
+        "ref_id": "e49b26ad20b14934a36c78cd1963764f",
+        "order_number": "102416",
+        "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=e49b26ad20b14934a36c78cd1963764f",
+        "is_test": true,
+        "line_count": 1,
+        "upsell_clicked": true,
+        "upsell_final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=e49b26ad20b14934a36c78cd1963764f",
+        "upsell_steps": [
+          {
+            "path": "decline",
+            "clicked": true,
+            "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=e49b26ad20b14934a36c78cd1963764f",
+            "expected_items": [],
+            "api_response_seen": false,
+            "api_response_status": null
+          }
+        ],
+        "card_last4": "1117"
+      }
+    },
+    {
+      "id": "browser-test-order:accept-decline",
+      "family": "browser-test-order",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "fail",
+      "severity": "blocker",
+      "expected": "test order created through deployed checkout page",
+      "actual": "step 1: upsell accept did not call order upsell API",
+      "evidence": {
+        "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/?ref_id=888dffa5fb5b4d048424bd9407fa01ac",
+        "events": {
+          "requests": [
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "environment_key",
+                  "payment_method"
+                ]
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "billing_same_as_shipping_address",
+                  "currency",
+                  "lines",
+                  "payment_detail",
+                  "payment_failed_url",
+                  "shipping_address",
+                  "shipping_method",
+                  "success_url",
+                  "user",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3D888dffa5fb5b4d048424bd9407fa01ac",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/888dffa5fb5b4d048424bd9407fa01ac/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/888dffa5fb5b4d048424bd9407fa01ac/upsells/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+a+Light+Bulb+Wifi+Camera+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell-2%2F%3Fref_id%3D888dffa5fb5b4d048424bd9407fa01ac",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Simple+Home+Watch+%E2%80%94+Order+Confirmation&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Freceipt%2F%3Fref_id%3D888dffa5fb5b4d048424bd9407fa01ac",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            }
+          ],
+          "responses": [
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  },
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "body": {
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "checkout_url": "https://keer.29next.store/accounts/complete-order/edb515647a1c43e2ad4510ef6f23003a/",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "body": {
+                "number": "102417",
+                "ref_id": "888dffa5fb5b4d048424bd9407fa01ac",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3D888dffa5fb5b4d048424bd9407fa01ac",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/888dffa5fb5b4d048424bd9407fa01ac/",
+              "body": {
+                "number": "102417",
+                "ref_id": "888dffa5fb5b4d048424bd9407fa01ac",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/888dffa5fb5b4d048424bd9407fa01ac/upsells/",
+              "body": {
+                "number": "102417",
+                "ref_id": "888dffa5fb5b4d048424bd9407fa01ac",
+                "is_test": true,
+                "total_incl_tax": "89.97",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  },
+                  {
+                    "title": "Window & Door Alarm Sensor Contact",
+                    "quantity": 1,
+                    "is_upsell": true,
+                    "price": "19.99",
+                    "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+                    "product_id": 402,
+                    "variant_id": 403
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+a+Light+Bulb+Wifi+Camera+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell-2%2F%3Fref_id%3D888dffa5fb5b4d048424bd9407fa01ac",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Simple+Home+Watch+%E2%80%94+Order+Confirmation&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Freceipt%2F%3Fref_id%3D888dffa5fb5b4d048424bd9407fa01ac",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            }
+          ],
+          "failed": [
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            },
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            },
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            }
+          ],
+          "console": [
+            {
+              "type": "error",
+              "text": "[ApiClient] API request failed: Failed to fetch"
+            }
+          ],
+          "pageErrors": []
+        }
+      }
+    }
+  ],
+  "test_orders": [
+    {
+      "path": "checkout",
+      "ok": true,
+      "next_order_id": "102413",
+      "ref_id": "d87461989ec74e838a97c7d4e7704118",
+      "qa_email": "[redacted-qa-email]",
+      "is_test": true,
+      "payment_method": "card_token",
+      "card": {
+        "last4": "1117"
+      },
+      "checkout_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell/?ref_id=d87461989ec74e838a97c7d4e7704118",
+      "cart_state": {
+        "packages": [
+          {
+            "title": "Indoor Wifi Smart Cam",
+            "quantity": 2,
+            "is_upsell": false
+          }
+        ]
+      },
+      "receipt_line_items": [
+        {
+          "title": "Indoor Wifi Smart Cam",
+          "quantity": 2,
+          "is_upsell": false,
+          "price": "69.98",
+          "sku": "KEER-DOG-INDOORSMARTCAM01",
+          "product_id": 398,
+          "variant_id": 399
+        }
+      ],
+      "verification": {
+        "verified": true,
+        "order_create_status": 201,
+        "order_read_status": 200,
+        "total_incl_tax": "69.98",
+        "currency": "USD",
+        "error": null
+      },
+      "evidence": {
+        "order_request_seen": true,
+        "spreedly_tokenized": true,
+        "events": {
+          "requests": [
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/iframe/iframe-v1.min.js",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 2,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "currency",
+                  "lines",
+                  "user"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "environment_key",
+                  "payment_method"
+                ]
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "billing_same_as_shipping_address",
+                  "currency",
+                  "lines",
+                  "payment_detail",
+                  "payment_failed_url",
+                  "shipping_address",
+                  "shipping_method",
+                  "success_url",
+                  "user",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3Dd87461989ec74e838a97c7d4e7704118",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/d87461989ec74e838a97c7d4e7704118/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            }
+          ],
+          "responses": [
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/iframe/iframe-v1.min.js",
+              "body": "!function(e){var t={};function n(r){if(t[r])return t[r].exports;var i=t[r]={i:r,l:!1,exports:{}};return e[r].call(i.exports,i,i.exports,n),i.l=!0,i.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var i in e)n.d(r,i,function(t){return e[t]}.bind(null,i));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,\"a\",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p=\"\",n(n.s=45)}([function(e,t){e.exports=function(e){return e&&e.__esModule?e:{default:e}},e.exports.__e"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+              "body": "<!DOCTYPE html> <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> <title>Credit Card Number Frame</title> <style type=\"text/css\"> input { background: transparent; border-style: none; } body { background: transparent; margin: 0px; } input[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=\"number\"] { -moz-appearance: textfield; } input:invalid, textarea:invalid { box-shadow: none; } input:hover { cursor: text; } .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .input-outline-none { outline: none; } </style> <script src=\"/iframe/number-frame-1.183.min.js?restricted=true\"></script> </head> <body> <form accept-charset=\"UTF-8\" action=\"javascript:void(0);\" id=\"number-form\" onsubmit=\"return false;\" > <label for=\"card_number\" class=\"visuallyhidden\" id=\"number_label\" >Card Number<"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "body": "<!DOCTYPE html> <html> <head> <title>CVV Frame</title> <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" /> <style type=\"text/css\"> input { background: transparent; border-style: none; } body { background: transparent; margin: 0; } /* Don't show the number increment/decrement spinner in number fields */ input[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=\"number\"] { -moz-appearance: textfield; } input:invalid, textarea:invalid { box-shadow: none; } input:hover { cursor: text; } .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .input-outline-none { outline: none; } </style> <script> var uniqueId = window.name.replace(\"spreedly-cvv-frame-\", \"\"); var numberWindowName = \"spreedly-number-frame-\" + uniqueId; window.notifyEvent = function(name, notification, addActiveField) { var activeFiel"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "body": "!function(e){var t={};function r(n){if(t[n])return t[n].exports;var a=t[n]={i:n,l:!1,exports:{}};return e[n].call(a.exports,a,a.exports,r),a.l=!0,a.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var a in e)r.d(n,a,function(t){return e[t]}.bind(null,a));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,\"a\",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p=\"\",r(r.s=30)}([function(e,t){e.exports=function(e){return e&&e.__esModule?e:{default:e}},e.exports.__e"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 3,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Simple+Home+Watch+%E2%80%94+Secure+Checkout&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fcheckout%2F",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  },
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "body": {
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "checkout_url": "https://keer.29next.store/accounts/complete-order/edb515647a1c43e2ad4510ef6f23003a/",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "body": {
+                "number": "102413",
+                "ref_id": "d87461989ec74e838a97c7d4e7704118",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3Dd87461989ec74e838a97c7d4e7704118",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/d87461989ec74e838a97c7d4e7704118/",
+              "body": {
+                "number": "102413",
+                "ref_id": "d87461989ec74e838a97c7d4e7704118",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            }
+          ],
+          "failed": [
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            }
+          ],
+          "console": [
+            {
+              "type": "error",
+              "text": "[ApiClient] API request failed: Failed to fetch"
+            }
+          ],
+          "pageErrors": []
+        }
+      }
+    },
+    {
+      "path": "accept",
+      "ok": true,
+      "next_order_id": "102414",
+      "ref_id": "1adf7f62ef4e4e46841b120732e5d755",
+      "qa_email": "[redacted-qa-email]",
+      "is_test": true,
+      "payment_method": "card_token",
+      "card": {
+        "last4": "1117"
+      },
+      "checkout_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=1adf7f62ef4e4e46841b120732e5d755",
+      "cart_state": {
+        "packages": [
+          {
+            "title": "Indoor Wifi Smart Cam",
+            "quantity": 2,
+            "is_upsell": false
+          },
+          {
+            "title": "Window & Door Alarm Sensor Contact",
+            "quantity": 1,
+            "is_upsell": true
+          }
+        ]
+      },
+      "receipt_line_items": [
+        {
+          "title": "Indoor Wifi Smart Cam",
+          "quantity": 2,
+          "is_upsell": false,
+          "price": "69.98",
+          "sku": "KEER-DOG-INDOORSMARTCAM01",
+          "product_id": 398,
+          "variant_id": 399
+        },
+        {
+          "title": "Window & Door Alarm Sensor Contact",
+          "quantity": 1,
+          "is_upsell": true,
+          "price": "19.99",
+          "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+          "product_id": 402,
+          "variant_id": 403
+        }
+      ],
+      "verification": {
+        "verified": true,
+        "order_create_status": 201,
+        "order_read_status": 200,
+        "total_incl_tax": "89.97",
+        "currency": "USD",
+        "error": null,
+        "accepted_upsell_line_present": true,
+        "upsell_api_response_seen": false,
+        "accepted_upsell_matches": [
+          {
+            "ok": true,
+            "reason": null,
+            "expected_items": [
+              {
+                "package_id": "3",
+                "quantity": 1,
+                "display_name": "Window & Door Sensor",
+                "selector_id": "upsell-bundle",
+                "bundle_id": "upsell-bundle-1x",
+                "vouchers": [
+                  "WINDOW"
+                ]
+              }
+            ],
+            "matched_lines": [
+              {
+                "title": "Window & Door Alarm Sensor Contact",
+                "quantity": 1,
+                "is_upsell": true,
+                "price": "19.99",
+                "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+                "product_id": 402,
+                "variant_id": 403
+              }
+            ]
+          }
+        ],
+        "upsell_step_failures": [
+          "step 1: upsell accept did not call order upsell API"
+        ]
+      },
+      "evidence": {
+        "order_request_seen": true,
+        "spreedly_tokenized": true,
+        "events": {
+          "requests": [
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/iframe/iframe-v1.min.js",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 2,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "currency",
+                  "lines",
+                  "user"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "environment_key",
+                  "payment_method"
+                ]
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "billing_same_as_shipping_address",
+                  "currency",
+                  "lines",
+                  "payment_detail",
+                  "payment_failed_url",
+                  "shipping_address",
+                  "shipping_method",
+                  "success_url",
+                  "user",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3D1adf7f62ef4e4e46841b120732e5d755",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/1adf7f62ef4e4e46841b120732e5d755/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            }
+          ],
+          "responses": [
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/iframe/iframe-v1.min.js",
+              "body": "!function(e){var t={};function n(r){if(t[r])return t[r].exports;var i=t[r]={i:r,l:!1,exports:{}};return e[r].call(i.exports,i,i.exports,n),i.l=!0,i.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var i in e)n.d(r,i,function(t){return e[t]}.bind(null,i));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,\"a\",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p=\"\",n(n.s=45)}([function(e,t){e.exports=function(e){return e&&e.__esModule?e:{default:e}},e.exports.__e"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+              "body": "<!DOCTYPE html> <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> <title>Credit Card Number Frame</title> <style type=\"text/css\"> input { background: transparent; border-style: none; } body { background: transparent; margin: 0px; } input[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=\"number\"] { -moz-appearance: textfield; } input:invalid, textarea:invalid { box-shadow: none; } input:hover { cursor: text; } .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .input-outline-none { outline: none; } </style> <script src=\"/iframe/number-frame-1.183.min.js?restricted=true\"></script> </head> <body> <form accept-charset=\"UTF-8\" action=\"javascript:void(0);\" id=\"number-form\" onsubmit=\"return false;\" > <label for=\"card_number\" class=\"visuallyhidden\" id=\"number_label\" >Card Number<"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "body": "!function(e){var t={};function r(n){if(t[n])return t[n].exports;var a=t[n]={i:n,l:!1,exports:{}};return e[n].call(a.exports,a,a.exports,r),a.l=!0,a.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var a in e)r.d(n,a,function(t){return e[t]}.bind(null,a));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,\"a\",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p=\"\",r(r.s=30)}([function(e,t){e.exports=function(e){return e&&e.__esModule?e:{default:e}},e.exports.__e"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "body": "<!DOCTYPE html> <html> <head> <title>CVV Frame</title> <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" /> <style type=\"text/css\"> input { background: transparent; border-style: none; } body { background: transparent; margin: 0; } /* Don't show the number increment/decrement spinner in number fields */ input[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=\"number\"] { -moz-appearance: textfield; } input:invalid, textarea:invalid { box-shadow: none; } input:hover { cursor: text; } .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .input-outline-none { outline: none; } </style> <script> var uniqueId = window.name.replace(\"spreedly-cvv-frame-\", \"\"); var numberWindowName = \"spreedly-number-frame-\" + uniqueId; window.notifyEvent = function(name, notification, addActiveField) { var activeFiel"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Simple+Home+Watch+%E2%80%94+Secure+Checkout&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fcheckout%2F",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 3,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  },
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "body": {
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "checkout_url": "https://keer.29next.store/accounts/complete-order/edb515647a1c43e2ad4510ef6f23003a/",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "body": {
+                "number": "102414",
+                "ref_id": "1adf7f62ef4e4e46841b120732e5d755",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3D1adf7f62ef4e4e46841b120732e5d755",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/1adf7f62ef4e4e46841b120732e5d755/",
+              "body": {
+                "number": "102414",
+                "ref_id": "1adf7f62ef4e4e46841b120732e5d755",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            }
+          ],
+          "failed": [
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            }
+          ],
+          "console": [
+            {
+              "type": "error",
+              "text": "[ApiClient] API request failed: Failed to fetch"
+            }
+          ],
+          "pageErrors": []
+        }
+      },
+      "upsell_steps": [
+        {
+          "path": "accept",
+          "clicked": true,
+          "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=1adf7f62ef4e4e46841b120732e5d755",
+          "expected_items": [
+            {
+              "package_id": "3",
+              "quantity": 1,
+              "display_name": "Window & Door Sensor",
+              "selector_id": "upsell-bundle",
+              "bundle_id": "upsell-bundle-1x",
+              "vouchers": [
+                "WINDOW"
+              ]
+            }
+          ],
+          "api_response_seen": false,
+          "api_response_status": null,
+          "api_response_url": null,
+          "verification": {
+            "accepted_upsell_line_present": true,
+            "accepted_upsell_match": {
+              "ok": true,
+              "reason": null,
+              "expected_items": [
+                {
+                  "package_id": "3",
+                  "quantity": 1,
+                  "display_name": "Window & Door Sensor",
+                  "selector_id": "upsell-bundle",
+                  "bundle_id": "upsell-bundle-1x",
+                  "vouchers": [
+                    "WINDOW"
+                  ]
+                }
+              ],
+              "matched_lines": [
+                {
+                  "title": "Window & Door Alarm Sensor Contact",
+                  "quantity": 1,
+                  "is_upsell": true,
+                  "price": "19.99",
+                  "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+                  "product_id": 402,
+                  "variant_id": 403
+                }
+              ]
+            },
+            "upsell_api_response_seen": false,
+            "upsell_api_response_status": null
+          }
+        }
+      ],
+      "upsell": {
+        "path": "accept",
+        "clicked": true,
+        "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=1adf7f62ef4e4e46841b120732e5d755",
+        "expected_items": [
+          {
+            "package_id": "3",
+            "quantity": 1,
+            "display_name": "Window & Door Sensor",
+            "selector_id": "upsell-bundle",
+            "bundle_id": "upsell-bundle-1x",
+            "vouchers": [
+              "WINDOW"
+            ]
+          }
+        ],
+        "api_response_seen": false,
+        "api_response_status": null,
+        "api_response_url": null,
+        "verification": {
+          "accepted_upsell_line_present": true,
+          "accepted_upsell_match": {
+            "ok": true,
+            "reason": null,
+            "expected_items": [
+              {
+                "package_id": "3",
+                "quantity": 1,
+                "display_name": "Window & Door Sensor",
+                "selector_id": "upsell-bundle",
+                "bundle_id": "upsell-bundle-1x",
+                "vouchers": [
+                  "WINDOW"
+                ]
+              }
+            ],
+            "matched_lines": [
+              {
+                "title": "Window & Door Alarm Sensor Contact",
+                "quantity": 1,
+                "is_upsell": true,
+                "price": "19.99",
+                "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+                "product_id": 402,
+                "variant_id": 403
+              }
+            ]
+          },
+          "upsell_api_response_seen": false,
+          "upsell_api_response_status": null
+        }
+      },
+      "final_receipt_line_items": [
+        {
+          "title": "Indoor Wifi Smart Cam",
+          "quantity": 2,
+          "is_upsell": false,
+          "price": "69.98",
+          "sku": "KEER-DOG-INDOORSMARTCAM01",
+          "product_id": 398,
+          "variant_id": 399
+        },
+        {
+          "title": "Window & Door Alarm Sensor Contact",
+          "quantity": 1,
+          "is_upsell": true,
+          "price": "19.99",
+          "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+          "product_id": 402,
+          "variant_id": 403
+        }
+      ]
+    },
+    {
+      "path": "decline",
+      "ok": true,
+      "next_order_id": "102416",
+      "ref_id": "e49b26ad20b14934a36c78cd1963764f",
+      "qa_email": "[redacted-qa-email]",
+      "is_test": true,
+      "payment_method": "card_token",
+      "card": {
+        "last4": "1117"
+      },
+      "checkout_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=e49b26ad20b14934a36c78cd1963764f",
+      "cart_state": {
+        "packages": [
+          {
+            "title": "Indoor Wifi Smart Cam",
+            "quantity": 2,
+            "is_upsell": false
+          }
+        ]
+      },
+      "receipt_line_items": [
+        {
+          "title": "Indoor Wifi Smart Cam",
+          "quantity": 2,
+          "is_upsell": false,
+          "price": "69.98",
+          "sku": "KEER-DOG-INDOORSMARTCAM01",
+          "product_id": 398,
+          "variant_id": 399
+        }
+      ],
+      "verification": {
+        "verified": true,
+        "order_create_status": 201,
+        "order_read_status": 200,
+        "total_incl_tax": "69.98",
+        "currency": "USD",
+        "error": null
+      },
+      "evidence": {
+        "order_request_seen": true,
+        "spreedly_tokenized": true,
+        "events": {
+          "requests": [
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 2,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "currency",
+                  "lines",
+                  "user"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "environment_key",
+                  "payment_method"
+                ]
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "billing_same_as_shipping_address",
+                  "currency",
+                  "lines",
+                  "payment_detail",
+                  "payment_failed_url",
+                  "shipping_address",
+                  "shipping_method",
+                  "success_url",
+                  "user",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/e49b26ad20b14934a36c78cd1963764f/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3De49b26ad20b14934a36c78cd1963764f",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            }
+          ],
+          "responses": [
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/iframe/iframe-v1.min.js",
+              "body": "!function(e){var t={};function n(r){if(t[r])return t[r].exports;var i=t[r]={i:r,l:!1,exports:{}};return e[r].call(i.exports,i,i.exports,n),i.l=!0,i.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var i in e)n.d(r,i,function(t){return e[t]}.bind(null,i));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,\"a\",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p=\"\",n(n.s=45)}([function(e,t){e.exports=function(e){return e&&e.__esModule?e:{default:e}},e.exports.__e"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+              "body": "<!DOCTYPE html> <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> <title>Credit Card Number Frame</title> <style type=\"text/css\"> input { background: transparent; border-style: none; } body { background: transparent; margin: 0px; } input[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=\"number\"] { -moz-appearance: textfield; } input:invalid, textarea:invalid { box-shadow: none; } input:hover { cursor: text; } .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .input-outline-none { outline: none; } </style> <script src=\"/iframe/number-frame-1.183.min.js?restricted=true\"></script> </head> <body> <form accept-charset=\"UTF-8\" action=\"javascript:void(0);\" id=\"number-form\" onsubmit=\"return false;\" > <label for=\"card_number\" class=\"visuallyhidden\" id=\"number_label\" >Card Number<"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "body": "!function(e){var t={};function r(n){if(t[n])return t[n].exports;var a=t[n]={i:n,l:!1,exports:{}};return e[n].call(a.exports,a,a.exports,r),a.l=!0,a.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var a in e)r.d(n,a,function(t){return e[t]}.bind(null,a));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,\"a\",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p=\"\",r(r.s=30)}([function(e,t){e.exports=function(e){return e&&e.__esModule?e:{default:e}},e.exports.__e"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "body": "<!DOCTYPE html> <html> <head> <title>CVV Frame</title> <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" /> <style type=\"text/css\"> input { background: transparent; border-style: none; } body { background: transparent; margin: 0; } /* Don't show the number increment/decrement spinner in number fields */ input[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=\"number\"] { -moz-appearance: textfield; } input:invalid, textarea:invalid { box-shadow: none; } input:hover { cursor: text; } .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .input-outline-none { outline: none; } </style> <script> var uniqueId = window.name.replace(\"spreedly-cvv-frame-\", \"\"); var numberWindowName = \"spreedly-number-frame-\" + uniqueId; window.notifyEvent = function(name, notification, addActiveField) { var activeFiel"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Simple+Home+Watch+%E2%80%94+Secure+Checkout&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fcheckout%2F",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 3,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  },
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "body": {
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "checkout_url": "https://keer.29next.store/accounts/complete-order/edb515647a1c43e2ad4510ef6f23003a/",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "body": {
+                "number": "102416",
+                "ref_id": "e49b26ad20b14934a36c78cd1963764f",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/e49b26ad20b14934a36c78cd1963764f/",
+              "body": {
+                "number": "102416",
+                "ref_id": "e49b26ad20b14934a36c78cd1963764f",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3De49b26ad20b14934a36c78cd1963764f",
+              "body": {}
+            }
+          ],
+          "failed": [
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            },
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            }
+          ],
+          "console": [
+            {
+              "type": "error",
+              "text": "[ApiClient] API request failed: Failed to fetch"
+            }
+          ],
+          "pageErrors": []
+        }
+      },
+      "upsell_steps": [
+        {
+          "path": "decline",
+          "clicked": true,
+          "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=e49b26ad20b14934a36c78cd1963764f",
+          "expected_items": [],
+          "api_response_seen": false,
+          "api_response_status": null,
+          "api_response_url": null,
+          "verification": {
+            "ok": true,
+            "reason": null
+          }
+        }
+      ],
+      "upsell": {
+        "path": "decline",
+        "clicked": true,
+        "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=e49b26ad20b14934a36c78cd1963764f",
+        "expected_items": [],
+        "api_response_seen": false,
+        "api_response_status": null,
+        "api_response_url": null,
+        "verification": {
+          "ok": true,
+          "reason": null
+        }
+      },
+      "final_receipt_line_items": [
+        {
+          "title": "Indoor Wifi Smart Cam",
+          "quantity": 2,
+          "is_upsell": false,
+          "price": "69.98",
+          "sku": "KEER-DOG-INDOORSMARTCAM01",
+          "product_id": 398,
+          "variant_id": 399
+        }
+      ]
+    },
+    {
+      "path": "accept-decline",
+      "ok": true,
+      "next_order_id": "102417",
+      "ref_id": "888dffa5fb5b4d048424bd9407fa01ac",
+      "qa_email": "[redacted-qa-email]",
+      "is_test": true,
+      "payment_method": "card_token",
+      "card": {
+        "last4": "1117"
+      },
+      "checkout_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/?ref_id=888dffa5fb5b4d048424bd9407fa01ac",
+      "cart_state": {
+        "packages": [
+          {
+            "title": "Indoor Wifi Smart Cam",
+            "quantity": 2,
+            "is_upsell": false
+          },
+          {
+            "title": "Window & Door Alarm Sensor Contact",
+            "quantity": 1,
+            "is_upsell": true
+          }
+        ]
+      },
+      "receipt_line_items": [
+        {
+          "title": "Indoor Wifi Smart Cam",
+          "quantity": 2,
+          "is_upsell": false,
+          "price": "69.98",
+          "sku": "KEER-DOG-INDOORSMARTCAM01",
+          "product_id": 398,
+          "variant_id": 399
+        },
+        {
+          "title": "Window & Door Alarm Sensor Contact",
+          "quantity": 1,
+          "is_upsell": true,
+          "price": "19.99",
+          "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+          "product_id": 402,
+          "variant_id": 403
+        }
+      ],
+      "verification": {
+        "verified": true,
+        "order_create_status": 201,
+        "order_read_status": 200,
+        "total_incl_tax": "89.97",
+        "currency": "USD",
+        "error": null,
+        "accepted_upsell_line_present": true,
+        "upsell_api_response_seen": false,
+        "accepted_upsell_matches": [
+          {
+            "ok": true,
+            "reason": null,
+            "expected_items": [
+              {
+                "package_id": "3",
+                "quantity": 1,
+                "display_name": "Window & Door Sensor",
+                "selector_id": "upsell-bundle",
+                "bundle_id": "upsell-bundle-1x",
+                "vouchers": [
+                  "WINDOW"
+                ]
+              }
+            ],
+            "matched_lines": [
+              {
+                "title": "Window & Door Alarm Sensor Contact",
+                "quantity": 1,
+                "is_upsell": true,
+                "price": "19.99",
+                "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+                "product_id": 402,
+                "variant_id": 403
+              }
+            ]
+          }
+        ],
+        "upsell_step_failures": [
+          "step 1: upsell accept did not call order upsell API"
+        ]
+      },
+      "evidence": {
+        "order_request_seen": true,
+        "spreedly_tokenized": true,
+        "events": {
+          "requests": [
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/iframe/iframe-v1.min.js",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 2,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "currency",
+                  "lines",
+                  "user"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "environment_key",
+                  "payment_method"
+                ]
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "attribution",
+                  "billing_same_as_shipping_address",
+                  "currency",
+                  "lines",
+                  "payment_detail",
+                  "payment_failed_url",
+                  "shipping_address",
+                  "shipping_method",
+                  "success_url",
+                  "user",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "shipping_method",
+                  "vouchers"
+                ],
+                "line_count": 0,
+                "currency": "USD"
+              }
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3D888dffa5fb5b4d048424bd9407fa01ac",
+              "postData": null
+            },
+            {
+              "method": "GET",
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/888dffa5fb5b4d048424bd9407fa01ac/",
+              "postData": null
+            },
+            {
+              "method": "POST",
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "postData": {
+                "redacted": true,
+                "keys": [
+                  "currency",
+                  "lines",
+                  "vouchers"
+                ],
+                "line_count": 1,
+                "currency": "USD"
+              }
+            }
+          ],
+          "responses": [
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/iframe/iframe-v1.min.js",
+              "body": "!function(e){var t={};function n(r){if(t[r])return t[r].exports;var i=t[r]={i:r,l:!1,exports:{}};return e[r].call(i.exports,i,i.exports,n),i.l=!0,i.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var i in e)n.d(r,i,function(t){return e[t]}.bind(null,i));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,\"a\",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p=\"\",n(n.s=45)}([function(e,t){e.exports=function(e){return e&&e.__esModule?e:{default:e}},e.exports.__e"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/v1/embedded/number-frame-1.183.html",
+              "body": "<!DOCTYPE html> <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> <title>Credit Card Number Frame</title> <style type=\"text/css\"> input { background: transparent; border-style: none; } body { background: transparent; margin: 0px; } input[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=\"number\"] { -moz-appearance: textfield; } input:invalid, textarea:invalid { box-shadow: none; } input:hover { cursor: text; } .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .input-outline-none { outline: none; } </style> <script src=\"/iframe/number-frame-1.183.min.js?restricted=true\"></script> </head> <body> <form accept-charset=\"UTF-8\" action=\"javascript:void(0);\" id=\"number-form\" onsubmit=\"return false;\" > <label for=\"card_number\" class=\"visuallyhidden\" id=\"number_label\" >Card Number<"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/iframe/number-frame-1.183.min.js?restricted=true",
+              "body": "!function(e){var t={};function r(n){if(t[n])return t[n].exports;var a=t[n]={i:n,l:!1,exports:{}};return e[n].call(a.exports,a,a.exports,r),a.l=!0,a.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var a in e)r.d(n,a,function(t){return e[t]}.bind(null,a));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,\"a\",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p=\"\",r(r.s=30)}([function(e,t){e.exports=function(e){return e&&e.__esModule?e:{default:e}},e.exports.__e"
+            },
+            {
+              "status": 200,
+              "url": "https://core.spreedly.com/v1/embedded/cvv-frame-1.183.html",
+              "body": "<!DOCTYPE html> <html> <head> <title>CVV Frame</title> <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" /> <style type=\"text/css\"> input { background: transparent; border-style: none; } body { background: transparent; margin: 0; } /* Don't show the number increment/decrement spinner in number fields */ input[type=\"number\"]::-webkit-inner-spin-button, input[type=\"number\"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=\"number\"] { -moz-appearance: textfield; } input:invalid, textarea:invalid { box-shadow: none; } input:hover { cursor: text; } .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .input-outline-none { outline: none; } </style> <script> var uniqueId = window.name.replace(\"spreedly-cvv-frame-\", \"\"); var numberWindowName = \"spreedly-number-frame-\" + uniqueId; window.notifyEvent = function(name, notification, addActiveField) { var activeFiel"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Simple+Home+Watch+%E2%80%94+Secure+Checkout&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fcheckout%2F",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 3,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  },
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/",
+              "body": {
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "checkout_url": "https://keer.29next.store/accounts/complete-order/edb515647a1c43e2ad4510ef6f23003a/",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/addresses/autocomplete/?query_text=1600+Amphitheatre+Pkwy&country=US",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://core.spreedly.com/v1/payment_methods/restricted.json?from=iframe&v=1.183",
+              "body": {}
+            },
+            {
+              "status": 201,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/",
+              "body": {
+                "number": "102417",
+                "ref_id": "888dffa5fb5b4d048424bd9407fa01ac",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "body": {
+                "currency": "USD",
+                "lines": []
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/js/v1/campaign/",
+              "body": "!function(){\"use strict\";function s(e){var t;e[\"X-Next-Campaign-Session-Id\"]=(t=\"ncsid\",2===(t=(\"; \"+document.cookie).split(`; ${t}=`)).length?t.pop().split(\";\").shift():null),e[\"X-Next-Campaign-Page-URL\"]=window.location.href}const i=window.fetch,o=(window.fetch=async function(...e){var[t,n]=e;return(\"string\"==typeof t?t:t.url).startsWith(nextCampaign.host)?((n=n||{}).headers=n.headers||{},s(n.headers),i(t,n)):i(...e)},XMLHttpRequest.prototype.open);XMLHttpRequest.prototype.open=function(e,t,...n){this.addEventListener(\"readystatechange\",function(){this.readyState===XMLHttpRequest.OPENED&&t.startsWith(nextCampaign.host)&&s(this)}),o.apply(this,[e,t,...n])},window.location.search?.includes(\"ignore=true\")&&sessionStorage.setItem(\"ignore\",\"true\");window.nextCampaign=new class{constructor(){this.apiKey=null,this.host=\"https://campaigns.apps.29next.com\"}config({apiKey:e,host:t}){this.apiKey=void 0!==e?e:this.apiKey,this.host=void 0!==t?t:this.host}event(e,t){this.apiKey?sessionStorage.getI"
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/c/event/?key=USbHa71KgyEQrBG2ZdgmOa12cgQZF4e3O4uFyYs5&event=page_view&title=Add+Window+%26+Door+Protection+%E2%80%94+Special+Offer&url=https%3A%2F%2Fdeploy-preview-15--campaignsos.netlify.app%2Fsimple-home-watch-v0%2Fupsell%2F%3Fref_id%3D888dffa5fb5b4d048424bd9407fa01ac",
+              "body": {}
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/orders/888dffa5fb5b4d048424bd9407fa01ac/",
+              "body": {
+                "number": "102417",
+                "ref_id": "888dffa5fb5b4d048424bd9407fa01ac",
+                "is_test": true,
+                "total_incl_tax": "69.98",
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": "Indoor Wifi Smart Cam",
+                    "quantity": 2,
+                    "is_upsell": false,
+                    "price": "69.98",
+                    "sku": "KEER-DOG-INDOORSMARTCAM01",
+                    "product_id": 398,
+                    "variant_id": 399
+                  }
+                ]
+              }
+            },
+            {
+              "status": 200,
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/?upsell=true",
+              "body": {
+                "currency": "USD",
+                "lines": [
+                  {
+                    "title": null,
+                    "quantity": 1,
+                    "is_upsell": false,
+                    "price": null,
+                    "sku": null,
+                    "product_id": null,
+                    "variant_id": null
+                  }
+                ]
+              }
+            }
+          ],
+          "failed": [
+            {
+              "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+              "failure": "net::ERR_ABORTED"
+            }
+          ],
+          "console": [
+            {
+              "type": "error",
+              "text": "[ApiClient] API request failed: Failed to fetch"
+            }
+          ],
+          "pageErrors": []
+        }
+      },
+      "upsell_steps": [
+        {
+          "path": "accept",
+          "clicked": true,
+          "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/upsell-2/?ref_id=888dffa5fb5b4d048424bd9407fa01ac",
+          "expected_items": [
+            {
+              "package_id": "3",
+              "quantity": 1,
+              "display_name": "Window & Door Sensor",
+              "selector_id": "upsell-bundle",
+              "bundle_id": "upsell-bundle-1x",
+              "vouchers": [
+                "WINDOW"
+              ]
+            }
+          ],
+          "api_response_seen": false,
+          "api_response_status": null,
+          "api_response_url": null,
+          "verification": {
+            "accepted_upsell_line_present": true,
+            "accepted_upsell_match": {
+              "ok": true,
+              "reason": null,
+              "expected_items": [
+                {
+                  "package_id": "3",
+                  "quantity": 1,
+                  "display_name": "Window & Door Sensor",
+                  "selector_id": "upsell-bundle",
+                  "bundle_id": "upsell-bundle-1x",
+                  "vouchers": [
+                    "WINDOW"
+                  ]
+                }
+              ],
+              "matched_lines": [
+                {
+                  "title": "Window & Door Alarm Sensor Contact",
+                  "quantity": 1,
+                  "is_upsell": true,
+                  "price": "19.99",
+                  "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+                  "product_id": 402,
+                  "variant_id": 403
+                }
+              ]
+            },
+            "upsell_api_response_seen": false,
+            "upsell_api_response_status": null
+          }
+        },
+        {
+          "path": "decline",
+          "clicked": true,
+          "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/?ref_id=888dffa5fb5b4d048424bd9407fa01ac",
+          "expected_items": [],
+          "api_response_seen": false,
+          "api_response_status": null,
+          "api_response_url": null,
+          "verification": {
+            "ok": true,
+            "reason": null
+          }
+        }
+      ],
+      "upsell": {
+        "path": "decline",
+        "clicked": true,
+        "final_url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/receipt/?ref_id=888dffa5fb5b4d048424bd9407fa01ac",
+        "expected_items": [],
+        "api_response_seen": false,
+        "api_response_status": null,
+        "api_response_url": null,
+        "verification": {
+          "ok": true,
+          "reason": null
+        }
+      },
+      "final_receipt_line_items": [
+        {
+          "title": "Indoor Wifi Smart Cam",
+          "quantity": 2,
+          "is_upsell": false,
+          "price": "69.98",
+          "sku": "KEER-DOG-INDOORSMARTCAM01",
+          "product_id": 398,
+          "variant_id": 399
+        },
+        {
+          "title": "Window & Door Alarm Sensor Contact",
+          "quantity": 1,
+          "is_upsell": true,
+          "price": "19.99",
+          "sku": "KEER-DOG-WINDOWDOORSENSOR01",
+          "product_id": 402,
+          "variant_id": 403
+        }
+      ]
+    }
+  ],
+  "exceptions": [
+    {
+      "id": "browser-test-order:accept",
+      "family": "browser-test-order",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "fail",
+      "severity": "blocker",
+      "expected": "test order created through deployed checkout page",
+      "actual": "step 1: upsell accept did not call order upsell API"
+    },
+    {
+      "id": "browser-test-order:accept-decline",
+      "family": "browser-test-order",
+      "page": "page_mpz72wd5_31",
+      "url": "https://deploy-preview-15--campaignsos.netlify.app/simple-home-watch-v0/checkout/",
+      "status": "fail",
+      "severity": "blocker",
+      "expected": "test order created through deployed checkout page",
+      "actual": "step 1: upsell accept did not call order upsell API"
+    }
+  ]
+}
