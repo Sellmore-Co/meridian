@@ -1,0 +1,191 @@
+---
+title: "Thank You - Lumi"
+permalink: /lumi-v0/receipt/
+page_layout: raw.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you &middot; Lumi</title>
+    <!-- SDK meta tags -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lumi-primary: #2f8f7e;
+            --lumi-primary-dark: #1f4a47;
+            --lumi-surface: #f7faf8;
+            --lumi-text: #1a2826;
+            --lumi-text-soft: #4a5b58;
+            --lumi-border: #e2ebe8;
+            --lumi-highlight: #e8f3ef;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Manrope', system-ui, -apple-system, sans-serif; background: var(--lumi-surface); color: var(--lumi-text); margin: 0; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+        .brand-bar { background: #fff; border-bottom: 1px solid var(--lumi-border); padding: 14px 22px; display: flex; justify-content: center; }
+        .wordmark { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em; color: var(--lumi-primary-dark); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .wordmark::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: var(--lumi-primary); display: inline-block; }
+
+        .container { max-width: 1080px; margin: 0 auto; padding: 32px 20px 64px; }
+        .grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; }
+        @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+        .panel { background: #fff; border: 1px solid var(--lumi-border); border-radius: 12px; padding: 28px; margin-bottom: 18px; }
+
+        .check { width: 56px; height: 56px; border-radius: 50%; background: var(--lumi-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 16px; }
+        .conf { font-size: 13px; color: var(--lumi-text-soft); }
+        h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.025em; margin: 4px 0 18px; color: var(--lumi-text); }
+        h1 .name { color: var(--lumi-primary); }
+        .sub { font-size: 15px; color: var(--lumi-text-soft); margin: 0 0 22px; }
+
+        h2 { font-size: 17px; font-weight: 700; margin: 0 0 14px; letter-spacing: -0.01em; }
+        .sec { padding: 18px 0; border-top: 1px solid var(--lumi-border); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--lumi-text-soft); margin-bottom: 4px; font-weight: 700; }
+        .value { font-size: 14px; color: var(--lumi-text); line-height: 1.55; }
+
+        .order-line { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--lumi-border); }
+        .order-line img { width: 52px; height: 52px; object-fit: contain; background: var(--lumi-surface); border-radius: 6px; }
+        .order-line .nm { font-weight: 600; font-size: 14px; }
+        .order-line .qy { font-size: 12px; color: var(--lumi-text-soft); margin-top: 2px; }
+        .order-line .pr { margin-left: auto; font-weight: 700; font-size: 14px; }
+        .totals { padding-top: 14px; }
+        .totals .row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; color: var(--lumi-text-soft); }
+        .totals .row.total { font-size: 18px; font-weight: 800; border-top: 2px solid var(--lumi-text); padding-top: 14px; margin-top: 8px; color: var(--lumi-text); }
+
+        .actions { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 13px 22px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; }
+        .btn-primary { background: var(--lumi-primary); color: #fff; }
+        .btn-secondary { background: #fff; color: var(--lumi-primary-dark); border: 1.5px solid var(--lumi-border); }
+        .footer-links { display: flex; gap: 18px; padding-top: 22px; margin-top: 22px; border-top: 1px solid var(--lumi-border); font-size: 13px; flex-wrap: wrap; }
+        .footer-links a { color: var(--lumi-text-soft); text-decoration: none; }
+        .footer-links a:hover { color: var(--lumi-primary); }
+
+        .guarantee { text-align: center; padding: 22px; }
+        .guarantee strong { font-size: 15px; color: var(--lumi-text); }
+        .guarantee p { font-size: 13px; color: var(--lumi-text-soft); margin: 8px 0 0; }
+        .tagline { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lumi-primary); font-weight: 600; text-align: center; margin-top: 14px; }
+    </style>
+    <meta name="next-funnel" content="Lumi v0">
+    <meta name="next-page-type" content="receipt">
+    <link href="/lumi-v0/css/next-core.css" rel="stylesheet" type="text/css">
+    <script src="/lumi-v0/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/loader.js" type="module"></script>
+</head>
+<body>
+
+<div class="brand-bar"><a href="/lumi-v0/landing/" class="wordmark">Lumi</a></div>
+
+<div class="container">
+    <div class="grid">
+
+        <!-- LEFT: confirmation + order details -->
+        <div>
+            <div class="panel">
+                <div class="check">&#10003;</div>
+                <div class="conf">Order #<span data-next-display="order.number">LUMI-PLACEHOLDER</span></div>
+                <h1>Thank you, <span class="name" data-next-display="order.customer.fname">friend</span> &mdash; your order is in.</h1>
+                <p class="sub">You'll get a confirmation email shortly with tracking info as soon as the order is dispatched.</p>
+
+                <div class="sec">
+                    <h2>Order details</h2>
+                    <div class="grid-2">
+                        <div>
+                            <div class="label">Contact</div>
+                            <div class="value" data-next-display="order.customer.email">customer@example.com</div>
+                        </div>
+                        <div>
+                            <div class="label">Payment</div>
+                            <div class="value" data-next-display="order.paymentMethod">Card</div>
+                        </div>
+                        <div>
+                            <div class="label">Shipping address</div>
+                            <div class="value">
+                                <div>
+                                    <span data-next-display="order.customer.fname">First</span>
+                                    <span data-next-display="order.customer.lname">Last</span>
+                                </div>
+                                <div data-next-display="order.shippingAddress.line1">Address line 1</div>
+                                <div data-next-display="order.shippingAddress.line2"></div>
+                                <div>
+                                    <span data-next-display="order.shippingAddress.city">City</span>
+                                    <span data-next-display="order.shippingAddress.state"></span>
+                                    <span data-next-display="order.shippingAddress.postcode">Postcode</span>
+                                </div>
+                                <div data-next-display="order.shippingAddress.country">Country</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="label">Shipping method</div>
+                            <div class="value" data-next-display="order.shippingMethod">Tracked international</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <a href="/lumi-v0/landing/" class="btn btn-primary">Continue shopping</a>
+                    <a href="/lumi-v0/landing/" class="btn btn-secondary">Contact support</a>
+                </div>
+
+                <div class="footer-links">
+                    <a href="/lumi-v0/landing/">Return policy</a>
+                    <a href="/lumi-v0/landing/">Privacy policy</a>
+                    <a href="/lumi-v0/landing/">Terms of service</a>
+                    <a href="/lumi-v0/landing/">Shipping</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: order summary -->
+        <aside>
+            <div class="panel" data-next-cart-summary data-summary-lines>
+                <h2>Order summary</h2>
+
+                <!-- Order line item template region (SDK preserved).
+                     Inside <template> the SDK uses single-brace tokens, not Liquid. -->
+                <template id="order-item-template">
+                    <div class="order-line" data-next-order-item>
+                        <img src="/lumi-v0/products/air-purifier.png" data-next-template-src="{item.image}" alt="{item.name}">
+                        <div>
+                            <div class="nm">{item.name}</div>
+                            <div class="qy">Qty: {item.quantity}</div>
+                        </div>
+                        <div class="pr">{item.subtotal}</div>
+                    </div>
+                </template>
+
+                <!-- Skeleton placeholder order lines (SDK overwrites at runtime).
+                     No hardcoded currency symbols — prices come from order.* bindings. -->
+                <div data-next-order-items>
+                    <div class="order-line">
+                        <img src="/lumi-v0/products/air-purifier.png" alt="Lumi Air Purifier">
+                        <div>
+                            <div class="nm">Lumi Air Purifier</div>
+                            <div class="qy">Qty: 1</div>
+                        </div>
+                        <div class="pr">&mdash;</div>
+                    </div>
+                </div>
+
+                <div class="totals">
+                    <div class="row"><span>Subtotal</span><span data-next-display="order.subtotal"></span></div>
+                    <div class="row"><span>Shipping</span><span data-next-display="order.shipping"></span></div>
+                    <div class="row"><span>Tax</span><span data-next-display="order.tax"></span></div>
+                    <div class="row total"><span>Total</span><span data-next-display="order.total"></span></div>
+                </div>
+            </div>
+
+            <div class="panel guarantee">
+                <strong>30-day money-back guarantee</strong>
+                <p>Not feeling the difference? Return within 30 days for a full refund.</p>
+                <div class="tagline">Daily clean. Daily calm.</div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+</body>
+</html>

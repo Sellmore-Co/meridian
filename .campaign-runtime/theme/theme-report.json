@@ -1,0 +1,108 @@
+{
+  "schema_version": "campaign-runtime-brand-theme/v0",
+  "generated_at": "2026-06-05T15:24:40.502Z",
+  "status": "ready",
+  "policy": "inspect_only",
+  "source_kind": "html_funnel",
+  "confidence": "medium",
+  "source_files": [
+    {
+      "path": "../designer/funnel-designs/lumi-daily-wellness-set/presell.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "956bcbf7ade4584ac932d302bb9cb00332b033951a6431cef9d6e9f6f35a86e2",
+      "token_count": 7,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    {
+      "path": "../designer/funnel-designs/lumi-daily-wellness-set/landing.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "59fee3fd57857a1bca9d95480d720a073ca6d0b3cd983dad4291809318cc32ce",
+      "token_count": 8,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    {
+      "path": "../designer/funnel-designs/lumi-daily-wellness-set/checkout.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "3a39a578775c4baa0ea9bbbe5af194d98e563ef3816dec357cb39c493704b074",
+      "token_count": 8,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    {
+      "path": "../designer/funnel-designs/lumi-daily-wellness-set/upsell-1.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "8e83c0bc8354401e04fc691b0f8f2d4c45e9b7c9c397e2a04bb07715ba6d1b4f",
+      "token_count": 8,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    {
+      "path": "../designer/funnel-designs/lumi-daily-wellness-set/upsell-2.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "da7a7feaf8efcac899edd97dd55aba5df2576564be20a2fd0e02630bac67ec76",
+      "token_count": 8,
+      "inline_block_index": 0,
+      "referenced_by": []
+    },
+    {
+      "path": "../designer/funnel-designs/lumi-daily-wellness-set/thank-you.html",
+      "role": "page",
+      "source": "html_inline_root",
+      "hash": "b4ff072009935f262138d8131ec514b8bae092b1fb5a49553296de9565002177",
+      "token_count": 7,
+      "inline_block_index": 0,
+      "referenced_by": []
+    }
+  ],
+  "selected_source": {
+    "path": "../designer/funnel-designs/lumi-daily-wellness-set/checkout.html",
+    "role": "page",
+    "source": "html_inline_root",
+    "hash": "3a39a578775c4baa0ea9bbbe5af194d98e563ef3816dec357cb39c493704b074",
+    "token_count": 8,
+    "inline_block_index": 0,
+    "referenced_by": []
+  },
+  "producer_defaults": {
+    "matched": false,
+    "producer": "figma-sections-export",
+    "version": "v0",
+    "matched_tokens": [],
+    "unresolved_tokens": [],
+    "present_core_tokens": []
+  },
+  "conflicts": [],
+  "mappings": [],
+  "generated": {
+    "css_path": ".campaign-runtime/theme/brand-theme.css",
+    "report_path": ".campaign-runtime/theme/theme-report.json",
+    "safety": {
+      "ok": false,
+      "errors": [
+        {
+          "code": "theme.css.empty",
+          "message": "No generated CSS because no source tokens were selected."
+        }
+      ],
+      "warnings": []
+    },
+    "stale": {
+      "stale": false,
+      "reasons": []
+    },
+    "can_generate": false,
+    "can_auto_generate": false,
+    "overwrite_requires_force": false
+  },
+  "existing_brand_layers": [],
+  "warnings": [],
+  "errors": [],
+  "next_action": "Review theme-report.json and decide whether to skip or collect stronger brand inputs."
+}
