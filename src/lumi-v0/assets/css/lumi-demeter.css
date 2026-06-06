@@ -1,0 +1,110 @@
+:root {
+  --_text---font-family--primary: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --_text---font-family--heading: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --brand--color--primary: #2f8f7e;
+  --brand--color--primary-dark: #1f4a47;
+  --brand--color--primary-light: #dceee9;
+  --brand--color--primary-lighter: #f5faf8;
+  --brand--color--cta-primary: #1f4a47;
+  --brand--color--surface: #f7faf8;
+  --brand--color--foreground: #1a2826;
+  --brand--color--border: #dfe9e6;
+  --brand--color--text-primary: #1a2826;
+  --brand--color--text-secondary: #4a5b58;
+  --brand--color--rating-star: #d49b3a;
+  --component--color--outline: #2f8f7e;
+}
+
+body {
+  background: #f8fbf9;
+}
+
+.lumi-checkout-header {
+  background: #ffffff;
+  border-bottom: 1px solid #dfe9e6;
+}
+
+.lumi-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1f4a47;
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+
+.lumi-wordmark__dot {
+  width: 0.78rem;
+  height: 0.78rem;
+  border-radius: 999px;
+  background: #2f8f7e;
+  display: inline-block;
+}
+
+.encrypted-banner,
+.announcement {
+  background: #1f4a47;
+  color: #ffffff;
+}
+
+.security-banner__text,
+.announcement__text {
+  color: #ffffff;
+}
+
+.button,
+.submit-button,
+[data-next-upsell-action="add"] {
+  background: #2f8f7e;
+  border-color: #2f8f7e;
+}
+
+.button:hover,
+.submit-button:hover,
+[data-next-upsell-action="add"]:hover {
+  background: #1f4a47;
+  border-color: #1f4a47;
+}
+
+.os-card.next-selected,
+.os-card:has(.next-selected),
+.cc-upsell-bundle-tier-grid .os-card.next-selected {
+  border-color: #2f8f7e;
+  box-shadow: 0 0 0 1px #2f8f7e;
+}
+
+.form-section__title,
+.cart-box__title,
+.display-lg,
+.display-xs {
+  letter-spacing: 0;
+}
+
+.lumi-product-note {
+  margin: 0 0 1rem;
+  color: #4a5b58;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.checkout-layout__right {
+  background: #f7faf8;
+}
+
+.guarantee-checkout__v2,
+.guarantee-section {
+  border-color: #dfe9e6;
+  background: #ffffff;
+}
+
+.upsell-header__offer,
+.upsell-header__suboffer {
+  color: #1f4a47;
+}
+
+.receipt-check {
+  color: #2f8f7e;
+}

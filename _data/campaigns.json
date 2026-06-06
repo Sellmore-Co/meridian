@@ -202,5 +202,21 @@
     "store_phone_tel": "",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "lumi-v0": {
+    "name": "Lumi v0",
+    "description": "Keer dogfood - Lumi daily wellness funnel rebuilt from Demeter commerce-page clones.",
+    "entry_url": "",
+    "sdk_version": "0.4.19",
+    "store_name": "Lumi",
+    "store_url": "https://keer.29next.store/",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
   }
 }

@@ -1,0 +1,806 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MQ1UENP6LKLNBR73PTQ7BPL2RG",
+  "campaign_slug": "lumi-v0-qdos",
+  "campaign_ref_id": 1596,
+  "spec_version": "4.3",
+  "spec_hash": "sha256:1f1086560867198ad8e3107400d5ee54a47f79c5884d86624d6729caf3aee9ca",
+  "started_at": "2026-06-06T04:18:09.401Z",
+  "completed_at": "2026-06-06T04:18:33.417Z",
+  "runtime": "campaigns-os-node-qa@0.1.0-alpha.0",
+  "operator": "devin@local",
+  "disposition": "ready",
+  "assertions": [
+    {
+      "id": "http:page_mpaxqpb1_21",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:8100/lumi-v0/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_21:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:8100/lumi-v0/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_21:next",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:8100/lumi-v0/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:8100/lumi-v0/landing/",
+      "actual": "http://127.0.0.1:8100/lumi-v0/landing/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_22",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:8100/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_22:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:8100/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_22:next-currency",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:8100/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_22:next",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:8100/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "actual": "http://127.0.0.1:8100/lumi-v0/checkout/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_23",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "checkout",
+      "actual": "checkout"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-currency",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-predictive-address",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_23:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "/lumi-v0/upsell/",
+      "actual": "/lumi-v0/upsell/"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_23:next",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "actual": "http://127.0.0.1:8100/lumi-v0/upsell/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_24",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-currency",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-prevent-back-navigation",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "/lumi-v0/upsell-2/",
+      "actual": "/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_24:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "/lumi-v0/upsell-2/",
+      "actual": "/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_24:accept",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "actual": "http://127.0.0.1:8100/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mpaxqpb1_24:decline",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "actual": "http://127.0.0.1:8100/lumi-v0/upsell-2/"
+    },
+    {
+      "id": "http:page_mpaxrhe5_86",
+      "family": "funnel-flow",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-currency",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/lumi-v0/receipt/",
+      "actual": "/lumi-v0/receipt/"
+    },
+    {
+      "id": "meta:page_mpaxrhe5_86:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "/lumi-v0/receipt/",
+      "actual": "/lumi-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mpaxrhe5_86:accept",
+      "family": "funnel-flow",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:8100/lumi-v0/receipt/",
+      "actual": "http://127.0.0.1:8100/lumi-v0/receipt/"
+    },
+    {
+      "id": "route-link:page_mpaxrhe5_86:decline",
+      "family": "funnel-flow",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "http://127.0.0.1:8100/lumi-v0/receipt/",
+      "actual": "http://127.0.0.1:8100/lumi-v0/receipt/"
+    },
+    {
+      "id": "http:page_mpaxqpb1_25",
+      "family": "funnel-flow",
+      "page": "page_mpaxqpb1_25",
+      "url": "http://127.0.0.1:8100/lumi-v0/receipt/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mpaxqpb1_25:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mpaxqpb1_25",
+      "url": "http://127.0.0.1:8100/lumi-v0/receipt/",
+      "status": "pass",
+      "expected": "receipt",
+      "actual": "receipt"
+    },
+    {
+      "id": "browser-load:page_mpaxqpb1_21",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_21",
+      "url": "http://127.0.0.1:8100/lumi-v0/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "3 Things Hurting Your Air Quality (That You Didn't Know) | Lumi",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mpaxqpb1_22",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_22",
+      "url": "http://127.0.0.1:8100/lumi-v0/landing/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Lumi Air Purifier — Plug-in. Filter-free. Daily clean air.",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mpaxqpb1_23",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Lumi Daily Wellness Set - Checkout",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-payment-surface:page_mpaxqpb1_23",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "rendered credit-card payment field mounts",
+      "actual": "card_mounts=1; cvv_mounts=1; spreedly_frames=2",
+      "evidence": {
+        "card_number_selector": "[data-next-checkout-field=\"cc-number\"], #spreedly-number",
+        "cvv_selector": "[data-next-checkout-field=\"cvv\"], #spreedly-cvv",
+        "spreedly_frame_urls": [
+          "https://core.spreedly.com/v1/embedded/number-frame-1.186.html",
+          "https://core.spreedly.com/v1/embedded/cvv-frame-1.186.html"
+        ],
+        "next_step": "Run --test-order common for typed-card checkout proof (test cards bypass the gateway; no approval needed)."
+      }
+    },
+    {
+      "id": "browser-payment-geometry:page_mpaxqpb1_23",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "native-looking card/CVV controls: fixed field height and centered hosted iframe text path",
+      "actual": "spreedly-number: host=48px iframe=20px center_delta=0px; spreedly-cvv: host=48px iframe=20px center_delta=0px",
+      "evidence": {
+        "fields": [
+          {
+            "id": "spreedly-number",
+            "host": {
+              "width": 504,
+              "height": 48
+            },
+            "iframe": {
+              "width": 478,
+              "height": 20
+            },
+            "centerDelta": 0
+          },
+          {
+            "id": "spreedly-cvv",
+            "host": {
+              "width": 157,
+              "height": 48
+            },
+            "iframe": {
+              "width": 131,
+              "height": 20
+            },
+            "centerDelta": 0
+          }
+        ],
+        "rules": {
+          "host_height_px": "42..64",
+          "iframe_height_ratio_max": 0.72,
+          "iframe_center_delta_px_max": 8
+        }
+      }
+    },
+    {
+      "id": "browser-express-wallets:page_mpaxqpb1_23",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "eligible express wallet buttons render with stable wallet-button dimensions; Apple Pay may be absent in non-eligible browsers",
+      "actual": "apple_pay:261x44; google_pay:261x44",
+      "evidence": {
+        "buttons": [
+          {
+            "kind": "apple_pay",
+            "className": "payment-btn cc-apple-pay",
+            "width": 261,
+            "height": 44
+          },
+          {
+            "kind": "google_pay",
+            "className": "payment-btn cc-google-pay",
+            "width": 261,
+            "height": 44
+          }
+        ],
+        "note": "Wallet presence is browser/device eligibility dependent; do not require Apple Pay in Chrome-only QA."
+      }
+    },
+    {
+      "id": "browser-bundle-selector:page_mpaxqpb1_23",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "bundle cards have one selected option and visible prices for every tier",
+      "actual": "1 selected; 3/3 cards with visible price",
+      "evidence": {
+        "selectedCount": 1,
+        "cards": [
+          {
+            "index": 0,
+            "id": "bundle-1x",
+            "selected": true,
+            "width": 538,
+            "height": 112,
+            "prices": [
+              "$34.99",
+              "$34.99",
+              "$34.99",
+              "$34.99"
+            ],
+            "hasVisiblePrice": true
+          },
+          {
+            "index": 1,
+            "id": "bundle-2x",
+            "selected": false,
+            "width": 538,
+            "height": 112,
+            "prices": [
+              "$34.99",
+              "$31.99",
+              "$69.98",
+              "$63.98"
+            ],
+            "hasVisiblePrice": true
+          },
+          {
+            "index": 2,
+            "id": "bundle-3x",
+            "selected": false,
+            "width": 538,
+            "height": 112,
+            "prices": [
+              "$34.99",
+              "$27.99",
+              "$104.97",
+              "$83.97"
+            ],
+            "hasVisiblePrice": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-order-bump-state:page_mpaxqpb1_23",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "order bump visible checkbox state agrees with active/in-cart and hidden input state",
+      "actual": "1/1 bump toggle(s) aligned",
+      "evidence": {
+        "toggles": [
+          {
+            "index": 0,
+            "packageId": "2",
+            "active": false,
+            "inputChecked": null,
+            "markerChecked": false,
+            "inputAgrees": true,
+            "markerAgrees": true,
+            "statesAgree": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-commerce-structure:page_mpaxqpb1_23",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "rendered checkout conforms to the selected template-family commerce structure contract",
+      "actual": "8/8 structure check(s) passed",
+      "evidence": {
+        "template_family": "demeter",
+        "contract_status": "loaded",
+        "description": "Rendered Demeter checkout must adopt the starter-template shell, not a custom shell with only borrowed partials.",
+        "checks": [
+          {
+            "name": "Demeter checkout wrapper",
+            "selectors": [
+              ".checkout-wrapper"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 2660,
+            "sample_text": "Choose Your Lumi Bundle 1x Air Purifier Save $0.00 $34.99 $34.99/ea Total: $34.99 $34.99 STARTER 2x Air Purifier SAVE 9%"
+          },
+          {
+            "name": "left checkout column",
+            "selectors": [
+              ".checkout-layout__left"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 2283,
+            "sample_text": "Choose Your Lumi Bundle 1x Air Purifier Save $0.00 $34.99 $34.99/ea Total: $34.99 $34.99 STARTER 2x Air Purifier SAVE 9%"
+          },
+          {
+            "name": "right checkout column",
+            "selectors": [
+              ".checkout-layout__right"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 376,
+            "sample_text": "Your Cart Free shipping on all orders. Most Popular Cart subtext Air Purifier Item Amount Scroll for more items 1x Air P"
+          },
+          {
+            "name": "checkout form",
+            "selectors": [
+              "[data-next-checkout=\"form\"]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 2127,
+            "sample_text": "Choose Your Lumi Bundle 1x Air Purifier Save $0.00 $34.99 $34.99/ea Total: $34.99 $34.99 STARTER 2x Air Purifier SAVE 9%"
+          },
+          {
+            "name": "shipping field row component",
+            "selectors": [
+              "[data-next-component=\"shipping-field-row\"]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 12,
+            "visible_count": 12,
+            "text_length": 817,
+            "sample_text": "Country Select CountryFranceGermanyItalyNetherlandsSpainUnited KingdomUnited States First Name Last Name Address Apartme"
+          },
+          {
+            "name": "checkout payment submit",
+            "selectors": [
+              "[os-checkout-payment]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 68,
+            "sample_text": "COMPLETE PURCHASE → TRY IT RISK FREE! - 30 DAY MONEY BACK GUARANTEE!"
+          },
+          {
+            "name": "rendered order summary",
+            "selectors": [
+              "[data-next-cart-summary]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 201,
+            "sample_text": "Item Amount Scroll for more items 1x Air Purifier $34.99/ea $34.99/ea $34.99 $34.99 Subtotal $34.99 Today you saved 0% O"
+          },
+          {
+            "name": "visible order summary content",
+            "selectors": [
+              "[data-next-cart-summary]"
+            ],
+            "mode": "non_empty",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 201,
+            "sample_text": "Item Amount Scroll for more items 1x Air Purifier $34.99/ea $34.99/ea $34.99 $34.99 Subtotal $34.99 Today you saved 0% O"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpaxqpb1_23",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_23",
+      "url": "http://127.0.0.1:8100/lumi-v0/checkout/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "http://127.0.0.1:8100/lumi-v0/checkout/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mpaxqpb1_24",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Add the Lumi Foot Massager",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpaxqpb1_24:accept",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "http://127.0.0.1:8100/lumi-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpaxqpb1_24:decline",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "http://127.0.0.1:8100/lumi-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpaxqpb1_24",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_24",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "http://127.0.0.1:8100/lumi-v0/upsell/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mpaxrhe5_86",
+      "family": "browser-runtime",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Add the Lumi Fruit and Veg Cleaner",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpaxrhe5_86:accept",
+      "family": "browser-runtime",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "http://127.0.0.1:8100/lumi-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mpaxrhe5_86:decline",
+      "family": "browser-runtime",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "http://127.0.0.1:8100/lumi-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpaxrhe5_86",
+      "family": "browser-runtime",
+      "page": "page_mpaxrhe5_86",
+      "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "http://127.0.0.1:8100/lumi-v0/upsell-2/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mpaxqpb1_25",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_25",
+      "url": "http://127.0.0.1:8100/lumi-v0/receipt/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Lumi - Receipt",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mpaxqpb1_25",
+      "family": "browser-runtime",
+      "page": "page_mpaxqpb1_25",
+      "url": "http://127.0.0.1:8100/lumi-v0/receipt/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "http://127.0.0.1:8100/lumi-v0/receipt/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    }
+  ],
+  "test_orders": [],
+  "exceptions": []
+}

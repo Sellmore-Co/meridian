@@ -1,0 +1,17 @@
+{
+  "schema_version": "campaign-runtime-setup-handoff/v0",
+  "status": "completed",
+  "template_family": "demeter",
+  "source": "../designer/funnel-designs/lumi-daily-wellness-set",
+  "outputs": [
+    "src/lumi-v0/",
+    "src/lumi-v0/_includes/",
+    "src/lumi-v0/_layouts/",
+    "src/lumi-v0/assets/"
+  ],
+  "notes": [
+    "Copied Demeter as an atomic page-kit family slice.",
+    "Presell/landing use prepared Lumi source HTML; checkout, upsells, and receipt use Demeter commerce-page clones."
+  ],
+  "generated_at": "2026-06-06T04:23:36.902Z"
+}
