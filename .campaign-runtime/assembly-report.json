@@ -2,7 +2,7 @@
   "schema_version": "campaign-runtime-assembly-report/v0",
   "run_id": "asm_1780718530345",
   "generated_at": "2026-06-06T04:02:10.345Z",
-  "status": "ready_local_qa_passed",
+  "status": "ready_preview_qa_passed",
   "identity": {
     "map_id": "lumi-v0-qdos",
     "public_route_slug": "lumi-v0",
@@ -112,20 +112,24 @@
       "status": "completed",
       "inputs": [
         "campaign-runtime.build.json",
-        "http://127.0.0.1:8100/lumi-v0/"
+        "http://127.0.0.1:8100/lumi-v0/",
+        "https://deploy-preview-19--campaignsos.netlify.app/lumi-v0/"
       ],
       "outputs": [
         ".campaign-runtime/qa-lumi-v0-demeter-local/lumi-v0-qdos/MQ1UENP6LKLNBR73PTQ7BPL2RG.json",
+        ".campaign-runtime/qa-lumi-v0-demeter-preview/lumi-v0-qdos/MQ1UPRDOU8JF8LMVRO582AP286.json",
         ".campaign-runtime/evidence/lumi-demeter-checkout-desktop.png",
         ".campaign-runtime/evidence/lumi-demeter-checkout-mobile.png"
       ],
       "commands": [
         "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url http://127.0.0.1:8100/lumi-v0/ --browser --no-post-verdict --output-dir .campaign-runtime/qa-lumi-v0-demeter-local --json",
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url https://deploy-preview-19--campaignsos.netlify.app/lumi-v0/ --browser --no-post-verdict --output-dir .campaign-runtime/qa-lumi-v0-demeter-preview --json",
         "node scripts/lint-sdk.mjs --scope=lumi-v0 --pages=checkout"
       ],
       "blockers": [],
       "warnings": [
-        "Typed-card order proof was not run; no paid/test order path was approved for this local dogfood pass."
+        "Typed-card order proof was not run; no paid/test order path was approved for this dogfood pass.",
+        "SDK origin allowlist remains unconfirmed for the deploy preview, even though no-order browser QA passed."
       ]
     }
   },
@@ -210,7 +214,9 @@
     "Local Campaigns OS browser QA ready: run MQ1UENP6LKLNBR73PTQ7BPL2RG, 50/50 assertions passing.",
     ".campaign-runtime/qa-lumi-v0-demeter-local/lumi-v0-qdos/MQ1UENP6LKLNBR73PTQ7BPL2RG.json",
     ".campaign-runtime/evidence/lumi-demeter-checkout-desktop.png",
-    ".campaign-runtime/evidence/lumi-demeter-checkout-mobile.png"
+    ".campaign-runtime/evidence/lumi-demeter-checkout-mobile.png",
+    "Preview Campaigns OS browser QA ready: run MQ1UPRDOU8JF8LMVRO582AP286, 50/50 assertions passing.",
+    ".campaign-runtime/qa-lumi-v0-demeter-preview/lumi-v0-qdos/MQ1UPRDOU8JF8LMVRO582AP286.json"
   ],
   "blockers": [],
   "warnings": [
@@ -226,9 +232,9 @@
     }
   ],
   "next": {
-    "stage": "draft_pr_preview_qa",
-    "owner": "Sellmore-Co/meridian branch lumi-v1-demeter-dogfood",
-    "action": "Push branch, open draft PR, wait for Netlify preview, then rerun Campaigns OS browser QA against the preview URL."
+    "stage": "operator_review",
+    "owner": "Devin",
+    "action": "Review the deploy preview visually and decide whether to run typed-card order proof after explicit order-count/path approval."
   },
-  "updated_at": "2026-06-06T04:24:29.277Z"
+  "updated_at": "2026-06-06T04:28:55.672Z"
 }

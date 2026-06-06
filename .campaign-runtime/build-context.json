@@ -2,7 +2,7 @@
   "schema_version": "campaign-runtime-build-context/v0",
   "generated_at": "2026-06-06T04:02:10.335Z",
   "source_adapter": "hybrid_lumi_source_plus_demeter_commerce_clone",
-  "status": "ready_local_qa_passed",
+  "status": "ready_preview_qa_passed",
   "packet_path": "./campaign-runtime.build.json",
   "report_path": ".campaign-runtime/assembly-report.json",
   "spec": {
@@ -419,7 +419,7 @@
       "css": false
     }
   },
-  "updated_at": "2026-06-06T04:24:29.277Z",
+  "updated_at": "2026-06-06T04:28:55.672Z",
   "assembly": {
     "status": "completed_with_warnings",
     "script": "scripts/assemble-lumi-demeter.mjs",
@@ -439,9 +439,31 @@
     ]
   },
   "qa": {
+    "status": "ready",
     "run_id": "MQ1UENP6LKLNBR73PTQ7BPL2RG",
+    "map_id": "lumi-v0-qdos",
+    "base_url": "http://127.0.0.1:8100/lumi-v0/",
     "output": ".campaign-runtime/qa-lumi-v0-demeter-local/lumi-v0-qdos/MQ1UENP6LKLNBR73PTQ7BPL2RG.json",
+    "counts": {
+      "pass": 50
+    },
+    "disposition": "ready",
     "test_orders": [],
+    "exceptions": [],
     "command": "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url http://127.0.0.1:8100/lumi-v0/ --browser --no-post-verdict --output-dir .campaign-runtime/qa-lumi-v0-demeter-local --json"
+  },
+  "preview_qa": {
+    "status": "ready",
+    "run_id": "MQ1UPRDOU8JF8LMVRO582AP286",
+    "map_id": "lumi-v0-qdos",
+    "base_url": "https://deploy-preview-19--campaignsos.netlify.app/lumi-v0/",
+    "output": ".campaign-runtime/qa-lumi-v0-demeter-preview/lumi-v0-qdos/MQ1UPRDOU8JF8LMVRO582AP286.json",
+    "counts": {
+      "pass": 50
+    },
+    "disposition": "ready",
+    "test_orders": [],
+    "exceptions": [],
+    "command": "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url https://deploy-preview-19--campaignsos.netlify.app/lumi-v0/ --browser --no-post-verdict --output-dir .campaign-runtime/qa-lumi-v0-demeter-preview --json"
   }
 }

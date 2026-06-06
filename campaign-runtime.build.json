@@ -69,7 +69,7 @@
   },
   "deploy": {
     "target": "unknown",
-    "preview_url": null,
+    "preview_url": "https://deploy-preview-19--campaignsos.netlify.app/lumi-v0/",
     "production_url": null,
     "live_url_path": "/lumi-v0/"
   },
