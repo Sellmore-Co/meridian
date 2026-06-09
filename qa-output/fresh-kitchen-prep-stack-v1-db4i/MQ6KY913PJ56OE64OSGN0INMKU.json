@@ -1,0 +1,806 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MQ6KY913PJ56OE64OSGN0INMKU",
+  "campaign_slug": "fresh-kitchen-prep-stack-v1-db4i",
+  "campaign_ref_id": 1648,
+  "spec_version": "4.3",
+  "spec_hash": "sha256:06d5ecaeb8662a3cd6a17ff04c27ffdb06b080c14c96181421383e06ce5c7a1d",
+  "started_at": "2026-06-09T11:52:18.231Z",
+  "completed_at": "2026-06-09T11:52:52.658Z",
+  "runtime": "campaigns-os-node-qa@0.1.0-alpha.0",
+  "operator": "devin@local",
+  "disposition": "ready",
+  "assertions": [
+    {
+      "id": "http:page_mq6es6pj_25",
+      "family": "funnel-flow",
+      "page": "page_mq6es6pj_25",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mq6es6pj_25:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_25",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "route-link:page_mq6es6pj_25:next",
+      "family": "funnel-flow",
+      "page": "page_mq6es6pj_25",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/",
+      "status": "pass",
+      "expected": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/landing/",
+      "actual": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/landing/"
+    },
+    {
+      "id": "http:page_mq6es6pj_26",
+      "family": "funnel-flow",
+      "page": "page_mq6es6pj_26",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/landing/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mq6es6pj_26:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_26",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/landing/",
+      "status": "pass",
+      "expected": "product",
+      "actual": "product"
+    },
+    {
+      "id": "meta:page_mq6es6pj_26:next-currency",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_26",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/landing/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "route-link:page_mq6es6pj_26:next",
+      "family": "funnel-flow",
+      "page": "page_mq6es6pj_26",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/landing/",
+      "status": "pass",
+      "expected": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "actual": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/"
+    },
+    {
+      "id": "http:page_mq6es6pj_27",
+      "family": "funnel-flow",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mq6es6pj_27:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "checkout",
+      "actual": "checkout"
+    },
+    {
+      "id": "meta:page_mq6es6pj_27:next-currency",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mq6es6pj_27:next-predictive-address",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mq6es6pj_27:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "/fresh-kitchen-prep-stack-v1/upsell/",
+      "actual": "/fresh-kitchen-prep-stack-v1/upsell/"
+    },
+    {
+      "id": "route-link:page_mq6es6pj_27:next",
+      "family": "funnel-flow",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "actual": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/"
+    },
+    {
+      "id": "http:page_mq6es6pj_28",
+      "family": "funnel-flow",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mq6es6pj_28:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mq6es6pj_28:next-currency",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mq6es6pj_28:next-prevent-back-navigation",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "id": "meta:page_mq6es6pj_28:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "actual": "/fresh-kitchen-prep-stack-v1/upsell-2/"
+    },
+    {
+      "id": "meta:page_mq6es6pj_28:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "actual": "/fresh-kitchen-prep-stack-v1/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mq6es6pj_28:accept",
+      "family": "funnel-flow",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "actual": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/"
+    },
+    {
+      "id": "route-link:page_mq6es6pj_28:decline",
+      "family": "funnel-flow",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "actual": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/"
+    },
+    {
+      "id": "http:page_mq6etfcc_38",
+      "family": "funnel-flow",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mq6etfcc_38:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "upsell",
+      "actual": "upsell"
+    },
+    {
+      "id": "meta:page_mq6etfcc_38:next-currency",
+      "family": "meta-tags",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "USD",
+      "actual": "USD"
+    },
+    {
+      "id": "meta:page_mq6etfcc_38:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "/fresh-kitchen-prep-stack-v1/receipt/",
+      "actual": "/fresh-kitchen-prep-stack-v1/receipt/"
+    },
+    {
+      "id": "meta:page_mq6etfcc_38:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "/fresh-kitchen-prep-stack-v1/receipt/",
+      "actual": "/fresh-kitchen-prep-stack-v1/receipt/"
+    },
+    {
+      "id": "route-link:page_mq6etfcc_38:accept",
+      "family": "funnel-flow",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/",
+      "actual": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/"
+    },
+    {
+      "id": "route-link:page_mq6etfcc_38:decline",
+      "family": "funnel-flow",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/",
+      "actual": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/"
+    },
+    {
+      "id": "http:page_mq6es6pj_29",
+      "family": "funnel-flow",
+      "page": "page_mq6es6pj_29",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "meta:page_mq6es6pj_29:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mq6es6pj_29",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/",
+      "status": "pass",
+      "expected": "receipt",
+      "actual": "receipt"
+    },
+    {
+      "id": "browser-load:page_mq6es6pj_25",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_25",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "FreshPak Vacuum Sealer — Kitchen Prep Guide",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mq6es6pj_26",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_26",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/landing/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "FreshPak Vacuum Sealer",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-load:page_mq6es6pj_27",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "FreshPak Vacuum Sealer — Checkout",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-payment-surface:page_mq6es6pj_27",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "rendered credit-card payment field mounts",
+      "actual": "card_mounts=1; cvv_mounts=1; spreedly_frames=2",
+      "evidence": {
+        "card_number_selector": "[data-next-checkout-field=\"cc-number\"], #spreedly-number",
+        "cvv_selector": "[data-next-checkout-field=\"cvv\"], #spreedly-cvv",
+        "spreedly_frame_urls": [
+          "https://core.spreedly.com/v1/embedded/number-frame-1.186.html",
+          "https://core.spreedly.com/v1/embedded/cvv-frame-1.186.html"
+        ],
+        "next_step": "Run --test-order common for typed-card checkout proof (test cards bypass the gateway; no approval needed)."
+      }
+    },
+    {
+      "id": "browser-payment-geometry:page_mq6es6pj_27",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "native-looking card/CVV controls: fixed field height and centered hosted iframe text path",
+      "actual": "spreedly-number: host=48px iframe=20px center_delta=0px; spreedly-cvv: host=48px iframe=20px center_delta=0px",
+      "evidence": {
+        "fields": [
+          {
+            "id": "spreedly-number",
+            "host": {
+              "width": 494,
+              "height": 48
+            },
+            "iframe": {
+              "width": 468,
+              "height": 20
+            },
+            "centerDelta": 0
+          },
+          {
+            "id": "spreedly-cvv",
+            "host": {
+              "width": 154,
+              "height": 48
+            },
+            "iframe": {
+              "width": 128,
+              "height": 20
+            },
+            "centerDelta": 0
+          }
+        ],
+        "rules": {
+          "host_height_px": "42..64",
+          "iframe_height_ratio_max": 0.72,
+          "iframe_center_delta_px_max": 8
+        }
+      }
+    },
+    {
+      "id": "browser-express-wallets:page_mq6es6pj_27",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "eligible express wallet buttons render with stable wallet-button dimensions; Apple Pay may be absent in non-eligible browsers",
+      "actual": "apple_pay:256x44; google_pay:256x44",
+      "evidence": {
+        "buttons": [
+          {
+            "kind": "apple_pay",
+            "className": "payment-btn cc-apple-pay",
+            "width": 256,
+            "height": 44
+          },
+          {
+            "kind": "google_pay",
+            "className": "payment-btn cc-google-pay",
+            "width": 256,
+            "height": 44
+          }
+        ],
+        "note": "Wallet presence is browser/device eligibility dependent; do not require Apple Pay in Chrome-only QA."
+      }
+    },
+    {
+      "id": "browser-bundle-selector:page_mq6es6pj_27",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "bundle cards have one selected option and visible prices for every tier",
+      "actual": "1 selected; 3/3 cards with visible price",
+      "evidence": {
+        "selectedCount": 1,
+        "cards": [
+          {
+            "index": 0,
+            "id": "bundle-1x",
+            "selected": false,
+            "width": 528,
+            "height": 112,
+            "prices": [
+              "$89.99",
+              "$59.99",
+              "$89.99",
+              "$59.99"
+            ],
+            "hasVisiblePrice": true
+          },
+          {
+            "index": 1,
+            "id": "bundle-2x",
+            "selected": false,
+            "width": 528,
+            "height": 112,
+            "prices": [
+              "$89.99",
+              "$54.99",
+              "$179.98",
+              "$109.98"
+            ],
+            "hasVisiblePrice": true
+          },
+          {
+            "index": 2,
+            "id": "bundle-3x",
+            "selected": true,
+            "width": 528,
+            "height": 112,
+            "prices": [
+              "$89.99",
+              "$49.99",
+              "$269.97",
+              "$149.97"
+            ],
+            "hasVisiblePrice": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-order-bump-state:page_mq6es6pj_27",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "order bump visible checkbox state agrees with active/in-cart and hidden input state",
+      "actual": "1/1 bump toggle(s) aligned",
+      "evidence": {
+        "toggles": [
+          {
+            "index": 0,
+            "packageId": "2",
+            "active": false,
+            "inputChecked": null,
+            "markerChecked": false,
+            "inputAgrees": true,
+            "markerAgrees": true,
+            "statesAgree": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-commerce-structure:page_mq6es6pj_27",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "rendered checkout conforms to the selected template-family commerce structure contract",
+      "actual": "8/8 structure check(s) passed",
+      "evidence": {
+        "template_family": "olympus",
+        "contract_status": "loaded",
+        "description": "Rendered Olympus checkout must adopt the starter-template shell, not a custom shell with only borrowed partials.",
+        "checks": [
+          {
+            "name": "Olympus checkout wrapper",
+            "selectors": [
+              ".checkout-wrapper"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 3619,
+            "sample_text": "Locks in freshness One-touch sealing Dry and moist modes Free US shipping Fewer wasted groceries I batch prep on Sundays"
+          },
+          {
+            "name": "left checkout column",
+            "selectors": [
+              ".checkout-layout__left"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 439,
+            "sample_text": "Locks in freshness One-touch sealing Dry and moist modes Free US shipping Fewer wasted groceries I batch prep on Sundays"
+          },
+          {
+            "name": "right checkout column",
+            "selectors": [
+              ".checkout-layout__right"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 3179,
+            "sample_text": "TRUSTED BY BUSY HOME COOKS FreshPak Vacuum Sealer Keep ingredients fresh longer with one-touch vacuum sealing Seal bulk "
+          },
+          {
+            "name": "checkout form",
+            "selectors": [
+              "[data-next-checkout=\"form\"]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 2325,
+            "sample_text": "Step 1: Pick Your Bundle Deal 1x Food Vacuum Sealer SAVE 33.34% Save $30.00 $89.99 $59.99/ea Total: $89.99 $59.99 2x Foo"
+          },
+          {
+            "name": "shipping field row component",
+            "selectors": [
+              "[data-next-component=\"shipping-field-row\"]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 12,
+            "visible_count": 10,
+            "text_length": 209,
+            "sample_text": "First Name Last Name Phone Country Select CountryUnited States Address Apartment, suite, etc. (optional) First Name Last"
+          },
+          {
+            "name": "checkout payment submit",
+            "selectors": [
+              "[os-checkout-payment]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 68,
+            "sample_text": "COMPLETE PURCHASE → TRY IT RISK FREE! - 30 DAY MONEY BACK GUARANTEE!"
+          },
+          {
+            "name": "rendered order summary",
+            "selectors": [
+              "[data-next-cart-summary]"
+            ],
+            "mode": "visible",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 252,
+            "sample_text": "Item Amount Scroll for more items … 3x Food Vacuum Sealer $89.99/ea $49.99/ea $269.97 $149.97 Subtotal $269.97 Food Vacu"
+          },
+          {
+            "name": "visible order summary content",
+            "selectors": [
+              "[data-next-cart-summary]"
+            ],
+            "mode": "non_empty",
+            "status": "pass",
+            "count": 1,
+            "visible_count": 1,
+            "text_length": 252,
+            "sample_text": "Item Amount Scroll for more items … 3x Food Vacuum Sealer $89.99/ea $49.99/ea $269.97 $149.97 Subtotal $269.97 Food Vacu"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mq6es6pj_27",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_27",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mq6es6pj_28",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "FreshPak — Add Fruit and Veg Cleaner",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mq6es6pj_28:accept",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mq6es6pj_28:decline",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mq6es6pj_28",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_28",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mq6etfcc_38",
+      "family": "browser-runtime",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "FreshPak — Add Chef Knife",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mq6etfcc_38:accept",
+      "family": "browser-runtime",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK accept control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"add\"]",
+        "expected_url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/"
+      }
+    },
+    {
+      "id": "browser-upsell-control:page_mq6etfcc_38:decline",
+      "family": "browser-runtime",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "rendered SDK decline control",
+      "actual": "1 matching control(s)",
+      "evidence": {
+        "selector": "[data-next-upsell-action=\"skip\"]",
+        "expected_url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mq6etfcc_38",
+      "family": "browser-runtime",
+      "page": "page_mq6etfcc_38",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/upsell-2/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-load:page_mq6es6pj_29",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_29",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "FreshPak — Receipt",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:page_mq6es6pj_29",
+      "family": "browser-runtime",
+      "page": "page_mq6es6pj_29",
+      "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/",
+      "status": "pass",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay and selector controls mounted",
+      "evidence": {
+        "url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/receipt/?debugger=true",
+        "displayReady": true,
+        "overlayHost": true,
+        "selectorContainer": true,
+        "currencySelector": true,
+        "countrySelector": true,
+        "localeSelector": true,
+        "nextKeys": [
+          "callbacks",
+          "exitIntentEnhancer",
+          "fomoEnhancer",
+          "logger",
+          "eventBus"
+        ],
+        "http_status": 200,
+        "console_errors": [],
+        "page_errors": []
+      }
+    }
+  ],
+  "test_orders": [],
+  "exceptions": []
+}

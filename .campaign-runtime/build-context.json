@@ -2,7 +2,7 @@
   "schema_version": "campaign-runtime-build-context/v0",
   "generated_at": "2026-06-09T11:28:32.480Z",
   "source_adapter": "html_funnel",
-  "status": "local_qa_ready",
+  "status": "deploy_preview_qa_ready",
   "packet_path": "./campaign-runtime.build.json",
   "report_path": ".campaign-runtime/assembly-report.json",
   "spec": {
@@ -562,18 +562,20 @@
     ]
   },
   "qa": {
-    "status": "completed_local_only",
-    "completed_at": "2026-06-09T11:44:12.666Z",
-    "base_url": "http://127.0.0.1:8087/fresh-kitchen-prep-stack-v1/",
-    "verdict_path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
-    "run_id": "MQ6KM0FY4BEJI9DURLBPV5IM18",
+    "status": "completed_preview",
+    "completed_at": "2026-06-09T11:52:52.658Z",
+    "base_url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/",
+    "verdict_path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KY913PJ56OE64OSGN0INMKU.json",
+    "run_id": "MQ6KY913PJ56OE64OSGN0INMKU",
     "counts": {
       "pass": 50
     },
+    "local_verdict_path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
+    "local_run_id": "MQ6KM0FY4BEJI9DURLBPV5IM18",
     "typed_card": "not_run"
   },
   "deploy": {
-    "status": "pending",
-    "reason": "PR/deploy preview not created yet"
+    "status": "completed",
+    "preview_url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/"
   }
 }

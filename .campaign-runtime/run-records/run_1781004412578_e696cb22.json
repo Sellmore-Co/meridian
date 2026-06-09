@@ -4,17 +4,19 @@
   "package_version": "0.1.0-alpha.0",
   "command": "run-record",
   "argv_shape": [
+    "--context",
     "--journal",
     "--json",
     "--lifecycle-journal",
     "--packet",
     "--primary-surface",
     "--qa-verdict",
+    "--report",
     "--run-id",
     "--surface-confidence",
     "--surfaces"
   ],
-  "created_at": "2026-06-09T11:45:15.197Z",
+  "created_at": "2026-06-09T11:55:19.852Z",
   "consent_state": "off",
   "consent_source": "default",
   "remit_attempted": false,
@@ -33,25 +35,25 @@
       "kind": "build_packet",
       "path": "./campaign-runtime.build.json",
       "schema_version": "campaign-runtime-build-packet/v0",
-      "sha256": "9bac3e3220ef94d574aea737ae4605096e1df8cf4cb2c63846ecbb19f1b149fe"
+      "sha256": "04fd05b0385eb30f335ffeaff6f2421792b8f7fca76aacdb77d32022710da1b0"
     },
     {
       "kind": "build_context",
       "path": ".campaign-runtime/build-context.json",
       "schema_version": "campaign-runtime-build-context/v0",
-      "sha256": "ff5579e8db7d4717761b72ae555a0a2cd7a57a7cabd84d3d59e67d805e4c7a8c"
+      "sha256": "3c432a1e2a9ea6f0dc506d5cbbd7cc6f4a94285125750e5c54db273816d128c9"
     },
     {
       "kind": "assembly_report",
       "path": ".campaign-runtime/assembly-report.json",
       "schema_version": "campaign-runtime-assembly-report/v0",
-      "sha256": "0d519114fcedb532fd079446cc93dea974b53ab4b923e85e71d79497b2c21326"
+      "sha256": "f80e35369ed4362a1085b14220e90c80c7249c5c7b22d88ce49e110e1e3ea45d"
     },
     {
       "kind": "qa_verdict",
-      "path": "./qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
+      "path": "./qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KY913PJ56OE64OSGN0INMKU.json",
       "schema_version": "1.0",
-      "sha256": "30d5d66b1087b4e1cc0b5e3834091e5d4b6eea77c047123a2b34dc5ce48fd903"
+      "sha256": "b6457bb09c38e9162dbab6cf6cb26e794c31200c740ad00034403fd6e25fe1cc"
     },
     {
       "kind": "findings_journal",
@@ -68,31 +70,15 @@
         "campaign.allowed_domains_confirmed",
         "spec.validation",
         "spec.store_profile.payment_methods_default_on",
-        "routing_meta.runtime_root",
-        "frontmatter.demoOnlyValues",
-        "frontmatter.demoOnlyValues",
-        "frontmatter.demoOnlyValues",
-        "frontmatter.demoOnlyValues",
-        "frontmatter.demoOnlyValues",
-        "frontmatter.demoOnlyValues",
-        "frontmatter.demoOnlyValues",
-        "frontmatter.demoOnlyValues",
-        "frontmatter.replaceFromSpecOrApi",
-        "frontmatter.replaceFromSpecOrApi",
-        "frontmatter.replaceFromSpecOrApi",
-        "frontmatter.replaceFromSpecOrApi",
-        "frontmatter.replaceFromSpecOrApi",
-        "frontmatter.replaceFromSpecOrApi",
-        "frontmatter.replaceFromSpecOrApi",
-        "frontmatter.replaceFromSpecOrApi",
-        "frontmatter.removeWhenUnsupported",
-        "frontmatter.removeWhenUnsupported",
-        "frontmatter.removeWhenUnsupported",
-        "frontmatter.removeWhenUnsupported",
-        "deploy.preview_url"
+        "adapter.raw_html_conversion_status",
+        "adapter.commerce_shell_adoption",
+        "adapter.template_files_copied",
+        "source_html.commerce_shell_required",
+        "source_html.commerce_shell_required",
+        "source_html.commerce_shell_required",
+        "source_html.commerce_shell_required"
       ],
-      "ready_count": 21,
-      "note": "Final doctor-output artifact. Static template/spec-literal warnings remain despite rendered QA passing; see workflow finding wf_1781005341002_2783998d."
+      "ready_count": 30
     },
     "spec_validation_rule_ids": [
       "StoreProfileShape"
@@ -112,13 +98,7 @@
     },
     "qa": {
       "disposition": "ready",
-      "gap_classes": [],
-      "local_run_id": "MQ6KM0FY4BEJI9DURLBPV5IM18",
-      "counts": {
-        "pass": 50
-      },
-      "posted": null,
-      "test_orders": []
+      "gap_classes": []
     },
     "finding_ids": [
       "wf_1781004499792_1b42a5b1",

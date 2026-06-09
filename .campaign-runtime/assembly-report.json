@@ -2,7 +2,7 @@
   "schema_version": "campaign-runtime-assembly-report/v0",
   "run_id": "asm_1781004512492",
   "generated_at": "2026-06-09T11:28:32.492Z",
-  "status": "local_qa_ready",
+  "status": "deploy_preview_qa_ready",
   "identity": {
     "map_id": "fresh-kitchen-prep-stack-v1-db4i",
     "public_route_slug": "fresh-kitchen-prep-stack-v1",
@@ -115,29 +115,37 @@
     },
     "deploy": {
       "stage": "deploy",
-      "status": "pending",
+      "status": "completed",
       "inputs": [],
-      "outputs": [],
-      "commands": [],
+      "outputs": [
+        "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/"
+      ],
+      "commands": [
+        "git push -u origin fresh-kitchen-prep-stack-v1",
+        "gh pr create --draft --base main --head fresh-kitchen-prep-stack-v1 --title \"Assemble Fresh Kitchen Prep Stack v1\"",
+        "curl -I https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/",
+        "curl -I https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/checkout/"
+      ],
       "blockers": [],
-      "warnings": [
-        "Preview URL pending PR/Netlify deploy."
-      ]
+      "warnings": []
     },
     "qa": {
       "stage": "qa",
       "status": "completed",
       "inputs": [],
       "outputs": [
-        "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json"
+        "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
+        "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KY913PJ56OE64OSGN0INMKU.json"
       ],
       "commands": [
         "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa resolve --packet campaign-runtime.build.json --base-url http://127.0.0.1:8087/fresh-kitchen-prep-stack-v1/ --json",
-        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url http://127.0.0.1:8087/fresh-kitchen-prep-stack-v1/ --browser --no-post-verdict --json"
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url http://127.0.0.1:8087/fresh-kitchen-prep-stack-v1/ --browser --no-post-verdict --json",
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa resolve --packet campaign-runtime.build.json --base-url https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/ --json",
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/ --browser --no-post-verdict --json"
       ],
       "blockers": [],
       "warnings": [
-        "Local-only browser QA; no typed-card test order fired. Deploy-preview QA still pending after PR preview URL exists."
+        "No typed-card test order fired. Preview browser QA passed; typed-card proof remains a separate QA step."
       ]
     }
   },
@@ -341,6 +349,22 @@
       "summary": "Campaigns OS browser QA passed 50/50 assertions locally",
       "path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
       "created_at": "2026-06-09T11:44:12.666Z"
+    },
+    {
+      "id": "ev_deploy_preview_fresh",
+      "stage": "deploy",
+      "kind": "url",
+      "summary": "Netlify deploy preview is live for the Fresh campaign root and checkout",
+      "path": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/",
+      "created_at": "2026-06-09T11:51:53.000Z"
+    },
+    {
+      "id": "ev_qa_fresh_preview",
+      "stage": "qa",
+      "kind": "qa-verdict",
+      "summary": "Campaigns OS browser QA passed 50/50 assertions on the Netlify deploy preview",
+      "path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KY913PJ56OE64OSGN0INMKU.json",
+      "created_at": "2026-06-09T11:52:52.658Z"
     }
   ],
   "blockers": [],
@@ -352,22 +376,25 @@
     }
   ],
   "next": {
-    "stage": "setup",
-    "owner": "next-campaigns-setup",
-    "action": "Run setup before build."
+    "stage": "typed_card_qa",
+    "owner": "operator",
+    "action": "Optionally run typed-card test-order proof against the deploy preview after confirming the desired order depth."
   },
   "qa": {
-    "status": "completed_local_only",
-    "base_url": "http://127.0.0.1:8087/fresh-kitchen-prep-stack-v1/",
-    "verdict_path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
-    "run_id": "MQ6KM0FY4BEJI9DURLBPV5IM18",
+    "status": "completed_preview",
+    "base_url": "https://deploy-preview-20--meridian-skincare.netlify.app/fresh-kitchen-prep-stack-v1/",
+    "verdict_path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KY913PJ56OE64OSGN0INMKU.json",
+    "run_id": "MQ6KY913PJ56OE64OSGN0INMKU",
     "counts": {
       "pass": 50
     },
+    "local_verdict_path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
+    "local_run_id": "MQ6KM0FY4BEJI9DURLBPV5IM18",
     "posted": null,
     "test_orders": [],
     "notes": [
-      "Browser QA passed card iframe geometry, express wallets, bundle selector, order bump unchecked state, checkout structure, upsell controls, and SDK debugger mounts."
+      "Browser QA passed card iframe geometry, express wallets, bundle selector, order bump unchecked state, checkout structure, upsell controls, and SDK debugger mounts on both local build and Netlify preview.",
+      "Typed-card test-order proof was not run."
     ]
   }
 }
