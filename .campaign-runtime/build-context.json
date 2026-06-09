@@ -1,46 +1,46 @@
 {
   "schema_version": "campaign-runtime-build-context/v0",
-  "generated_at": "2026-05-13T07:40:54.660Z",
+  "generated_at": "2026-06-09T11:28:32.480Z",
   "source_adapter": "html_funnel",
-  "status": "prepared",
+  "status": "local_qa_ready",
   "packet_path": "./campaign-runtime.build.json",
   "report_path": ".campaign-runtime/assembly-report.json",
   "spec": {
-    "path": "../designer/funnel-designs/home-outage-prep/campaign-spec-home-outage-prep-v0.json",
-    "hash": "75703893a6301214159baa18af885ce0a5a9eb2b9c90f0bf3d20ccc803104528",
+    "path": ".campaign-runtime/fetched-specs/fresh-kitchen-prep-stack-v1-db4i.json",
+    "hash": "0af9250870bdbe88d4cdf31d544d5d6f30696fd56bab76d67fa3458f9c1b19ad",
     "active_pages": [
       {
-        "id": "page_mp3qp2nt_25",
+        "id": "page_mq6es6pj_25",
         "type": "presell",
         "label": "Presell",
         "page_url": ""
       },
       {
-        "id": "page_mp3qp2nt_26",
+        "id": "page_mq6es6pj_26",
         "type": "landing",
         "label": "Landing (PDP)",
         "page_url": "landing/"
       },
       {
-        "id": "page_mp3qp2nt_27",
+        "id": "page_mq6es6pj_27",
         "type": "checkout",
         "label": "Checkout",
         "page_url": "checkout/"
       },
       {
-        "id": "page_mp3qp2nt_28",
+        "id": "page_mq6es6pj_28",
         "type": "upsell",
         "label": "Upsell",
         "page_url": "upsell/"
       },
       {
-        "id": "page_mp3qs1fg_226",
+        "id": "page_mq6etfcc_38",
         "type": "upsell",
         "label": "Upsell 2",
         "page_url": "upsell-2/"
       },
       {
-        "id": "page_mp3qp2nt_29",
+        "id": "page_mq6es6pj_29",
         "type": "thankyou",
         "label": "Thank You",
         "page_url": "receipt/"
@@ -48,102 +48,184 @@
     ]
   },
   "source": {
-    "root": "../designer/funnel-designs/home-outage-prep",
+    "root": "./source-html/fresh-kitchen-prep-stack-v1",
     "html_files": [
       {
-        "path": "checkout.html",
-        "name": "checkout.html",
-        "basename": "checkout",
-        "bytes": 17699,
-        "sha256": "ce7f9799ee61616e6a11fdc22636c99c2452de1ed459dd1a0fe040dbf3745342"
+        "path": "checkout-template-source.html",
+        "name": "checkout-template-source.html",
+        "basename": "checkout-template-source",
+        "bytes": 391,
+        "sha256": "afbd6493aa420c693a2c7a6930999885376545dbc9fb68533145a6a86fe40499"
       },
       {
-        "path": "landing.html",
+        "path": "designer-landing/landing.html",
         "name": "landing.html",
         "basename": "landing",
-        "bytes": 33525,
-        "sha256": "f73f2efeb53b99610f14accbc887ef85d76522132ea7149276fbcef66e415f85"
+        "bytes": 30048,
+        "sha256": "3033a46fd3ef5cfc2c72d1f6b9fc8e89de1efae0098182eacd449805d3f053e4"
       },
       {
         "path": "presell.html",
         "name": "presell.html",
         "basename": "presell",
-        "bytes": 4829,
-        "sha256": "791f6c92f1af95ec66a9c449d54686d21017400c4b84dfc958cdd70728804b84"
+        "bytes": 696,
+        "sha256": "8c308a62e25aa86a948fd4ef488955a0939ef874290486ccffa44ed5efc11e6f"
       },
       {
-        "path": "thank-you.html",
-        "name": "thank-you.html",
-        "basename": "thank-you",
-        "bytes": 5245,
-        "sha256": "73853dcd8e6c2683bdc61f1a792fba5bf4c846cd7dfad1c9b923e7ddd4480173"
+        "path": "receipt-template-source.html",
+        "name": "receipt-template-source.html",
+        "basename": "receipt-template-source",
+        "bytes": 292,
+        "sha256": "01aaa8249bfc39091e0c39b66dba5dba2d3f971baebb7237bf90815c01249ca0"
       },
       {
-        "path": "upsell-1.html",
-        "name": "upsell-1.html",
-        "basename": "upsell-1",
-        "bytes": 6063,
-        "sha256": "3143529ce25efba50147e9b62dfa9cb1202a39d1603c158a7573c294ba701c7b"
+        "path": "upsell-chef-knife-template-source.html",
+        "name": "upsell-chef-knife-template-source.html",
+        "basename": "upsell-chef-knife-template-source",
+        "bytes": 260,
+        "sha256": "1a6a75d4502a3c205d5eca6899eb1b5cbfef58480fe8cfe779f930369aa52ddd"
       },
       {
-        "path": "upsell-2.html",
-        "name": "upsell-2.html",
-        "basename": "upsell-2",
-        "bytes": 5615,
-        "sha256": "541ef58aa89d53a8e372d2b97f64d03f2fba6224c59358fcdbdd946b788328e2"
+        "path": "upsell-fruit-cleaner-template-source.html",
+        "name": "upsell-fruit-cleaner-template-source.html",
+        "basename": "upsell-fruit-cleaner-template-source",
+        "bytes": 316,
+        "sha256": "bfe876090eb0ec1294bce8730326b32cc297c3f139da0d1aab4e3766a495486f"
       }
-    ]
+    ],
+    "manifest": {
+      "path": "./source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json",
+      "schema_version": "source-html-manifest/v0",
+      "generator": "campaigns-os-dogfood-source-intake/manual-v1",
+      "generated_at": "2026-06-09T11:30:00.000Z",
+      "campaign_slug": "fresh-kitchen-prep-stack-v1",
+      "page_count": 6
+    },
+    "manifest_warnings": []
   },
   "page_map": [
     {
-      "page_id": "page_mp3qp2nt_25",
+      "page_id": "page_mq6es6pj_25",
       "source_path": "presell.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/presell.html"
+      "output_path": "./src/fresh-kitchen-prep-stack-v1/presell.html",
+      "page_kit": {
+        "target_path": "presell.html",
+        "output_path": "src/fresh-kitchen-prep-stack-v1/presell.html",
+        "public_route": "/fresh-kitchen-prep-stack-v1/",
+        "spec_route": "",
+        "page_type": "product",
+        "permalink_required": true,
+        "frontmatter": {
+          "page_type": "product",
+          "permalink": "/fresh-kitchen-prep-stack-v1/",
+          "next_url": "/fresh-kitchen-prep-stack-v1/landing/"
+        }
+      }
     },
     {
-      "page_id": "page_mp3qp2nt_26",
-      "source_path": "landing.html",
+      "page_id": "page_mq6es6pj_26",
+      "source_path": "designer-landing/landing.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/landing.html"
+      "output_path": "./src/fresh-kitchen-prep-stack-v1/landing.html",
+      "page_kit": {
+        "target_path": "landing.html",
+        "output_path": "src/fresh-kitchen-prep-stack-v1/landing.html",
+        "public_route": "/fresh-kitchen-prep-stack-v1/landing/",
+        "spec_route": "landing/",
+        "page_type": "product",
+        "permalink_required": false,
+        "frontmatter": {
+          "page_type": "product",
+          "next_url": "/fresh-kitchen-prep-stack-v1/checkout/"
+        }
+      }
     },
     {
-      "page_id": "page_mp3qp2nt_27",
-      "source_path": "checkout.html",
+      "page_id": "page_mq6es6pj_27",
+      "source_path": "checkout-template-source.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/checkout.html"
+      "output_path": "./src/fresh-kitchen-prep-stack-v1/checkout.html",
+      "page_kit": {
+        "target_path": "checkout.html",
+        "output_path": "src/fresh-kitchen-prep-stack-v1/checkout.html",
+        "public_route": "/fresh-kitchen-prep-stack-v1/checkout/",
+        "spec_route": "checkout/",
+        "page_type": "checkout",
+        "permalink_required": false,
+        "frontmatter": {
+          "page_type": "checkout",
+          "next_url": "/fresh-kitchen-prep-stack-v1/upsell/"
+        }
+      }
     },
     {
-      "page_id": "page_mp3qp2nt_28",
-      "source_path": "upsell-1.html",
+      "page_id": "page_mq6es6pj_28",
+      "source_path": "upsell-fruit-cleaner-template-source.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/upsell-1.html"
+      "output_path": "./src/fresh-kitchen-prep-stack-v1/upsell.html",
+      "page_kit": {
+        "target_path": "upsell.html",
+        "output_path": "src/fresh-kitchen-prep-stack-v1/upsell.html",
+        "public_route": "/fresh-kitchen-prep-stack-v1/upsell/",
+        "spec_route": "upsell/",
+        "page_type": "upsell",
+        "permalink_required": false,
+        "frontmatter": {
+          "page_type": "upsell",
+          "next_url": "/fresh-kitchen-prep-stack-v1/upsell-2/"
+        }
+      }
     },
     {
-      "page_id": "page_mp3qs1fg_226",
-      "source_path": "upsell-2.html",
+      "page_id": "page_mq6etfcc_38",
+      "source_path": "upsell-chef-knife-template-source.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/upsell-2.html"
+      "output_path": "./src/fresh-kitchen-prep-stack-v1/upsell-2.html",
+      "page_kit": {
+        "target_path": "upsell-2.html",
+        "output_path": "src/fresh-kitchen-prep-stack-v1/upsell-2.html",
+        "public_route": "/fresh-kitchen-prep-stack-v1/upsell-2/",
+        "spec_route": "upsell-2/",
+        "page_type": "upsell",
+        "permalink_required": false,
+        "frontmatter": {
+          "page_type": "upsell",
+          "next_url": "/fresh-kitchen-prep-stack-v1/receipt/"
+        }
+      }
     },
     {
-      "page_id": "page_mp3qp2nt_29",
-      "source_path": "thank-you.html",
+      "page_id": "page_mq6es6pj_29",
+      "source_path": "receipt-template-source.html",
       "skip_reason": null,
-      "output_path": "./src/home-outage-prep-v0/thank-you.html"
+      "output_path": "./src/fresh-kitchen-prep-stack-v1/receipt.html",
+      "page_kit": {
+        "target_path": "receipt.html",
+        "output_path": "src/fresh-kitchen-prep-stack-v1/receipt.html",
+        "public_route": "/fresh-kitchen-prep-stack-v1/receipt/",
+        "spec_route": "receipt/",
+        "page_type": "receipt",
+        "permalink_required": false,
+        "frontmatter": {
+          "page_type": "receipt"
+        }
+      }
     }
   ],
   "scaffold": {
     "mode": "fresh",
     "required": false,
-    "completed_at": "2026-05-13T07:42:00.000Z",
     "target_repo": ".",
-    "output_dir": "./src/home-outage-prep-v0",
+    "output_dir": "./src/fresh-kitchen-prep-stack-v1",
     "handoff_skill": "next-campaigns-setup",
     "handoff_artifact": ".campaign-runtime/setup-handoff.json",
-    "reason": "Setup completed: directory scaffolded and route registered."
+    "reason": "Target campaign output directory is missing; scaffold before build.",
+    "completed_at": "2026-06-09T11:44:12.666Z",
+    "template_family": "olympus"
   },
   "template": {
-    "family": "demeter",
+    "family": "olympus",
     "locked": true,
     "lock": {
       "locked": true,
@@ -153,190 +235,345 @@
         "prepare-build --template-family"
       ]
     },
-    "candidates": []
+    "candidates": [
+      {
+        "family": "olympus",
+        "source": "CampaignSpec preferred_template_family",
+        "confidence": "hint"
+      }
+    ]
+  },
+  "adapter_decisions": {
+    "raw_html_conversion_status": "pending",
+    "source_asset_strategy": "pagekit_campaign_asset_root",
+    "route_rewrite_policy": "campaignspec_routes_via_campaign_link",
+    "config_script_strategy": "campaign_asset",
+    "commerce_shell_adoption": "template_clone_first_required",
+    "wrapper_policy": "strip_document_wrappers",
+    "frontmatter_policy": "pagekit_yaml_frontmatter",
+    "script_style_reference_policy": "frontmatter_or_campaign_asset",
+    "cta_rewrite_policy": "campaignspec_routes_via_campaign_link",
+    "layout_choice": "campaign_layout",
+    "template_files_copied": {
+      "status": "pending",
+      "required_groups": [
+        "pages",
+        "_includes",
+        "_layouts",
+        "assets/css",
+        "assets/js",
+        "frontmatter_vocabulary"
+      ],
+      "groups": [],
+      "paths": []
+    }
   },
   "commerce_zone_findings": [
     {
-      "path": "checkout.html",
+      "path": "checkout-template-source.html",
       "zones": [
         "checkout",
         "payment",
-        "upsell",
-        "receipt",
-        "sdk_attributes"
+        "commerce_zones",
+        "sdk_owned_declared"
       ],
-      "sdk_attributes": [
-        "data-next-checkout",
-        "data-next-bundle-selector",
-        "data-next-selector-id",
-        "data-next-bundles",
-        "data-next-selection-mode",
-        "data-next-include-shipping",
-        "data-next-bundle-card",
-        "data-next-bundle-id",
-        "data-next-shipping-id",
-        "data-next-bundle-display",
-        "data-next-checkout-field",
-        "data-next-component",
-        "data-next-catalog-component",
-        "data-next-await",
-        "data-next-package-toggle",
-        "data-next-toggle-card",
-        "data-next-is-upsell",
-        "data-next-package-sync",
-        "data-next-package-id",
-        "data-next-toggle-image",
-        "data-next-toggle-display",
-        "data-next-payment-method",
-        "data-next-payment-form",
-        "data-next-display",
-        "data-next-cart-summary",
-        "data-next-discounts"
+      "commerce_zones": [
+        "checkout payment order-summary shipping bump bundle-selector"
       ],
-      "action": "review_and_preserve_catalog_surfaces"
-    },
-    {
-      "path": "landing.html",
-      "zones": [
-        "checkout"
-      ],
+      "sdk_owned_declared": true,
+      "requires_template_shell": true,
       "sdk_attributes": [],
-      "action": "review_and_preserve_catalog_surfaces"
+      "action": "adopt_selected_template_family_shell_before_assembly"
     },
     {
-      "path": "thank-you.html",
+      "path": "receipt-template-source.html",
       "zones": [
-        "payment",
+        "checkout",
         "receipt",
-        "sdk_attributes"
+        "commerce_zones",
+        "sdk_owned_declared"
       ],
-      "sdk_attributes": [
-        "data-next-await",
-        "data-next-display",
-        "data-next-catalog-component",
-        "data-next-order-items",
-        "data-next-receipt-line-item",
-        "data-next-show"
+      "commerce_zones": [
+        "receipt thank-you order-summary"
       ],
-      "action": "review_and_preserve_catalog_surfaces"
+      "sdk_owned_declared": true,
+      "requires_template_shell": true,
+      "sdk_attributes": [],
+      "action": "adopt_selected_template_family_shell_before_assembly"
     },
     {
-      "path": "upsell-1.html",
+      "path": "upsell-chef-knife-template-source.html",
       "zones": [
         "upsell",
-        "sdk_attributes"
+        "commerce_zones",
+        "sdk_owned_declared"
       ],
-      "sdk_attributes": [
-        "data-next-catalog-component",
-        "data-next-upsell",
-        "data-next-await",
-        "data-next-display",
-        "data-next-bundle-selector",
-        "data-next-selector-id",
-        "data-next-bundle-card",
-        "data-next-bundle-id",
-        "data-next-bundle-items",
-        "data-next-bundle-vouchers",
-        "data-next-selected",
-        "data-next-bundle-display",
-        "data-next-format",
-        "data-next-upsell-action"
+      "commerce_zones": [
+        "upsell"
       ],
-      "action": "review_and_preserve_catalog_surfaces"
+      "sdk_owned_declared": true,
+      "requires_template_shell": true,
+      "sdk_attributes": [],
+      "action": "adopt_selected_template_family_shell_before_assembly"
     },
     {
-      "path": "upsell-2.html",
+      "path": "upsell-fruit-cleaner-template-source.html",
       "zones": [
         "upsell",
-        "sdk_attributes"
+        "commerce_zones",
+        "sdk_owned_declared"
       ],
-      "sdk_attributes": [
-        "data-next-catalog-component",
-        "data-next-upsell",
-        "data-next-await",
-        "data-next-display",
-        "data-next-bundle-selector",
-        "data-next-upsell-context",
-        "data-next-selector-id",
-        "data-next-bundle-card",
-        "data-next-bundle-id",
-        "data-next-bundle-items",
-        "data-next-bundle-vouchers",
-        "data-next-quantity",
-        "data-next-min-quantity",
-        "data-next-max-quantity",
-        "data-next-selected",
-        "data-next-bundle-qty-for",
-        "data-next-quantity-decrease",
-        "data-next-quantity-display",
-        "data-next-quantity-increase",
-        "data-next-format",
-        "data-next-upsell-action"
+      "commerce_zones": [
+        "upsell"
       ],
-      "action": "review_and_preserve_catalog_surfaces"
+      "sdk_owned_declared": true,
+      "requires_template_shell": true,
+      "sdk_attributes": [],
+      "action": "adopt_selected_template_family_shell_before_assembly"
     }
   ],
   "prompts_required": [],
   "decisions": [
     {
-      "id": "dec_page_map_page_mp3qp2nt_25",
+      "id": "dec_page_map_page_mq6es6pj_25",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_25\" to source file \"presell.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6es6pj_25\" to source file \"presell.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-25, presell, presell-1, index"
+        "source-html manifest entry matched page \"page_mq6es6pj_25\" by page_id; path=\"presell.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_26",
+      "id": "dec_page_map_page_mq6es6pj_26",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_26\" to source file \"landing.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6es6pj_26\" to source file \"designer-landing/landing.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-26, landing-pdp, landing, landing-1, index"
+        "source-html manifest entry matched page \"page_mq6es6pj_26\" by page_id; path=\"designer-landing/landing.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_27",
+      "id": "dec_page_map_page_mq6es6pj_27",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_27\" to source file \"checkout.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6es6pj_27\" to source file \"checkout-template-source.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-27, checkout, checkout-1"
+        "source-html manifest entry matched page \"page_mq6es6pj_27\" by page_id; path=\"checkout-template-source.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_28",
+      "id": "dec_page_map_page_mq6es6pj_28",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_28\" to source file \"upsell-1.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6es6pj_28\" to source file \"upsell-fruit-cleaner-template-source.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-28, upsell, upsell-1"
+        "source-html manifest entry matched page \"page_mq6es6pj_28\" by page_id; path=\"upsell-fruit-cleaner-template-source.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qs1fg_226",
+      "id": "dec_page_map_page_mq6etfcc_38",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qs1fg_226\" to source file \"upsell-2.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6etfcc_38\" to source file \"upsell-chef-knife-template-source.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qs1fg-226, upsell-2, upsell"
+        "source-html manifest entry matched page \"page_mq6etfcc_38\" by page_id; path=\"upsell-chef-knife-template-source.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_29",
+      "id": "dec_page_map_page_mq6es6pj_29",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_29\" to source file \"thank-you.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6es6pj_29\" to source file \"receipt-template-source.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-29, thank-you, thankyou, receipt, thankyou-1"
+        "source-html manifest entry matched page \"page_mq6es6pj_29\" by page_id; path=\"receipt-template-source.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6es6pj_25",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6es6pj_25\" to Page Kit target \"presell.html\" with CPK page_type \"product\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"presell.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/presell.html\" derives from CampaignSpec route \"(entry route)\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6es6pj_26",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6es6pj_26\" to Page Kit target \"landing.html\" with CPK page_type \"product\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"designer-landing/landing.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/landing.html\" derives from CampaignSpec route \"landing/\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6es6pj_27",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6es6pj_27\" to Page Kit target \"checkout.html\" with CPK page_type \"checkout\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"checkout-template-source.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/checkout.html\" derives from CampaignSpec route \"checkout/\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6es6pj_28",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6es6pj_28\" to Page Kit target \"upsell.html\" with CPK page_type \"upsell\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"upsell-fruit-cleaner-template-source.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/upsell.html\" derives from CampaignSpec route \"upsell/\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6etfcc_38",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6etfcc_38\" to Page Kit target \"upsell-2.html\" with CPK page_type \"upsell\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"upsell-chef-knife-template-source.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/upsell-2.html\" derives from CampaignSpec route \"upsell-2/\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6es6pj_29",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6es6pj_29\" to Page Kit target \"receipt.html\" with CPK page_type \"receipt\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"receipt-template-source.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/receipt.html\" derives from CampaignSpec route \"receipt/\" and public slug \"fresh-kitchen-prep-stack-v1\""
       ]
     }
-  ]
+  ],
+  "theme": {
+    "status": "missing",
+    "policy": "inspect_only",
+    "source_kind": "html_funnel",
+    "producer": {
+      "name": "unknown",
+      "version": "unknown"
+    },
+    "source_files": [
+      {
+        "path": "source-html/fresh-kitchen-prep-stack-v1/designer-landing/css/style.css",
+        "role": "page",
+        "source": "mapped_html_reference",
+        "hash": "fe4f7f0632dbd227bba495d5b1d57ffc01ec7c96ebe74e8ad174355f0e96aa5c",
+        "token_count": 0,
+        "inline_block_index": null,
+        "referenced_by": [
+          {
+            "page_id": "page_mq6es6pj_26",
+            "path": "designer-landing/landing.html",
+            "ref": "css/style.css"
+          }
+        ]
+      },
+      {
+        "path": "source-html/fresh-kitchen-prep-stack-v1/designer-landing/css/slick.css",
+        "role": "page",
+        "source": "mapped_html_reference",
+        "hash": "34ae0c2960088a4855aa1464057a7170b29808ff83d67a674cf11e8cd1cdd0cc",
+        "token_count": 0,
+        "inline_block_index": null,
+        "referenced_by": [
+          {
+            "page_id": "page_mq6es6pj_26",
+            "path": "designer-landing/landing.html",
+            "ref": "css/slick.css"
+          }
+        ]
+      }
+    ],
+    "selected_source": null,
+    "producer_defaults": {
+      "matched": false,
+      "producer": "figma-sections-export",
+      "version": "v0",
+      "matched_tokens": [],
+      "unresolved_tokens": [],
+      "present_core_tokens": []
+    },
+    "confidence": "none",
+    "generated": {
+      "css_path": ".campaign-runtime/theme/brand-theme.css",
+      "report_path": ".campaign-runtime/theme/theme-report.json",
+      "safety": {
+        "ok": false,
+        "errors": [
+          {
+            "code": "theme.css.empty",
+            "message": "No generated CSS because no source tokens were selected."
+          }
+        ],
+        "warnings": []
+      },
+      "stale": {
+        "stale": false,
+        "reasons": []
+      },
+      "can_generate": false,
+      "can_auto_generate": false,
+      "overwrite_requires_force": false
+    },
+    "mappings": [],
+    "unmapped_defaults": [],
+    "warnings": [],
+    "wrote": {
+      "report": true,
+      "css": false
+    }
+  },
+  "build": {
+    "status": "completed",
+    "completed_at": "2026-06-09T11:44:12.666Z",
+    "commands": [
+      "npm run build"
+    ],
+    "outputs": [
+      "./_site/fresh-kitchen-prep-stack-v1/"
+    ]
+  },
+  "polish": {
+    "status": "completed",
+    "completed_at": "2026-06-09T11:44:12.666Z",
+    "focus": [
+      "payment rows",
+      "bundle selector",
+      "order bump",
+      "upsell copy",
+      "brand/assets"
+    ]
+  },
+  "qa": {
+    "status": "completed_local_only",
+    "completed_at": "2026-06-09T11:44:12.666Z",
+    "base_url": "http://127.0.0.1:8087/fresh-kitchen-prep-stack-v1/",
+    "verdict_path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
+    "run_id": "MQ6KM0FY4BEJI9DURLBPV5IM18",
+    "counts": {
+      "pass": 50
+    },
+    "typed_card": "not_run"
+  },
+  "deploy": {
+    "status": "pending",
+    "reason": "PR/deploy preview not created yet"
+  }
 }

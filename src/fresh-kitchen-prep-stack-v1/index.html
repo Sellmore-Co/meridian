@@ -1,0 +1,55 @@
+---
+page_layout: base-presell.html
+title: "FreshPak Vacuum Sealer — Kitchen Prep Guide"
+page_type: product
+meta_tags:
+  next-funnel: Fresh Kitchen Prep Stack v1
+  next-page-type: product
+scripts:
+  - js/presell/countdown.js
+next_url: "landing.html"
+---
+
+<main class="bg-white">
+  <section class="border-b border-[var(--border-default)] py-12 md:py-16">
+    <div class="max-w-[820px] mx-auto px-[18px] md:px-[35px]">
+      <p class="font-bold text-[var(--brand-primary)] uppercase tracking-[0.12em] text-sm mb-4">Kitchen prep report</p>
+      <h1 class="font-bold text-[34px] md:text-[50px] leading-tight text-[var(--text-primary)] mb-5">
+        The simple counter-top tool that keeps fresh food ready longer
+      </h1>
+      <p class="text-[18px] md:text-[21px] leading-[1.6] text-[var(--text-secondary)]">
+        FreshPak vacuum seals produce, proteins, pantry staples, and meal-prep portions so fewer groceries end up wasted before the week is over.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-14">
+    <div class="max-w-[820px] mx-auto px-[18px] md:px-[35px] grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+      <div>
+        <h2 class="text-[28px] md:text-[36px] font-bold leading-tight mb-5">Why home cooks are switching to FreshPak</h2>
+        <div class="space-y-5 text-[17px] leading-[1.65] text-[var(--text-secondary)]">
+          <p><strong class="text-[var(--text-primary)]">Less waste:</strong> lock air out before herbs wilt, meat oxidizes, or bulk buys lose their texture.</p>
+          <p><strong class="text-[var(--text-primary)]">Faster weeknights:</strong> portion ingredients once and move straight from fridge, freezer, or pantry to cooking.</p>
+          <p><strong class="text-[var(--text-primary)]">One-touch sealing:</strong> choose dry or moist modes and seal bags without a bulky commercial machine.</p>
+        </div>
+      </div>
+      <div class="rounded-lg border border-[var(--border-default)] overflow-hidden bg-[var(--surface-alt)]">
+        <img src="{{ 'landing/images/banner-product.png' | campaign_asset }}" alt="FreshPak Vacuum Sealer" class="w-full h-auto block">
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-[var(--border-default)] py-10 md:py-14">
+    <div class="max-w-[820px] mx-auto px-[18px] md:px-[35px]">
+      <div class="bg-[var(--surface-alt)] border border-[var(--border-default)] rounded-lg p-6 md:p-8">
+        <h2 class="text-[26px] md:text-[34px] font-bold leading-tight mb-4">See the full FreshPak offer</h2>
+        <p class="text-[17px] leading-[1.65] text-[var(--text-secondary)] mb-6">
+          Review the product details, food-storage examples, and current bundle pricing before choosing your FreshPak package.
+        </p>
+        <a href="{{ next_url | campaign_link }}" class="inline-flex items-center justify-center rounded-md bg-[var(--brand-primary)] px-6 py-4 text-white font-bold text-[16px] uppercase">
+          Continue to FreshPak
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

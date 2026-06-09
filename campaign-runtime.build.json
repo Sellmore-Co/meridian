@@ -1,53 +1,156 @@
 {
   "schema_version": "campaign-runtime-build-packet/v0",
   "campaign": {
-    "public_route_slug": "home-outage-prep-v0",
-    "campaign_directory": "home-outage-prep-v0",
-    "live_url_path": "/home-outage-prep-v0/",
+    "public_route_slug": "fresh-kitchen-prep-stack-v1",
+    "campaign_directory": "fresh-kitchen-prep-stack-v1",
+    "live_url_path": "/fresh-kitchen-prep-stack-v1/",
     "campaigns_app_url": null,
     "api_key_source": "env:CAMPAIGNS_API_KEY",
-    "allowed_domains_confirmed": true
+    "allowed_domains_confirmed": false
   },
   "spec": {
-    "map_id": "home-outage-prep-v0-sf21",
-    "spec_url": "https://campaign-map.nextcommerce.com/api/spec/home-outage-prep-v0-sf21",
-    "local_path": "../designer/funnel-designs/home-outage-prep/campaign-spec-home-outage-prep-v0.json"
+    "map_id": "fresh-kitchen-prep-stack-v1-db4i",
+    "spec_url": "https://campaign-map.nextcommerce.com/api/spec/fresh-kitchen-prep-stack-v1-db4i",
+    "local_path": ".campaign-runtime/fetched-specs/fresh-kitchen-prep-stack-v1-db4i.json"
   },
   "source_html": {
-    "root": "../designer/funnel-designs/home-outage-prep",
+    "root": "./source-html/fresh-kitchen-prep-stack-v1",
     "pages": [
       {
-        "page_id": "page_mp3qp2nt_25",
-        "path": "presell.html"
+        "page_id": "page_mq6es6pj_25",
+        "path": "presell.html",
+        "page_type": "presell",
+        "page_kit": {
+          "target_path": "presell.html",
+          "output_path": "src/fresh-kitchen-prep-stack-v1/presell.html",
+          "public_route": "/fresh-kitchen-prep-stack-v1/",
+          "spec_route": "",
+          "page_type": "product",
+          "permalink_required": true,
+          "frontmatter": {
+            "page_type": "product",
+            "permalink": "/fresh-kitchen-prep-stack-v1/",
+            "next_url": "/fresh-kitchen-prep-stack-v1/landing/"
+          }
+        }
       },
       {
-        "page_id": "page_mp3qp2nt_26",
-        "path": "landing.html"
+        "page_id": "page_mq6es6pj_26",
+        "path": "designer-landing/landing.html",
+        "page_type": "landing",
+        "page_kit": {
+          "target_path": "landing.html",
+          "output_path": "src/fresh-kitchen-prep-stack-v1/landing.html",
+          "public_route": "/fresh-kitchen-prep-stack-v1/landing/",
+          "spec_route": "landing/",
+          "page_type": "product",
+          "permalink_required": false,
+          "frontmatter": {
+            "page_type": "product",
+            "next_url": "/fresh-kitchen-prep-stack-v1/checkout/"
+          }
+        }
       },
       {
-        "page_id": "page_mp3qp2nt_27",
-        "path": "checkout.html"
+        "page_id": "page_mq6es6pj_27",
+        "path": "checkout-template-source.html",
+        "page_type": "checkout",
+        "page_kit": {
+          "target_path": "checkout.html",
+          "output_path": "src/fresh-kitchen-prep-stack-v1/checkout.html",
+          "public_route": "/fresh-kitchen-prep-stack-v1/checkout/",
+          "spec_route": "checkout/",
+          "page_type": "checkout",
+          "permalink_required": false,
+          "frontmatter": {
+            "page_type": "checkout",
+            "next_url": "/fresh-kitchen-prep-stack-v1/upsell/"
+          }
+        }
       },
       {
-        "page_id": "page_mp3qp2nt_28",
-        "path": "upsell-1.html"
+        "page_id": "page_mq6es6pj_28",
+        "path": "upsell-fruit-cleaner-template-source.html",
+        "page_type": "upsell",
+        "page_kit": {
+          "target_path": "upsell.html",
+          "output_path": "src/fresh-kitchen-prep-stack-v1/upsell.html",
+          "public_route": "/fresh-kitchen-prep-stack-v1/upsell/",
+          "spec_route": "upsell/",
+          "page_type": "upsell",
+          "permalink_required": false,
+          "frontmatter": {
+            "page_type": "upsell",
+            "next_url": "/fresh-kitchen-prep-stack-v1/upsell-2/"
+          }
+        }
       },
       {
-        "page_id": "page_mp3qs1fg_226",
-        "path": "upsell-2.html"
+        "page_id": "page_mq6etfcc_38",
+        "path": "upsell-chef-knife-template-source.html",
+        "page_type": "upsell",
+        "page_kit": {
+          "target_path": "upsell-2.html",
+          "output_path": "src/fresh-kitchen-prep-stack-v1/upsell-2.html",
+          "public_route": "/fresh-kitchen-prep-stack-v1/upsell-2/",
+          "spec_route": "upsell-2/",
+          "page_type": "upsell",
+          "permalink_required": false,
+          "frontmatter": {
+            "page_type": "upsell",
+            "next_url": "/fresh-kitchen-prep-stack-v1/receipt/"
+          }
+        }
       },
       {
-        "page_id": "page_mp3qp2nt_29",
-        "path": "thank-you.html"
+        "page_id": "page_mq6es6pj_29",
+        "path": "receipt-template-source.html",
+        "page_type": "thankyou",
+        "page_kit": {
+          "target_path": "receipt.html",
+          "output_path": "src/fresh-kitchen-prep-stack-v1/receipt.html",
+          "public_route": "/fresh-kitchen-prep-stack-v1/receipt/",
+          "spec_route": "receipt/",
+          "page_type": "receipt",
+          "permalink_required": false,
+          "frontmatter": {
+            "page_type": "receipt"
+          }
+        }
       }
-    ]
+    ],
+    "adapter_contract": {
+      "raw_html_conversion_status": "pending",
+      "source_asset_strategy": "pagekit_campaign_asset_root",
+      "route_rewrite_policy": "campaignspec_routes_via_campaign_link",
+      "config_script_strategy": "campaign_asset",
+      "commerce_shell_adoption": "template_clone_first_required",
+      "wrapper_policy": "strip_document_wrappers",
+      "frontmatter_policy": "pagekit_yaml_frontmatter",
+      "script_style_reference_policy": "frontmatter_or_campaign_asset",
+      "cta_rewrite_policy": "campaignspec_routes_via_campaign_link",
+      "layout_choice": "campaign_layout",
+      "template_files_copied": {
+        "status": "pending",
+        "required_groups": [
+          "pages",
+          "_includes",
+          "_layouts",
+          "assets/css",
+          "assets/js",
+          "frontmatter_vocabulary"
+        ],
+        "groups": [],
+        "paths": []
+      }
+    }
   },
   "assembly": {
     "implementation": "next-campaigns-build",
     "target_repo": ".",
-    "output_dir": "src/home-outage-prep-v0",
-    "template_family": "demeter",
-    "template_decision_notes": "Template family locked by prepare-build --template-family demeter.",
+    "output_dir": "src/fresh-kitchen-prep-stack-v1",
+    "template_family": "olympus",
+    "template_decision_notes": "Template family locked by prepare-build --template-family olympus.",
     "template_lock": {
       "locked": true,
       "locked_by": "operator_flag",
@@ -58,7 +161,7 @@
     },
     "commerce_catalog": {
       "required": true,
-      "family": "demeter",
+      "family": "olympus",
       "version": null,
       "path": "../campaigns-os/contracts/commerce-surface-catalog.json"
     },
@@ -68,15 +171,24 @@
     ]
   },
   "deploy": {
-    "target": "unknown",
+    "target": "netlify",
     "preview_url": null,
-    "production_url": "https://meridian-skincare.netlify.app/home-outage-prep-v0/",
-    "live_url_path": "/home-outage-prep-v0/"
+    "production_url": null,
+    "live_url_path": "/fresh-kitchen-prep-stack-v1/"
   },
   "qa": {
-    "test_orders_allowed": true,
-    "sandbox_test_card_confirmed": true,
-    "test_order_policy_notes": "Default: SDK-driven test orders are not fired until the deployed domain is allowlisted and test_card sandbox routing is confirmed."
+    "test_orders_allowed": false,
+    "sandbox_test_card_confirmed": false,
+    "proof_policy": {
+      "browser_qa_required": true,
+      "typed_card_depth": "common",
+      "localhost_development_domain_allowed": true,
+      "non_localhost_origin_allowlist_required": true,
+      "order_path_depth": "common",
+      "operator_approval_state": "not_required_global_test_cards",
+      "qa_portal_publish_default": true
+    },
+    "test_order_policy_notes": "Test Orders use global test cards that bypass the gateway and create no transactions. Run them any time with `qa run --test-order common` (3-5 shape sample) or `--test-order full` (every permutation). Localhost on any port is a globally allowed Development domain; non-localhost preview/production origins still need SDK origin allowlist confirmation. These flags are informational, not a permission gate."
   },
   "notes": "Generated by campaigns-os prepare-build. Replace demo refs from CampaignSpec/API before launch."
 }

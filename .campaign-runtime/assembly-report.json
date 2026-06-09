@@ -1,31 +1,37 @@
 {
   "schema_version": "campaign-runtime-assembly-report/v0",
-  "run_id": "asm_1778658054663",
-  "generated_at": "2026-05-13T07:40:54.663Z",
-  "status": "prepared",
+  "run_id": "asm_1781004512492",
+  "generated_at": "2026-06-09T11:28:32.492Z",
+  "status": "local_qa_ready",
   "identity": {
-    "map_id": "home-outage-prep-v0-sf21",
-    "public_route_slug": "home-outage-prep-v0",
-    "campaign_directory": "home-outage-prep-v0",
-    "live_url_path": "/home-outage-prep-v0/",
-    "spec_hash": "75703893a6301214159baa18af885ce0a5a9eb2b9c90f0bf3d20ccc803104528"
+    "map_id": "fresh-kitchen-prep-stack-v1-db4i",
+    "public_route_slug": "fresh-kitchen-prep-stack-v1",
+    "campaign_directory": "fresh-kitchen-prep-stack-v1",
+    "live_url_path": "/fresh-kitchen-prep-stack-v1/",
+    "spec_hash": "0af9250870bdbe88d4cdf31d544d5d6f30696fd56bab76d67fa3458f9c1b19ad"
   },
   "inputs": {
     "packet_path": "./campaign-runtime.build.json",
     "context_path": ".campaign-runtime/build-context.json",
-    "spec_path": "../designer/funnel-designs/home-outage-prep/campaign-spec-home-outage-prep-v0.json",
+    "spec_path": ".campaign-runtime/fetched-specs/fresh-kitchen-prep-stack-v1-db4i.json",
     "source": {
       "kind": "html_funnel",
-      "root": "../designer/funnel-designs/home-outage-prep"
+      "root": "./source-html/fresh-kitchen-prep-stack-v1"
     },
     "target_repo": "."
   },
   "template_family": {
-    "value": "demeter",
+    "value": "olympus",
     "locked": true,
     "locked_by": "operator_flag",
     "commerce_catalog_version": null,
-    "candidates": []
+    "candidates": [
+      {
+        "family": "olympus",
+        "source": "CampaignSpec preferred_template_family",
+        "confidence": "hint"
+      }
+    ]
   },
   "stages": {
     "prepare_build": {
@@ -43,242 +49,300 @@
     },
     "doctor": {
       "stage": "doctor",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [],
+      "commands": [
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs doctor --packet campaign-runtime.build.json --json"
+      ],
+      "blockers": [],
+      "warnings": [
+        "Doctor still emits static Olympus contract/spec-literal reminders after rendered output verifies replacements; see workflow finding wf_1781005341002_2783998d."
+      ]
+    },
+    "setup": {
+      "stage": "setup",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [
+        "src/fresh-kitchen-prep-stack-v1/",
+        "package-lock.json"
+      ],
+      "commands": [
+        "cp -R /Users/devin/Developer/campaign-cart-starter-templates/src/olympus src/fresh-kitchen-prep-stack-v1",
+        "npm install next-campaign-page-kit@^0.1.3"
+      ],
+      "blockers": [],
+      "warnings": [
+        "npm audit reports one critical advisory in dependency tree."
+      ]
+    },
+    "assembly": {
+      "stage": "assembly",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [
+        "_site/fresh-kitchen-prep-stack-v1/index.html",
+        "_site/fresh-kitchen-prep-stack-v1/landing/index.html",
+        "_site/fresh-kitchen-prep-stack-v1/checkout/index.html",
+        "_site/fresh-kitchen-prep-stack-v1/upsell/index.html",
+        "_site/fresh-kitchen-prep-stack-v1/upsell-2/index.html",
+        "_site/fresh-kitchen-prep-stack-v1/receipt/index.html"
+      ],
+      "commands": [
+        "npm run build"
+      ],
+      "blockers": [],
+      "warnings": []
+    },
+    "polish": {
+      "stage": "polish",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [
+        "src/fresh-kitchen-prep-stack-v1/checkout.html",
+        "src/fresh-kitchen-prep-stack-v1/upsell.html",
+        "src/fresh-kitchen-prep-stack-v1/upsell-2.html",
+        "src/fresh-kitchen-prep-stack-v1/receipt.html"
+      ],
+      "commands": [
+        "Campaign source edits: removed unsupported payment rows, rooted runtime meta tags, replaced demo refs, copied FreshPak brand/assets, full-price upsell copy."
+      ],
+      "blockers": [],
+      "warnings": [
+        "Visual design kept intentionally light; commerce template fidelity prioritized over bespoke styling."
+      ]
+    },
+    "deploy": {
+      "stage": "deploy",
       "status": "pending",
       "inputs": [],
       "outputs": [],
       "commands": [],
       "blockers": [],
-      "warnings": []
-    },
-    "setup": {
-      "stage": "setup",
-      "status": "completed",
-      "inputs": [
-        "./campaign-runtime.build.json",
-        ".campaign-runtime/build-context.json"
-      ],
-      "outputs": [
-        "src/home-outage-prep-v0/",
-        "src/home-outage-prep-v0/assets/",
-        "_data/campaigns.json#home-outage-prep-v0"
-      ],
-      "commands": [
-        "mkdir -p src/home-outage-prep-v0/assets",
-        "register route home-outage-prep-v0 in _data/campaigns.json (store_name=Keer, store_url=https://keer.29next.store)"
-      ],
-      "blockers": [],
-      "warnings": []
-    },
-    "assembly": {
-      "stage": "assembly",
-      "status": "completed",
-      "inputs": [
-        "./campaign-runtime.build.json",
-        ".campaign-runtime/build-context.json",
-        "../designer/funnel-designs/home-outage-prep/",
-        "../campaign-cart-starter-templates/src/demeter/"
-      ],
-      "outputs": [
-        "src/home-outage-prep-v0/_layouts/landing-passthrough.html",
-        "src/home-outage-prep-v0/presell.html (passthrough from designed source)",
-        "src/home-outage-prep-v0/landing.html (passthrough from designed source)",
-        "src/home-outage-prep-v0/checkout.html (demeter checkout, spec-driven values)",
-        "src/home-outage-prep-v0/upsell.html (demeter tier-cards, pkg 3 Fire Blanket, voucher FIRE)",
-        "src/home-outage-prep-v0/upsell-2.html (demeter stepper, pkg 4 Solar Spotlight, voucher SOLAR)",
-        "src/home-outage-prep-v0/receipt.html (demeter receipt)",
-        "src/home-outage-prep-v0/assets/ (demeter starter + brand.css + landing/ + products/)",
-        "src/home-outage-prep-v0/assets/config.js (apiKey + storeName from CampaignSpec, paypal removed)"
-      ],
-      "commands": [
-        "cp -r campaign-cart-starter-templates/src/demeter/* meridian/src/home-outage-prep-v0/",
-        "Replace config.js apiKey with CampaignSpec campaign.campaigns_api_key",
-        "Replace storeName with 'Keer'",
-        "Drop paypal from paymentConfig.expressCheckout.methodOrder",
-        "Wire frontmatter from CampaignSpec: packages.main_package=1, packages.prepurchase_1=2",
-        "Remove order_bump.switch01 (no second prepurchase in spec)",
-        "Replace shipping_methods with the one CampaignSpec shipping (standard=1)",
-        "Drop bundles[].shipping_method (no tier-specific shipping in spec)",
-        "Use bundle 2x as default-selected ('BEST DEAL' badge)",
-        "Pass show_paypal=false show_klarna=false to payment-methods.html (spec excludes them)",
-        "Wire upsell.html: pkg 3 Fire Blanket, single voucher FIRE on all 3 tiers (spec carries one voucher per upsell)",
-        "Wire upsell-2.html: pkg 4 Solar Spotlight, voucher SOLAR, qty stepper 1-5",
-        "Rooted SDK routing meta tags via campaign_link (next_url + decline_url frontmatter)",
-        "Removed unused upsell-bundle-tier-pills.html template",
-        "Renamed upsell-bundle-tier-cards.html → upsell.html, upsell-bundle-stepper.html → upsell-2.html (match spec page_url)",
-        "npm run build → 67 pages built, 6 home-outage-prep-v0 pages OK"
-      ],
-      "blockers": [],
       "warnings": [
-        {
-          "code": "TIER_UPSELL_SINGLE_VOUCHER",
-          "message": "Upsell 1 tier cards (1x/2x/3x) all reuse single CampaignSpec voucher FIRE — spec does not carry per-tier voucher codes. Map Builder should expose tier voucher mapping, or doctor should flag tier UX with single voucher."
-        },
-        {
-          "code": "BRAND_LOGO_PLACEHOLDER",
-          "message": "Checkout header + receipt use next-logo.png placeholder. No RescueRay logo asset shipped in designer source — polish should add a brand asset and override checkout-header.html + receipt-skeleton.html in slug-local _includes."
-        }
+        "Preview URL pending PR/Netlify deploy."
       ]
-    },
-    "polish": {
-      "stage": "polish",
-      "status": "completed",
-      "inputs": [
-        "src/home-outage-prep-v0/_includes/checkout-header.html",
-        "src/home-outage-prep-v0/_includes/receipt-skeleton.html",
-        "src/home-outage-prep-v0/receipt.html",
-        "src/home-outage-prep-v0/assets/js/checkout-demeter.js"
-      ],
-      "outputs": [
-        "Replaced next-logo.png placeholder with /home-outage-prep-v0/landing/images/logo.png (RescueRay brand mark from designer source) in checkout-header + receipt-skeleton + receipt body",
-        "Suppressed initExitIntentImage(placehold.co/600x400, EXIT10) in checkout-demeter.js — neither asset exists on this campaign"
-      ],
-      "commands": [
-        "Override _includes/checkout-header.html brand-logo to landing/images/logo.png (page-kit-commands.md gotcha)",
-        "Override _includes/receipt-skeleton.html brand-logo similarly",
-        "Override inline brand-logo in receipt.html (also references next-logo.png)",
-        "Rewrite checkout-demeter.js to drop initExitIntentImage call"
-      ],
-      "blockers": [],
-      "warnings": [
-        {
-          "code": "FUNNEL_VISUAL_INCONSISTENCY",
-          "message": "Presell + landing use designer source HTML (RescueRay navy/orange palette via brand.css). Checkout + upsells + receipt use demeter's tokens.css palette. Brand identity changes mid-funnel. v2 polish: retheme demeter visuals with RR colors via slug-local tokens.css override."
-        },
-        {
-          "code": "LOGO_SOURCE_OF_TRUTH",
-          "message": "Used landing/images/logo.png as the brand logo on checkout + receipt. Logo lives under a sub-asset path (landing/) rather than a top-level brand asset. Polish accepted this; designer source should ship a /brand/logo.png at the top of assets for the next round."
-        }
-      ]
-    },
-    "deploy": {
-      "stage": "deploy",
-      "status": "completed",
-      "inputs": [
-        "branch home-outage-prep-v0-sf21",
-        "PR https://github.com/Sellmore-Co/meridian/pull/7"
-      ],
-      "outputs": [
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/presell/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
-      ],
-      "commands": [
-        "git add -A && git commit -m '...' && git push -u origin home-outage-prep-v0-sf21",
-        "gh pr create --draft --base main --head home-outage-prep-v0-sf21",
-        "Netlify deploy preview for meridian-skincare: SUCCESS"
-      ],
-      "blockers": [],
-      "warnings": []
     },
     "qa": {
       "stage": "qa",
       "status": "completed",
-      "inputs": [
-        "https://meridian-skincare.netlify.app/home-outage-prep-v0/ (production live)"
-      ],
+      "inputs": [],
       "outputs": [
-        ".campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP488C874DE9BB07KQLAF2TCTV.json (browser-only: 41 pass / 0 fail / READY)",
-        ".campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP48BJ6BQ494G2RM6OHD3O7BFJ.json (browser + test-order both: 43 pass / 1 warn / 0 fail)",
-        ".campaign-runtime/qa-home-outage-prep/screenshots/ (7 funnel screenshots from earlier preview walk)",
-        "Test order #102248 ref_id 807d4fba7dbb4d7c855c243fd5123931 (ACCEPT path, $39.98, verified API 201/200, Spreedly tokenized)",
-        "Test order #102251 ref_id 7aefc0059432476ea22bde177baa945c (DECLINE path, $39.98, verified API 201/200, Spreedly tokenized)"
+        "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json"
       ],
       "commands": [
-        "campaigns-os qa resolve --packet ... --base-url https://meridian-skincare.netlify.app",
-        "campaigns-os qa run --packet ... --base-url https://meridian-skincare.netlify.app --browser (static + render-only)",
-        "campaigns-os qa run --packet ... --base-url https://meridian-skincare.netlify.app --browser --test-order both --allow-test-orders --sandbox-test-card-confirmed (Playwright typed-card, both upsell paths)"
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa resolve --packet campaign-runtime.build.json --base-url http://127.0.0.1:8087/fresh-kitchen-prep-stack-v1/ --json",
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs qa run --packet campaign-runtime.build.json --base-url http://127.0.0.1:8087/fresh-kitchen-prep-stack-v1/ --browser --no-post-verdict --json"
       ],
       "blockers": [],
       "warnings": [
-        {
-          "code": "BROWSER_CONSOLE_ERRORS",
-          "message": "Playwright run flagged 1 browser console issue on checkout: a missing /home-outage-prep-v0/images/credit-card-flags.svg asset from the Demeter starter. Friction #10 / starter-template asset hygiene."
-        },
-        {
-          "code": "QA_RECEIPT_LINE_ITEMS_MISSING_UPSELL",
-          "message": "Both accept and decline test orders show identical receipt_line_items (base 2x bundle only). Accept path clicked through upsell-1 and the upsell-add API succeeded, but the QA toolkit's captured receipt_line_items doesn't include the upsell tier. Either re-read order lines after upsell-add, or rename the field. New friction for SELL-271."
-        },
-        {
-          "code": "CAMPAIGNS_OS_START_DESTRUCTIVE",
-          "message": "Re-running campaigns-os start to regenerate the packet (e.g., to flip --test-orders-allowed on) wiped the populated .campaign-runtime/assembly-report.json and build-context.json. Lifecycle state was rebuilt from scratch and had to be manually restored from git. Either expose qa policy set as a non-destructive subcommand, or have start detect existing report content and merge instead of overwrite. New friction for SELL-271."
-        },
-        {
-          "code": "STATIC_QA_404",
-          "message": "Live page has a 404 on /home-outage-prep-v0/images/credit-card-flags.svg (demeter starter asset reference). Demeter starter ships partials that reference an asset not in the template's own assets/images/. Polish item."
-        },
-        {
-          "code": "API_REQUEST_ABORTED",
-          "message": "Raw browser event logs also include [ApiClient] API request failed: signal is aborted without reason during navigation. It did not drive the top-level QA warning in this run, but remains useful SDK noise to quiet separately."
-        }
+        "Local-only browser QA; no typed-card test order fired. Deploy-preview QA still pending after PR preview URL exists."
       ]
     }
   },
   "decisions": [
     {
-      "id": "dec_page_map_page_mp3qp2nt_25",
+      "id": "dec_page_map_page_mq6es6pj_25",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_25\" to source file \"presell.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6es6pj_25\" to source file \"presell.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-25, presell, presell-1, index"
+        "source-html manifest entry matched page \"page_mq6es6pj_25\" by page_id; path=\"presell.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_26",
+      "id": "dec_page_map_page_mq6es6pj_26",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_26\" to source file \"landing.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6es6pj_26\" to source file \"designer-landing/landing.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-26, landing-pdp, landing, landing-1, index"
+        "source-html manifest entry matched page \"page_mq6es6pj_26\" by page_id; path=\"designer-landing/landing.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_27",
+      "id": "dec_page_map_page_mq6es6pj_27",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_27\" to source file \"checkout.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6es6pj_27\" to source file \"checkout-template-source.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-27, checkout, checkout-1"
+        "source-html manifest entry matched page \"page_mq6es6pj_27\" by page_id; path=\"checkout-template-source.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_28",
+      "id": "dec_page_map_page_mq6es6pj_28",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_28\" to source file \"upsell-1.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6es6pj_28\" to source file \"upsell-fruit-cleaner-template-source.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-28, upsell, upsell-1"
+        "source-html manifest entry matched page \"page_mq6es6pj_28\" by page_id; path=\"upsell-fruit-cleaner-template-source.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qs1fg_226",
+      "id": "dec_page_map_page_mq6etfcc_38",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qs1fg_226\" to source file \"upsell-2.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6etfcc_38\" to source file \"upsell-chef-knife-template-source.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qs1fg-226, upsell-2, upsell"
+        "source-html manifest entry matched page \"page_mq6etfcc_38\" by page_id; path=\"upsell-chef-knife-template-source.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_29",
+      "id": "dec_page_map_page_mq6es6pj_29",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_29\" to source file \"thank-you.html\"",
+      "decision": "mapped CampaignSpec page \"page_mq6es6pj_29\" to source file \"receipt-template-source.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-29, thank-you, thankyou, receipt, thankyou-1"
+        "source-html manifest entry matched page \"page_mq6es6pj_29\" by page_id; path=\"receipt-template-source.html\" from /Users/devin/Developer/meridian--fresh-kitchen-prep-stack-v1/source-html/fresh-kitchen-prep-stack-v1/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6es6pj_25",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6es6pj_25\" to Page Kit target \"presell.html\" with CPK page_type \"product\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"presell.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/presell.html\" derives from CampaignSpec route \"(entry route)\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6es6pj_26",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6es6pj_26\" to Page Kit target \"landing.html\" with CPK page_type \"product\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"designer-landing/landing.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/landing.html\" derives from CampaignSpec route \"landing/\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6es6pj_27",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6es6pj_27\" to Page Kit target \"checkout.html\" with CPK page_type \"checkout\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"checkout-template-source.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/checkout.html\" derives from CampaignSpec route \"checkout/\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6es6pj_28",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6es6pj_28\" to Page Kit target \"upsell.html\" with CPK page_type \"upsell\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"upsell-fruit-cleaner-template-source.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/upsell.html\" derives from CampaignSpec route \"upsell/\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6etfcc_38",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6etfcc_38\" to Page Kit target \"upsell-2.html\" with CPK page_type \"upsell\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"upsell-chef-knife-template-source.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/upsell-2.html\" derives from CampaignSpec route \"upsell-2/\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mq6es6pj_29",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mq6es6pj_29\" to Page Kit target \"receipt.html\" with CPK page_type \"receipt\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"receipt-template-source.html\" remains producer provenance",
+        "target path \"src/fresh-kitchen-prep-stack-v1/receipt.html\" derives from CampaignSpec route \"receipt/\" and public slug \"fresh-kitchen-prep-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_fresh_template_clone",
+      "stage": "assembly",
+      "decision_type": "implementation",
+      "decision": "Used an Olympus template clone for checkout, upsells, and receipt; source marketing page is preserved as passthrough landing. Unsupported PayPal/Klarna rows and demo voucher upsell copy were removed because CampaignSpec only supports bankcard/apple_pay/google_pay and full-price post-checkout upsells.",
+      "confidence": "high",
+      "evidence": [
+        "_site checkout renders credit/apple-pay/google-pay only",
+        "QA run MQ6KM0FY4BEJI9DURLBPV5IM18 passed payment geometry, bundle, bump, and upsell control checks"
       ]
     }
   ],
-  "evidence": [],
+  "adapter_decisions": {
+    "raw_html_conversion_status": "pending",
+    "source_asset_strategy": "pagekit_campaign_asset_root",
+    "route_rewrite_policy": "campaignspec_routes_via_campaign_link",
+    "config_script_strategy": "campaign_asset",
+    "commerce_shell_adoption": "template_clone_first_required",
+    "wrapper_policy": "strip_document_wrappers",
+    "frontmatter_policy": "pagekit_yaml_frontmatter",
+    "script_style_reference_policy": "frontmatter_or_campaign_asset",
+    "cta_rewrite_policy": "campaignspec_routes_via_campaign_link",
+    "layout_choice": "campaign_layout",
+    "template_files_copied": {
+      "status": "pending",
+      "required_groups": [
+        "pages",
+        "_includes",
+        "_layouts",
+        "assets/css",
+        "assets/js",
+        "frontmatter_vocabulary"
+      ],
+      "groups": [],
+      "paths": []
+    }
+  },
+  "proof_policy": {
+    "browser_qa_required": true,
+    "typed_card_depth": "common",
+    "localhost_development_domain_allowed": true,
+    "non_localhost_origin_allowlist_required": true,
+    "order_path_depth": "common",
+    "operator_approval_state": "not_required_global_test_cards",
+    "qa_portal_publish_default": true
+  },
+  "theme": {
+    "status": "skipped",
+    "css_path": null,
+    "load_order": "unknown",
+    "commerce_pages": [],
+    "evidence": [
+      "theme inspect completed; no generated brand theme was applied during prepare-build."
+    ],
+    "warnings": [],
+    "repair_loop_defect": null
+  },
+  "evidence": [
+    {
+      "id": "ev_build_fresh_local",
+      "stage": "assembly",
+      "kind": "command",
+      "summary": "npm run build succeeded and emitted six Fresh pages",
+      "path": "_site/fresh-kitchen-prep-stack-v1/",
+      "created_at": "2026-06-09T11:44:12.666Z"
+    },
+    {
+      "id": "ev_qa_fresh_local",
+      "stage": "qa",
+      "kind": "qa-verdict",
+      "summary": "Campaigns OS browser QA passed 50/50 assertions locally",
+      "path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
+      "created_at": "2026-06-09T11:44:12.666Z"
+    }
+  ],
   "blockers": [],
   "warnings": [
     {
@@ -288,8 +352,22 @@
     }
   ],
   "next": {
-    "stage": "review",
-    "owner": "Devin / Campaigns OS team",
-    "action": "Triage dogfood findings (HOME-OUTAGE-PREP-DOGFOOD-REPORT.md) into the Campaigns OS Dogfood Linear project. Confirm PR #7 is reviewed and either land or close after writing remediation tickets."
+    "stage": "setup",
+    "owner": "next-campaigns-setup",
+    "action": "Run setup before build."
+  },
+  "qa": {
+    "status": "completed_local_only",
+    "base_url": "http://127.0.0.1:8087/fresh-kitchen-prep-stack-v1/",
+    "verdict_path": "qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
+    "run_id": "MQ6KM0FY4BEJI9DURLBPV5IM18",
+    "counts": {
+      "pass": 50
+    },
+    "posted": null,
+    "test_orders": [],
+    "notes": [
+      "Browser QA passed card iframe geometry, express wallets, bundle selector, order bump unchecked state, checkout structure, upsell controls, and SDK debugger mounts."
+    ]
   }
 }

@@ -1,0 +1,224 @@
+{
+  "schema_version": "campaigns-os-run-record/v0",
+  "run_id": "run_1781004412578_e696cb22",
+  "package_version": "0.1.0-alpha.0",
+  "command": "run-record",
+  "argv_shape": [
+    "--journal",
+    "--json",
+    "--lifecycle-journal",
+    "--packet",
+    "--primary-surface",
+    "--qa-verdict",
+    "--run-id",
+    "--surface-confidence",
+    "--surfaces"
+  ],
+  "created_at": "2026-06-09T11:45:15.197Z",
+  "consent_state": "off",
+  "consent_source": "default",
+  "remit_attempted": false,
+  "remit_ok": null,
+  "remit_error": null,
+  "remit_endpoint": null,
+  "remit_state": "skipped",
+  "identity": {
+    "map_id": "fresh-kitchen-prep-stack-v1-db4i",
+    "campaign_slug": "fresh-kitchen-prep-stack-v1",
+    "template_family": "olympus",
+    "entry_point_shape": "packet"
+  },
+  "artifacts": [
+    {
+      "kind": "build_packet",
+      "path": "./campaign-runtime.build.json",
+      "schema_version": "campaign-runtime-build-packet/v0",
+      "sha256": "9bac3e3220ef94d574aea737ae4605096e1df8cf4cb2c63846ecbb19f1b149fe"
+    },
+    {
+      "kind": "build_context",
+      "path": ".campaign-runtime/build-context.json",
+      "schema_version": "campaign-runtime-build-context/v0",
+      "sha256": "ff5579e8db7d4717761b72ae555a0a2cd7a57a7cabd84d3d59e67d805e4c7a8c"
+    },
+    {
+      "kind": "assembly_report",
+      "path": ".campaign-runtime/assembly-report.json",
+      "schema_version": "campaign-runtime-assembly-report/v0",
+      "sha256": "0d519114fcedb532fd079446cc93dea974b53ab4b923e85e71d79497b2c21326"
+    },
+    {
+      "kind": "qa_verdict",
+      "path": "./qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KM0FY4BEJI9DURLBPV5IM18.json",
+      "schema_version": "1.0",
+      "sha256": "30d5d66b1087b4e1cc0b5e3834091e5d4b6eea77c047123a2b34dc5ce48fd903"
+    },
+    {
+      "kind": "findings_journal",
+      "path": ".campaign-runtime/workflow-findings.jsonl",
+      "schema_version": "campaigns-os-workflow-finding/v0",
+      "sha256": "92a0632cfa06fe03bccfe485809d14cf448f24a9db3ad57092f64becf9ef75da"
+    }
+  ],
+  "observations": {
+    "doctor": {
+      "status": "ready_with_warnings",
+      "error_codes": [],
+      "warning_codes": [
+        "campaign.allowed_domains_confirmed",
+        "spec.validation",
+        "spec.store_profile.payment_methods_default_on",
+        "routing_meta.runtime_root",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.demoOnlyValues",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.replaceFromSpecOrApi",
+        "frontmatter.removeWhenUnsupported",
+        "frontmatter.removeWhenUnsupported",
+        "frontmatter.removeWhenUnsupported",
+        "frontmatter.removeWhenUnsupported",
+        "deploy.preview_url"
+      ],
+      "ready_count": 21,
+      "note": "Final doctor-output artifact. Static template/spec-literal warnings remain despite rendered QA passing; see workflow finding wf_1781005341002_2783998d."
+    },
+    "spec_validation_rule_ids": [
+      "StoreProfileShape"
+    ],
+    "adapter_decisions": {
+      "raw_html_conversion_status": "pending",
+      "source_asset_strategy": "pagekit_campaign_asset_root",
+      "route_rewrite_policy": "campaignspec_routes_via_campaign_link",
+      "config_script_strategy": "campaign_asset",
+      "commerce_shell_adoption": "template_clone_first_required",
+      "wrapper_policy": "strip_document_wrappers",
+      "frontmatter_policy": "pagekit_yaml_frontmatter",
+      "script_style_reference_policy": "frontmatter_or_campaign_asset",
+      "cta_rewrite_policy": "campaignspec_routes_via_campaign_link",
+      "layout_choice": "campaign_layout",
+      "template_files_copied_status": "pending"
+    },
+    "qa": {
+      "disposition": "ready",
+      "gap_classes": [],
+      "local_run_id": "MQ6KM0FY4BEJI9DURLBPV5IM18",
+      "counts": {
+        "pass": 50
+      },
+      "posted": null,
+      "test_orders": []
+    },
+    "finding_ids": [
+      "wf_1781004499792_1b42a5b1",
+      "wf_1781005314369_ddab370a",
+      "wf_1781005341002_2783998d"
+    ]
+  },
+  "surfaces": [
+    "template",
+    "design-source",
+    "spec-rule",
+    "cli"
+  ],
+  "primary_surface": "template",
+  "surface_confidence": "high",
+  "lifecycle": {
+    "run_id": "run_1781004412578_e696cb22",
+    "command": null,
+    "argv_shape": [],
+    "exit_status": 0,
+    "started_at": "2026-06-09T11:28:02.237Z",
+    "completed_at": "2026-06-09T11:45:05.360Z",
+    "duration_ms": 1023123,
+    "stages": [
+      {
+        "name": "start:resolve-spec",
+        "duration_ms": 905,
+        "exit_status": 0
+      },
+      {
+        "name": "start:prepare-build",
+        "duration_ms": 39,
+        "exit_status": 0
+      },
+      {
+        "name": "findings",
+        "duration_ms": 1,
+        "exit_status": 1
+      },
+      {
+        "name": "findings",
+        "duration_ms": 2,
+        "exit_status": 0
+      },
+      {
+        "name": "start:resolve-spec",
+        "duration_ms": 606,
+        "exit_status": 0
+      },
+      {
+        "name": "start:prepare-build",
+        "duration_ms": 41,
+        "exit_status": 0
+      },
+      {
+        "name": "doctor",
+        "duration_ms": 39,
+        "exit_status": 0
+      },
+      {
+        "name": "findings",
+        "duration_ms": 3,
+        "exit_status": 0
+      },
+      {
+        "name": "doctor",
+        "duration_ms": 36,
+        "exit_status": 0
+      },
+      {
+        "name": "findings",
+        "duration_ms": 2,
+        "exit_status": 0
+      },
+      {
+        "name": "qa",
+        "duration_ms": 4,
+        "exit_status": 0
+      },
+      {
+        "name": "qa",
+        "duration_ms": 28270,
+        "exit_status": 0
+      },
+      {
+        "name": "findings",
+        "duration_ms": 2,
+        "exit_status": 0
+      },
+      {
+        "name": "validate-assembly-report",
+        "duration_ms": 2,
+        "exit_status": 0
+      },
+      {
+        "name": "doctor",
+        "duration_ms": 52,
+        "exit_status": 0
+      }
+    ],
+    "repair_loop_count": 8
+  }
+}

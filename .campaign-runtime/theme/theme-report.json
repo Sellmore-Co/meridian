@@ -1,0 +1,76 @@
+{
+  "schema_version": "campaign-runtime-brand-theme/v0",
+  "generated_at": "2026-06-09T11:28:32.484Z",
+  "status": "missing",
+  "policy": "inspect_only",
+  "source_kind": "html_funnel",
+  "confidence": "none",
+  "source_files": [
+    {
+      "path": "source-html/fresh-kitchen-prep-stack-v1/designer-landing/css/style.css",
+      "role": "page",
+      "source": "mapped_html_reference",
+      "hash": "fe4f7f0632dbd227bba495d5b1d57ffc01ec7c96ebe74e8ad174355f0e96aa5c",
+      "token_count": 0,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_mq6es6pj_26",
+          "path": "designer-landing/landing.html",
+          "ref": "css/style.css"
+        }
+      ]
+    },
+    {
+      "path": "source-html/fresh-kitchen-prep-stack-v1/designer-landing/css/slick.css",
+      "role": "page",
+      "source": "mapped_html_reference",
+      "hash": "34ae0c2960088a4855aa1464057a7170b29808ff83d67a674cf11e8cd1cdd0cc",
+      "token_count": 0,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_mq6es6pj_26",
+          "path": "designer-landing/landing.html",
+          "ref": "css/slick.css"
+        }
+      ]
+    }
+  ],
+  "selected_source": null,
+  "producer_defaults": {
+    "matched": false,
+    "producer": "figma-sections-export",
+    "version": "v0",
+    "matched_tokens": [],
+    "unresolved_tokens": [],
+    "present_core_tokens": []
+  },
+  "conflicts": [],
+  "mappings": [],
+  "generated": {
+    "css_path": ".campaign-runtime/theme/brand-theme.css",
+    "report_path": ".campaign-runtime/theme/theme-report.json",
+    "safety": {
+      "ok": false,
+      "errors": [
+        {
+          "code": "theme.css.empty",
+          "message": "No generated CSS because no source tokens were selected."
+        }
+      ],
+      "warnings": []
+    },
+    "stale": {
+      "stale": false,
+      "reasons": []
+    },
+    "can_generate": false,
+    "can_auto_generate": false,
+    "overwrite_requires_force": false
+  },
+  "existing_brand_layers": [],
+  "warnings": [],
+  "errors": [],
+  "next_action": "Proceed without generated brand theme, or provide source tokens/design-system artifacts."
+}
