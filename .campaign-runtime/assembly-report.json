@@ -100,18 +100,19 @@
       "status": "completed",
       "inputs": [],
       "outputs": [
+        "src/fresh-kitchen-prep-stack-v1/index.html",
+        "src/fresh-kitchen-prep-stack-v1/assets/css/freshpak-funnel.css",
         "src/fresh-kitchen-prep-stack-v1/checkout.html",
         "src/fresh-kitchen-prep-stack-v1/upsell.html",
         "src/fresh-kitchen-prep-stack-v1/upsell-2.html",
         "src/fresh-kitchen-prep-stack-v1/receipt.html"
       ],
       "commands": [
-        "Campaign source edits: removed unsupported payment rows, rooted runtime meta tags, replaced demo refs, copied FreshPak brand/assets, full-price upsell copy."
+        "Campaign source edits: removed unsupported payment rows, rooted runtime meta tags, replaced demo refs, copied FreshPak brand/assets, full-price upsell copy.",
+        "FreshPak visual polish: added campaign-scoped CSS, converted presell CTAs from utility-only styling to static classes, aligned checkout/upsell/receipt colors with landing source while preserving SDK data hooks."
       ],
       "blockers": [],
-      "warnings": [
-        "Visual design kept intentionally light; commerce template fidelity prioritized over bespoke styling."
-      ]
+      "warnings": []
     },
     "deploy": {
       "stage": "deploy",
