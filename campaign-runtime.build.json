@@ -6,7 +6,7 @@
     "live_url_path": "/fresh-kitchen-prep-stack-v1/",
     "campaigns_app_url": null,
     "api_key_source": "env:CAMPAIGNS_API_KEY",
-    "allowed_domains_confirmed": false
+    "allowed_domains_confirmed": true
   },
   "spec": {
     "map_id": "fresh-kitchen-prep-stack-v1-db4i",
