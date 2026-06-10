@@ -16,7 +16,7 @@
     "--surface-confidence",
     "--surfaces"
   ],
-  "created_at": "2026-06-09T11:55:19.852Z",
+  "created_at": "2026-06-10T04:22:35.498Z",
   "consent_state": "off",
   "consent_source": "default",
   "remit_attempted": false,
@@ -47,7 +47,7 @@
       "kind": "assembly_report",
       "path": ".campaign-runtime/assembly-report.json",
       "schema_version": "campaign-runtime-assembly-report/v0",
-      "sha256": "f80e35369ed4362a1085b14220e90c80c7249c5c7b22d88ce49e110e1e3ea45d"
+      "sha256": "6125e28b16cead5c492aa91680f43d247988eb9713315f21f267fe6a0806dc30"
     },
     {
       "kind": "qa_verdict",
@@ -59,7 +59,7 @@
       "kind": "findings_journal",
       "path": ".campaign-runtime/workflow-findings.jsonl",
       "schema_version": "campaigns-os-workflow-finding/v0",
-      "sha256": "92a0632cfa06fe03bccfe485809d14cf448f24a9db3ad57092f64becf9ef75da"
+      "sha256": "dde428992caeb473cb86a82d3f40558b4cda8f51df25a3ee82378d1e75dcf2ce"
     }
   ],
   "observations": {
@@ -103,7 +103,11 @@
     "finding_ids": [
       "wf_1781004499792_1b42a5b1",
       "wf_1781005314369_ddab370a",
-      "wf_1781005341002_2783998d"
+      "wf_1781005341002_2783998d",
+      "wf_1781065253300_e129d4d3",
+      "wf_1781065272490_bb931aad",
+      "wf_1781065272497_2a473ad2",
+      "wf_1781065277566_75432f3f"
     ]
   },
   "surfaces": [
@@ -113,7 +117,7 @@
     "cli"
   ],
   "primary_surface": "template",
-  "surface_confidence": "high",
+  "surface_confidence": "operator_observed",
   "lifecycle": {
     "run_id": "run_1781004412578_e696cb22",
     "command": null,
