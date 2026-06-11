@@ -1,0 +1,130 @@
+{
+  "schema_version": "campaign-runtime-brand-theme/v0",
+  "generated_at": "2026-06-11T02:55:44.358Z",
+  "status": "ready",
+  "policy": "inspect_only",
+  "source_kind": "html_funnel",
+  "confidence": "medium",
+  "source_files": [
+    {
+      "path": "../executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/designer/footscape-presell/css/style.css",
+      "role": "presell",
+      "source": "mapped_html_reference",
+      "hash": "ae79c346694727598f2ab16da71fa81317578f6210bbdf4cd7d3621ce534b49b",
+      "token_count": 2,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_recovery_relief_presell",
+          "path": "designer/footscape-presell/index.html",
+          "ref": "css/style.css"
+        }
+      ]
+    },
+    {
+      "path": "../executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/designer/heat-patches/css/style.css",
+      "role": "landing",
+      "source": "mapped_html_reference",
+      "hash": "eb1321a9c3beefcfd447bb770e9763fc18adc203efed7b47ab7f7444e12441e4",
+      "token_count": 2,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_recovery_relief_landing",
+          "path": "designer/heat-patches/index.html",
+          "ref": "css/style.css"
+        }
+      ]
+    },
+    {
+      "path": "../executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/designer/tens-ems/css/style.css",
+      "role": "upsell",
+      "source": "mapped_html_reference",
+      "hash": "a6a5cec2251dfe6908134a400c6aafad5e758f708599e554af1136dc8774e47a",
+      "token_count": 2,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_recovery_relief_upsell_1",
+          "path": "designer/tens-ems/index.html",
+          "ref": "css/style.css"
+        }
+      ]
+    },
+    {
+      "path": "../executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/designer/tens-ems/css/slick.css",
+      "role": "upsell",
+      "source": "mapped_html_reference",
+      "hash": "894d9f618a1080b14cff16ba53ad9608aa92f55569be0478486038280f3b98a2",
+      "token_count": 2,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_recovery_relief_upsell_1",
+          "path": "designer/tens-ems/index.html",
+          "ref": "css/slick.css"
+        }
+      ]
+    }
+  ],
+  "selected_source": {
+    "path": "../executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/designer/heat-patches/css/style.css",
+    "role": "landing",
+    "source": "mapped_html_reference",
+    "hash": "eb1321a9c3beefcfd447bb770e9763fc18adc203efed7b47ab7f7444e12441e4",
+    "token_count": 2,
+    "inline_block_index": null,
+    "referenced_by": [
+      {
+        "page_id": "page_recovery_relief_landing",
+        "path": "designer/heat-patches/index.html",
+        "ref": "css/style.css"
+      }
+    ]
+  },
+  "producer_defaults": {
+    "matched": false,
+    "producer": "figma-sections-export",
+    "version": "v0",
+    "matched_tokens": [],
+    "unresolved_tokens": [],
+    "present_core_tokens": []
+  },
+  "conflicts": [],
+  "mappings": [
+    {
+      "source": "--brand-cta",
+      "target": "--brand--color--cta-primary",
+      "value": "#1aae2d",
+      "confidence": "high",
+      "derivation": null
+    },
+    {
+      "source": "--button-primary-bg",
+      "target": "--brand--color--cta-primary",
+      "value": "#1aae2d",
+      "confidence": "high",
+      "derivation": null
+    }
+  ],
+  "generated": {
+    "css_path": ".campaign-runtime/theme/brand-theme.css",
+    "report_path": ".campaign-runtime/theme/theme-report.json",
+    "safety": {
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stale": {
+      "stale": false,
+      "reasons": []
+    },
+    "can_generate": true,
+    "can_auto_generate": false,
+    "overwrite_requires_force": false
+  },
+  "existing_brand_layers": [],
+  "warnings": [],
+  "errors": [],
+  "next_action": "Run campaigns-os theme generate, then apply brand-theme.css after next-core.css on commerce pages."
+}

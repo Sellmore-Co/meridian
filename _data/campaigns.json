@@ -202,5 +202,22 @@
     "store_phone_tel": "",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "recovery-relief-stack-v1": {
+    "name": "Recovery Relief Stack v1",
+    "description": "Keer dogfood - Recovery Relief Stack v1 Demeter template-first build from Map recovery-relief-stack-v1-owmd.",
+    "entry_url": "",
+    "sdk_version": "0.4.24",
+    "store_name": "Keer",
+    "store_url": "https://keer.29next.store/",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": ""
   }
 }

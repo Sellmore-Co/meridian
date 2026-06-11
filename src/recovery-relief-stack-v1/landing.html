@@ -1,0 +1,33 @@
+---
+page_layout: base-landing.html
+title: "Recovery Relief Heat Patches"
+page_type: product
+permalink: /recovery-relief-stack-v1/landing/
+next_url: /recovery-relief-stack-v1/checkout/
+meta_tags:
+  next-funnel: recovery-relief-stack-v1
+  next-page-type: product
+styles:
+  - css/recovery-relief.css
+---
+<main class="rr-page">
+  <div class="rr-shell">
+    <nav class="rr-nav"><div class="rr-brand">Recovery Relief</div><a class="rr-pill" href="{{ next_url | campaign_link }}">Choose bundle</a></nav>
+    <section class="rr-hero">
+      <div>
+        <div class="rr-kicker">Hero product</div>
+        <h1>Heat patches for fast, flexible comfort.</h1>
+        <p class="rr-lede">Apply targeted warmth to sore muscles and stiff joints without bulky wraps. Choose a single pack or stock up with offer-based quantity discounts.</p>
+        <div class="rr-actions"><a class="rr-button" href="{{ next_url | campaign_link }}">Choose my bundle</a><a class="rr-button secondary" href="#details">How it helps</a></div>
+      </div>
+      <div class="rr-media"><img src="{{ 'products/heat-patches.png' | campaign_asset }}" alt="Heat Patches"></div>
+    </section>
+    <section id="details" class="rr-grid">
+      <article class="rr-card"><h3>Peel, place, recover</h3><p>No cords or prep. Place the patch where you want warmth and keep moving.</p></article>
+      <article class="rr-card"><h3>Buy more, save more</h3><p>The checkout uses one package ID with Offer-based discounts for 1x, 2x, and 3x quantities.</p></article>
+      <article class="rr-card"><h3>Stack-friendly</h3><p>Add optional compression, TENS/EMS therapy, and massage tools during checkout.</p></article>
+    </section>
+    <div class="rr-offer"><div><strong>Bundle pricing is applied live in checkout.</strong><p>Pick 1x, 2x, or 3x and let the Campaigns SDK calculate discounts and totals.</p></div><a class="rr-button" href="{{ next_url | campaign_link }}">Go to checkout</a></div>
+    <footer class="rr-footer">30-day money-back guarantee. Fast US shipping.</footer>
+  </div>
+</main>
