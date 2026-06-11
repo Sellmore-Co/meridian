@@ -39,7 +39,6 @@ swiper_thumbs:
 {% assign upsell_selector_id = upsell_offer.selector_id | default: 'upsell-bundle' -%}
 {% assign upsell_package_name_path = 'package.' | append: upsell_package_id | append: '.name' -%}
 {% assign upsell_price_path = 'bundle.' | append: upsell_selector_id | append: '.price' -%}
-{% assign upsell__path = 'bundle.' | append: upsell_selector_id | append: '.discountPercentage' -%}
 <div class="page-wrapper rr-full-price">
   <div class="main-wrapper">
     <div class="announcement">
@@ -61,8 +60,6 @@ swiper_thumbs:
           </div>
           <div class="upsell-header__suboffer">
             Add this full-price recovery upgrade to your order.
-            <span data-next-display="{{ upsell_discount_path }}" data-next-format="percentage">50%</span>
-            discount
           </div>
         </div>
       </div>
