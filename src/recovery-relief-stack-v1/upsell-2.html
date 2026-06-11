@@ -1,0 +1,78 @@
+---
+title: "Add Percussion Massage Relief"
+page_type: upsell
+permalink: /recovery-relief-stack-v1/upsell-2/
+next_url: /recovery-relief-stack-v1/receipt/
+decline_url: /recovery-relief-stack-v1/receipt/
+meta_tags:
+  next-funnel: recovery-relief-stack-v1
+  next-page-type: upsell
+  next-upsell-accept-url: /recovery-relief-stack-v1/receipt/
+  next-upsell-decline-url: /recovery-relief-stack-v1/receipt/
+styles:
+  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
+  - css/recovery-relief.css
+scripts:
+  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
+  - js/upsells.js
+upsell_offer:
+  package_id: 4
+  selector_id: "upsell-massage"
+  bundle_id: "upsell-massage-1x"
+  items_json: '[{"packageId":4,"quantity":1}]'
+  vouchers_json: '[]'
+  default_quantity: 1
+  min_quantity: 1
+  max_quantity: 1
+  accept_text: "Yes, Add Massage Gun"
+  decline_text: "No thanks, show my receipt"
+swiper_slides:
+  - src: "products/massage-gun.png"
+    alt: "Massage gun"
+swiper_thumbs:
+  - src: "products/massage-gun.png"
+    alt: "Massage gun"
+---
+
+{% assign upsell_package_id = upsell_offer.package_id | default: 3 -%}
+{% assign upsell_selector_id = upsell_offer.selector_id | default: 'upsell-bundle' -%}
+{% assign upsell_package_name_path = 'package.' | append: upsell_package_id | append: '.name' -%}
+{% assign upsell_price_path = 'bundle.' | append: upsell_selector_id | append: '.price' -%}
+<div class="page-wrapper rr-full-price">
+  <div class="main-wrapper">
+    <div class="announcement">
+      <div class="announcement__block">
+        <div class="announcement__text"><strong>Special Offer Unlocked - Do Not Close This Page</strong></div>
+      </div>
+    </div>
+    {% campaign_include 'upsell-header-bar.html' %}
+
+    <section class="section upsell-header">
+      <div class="container">
+        <div class="upsell-header__inner">
+          <div class="upsell-header__title">Wait! Your Order Isn't Complete</div>
+          <div class="upsell-header__offer">
+            One-Time Add-On: Get
+            <span data-next-display="{{ upsell_package_name_path }}">Product Title</span>
+            For Only
+            <span data-next-display="{{ upsell_price_path }}" data-next-format="currency">$14.95</span>
+          </div>
+          <div class="upsell-header__suboffer">
+            Add this full-price recovery upgrade to your order.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% campaign_include 'upsell-bundle-stepper-offer.html' %}
+    {% campaign_include 'footer.html' %}
+  </div>
+</div>
+
+<script>
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => initSwiperGalleries());
+  } else {
+    initSwiperGalleries();
+  }
+</script>

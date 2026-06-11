@@ -1,22 +1,22 @@
 {
   "schema_version": "campaign-runtime-assembly-report/v0",
-  "run_id": "asm_1778658054663",
-  "generated_at": "2026-05-13T07:40:54.663Z",
-  "status": "prepared",
+  "run_id": "asm_1781146544366",
+  "generated_at": "2026-06-11T03:22:35.080Z",
+  "status": "polished_with_pending_deploy_qa",
   "identity": {
-    "map_id": "home-outage-prep-v0-sf21",
-    "public_route_slug": "home-outage-prep-v0",
-    "campaign_directory": "home-outage-prep-v0",
-    "live_url_path": "/home-outage-prep-v0/",
-    "spec_hash": "75703893a6301214159baa18af885ce0a5a9eb2b9c90f0bf3d20ccc803104528"
+    "map_id": "recovery-relief-stack-v1-owmd",
+    "public_route_slug": "recovery-relief-stack-v1",
+    "campaign_directory": "recovery-relief-stack-v1",
+    "live_url_path": "/recovery-relief-stack-v1/",
+    "spec_hash": "c71f95a6941fa8b416bd635fb4a62c2434a272000149517415f30f1720e8ddd7"
   },
   "inputs": {
     "packet_path": "./campaign-runtime.build.json",
     "context_path": ".campaign-runtime/build-context.json",
-    "spec_path": "../designer/funnel-designs/home-outage-prep/campaign-spec-home-outage-prep-v0.json",
+    "spec_path": ".campaign-runtime/fetched-specs/recovery-relief-stack-v1-owmd.json",
     "source": {
       "kind": "html_funnel",
-      "root": "../designer/funnel-designs/home-outage-prep"
+      "root": "../executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1"
     },
     "target_repo": "."
   },
@@ -25,7 +25,13 @@
     "locked": true,
     "locked_by": "operator_flag",
     "commerce_catalog_version": null,
-    "candidates": []
+    "candidates": [
+      {
+        "family": "demeter",
+        "source": "CampaignSpec preferred_template_family",
+        "confidence": "hint"
+      }
+    ]
   },
   "stages": {
     "prepare_build": {
@@ -43,6 +49,136 @@
     },
     "doctor": {
       "stage": "doctor",
+      "status": "completed_with_warnings",
+      "inputs": [
+        "campaign-runtime.build.json",
+        ".campaign-runtime/build-context.json",
+        ".campaign-runtime/assembly-report.json"
+      ],
+      "outputs": [
+        ".campaign-runtime/doctor-output.json"
+      ],
+      "commands": [
+        "node /Users/devin/Developer/campaigns-os/bin/campaigns-os.mjs doctor --packet campaign-runtime.build.json --json"
+      ],
+      "blockers": [],
+      "warnings": [
+        "Doctor still has deploy/allowlist gates until a preview URL exists and SDK origin allowlist is confirmed.",
+        "Several doctor warnings are retained as tool friction: rendered output proves PayPal/Klarna removed, root-routed meta tags applied, and package/shipping refs are real Recovery campaign refs despite matching starter demo numbers."
+      ],
+      "completed_at": "2026-06-11T03:09:36.469Z"
+    },
+    "setup": {
+      "stage": "setup",
+      "status": "completed",
+      "inputs": [
+        "campaign-runtime.build.json",
+        "/Users/devin/Developer/campaign-cart-starter-templates/src/demeter"
+      ],
+      "outputs": [
+        "src/recovery-relief-stack-v1/checkout.html",
+        "src/recovery-relief-stack-v1/landing.html",
+        "src/recovery-relief-stack-v1/presell.html",
+        "src/recovery-relief-stack-v1/receipt.html",
+        "src/recovery-relief-stack-v1/upsell-bundle-stepper.html",
+        "src/recovery-relief-stack-v1/upsell-bundle-tier-cards.html",
+        "src/recovery-relief-stack-v1/upsell-bundle-tier-pills.html",
+        "src/recovery-relief-stack-v1/_includes",
+        "src/recovery-relief-stack-v1/_layouts",
+        "src/recovery-relief-stack-v1/assets/css",
+        "src/recovery-relief-stack-v1/assets/js"
+      ],
+      "commands": [
+        "cp -R /Users/devin/Developer/campaign-cart-starter-templates/src/demeter/. src/recovery-relief-stack-v1"
+      ],
+      "blockers": [],
+      "warnings": [],
+      "completed_at": "2026-06-11T02:57:06.643Z"
+    },
+    "assembly": {
+      "stage": "assembly",
+      "status": "completed_with_warnings",
+      "inputs": [
+        "campaign-runtime.build.json",
+        ".campaign-runtime/build-context.json",
+        "src/recovery-relief-stack-v1",
+        "/Users/devin/Developer/executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1"
+      ],
+      "outputs": [
+        "src/recovery-relief-stack-v1/presell.html",
+        "src/recovery-relief-stack-v1/landing.html",
+        "src/recovery-relief-stack-v1/checkout.html",
+        "src/recovery-relief-stack-v1/upsell.html",
+        "src/recovery-relief-stack-v1/upsell-2.html",
+        "src/recovery-relief-stack-v1/receipt.html",
+        "src/recovery-relief-stack-v1/_includes/bump-check01.html",
+        "src/recovery-relief-stack-v1/_includes/editorial-tier-selector.html",
+        "src/recovery-relief-stack-v1/_includes/upsell-bundle-stepper-offer.html",
+        "src/recovery-relief-stack-v1/assets/config.js",
+        "src/recovery-relief-stack-v1/assets/css/recovery-relief.css",
+        "src/recovery-relief-stack-v1/assets/products/heat-patches.png",
+        "src/recovery-relief-stack-v1/assets/products/knee-compression-sleeve.png",
+        "src/recovery-relief-stack-v1/assets/products/tens-ems-device.png",
+        "src/recovery-relief-stack-v1/assets/products/massage-gun.png",
+        "_data/campaigns.json",
+        "_site/recovery-relief-stack-v1/index.html",
+        "_site/recovery-relief-stack-v1/landing/index.html",
+        "_site/recovery-relief-stack-v1/checkout/index.html",
+        "_site/recovery-relief-stack-v1/upsell/index.html",
+        "_site/recovery-relief-stack-v1/upsell-2/index.html",
+        "_site/recovery-relief-stack-v1/receipt/index.html"
+      ],
+      "commands": [
+        "npm install",
+        "npm run build",
+        "node scripts/lint-sdk.mjs --scope=recovery-relief-stack-v1 --pages=checkout,upsell,upsell-2,receipt",
+        "rg -n \"paypal|klarna|LLbBgtus|Lorem|Retail Price|Special Discount|data-next-include-shipping\" _site/recovery-relief-stack-v1/{index.html,landing/index.html,checkout/index.html,upsell/index.html,upsell-2/index.html,receipt/index.html}",
+        "rg -n \"LSXBnAr7ACS8TD4ewKUms2EcgkCFNGvqruMw6Ksh|next-success-url|next-upsell-accept-url|payment-method|data-next-bundle-selector\" _site/recovery-relief-stack-v1/{checkout/index.html,upsell/index.html,upsell-2/index.html}"
+      ],
+      "blockers": [],
+      "warnings": [
+        "npm audit reports one critical vulnerability after dependency install; not auto-fixed to avoid unrelated dependency churn.",
+        "No deploy preview or typed-card order proof has run yet.",
+        "Pricing and discount presentation follows full-price post-checkout policy; no code-based upsell discounts were configured for this v1 campaign.",
+        "Campaigns App work must be entered through the Keer dashboard shell/framed auth, not direct app URLs."
+      ],
+      "completed_at": "2026-06-11T03:09:36.469Z"
+    },
+    "polish": {
+      "stage": "polish",
+      "status": "completed_with_warnings",
+      "inputs": [
+        "src/recovery-relief-stack-v1",
+        "_site/recovery-relief-stack-v1",
+        "http://localhost:4187/recovery-relief-stack-v1/"
+      ],
+      "outputs": [
+        ".campaign-runtime/evidence/recovery-relief-presell-desktop.png",
+        ".campaign-runtime/evidence/recovery-relief-landing-desktop.png",
+        ".campaign-runtime/evidence/recovery-relief-checkout-desktop.png",
+        ".campaign-runtime/evidence/recovery-relief-upsell1-desktop.png",
+        ".campaign-runtime/evidence/recovery-relief-upsell2-desktop.png",
+        ".campaign-runtime/evidence/recovery-relief-checkout-mobile.png"
+      ],
+      "commands": [
+        "python3 -m http.server 4187 --directory _site",
+        "/Users/devin/.codex/skills/gstack/browse/dist/browse goto http://localhost:4187/recovery-relief-stack-v1/checkout/",
+        "/Users/devin/.codex/skills/gstack/browse/dist/browse prettyscreenshot --cleanup --width 1440 /tmp/recovery-checkout-polished-desktop.png",
+        "/Users/devin/.codex/skills/gstack/browse/dist/browse viewport 390x1200",
+        "/Users/devin/.codex/skills/gstack/browse/dist/browse prettyscreenshot --cleanup --width 390 /tmp/recovery-checkout-mobile.png",
+        "npm run build",
+        "node scripts/lint-sdk.mjs --scope=recovery-relief-stack-v1 --pages=checkout,upsell,upsell-2,receipt"
+      ],
+      "blockers": [],
+      "warnings": [
+        "Local polish used a static _site server because campaign-dev only exposed an interactive campaign picker.",
+        "Browser polish is not typed-card QA; deployed preview and order-path proof remain pending.",
+        "Checkout/summary visibility required campaign CSS overrides for runtime inline display:none on Demeter wrappers; finding recorded."
+      ],
+      "completed_at": "2026-06-11T03:21:01.587Z"
+    },
+    "deploy": {
+      "stage": "deploy",
       "status": "pending",
       "inputs": [],
       "outputs": [],
@@ -50,246 +186,249 @@
       "blockers": [],
       "warnings": []
     },
-    "setup": {
-      "stage": "setup",
-      "status": "completed",
-      "inputs": [
-        "./campaign-runtime.build.json",
-        ".campaign-runtime/build-context.json"
-      ],
-      "outputs": [
-        "src/home-outage-prep-v0/",
-        "src/home-outage-prep-v0/assets/",
-        "_data/campaigns.json#home-outage-prep-v0"
-      ],
-      "commands": [
-        "mkdir -p src/home-outage-prep-v0/assets",
-        "register route home-outage-prep-v0 in _data/campaigns.json (store_name=Keer, store_url=https://keer.29next.store)"
-      ],
-      "blockers": [],
-      "warnings": []
-    },
-    "assembly": {
-      "stage": "assembly",
-      "status": "completed",
-      "inputs": [
-        "./campaign-runtime.build.json",
-        ".campaign-runtime/build-context.json",
-        "../designer/funnel-designs/home-outage-prep/",
-        "../campaign-cart-starter-templates/src/demeter/"
-      ],
-      "outputs": [
-        "src/home-outage-prep-v0/_layouts/landing-passthrough.html",
-        "src/home-outage-prep-v0/presell.html (passthrough from designed source)",
-        "src/home-outage-prep-v0/landing.html (passthrough from designed source)",
-        "src/home-outage-prep-v0/checkout.html (demeter checkout, spec-driven values)",
-        "src/home-outage-prep-v0/upsell.html (demeter tier-cards, pkg 3 Fire Blanket, voucher FIRE)",
-        "src/home-outage-prep-v0/upsell-2.html (demeter stepper, pkg 4 Solar Spotlight, voucher SOLAR)",
-        "src/home-outage-prep-v0/receipt.html (demeter receipt)",
-        "src/home-outage-prep-v0/assets/ (demeter starter + brand.css + landing/ + products/)",
-        "src/home-outage-prep-v0/assets/config.js (apiKey + storeName from CampaignSpec, paypal removed)"
-      ],
-      "commands": [
-        "cp -r campaign-cart-starter-templates/src/demeter/* meridian/src/home-outage-prep-v0/",
-        "Replace config.js apiKey with CampaignSpec campaign.campaigns_api_key",
-        "Replace storeName with 'Keer'",
-        "Drop paypal from paymentConfig.expressCheckout.methodOrder",
-        "Wire frontmatter from CampaignSpec: packages.main_package=1, packages.prepurchase_1=2",
-        "Remove order_bump.switch01 (no second prepurchase in spec)",
-        "Replace shipping_methods with the one CampaignSpec shipping (standard=1)",
-        "Drop bundles[].shipping_method (no tier-specific shipping in spec)",
-        "Use bundle 2x as default-selected ('BEST DEAL' badge)",
-        "Pass show_paypal=false show_klarna=false to payment-methods.html (spec excludes them)",
-        "Wire upsell.html: pkg 3 Fire Blanket, single voucher FIRE on all 3 tiers (spec carries one voucher per upsell)",
-        "Wire upsell-2.html: pkg 4 Solar Spotlight, voucher SOLAR, qty stepper 1-5",
-        "Rooted SDK routing meta tags via campaign_link (next_url + decline_url frontmatter)",
-        "Removed unused upsell-bundle-tier-pills.html template",
-        "Renamed upsell-bundle-tier-cards.html → upsell.html, upsell-bundle-stepper.html → upsell-2.html (match spec page_url)",
-        "npm run build → 67 pages built, 6 home-outage-prep-v0 pages OK"
-      ],
-      "blockers": [],
-      "warnings": [
-        {
-          "code": "TIER_UPSELL_SINGLE_VOUCHER",
-          "message": "Upsell 1 tier cards (1x/2x/3x) all reuse single CampaignSpec voucher FIRE — spec does not carry per-tier voucher codes. Map Builder should expose tier voucher mapping, or doctor should flag tier UX with single voucher."
-        },
-        {
-          "code": "BRAND_LOGO_PLACEHOLDER",
-          "message": "Checkout header + receipt use next-logo.png placeholder. No RescueRay logo asset shipped in designer source — polish should add a brand asset and override checkout-header.html + receipt-skeleton.html in slug-local _includes."
-        }
-      ]
-    },
-    "polish": {
-      "stage": "polish",
-      "status": "completed",
-      "inputs": [
-        "src/home-outage-prep-v0/_includes/checkout-header.html",
-        "src/home-outage-prep-v0/_includes/receipt-skeleton.html",
-        "src/home-outage-prep-v0/receipt.html",
-        "src/home-outage-prep-v0/assets/js/checkout-demeter.js"
-      ],
-      "outputs": [
-        "Replaced next-logo.png placeholder with /home-outage-prep-v0/landing/images/logo.png (RescueRay brand mark from designer source) in checkout-header + receipt-skeleton + receipt body",
-        "Suppressed initExitIntentImage(placehold.co/600x400, EXIT10) in checkout-demeter.js — neither asset exists on this campaign"
-      ],
-      "commands": [
-        "Override _includes/checkout-header.html brand-logo to landing/images/logo.png (page-kit-commands.md gotcha)",
-        "Override _includes/receipt-skeleton.html brand-logo similarly",
-        "Override inline brand-logo in receipt.html (also references next-logo.png)",
-        "Rewrite checkout-demeter.js to drop initExitIntentImage call"
-      ],
-      "blockers": [],
-      "warnings": [
-        {
-          "code": "FUNNEL_VISUAL_INCONSISTENCY",
-          "message": "Presell + landing use designer source HTML (RescueRay navy/orange palette via brand.css). Checkout + upsells + receipt use demeter's tokens.css palette. Brand identity changes mid-funnel. v2 polish: retheme demeter visuals with RR colors via slug-local tokens.css override."
-        },
-        {
-          "code": "LOGO_SOURCE_OF_TRUTH",
-          "message": "Used landing/images/logo.png as the brand logo on checkout + receipt. Logo lives under a sub-asset path (landing/) rather than a top-level brand asset. Polish accepted this; designer source should ship a /brand/logo.png at the top of assets for the next round."
-        }
-      ]
-    },
-    "deploy": {
-      "stage": "deploy",
-      "status": "completed",
-      "inputs": [
-        "branch home-outage-prep-v0-sf21",
-        "PR https://github.com/Sellmore-Co/meridian/pull/7"
-      ],
-      "outputs": [
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/presell/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/landing/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/checkout/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/upsell/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/upsell-2/",
-        "https://deploy-preview-7--meridian-skincare.netlify.app/home-outage-prep-v0/receipt/"
-      ],
-      "commands": [
-        "git add -A && git commit -m '...' && git push -u origin home-outage-prep-v0-sf21",
-        "gh pr create --draft --base main --head home-outage-prep-v0-sf21",
-        "Netlify deploy preview for meridian-skincare: SUCCESS"
-      ],
-      "blockers": [],
-      "warnings": []
-    },
     "qa": {
       "stage": "qa",
-      "status": "completed",
-      "inputs": [
-        "https://meridian-skincare.netlify.app/home-outage-prep-v0/ (production live)"
-      ],
-      "outputs": [
-        ".campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP488C874DE9BB07KQLAF2TCTV.json (browser-only: 41 pass / 0 fail / READY)",
-        ".campaign-runtime/qa-home-outage-prep/home-outage-prep-v0-sf21/MP48BJ6BQ494G2RM6OHD3O7BFJ.json (browser + test-order both: 43 pass / 1 warn / 0 fail)",
-        ".campaign-runtime/qa-home-outage-prep/screenshots/ (7 funnel screenshots from earlier preview walk)",
-        "Test order #102248 ref_id 807d4fba7dbb4d7c855c243fd5123931 (ACCEPT path, $39.98, verified API 201/200, Spreedly tokenized)",
-        "Test order #102251 ref_id 7aefc0059432476ea22bde177baa945c (DECLINE path, $39.98, verified API 201/200, Spreedly tokenized)"
-      ],
-      "commands": [
-        "campaigns-os qa resolve --packet ... --base-url https://meridian-skincare.netlify.app",
-        "campaigns-os qa run --packet ... --base-url https://meridian-skincare.netlify.app --browser (static + render-only)",
-        "campaigns-os qa run --packet ... --base-url https://meridian-skincare.netlify.app --browser --test-order both --allow-test-orders --sandbox-test-card-confirmed (Playwright typed-card, both upsell paths)"
-      ],
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
       "blockers": [],
-      "warnings": [
-        {
-          "code": "BROWSER_CONSOLE_ERRORS",
-          "message": "Playwright run flagged 1 browser console issue on checkout: a missing /home-outage-prep-v0/images/credit-card-flags.svg asset from the Demeter starter. Friction #10 / starter-template asset hygiene."
-        },
-        {
-          "code": "QA_RECEIPT_LINE_ITEMS_MISSING_UPSELL",
-          "message": "Both accept and decline test orders show identical receipt_line_items (base 2x bundle only). Accept path clicked through upsell-1 and the upsell-add API succeeded, but the QA toolkit's captured receipt_line_items doesn't include the upsell tier. Either re-read order lines after upsell-add, or rename the field. New friction for SELL-271."
-        },
-        {
-          "code": "CAMPAIGNS_OS_START_DESTRUCTIVE",
-          "message": "Re-running campaigns-os start to regenerate the packet (e.g., to flip --test-orders-allowed on) wiped the populated .campaign-runtime/assembly-report.json and build-context.json. Lifecycle state was rebuilt from scratch and had to be manually restored from git. Either expose qa policy set as a non-destructive subcommand, or have start detect existing report content and merge instead of overwrite. New friction for SELL-271."
-        },
-        {
-          "code": "STATIC_QA_404",
-          "message": "Live page has a 404 on /home-outage-prep-v0/images/credit-card-flags.svg (demeter starter asset reference). Demeter starter ships partials that reference an asset not in the template's own assets/images/. Polish item."
-        },
-        {
-          "code": "API_REQUEST_ABORTED",
-          "message": "Raw browser event logs also include [ApiClient] API request failed: signal is aborted without reason during navigation. It did not drive the top-level QA warning in this run, but remains useful SDK noise to quiet separately."
-        }
-      ]
+      "warnings": []
     }
   },
   "decisions": [
     {
-      "id": "dec_page_map_page_mp3qp2nt_25",
+      "id": "dec_page_map_page_recovery_relief_presell",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_25\" to source file \"presell.html\"",
+      "decision": "mapped CampaignSpec page \"page_recovery_relief_presell\" to source file \"designer/footscape-presell/index.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-25, presell, presell-1, index"
+        "source-html manifest entry matched page \"page_recovery_relief_presell\" by page_id; path=\"designer/footscape-presell/index.html\" from /Users/devin/Developer/executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_26",
+      "id": "dec_page_map_page_recovery_relief_landing",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_26\" to source file \"landing.html\"",
+      "decision": "mapped CampaignSpec page \"page_recovery_relief_landing\" to source file \"designer/heat-patches/index.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-26, landing-pdp, landing, landing-1, index"
+        "source-html manifest entry matched page \"page_recovery_relief_landing\" by page_id; path=\"designer/heat-patches/index.html\" from /Users/devin/Developer/executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_27",
+      "id": "dec_page_map_page_recovery_relief_checkout",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_27\" to source file \"checkout.html\"",
+      "decision": "mapped CampaignSpec page \"page_recovery_relief_checkout\" to source file \"template-stock/demeter/checkout.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-27, checkout, checkout-1"
+        "source-html manifest entry matched page \"page_recovery_relief_checkout\" by page_id; path=\"template-stock/demeter/checkout.html\" from /Users/devin/Developer/executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_28",
+      "id": "dec_page_map_page_recovery_relief_upsell_1",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_28\" to source file \"upsell-1.html\"",
+      "decision": "mapped CampaignSpec page \"page_recovery_relief_upsell_1\" to source file \"designer/tens-ems/index.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-28, upsell, upsell-1"
+        "source-html manifest entry matched page \"page_recovery_relief_upsell_1\" by page_id; path=\"designer/tens-ems/index.html\" from /Users/devin/Developer/executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qs1fg_226",
+      "id": "dec_page_map_page_recovery_relief_upsell_2",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qs1fg_226\" to source file \"upsell-2.html\"",
+      "decision": "mapped CampaignSpec page \"page_recovery_relief_upsell_2\" to source file \"designer/massage-gun/index.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qs1fg-226, upsell-2, upsell"
+        "source-html manifest entry matched page \"page_recovery_relief_upsell_2\" by page_id; path=\"designer/massage-gun/index.html\" from /Users/devin/Developer/executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/.campaigns-os/source-html-manifest.json"
       ]
     },
     {
-      "id": "dec_page_map_page_mp3qp2nt_29",
+      "id": "dec_page_map_page_recovery_relief_receipt",
       "stage": "prepare_build",
       "decision_type": "deterministic_derivation",
-      "decision": "mapped CampaignSpec page \"page_mp3qp2nt_29\" to source file \"thank-you.html\"",
+      "decision": "mapped CampaignSpec page \"page_recovery_relief_receipt\" to source file \"template-stock/demeter/receipt.html\" via source-html manifest (matched by page_id)",
       "confidence": "high",
       "evidence": [
-        "matched source filename against page keys: page-mp3qp2nt-29, thank-you, thankyou, receipt, thankyou-1"
+        "source-html manifest entry matched page \"page_recovery_relief_receipt\" by page_id; path=\"template-stock/demeter/receipt.html\" from /Users/devin/Developer/executive/workstreams/campaigns-os/dogfood-automation/sources/recovery-relief-stack-v1/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_recovery_relief_presell",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_recovery_relief_presell\" to Page Kit target \"presell.html\" with CPK page_type \"product\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"designer/footscape-presell/index.html\" remains producer provenance",
+        "target path \"src/recovery-relief-stack-v1/presell.html\" derives from CampaignSpec route \"(entry route)\" and public slug \"recovery-relief-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_recovery_relief_landing",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_recovery_relief_landing\" to Page Kit target \"landing.html\" with CPK page_type \"product\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"designer/heat-patches/index.html\" remains producer provenance",
+        "target path \"src/recovery-relief-stack-v1/landing.html\" derives from CampaignSpec route \"landing/\" and public slug \"recovery-relief-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_recovery_relief_checkout",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_recovery_relief_checkout\" to Page Kit target \"checkout.html\" with CPK page_type \"checkout\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"template-stock/demeter/checkout.html\" remains producer provenance",
+        "target path \"src/recovery-relief-stack-v1/checkout.html\" derives from CampaignSpec route \"checkout/\" and public slug \"recovery-relief-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_recovery_relief_upsell_1",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_recovery_relief_upsell_1\" to Page Kit target \"upsell.html\" with CPK page_type \"upsell\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"designer/tens-ems/index.html\" remains producer provenance",
+        "target path \"src/recovery-relief-stack-v1/upsell.html\" derives from CampaignSpec route \"upsell/\" and public slug \"recovery-relief-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_recovery_relief_upsell_2",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_recovery_relief_upsell_2\" to Page Kit target \"upsell-2.html\" with CPK page_type \"upsell\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"designer/massage-gun/index.html\" remains producer provenance",
+        "target path \"src/recovery-relief-stack-v1/upsell-2.html\" derives from CampaignSpec route \"upsell-2/\" and public slug \"recovery-relief-stack-v1\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_recovery_relief_receipt",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_recovery_relief_receipt\" to Page Kit target \"receipt.html\" with CPK page_type \"receipt\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"template-stock/demeter/receipt.html\" remains producer provenance",
+        "target path \"src/recovery-relief-stack-v1/receipt.html\" derives from CampaignSpec route \"receipt/\" and public slug \"recovery-relief-stack-v1\""
       ]
     }
   ],
-  "evidence": [],
+  "adapter_decisions": {
+    "raw_html_conversion_status": "completed",
+    "source_asset_strategy": "pagekit_campaign_asset_root",
+    "route_rewrite_policy": "campaignspec_routes_via_campaign_link",
+    "config_script_strategy": "campaign_asset",
+    "commerce_shell_adoption": "template_clone_first_verified",
+    "wrapper_policy": "strip_document_wrappers",
+    "frontmatter_policy": "pagekit_yaml_frontmatter",
+    "script_style_reference_policy": "frontmatter_or_campaign_asset",
+    "cta_rewrite_policy": "campaignspec_routes_via_campaign_link",
+    "layout_choice": "campaign_layout",
+    "template_files_copied": {
+      "status": "verified_existing_slice",
+      "required_groups": [
+        "pages",
+        "_includes",
+        "_layouts",
+        "assets/css",
+        "assets/js",
+        "frontmatter_vocabulary"
+      ],
+      "groups": [
+        "pages",
+        "_includes",
+        "_layouts",
+        "assets/css",
+        "assets/js",
+        "frontmatter_vocabulary"
+      ],
+      "paths": [
+        "src/recovery-relief-stack-v1/checkout.html",
+        "src/recovery-relief-stack-v1/landing.html",
+        "src/recovery-relief-stack-v1/presell.html",
+        "src/recovery-relief-stack-v1/receipt.html",
+        "src/recovery-relief-stack-v1/upsell.html",
+        "src/recovery-relief-stack-v1/upsell-2.html",
+        "src/recovery-relief-stack-v1/_includes",
+        "src/recovery-relief-stack-v1/_layouts",
+        "src/recovery-relief-stack-v1/assets/css",
+        "src/recovery-relief-stack-v1/assets/js"
+      ]
+    }
+  },
+  "proof_policy": {
+    "browser_qa_required": true,
+    "typed_card_depth": "common",
+    "localhost_development_domain_allowed": true,
+    "non_localhost_origin_allowlist_required": true,
+    "order_path_depth": "common",
+    "operator_approval_state": "not_required_global_test_cards",
+    "qa_portal_publish_default": true
+  },
+  "theme": {
+    "status": "needs_review",
+    "css_path": ".campaign-runtime/theme/brand-theme.css",
+    "load_order": "unknown",
+    "commerce_pages": [],
+    "evidence": [
+      "theme inspect found a generatable brand theme; run theme generate or explicit auto policy before applying."
+    ],
+    "warnings": [],
+    "repair_loop_defect": null
+  },
+  "evidence": [
+    "Build passed with npm run build after installing project dependencies.",
+    "SDK lint passed for checkout, upsell, upsell-2, and receipt.",
+    "Rendered scan found no PayPal/Klarna, stale Lumi API key, Lorem bullets, Retail/Special Discount full-price upsell labels, or data-next-include-shipping on the bundle selector.",
+    "Checkout renders bankcard plus Apple Pay/Google Pay only; root-routed success URL points to /recovery-relief-stack-v1/upsell/.",
+    "Upsell accept/decline meta routes point to /recovery-relief-stack-v1/upsell-2/ and /recovery-relief-stack-v1/receipt/ respectively.",
+    "Checkout uses one hero package with offer-driven bundle quantities, plus opt-in prepurchase bump package 2.",
+    "Local browser polish verified presell and landing CTAs are visible.",
+    "Checkout desktop renders bundle picker, opt-in full-price bump, payment methods, and side order summary after campaign CSS visibility correction.",
+    "Checkout mobile at 390px renders stable bundle cards, opt-in bump, payment section, and order summary without PayPal text.",
+    "Upsell 1 and Upsell 2 render full-price copy only, product images, accept/decline CTAs, and no retail/special-discount/Lorem residue.",
+    "Placeholder exit-intent image/coupon behavior was removed from checkout-demeter.js for this campaign."
+  ],
   "blockers": [],
   "warnings": [
     {
       "code": "SOURCE_COMMERCE_REVIEW",
       "stage": "assembly",
       "message": "Source HTML contains possible commerce zones. Preserve catalog-owned runtime surfaces."
+    },
+    {
+      "code": "SOURCE_ASSET_MISSING",
+      "stage": "assembly",
+      "message": "6 local source asset reference(s) did not resolve to files under the source root.",
+      "sample": [
+        "images/lighter_arc_flashlight.mp4",
+        "images/specs_icon1.png",
+        "images/specs_icon2.png",
+        "images/specs_icon3.png",
+        "../images/next.png",
+        "../images/prev.png"
+      ]
     }
   ],
   "next": {
-    "stage": "review",
-    "owner": "Devin / Campaigns OS team",
-    "action": "Triage dogfood findings (HOME-OUTAGE-PREP-DOGFOOD-REPORT.md) into the Campaigns OS Dogfood Linear project. Confirm PR #7 is reviewed and either land or close after writing remediation tickets."
+    "stage": "deploy",
+    "status": "ready_with_warnings",
+    "owner": "deploy",
+    "action": "Create PR and deploy preview, then run Campaigns OS QA with browser and common test-order proof.",
+    "blocked_stages": [
+      "qa",
+      "runtime-sdk-verification"
+    ]
   }
 }
