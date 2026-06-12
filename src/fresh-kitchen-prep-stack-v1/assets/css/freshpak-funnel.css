@@ -1,0 +1,440 @@
+:root {
+  --freshpak-green: #0ca81d;
+  --freshpak-green-bright: #26cf39;
+  --freshpak-cta-green: #067915;
+  --freshpak-cta-green-bright: #089217;
+  --freshpak-green-light: #e9f3d2;
+  --freshpak-orange: #ff8e09;
+  --freshpak-red: #eb1313;
+  --freshpak-ink: #2e3a4b;
+  --freshpak-muted: #516073;
+  --freshpak-border: #d7e6c0;
+  --freshpak-cream: #fffdf6;
+  --freshpak-card: #f8fbef;
+  --brand-primary: var(--freshpak-green);
+  --brand-secondary: var(--freshpak-green-light);
+  --brand-accent: var(--freshpak-orange);
+  --surface-bg: #ffffff;
+  --surface-card: var(--freshpak-card);
+  --surface-alt: #f3f9e7;
+  --text-primary: var(--freshpak-ink);
+  --text-secondary: var(--freshpak-muted);
+  --text-inverse: #ffffff;
+  --border-default: var(--freshpak-border);
+  --brand--color--primary: var(--freshpak-green);
+  --brand--color--primary-dark: #087817;
+  --brand--color--primary-light: var(--freshpak-green-light);
+  --brand--color--primary-lighter: #f7fbec;
+  --brand--color--primary-foreground: #ffffff;
+  --brand--color--cta-primary: var(--freshpak-green);
+  --brand--color--accent: var(--freshpak-orange);
+  --brand--color--background: #ffffff;
+  --brand--color--surface: var(--freshpak-cream);
+  --brand--color--foreground: var(--freshpak-ink);
+  --brand--color--border: var(--freshpak-border);
+  --brand--color--text-primary: var(--freshpak-ink);
+  --brand--color--text-secondary: var(--freshpak-muted);
+  --brand--color--rating-star: var(--freshpak-green);
+  --component--color--outline: var(--freshpak-green);
+  --system-colors--success: var(--freshpak-green);
+  --system-colors--success-medium: var(--freshpak-green-bright);
+  --system-colors--success-light: #f3f9e7;
+}
+
+/* Presell bridge */
+.freshpak-presell {
+  background: #ffffff;
+  color: var(--freshpak-ink);
+  font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.freshpak-presell * {
+  box-sizing: border-box;
+}
+
+.freshpak-presell__shipping-strip {
+  background: var(--freshpak-red);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.35;
+  padding: 0.55rem 1rem;
+  text-align: center;
+}
+
+.freshpak-presell__nav {
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(46, 58, 75, 0.14);
+  box-shadow: 0 5px 16px rgba(46, 58, 75, 0.08);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9rem clamp(1rem, 5vw, 3.5rem);
+}
+
+.freshpak-presell__logo-link {
+  display: inline-flex;
+}
+
+.freshpak-presell__logo {
+  display: block;
+  height: auto;
+  width: clamp(9.5rem, 17vw, 12.5rem);
+}
+
+.freshpak-presell__nav-cta,
+.freshpak-presell__cta {
+  align-items: center;
+  background: linear-gradient(180deg, var(--freshpak-cta-green-bright) 0%, var(--freshpak-cta-green) 100%);
+  background-color: var(--freshpak-cta-green);
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.24);
+  color: #ffffff;
+  display: inline-flex;
+  font-weight: 900;
+  justify-content: center;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.45);
+  text-transform: uppercase;
+}
+
+.freshpak-presell__nav-cta {
+  font-size: 0.9rem;
+  min-height: 3.1rem;
+  padding: 0 1.25rem;
+}
+
+.freshpak-presell__cta {
+  gap: 0.75rem;
+  min-height: 4.25rem;
+  padding: 1rem 1.65rem;
+}
+
+.freshpak-presell__cta img {
+  height: auto;
+  width: 1rem;
+}
+
+.freshpak-presell__hero {
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.88) 50%, rgba(233, 243, 210, 0.66) 100%),
+    url("../landing/images/banner-xl.jpg") center top / cover no-repeat;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 1.08fr) minmax(16rem, 0.82fr);
+  min-height: 31rem;
+  padding: clamp(2.15rem, 5vw, 4.5rem) clamp(1.25rem, 6vw, 4rem);
+}
+
+.freshpak-presell__hero-copy {
+  max-width: 46rem;
+}
+
+.freshpak-presell__eyebrow {
+  color: var(--freshpak-green);
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.freshpak-presell h1,
+.freshpak-presell h2,
+.freshpak-presell p {
+  margin-top: 0;
+}
+
+.freshpak-presell h1 {
+  color: var(--freshpak-ink);
+  font-size: clamp(2.45rem, 4.9vw, 4.65rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.98;
+  margin-bottom: 1.4rem;
+}
+
+.freshpak-presell h1::after {
+  color: var(--freshpak-orange);
+  content: ".";
+}
+
+.freshpak-presell__lede {
+  color: #111111;
+  font-size: clamp(1.05rem, 1.7vw, 1.32rem);
+  font-weight: 700;
+  line-height: 1.42;
+  margin-bottom: 1.4rem;
+  max-width: 43rem;
+}
+
+.freshpak-presell__proof-row {
+  align-items: center;
+  color: #111111;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  gap: 0.45rem 0.75rem;
+  margin-bottom: 1.8rem;
+}
+
+.freshpak-presell__stars {
+  color: var(--freshpak-orange);
+  letter-spacing: 0;
+}
+
+.freshpak-presell__hero-media {
+  align-self: end;
+}
+
+.freshpak-presell__hero-media img,
+.freshpak-presell__feature-card img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.freshpak-presell__section,
+.freshpak-presell__offer-band {
+  padding: clamp(2.4rem, 5vw, 4.25rem) clamp(1.25rem, 6vw, 4rem);
+}
+
+.freshpak-presell__grid {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+  margin: 0 auto;
+  max-width: 72rem;
+}
+
+.freshpak-presell__copy-card,
+.freshpak-presell__feature-card,
+.freshpak-presell__offer-card {
+  border: 1px solid var(--freshpak-border);
+  border-radius: 8px;
+}
+
+.freshpak-presell__copy-card {
+  background: #ffffff;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.freshpak-presell h2 {
+  color: #111111;
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  font-weight: 900;
+  line-height: 1.08;
+  margin-bottom: 1.4rem;
+}
+
+.freshpak-presell__list {
+  color: var(--freshpak-muted);
+  display: grid;
+  font-size: 1.08rem;
+  gap: 1rem;
+  line-height: 1.55;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.freshpak-presell__list li {
+  background: url("../landing/images/banner-list-check.png") 0 0.2rem / 1.4rem auto no-repeat;
+  padding-left: 2.1rem;
+}
+
+.freshpak-presell__list strong {
+  color: #111111;
+}
+
+.freshpak-presell__feature-card {
+  align-self: stretch;
+  background: var(--freshpak-green-light);
+  overflow: hidden;
+}
+
+.freshpak-presell__feature-card p {
+  color: #111111;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.45;
+  margin: 0;
+  padding: 1.25rem;
+}
+
+.freshpak-presell__offer-band {
+  background: var(--freshpak-card);
+  border-top: 1px solid var(--freshpak-border);
+}
+
+.freshpak-presell__offer-card {
+  background: #ffffff;
+  margin: 0 auto;
+  max-width: 52rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+}
+
+.freshpak-presell__offer-card p:not(.freshpak-presell__eyebrow) {
+  color: var(--freshpak-muted);
+  font-size: 1.1rem;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.freshpak-presell__cta--wide {
+  width: min(100%, 27rem);
+}
+
+/* Commerce page skin */
+.section_header promo-banner {
+  --brand--color--primary: var(--freshpak-red);
+}
+
+.checkout-header,
+.upsell-header-bar {
+  border-bottom-color: var(--freshpak-border);
+  box-shadow: 0 4px 14px rgba(46, 58, 75, 0.07);
+}
+
+.brand-logo {
+  height: auto;
+  max-height: 3rem;
+  object-fit: contain;
+}
+
+.encrypted-banner {
+  background-color: var(--freshpak-green-light);
+  color: #111111;
+}
+
+.encrypted-banner__icon,
+.bullet_features-icon-svg,
+.checkout-review__verified,
+.color-primary {
+  color: var(--freshpak-green) !important;
+}
+
+.review_component-star,
+.star_img svg rect {
+  color: var(--freshpak-green);
+}
+
+.os-card.next-selected,
+.cc-upsell-bundle-tier-grid .os-card.next-selected {
+  background-color: #f7fbec;
+  border-color: var(--freshpak-green) !important;
+  box-shadow: 0 0 0 1px var(--freshpak-green) !important;
+}
+
+.os-card__label--pill-primary,
+.os-card__label--pill-secondary,
+.os-card__title-badge.pb--bestseller,
+.cc-upsell-bundle-tier-card__badge {
+  background-color: var(--freshpak-green) !important;
+  color: #ffffff !important;
+}
+
+.os-card__price.os--current,
+.os-card__total-current,
+.upsell-offer__price {
+  color: #111111;
+}
+
+.submit-button,
+.button,
+.button.cc-auto,
+.common-button {
+  background: linear-gradient(180deg, var(--freshpak-cta-green-bright) 0%, var(--freshpak-cta-green) 100%) !important;
+  background-color: var(--freshpak-cta-green) !important;
+  border-color: var(--freshpak-cta-green) !important;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.22) !important;
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+.submit-button__subtext {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.announcement {
+  background-color: var(--freshpak-red);
+}
+
+.upsell-header {
+  background: linear-gradient(180deg, var(--freshpak-green-bright) 0%, var(--freshpak-green) 100%);
+}
+
+.upsell-header__title,
+.upsell-header__offer,
+.upsell-header__suboffer {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.upsell-offer__card,
+.checkout__form-container,
+.cart-box--card,
+.receipt-confirmation,
+.order_details {
+  border-color: var(--freshpak-border);
+}
+
+.upsell-offer__image-column,
+.checkout-media__wrapper {
+  background-color: #f7fbec;
+}
+
+.receipt-check {
+  color: var(--freshpak-green);
+}
+
+.summary-toggle__text,
+.order-totals__value--total {
+  color: var(--freshpak-ink);
+}
+
+@media (max-width: 767px) {
+  .freshpak-presell__shipping-strip {
+    font-size: 0.9rem;
+  }
+
+  .freshpak-presell__nav {
+    align-items: flex-start;
+    gap: 0.9rem;
+    flex-direction: column;
+  }
+
+  .freshpak-presell__nav-cta {
+    width: 100%;
+  }
+
+  .freshpak-presell__hero,
+  .freshpak-presell__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .freshpak-presell__hero {
+    min-height: 0;
+  }
+
+  .freshpak-presell__hero-media {
+    order: -1;
+  }
+
+  .freshpak-presell__cta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .announcement__text {
+    font-size: 0.8rem;
+    line-height: 1.25;
+    padding-inline: 0.5rem;
+  }
+}

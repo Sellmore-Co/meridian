@@ -1,0 +1,43 @@
+{
+  "schema_version": "source-html-manifest/v0",
+  "generated_at": "2026-06-09T11:30:00.000Z",
+  "generator": "campaigns-os-dogfood-source-intake/manual-v1",
+  "campaign_slug": "fresh-kitchen-prep-stack-v1",
+  "pages": [
+    {
+      "page_id": "page_mq6es6pj_25",
+      "path": "presell.html",
+      "page_type": "presell"
+    },
+    {
+      "page_id": "page_mq6es6pj_26",
+      "path": "designer-landing/landing.html",
+      "page_type": "landing",
+      "page_url": "landing/"
+    },
+    {
+      "page_id": "page_mq6es6pj_27",
+      "path": "checkout-template-source.html",
+      "page_type": "checkout",
+      "page_url": "checkout/"
+    },
+    {
+      "page_id": "page_mq6es6pj_28",
+      "path": "upsell-fruit-cleaner-template-source.html",
+      "page_type": "upsell",
+      "page_url": "upsell/"
+    },
+    {
+      "page_id": "page_mq6etfcc_38",
+      "path": "upsell-chef-knife-template-source.html",
+      "page_type": "upsell",
+      "page_url": "upsell-2/"
+    },
+    {
+      "page_id": "page_mq6es6pj_29",
+      "path": "receipt-template-source.html",
+      "page_type": "thankyou",
+      "page_url": "receipt/"
+    }
+  ]
+}

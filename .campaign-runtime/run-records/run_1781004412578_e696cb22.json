@@ -1,0 +1,208 @@
+{
+  "schema_version": "campaigns-os-run-record/v0",
+  "run_id": "run_1781004412578_e696cb22",
+  "package_version": "0.1.0-alpha.0",
+  "command": "run-record",
+  "argv_shape": [
+    "--context",
+    "--journal",
+    "--json",
+    "--lifecycle-journal",
+    "--packet",
+    "--primary-surface",
+    "--qa-verdict",
+    "--report",
+    "--run-id",
+    "--surface-confidence",
+    "--surfaces"
+  ],
+  "created_at": "2026-06-10T04:22:35.498Z",
+  "consent_state": "off",
+  "consent_source": "default",
+  "remit_attempted": false,
+  "remit_ok": null,
+  "remit_error": null,
+  "remit_endpoint": null,
+  "remit_state": "skipped",
+  "identity": {
+    "map_id": "fresh-kitchen-prep-stack-v1-db4i",
+    "campaign_slug": "fresh-kitchen-prep-stack-v1",
+    "template_family": "olympus",
+    "entry_point_shape": "packet"
+  },
+  "artifacts": [
+    {
+      "kind": "build_packet",
+      "path": "./campaign-runtime.build.json",
+      "schema_version": "campaign-runtime-build-packet/v0",
+      "sha256": "04fd05b0385eb30f335ffeaff6f2421792b8f7fca76aacdb77d32022710da1b0"
+    },
+    {
+      "kind": "build_context",
+      "path": ".campaign-runtime/build-context.json",
+      "schema_version": "campaign-runtime-build-context/v0",
+      "sha256": "3c432a1e2a9ea6f0dc506d5cbbd7cc6f4a94285125750e5c54db273816d128c9"
+    },
+    {
+      "kind": "assembly_report",
+      "path": ".campaign-runtime/assembly-report.json",
+      "schema_version": "campaign-runtime-assembly-report/v0",
+      "sha256": "6125e28b16cead5c492aa91680f43d247988eb9713315f21f267fe6a0806dc30"
+    },
+    {
+      "kind": "qa_verdict",
+      "path": "./qa-output/fresh-kitchen-prep-stack-v1-db4i/MQ6KY913PJ56OE64OSGN0INMKU.json",
+      "schema_version": "1.0",
+      "sha256": "b6457bb09c38e9162dbab6cf6cb26e794c31200c740ad00034403fd6e25fe1cc"
+    },
+    {
+      "kind": "findings_journal",
+      "path": ".campaign-runtime/workflow-findings.jsonl",
+      "schema_version": "campaigns-os-workflow-finding/v0",
+      "sha256": "dde428992caeb473cb86a82d3f40558b4cda8f51df25a3ee82378d1e75dcf2ce"
+    }
+  ],
+  "observations": {
+    "doctor": {
+      "status": "ready_with_warnings",
+      "error_codes": [],
+      "warning_codes": [
+        "campaign.allowed_domains_confirmed",
+        "spec.validation",
+        "spec.store_profile.payment_methods_default_on",
+        "adapter.raw_html_conversion_status",
+        "adapter.commerce_shell_adoption",
+        "adapter.template_files_copied",
+        "source_html.commerce_shell_required",
+        "source_html.commerce_shell_required",
+        "source_html.commerce_shell_required",
+        "source_html.commerce_shell_required"
+      ],
+      "ready_count": 30
+    },
+    "spec_validation_rule_ids": [
+      "StoreProfileShape"
+    ],
+    "adapter_decisions": {
+      "raw_html_conversion_status": "pending",
+      "source_asset_strategy": "pagekit_campaign_asset_root",
+      "route_rewrite_policy": "campaignspec_routes_via_campaign_link",
+      "config_script_strategy": "campaign_asset",
+      "commerce_shell_adoption": "template_clone_first_required",
+      "wrapper_policy": "strip_document_wrappers",
+      "frontmatter_policy": "pagekit_yaml_frontmatter",
+      "script_style_reference_policy": "frontmatter_or_campaign_asset",
+      "cta_rewrite_policy": "campaignspec_routes_via_campaign_link",
+      "layout_choice": "campaign_layout",
+      "template_files_copied_status": "pending"
+    },
+    "qa": {
+      "disposition": "ready",
+      "gap_classes": []
+    },
+    "finding_ids": [
+      "wf_1781004499792_1b42a5b1",
+      "wf_1781005314369_ddab370a",
+      "wf_1781005341002_2783998d",
+      "wf_1781065253300_e129d4d3",
+      "wf_1781065272490_bb931aad",
+      "wf_1781065272497_2a473ad2",
+      "wf_1781065277566_75432f3f"
+    ]
+  },
+  "surfaces": [
+    "template",
+    "design-source",
+    "spec-rule",
+    "cli"
+  ],
+  "primary_surface": "template",
+  "surface_confidence": "operator_observed",
+  "lifecycle": {
+    "run_id": "run_1781004412578_e696cb22",
+    "command": null,
+    "argv_shape": [],
+    "exit_status": 0,
+    "started_at": "2026-06-09T11:28:02.237Z",
+    "completed_at": "2026-06-09T11:45:05.360Z",
+    "duration_ms": 1023123,
+    "stages": [
+      {
+        "name": "start:resolve-spec",
+        "duration_ms": 905,
+        "exit_status": 0
+      },
+      {
+        "name": "start:prepare-build",
+        "duration_ms": 39,
+        "exit_status": 0
+      },
+      {
+        "name": "findings",
+        "duration_ms": 1,
+        "exit_status": 1
+      },
+      {
+        "name": "findings",
+        "duration_ms": 2,
+        "exit_status": 0
+      },
+      {
+        "name": "start:resolve-spec",
+        "duration_ms": 606,
+        "exit_status": 0
+      },
+      {
+        "name": "start:prepare-build",
+        "duration_ms": 41,
+        "exit_status": 0
+      },
+      {
+        "name": "doctor",
+        "duration_ms": 39,
+        "exit_status": 0
+      },
+      {
+        "name": "findings",
+        "duration_ms": 3,
+        "exit_status": 0
+      },
+      {
+        "name": "doctor",
+        "duration_ms": 36,
+        "exit_status": 0
+      },
+      {
+        "name": "findings",
+        "duration_ms": 2,
+        "exit_status": 0
+      },
+      {
+        "name": "qa",
+        "duration_ms": 4,
+        "exit_status": 0
+      },
+      {
+        "name": "qa",
+        "duration_ms": 28270,
+        "exit_status": 0
+      },
+      {
+        "name": "findings",
+        "duration_ms": 2,
+        "exit_status": 0
+      },
+      {
+        "name": "validate-assembly-report",
+        "duration_ms": 2,
+        "exit_status": 0
+      },
+      {
+        "name": "doctor",
+        "duration_ms": 52,
+        "exit_status": 0
+      }
+    ],
+    "repair_loop_count": 8
+  }
+}
