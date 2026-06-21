@@ -1,0 +1,62 @@
+{% comment %}
+  next_component: promo-display
+  next_version: 0.1.0
+  next_sdk_min: 0.4.18
+  next_purpose: Inline promo-code display (Adsbranded opinion — all 4 surveyed checkouts ship one). Renders the SDK coupon input + applied-coupon tags, plus an optional opinionated "use this code" chip. Wired to the real SDK coupon path via data-next-coupon anchors; the SDK applies/validates the code and reflects it in cart discounts + the cart-summary voucher row.
+  next_params:
+    promo:        object, optional. { label, code, placeholder, button_text, auto_apply }.
+      label:       string. Small heading above the field (e.g. "Have a promo code?"). Omit to hide.
+      code:        string. A visible suggested code shown as a chip AND prefilled into the field
+                   (customer one-clicks Apply). Omit for a plain empty field.
+      placeholder: string, default "Promo code (optional)".
+      button_text: string, default "Apply".
+      auto_apply:  bool, default true. Mirrors data-auto-apply on the SDK input row.
+  next_sdk_owns:
+    - data-next-coupon (input | display)   # the coupon application + applied-tags path
+    - data-auto-apply
+    - os-checkout-field="coupon"
+    - data-next-hide="cart.isEmpty"
+  next_theming:
+    classes_designer_owns: [.promo-display, .promo-wrapper, .promo-display__label, .promo-display__code, .coupon-form, .coupon-form__row, .coupon-button, .coupon-tags, .coupon-tag]
+    css_vars_designer_owns: []
+  next_dont_touch:
+    - data-next-coupon="input"/"display" and os-checkout-field="coupon" are the SDK hooks — renaming breaks coupon apply/remove.
+    - The applied-coupon tag template uses pb-checkout="coupon-title"/"coupon-remove"; the SDK clones it per applied coupon.
+  next_gotchas:
+    - Do NOT prefill + auto-apply a fake demo code: the SDK would try to apply it on load and surface an error. The starter ships no `code`, so the default renders an empty field (no erroneous auto-apply).
+    - Applied coupons also render in the cart-summary voucher discount row (data-next-discounts="voucher"); this block is the input + tag affordance, the summary is the math.
+    - coupon-button label is upcased by the base button style; pass button_text in natural case.
+  next_variants:
+    - inline (this; sits in the order-summary card)
+  next_related:
+    - cart-summary (shows the applied voucher discount)
+    - exit-intent-popup (exit-intent coupon path; this is the always-visible inline path)
+{% endcomment %}
+{%- assign _placeholder = promo.placeholder | default: 'Promo code (optional)' -%}
+{%- assign _button = promo.button_text | default: 'Apply' -%}
+{%- assign _auto = promo.auto_apply -%}{%- if _auto == nil %}{% assign _auto = true %}{% endif -%}
+<div data-next-hide="cart.isEmpty" class="coupon-section promo-display">
+  {%- if promo.label or promo.code %}
+  <div class="promo-wrapper">
+    {% if promo.label %}<div class="promo-display__label">{{ promo.label | escape }}</div>{% endif %}
+    {% if promo.code %}<div class="promo-display__code">
+      <span class="promo-display__code-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M21 11.5L12.5 3A1.5 1.5 0 0 0 11.44 2.56L3 4v8.5l8.5 8.5a2 2 0 0 0 2.83 0l6.67-6.67a2 2 0 0 0 0-2.83zM6.5 8A1.5 1.5 0 1 1 8 6.5 1.5 1.5 0 0 1 6.5 8z"/></svg></span>
+      <span class="promo-display__code-text">{{ promo.code | escape }}</span>
+    </div>{% endif %}
+  </div>
+  {%- endif %}
+  <div class="coupon-form">
+    <div{% if _auto %} data-auto-apply="true"{% endif %} data-next-coupon="input" data-placeholder="{{ _placeholder | escape }}" data-button-text="{{ _button | escape }}" class="coupon-form__row">
+      <div class="form-group">
+        <div class="form-input"><input os-checkout-field="coupon" name="coupon" data-name="Coupon Code" type="text" placeholder="{{ _placeholder | escape }}"{% if promo.code %} value="{{ promo.code | escape }}"{% endif %} class="input-flds"></div>
+      </div>
+      <button type="button" class="coupon-button next-disabled"><div>{{ _button | escape }}</div></button>
+    </div>
+    <div data-template="tag" data-next-coupon="display" class="coupon-tags">
+      <div pb-checkout="coupon-card" class="coupon-tag">
+        <span pb-checkout="coupon-title" class="coupon-tag__text">CODE</span>
+        <span pb-checkout="coupon-remove" class="coupon-tag__remove w-embed"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="100%" height="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59L7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12L5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4"/></svg></span>
+      </div>
+    </div>
+  </div>
+</div>

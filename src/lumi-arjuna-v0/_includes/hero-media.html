@@ -1,0 +1,60 @@
+{% comment %}
+  next_component: hero-media
+  next_version: 0.1.0
+  next_sdk_min: 0.4.18
+  next_purpose: Primary product media slot for the left checkout column. DEFAULT is a single large static product IMAGE with optional absolutely-positioned badge overlays (the recurring Adsbranded pattern). Opt in to an autoplay/loop/muted product VIDEO (media_type=video) or a swiper gallery (media_type=gallery).
+  next_params:
+    media_type:   enum [image, gallery, video], default "image". image = single large banner-img (Adsbranded default); gallery = swiper carousel (opt-in); video = autoplay product video (opt-in).
+    hero_image:   object { src (asset path — campaign_asset-resolved), alt }. Used when media_type=image. Ships an obvious placeholder so the slot is never blank.
+    hero_video:   object { poster (asset path — campaign_asset-resolved), sources: [{ src, type }] }. Required when media_type=video.
+                  NOTE: sources[].src is rendered RAW (absolute CDN URL), NOT campaign_asset-resolved — unlike poster.
+    media_badges: array of { src (asset path), pos } overlays (shared by image + video). pos => CSS class badge-img | badge-img-2 | badge-img-3.
+    swiper_slides / swiper_thumbs / swiper_aspect: passed through to swiper-gallery when media_type=gallery.
+  next_sdk_owns:
+    - none (static media). Gallery variant delegates to data-component="swiper" (swiper-gallery.html).
+  next_theming:
+    classes_designer_owns: [.banner-img-wrapper, .img-wrapper, .banner-img, .img-poster, .badge-img, .badge-img-2, .badge-img-3]
+    css_vars_designer_owns: []
+  next_dont_touch:
+    - video must stay muted + playsinline + autoplay for mobile autoplay to work.
+  next_gotchas:
+    - image is the family default; carousel/video are opt-in, NOT the baseline (3/4 surveyed Adsbranded checkouts are single-image).
+    - ship a real hero_image.src (or video poster) so the slot is never blank; the starter ships an obvious placeholder QA should flag.
+    - badge pos maps to fixed corners (badge-img bottom-right, badge-img-2 right-mid, badge-img-3 top-right); only 3 slots styled.
+    - QA gate may expect a swiper gallery; the checkout qaStructure accepts .banner-img-wrapper OR [data-component="swiper"].
+  next_variants:
+    - image (this; Arjuna default — single large banner-img)
+    - gallery (delegates to swiper-gallery.html; opt-in carousel)
+    - video (autoplay/loop/muted product video; opt-in)
+  next_related:
+    - swiper-gallery (gallery fallback)
+    - left-content (the social-proof rail rendered beneath this)
+{% endcomment %}
+{% assign _media_type = media_type | default: 'image' -%}
+{% if _media_type == 'gallery' -%}
+  {% campaign_include 'swiper-gallery.html' main_slides=swiper_slides thumbs=swiper_thumbs variant='sw1' swiper_aspect=swiper_aspect %}
+{% elsif _media_type == 'video' -%}
+<div class="banner-img-wrapper">
+  <div class="img-wrapper video">
+    <video class="img-poster" fetchpriority="high" loop autoplay muted playsinline{% if hero_video.poster %} poster="{{ hero_video.poster | campaign_asset }}"{% endif %}>
+      {% for s in hero_video.sources -%}
+      <source src="{{ s.src }}" type="{{ s.type | default: 'video/webm' }}">
+      {% endfor -%}
+    </video>
+    {% for b in media_badges -%}
+    <img class="{{ b.pos | default: 'badge-img' }}" src="{{ b.src | campaign_asset }}" alt="" loading="lazy" decoding="async">
+    {% endfor -%}
+  </div>
+</div>
+{% else -%}
+{%- comment -%} image — single large static banner (Adsbranded default). {%- endcomment -%}
+{%- assign _hero_src = hero_image.src | default: 'images/hero-placeholder.svg' -%}
+<div class="banner-img-wrapper">
+  <div class="img-wrapper">
+    <img class="banner-img" src="{{ _hero_src | campaign_asset }}" alt="{{ hero_image.alt | default: '' | escape }}" fetchpriority="high" decoding="async">
+    {% for b in media_badges -%}
+    <img class="{{ b.pos | default: 'badge-img' }}" src="{{ b.src | campaign_asset }}" alt="" loading="lazy" decoding="async">
+    {% endfor -%}
+  </div>
+</div>
+{% endif -%}

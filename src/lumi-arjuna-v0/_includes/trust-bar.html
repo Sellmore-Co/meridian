@@ -1,0 +1,53 @@
+{% comment %}
+  next_component: trust-bar
+  next_version: 0.1.0
+  next_sdk_min: 0.4.18
+  next_purpose: Configurable trust/conversion bar below the form — security seals, payment logos, and an optional "as seen in" press strip. This is the #1 surface CRO iterations touch (add/swap/rearrange badges + seals), so it is frontmatter-driven: CRO tweaks reconfigure data, they never fork the template.
+  next_params:
+    trust_bar: object, optional.
+      seals:        array of { line1, line2, icon? }. The stacked security seals. icon = optional asset src; omit for text-only (current default).
+      payment_logos: asset path to a card/payment-logos image. Omit to hide.
+      press:        object, optional "As seen in" media strip (a common CRO add). { heading, logos:[{src,alt}] }.
+      Omit `trust_bar` entirely → ships the default 2 seals (SSL + Safe Checkout) + card flags (preserves prior behavior).
+  next_sdk_owns: []   # presentational only — no SDK anchors
+  next_theming:
+    classes_designer_owns: [.checkout-trust-bar, .trust-badges, .trust-badge__item, .trust-badge--icon, .trust-badge--text, .credit-card__flags, .press-bar, .press-bar__heading, .press-bar__logos, .press-bar__logo]
+    css_vars_designer_owns: []
+  next_dont_touch: []
+  next_gotchas:
+    - Presentational trust content, NOT a payment gate — adding a payment logo here does not enable that method (see payment-methods.html).
+    - A CRO "as seen in" strip is data here, not new markup — add logos to trust_bar.press.logos.
+  next_variants:
+    - default (2 seals + card flags)
+    - +press ("as seen in" strip)
+  next_related:
+    - payment-methods (the real methods), guarantee (guarantee block), rating-stars (heading proof)
+{% endcomment %}
+{%- assign _seals = trust_bar.seals -%}
+<div class="checkout-trust-bar">
+  <div class="trust-badges">
+    {%- if _seals -%}
+    {%- for s in _seals %}
+    <div class="trust-badge__item">
+      {% if s.icon %}<div class="trust-badge--icon"><img loading="lazy" src="{{ s.icon | campaign_asset }}" alt=""></div>{% endif %}
+      <div class="trust-badge--text">{{ s.line1 | escape }}<br>{{ s.line2 | escape }}</div>
+    </div>
+    {%- endfor -%}
+    {%- else -%}
+    <div class="trust-badge__item"><div class="trust-badge--text">SECURE<br>SSL ENCRYPTION</div></div>
+    <div class="trust-badge__item"><div class="trust-badge--text">GUARANTEED<br>SAFE CHECKOUT</div></div>
+    {%- endif %}
+  </div>
+  {%- assign _pay = trust_bar.payment_logos | default: 'images/credit-card-flags.svg' -%}
+  {% if _pay %}<img loading="lazy" src="{{ _pay | campaign_asset }}" alt="" class="credit-card__flags">{% endif %}
+  {%- if trust_bar.press and trust_bar.press.logos %}
+  <div class="press-bar">
+    {% if trust_bar.press.heading %}<div class="press-bar__heading">{{ trust_bar.press.heading | escape }}</div>{% endif %}
+    <div class="press-bar__logos">
+      {%- for l in trust_bar.press.logos %}
+      <img loading="lazy" src="{{ l.src | campaign_asset }}" alt="{{ l.alt | escape }}" class="press-bar__logo">
+      {%- endfor %}
+    </div>
+  </div>
+  {%- endif %}
+</div>

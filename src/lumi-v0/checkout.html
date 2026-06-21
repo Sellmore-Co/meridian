@@ -1,0 +1,353 @@
+---
+title: "Checkout - Lumi"
+page_type: "checkout"
+page_layout: "passthrough.html"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout &middot; Lumi</title>
+    <!-- SDK meta tags (preserve). NOTE: no hardcoded currency in meta. The SDK
+         detects currency from the customer's country + campaign.available_currencies. -->
+    <meta name="next-page-type" content="checkout">
+    <meta name="next-success-url" content="/lumi-v0/upsell/">
+    <meta name="next-predictive-address" content="true">
+    <meta name="next-currency" content="USD">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lumi-primary: #2f8f7e;
+            --lumi-primary-dark: #1f4a47;
+            --lumi-surface: #f7faf8;
+            --lumi-text: #1a2826;
+            --lumi-text-soft: #4a5b58;
+            --lumi-border: #e2ebe8;
+            --lumi-highlight: #e8f3ef;
+            --lumi-accent: #d49b3a;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Manrope', system-ui, -apple-system, sans-serif; background: var(--lumi-surface); color: var(--lumi-text); margin: 0; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+        .brand-bar { background: #fff; border-bottom: 1px solid var(--lumi-border); padding: 14px 22px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .wordmark { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em; color: var(--lumi-primary-dark); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .wordmark::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: var(--lumi-primary); display: inline-block; }
+        .header-utils { display: flex; align-items: center; gap: 14px; font-size: 13px; color: var(--lumi-text-soft); }
+        .region-picker { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid var(--lumi-border); border-radius: 999px; background: #fff; font-size: 13px; color: var(--lumi-text); cursor: pointer; }
+        .region-picker select { border: 0; background: transparent; font: inherit; color: inherit; cursor: pointer; padding: 0 4px; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+        .region-picker .caret { font-size: 9px; color: var(--lumi-text-soft); }
+        .secure { display: inline-flex; align-items: center; gap: 6px; color: var(--lumi-text-soft); }
+        .secure::before { content: "\1F512"; font-size: 14px; }
+
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; padding: 32px 0 80px; }
+        @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+        .panel { background: #fff; border: 1px solid var(--lumi-border); border-radius: 12px; padding: 24px; margin-bottom: 18px; }
+        .panel h2 { font-size: 18px; font-weight: 700; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--lumi-border); letter-spacing: -0.01em; }
+
+        .form-row { display: grid; gap: 12px; margin-bottom: 12px; }
+        .form-row.two { grid-template-columns: 1fr 1fr; }
+        .form-row.three { grid-template-columns: 2fr 1fr 1fr; }
+        @media (max-width: 600px) { .form-row.two, .form-row.three { grid-template-columns: 1fr; } }
+        .field { display: flex; flex-direction: column; }
+        .field label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--lumi-text-soft); margin-bottom: 4px; font-weight: 700; }
+        .field input, .field select { font-family: inherit; font-size: 15px; padding: 12px 14px; border: 1.5px solid var(--lumi-border); border-radius: 8px; background: #fff; color: var(--lumi-text); }
+        .field input:focus, .field select:focus { border-color: var(--lumi-primary); outline: none; }
+
+        .bundle-list { display: flex; flex-direction: column; gap: 10px; }
+        .bundle-card { display: flex; align-items: center; gap: 14px; border: 2px solid var(--lumi-border); border-radius: 10px; padding: 14px; cursor: pointer; background: #fff; transition: border-color 0.15s, background 0.15s; }
+        .bundle-card.next-selected { border-color: var(--lumi-primary); background: var(--lumi-highlight); }
+        .bundle-card img { width: 60px; height: 60px; object-fit: contain; }
+        .bundle-card .title { font-weight: 700; font-size: 15px; }
+        .bundle-card .meta { font-size: 12px; color: var(--lumi-text-soft); margin-top: 2px; }
+        .bundle-card .price { margin-left: auto; font-weight: 700; font-size: 16px; text-align: right; }
+        .bundle-card .badge { background: var(--lumi-primary); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 4px; margin-left: 8px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+        .bundle-card .save { font-size: 11px; color: var(--lumi-primary); font-weight: 700; margin-top: 2px; }
+
+        .bump { background: var(--lumi-highlight); border: 2px dashed var(--lumi-primary); padding: 14px; border-radius: 10px; display: flex; align-items: center; gap: 14px; cursor: pointer; }
+        .bump img { width: 56px; height: 56px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px; }
+        .bump-text { flex: 1; }
+        .bump-text strong { display: block; font-size: 14px; color: var(--lumi-text); margin-bottom: 4px; }
+        .bump-text small { display: block; font-size: 12px; color: var(--lumi-text-soft); line-height: 1.4; }
+
+        .submit-btn { display: block; width: 100%; background: var(--lumi-primary); color: #fff; border: 0; padding: 18px; font-size: 17px; font-weight: 700; text-transform: uppercase; border-radius: 8px; cursor: pointer; letter-spacing: 0.06em; transition: background 0.15s; }
+        .submit-btn:hover { background: var(--lumi-primary-dark); }
+        .subdisclaimer { font-size: 12px; color: var(--lumi-text-soft); text-align: center; margin-top: 10px; line-height: 1.5; }
+
+        .summary { position: sticky; top: 20px; }
+        .summary-line { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; color: var(--lumi-text-soft); }
+        .summary-line.total { font-size: 18px; font-weight: 800; border-top: 2px solid var(--lumi-text); padding-top: 12px; margin-top: 8px; color: var(--lumi-text); }
+        .order-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--lumi-border); }
+        .order-item img { width: 52px; height: 52px; object-fit: contain; background: var(--lumi-surface); border-radius: 6px; }
+        .order-item .item-name { font-weight: 600; font-size: 14px; color: var(--lumi-text); }
+        .order-item .item-qty { font-size: 12px; color: var(--lumi-text-soft); margin-top: 2px; }
+        .order-item .item-price { margin-left: auto; font-weight: 700; font-size: 14px; }
+
+        .checkbox-line { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; margin-top: 8px; color: var(--lumi-text-soft); }
+        .payment-mount { padding: 18px; border: 1.5px dashed var(--lumi-border); border-radius: 8px; text-align: center; color: var(--lumi-text-soft); font-size: 13px; background: var(--lumi-surface); }
+        .payment-tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .payment-tab { flex: 1; min-width: 110px; border: 1.5px solid var(--lumi-border); padding: 12px; text-align: center; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; background: #fff; color: var(--lumi-text); }
+        .payment-tab.active { border-color: var(--lumi-primary); background: var(--lumi-highlight); }
+        .trust-row { display: flex; gap: 16px; align-items: center; justify-content: center; padding: 14px 0 0; font-size: 12px; color: var(--lumi-text-soft); flex-wrap: wrap; }
+        .trust-row span { display: inline-flex; align-items: center; gap: 6px; }
+    </style>
+    <script src="/lumi-v0/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/loader.js" type="module"></script>
+</head>
+<body>
+
+<!-- Header: Lumi wordmark + country/currency picker + secure-checkout mark.
+     The country/currency picker is the SDK-managed standard surface — values are
+     placeholders for the prepared HTML; live build wires SDK enhancers. -->
+<div class="brand-bar">
+    <a href="/lumi-v0/landing/" class="wordmark">Lumi</a>
+    <div class="header-utils">
+        <div class="region-picker" data-next-component="region-picker">
+            <span aria-hidden="true">&#127760;</span>
+            <select data-next-component="country-selector" aria-label="Ship to country">
+                <option value="US">United States</option>
+                <option value="GB">United Kingdom</option>
+                <option value="DE">Germany</option>
+                <option value="FR">France</option>
+                <option value="IE">Ireland</option>
+                <option value="ES">Spain</option>
+                <option value="IT">Italy</option>
+                <option value="NL">Netherlands</option>
+            </select>
+            <span class="caret">&#9662;</span>
+            <select data-next-component="currency-selector" aria-label="Currency">
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="EUR">EUR</option>
+            </select>
+            <span class="caret">&#9662;</span>
+        </div>
+        <span class="secure">Secure checkout</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="grid">
+
+        <!-- LEFT: form -->
+        <form data-next-checkout="form" id="combo_form" method="post">
+
+            <!-- Bundle selection -->
+            <div class="panel">
+                <h2>Choose your bundle</h2>
+                <div class="bundle-list"
+                     data-next-bundle-selector
+                     data-next-selector-id="main"
+                     data-next-selection-mode="swap"
+                     data-next-include-shipping="true">
+
+                    <label class="bundle-card next-selected" data-next-bundle-card data-next-bundle-id="bundle-1x" data-next-shipping-id="2">
+                        <input type="radio" name="bundle" value="bundle-1x" checked hidden>
+                        <img src="/lumi-v0/products/air-purifier.png" alt="Lumi Air Purifier 1x">
+                        <div>
+                            <div class="title">1 &times; Lumi Air Purifier</div>
+                            <div class="meta">Tracked shipping</div>
+                        </div>
+                        <div class="price">
+                            <span data-next-bundle-display="unitPrice"></span>
+                        </div>
+                    </label>
+
+                    <label class="bundle-card" data-next-bundle-card data-next-bundle-id="bundle-2x" data-next-shipping-id="2">
+                        <input type="radio" name="bundle" value="bundle-2x" hidden>
+                        <img src="/lumi-v0/products/air-purifier.png" alt="Lumi Air Purifier 2x">
+                        <div>
+                            <div class="title">2 &times; Lumi Air Purifier</div>
+                            <div class="meta">Tracked shipping</div>
+                            <div class="save"><span data-next-bundle-display="discountPercentage" data-next-format="percentage"></span> off per unit</div>
+                        </div>
+                        <span class="badge">Popular</span>
+                        <div class="price">
+                            <span data-next-bundle-display="totalPrice"></span>
+                        </div>
+                    </label>
+
+                    <label class="bundle-card" data-next-bundle-card data-next-bundle-id="bundle-3x" data-next-shipping-id="1">
+                        <input type="radio" name="bundle" value="bundle-3x" hidden>
+                        <img src="/lumi-v0/products/air-purifier.png" alt="Lumi Air Purifier 3x">
+                        <div>
+                            <div class="title">3 &times; Lumi Air Purifier</div>
+                            <div class="meta">Free tracked shipping</div>
+                            <div class="save"><span data-next-bundle-display="discountPercentage" data-next-format="percentage"></span> off per unit</div>
+                        </div>
+                        <span class="badge">Best value</span>
+                        <div class="price">
+                            <span data-next-bundle-display="totalPrice"></span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="panel">
+                <h2>Contact</h2>
+                <div class="form-row">
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input autocomplete="email" os-checkout-validate="required" name="email" type="email" id="email" placeholder="you@example.com" data-next-checkout-field="email">
+                    </div>
+                </div>
+                <label class="checkbox-line">
+                    <input type="checkbox" data-next-checkout-field="accepts_marketing" name="accepts_marketing" id="accepts_marketing" checked>
+                    <span>Email me with news and offers</span>
+                </label>
+            </div>
+
+            <!-- Shipping -->
+            <div class="panel">
+                <h2>Shipping address</h2>
+                <div data-next-component="shipping-form">
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="shipping_country">Country</label>
+                            <select autocomplete="country-name" os-checkout-validate="required" data-next-checkout-field="country" id="shipping_country">
+                                <option value="">Select country</option>
+                                <!-- SDK populates from campaign.available_shipping_countries -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row two">
+                        <div class="field">
+                            <label for="shipping_fname">First name</label>
+                            <input autocomplete="given-name" os-checkout-validate="required" placeholder="First name" name="shipping_fname" type="text" id="shipping_fname" data-next-checkout-field="fname">
+                        </div>
+                        <div class="field">
+                            <label for="shipping_lname">Last name</label>
+                            <input autocomplete="family-name" os-checkout-validate="required" placeholder="Last name" name="shipping_lname" type="text" id="shipping_lname" data-next-checkout-field="lname">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="shipping_address1">Address</label>
+                            <input autocomplete="address-line1" os-checkout-validate="required" placeholder="Street address" id="shipping_address1" data-next-checkout-field="address1">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="shipping_address2">Apartment, suite, etc. (optional)</label>
+                            <input autocomplete="address-line2" name="shipping_address2" type="text" id="shipping_address2" placeholder="Apt, suite, etc." data-next-checkout-field="address2">
+                        </div>
+                    </div>
+                    <div class="form-row three" data-os-component="location">
+                        <div class="field">
+                            <label for="shipping_city">City</label>
+                            <input autocomplete="address-level2" os-checkout-validate="required" placeholder="City" name="shipping_city" type="text" id="shipping_city" data-next-checkout-field="city">
+                        </div>
+                        <div class="field">
+                            <label for="shipping_province">State / County</label>
+                            <select autocomplete="address-level1" name="shipping_province" id="shipping_province" data-next-checkout-field="province">
+                                <option value="">Select</option>
+                                <!-- SDK populates state/county list based on selected country -->
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="shipping_postal_code">Postal code</label>
+                            <input autocomplete="postal-code" os-checkout-validate="required" placeholder="Postal code" name="shipping_postal_code" type="text" id="shipping_postal_code" data-next-checkout-field="postal">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="phone">Phone (optional)</label>
+                            <input autocomplete="tel-full" name="phone" type="tel" id="phone" placeholder="Mobile number" data-next-checkout-field="phone">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order bump (Odor Vaporizer) -->
+            <div class="panel">
+                <h2>Add to your order</h2>
+                <label class="bump" data-next-bump data-next-package-id="2">
+                    <input type="checkbox" data-next-checkout-field="bump" name="bump_vaporizer">
+                    <img src="/lumi-v0/products/odor-vaporizer.png" alt="Lumi Odor Vaporizer">
+                    <div class="bump-text">
+                        <strong>Add the Lumi Odor Vaporizer &mdash; <span data-next-display="package.2.price"></span></strong>
+                        <small>Neutralizes fridge, closet, and entryway odors at the source. Plug-in, filter-free, runs silently alongside the air purifier.</small>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Payment -->
+            <div class="panel">
+                <h2>Payment</h2>
+                <p style="font-size: 13px; color: var(--lumi-text-soft); margin: 0 0 12px;">All transactions are secure and encrypted.</p>
+                <div data-next-component="payment-methods">
+                    <div class="payment-tabs">
+                        <div class="payment-tab active" data-next-payment-method="credit-card">Card</div>
+                        <div class="payment-tab" data-next-payment-method="apple-pay">Apple Pay</div>
+                        <div class="payment-tab" data-next-payment-method="google-pay">Google Pay</div>
+                    </div>
+                    <div data-next-component="payment-mount" class="payment-mount">
+                        Card fields will mount here.
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit-section">
+                <button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-btn">Complete purchase &rarr;</button>
+                <div class="subdisclaimer">By clicking the button, you agree to our Terms of Use and Privacy Policy. Your card will be charged the amount shown above.</div>
+            </div>
+        </form>
+
+        <!-- RIGHT: order summary -->
+        <aside>
+            <div class="summary">
+                <div class="panel" data-next-cart-summary data-summary-lines>
+                    <h2>Order summary</h2>
+
+                    <div class="order-item" data-next-cart-item data-next-package-id="1">
+                        <img src="/lumi-v0/products/air-purifier.png" alt="Lumi Air Purifier">
+                        <div>
+                            <div class="item-name">Lumi Air Purifier</div>
+                            <div class="item-qty">Qty: <span data-next-display="cart.item.quantity">1</span></div>
+                        </div>
+                        <div class="item-price" data-next-display="cart.item.subtotal"></div>
+                    </div>
+
+                    <div class="order-item" data-next-cart-item data-next-package-id="2" data-next-show="cart.hasBump">
+                        <img src="/lumi-v0/products/odor-vaporizer.png" alt="Lumi Odor Vaporizer">
+                        <div>
+                            <div class="item-name">Lumi Odor Vaporizer</div>
+                            <div class="item-qty">Qty: 1</div>
+                        </div>
+                        <div class="item-price" data-next-display="package.2.price"></div>
+                    </div>
+
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <span data-next-display="cart.subtotal"></span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Shipping</span>
+                        <span data-next-display="cart.shipping"></span>
+                    </div>
+                    <div class="summary-line total">
+                        <span>Total</span>
+                        <span data-next-display="cart.total"></span>
+                    </div>
+
+                    <div class="trust-row">
+                        <span>&#128274; Encrypted</span>
+                        <span>&#10003; PCI compliant</span>
+                        <span>&#9851; 30-day guarantee</span>
+                    </div>
+                </div>
+
+                <div class="panel" style="text-align:center;">
+                    <strong style="font-size: 15px; color: var(--lumi-text);">30-day money-back guarantee</strong>
+                    <p style="font-size: 13px; color: var(--lumi-text-soft); margin: 8px 0 0;">Not feeling the difference? Return within 30 days for a full refund &mdash; no questions asked.</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+</body>
+</html>

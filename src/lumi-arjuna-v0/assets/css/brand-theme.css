@@ -1,0 +1,254 @@
+/* ===========================================================================
+   Arjuna — brand theme layer
+   Loaded AFTER next-core.css (per template-brand-contract.shared-commerce.v0).
+   Two jobs:
+     1. Override the --brand--* / --_text--* tokens to the Arjuna identity
+        (zinc-black + warm cream, Inter/Roboto/Poppins).
+     2. Provide the components Olympus's next-core.css does not ship
+        (video hero + badges, benefit grid, testimonial rail, UGC video,
+        delivery + scarcity), ported from the HerzP1 SmartScale source.
+   Ported verbatim from herzp1/smartscale/css/{next-smart-scale-core,custom}.css
+   where noted; layout still comes from next-core.css (.checkout-layout__*).
+   =========================================================================== */
+
+/* ---- 1. Brand tokens -------------------------------------------------- */
+:root {
+  /* Typefaces — the Arjuna tri-font signature, each exposed as a NAMED token so a clone
+     re-skins type WITHOUT touching component CSS (no family names are hardcoded below).
+       --font-primary   → body + headings              (default Inter)
+       --font-secondary → cards / form / reviews        (default Roboto)
+       --font-accent    → delivery + scarcity "resume"  (default Poppins)
+     SINGLE-FONT COLLAPSE is one line — override all three to the same family:
+       :root { --font-primary:"Inter",sans-serif; --font-secondary:var(--font-primary); --font-accent:var(--font-primary); }
+     (secondary/accent already fall back THROUGH primary, so a brand can also just prepend
+     its own face to one token and leave the others.) */
+  --font-primary: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-secondary: "Roboto", var(--font-primary);
+  --font-accent: "Poppins", var(--font-primary);
+
+  /* Bridge to the next-core type tokens (next-core reads these 3 — keep them pointed at the
+     named families above so the whole stack flows from --font-* and stays single-source). */
+  --_text---font-family--primary: var(--font-primary);
+  --_text---font-family--heading: var(--font-primary);
+  --_text---font-family--secondary: var(--font-secondary);
+
+  /* Palette — zinc-black primary on warm cream surface (replaces Olympus blue) */
+  --brand--color--primary: #18181b;
+  --brand--color--primary-dark: #0c0c0e;
+  --brand--color--primary-light: rgb(252, 248, 220);
+  --brand--color--primary-lighter: rgb(254, 252, 235);
+  --brand--color--surface: rgb(255, 254, 242);
+  --brand--color--accent: #18181b;
+  --brand--color--secondary: #737373;
+  --brand--color--cta-primary: #18181b;
+  /* Arjuna's CTA is dark zinc, so its text must be light. cta-foreground and cta-primary are a
+     PAIR — when a campaign re-themes cta-primary to a light/bright color it MUST drop or relight
+     this so the CTA label stays legible (the base default is dark #020b1e for that case). */
+  --brand--color--cta-foreground: #fff;
+  --brand--color--danger: #b73339;
+  --arjuna--strike: #ff0000;        /* diagonal compare-price strike */
+}
+
+/* The base resets the font-family tokens to the system stack inside its
+   ≤991px media query (next-core.css:7629), so re-assert the bridge here. The
+   --font-* tokens themselves live at :root (no media query), so this just re-points. */
+@media screen and (max-width: 991px) {
+  :root {
+    --_text---font-family--primary: var(--font-primary);
+    --_text---font-family--heading: var(--font-primary);
+    --_text---font-family--secondary: var(--font-secondary);
+  }
+}
+
+/* Apply the named families directly (Olympus body/headings don't all read the vars, and the
+   SDK sheet loads last). All reference the --font-* tokens — no literal family names here. */
+body { font-family: var(--font-primary); }
+h1, h2, h3, h4, h5, h6,
+.display-xl, .display-lg, .display-md, .display-sm, .display-xs, .display-2xs {
+  font-family: var(--font-primary);
+}
+.checkout__form-container,
+.os-card,
+.os-card__label,
+.os-card__label-2,
+.limos_review-box,
+.star_text-wrapper-row { font-family: var(--font-secondary); }
+
+/* ---- 2. Bundle card — Arjuna selected state + badge theming ----------- */
+/* Selected: warm lime fill + thick black border (the signature). Keyed on .next-selected
+   ONLY — NOT .next-in-cart. In swap mode the SDK leaves .next-in-cart on the previously
+   selected card (it never clears it), so styling .next-in-cart leaves the old card lit and
+   TWO cards look selected after a swap (the same single-select trap as the radio's old
+   data-selected hook, issue #3). .next-selected is the class the SDK actually swaps.
+   browser-verified: clicking 2x now moves the lime fill off 1x cleanly. */
+.os-card.next-selected {
+  z-index: 1;
+  background-color: #f3ffda !important;  /* literal — var() didn't resolve here in cascade */
+  border: 3px solid #000 !important;
+  box-shadow: 0 4px 4px 0 #14250333;
+}
+/* Neutralize any SDK in-cart tint on the NON-selected card the SDK left .next-in-cart on,
+   so only the .next-selected card carries the Arjuna highlight. */
+.os-card.next-in-cart:not(.next-selected) {
+  background-color: #fff !important;
+  border-color: #ededed !important;
+}
+/* pb--bestseller pill inherits primary-light/primary tokens above (cream/zinc). */
+/* Adsbranded price shape = per-unit "/ea" (current) + DIAGONAL compare strike + visible savings.
+   This is the family DEFAULT, baked here so it applies without per-card markup classes (the cards
+   ship plain .os--compare / .os-card__total-compare). The compare rows are gated by the SDK's
+   hasDiscount token, so a full-price (no-discount) campaign is the natural opt-DOWN: with no
+   discount the strike + savings simply don't render and only the current /ea + total show. */
+.os-card__price.os--current { font-weight: 700; }
+.os-card__price.os--compare,
+.os-card__price.os--compare-diagonal { color: #000; font-weight: 400; }
+.os-card__price.os--compare,
+.os-card__total-compare { position: relative; display: inline-block; }
+.os-card__price.os--compare::after,
+.os-card__total-compare::after {
+  content: ""; position: absolute; left: 0; top: 50%; right: 0;
+  border-top: 1px solid var(--arjuna--strike);
+  transform: rotate(-10deg); transform-origin: center; pointer-events: none;
+}
+.os-card__shipping { font-weight: 700; color: var(--brand--color--danger); }
+
+/* Per-card label pill colors (Most Popular / Best Deal) */
+.os-card__label-2.os-card__label--pill-primary .os-card__label-text-2 { color: #08927a; }
+.os-card__label-2.os-card__label--pill-secondary .os-card__label-text-2 { color: #298fbd; }
+
+/* Diagonal red strike — porting herzp1/custom.css:956-973 */
+.diagonal-strike,
+.os--compare-diagonal { position: relative; display: inline-block; }
+.diagonal-strike::after,
+.os--compare-diagonal::after {
+  content: ""; position: absolute; left: 0; top: 50%; right: 0;
+  border-top: 1px solid var(--arjuna--strike);
+  transform: rotate(-10deg); transform-origin: center;
+}
+
+/* Radio — herzp1/custom.css:575-615 (thick black selected dot) */
+.radio-style-1 {
+  display: inline-block; width: 24px; height: 24px;
+  border: 1px solid #919191; border-radius: 50%; background: #f6f6f6;
+  position: relative; box-sizing: border-box; transition: all .2s ease; flex: none;
+}
+.radio-inner { position: absolute; width: 0; height: 0; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+/* Selected radio follows ONLY the SDK's single-select .next-selected class, so it swaps
+   correctly (issue #3). !important beats the SDK's own .next-selected .radio-style-1 rule in
+   campaign-cart.css, which is injected from the CDN AFTER this layer (same pattern as the
+   .next-selected card fill above). Do NOT reintroduce a static data-selected hook — the SDK
+   never clears it, leaving the initial card's radio permanently lit. */
+.next-selected .radio-style-1 { border: .45rem solid #000 !important; background: #fff !important; box-shadow: 0 0 0 .1rem #fff !important; }
+/* Arjuna's thick-black ring IS the indicator; suppress the SDK's centred inner dot. */
+.next-selected .radio-style-1 .radio-inner { width: 0 !important; height: 0 !important; }
+
+/* ---- 3. Hero media — video-as-image + badge overlays ------------------ */
+/* Porting herzp1/next-smart-scale-core.css:21384-21445 */
+.banner-img-wrapper { background-color: #fff; border-radius: 8px; padding: 16px 0 25px; }
+/* both the image-default and video modes share the centered, badge-anchoring wrapper */
+.banner-img-wrapper > .img-wrapper,
+.banner-img-wrapper > .img-wrapper.video { position: relative; display: flex; justify-content: center; align-items: center; }
+.banner-img-wrapper > .img-wrapper > video { width: 100%; height: 485px; object-fit: cover; }
+.img-wrapper .banner-img { width: 100%; height: 485px; object-fit: contain; }
+.img-wrapper .img-poster { width: 286px; height: auto; }
+.img-wrapper .badge-img { position: absolute; right: 14px; bottom: 20px; }
+.img-wrapper .badge-img-2 { position: absolute; right: 14px; bottom: 128px; width: 65px; }
+.img-wrapper .badge-img-3 { position: absolute; top: 26px; right: 0; }
+
+@media screen and (max-width: 500px) {
+  .img-wrapper { height: 340px; }
+  /* video mode keeps the narrow poster offset; image mode stays full-width + centered */
+  .img-wrapper.video { justify-content: flex-start; margin-left: 30px; }
+  .banner-img-wrapper > .img-wrapper.video,
+  .banner-img-wrapper > .img-wrapper > video { margin-left: 0; height: 340px; }
+  .img-wrapper .img-poster { width: auto; height: 340px; }
+  .img-wrapper .banner-img { height: 340px; }
+  .img-wrapper .badge-img-3 { top: 0; }
+  .banner-img-wrapper { border-radius: 0; }
+}
+
+/* ---- 4. Benefit icon grid (4-up) — herzp1/custom.css:1031-1075 -------- */
+.icons-grids-2 { display: flex; text-align: center; gap: 16px; }
+.icons-grids-2-item {
+  flex: 1; border: 1px solid #bdbdbd; padding: 15px 4px; border-radius: 4px;
+  font-family: var(--font-primary); font-weight: 700;
+  font-size: 14px; line-height: 18px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+}
+.icons-grids-2-item img { width: 32px; height: 32px; object-fit: contain; }
+@media screen and (max-width: 540px) {
+  .icons-grids-2 { flex-wrap: wrap; }
+  .icons-grids-2-item { min-width: calc(50% - 16px); }
+}
+
+/* ---- 5. Left social-proof rail --------------------------------------- */
+/* herzp1/next-smart-scale-core.css:7580-7591, 15652-15700, 15727-15796, 15821+ */
+.sub-hero { display: flex; flex-flow: column; gap: 1.5rem; }
+.benefit_section { display: flex; flex-flow: column; gap: 1rem; }
+.checkout-features__column { display: flex; flex-flow: row; gap: 1rem; }
+
+.limos_review-box-wrapper { flex: 1; display: flex; flex-direction: column; }
+.limos_review-box {
+  background-color: #fff; border: 1px solid #ededed; border-radius: 8px;
+  display: flex; flex-flow: column; align-items: flex-start; width: 100%;
+  padding: 1rem .75rem 1.5rem;
+}
+.limos_review-box-wrapper > img { width: 100%; height: auto; border-radius: 8px 8px 0 0; display: block; }
+.limos_review-box-wrapper > img + .limos_review-box { border-radius: 0 0 8px 8px; border-top: 0; }
+
+.star_text-img-wrapper { display: flex; justify-content: center; align-items: center; }
+.star_text-wrapper { display: flex; flex-flow: column; align-items: flex-start; gap: 8px; font-weight: 700; }
+.star_text-wrapper-row { display: flex; flex-flow: row; align-items: center; gap: 8px; font-size: 1rem; }
+.star_wrapper { display: flex; align-items: center; gap: 1.2px; }
+.star_img { display: flex; flex: none; width: 13px; height: 13px; object-fit: cover; }
+.margin-8 { margin-top: 8px; }
+
+.customer_name-wrapper { display: flex; align-items: center; gap: 7px; margin-top: 12px; font-size: .875rem; line-height: 1.2; }
+.customer_text-name { color: #000; font-weight: 700; }
+.black-line { background-color: #000; border-radius: 4px; min-width: 2.6px; height: 16px; }
+.icon-review__wrapper { display: flex; align-items: center; gap: 5px; }
+.icon_size-16 { flex: none; width: 16px; height: 16px; }
+
+/* ---- 6. UGC video block — herzp1/next-smart-scale-core.css:15663 ------ */
+.video-title { box-sizing: border-box; text-align: center; font-weight: 700; margin: 32px 0; padding: 0; font-size: 27px; line-height: 1.3; }
+.video-cont__out { border-radius: 20px; overflow: hidden; }
+.video-cont__out__video,
+.video-cont video { width: 100%; height: auto; display: block; }
+
+/* ---- 7. Order summary — delivery estimate + scarcity ----------------- */
+/* herzp1/custom.css:1093-1103 */
+.popular-item-resume { font-family: var(--font-accent); font-size: 16px; line-height: 1.4; margin-top: 9px; }
+.red-bold { color: #d32b33; font-weight: 600; }
+.summary-total__coin { font-weight: 700; margin-right: .25rem; }
+
+/* ---- 7b. Inline promo-code display ----------------------------------- */
+/* Base .promo-wrapper / .coupon-form / .coupon-button / .coupon-tags ship in next-core;
+   this adds the Adsbranded label + suggested-code chip opinion. */
+.promo-display { display: flex; flex-flow: column; gap: .625rem; margin-bottom: 1rem; }
+.promo-display .promo-wrapper { flex-flow: row wrap; align-items: center; gap: .5rem; }
+.promo-display__label { font-weight: 700; font-size: .9rem; }
+.promo-display__code {
+  display: inline-flex; align-items: center; gap: .375rem;
+  border: 1px dashed var(--brand--color--primary); border-radius: 6px;
+  padding: .25rem .5rem; font-weight: 700; font-size: .85rem; letter-spacing: .04em;
+  background: var(--brand--color--primary-light);
+}
+.promo-display__code-icon { display: inline-flex; width: 14px; height: 14px; }
+
+/* ---- 8. Responsive social-proof slot --------------------------------- */
+/* Desktop: left rail shows. Mobile: re-emit below the form (single source,
+   toggled by .hide-tablet-* utilities from next-core.css). */
+@media screen and (min-width: 992px) { .mobile-footer-content { display: none; } }
+
+/* ---- 9. CRO-variance slots ------------------------------------------- */
+/* Optional, frontmatter-driven surfaces CRO iterations add (rating-stars.html,
+   trust-bar.html press strip). Trust seals + guarantee reuse existing classes. */
+.rating-row { display: flex; align-items: center; gap: .5rem; margin: .25rem 0 .5rem; flex-wrap: wrap; }
+.rating-row__stars { display: inline-flex; align-items: center; gap: 1.2px; }
+.rating-row__text { font-size: .875rem; color: var(--brand--color--text-secondary, #313131); }
+.rating-row__text strong { color: #000; }
+
+.press-bar { width: 100%; margin-top: .75rem; padding-top: .75rem; border-top: 1px solid #ededed; text-align: center; }
+.press-bar__heading { font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; color: var(--brand--color--text-muted, #969696); margin-bottom: .5rem; }
+.press-bar__logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem 1.5rem; }
+.press-bar__logo { height: 22px; width: auto; object-fit: contain; opacity: .65; filter: grayscale(1); }

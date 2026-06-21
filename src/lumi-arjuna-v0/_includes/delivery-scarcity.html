@@ -1,0 +1,27 @@
+{% comment %}
+  next_component: delivery-scarcity
+  next_version: 0.1.0
+  next_sdk_min: 0.4.18
+  next_purpose: Order-summary footer block — a fastest-delivery date estimate plus a high-demand scarcity line (Arjuna's "popular-item-resume"). Rendered just below the cart totals.
+  next_params:
+    delivery_estimate: object { min_days (int, default 2), max_days (int, default 3) }. Dates computed client-side by checkout-arjuna.js into #delivery-start/#delivery-end.
+    scarcity_note:     string. Red emphasis line. Omit to hide.
+  next_sdk_owns:
+    - none (presentational; dates are filled by checkout-arjuna.js, not the SDK).
+  next_theming:
+    classes_designer_owns: [.popular-item-resume, .red-bold]
+    css_vars_designer_owns: []
+  next_dont_touch:
+    - #delivery-start / #delivery-end ids are the JS fill targets; keep them.
+  next_gotchas:
+    - delivery dates are a UI estimate (today + min/max days), not a real fulfillment promise; keep min/max honest.
+  next_variants: []
+  next_related:
+    - cart-summary (this renders inside/after it)
+{% endcomment %}
+{% assign _min = delivery_estimate.min_days | default: 2 -%}
+{% assign _max = delivery_estimate.max_days | default: 3 -%}
+<div class="popular-item-resume" data-delivery-min="{{ _min }}" data-delivery-max="{{ _max }}">
+  <div>Fastest delivery: <b><span id="delivery-start"></span> - <span id="delivery-end"></span></b></div>
+  {% if scarcity_note %}<br><div class="red-bold">{{ scarcity_note | escape }}</div>{% endif %}
+</div>

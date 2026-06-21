@@ -1,0 +1,99 @@
+{% comment %}
+  next_component: left-content
+  next_version: 0.1.0
+  next_sdk_min: 0.4.18
+  next_purpose: Left-column social-proof rail rendered beneath the hero media (Arjuna distinctive Olympus lacks). Stacks a benefit-icon grid, testimonial cards, and a UGC video block. On mobile the same content is re-emitted below the form via .mobile-footer-content + hide-tablet utilities.
+  next_params:
+    benefit_icons: array of { icon (asset path), label }. 4 recommended, each with a DISTINCT
+                   icon (repeating one icon across all four is the easy default trap — issue #3;
+                   the starter ships 4 distinct images/benefit-N.svg placeholders). Omit to skip the grid.
+    testimonials:  array of { image (asset path, optional), stars (int, default 5), title, body, name, verified (bool) }.
+    ugc_video:     object { title, sources: [{ src, type }] }. Omit to skip the UGC block.
+    context:       enum [desktop, mobile], default "desktop". Only changes asset hints; visibility is CSS-driven by the caller.
+  next_sdk_owns:
+    - none (static social proof).
+  next_theming:
+    classes_designer_owns: [.icons-grids-2, .icons-grids-2-item, .sub-hero, .benefit_section, .checkout-features__column, .limos_review-box, .limos_review-box-wrapper, .customer_name-wrapper, .black-line, .video-title, .video-cont]
+    css_vars_designer_owns: []
+  next_dont_touch:
+    - UGC <video> keeps data-arjuna-ugc so checkout-arjuna.js can auto-hide its controls.
+  next_gotchas:
+    - benefit_icons must each use a DISTINCT icon; shipping the same icon repeated is the common
+      trap (issue #3). The grid emits an HTML-comment lint warning when icons are not all distinct.
+    - review cards are fully frontmatter-driven (§C.9); the starter ships distinct, no-Lorem
+      placeholder quotes. The block emits an HTML-comment asset-fidelity flag when any card still
+      uses a starter placeholder photo (1x1_*.svg) so QA re-skins before shipping.
+    - testimonial body/title render as plain text; sanitize merchant copy upstream.
+    - stars renders min(stars,5) filled star glyphs; half-stars not supported.
+  next_variants:
+    - desktop (left rail)
+    - mobile (re-emit inside .mobile-footer-content)
+  next_related:
+    - hero-media (sits above this)
+{% endcomment %}
+{% if benefit_icons -%}
+{%- assign _distinct_icons = benefit_icons | map: 'icon' | uniq -%}
+{%- if _distinct_icons.size < benefit_icons.size %}<!-- arjuna-lint (issue #3): benefit_icons reuse an icon ({{ _distinct_icons.size }} distinct of {{ benefit_icons.size }}); give each benefit its own icon. -->{% endif -%}
+<div class="icons-grids-2">
+  {% for b in benefit_icons -%}
+  <div class="icons-grids-2-item">
+    <img src="{{ b.icon | campaign_asset }}" alt="">
+    <div>{{ b.label | escape }}</div>
+  </div>
+  {% endfor -%}
+</div>
+{% endif -%}
+
+{% if testimonials -%}
+{%- comment -%} Asset-fidelity flag (issue #3 / §C.9): warn when review cards still carry the starter
+   placeholder photo (1x1_*.svg) so QA re-skins rather than shipping the demo reviews. {%- endcomment -%}
+{%- assign _ph_reviews = 0 -%}
+{%- for r in testimonials -%}{%- if r.image contains '1x1_' -%}{%- assign _ph_reviews = _ph_reviews | plus: 1 -%}{%- endif -%}{%- endfor -%}
+{%- if _ph_reviews > 0 %}<!-- arjuna-lint (§C.9): {{ _ph_reviews }} of {{ testimonials.size }} review card(s) still use a starter placeholder image (1x1_*.svg); supply real verified-customer photos + quotes per campaign. -->{% endif -%}
+<div class="sub-hero">
+  <div class="benefit_section">
+    <div class="checkout-features__column">
+      {% for r in testimonials -%}
+      <div class="limos_review-box-wrapper">
+        {% if r.image %}<img src="{{ r.image | campaign_asset }}" alt="" loading="lazy" decoding="async">{% endif %}
+        <div class="limos_review-box">
+          <div class="star_text-img-wrapper">
+            <div class="star_text-wrapper">
+              <div class="star_wrapper">
+                {% assign _n = r.stars | default: 5 -%}
+                {% for i in (1.._n) -%}
+                <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2" fill="#1BBA86"/><path d="M7.3125 2.25012L8.53329 6.00734L12.4839 6.00734L9.28779 8.32943L10.5086 12.0867L7.3125 9.76456L4.11642 12.0867L5.33721 8.32943L2.14113 6.00734L6.09171 6.00734L7.3125 2.25012Z" fill="white"/></svg></div>
+                {% endfor -%}
+              </div>
+              <div class="text-weight-bold">{{ r.title | escape }}</div>
+            </div>
+          </div>
+          <div class="margin-8"><div class="text-sm">{{ r.body | escape }}</div></div>
+          <div class="customer_name-wrapper">
+            <div class="customer_text-name">{{ r.name | escape }}</div>
+            {% if r.verified %}<div class="black-line"></div>
+            <div class="icon-review__wrapper">
+              <div class="icon_size-16"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0584 9.5375c-.3145-.4892-.629-.96092-.9435-1.45012-.0698-.10482-.0698-.17471 0-.27954.4145-.47172.7115-.943.026-1.41472.3669-.55908.1747-1.10069-.4542-1.32782-.5242-.19218-1.0483-.40184-1.5724-.59402-.1049-.03494-.1573-.10483-.1573-.22713-.0175-.57655-.0524-1.1531-.0873-1.71218-.035-.61149-.5067-.96092-1.1007-.80368-.5591.13977-1.1182.29701-1.6598.45425-.12231.03495-.1922 0-.27956-.08735-.34942-.45426-.71632-.89104-1.06575-1.32782-.38436-.489196-.97839-.489196-1.38022 0-.34943.43678-.71633.87356-1.04828 1.31035-.08736.12229-.17471.13977-.31448.10482-.54161-.15724-1.08322-.29701-1.46759-.40184-.75126-.17471-1.20551.12231-1.24046.75128-.03494.57655-.06988 1.1531-.08736 1.74713 0 .12229-.05241.17471-.15724.22712-.54161.20966-1.08322.41932-1.62483.62898-.55908.22713-.733791.76874-.401838 1.27541.314483.4892.628963.96092.943443 1.45012.06989.10483.06989.17472 0 .29702-.33195.48919-.64643.97839-.960915 1.48506-.297011.46708-.104829 1.02616.419331 1.23582.541614.20966 1.100694.41932 1.642304.62898.1223.0349.1573.1048.1573.2271.0175.5591.0874 1.1007.0874 1.6597 0 .5591.48919 1.0658 1.17057.856.541612-.1747 1.083222-.297 1.624832-.4543.10483-.035.17471-.0175.2446.0874.36689.4543.71632.8911 1.08321 1.3453.40183.4892.97839.4892 1.36275 0 .36689-.4542.71632-.891 1.08321-1.3453.06989-.0873.1223-.1223.24461-.0873.5591.1572 1.1182.297 1.6772.4543.5766.1572 1.0658-.1922 1.0833-.7863.035-.5765.07-1.1531.0874-1.7471 0-.1398.0699-.1922.1748-.2271.5241-.1922 1.0657-.4019 1.5898-.6115.5591-.2796.7339-.8387.4019-1.3454zm-4.1756-3.86529-3.49429 3.49429c-.08735.0873-.20965.1572-.33195.1747-.03494 0-.08735.0174-.1223.0174-.15724 0-.33195-.0698-.45425-.1922l-1.43264-1.43268c-.2446-.2446-.2446-.6464 0-.891.24459-.2446.64643-.2446.89103 0l.97839.97839 3.04-3.03999c.2446-.2446.6464-.2446.891 0 .2796.24459.2796.64643.035.89103z" fill="#00B67A"/></svg></div>
+              <div>Verified Customer</div>
+            </div>{% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor -%}
+    </div>
+  </div>
+</div>
+{% endif -%}
+
+{% if ugc_video -%}
+<div class="video-cont">
+  {% if ugc_video.title %}<h3 class="video-title">{{ ugc_video.title | escape }}</h3>{% endif %}
+  <div class="video-cont__out">
+    <video class="video-cont__out__video" data-arjuna-ugc loading="lazy" controls controlslist="play timeline nofullscreen nodownload" autoplay loop muted playsinline preload="none">
+      {% for s in ugc_video.sources -%}
+      <source src="{{ s.src }}" type="{{ s.type | default: 'video/mp4' }}">
+      {% endfor -%}
+    </video>
+  </div>
+</div>
+{% endif -%}

@@ -1,0 +1,235 @@
+---
+title: "Arjuna Checkout"
+page_type: checkout
+meta_tags:
+  next-page-type: checkout
+  next-currency: USD
+  next-predictive-address: "true"
+  next-success-url: /lumi-arjuna-v0/upsell/
+promo_sale: "default"
+next_url: upsell.html
+styles:
+  - css/brand-theme.css
+  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
+scripts:
+  - js/promo-banner.js
+  - js/promo-timer.js
+  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
+  - js/checkout.js
+  - js/checkout-arjuna.js
+# --- heading copy (frontmatter-driven — replace per campaign) ---
+product_eyebrow: "Daily clean. Daily calm."
+product_name: "Lumi Air Purifier"
+product_subhead: "Plug-in air support for cleaner-feeling rooms, paired with the Lumi daily wellness stack."
+# optional star-rating proof row by the heading (a near-universal CRO add; omit to hide)
+rating: { stars: 5, score: "4.8", count: "12,000+ happy customers" }
+# --- media: single large hero image is the Adsbranded DEFAULT (media_type: image).
+#     Opt in to a carousel (gallery) or autoplay product video by switching media_type. ---
+media_type: image
+hero_image:
+  src: "products/air-purifier.png"   # REPLACE: campaign product hero (obvious placeholder ships by default)
+  alt: ""
+# opt-in video hero (set media_type: video) — poster shows until CDN sources load
+hero_video:
+  poster: "products/air-purifier.png"
+  sources: []   # campaign supplies webm/mp4 CDN sources
+media_badges:
+  - { src: "images/90d.webp", pos: "badge-img" }
+# --- left social-proof rail ---
+# Each benefit needs its OWN icon — repeating one icon 4x is the default trap (issue #3).
+benefit_icons:
+  - { icon: "images/benefit-1.svg", label: "Benefit one" }
+  - { icon: "images/benefit-2.svg", label: "Benefit two" }
+  - { icon: "images/benefit-3.svg", label: "Benefit three" }
+  - { icon: "images/benefit-4.svg", label: "Benefit four" }
+# Distinct, no-Lorem starter reviews (still placeholders — replace with real verified quotes per campaign).
+testimonials:
+  - { image: "images/1x1_1.svg", stars: 5, title: "Exactly what I hoped for", body: "Setup took two minutes and it has been flawless since. Honestly wish I had bought it sooner.", name: "Jordan M.", verified: true }
+  - { image: "images/1x1_2.svg", stars: 5, title: "Worth every penny", body: "Does everything it claims and feels genuinely well made. The whole household uses it now.", name: "Priya S.", verified: true }
+ugc_video:
+  title: "Trusted by thousands of happy customers"
+  sources: []   # campaign supplies UGC mp4/webm sources
+# --- order summary footer ---
+delivery_estimate: { min_days: 2, max_days: 3 }
+scarcity_note: "This item is currently in high demand."
+# --- conversion / trust slots (CRO surfaces — all optional + frontmatter-driven, so CRO
+#     iterations reconfigure DATA here instead of editing markup / forking the template) ---
+guarantee:
+  title: "90 Day Money-Back Guarantee"
+  body: "Try it risk-free and return it within 90 days for a full refund or replacement—no questions asked."
+  # show: false   # CRO variants that drop the guarantee block
+trust_bar:
+  seals:
+    - { line1: "SECURE", line2: "SSL ENCRYPTION" }
+    - { line1: "GUARANTEED", line2: "SAFE CHECKOUT" }
+  payment_logos: "images/credit-card-flags.svg"
+  # press:                       # optional "As seen in" media strip (common CRO add)
+  #   heading: "As seen in"
+  #   logos:
+  #     - { src: "images/press-1.svg", alt: "" }
+# --- inline promo code (Adsbranded opinion — defined inline promo display, wired to SDK coupon path) ---
+promo:
+  label: "Have a promo code?"
+  placeholder: "Promo code (optional)"
+  button_text: "Apply"
+  # code: "SAVE10"   # set to show a visible suggested-code chip + prefill the field (opt-in)
+# --- commerce config (demo refs — replace from CampaignSpec/API when cloning) ---
+packages:
+  main_package: 1
+  prepurchase_1: 2
+shipping_methods:
+  standard: 2
+  free: 1
+bundles:
+  - id: "bundle-1x"
+    quantity: 1
+    shipping_method: "standard"
+    selected: true
+    title_prefix: "1x "
+    badge_text: "Most Popular"
+    badge_pill_class: "os-card__label--pill-primary"
+  - id: "bundle-2x"
+    quantity: 2
+    shipping_method: "standard"
+    title_prefix: "2x "
+    badge_text: "Best Deal"
+    badge_pill_class: "os-card__label--pill-secondary"
+  - id: "bundle-3x"
+    quantity: 3
+    shipping_method: "free"
+    title_prefix: "3x "
+    total_tone_class: "os-dark"
+    shipping_label: "+ Free Shipping"
+order_bump:
+  coverage:
+    package_id: 2
+    sync_product_id: ""   # set to the main product's product_id (shared by all variants) when cloning
+    title: "Add the Lumi Odor Vaporizer"
+    features:
+      - "Accidental damage protection"
+      - "Free parts replacement guarantee"
+      - "Express replacement service"
+---
+<div class="page-wrapper">
+  <div class="main-wrapper">
+
+    <div data-next-hide="param.banner=='n'" class="section_header">
+      <promo-banner{% if promo_sale %} force-sale="{{ promo_sale }}"{% endif %}></promo-banner>
+    </div>
+    {% campaign_include 'checkout-header.html' %}
+    <div class="encrypted-banner">
+      <div class="padding-global"><div class="contain small">
+        <div class="scarcity-banner__content">
+          <div class="encrypted-banner__icon"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="100%" height="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2m-6 9c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1z"></path></svg></div>
+          <div class="text-sm">100% Encrypted &amp; Secure Checkout</div>
+        </div>
+      </div></div>
+    </div>
+    {% campaign_include 'checkout-progress.html' %}
+
+    <div class="section-checkout cc-gray">
+      <div class="container">
+        <div class="checkout-page-layout">
+
+          <!-- Mobile heading (top) -->
+          <div class="show-tablet">
+            <div class="heading-box">
+              {% if product_eyebrow %}<div class="text-reg text-danger">{{ product_eyebrow }}</div>{% endif %}
+              <h1 class="display-md"><span>{{ product_name | default: 'Product Name' }}</span></h1>
+              {% campaign_include 'rating-stars.html' rating=rating %}
+              {% if product_subhead %}<div class="text-reg"><strong>{{ product_subhead }}</strong></div>{% endif %}
+            </div>
+          </div>
+
+          <div class="checkout-wrapper">
+            <!-- LEFT: hero media + social-proof rail -->
+            <div class="checkout-layout__left">
+              <div class="checkout-layout__content">
+                <div class="checkout-layout__content-inner">
+                  <div class="checkout-media__wrapper">
+                    {% campaign_include 'hero-media.html' media_type=media_type hero_image=hero_image hero_video=hero_video media_badges=media_badges %}
+                  </div>
+                  <div class="hide-tablet-down">
+                    {% campaign_include 'left-content.html' benefit_icons=benefit_icons testimonials=testimonials ugc_video=ugc_video context='desktop' %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: form -->
+            <div class="checkout-layout__right">
+              <div class="checkout-layout__form">
+                <div class="checkout__form-container">
+                  <div class="hide-tablet-down">
+                    <div class="hero_heading-box">
+                      <div class="heading-box">
+                        {% if product_eyebrow %}<div class="text-reg text-danger">{{ product_eyebrow }}</div>{% endif %}
+                        <h1 class="display-md">{{ product_name | default: 'Product Name' }}</h1>
+                        {% campaign_include 'rating-stars.html' rating=rating %}
+                      </div>
+                      {% if product_subhead %}<div class="sub-head-text"><div>{{ product_subhead }}</div></div>{% endif %}
+                    </div>
+                  </div>
+                  <promo-timer{% if promo_sale %} force-sale="{{ promo_sale }}"{% endif %}></promo-timer>
+
+                  <div class="checkout-form">
+                    <form data-next-checkout="form" id="combo_form" method="post">
+                      <div class="form-content"><div class="form-sections">
+
+                        <div class="form-section grid-row-gap2 form-section--first">
+                          <h2 class="form-section__title">Step 1: Pick Your Bundle Deal</h2>
+                          {% campaign_include 'bundle-selector.html' selector_id='main' packages=packages shipping_methods=shipping_methods bundles=bundles %}
+                        </div>
+
+                        <div data-next-component="shipping-form" class="form-sections">
+                          {% campaign_include 'customer-info-form.html' %}
+                          {% campaign_include 'shipping-address-form.html' %}
+                        </div>
+
+                        {% campaign_include 'bump-coverage.html' packages=packages order_bump=order_bump %}
+
+                        {% campaign_include 'guarantee.html' guarantee=guarantee %}
+
+                        <div class="form-section form-section--last">
+                          <div class="form-section__header">
+                            <h2 class="form-section__title">Payment</h2>
+                            <div class="form-section__subtitle">All transactions are secure and encrypted.</div>
+                          </div>
+                          {% campaign_include 'express-checkout.html' show_title=false %}
+                          {% campaign_include 'payment-methods.html' show_paypal=true show_apple_pay=true show_google_pay=true %}
+                        </div>
+
+                        <div class="form-section form-section--last">
+                          <div class="cart-box cart-box--card">
+                            {% campaign_include 'promo-display.html' promo=promo %}
+                            {% campaign_include 'cart-summary.html' %}
+                            {% campaign_include 'delivery-scarcity.html' delivery_estimate=delivery_estimate scarcity_note=scarcity_note %}
+                          </div>
+                        </div>
+
+                        {% campaign_include 'submit-block.html' %}
+                      </div></div>
+                    </form>
+                  </div>
+
+                  {% campaign_include 'trust-bar.html' trust_bar=trust_bar %}
+
+                  <!-- Mobile social-proof (re-emit below the form) -->
+                  <div class="mobile-footer-content hide-tablet-up">
+                    {% campaign_include 'left-content.html' benefit_icons=benefit_icons testimonials=testimonials ugc_video=ugc_video context='mobile' %}
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% campaign_include 'footer.html' %}
+</div>
+
+<script>if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', () => { if (window.initSwiperGalleries) initSwiperGalleries(); }); } else { if (window.initSwiperGalleries) initSwiperGalleries(); }</script>

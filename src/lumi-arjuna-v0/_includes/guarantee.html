@@ -1,0 +1,33 @@
+{% comment %}
+  next_component: guarantee
+  next_version: 0.1.0
+  next_sdk_min: 0.4.18
+  next_purpose: Money-back / risk-reversal guarantee block inside the form. CRO iterations frequently rewrite the guarantee window, swap the badge, or hide it — frontmatter-driven so those are data changes, not forks.
+  next_params:
+    guarantee: object, optional.
+      show:      bool, default true. Set false to omit the block entirely (some CRO variants drop it).
+      badge_src: asset path, default "images/90d.webp".
+      title:     string, default "90 Day Money-Back Guarantee".
+      body:      string, default the 90-day risk-free copy.
+  next_sdk_owns: []   # presentational
+  next_theming:
+    classes_designer_owns: [.guarantee-section, .guarantee-badge, .text-xs]
+    css_vars_designer_owns: []
+  next_dont_touch: []
+  next_gotchas:
+    - The guarantee window (days) is a merchant/legal commitment — keep title + body consistent with the store's real policy, not just the CRO test.
+  next_variants:
+    - default (90-day), custom (frontmatter), hidden (show:false)
+  next_related:
+    - trust-bar (security seals), submit-block (risk-reversal subtext near the CTA)
+{% endcomment %}
+{%- assign _show = guarantee.show -%}{%- if _show == nil %}{% assign _show = true %}{% endif -%}
+{%- if _show %}
+{%- assign _badge = guarantee.badge_src | default: 'images/90d.webp' -%}
+{%- assign _title = guarantee.title | default: '90 Day Money-Back Guarantee' -%}
+{%- assign _body = guarantee.body | default: "Try it risk-free and return it within 90 days for a full refund or replacement—no questions asked." -%}
+<div class="guarantee-section">
+  {% if _badge %}<img loading="lazy" src="{{ _badge | campaign_asset }}" alt="" class="guarantee-badge">{% endif %}
+  <div class="text-xs"><strong>{{ _title | escape }}:</strong> {{ _body | escape }}</div>
+</div>
+{%- endif %}

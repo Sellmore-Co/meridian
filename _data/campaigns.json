@@ -202,5 +202,41 @@
     "store_phone_tel": "",
     "gtm_id": "",
     "fb_pixel_id": ""
+  },
+  "lumi-v0": {
+    "name": "Lumi v0",
+    "description": "Multi-currency Lumi daily wellness dogfood funnel",
+    "entry_url": "",
+    "sdk_version": "0.4.19",
+    "store_name": "",
+    "store_url": "https://keer.29next.store/",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": "",
+    "og_image": ""
+  },
+  "lumi-arjuna-v0": {
+    "name": "Lumi Arjuna v0",
+    "description": "Private Arjuna dogfood build for Lumi multi-currency funnel",
+    "entry_url": "",
+    "sdk_version": "0.4.19",
+    "store_name": "",
+    "store_url": "https://keer.29next.store/",
+    "store_terms": "",
+    "store_privacy": "",
+    "store_contact": "",
+    "store_returns": "",
+    "store_shipping": "",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": "",
+    "og_image": ""
   }
 }

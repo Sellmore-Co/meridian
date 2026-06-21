@@ -1,0 +1,190 @@
+{
+  "schema_version": "campaigns-os-build-brief/v1",
+  "campaign_intent": {
+    "audience": null,
+    "conversion_goal": "direct response funnel with post-purchase offers",
+    "tone": "clear, practical, benefit-led"
+  },
+  "design_authority": {
+    "page_mpaxqpb1_21": {
+      "source": "provided_design_export",
+      "reference": "presell.html"
+    },
+    "page_mpaxqpb1_22": {
+      "source": "provided_design_export",
+      "reference": "landing.html"
+    },
+    "page_mpaxqpb1_23": {
+      "source": "provided_design_export",
+      "reference": "checkout.html"
+    },
+    "page_mpaxqpb1_24": {
+      "source": "provided_design_export",
+      "reference": "upsell-1.html"
+    },
+    "page_mpaxrhe5_86": {
+      "source": "provided_design_export",
+      "reference": "upsell-2.html"
+    },
+    "page_mpaxqpb1_25": {
+      "source": "provided_design_export",
+      "reference": "thank-you.html"
+    }
+  },
+  "brand": {
+    "commerce_palette_source": "provided_design_export",
+    "primary_accent": null,
+    "cta_style": null,
+    "avoid": [
+      "template-default brand colors"
+    ]
+  },
+  "media": {
+    "sold_variants": [],
+    "allow_other_variant_colors": null,
+    "prefer": [
+      "clean product renders",
+      "lifestyle images without embedded text"
+    ],
+    "avoid": [
+      "wrong product variant",
+      "blurry stock-like crops"
+    ]
+  },
+  "offer_presentation": {
+    "bundle_cards": {
+      "primary_price": null,
+      "show_total": "multi_pack_only",
+      "show_compare_price": false,
+      "savings_badge": "rounded_percentage",
+      "hide_duplicate_discount_copy": true
+    },
+    "post_purchase": {
+      "show_voucher_code": "when_customer_needs_to_see_it",
+      "show_retail_price": true,
+      "show_shipping": "if_charged"
+    }
+  },
+  "promo_urgency": {
+    "header_claim_source": "campaign_offers",
+    "timer_label": null,
+    "show_promo_code_in_timer": false,
+    "exit_pop": {
+      "enabled": false,
+      "code_source": null
+    },
+    "forbid_placeholders": true
+  },
+  "commerce_surfaces": {
+    "payment_methods_allowed": [
+      "apple_pay",
+      "google_pay"
+    ],
+    "hidden_payment_methods": [],
+    "order_bump": {
+      "enabled": false,
+      "display_style": null
+    },
+    "guarantees": {
+      "use_campaign_or_merchant_policy_copy": true
+    }
+  },
+  "canonical_display": {
+    "product_name_source": "campaign_spec",
+    "allow_runtime_name_override": false,
+    "manual_overrides": {}
+  },
+  "template_residue_policy": {
+    "block_placeholders": true,
+    "block_template_favicon": true,
+    "block_demo_payment_methods": true,
+    "block_lorem_ipsum": true,
+    "block_unapproved_tracking_claims": true
+  },
+  "qa_policy": {
+    "enforcement": {
+      "status": "documented_expectation",
+      "enforced_by": "qa.proof_policy and report.proof_policy",
+      "note": "Build Brief qa_policy records business QA expectations; doctor and QA enforce the Build Packet qa.proof_policy and Assembly Report report.proof_policy contract."
+    },
+    "require_desktop_mobile_screenshots": true,
+    "require_checkout_flow": true,
+    "require_post_purchase_flow": true,
+    "fail_on_visible_placeholders": true,
+    "compare_live_runtime_data_to_spec": true
+  },
+  "confidence": {
+    "campaign_intent": "low",
+    "design_authority": "medium",
+    "brand": "low",
+    "media": "low",
+    "offer_presentation": "low",
+    "promo_urgency": "low",
+    "commerce_surfaces": "medium",
+    "template_family": "arjuna"
+  },
+  "_meta": {
+    "generated_at": "2026-06-20T06:28:10.382Z",
+    "mode": "guided_draft",
+    "input_path": null,
+    "input_format": "generated",
+    "input_source": null,
+    "normalized_by": "campaigns-os prepare-build"
+  },
+  "status": "needs_answers",
+  "questions": [
+    {
+      "id": "brand_palette_cta",
+      "priority": 2,
+      "field": "brand",
+      "question": "Which palette and CTA style should commerce pages use?",
+      "reason": "Commerce pages need a business-approved brand layer instead of silent template defaults. Missing brand.commerce_palette_source or brand.cta_style.",
+      "options": [
+        "landing palette + matched CTA",
+        "shared token file",
+        "template palette"
+      ],
+      "blocking": true
+    },
+    {
+      "id": "variant_media_rules",
+      "priority": 3,
+      "field": "media",
+      "question": "Which product variants or colors are actually sold, and may media show other variants?",
+      "reason": "Variant ambiguity often creates wrong-color carousels and unavailable-product claims. Detected multiple variant/media signals: air harmony odor vaporizer, air purifier ionic plug-in, foot massager, fruit and veg cleaner.",
+      "options": [
+        "sold variant only",
+        "all available variants",
+        "ask merchant per carousel"
+      ],
+      "blocking": true
+    },
+    {
+      "id": "bundle_pricing_presentation",
+      "priority": 4,
+      "field": "offer_presentation.bundle_cards",
+      "question": "How should bundle cards present pricing: simple unit price, savings-led, or full accounting?",
+      "reason": "CampaignSpec owns prices; the brief owns which shopper-facing price story is appropriate. Missing offer_presentation.bundle_cards.primary_price.",
+      "options": [
+        "discounted unit price",
+        "savings-led",
+        "full accounting"
+      ],
+      "blocking": true
+    },
+    {
+      "id": "promo_urgency_copy",
+      "priority": 5,
+      "field": "promo_urgency",
+      "question": "Which promo, savings, and urgency language is approved for timers, banners, and exit-pop surfaces?",
+      "reason": "Promo placeholders and unsupported scarcity claims are business decisions, not implementation details. CampaignSpec appears to include promo/offer signals, but promo copy authority is incomplete.",
+      "options": [
+        "actual voucher code",
+        "bundle savings claim",
+        "no promo banner"
+      ],
+      "blocking": true
+    }
+  ],
+  "gates": []
+}
