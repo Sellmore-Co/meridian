@@ -33,3 +33,23 @@ Date: 2026-06-21
 - `qa run --site --slug <slug>` initially tested root-relative `/checkout/`, `/landing/`, etc. Passing a route-scoped `--base-url` plus `--slug` was required.
 - The QA help says localhost is a development domain, but browser runtime still saw CORS failures from `http://127.0.0.1:4174` to `https://campaigns.apps.29next.com`. This blocks SDK debugger/payment proof when the preview config uses `REPLACE_AT_DEPLOY`.
 - The source-preserved public build and the private Arjuna build surface different contract gaps: public passthrough keeps the designed funnel but loses several commerce/pricing selectors; Arjuna preserves more commerce structure but carries visible starter/template residue.
+
+## Corrective Pass: 2026-06-21
+
+- `lumi-v0` checkout now exposes canonical cart/runtime hooks that were missing or non-standard in the passthrough build:
+  - `data-next-bundle-items` on each checkout bundle card.
+  - `data-next-bundle-display="price"` instead of `totalPrice`.
+  - `.submit-button` on the submit control.
+  - credit-card/CVV `spreedly-field` mounts using `data-next-checkout-field`.
+  - upsell actions normalized from `accept`/`decline` to `add`/`skip`.
+- `lumi-v0` built-site doctor improved to only one residue warning: the scanner flags literal HTML `placeholder="..."` attribute names as `Placeholder` text. This looks like a false positive; preserving input placeholders is better UX.
+- Private `lumi-arjuna-v0` received a first-pass de-startering:
+  - presell article/copy/images are now Lumi air-quality content rather than supplement/energy copy.
+  - `next-logo.png`, `Package Title`, `XXCODE`, and upsell placeholder slides were replaced in the high-signal commerce surfaces.
+  - remaining real residue is concentrated in the Arjuna landing page, which still uses the sleep-supplement starter stack and many `1x1_1.svg` placeholders.
+- `campaigns-os doctor --built ... --emit-packet` works for local built-site review, but `qa run` against those synthesized packets failed because `spec.map_id` is set to the slug and the QA runner tries to fetch `https://campaign-map.nextcommerce.com/api/spec/<slug>`, which 404s.
+- Existing copied runtime packets also failed doctor because `assembly.target_repo` points at `.campaign-runtime`, so doctor reports `src/<slug>` missing even though the actual repo output exists.
+- Browser-use fallback:
+  - live route screenshots worked for `/lumi-v0/upsell/`; structure probe found `offer=true`, `add=1`, `skip=1`, `bundles=3`, `selected=1`.
+  - `browse load-html` worked for DOM probes but is not trustworthy for visual screenshots because relative CSS/assets do not resolve the same way as the served page.
+  - local SDK/API data was not resolving prices in visual checks, so local QA needs a seeded/mock price mode for reliable polish review.

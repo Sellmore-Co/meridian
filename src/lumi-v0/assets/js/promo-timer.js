@@ -301,7 +301,7 @@ class PromoTimer extends HTMLElement {
     }
 
     // Return default if no sale is active
-    return { name: 'default', promoCode: 'XXCODE' };
+    return { name: 'default', promoCode: 'LUMI20' };
   }
 
   startTimer() {

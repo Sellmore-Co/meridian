@@ -72,8 +72,8 @@ page_layout: "passthrough.html"
         .bump-text strong { display: block; font-size: 14px; color: var(--lumi-text); margin-bottom: 4px; }
         .bump-text small { display: block; font-size: 12px; color: var(--lumi-text-soft); line-height: 1.4; }
 
-        .submit-btn { display: block; width: 100%; background: var(--lumi-primary); color: #fff; border: 0; padding: 18px; font-size: 17px; font-weight: 700; text-transform: uppercase; border-radius: 8px; cursor: pointer; letter-spacing: 0.06em; transition: background 0.15s; }
-        .submit-btn:hover { background: var(--lumi-primary-dark); }
+        .submit-button { display: block; width: 100%; background: var(--lumi-primary); color: #fff; border: 0; padding: 18px; font-size: 17px; font-weight: 700; text-transform: uppercase; border-radius: 8px; cursor: pointer; letter-spacing: 0.06em; transition: background 0.15s; }
+        .submit-button:hover { background: var(--lumi-primary-dark); }
         .subdisclaimer { font-size: 12px; color: var(--lumi-text-soft); text-align: center; margin-top: 10px; line-height: 1.5; }
 
         .summary { position: sticky; top: 20px; }
@@ -143,7 +143,7 @@ page_layout: "passthrough.html"
                      data-next-selection-mode="swap"
                      data-next-include-shipping="true">
 
-                    <label class="bundle-card next-selected" data-next-bundle-card data-next-bundle-id="bundle-1x" data-next-shipping-id="2">
+                    <label class="bundle-card next-selected" data-next-bundle-card data-next-bundle-id="bundle-1x" data-next-bundle-items='[{"packageId":1,"quantity":1}]' data-next-shipping-id="2" data-next-selected="true">
                         <input type="radio" name="bundle" value="bundle-1x" checked hidden>
                         <img src="/lumi-v0/products/air-purifier.png" alt="Lumi Air Purifier 1x">
                         <div>
@@ -155,7 +155,7 @@ page_layout: "passthrough.html"
                         </div>
                     </label>
 
-                    <label class="bundle-card" data-next-bundle-card data-next-bundle-id="bundle-2x" data-next-shipping-id="2">
+                    <label class="bundle-card" data-next-bundle-card data-next-bundle-id="bundle-2x" data-next-bundle-items='[{"packageId":1,"quantity":2}]' data-next-shipping-id="2">
                         <input type="radio" name="bundle" value="bundle-2x" hidden>
                         <img src="/lumi-v0/products/air-purifier.png" alt="Lumi Air Purifier 2x">
                         <div>
@@ -165,11 +165,11 @@ page_layout: "passthrough.html"
                         </div>
                         <span class="badge">Popular</span>
                         <div class="price">
-                            <span data-next-bundle-display="totalPrice"></span>
+                            <span data-next-bundle-display="price"></span>
                         </div>
                     </label>
 
-                    <label class="bundle-card" data-next-bundle-card data-next-bundle-id="bundle-3x" data-next-shipping-id="1">
+                    <label class="bundle-card" data-next-bundle-card data-next-bundle-id="bundle-3x" data-next-bundle-items='[{"packageId":1,"quantity":3}]' data-next-shipping-id="1">
                         <input type="radio" name="bundle" value="bundle-3x" hidden>
                         <img src="/lumi-v0/products/air-purifier.png" alt="Lumi Air Purifier 3x">
                         <div>
@@ -179,7 +179,7 @@ page_layout: "passthrough.html"
                         </div>
                         <span class="badge">Best value</span>
                         <div class="price">
-                            <span data-next-bundle-display="totalPrice"></span>
+                            <span data-next-bundle-display="price"></span>
                         </div>
                     </label>
                 </div>
@@ -280,18 +280,47 @@ page_layout: "passthrough.html"
                 <p style="font-size: 13px; color: var(--lumi-text-soft); margin: 0 0 12px;">All transactions are secure and encrypted.</p>
                 <div data-next-component="payment-methods">
                     <div class="payment-tabs">
-                        <div class="payment-tab active" data-next-payment-method="credit-card">Card</div>
+                        <div class="payment-tab active next-selected" data-next-payment-method="credit">Card</div>
                         <div class="payment-tab" data-next-payment-method="apple-pay">Apple Pay</div>
                         <div class="payment-tab" data-next-payment-method="google-pay">Google Pay</div>
                     </div>
-                    <div data-next-component="payment-mount" class="payment-mount">
-                        Card fields will mount here.
+                    <div data-next-payment-method="credit" class="payment-method next-selected">
+                        <div class="form-row">
+                            <div class="field">
+                                <label>Card number</label>
+                                <div data-next-checkout-field="cc-number" class="input-flds spreedly-field payment-mount"></div>
+                            </div>
+                        </div>
+                        <div class="form-row three">
+                            <div class="field">
+                                <label for="credit_card_exp_month">Exp. month</label>
+                                <select autocomplete="cc-exp-month" name="credit_card_exp_month" id="credit_card_exp_month" data-next-checkout-field="exp-month">
+                                    <option value="">MM</option>
+                                    <option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option>
+                                    <option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option>
+                                    <option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="credit_card_exp_year">Exp. year</label>
+                                <select autocomplete="cc-exp-year" name="credit_card_exp_year" id="credit_card_exp_year" data-next-checkout-field="exp-year">
+                                    <option value="">YYYY</option>
+                                    <option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option>
+                                    <option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option>
+                                    <option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>CVV</label>
+                                <div data-next-checkout-field="cvv" class="input-flds spreedly-field payment-mount"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="submit-section">
-                <button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-btn">Complete purchase &rarr;</button>
+                <button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-button">Complete purchase &rarr;</button>
                 <div class="subdisclaimer">By clicking the button, you agree to our Terms of Use and Privacy Policy. Your card will be charged the amount shown above.</div>
             </div>
         </form>

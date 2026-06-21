@@ -111,7 +111,7 @@ page_layout: "passthrough.html"
             </div>
 
             <div class="price-row">
-                <div class="current" data-next-display="bundle.upsell-veg.totalPrice"></div>
+                <div class="current" data-next-display="bundle.upsell-veg.price" data-next-format="currency"></div>
                 <div class="save">Save <span data-next-display="bundle.upsell-veg.discountAmount"></span> off retail</div>
             </div>
 
@@ -119,7 +119,7 @@ page_layout: "passthrough.html"
             <div class="hidden-cards"
                  data-next-bundle-selector
                  data-next-selector-id="upsell-veg">
-                <label data-next-bundle-card data-next-bundle-id="upsell-veg-1x" data-next-bundle-items='[{"packageId":4,"quantity":1}]' class="next-selected">
+                <label data-next-bundle-card data-next-bundle-id="upsell-veg-1x" data-next-bundle-items='[{"packageId":4,"quantity":1}]' data-next-selected="true" class="next-selected">
                     <input type="radio" name="upsell-veg" value="1" checked>
                 </label>
                 <label data-next-bundle-card data-next-bundle-id="upsell-veg-2x" data-next-bundle-items='[{"packageId":4,"quantity":2}]'>
@@ -127,8 +127,8 @@ page_layout: "passthrough.html"
                 </label>
             </div>
 
-            <a href="/lumi-v0/receipt/" data-next-upsell-action="accept" class="accept-btn">Yes &mdash; add to my order</a>
-            <a href="/lumi-v0/receipt/" data-next-upsell-action="decline" class="skip-link">No thank you, complete my order without this</a>
+            <a href="/lumi-v0/receipt/" data-next-upsell-action="add" class="accept-btn">Yes &mdash; add to my order</a>
+            <a href="/lumi-v0/receipt/" data-next-upsell-action="skip" class="skip-link">No thank you, complete my order without this</a>
         </div>
     </section>
 </div>

@@ -629,7 +629,7 @@ class PromoBanner extends HTMLElement {
       emoji: '',
       offer1: '',
       offer2: '',
-      promoCode: 'XXCODE',
+      promoCode: 'LUMI20',
       topBarBg: '',
       highlightColor: '',
       showTopBar: applyTopBar(false),
