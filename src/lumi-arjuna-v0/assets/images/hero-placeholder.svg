@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Single-large-image hero placeholder (Adsbranded/Arjuna default media mode).
+     Obviously a placeholder so QA/asset-fidelity flags it — replace per campaign with the real product hero. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none" role="img" aria-label="Hero image placeholder">
+  <rect width="800" height="800" fill="#ededed"/>
+  <g fill="none" stroke="#939393" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="220" y="250" width="360" height="280" rx="14"/>
+    <circle cx="305" cy="330" r="26"/>
+    <path d="M232 470l92-92 70 70 86-86 88 88"/>
+  </g>
+  <text x="400" y="600" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="700" fill="#939393" letter-spacing="1">HERO IMAGE</text>
+  <text x="400" y="644" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#a8a8a8">replace per campaign</text>
+</svg>

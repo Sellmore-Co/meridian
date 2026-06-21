@@ -1,0 +1,266 @@
+{
+  "ok": true,
+  "status": "ready_with_warnings",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "campaign.allowed_domains_confirmed",
+      "message": "Non-localhost preview/production origins are not confirmed in the Campaigns App SDK origin allowlist. SDK runtime checks may be blocked after deploy."
+    },
+    {
+      "code": "spec.validation",
+      "message": "campaign.store_phone_tel is set but empty; remove the field or set a tel:-prefixed value (e.g. \"tel:+18005551234\").",
+      "detail": {
+        "ruleId": "StoreProfileShape",
+        "path": "/campaign/store_phone_tel",
+        "data": {
+          "check": "store-phone-tel-empty"
+        }
+      }
+    },
+    {
+      "code": "spec.store_profile.payment_methods_default_on",
+      "message": "Starter-template checkout pages enable paypal, klarna in the payment-methods include by default, but the CampaignSpec does not list them in available_payment_methods/available_express_payment_methods. If you build on a starter template family, remove the show_* arg(s) from the checkout payment-methods include (or add the method to the spec) so unsupported methods do not ship."
+    },
+    {
+      "code": "template_contract.literal_residue",
+      "message": "Assembly is recorded complete, but built output still contains generic starter/template placeholders: target:assets/js/promo-banner.js:632 \"XXCODE\"; target:assets/js/promo-timer.js:304 \"XXCODE\". Replace these from CampaignSpec/API or remove dead template references before QA."
+    },
+    {
+      "code": "template_contract.discount_claim_residue",
+      "message": "Assembly is recorded complete, but built output claims discount percentages above the CampaignSpec maximum (25%): target:assets/js/checkout.js:67 \"30% claim\"; target:assets/js/promo-banner.js:69 \"63% claim\"; target:assets/js/promo-banner.js:70 \"69% claim\"; target:assets/js/promo-banner.js:348 \"63% claim\"; target:assets/js/promo-banner.js:349 \"69% claim\"; target:assets/js/promo-banner.js:363 \"63% claim\"; target:assets/js/promo-banner.js:364 \"69% claim\"; target:assets/js/promo-banner.js:378 \"63% claim\"; plus 30 more. Generate promo/banner/timer copy from actual offers and vouchers."
+    },
+    {
+      "code": "template_contract.placeholder_text_residue",
+      "message": "Assembly is recorded complete, but built output still contains literal template placeholder text (Placeholder): target:checkout.html:194 \"Placeholder\"; target:checkout.html:219 \"Placeholder\"; target:checkout.html:223 \"Placeholder\"; target:checkout.html:229 \"Placeholder\"; target:checkout.html:235 \"Placeholder\"; target:checkout.html:241 \"Placeholder\"; target:checkout.html:252 \"Placeholder\"; target:checkout.html:258 \"Placeholder\"; plus 2 more. Replace with CampaignSpec/design copy; browser QA blocks on these terms."
+    },
+    {
+      "code": "market_copy.us_specific_claims",
+      "message": "Campaign market scope needs copy review (additional currencies: EUR, GBP, non-US shipping countries: FR, DE, IT, NL, ES, GB), and source/template files contain US-specific starter copy: target:_includes/upsell-bundle-stepper-offer.html:145 \"USPS\"; target:_includes/upsell-bundle-stepper-offer.html:147 \"ships from the USA\"; target:_includes/upsell-bundle-tier-cards-offer.html:130 \"USPS\"; target:_includes/upsell-bundle-tier-cards-offer.html:131 \"ships from the USA\"; target:_includes/upsell-bundle-tier-pills-offer.html:148 \"USPS\"; target:_includes/upsell-bundle-tier-pills-offer.html:149 \"ships from the USA\". Confirm or replace this copy; do not remove it automatically."
+    },
+    {
+      "code": "copy.hardcoded_currency_symbol",
+      "message": "Campaign currency scope needs copy review (available currencies: USD, EUR, GBP), and built campaign output contains hardcoded $ amounts outside SDK-bound or skipped regions: target:_includes/bump-check02.html:47 \"$1.99\"; target:_includes/bump-switch01.html:43 \"$9.99\"; target:_includes/bump-switch01.html:43 \"$9.99\"; target:_includes/upsell-bundle-stepper-offer.html:116 \"$4.95\"; target:_includes/upsell-bundle-tier-cards-offer.html:114 \"$4.95\"; target:_includes/upsell-bundle-tier-pills-offer.html:127 \"$4.95\". Use SDK display tokens or remove static currency strings."
+    },
+    {
+      "code": "adapter.wrapper_policy",
+      "message": "Assembly is recorded complete with report.adapter_decisions.wrapper_policy=\"preserve_document_wrappers\". Page-kit source should normally strip document wrappers unless preserving them is explicitly not_required."
+    },
+    {
+      "code": "adapter.commerce_shell_adoption",
+      "message": "Assembly is recorded complete, but report.adapter_decisions.commerce_shell_adoption is \"not_required\" for runtime commerce pages (page_mpaxqpb1_23, page_mpaxqpb1_24, page_mpaxrhe5_86, page_mpaxqpb1_25). Commerce pages should be template-clone-first, then styled, with SDK-owned surfaces preserved."
+    },
+    {
+      "code": "build_brief.guided_questions",
+      "message": "Generated Campaign Build Brief draft has 4 high-impact business question(s) to confirm: brand_palette_cta, variant_media_rules, bundle_pricing_presentation, promo_urgency_copy."
+    },
+    {
+      "code": "deploy.preview_url",
+      "message": "No preview or production URL yet. QA remains blocked after build/polish."
+    },
+    {
+      "code": "context.prompts_required.BUILD_BRIEF_BRAND_PALETTE_CTA",
+      "message": "Which palette and CTA style should commerce pages use?"
+    },
+    {
+      "code": "context.prompts_required.BUILD_BRIEF_VARIANT_MEDIA_RULES",
+      "message": "Which product variants or colors are actually sold, and may media show other variants?"
+    },
+    {
+      "code": "context.prompts_required.BUILD_BRIEF_BUNDLE_PRICING_PRESENTATION",
+      "message": "How should bundle cards present pricing: simple unit price, savings-led, or full accounting?"
+    },
+    {
+      "code": "context.prompts_required.BUILD_BRIEF_PROMO_URGENCY_COPY",
+      "message": "Which promo, savings, and urgency language is approved for timers, banners, and exit-pop surfaces?"
+    }
+  ],
+  "ready": [
+    "Build Packet schema campaign-runtime-build-packet/v0",
+    "Template family \"shop-single-step\" is certified (commerce catalog + brand contract)",
+    "Target campaign output directory exists",
+    "Target page-kit dependency ^0.2.0",
+    "Local CampaignSpec parsed",
+    "CampaignSpec spec_identity includes map_id and public_route_slug",
+    "CampaignSpec public page routes are Page Kit-compatible",
+    "CampaignSpec required Store Profile fields are present for page-kit campaigns.json",
+    "CampaignSpec store_url points at a non-placeholder storefront",
+    "Target campaigns.json SDK version matches CampaignSpec (0.4.19)",
+    "CampaignSpec shipping countries: FR, DE, IT, NL, ES, GB, US",
+    "CampaignSpec routing meta deferred to built-output verification (_site/lumi-v0/).",
+    "Source mappings cover active CampaignSpec pages",
+    "All mapped CampaignSpec pages are build candidates",
+    "CampaignSpec package purchase availability has no unavailable package refs in active build data",
+    "Built HTML structure and commerce refs checked in _site/lumi-v0/ for 6 page(s)",
+    "Built SDK meta tags checked in _site/lumi-v0/ for 6 page(s)",
+    "Page Kit build summary verified for \"lumi-v0\": 6 page(s) built, no build errors or shape warnings",
+    "Campaigns API key available via CampaignSpec campaign.campaigns_api_key",
+    "Commerce catalog sharedFrontmatterVocabulary loaded",
+    "Template agentContract loaded for shop-single-step",
+    "Template brand/residue/pricing contract loaded for shop-single-step",
+    "Template family inventory matrix loaded for shop-single-step",
+    "Built target output has no obvious demo-only or unsupported starter contract residue",
+    "Built target output references no template demo placeholder assets",
+    "shop-single-step contract has no explicit shipping frontmatter residue in currently available mapped source/target pages",
+    "Built target output has no ungoverned shop-single-step exit-pop residue",
+    "source_html.adapter_contract adapter decision fields loaded",
+    "Template family slice paths exist in target repo",
+    "Template family slice copy/verification covers required page-kit dependency groups",
+    "qa.proof_policy loaded: browser=true, typed_card_depth=common, order_path_depth=common",
+    "Build context schema campaign-runtime-build-context/v0",
+    "Source commerce zones inspected; no SDK-owned commerce shell placeholders declared",
+    "context.adapter_decisions adapter decision fields loaded",
+    "Brand theme context ready (medium confidence)",
+    "Assembly report schema campaign-runtime-assembly-report/v0",
+    "Assembly report theme skipped",
+    "report.adapter_decisions adapter decision fields loaded",
+    "report.proof_policy loaded: browser=true, typed_card_depth=common, order_path_depth=common",
+    "Theme gate passed: brand layer applied after next-core.css on commerce pages.",
+    "Campaign CSS has no display:none rules on shop-single-step pricing surfaces"
+  ],
+  "derived": {
+    "packet_path": "/Users/devin/Developer/meridian--campaigns-os-build-loop/campaign-runtime.build.json",
+    "map_id": "lumi-v0-qdos",
+    "public_route_slug": "lumi-v0",
+    "template_family": "shop-single-step",
+    "source_root": "/Users/devin/Developer/designer/funnel-designs/lumi-daily-wellness-set",
+    "target_repo": "/Users/devin/Developer/meridian--campaigns-os-build-loop",
+    "target_output_dir": "/Users/devin/Developer/meridian--campaigns-os-build-loop/src/lumi-v0",
+    "spec_path": "/Users/devin/Developer/designer/funnel-designs/lumi-daily-wellness-set/campaign-spec-lumi-v0.json",
+    "doctor_checks": [
+      "campaign-spec.rule-registry",
+      "spec.identity_export",
+      "spec.public_routes",
+      "spec.store_profile",
+      "page_kit.sdk_version",
+      "spec.shipping_countries",
+      "spec.routing_meta_tags",
+      "source_html.coverage",
+      "spec.package_availability",
+      "built_output.pages",
+      "built_output.sdk_meta_tags",
+      "built_output.build_summary",
+      "campaign.api_key",
+      "assembly.commerce_catalog",
+      "market_copy",
+      "source_html.adapter_contract",
+      "qa.proof_policy",
+      "build_brief.artifact",
+      "context.shape",
+      "assembly_report.shape"
+    ],
+    "scaffold_required": false,
+    "scaffold_reason": null,
+    "scope": {
+      "mode": "full",
+      "built_pages": [
+        {
+          "page_id": "page_mpaxqpb1_21",
+          "type": "presell",
+          "role": "visual",
+          "route": "",
+          "source_path": "presell.html"
+        },
+        {
+          "page_id": "page_mpaxqpb1_22",
+          "type": "landing",
+          "role": "visual",
+          "route": "landing/",
+          "source_path": "landing.html"
+        },
+        {
+          "page_id": "page_mpaxqpb1_23",
+          "type": "checkout",
+          "role": "runtime",
+          "route": "checkout/",
+          "source_path": "checkout.html"
+        },
+        {
+          "page_id": "page_mpaxqpb1_24",
+          "type": "upsell",
+          "role": "runtime",
+          "route": "upsell/",
+          "source_path": "upsell-1.html"
+        },
+        {
+          "page_id": "page_mpaxrhe5_86",
+          "type": "upsell",
+          "role": "runtime",
+          "route": "upsell-2/",
+          "source_path": "upsell-2.html"
+        },
+        {
+          "page_id": "page_mpaxqpb1_25",
+          "type": "thankyou",
+          "role": "runtime",
+          "route": "receipt/",
+          "source_path": "thank-you.html"
+        }
+      ],
+      "out_of_scope_pages": [],
+      "out_of_scope_reasons": [],
+      "previewable_routes": [
+        {
+          "page_id": "page_mpaxqpb1_21",
+          "type": "presell",
+          "route": ""
+        },
+        {
+          "page_id": "page_mpaxqpb1_22",
+          "type": "landing",
+          "route": "landing/"
+        },
+        {
+          "page_id": "page_mpaxqpb1_23",
+          "type": "checkout",
+          "route": "checkout/"
+        },
+        {
+          "page_id": "page_mpaxqpb1_24",
+          "type": "upsell",
+          "route": "upsell/"
+        },
+        {
+          "page_id": "page_mpaxrhe5_86",
+          "type": "upsell",
+          "route": "upsell-2/"
+        },
+        {
+          "page_id": "page_mpaxqpb1_25",
+          "type": "thankyou",
+          "route": "receipt/"
+        }
+      ],
+      "blocked_runtime_pages": []
+    },
+    "theme_gate": {
+      "status": "pass",
+      "code": "theme_gate.nothing_generatable",
+      "reason": "No generatable brand theme was found; the gate passes without a brand layer.",
+      "commerce_pages": [
+        "page_mpaxqpb1_23",
+        "page_mpaxqpb1_24",
+        "page_mpaxrhe5_86",
+        "page_mpaxqpb1_25"
+      ],
+      "waiver": null,
+      "required_actions": []
+    }
+  },
+  "next": {
+    "stage": "polish",
+    "status": "ready_with_warnings",
+    "owner": "polish",
+    "default_skill": "next-campaigns-polish",
+    "command": "campaigns-os next polish --packet /Users/devin/Developer/meridian--campaigns-os-build-loop/campaign-runtime.build.json",
+    "actions": [
+      "Replace literal template placeholder text (Lorem/Placeholder/TODO/Product Name) with CampaignSpec/design copy before QA; the browser residue gate blocks on these terms.",
+      "Run next-campaigns-polish and record polish as completed, skipped, or blocked before deploy/QA handoff."
+    ],
+    "blocked_stages": [
+      "qa",
+      "runtime-sdk-verification",
+      "deploy"
+    ]
+  }
+}

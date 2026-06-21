@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generic benefit-icon placeholder 2 of 4 (shipping). Replace per campaign with a distinct icon. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="8" fill="#ededed"/>
+  <path d="M11 16h17v15H11z" fill="none" stroke="#939393" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M28 21h6l4 5v5h-10z" fill="none" stroke="#939393" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="18" cy="33" r="3" fill="none" stroke="#939393" stroke-width="2.5"/>
+  <circle cx="32" cy="33" r="3" fill="none" stroke="#939393" stroke-width="2.5"/>
+</svg>

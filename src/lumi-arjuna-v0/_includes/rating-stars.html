@@ -1,0 +1,34 @@
+{% comment %}
+  next_component: rating-stars
+  next_version: 0.1.0
+  next_sdk_min: 0.4.18
+  next_purpose: Compact star-rating + score + review-count proof row shown next to the product heading. A near-universal CRO addition on Arjuna-shaped checkouts; frontmatter-driven optional slot so it can appear/disappear without markup edits. Reused in both the mobile and desktop heading boxes.
+  next_params:
+    rating: object, optional. Omit to render nothing.
+      stars: int 1-5, default 5. Filled star count.
+      score: string, optional (e.g. "4.8"). Shown before the count.
+      count: string, optional (e.g. "12,000+ reviews"). Social-proof count.
+  next_sdk_owns: []   # presentational
+  next_theming:
+    classes_designer_owns: [.rating-row, .rating-row__stars, .star_img, .rating-row__text]
+    css_vars_designer_owns: []
+  next_dont_touch: []
+  next_gotchas:
+    - Rendered twice (mobile + desktop heading) — visibility is CSS-toggled by the parent heading box, so this is not a duplicate-content concern beyond the existing heading twin.
+    - score/count are claims — keep them honest and consistent with the merchant's real review data.
+  next_variants: [stars-only, stars+score, stars+score+count]
+  next_related: [left-content (testimonials), trust-bar (seals)]
+{% endcomment %}
+{%- if rating %}
+{%- assign _n = rating.stars | default: 5 -%}
+<div class="rating-row">
+  <div class="rating-row__stars">
+    {%- for i in (1.._n) %}
+    <div class="star_img"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="15" height="15" rx="2" fill="#1BBA86"/><path d="M7.3125 2.25012L8.53329 6.00734L12.4839 6.00734L9.28779 8.32943L10.5086 12.0867L7.3125 9.76456L4.11642 12.0867L5.33721 8.32943L2.14113 6.00734L6.09171 6.00734L7.3125 2.25012Z" fill="white"/></svg></div>
+    {%- endfor %}
+  </div>
+  {%- if rating.score or rating.count %}
+  <div class="rating-row__text">{% if rating.score %}<strong>{{ rating.score | escape }}</strong>{% endif %}{% if rating.count %} {{ rating.count | escape }}{% endif %}</div>
+  {%- endif %}
+</div>
+{%- endif %}

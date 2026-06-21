@@ -1,0 +1,467 @@
+{
+  "schema_version": "campaign-runtime-assembly-report/v0",
+  "run_id": "asm_1781936630196",
+  "generated_at": "2026-06-20T06:23:50.196Z",
+  "status": "assembled_with_warnings",
+  "identity": {
+    "map_id": "lumi-v0-qdos",
+    "public_route_slug": "lumi-v0",
+    "campaign_directory": "lumi-v0",
+    "live_url_path": "/lumi-v0/",
+    "spec_hash": "9cc010c6b017e0e86d0c7fa1bec1d63d6d11f2fab0ccfbcd8a58635ccd4092ec"
+  },
+  "inputs": {
+    "packet_path": "./campaign-runtime.build.json",
+    "context_path": ".campaign-runtime/build-context.json",
+    "build_brief_path": ".campaign-runtime/input/campaign-build-brief.normalized.json",
+    "spec_path": "../designer/funnel-designs/lumi-daily-wellness-set/campaign-spec-lumi-v0.json",
+    "source": {
+      "kind": "html_funnel",
+      "root": "../designer/funnel-designs/lumi-daily-wellness-set"
+    },
+    "target_repo": "."
+  },
+  "template_family": {
+    "value": "shop-single-step",
+    "locked": true,
+    "locked_by": "operator_flag",
+    "commerce_catalog_version": null,
+    "candidates": []
+  },
+  "stages": {
+    "prepare_build": {
+      "stage": "prepare_build",
+      "status": "completed",
+      "inputs": [],
+      "outputs": [
+        "./campaign-runtime.build.json",
+        ".campaign-runtime/build-context.json",
+        ".campaign-runtime/input/campaign-build-brief.normalized.json",
+        ".campaign-runtime/assembly-report.json"
+      ],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "doctor": {
+      "stage": "doctor",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "setup": {
+      "stage": "setup",
+      "status": "completed",
+      "inputs": [
+        "campaign-runtime.build.json",
+        ".campaign-runtime/build-context.json"
+      ],
+      "outputs": [
+        "src/lumi-v0/",
+        "_data/campaigns.json"
+      ],
+      "commands": [
+        "npx campaign-init --non-interactive --json --source public --template shop-single-step --slug lumi-v0 --name \"Lumi v0\" --api-key REPLACE_AT_DEPLOY --keep-ai-context"
+      ],
+      "blockers": [],
+      "warnings": [
+        "--keep-ai-context had no effect because no --ai-context target was requested."
+      ],
+      "completed_at": "2026-06-20T06:24:46.355Z"
+    },
+    "assembly": {
+      "stage": "assembly",
+      "status": "completed",
+      "inputs": [
+        "campaign-runtime.build.json",
+        ".campaign-runtime/build-context.json",
+        ".campaign-runtime/assembly-report.json",
+        "../designer/funnel-designs/lumi-daily-wellness-set/*.html"
+      ],
+      "outputs": [
+        "src/lumi-v0/",
+        "_site/lumi-v0/",
+        ".campaign-runtime/page-kit-build-summary.json"
+      ],
+      "commands": [
+        "npx campaign-build --json > .campaign-runtime/page-kit-build-summary.json"
+      ],
+      "blockers": [],
+      "warnings": [
+        "Prepared standalone HTML was published through a passthrough layout; page-kit output is valid, but wrapper stripping remains tooling/build debt against the adapter contract.",
+        "campaign-build --json built the full repo; unrelated legacy campaign warnings are present in the repo-wide summary, while lumi-v0 pages have zero warnings/errors."
+      ],
+      "completed_at": "2026-06-20T06:26:39.549Z",
+      "evidence": {
+        "lumi_pages": [
+          {
+            "inputFile": "src/lumi-v0/checkout.html",
+            "campaignSlug": "lumi-v0",
+            "url": "/lumi-v0/checkout/",
+            "outputFile": "_site/lumi-v0/checkout/index.html",
+            "status": "built",
+            "warnings": [],
+            "errors": []
+          },
+          {
+            "inputFile": "src/lumi-v0/landing.html",
+            "campaignSlug": "lumi-v0",
+            "url": "/lumi-v0/landing/",
+            "outputFile": "_site/lumi-v0/landing/index.html",
+            "status": "built",
+            "warnings": [],
+            "errors": []
+          },
+          {
+            "inputFile": "src/lumi-v0/presell.html",
+            "campaignSlug": "lumi-v0",
+            "url": "/lumi-v0/",
+            "outputFile": "_site/lumi-v0/index.html",
+            "status": "built",
+            "warnings": [],
+            "errors": []
+          },
+          {
+            "inputFile": "src/lumi-v0/receipt.html",
+            "campaignSlug": "lumi-v0",
+            "url": "/lumi-v0/receipt/",
+            "outputFile": "_site/lumi-v0/receipt/index.html",
+            "status": "built",
+            "warnings": [],
+            "errors": []
+          },
+          {
+            "inputFile": "src/lumi-v0/upsell-2.html",
+            "campaignSlug": "lumi-v0",
+            "url": "/lumi-v0/upsell-2/",
+            "outputFile": "_site/lumi-v0/upsell-2/index.html",
+            "status": "built",
+            "warnings": [],
+            "errors": []
+          },
+          {
+            "inputFile": "src/lumi-v0/upsell.html",
+            "campaignSlug": "lumi-v0",
+            "url": "/lumi-v0/upsell/",
+            "outputFile": "_site/lumi-v0/upsell/index.html",
+            "status": "built",
+            "warnings": [],
+            "errors": []
+          }
+        ]
+      }
+    },
+    "polish": {
+      "stage": "polish",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "deploy": {
+      "stage": "deploy",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    },
+    "qa": {
+      "stage": "qa",
+      "status": "pending",
+      "inputs": [],
+      "outputs": [],
+      "commands": [],
+      "blockers": [],
+      "warnings": []
+    }
+  },
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mpaxqpb1_21",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_21\" to source file \"presell.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxqpb1-21, presell, presell-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpaxqpb1_22",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_22\" to source file \"landing.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxqpb1-22, landing-pdp, landing, landing-1, index"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpaxqpb1_23",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_23\" to source file \"checkout.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxqpb1-23, checkout, checkout-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpaxqpb1_24",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_24\" to source file \"upsell-1.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxqpb1-24, upsell, upsell-1"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpaxrhe5_86",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxrhe5_86\" to source file \"upsell-2.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxrhe5-86, upsell-2, upsell"
+      ]
+    },
+    {
+      "id": "dec_page_map_page_mpaxqpb1_25",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mpaxqpb1_25\" to source file \"thank-you.html\"",
+      "confidence": "high",
+      "evidence": [
+        "matched source filename against page keys: page-mpaxqpb1-25, thank-you, thankyou, receipt, thankyou-1"
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mpaxqpb1_21",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mpaxqpb1_21\" to Page Kit target \"presell.html\" with CPK page_type \"product\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"presell.html\" remains producer provenance",
+        "target path \"src/lumi-v0/presell.html\" derives from CampaignSpec route \"(entry route)\" and public slug \"lumi-v0\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mpaxqpb1_22",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mpaxqpb1_22\" to Page Kit target \"landing.html\" with CPK page_type \"product\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"landing.html\" remains producer provenance",
+        "target path \"src/lumi-v0/landing.html\" derives from CampaignSpec route \"landing/\" and public slug \"lumi-v0\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mpaxqpb1_23",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mpaxqpb1_23\" to Page Kit target \"checkout.html\" with CPK page_type \"checkout\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"checkout.html\" remains producer provenance",
+        "target path \"src/lumi-v0/checkout.html\" derives from CampaignSpec route \"checkout/\" and public slug \"lumi-v0\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mpaxqpb1_24",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mpaxqpb1_24\" to Page Kit target \"upsell.html\" with CPK page_type \"upsell\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"upsell-1.html\" remains producer provenance",
+        "target path \"src/lumi-v0/upsell.html\" derives from CampaignSpec route \"upsell/\" and public slug \"lumi-v0\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mpaxrhe5_86",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mpaxrhe5_86\" to Page Kit target \"upsell-2.html\" with CPK page_type \"upsell\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"upsell-2.html\" remains producer provenance",
+        "target path \"src/lumi-v0/upsell-2.html\" derives from CampaignSpec route \"upsell-2/\" and public slug \"lumi-v0\""
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mpaxqpb1_25",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mpaxqpb1_25\" to Page Kit target \"receipt.html\" with CPK page_type \"receipt\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"thank-you.html\" remains producer provenance",
+        "target path \"src/lumi-v0/receipt.html\" derives from CampaignSpec route \"receipt/\" and public slug \"lumi-v0\""
+      ]
+    }
+  ],
+  "build_brief": {
+    "schema_version": "campaigns-os-build-brief/v1",
+    "mode": "guided_draft",
+    "status": "needs_answers",
+    "input_path": null,
+    "normalized_path": ".campaign-runtime/input/campaign-build-brief.normalized.json",
+    "question_count": 4,
+    "gate_count": 0,
+    "questions": [
+      {
+        "id": "brand_palette_cta",
+        "priority": 2,
+        "field": "brand",
+        "question": "Which palette and CTA style should commerce pages use?",
+        "reason": "Commerce pages need a business-approved brand layer instead of silent template defaults. Missing brand.commerce_palette_source or brand.cta_style.",
+        "options": [
+          "landing palette + matched CTA",
+          "shared token file",
+          "template palette"
+        ],
+        "blocking": true
+      },
+      {
+        "id": "variant_media_rules",
+        "priority": 3,
+        "field": "media",
+        "question": "Which product variants or colors are actually sold, and may media show other variants?",
+        "reason": "Variant ambiguity often creates wrong-color carousels and unavailable-product claims. Detected multiple variant/media signals: air harmony odor vaporizer, air purifier ionic plug-in, foot massager, fruit and veg cleaner.",
+        "options": [
+          "sold variant only",
+          "all available variants",
+          "ask merchant per carousel"
+        ],
+        "blocking": true
+      },
+      {
+        "id": "bundle_pricing_presentation",
+        "priority": 4,
+        "field": "offer_presentation.bundle_cards",
+        "question": "How should bundle cards present pricing: simple unit price, savings-led, or full accounting?",
+        "reason": "CampaignSpec owns prices; the brief owns which shopper-facing price story is appropriate. Missing offer_presentation.bundle_cards.primary_price.",
+        "options": [
+          "discounted unit price",
+          "savings-led",
+          "full accounting"
+        ],
+        "blocking": true
+      },
+      {
+        "id": "promo_urgency_copy",
+        "priority": 5,
+        "field": "promo_urgency",
+        "question": "Which promo, savings, and urgency language is approved for timers, banners, and exit-pop surfaces?",
+        "reason": "Promo placeholders and unsupported scarcity claims are business decisions, not implementation details. CampaignSpec appears to include promo/offer signals, but promo copy authority is incomplete.",
+        "options": [
+          "actual voucher code",
+          "bundle savings claim",
+          "no promo banner"
+        ],
+        "blocking": true
+      }
+    ],
+    "gates": []
+  },
+  "adapter_decisions": {
+    "raw_html_conversion_status": "completed",
+    "source_asset_strategy": "pagekit_campaign_asset_root",
+    "route_rewrite_policy": "campaignspec_routes_via_campaign_link",
+    "config_script_strategy": "campaign_asset",
+    "commerce_shell_adoption": "not_required",
+    "wrapper_policy": "preserve_document_wrappers",
+    "frontmatter_policy": "pagekit_yaml_frontmatter",
+    "script_style_reference_policy": "inline",
+    "cta_rewrite_policy": "pagekit_public_routes",
+    "layout_choice": "page_layout",
+    "template_files_copied": {
+      "status": "complete",
+      "required_groups": [
+        "pages",
+        "_includes",
+        "_layouts",
+        "assets/css",
+        "assets/js",
+        "frontmatter_vocabulary"
+      ],
+      "groups": [
+        "pages",
+        "_includes",
+        "_layouts",
+        "assets/css",
+        "assets/js",
+        "frontmatter_vocabulary"
+      ],
+      "paths": [
+        "src/lumi-v0/presell.html",
+        "src/lumi-v0/landing.html",
+        "src/lumi-v0/checkout.html",
+        "src/lumi-v0/receipt.html",
+        "src/lumi-v0/_includes/",
+        "src/lumi-v0/_layouts/",
+        "src/lumi-v0/assets/css/",
+        "src/lumi-v0/assets/js/",
+        "src/lumi-v0/assets/config.js"
+      ],
+      "completed_at": "2026-06-20T06:24:46.355Z"
+    }
+  },
+  "proof_policy": {
+    "browser_qa_required": true,
+    "typed_card_depth": "common",
+    "localhost_development_domain_allowed": true,
+    "non_localhost_origin_allowlist_required": true,
+    "order_path_depth": "common",
+    "operator_approval_state": "not_required_global_test_cards",
+    "qa_portal_publish_default": true
+  },
+  "theme": {
+    "status": "skipped",
+    "css_path": null,
+    "load_order": "unknown",
+    "commerce_pages": [],
+    "evidence": [
+      "theme inspect completed; no generated brand theme was applied during prepare-build."
+    ],
+    "warnings": [],
+    "repair_loop_defect": null
+  },
+  "evidence": [],
+  "blockers": [],
+  "warnings": [
+    {
+      "code": "SOURCE_COMMERCE_REVIEW",
+      "stage": "assembly",
+      "message": "Source HTML contains possible commerce zones. Preserve catalog-owned runtime surfaces."
+    },
+    {
+      "code": "BUILD_BRIEF_GUIDED_QUESTIONS",
+      "stage": "prepare_build",
+      "message": "Generated Campaign Build Brief draft has 4 high-impact question(s) to confirm before first-shot assembly."
+    },
+    {
+      "stage": "assembly",
+      "message": "Prepared standalone HTML was published through a passthrough layout; page-kit output is valid, but wrapper stripping remains tooling/build debt against the adapter contract."
+    },
+    {
+      "stage": "assembly",
+      "message": "campaign-build --json built the full repo; unrelated legacy campaign warnings are present in the repo-wide summary, while lumi-v0 pages have zero warnings/errors."
+    }
+  ],
+  "next": {
+    "stage": "setup",
+    "owner": "next-campaigns-setup",
+    "action": "Run setup before build."
+  }
+}

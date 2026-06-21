@@ -1,0 +1,1710 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MQNJSP9O06HH6EA5LFABBS5JBP",
+  "campaign_slug": "lumi-arjuna-v0",
+  "campaign_ref_id": null,
+  "spec_version": "built-site",
+  "spec_hash": "sha256:6bf10dd8ff01a098e473dd3c4058abc77addf841cf9bda5076f4adf63c95cd8e",
+  "started_at": "2026-06-21T08:52:04.716Z",
+  "completed_at": "2026-06-21T08:52:23.309Z",
+  "runtime": "campaigns-os-node-qa@0.1.0-alpha.0",
+  "operator": "devin@local",
+  "disposition": "ready_with_exceptions",
+  "assertions": [
+    {
+      "id": "theme_gate.no_theme_context",
+      "family": "theme_gate",
+      "page": "campaign",
+      "status": "pass",
+      "expected": "theme gate pass or not applicable",
+      "actual": "No theme context exists for this campaign; run prepare-build/theme inspect to populate it.",
+      "evidence": {
+        "code": "theme_gate.no_theme_context",
+        "commerce_pages": [
+          "checkout",
+          "receipt",
+          "upsell-2",
+          "upsell"
+        ],
+        "scope_source": "spec_topologies"
+      }
+    },
+    {
+      "id": "template-brand-contract:arjuna",
+      "family": "template_residue",
+      "page": "campaign",
+      "status": "pass",
+      "expected": "selected template family has a brand/residue/pricing contract",
+      "actual": "loaded for arjuna",
+      "evidence": {
+        "template_family": "arjuna"
+      }
+    },
+    {
+      "id": "http:checkout",
+      "family": "funnel-flow",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "http:index",
+      "family": "funnel-flow",
+      "page": "index",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "http:landing",
+      "family": "funnel-flow",
+      "page": "landing",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "http:presell",
+      "family": "funnel-flow",
+      "page": "presell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/presell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "http:receipt",
+      "family": "funnel-flow",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "http:upsell-2",
+      "family": "funnel-flow",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "http:upsell",
+      "family": "funnel-flow",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "pass",
+      "expected": "2xx HTTP response",
+      "actual": "200 OK"
+    },
+    {
+      "id": "browser-load:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Arjuna Checkout",
+        "body_present": true
+      }
+    },
+    {
+      "id": "browser-payment-surface:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "pass",
+      "expected": "rendered credit-card payment field mounts",
+      "actual": "card_mounts=1; cvv_mounts=1; spreedly_frames=0",
+      "evidence": {
+        "card_number_selector": "[data-next-checkout-field=\"cc-number\"], #spreedly-number",
+        "cvv_selector": "[data-next-checkout-field=\"cvv\"], #spreedly-cvv",
+        "spreedly_frame_urls": [],
+        "next_step": "Run --test-order common for typed-card checkout proof (test cards bypass the gateway; no approval needed)."
+      }
+    },
+    {
+      "id": "browser-payment-geometry:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "native-looking card/CVV controls: fixed field height and centered hosted iframe text path",
+      "actual": "cc-number: host=48px iframe=0px center_delta=nullpx; cvv: host=48px iframe=0px center_delta=nullpx",
+      "evidence": {
+        "fields": [
+          {
+            "id": "cc-number",
+            "host": {
+              "width": 494,
+              "height": 48
+            },
+            "iframe": {
+              "width": 0,
+              "height": 0
+            },
+            "centerDelta": null
+          },
+          {
+            "id": "cvv",
+            "host": {
+              "width": 154,
+              "height": 48
+            },
+            "iframe": {
+              "width": 0,
+              "height": 0
+            },
+            "centerDelta": null
+          }
+        ],
+        "rules": {
+          "host_height_px": "42..64",
+          "iframe_height_ratio_max": 0.72,
+          "iframe_center_delta_px_max": 8
+        }
+      }
+    },
+    {
+      "id": "browser-express-wallets:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "manual_review",
+      "severity": "warn",
+      "expected": "eligible express wallet buttons render with stable wallet-button dimensions; Apple Pay may be absent in non-eligible browsers",
+      "actual": "no express wallet buttons mounted",
+      "evidence": {
+        "buttons": [],
+        "note": "Wallet presence is browser/device eligibility dependent; do not require Apple Pay in Chrome-only QA."
+      }
+    },
+    {
+      "id": "browser-bundle-selector:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "bundle cards have one selected option and visible prices for every tier",
+      "actual": "0 selected; 0/3 cards with visible price",
+      "evidence": {
+        "selectedCount": 0,
+        "cards": [
+          {
+            "index": 0,
+            "id": "bundle-1x",
+            "selected": false,
+            "width": 528,
+            "height": 112,
+            "prices": [
+              "-",
+              "-",
+              "-",
+              "-"
+            ],
+            "hasVisiblePrice": false
+          },
+          {
+            "index": 1,
+            "id": "bundle-2x",
+            "selected": false,
+            "width": 528,
+            "height": 112,
+            "prices": [
+              "-",
+              "-",
+              "-",
+              "-"
+            ],
+            "hasVisiblePrice": false
+          },
+          {
+            "index": 2,
+            "id": "bundle-3x",
+            "selected": false,
+            "width": 528,
+            "height": 112,
+            "prices": [
+              "-",
+              "-",
+              "-",
+              "-"
+            ],
+            "hasVisiblePrice": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-order-bump-state:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "pass",
+      "expected": "order bump visible checkbox state agrees with active/in-cart and hidden input state",
+      "actual": "1/1 bump toggle(s) aligned",
+      "evidence": {
+        "toggles": [
+          {
+            "index": 0,
+            "packageId": "2",
+            "active": false,
+            "inputChecked": null,
+            "markerChecked": false,
+            "inputAgrees": true,
+            "markerAgrees": true,
+            "statesAgree": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "template-residue:checkout:style:checkout_submit_button",
+      "family": "template_residue",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "not rgb(24, 24, 27) (starter default --brand--color--primary (Arjuna starter default; per-campaign brand override missing))",
+      "actual": "rgb(24, 24, 27)",
+      "evidence": {
+        "selector": ".submit-button",
+        "property": "background-color",
+        "expected": "not rgb(24, 24, 27) (starter default --brand--color--primary (Arjuna starter default; per-campaign brand override missing))",
+        "actual": "rgb(24, 24, 27)",
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+        "matches": [
+          {
+            "property": "background-color",
+            "actual": "rgb(24, 24, 27)",
+            "token": "--brand--color--primary (Arjuna starter default; per-campaign brand override missing)",
+            "rgb": "rgb(24, 24, 27)"
+          },
+          {
+            "property": "border-color",
+            "actual": "rgb(24, 24, 27)",
+            "token": "--brand--color--primary (Arjuna starter default; per-campaign brand override missing)",
+            "rgb": "rgb(24, 24, 27)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template-residue:checkout:style:selected_bundle_card",
+      "family": "template_residue",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "skipped",
+      "expected": "selector present for computed-style residue inspection: .os-card.next-selected",
+      "actual": "selector not found",
+      "evidence": {
+        "selector": ".os-card.next-selected",
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+        "note": "optional contract selector"
+      }
+    },
+    {
+      "id": "template-residue:checkout:style:announcement_bar",
+      "family": "template_residue",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "skipped",
+      "expected": "selector present for computed-style residue inspection: .announcement",
+      "actual": "selector not found",
+      "evidence": {
+        "selector": ".announcement",
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+        "note": "optional contract selector"
+      }
+    },
+    {
+      "id": "template-residue:checkout:style:bump_outline",
+      "family": "template_residue",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "skipped",
+      "expected": "selector present for computed-style residue inspection: [data-next-package-sync='false'], .bump-offer, .order-bump",
+      "actual": "selector not found",
+      "evidence": {
+        "selector": "[data-next-package-sync='false'], .bump-offer, .order-bump",
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+        "note": "optional contract selector"
+      }
+    },
+    {
+      "id": "template-residue:checkout:logo",
+      "family": "template_residue",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "campaign brand logo, not starter next-logo.png",
+      "actual": "starter logo asset still referenced (2 element(s))",
+      "evidence": {
+        "selector": "img.brand-logo",
+        "asset": "images/next-logo.png",
+        "sources": [
+          "http://127.0.0.1:4174/lumi-arjuna-v0/images/next-logo.png",
+          "/lumi-arjuna-v0/images/next-logo.png"
+        ],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/"
+      }
+    },
+    {
+      "id": "template-residue:checkout:placeholder-text",
+      "family": "template_residue",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "pass",
+      "expected": "no literal template placeholder text in rendered output",
+      "actual": "no placeholder text rendered",
+      "evidence": {
+        "terms": [
+          "Lorem",
+          "lorem ipsum",
+          "Placeholder",
+          "TODO",
+          "Product Name"
+        ],
+        "found": [],
+        "occurrences": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/"
+      }
+    },
+    {
+      "id": "template-residue:checkout:demo-asset",
+      "family": "template_residue",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "template demo assets still referenced: 1x1_1.svg, 1x1_2.svg, next-logo.png",
+      "evidence": {
+        "named_hits": [
+          "1x1_1.svg",
+          "1x1_2.svg",
+          "next-logo.png"
+        ],
+        "repeated_icons": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/"
+      }
+    },
+    {
+      "id": "pricing.checkout_price_visible",
+      "family": "pricing",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "pass",
+      "expected": "at least one visible checkout bundle price row",
+      "actual": "3 visible price row(s)",
+      "evidence": {
+        "selectors": [
+          ".price-wrapper",
+          ".cart-price",
+          "[data-next-bundle-display*='price']",
+          "[data-next-display*='price']"
+        ],
+        "visible_count": 3,
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay incomplete",
+      "evidence": {
+        "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/?debugger=true",
+        "displayReady": false,
+        "overlayHost": false,
+        "selectorContainer": false,
+        "currencySelector": false,
+        "countrySelector": false,
+        "localeSelector": false,
+        "nextKeys": [],
+        "http_status": 200,
+        "console_errors": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        ],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-console-errors:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "14 issue(s)",
+      "evidence": {
+        "messages": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        ]
+      }
+    },
+    {
+      "id": "browser-request-failures:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "3 failed request(s)",
+      "evidence": {
+        "failed_requests": [
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-load:index",
+      "family": "browser-runtime",
+      "page": "index",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "10 Reasons Why You Need This",
+        "body_present": true
+      }
+    },
+    {
+      "id": "template-residue:index:placeholder-text",
+      "family": "template_residue",
+      "page": "index",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/",
+      "status": "pass",
+      "expected": "no literal template placeholder text in rendered output",
+      "actual": "no placeholder text rendered",
+      "evidence": {
+        "terms": [
+          "Lorem",
+          "lorem ipsum",
+          "Placeholder",
+          "TODO",
+          "Product Name"
+        ],
+        "found": [],
+        "occurrences": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/"
+      }
+    },
+    {
+      "id": "template-residue:index:demo-asset",
+      "family": "template_residue",
+      "page": "index",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/",
+      "status": "pass",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "no template demo asset residue",
+      "evidence": {
+        "named_hits": [],
+        "repeated_icons": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/"
+      }
+    },
+    {
+      "id": "browser-console-errors:index",
+      "family": "browser-runtime",
+      "page": "index",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "9 issue(s)",
+      "evidence": {
+        "messages": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118"
+        ]
+      }
+    },
+    {
+      "id": "browser-request-failures:index",
+      "family": "browser-runtime",
+      "page": "index",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "2 failed request(s)",
+      "evidence": {
+        "failed_requests": [
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+            "failure": "net::ERR_FAILED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-load:landing",
+      "family": "browser-runtime",
+      "page": "landing",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "[Product] — Fall Asleep Faster, Stay Asleep Longer",
+        "body_present": true
+      }
+    },
+    {
+      "id": "template-residue:landing:placeholder-text",
+      "family": "template_residue",
+      "page": "landing",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/",
+      "status": "pass",
+      "expected": "no literal template placeholder text in rendered output",
+      "actual": "no placeholder text rendered",
+      "evidence": {
+        "terms": [
+          "Lorem",
+          "lorem ipsum",
+          "Placeholder",
+          "TODO",
+          "Product Name"
+        ],
+        "found": [],
+        "occurrences": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/"
+      }
+    },
+    {
+      "id": "template-residue:landing:demo-asset",
+      "family": "template_residue",
+      "page": "landing",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "template demo assets still referenced: 1x1_1.svg",
+      "evidence": {
+        "named_hits": [
+          "1x1_1.svg"
+        ],
+        "repeated_icons": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/"
+      }
+    },
+    {
+      "id": "browser-console-errors:landing",
+      "family": "browser-runtime",
+      "page": "landing",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "9 issue(s)",
+      "evidence": {
+        "messages": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118"
+        ]
+      }
+    },
+    {
+      "id": "browser-request-failures:landing",
+      "family": "browser-runtime",
+      "page": "landing",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "2 failed request(s)",
+      "evidence": {
+        "failed_requests": [
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+            "failure": "net::ERR_FAILED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-load:presell",
+      "family": "browser-runtime",
+      "page": "presell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/presell/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "10 Reasons Why You Need This",
+        "body_present": true
+      }
+    },
+    {
+      "id": "template-residue:presell:placeholder-text",
+      "family": "template_residue",
+      "page": "presell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/presell/",
+      "status": "pass",
+      "expected": "no literal template placeholder text in rendered output",
+      "actual": "no placeholder text rendered",
+      "evidence": {
+        "terms": [
+          "Lorem",
+          "lorem ipsum",
+          "Placeholder",
+          "TODO",
+          "Product Name"
+        ],
+        "found": [],
+        "occurrences": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/presell/"
+      }
+    },
+    {
+      "id": "template-residue:presell:demo-asset",
+      "family": "template_residue",
+      "page": "presell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/presell/",
+      "status": "pass",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "no template demo asset residue",
+      "evidence": {
+        "named_hits": [],
+        "repeated_icons": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/presell/"
+      }
+    },
+    {
+      "id": "browser-console-errors:presell",
+      "family": "browser-runtime",
+      "page": "presell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/presell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "9 issue(s)",
+      "evidence": {
+        "messages": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118"
+        ]
+      }
+    },
+    {
+      "id": "browser-request-failures:presell",
+      "family": "browser-runtime",
+      "page": "presell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/presell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "2 failed request(s)",
+      "evidence": {
+        "failed_requests": [
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+            "failure": "net::ERR_FAILED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-load:receipt",
+      "family": "browser-runtime",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Olympus — Receipt",
+        "body_present": true
+      }
+    },
+    {
+      "id": "template-residue:receipt:logo",
+      "family": "template_residue",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "campaign brand logo, not starter next-logo.png",
+      "actual": "starter logo asset still referenced (4 element(s))",
+      "evidence": {
+        "selector": "img.brand-logo",
+        "asset": "images/next-logo.png",
+        "sources": [
+          "http://127.0.0.1:4174/lumi-arjuna-v0/images/next-logo.png",
+          "/lumi-arjuna-v0/images/next-logo.png",
+          "http://127.0.0.1:4174/lumi-arjuna-v0/images/next-logo.png",
+          "/lumi-arjuna-v0/images/next-logo.png"
+        ],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/"
+      }
+    },
+    {
+      "id": "template-residue:receipt:placeholder-text",
+      "family": "template_residue",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "pass",
+      "expected": "no literal template placeholder text in rendered output",
+      "actual": "no placeholder text rendered",
+      "evidence": {
+        "terms": [
+          "Lorem",
+          "lorem ipsum",
+          "Placeholder",
+          "TODO",
+          "Product Name"
+        ],
+        "found": [],
+        "occurrences": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/"
+      }
+    },
+    {
+      "id": "template-residue:receipt:demo-asset",
+      "family": "template_residue",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "template demo assets still referenced: next-logo.png",
+      "evidence": {
+        "named_hits": [
+          "next-logo.png"
+        ],
+        "repeated_icons": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:receipt",
+      "family": "browser-runtime",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay incomplete",
+      "evidence": {
+        "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/?debugger=true",
+        "displayReady": false,
+        "overlayHost": false,
+        "selectorContainer": false,
+        "currencySelector": false,
+        "countrySelector": false,
+        "localeSelector": false,
+        "nextKeys": [],
+        "http_status": 200,
+        "console_errors": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        ],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-console-errors:receipt",
+      "family": "browser-runtime",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "14 issue(s)",
+      "evidence": {
+        "messages": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        ]
+      }
+    },
+    {
+      "id": "browser-request-failures:receipt",
+      "family": "browser-runtime",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "3 failed request(s)",
+      "evidence": {
+        "failed_requests": [
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-load:upsell-2",
+      "family": "browser-runtime",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Lumi Produce Cleaner Offer",
+        "body_present": true
+      }
+    },
+    {
+      "id": "template-residue:upsell-2:style:announcement_bar",
+      "family": "template_residue",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "pass",
+      "expected": "no starter-default palette on inspected commerce surface",
+      "actual": "campaign palette applied",
+      "evidence": {
+        "selector": ".announcement",
+        "properties": {
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "template-residue:upsell-2:style:upsell_accept_cta",
+      "family": "template_residue",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "not rgb(10, 38, 92) (starter default --brand--color--primary-dark (next-core default; brand-theme.css did not load))",
+      "actual": "rgb(10, 38, 92)",
+      "evidence": {
+        "selector": "[data-next-action='accept'], [data-next-upsell-action='add'], a[href*='upsell-accept'], .submit-button",
+        "property": "background-color",
+        "expected": "not rgb(10, 38, 92) (starter default --brand--color--primary-dark (next-core default; brand-theme.css did not load))",
+        "actual": "rgb(10, 38, 92)",
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+        "matches": [
+          {
+            "property": "background-color",
+            "actual": "rgb(10, 38, 92)",
+            "token": "--brand--color--primary-dark (next-core default; brand-theme.css did not load)",
+            "rgb": "rgb(10, 38, 92)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template-residue:upsell-2:logo",
+      "family": "template_residue",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "campaign brand logo, not starter next-logo.png",
+      "actual": "starter logo asset still referenced (2 element(s))",
+      "evidence": {
+        "selector": "img.brand-logo",
+        "asset": "images/next-logo.png",
+        "sources": [
+          "http://127.0.0.1:4174/lumi-arjuna-v0/images/next-logo.png",
+          "/lumi-arjuna-v0/images/next-logo.png"
+        ],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "template-residue:upsell-2:placeholder-text",
+      "family": "template_residue",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "pass",
+      "expected": "no literal template placeholder text in rendered output",
+      "actual": "no placeholder text rendered",
+      "evidence": {
+        "terms": [
+          "Lorem",
+          "lorem ipsum",
+          "Placeholder",
+          "TODO",
+          "Product Name"
+        ],
+        "found": [],
+        "occurrences": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "template-residue:upsell-2:demo-asset",
+      "family": "template_residue",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "template demo assets still referenced: 1x1_1.svg, 1x1_2.svg, next-logo.png",
+      "evidence": {
+        "named_hits": [
+          "1x1_1.svg",
+          "1x1_2.svg",
+          "next-logo.png"
+        ],
+        "repeated_icons": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "pricing.upsell_price_visible",
+      "family": "pricing",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "pass",
+      "expected": "at least one visible price row on the upsell offer",
+      "actual": "4 visible price row(s)",
+      "evidence": {
+        "selectors": [
+          ".price-wrapper",
+          ".price-display",
+          ".summary_price",
+          "[data-next-display*='price']"
+        ],
+        "visible_count": 4,
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:upsell-2",
+      "family": "browser-runtime",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay incomplete",
+      "evidence": {
+        "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/?debugger=true",
+        "displayReady": false,
+        "overlayHost": false,
+        "selectorContainer": false,
+        "currencySelector": false,
+        "countrySelector": false,
+        "localeSelector": false,
+        "nextKeys": [],
+        "http_status": 200,
+        "console_errors": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        ],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-console-errors:upsell-2",
+      "family": "browser-runtime",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "14 issue(s)",
+      "evidence": {
+        "messages": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        ]
+      }
+    },
+    {
+      "id": "browser-request-failures:upsell-2",
+      "family": "browser-runtime",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "3 failed request(s)",
+      "evidence": {
+        "failed_requests": [
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "browser-load:upsell",
+      "family": "browser-runtime",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "pass",
+      "expected": "browser-rendered page",
+      "actual": "HTTP 200",
+      "evidence": {
+        "title": "Lumi Foot Recovery Offer",
+        "body_present": true
+      }
+    },
+    {
+      "id": "template-residue:upsell:style:announcement_bar",
+      "family": "template_residue",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "pass",
+      "expected": "no starter-default palette on inspected commerce surface",
+      "actual": "campaign palette applied",
+      "evidence": {
+        "selector": ".announcement",
+        "properties": {
+          "background-color": "rgba(0, 0, 0, 0)"
+        },
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/"
+      }
+    },
+    {
+      "id": "template-residue:upsell:style:upsell_accept_cta",
+      "family": "template_residue",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "not rgb(10, 38, 92) (starter default --brand--color--primary-dark (next-core default; brand-theme.css did not load))",
+      "actual": "rgb(10, 38, 92)",
+      "evidence": {
+        "selector": "[data-next-action='accept'], [data-next-upsell-action='add'], a[href*='upsell-accept'], .submit-button",
+        "property": "background-color",
+        "expected": "not rgb(10, 38, 92) (starter default --brand--color--primary-dark (next-core default; brand-theme.css did not load))",
+        "actual": "rgb(10, 38, 92)",
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+        "matches": [
+          {
+            "property": "background-color",
+            "actual": "rgb(10, 38, 92)",
+            "token": "--brand--color--primary-dark (next-core default; brand-theme.css did not load)",
+            "rgb": "rgb(10, 38, 92)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template-residue:upsell:logo",
+      "family": "template_residue",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "campaign brand logo, not starter next-logo.png",
+      "actual": "starter logo asset still referenced (2 element(s))",
+      "evidence": {
+        "selector": "img.brand-logo",
+        "asset": "images/next-logo.png",
+        "sources": [
+          "http://127.0.0.1:4174/lumi-arjuna-v0/images/next-logo.png",
+          "/lumi-arjuna-v0/images/next-logo.png"
+        ],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/"
+      }
+    },
+    {
+      "id": "template-residue:upsell:placeholder-text",
+      "family": "template_residue",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "pass",
+      "expected": "no literal template placeholder text in rendered output",
+      "actual": "no placeholder text rendered",
+      "evidence": {
+        "terms": [
+          "Lorem",
+          "lorem ipsum",
+          "Placeholder",
+          "TODO",
+          "Product Name"
+        ],
+        "found": [],
+        "occurrences": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/"
+      }
+    },
+    {
+      "id": "template-residue:upsell:demo-asset",
+      "family": "template_residue",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "template demo assets still referenced: 1x1_1.svg, 1x1_2.svg, next-logo.png",
+      "evidence": {
+        "named_hits": [
+          "1x1_1.svg",
+          "1x1_2.svg",
+          "next-logo.png"
+        ],
+        "repeated_icons": [],
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/"
+      }
+    },
+    {
+      "id": "pricing.upsell_price_visible",
+      "family": "pricing",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "pass",
+      "expected": "at least one visible price row on the upsell offer",
+      "actual": "3 visible price row(s)",
+      "evidence": {
+        "selectors": [
+          ".price-wrapper",
+          ".price-display",
+          ".summary_price",
+          "[data-next-display*='price']"
+        ],
+        "visible_count": 3,
+        "page_url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/"
+      }
+    },
+    {
+      "id": "browser-sdk-debugger:upsell",
+      "family": "browser-runtime",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay incomplete",
+      "evidence": {
+        "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/?debugger=true",
+        "displayReady": false,
+        "overlayHost": false,
+        "selectorContainer": false,
+        "currencySelector": false,
+        "countrySelector": false,
+        "localeSelector": false,
+        "nextKeys": [],
+        "http_status": 200,
+        "console_errors": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at window.fetch (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/debug-6wuGgI0A.js:624:28) at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        ],
+        "page_errors": []
+      }
+    },
+    {
+      "id": "browser-console-errors:upsell",
+      "family": "browser-runtime",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "14 issue(s)",
+      "evidence": {
+        "messages": [
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CampaignStore] Campaign load failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "[SDKInitializer] SDK initialization failed: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.getCampaigns (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:11:17) at Object.loadCampaign (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:769:37) at async _SDKInitializer.loadCampaignData (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1892:5) at async _SDKInitializer.initialize (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/index-_DqJgzxB.js:1658:7)",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/carts/calculate/' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+          "Failed to load resource: net::ERR_FAILED",
+          "[ApiClient] API request failed: Failed to fetch",
+          "[CartStore] Failed to sync cart with API: TypeError: Failed to fetch at ApiClient.request (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:112:30) at ApiClient.calculateSummary (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/api-Bq4JBUws.js:22:17) at calculateCart (https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/utils-D7bEf2-B.js:896:26) at async https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.4.19/dist/chunks/analytics-DDBbK97v.js:279:118",
+          "Access to fetch at 'https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD' from origin 'http://127.0.0.1:4174' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+        ]
+      }
+    },
+    {
+      "id": "browser-request-failures:upsell",
+      "family": "browser-runtime",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "3 failed request(s)",
+      "evidence": {
+        "failed_requests": [
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/carts/calculate/",
+            "failure": "net::ERR_FAILED"
+          },
+          {
+            "url": "https://campaigns.apps.29next.com/api/v1/campaigns/?currency=USD",
+            "failure": "net::ERR_FAILED"
+          }
+        ]
+      }
+    }
+  ],
+  "test_orders": [],
+  "exceptions": [
+    {
+      "id": "browser-payment-geometry:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "native-looking card/CVV controls: fixed field height and centered hosted iframe text path",
+      "actual": "cc-number: host=48px iframe=0px center_delta=nullpx; cvv: host=48px iframe=0px center_delta=nullpx"
+    },
+    {
+      "id": "browser-express-wallets:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "manual_review",
+      "severity": "warn",
+      "expected": "eligible express wallet buttons render with stable wallet-button dimensions; Apple Pay may be absent in non-eligible browsers",
+      "actual": "no express wallet buttons mounted"
+    },
+    {
+      "id": "browser-bundle-selector:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "bundle cards have one selected option and visible prices for every tier",
+      "actual": "0 selected; 0/3 cards with visible price"
+    },
+    {
+      "id": "template-residue:checkout:style:checkout_submit_button",
+      "family": "template_residue",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "not rgb(24, 24, 27) (starter default --brand--color--primary (Arjuna starter default; per-campaign brand override missing))",
+      "actual": "rgb(24, 24, 27)"
+    },
+    {
+      "id": "template-residue:checkout:logo",
+      "family": "template_residue",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "campaign brand logo, not starter next-logo.png",
+      "actual": "starter logo asset still referenced (2 element(s))"
+    },
+    {
+      "id": "template-residue:checkout:demo-asset",
+      "family": "template_residue",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "template demo assets still referenced: 1x1_1.svg, 1x1_2.svg, next-logo.png"
+    },
+    {
+      "id": "browser-sdk-debugger:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay incomplete"
+    },
+    {
+      "id": "browser-console-errors:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "14 issue(s)"
+    },
+    {
+      "id": "browser-request-failures:checkout",
+      "family": "browser-runtime",
+      "page": "checkout",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/checkout/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "3 failed request(s)"
+    },
+    {
+      "id": "browser-console-errors:index",
+      "family": "browser-runtime",
+      "page": "index",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "9 issue(s)"
+    },
+    {
+      "id": "browser-request-failures:index",
+      "family": "browser-runtime",
+      "page": "index",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "2 failed request(s)"
+    },
+    {
+      "id": "template-residue:landing:demo-asset",
+      "family": "template_residue",
+      "page": "landing",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "template demo assets still referenced: 1x1_1.svg"
+    },
+    {
+      "id": "browser-console-errors:landing",
+      "family": "browser-runtime",
+      "page": "landing",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "9 issue(s)"
+    },
+    {
+      "id": "browser-request-failures:landing",
+      "family": "browser-runtime",
+      "page": "landing",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/landing/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "2 failed request(s)"
+    },
+    {
+      "id": "browser-console-errors:presell",
+      "family": "browser-runtime",
+      "page": "presell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/presell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "9 issue(s)"
+    },
+    {
+      "id": "browser-request-failures:presell",
+      "family": "browser-runtime",
+      "page": "presell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/presell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "2 failed request(s)"
+    },
+    {
+      "id": "template-residue:receipt:logo",
+      "family": "template_residue",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "campaign brand logo, not starter next-logo.png",
+      "actual": "starter logo asset still referenced (4 element(s))"
+    },
+    {
+      "id": "template-residue:receipt:demo-asset",
+      "family": "template_residue",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "template demo assets still referenced: next-logo.png"
+    },
+    {
+      "id": "browser-sdk-debugger:receipt",
+      "family": "browser-runtime",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay incomplete"
+    },
+    {
+      "id": "browser-console-errors:receipt",
+      "family": "browser-runtime",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "14 issue(s)"
+    },
+    {
+      "id": "browser-request-failures:receipt",
+      "family": "browser-runtime",
+      "page": "receipt",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/receipt/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "3 failed request(s)"
+    },
+    {
+      "id": "template-residue:upsell-2:style:upsell_accept_cta",
+      "family": "template_residue",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "not rgb(10, 38, 92) (starter default --brand--color--primary-dark (next-core default; brand-theme.css did not load))",
+      "actual": "rgb(10, 38, 92)"
+    },
+    {
+      "id": "template-residue:upsell-2:logo",
+      "family": "template_residue",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "campaign brand logo, not starter next-logo.png",
+      "actual": "starter logo asset still referenced (2 element(s))"
+    },
+    {
+      "id": "template-residue:upsell-2:demo-asset",
+      "family": "template_residue",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "template demo assets still referenced: 1x1_1.svg, 1x1_2.svg, next-logo.png"
+    },
+    {
+      "id": "browser-sdk-debugger:upsell-2",
+      "family": "browser-runtime",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay incomplete"
+    },
+    {
+      "id": "browser-console-errors:upsell-2",
+      "family": "browser-runtime",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "14 issue(s)"
+    },
+    {
+      "id": "browser-request-failures:upsell-2",
+      "family": "browser-runtime",
+      "page": "upsell-2",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell-2/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "3 failed request(s)"
+    },
+    {
+      "id": "template-residue:upsell:style:upsell_accept_cta",
+      "family": "template_residue",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "not rgb(10, 38, 92) (starter default --brand--color--primary-dark (next-core default; brand-theme.css did not load))",
+      "actual": "rgb(10, 38, 92)"
+    },
+    {
+      "id": "template-residue:upsell:logo",
+      "family": "template_residue",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "fail",
+      "severity": "warn",
+      "expected": "campaign brand logo, not starter next-logo.png",
+      "actual": "starter logo asset still referenced (2 element(s))"
+    },
+    {
+      "id": "template-residue:upsell:demo-asset",
+      "family": "template_residue",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "campaign assets replace template demo placeholders (re-skin before launch)",
+      "actual": "template demo assets still referenced: 1x1_1.svg, 1x1_2.svg, next-logo.png"
+    },
+    {
+      "id": "browser-sdk-debugger:upsell",
+      "family": "browser-runtime",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "Campaign Cart SDK debugger mode mounts on SDK-owned runtime pages",
+      "actual": "debugger overlay incomplete"
+    },
+    {
+      "id": "browser-console-errors:upsell",
+      "family": "browser-runtime",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "clean browser runtime",
+      "actual": "14 issue(s)"
+    },
+    {
+      "id": "browser-request-failures:upsell",
+      "family": "browser-runtime",
+      "page": "upsell",
+      "url": "http://127.0.0.1:4174/lumi-arjuna-v0/upsell/",
+      "status": "warn",
+      "severity": "warn",
+      "expected": "no failed browser requests",
+      "actual": "3 failed request(s)"
+    }
+  ]
+}
